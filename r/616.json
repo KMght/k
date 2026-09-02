@@ -1,0 +1,136 @@
+{
+  "title": "国際捜査共助規則",
+  "law_number": "昭和五十五年法律第六十九号",
+  "enforcement_date": "平成16年6月29日",
+  "enforcement_iso": "2004-06-29",
+  "pdf_link": "https://www.courts.go.jp/assets/kokusaisousakyoujyo.pdf",
+  "source": "kokusaisousakyoujyo.pdf",
+  "numeral": "kansuji",
+  "notes": [
+    "題名・制定文とみられる行を本文の前に検出しました：昭和55年9月18日最高裁判所規則第７号／改正 平成16年6月21日最高裁判所規則第１１号／国際捜査共助規則を次のように定める。",
+    "各条の「原本」は https://www.courts.go.jp/assets/kokusaisousakyoujyo.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+  ],
+  "nodes": [
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "a1",
+      "caption": "令状の発付等の手続についての刑事訴訟規則の準用",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "国際捜査共助等に関する法律（昭和五十五年法律第六十九号）による令状の発付及び証人尋問並びに同法において準用する刑事訴訟法（昭和二十三法律第百三十一号）による不服申立てに関する手続については、その性質に反しない限り、刑事訴訟規則（昭和二十三年最高裁判所規則第三十二号）第一編第二章及び第五章から第十三章まで、第二編第一章、第三編第一章、第三章及び第四章、第七編並びに第八編の規定を準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        2
+      ],
+      "label": "第二条",
+      "short_label": "2条",
+      "anchor": "a2",
+      "caption": "訳文の添付",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "外国語で記載された書面には、その訳文を添付しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "",
+      "anchor": "sup1",
+      "level": 1,
+      "page": 1,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-1",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 1,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、昭和五十五年十月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則は、この規則の施行前に犯された犯罪に係る外国からの共助の要請についても、適用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成一六年六月二一日最高裁判所規則第一一号）",
+      "anchor": "sup2",
+      "level": 1,
+      "page": 1,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-2",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 2,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は，国際捜査共助法及び組織的な犯罪の処罰及び犯罪収益の規制等に関する法律の一部を改正する法律（平成十六年法律第八十九号）の施行の日（平成十六年六月二十九日）から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    }
+  ]
+}

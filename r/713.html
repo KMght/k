@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>司法修習生の修習専念資金の貸与等に関する規則</title>
+<style>
+:root{
+  --paper:#ffffff;
+  --ink:#16181d;
+  --sub:#5f6875;
+  --rule:#dde2e9;
+  --chrome:#f4f6f9;
+  --accent:#14538a;
+  --accent-weak:#e7eff7;
+  --mark:#ffe08a;
+  --mark-live:#ff9d3d;
+  --gothic:"Yu Gothic UI","Yu Gothic","YuGothic","Hiragino Sans","Noto Sans JP","Meiryo",system-ui,sans-serif;
+  --mincho:"Yu Mincho","YuMincho","Hiragino Mincho ProN","Noto Serif JP","MS Mincho",serif;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:5.5rem}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--mincho);font-size:17px;line-height:1.9;
+  text-rendering:optimizeLegibility;
+}
+
+/* ---------------------------------------------------------------- ヘッダ */
+.top{
+  position:sticky;top:0;z-index:30;background:var(--chrome);
+  border-bottom:1px solid var(--rule);font-family:var(--gothic);
+}
+.top-inner{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;padding:.7rem 1.2rem}
+.law-title{font-size:1.12rem;font-weight:700;letter-spacing:.02em;margin:0}
+.law-number{font-size:.8rem;color:var(--sub);margin-left:.2rem}
+.top-tools{margin-left:auto;display:flex;align-items:center;gap:.5rem}
+.search-box{display:flex;align-items:center;gap:.35rem;background:var(--paper);
+  border:1px solid var(--rule);border-radius:2px;padding:.25rem .5rem}
+.search-box input{border:0;outline:0;font:inherit;font-size:.85rem;width:14rem;background:transparent;color:inherit}
+.hit-count{font-size:.78rem;color:var(--sub);min-width:4.2rem;text-align:right;font-variant-numeric:tabular-nums}
+button{font:inherit;font-family:var(--gothic);cursor:pointer}
+.btn{background:var(--paper);border:1px solid var(--rule);border-radius:2px;
+  color:var(--ink);font-size:.78rem;padding:.28rem .6rem;line-height:1.4}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.crumb{padding:.3rem 1.2rem;border-top:1px solid var(--rule);background:var(--paper);
+  font-family:var(--gothic);font-size:.78rem;color:var(--sub);min-height:1.7rem}
+
+/* ------------------------------------------------------------------ 骨格 */
+.wrap{display:grid;grid-template-columns:19rem minmax(0,1fr);align-items:start}
+.toc{
+  position:sticky;top:5.6rem;max-height:calc(100vh - 5.6rem);overflow-y:auto;
+  border-right:1px solid var(--rule);padding:1rem .6rem 4rem 1.2rem;
+  font-family:var(--gothic);font-size:.83rem;line-height:1.65;
+}
+.toc h2{font-size:.75rem;color:var(--sub);font-weight:700;margin:0 0 .6rem}
+.toc ul{list-style:none;margin:0;padding:0}
+.toc a{display:block;color:var(--ink);text-decoration:none;padding:.16rem .4rem;border-radius:2px}
+.toc a:hover{background:var(--accent-weak);color:var(--accent)}
+.toc a.current{background:var(--accent-weak);color:var(--accent);font-weight:700}
+.toc .div-1>a,.toc .div-2>a{font-weight:700}
+.toc .div-2{margin-top:.5rem}
+.toc .div-3,.toc .div-4,.toc .div-5{margin-top:.25rem}
+.toc .lv-art{padding-left:.9rem}
+.toc .lv-art.hidden,.toc .lv-div.hidden{display:none}
+.toc-toggle{background:none;border:0;color:var(--sub);padding:0 .3rem;font-size:.75rem}
+
+.doc{padding:2.2rem 2rem 8rem;max-width:44em}
+.doc-head{border-bottom:2px solid var(--ink);padding-bottom:.8rem;margin-bottom:2rem}
+.doc-head h1{font-size:1.5rem;margin:0 0 .3rem;letter-spacing:.04em}
+.doc-head .meta{font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+
+/* ------------------------------------------------------------------ 条文 */
+.div-head{font-family:var(--gothic);margin:2.6rem 0 1rem;scroll-margin-top:6rem}
+.div-head .lbl{color:var(--accent);font-weight:700}
+h2.div-head{font-size:1.12rem;border-bottom:1px solid var(--rule);padding-bottom:.35rem}
+h3.div-head{font-size:1.02rem}
+h4.div-head,h5.div-head,h6.div-head{font-size:.95rem}
+
+.art{position:relative;padding-left:2.6rem;margin:1.5rem 0 1.9rem;scroll-margin-top:6rem}
+.art:target{background:var(--accent-weak);box-shadow:-.4rem 0 0 var(--accent);border-radius:2px}
+.art-tools{position:absolute;left:0;top:.25rem;display:flex;flex-direction:column;gap:.2rem;
+  visibility:hidden}
+.art:hover .art-tools,.art:focus-within .art-tools,.art:target .art-tools{visibility:visible}
+.art-tools button,.art-tools a{background:none;border:0;color:var(--sub);font-size:.72rem;
+  font-family:var(--gothic);padding:.1rem .2rem;border-radius:2px;text-decoration:none;
+  white-space:nowrap;display:block}
+.art-tools button:hover,.art-tools a:hover{color:var(--accent);background:var(--accent-weak)}
+.raw h3 .src{font-size:.75rem;font-weight:400;color:var(--sub);margin-left:.5rem}
+.doc-head .src{color:var(--accent);text-decoration:none}
+.doc-head .src:hover{text-decoration:underline}
+.caption{font-family:var(--gothic);font-size:.88rem;font-weight:700;color:var(--sub);margin:0 0 .1rem}
+.amend-note{font-family:var(--gothic);font-size:.78rem;font-weight:400;color:var(--sub);margin:.1rem 0 0;text-align:right}
+h2 .amend-note,h3 .amend-note,h4 .amend-note,h5 .amend-note,h6 .amend-note{display:inline;text-align:left}
+.art-no{font-family:var(--gothic);font-weight:700;color:var(--accent);text-decoration:none;margin-right:.55em}
+.art-no:hover{text-decoration:underline}
+.para{margin:.35rem 0;text-indent:0}
+.para+.para{margin-top:.55rem}
+.pno{font-family:var(--gothic);color:var(--sub);font-size:.9em;margin-right:.5em;font-variant-numeric:tabular-nums}
+.deleted .body-text{color:var(--sub)}
+.art.noarticle .para{margin-top:0}
+
+ol.items{list-style:none;margin:.35rem 0 .35rem 1.1em;padding:0}
+ol.items>li{display:grid;grid-template-columns:2.4em minmax(0,1fr);margin:.2rem 0}
+ol.items .mk{font-family:var(--gothic);font-size:.9em;color:var(--sub);margin-right:.4em}
+ol.items ol.items{grid-column:1/-1;margin-left:1.2em}
+ol.items ol.items>li{grid-template-columns:2em minmax(0,1fr)}
+
+.raw{margin:1.6rem 0;scroll-margin-top:6rem}
+.raw h3{font-family:var(--gothic);font-size:1rem;margin:0 0 .4rem}
+.raw pre{font-family:var(--mincho);white-space:pre-wrap;margin:0;padding:.7rem .9rem;
+  background:var(--chrome);border:1px solid var(--rule);font-size:.92rem;line-height:1.75}
+
+.notes{margin:2.5rem 0 0;padding:.8rem 1rem;background:var(--chrome);
+  border-left:3px solid var(--accent);font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+.notes p{margin:0 0 .3rem;font-weight:700;color:var(--ink)}
+.notes ul{margin:0;padding-left:1.2rem}
+.foot{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);
+  font-family:var(--gothic);font-size:.75rem;color:var(--sub)}
+
+a.ref{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule)}
+a.ref:hover{color:var(--accent);border-bottom-color:var(--accent)}
+a.ref-egov{border-bottom-style:dotted}
+a.ref-rule{border-bottom-color:var(--accent)}
+mark{background:var(--mark);color:inherit;padding:0 .05em}
+mark.live{background:var(--mark-live)}
+.toast{position:fixed;left:50%;bottom:2rem;transform:translateX(-50%);
+  background:var(--ink);color:#fff;font-family:var(--gothic);font-size:.8rem;
+  padding:.5rem .9rem;border-radius:3px;pointer-events:none;z-index:60;display:none}
+.toast.show{display:block}
+
+.toc-open{display:none}
+@media (max-width:900px){
+  body{font-size:16px}
+  .wrap{grid-template-columns:minmax(0,1fr)}
+  .toc{position:fixed;inset:5.6rem auto 0 0;width:82vw;max-width:20rem;background:var(--paper);
+    z-index:25;box-shadow:0 0 0 100vmax rgba(0,0,0,.25);max-height:none;height:calc(100vh - 5.6rem);
+    display:none}
+  .toc.open{display:block}
+  .toc-open{display:inline-block}
+  .doc{padding:1.4rem 1.1rem 6rem}
+  .search-box input{width:8rem}
+  .art-tools{opacity:1;position:static;flex-direction:row;justify-content:flex-end;margin-bottom:.15rem}
+  .art-tools button,.art-tools a{border:1px solid var(--rule);border-radius:2px;
+    padding:.1rem .45rem;display:inline-block}
+  .art{padding-left:0}
+}
+
+@media print{
+  .top,.toc,.art-tools,.crumb,.toast{display:none!important}
+  a.ref{border-bottom:0}
+  .wrap{display:block}
+  .doc{max-width:none;padding:0}
+  body{font-size:10.5pt;line-height:1.7}
+  .art{page-break-inside:avoid}
+}
+
+.anchor-alias{position:absolute;scroll-margin-top:6rem}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <button type="button" class="btn toc-open" id="toc-open">目次</button>
+    <h1 class="law-title">司法修習生の修習専念資金の貸与等に関する規則</h1>
+    <span class="law-number">平成21年10月30日最高裁判所規則第10号　／　令和5年11月1日施行</span>
+    <div class="top-tools">
+      <div class="search-box">
+        <input type="search" id="q" placeholder="条文を検索（/ キー）" aria-label="条文を検索">
+        <span class="hit-count" id="hits"></span>
+      </div>
+      <button type="button" class="btn" id="prev" title="前の該当箇所">前</button>
+      <button type="button" class="btn" id="next" title="次の該当箇所">次</button>
+      <button type="button" class="btn" id="numeral" aria-pressed="false"
+        title="条番号の表記を切り替える">123</button>
+    </div>
+  </div>
+  <div class="crumb" id="crumb"></div>
+</header>
+<div class="wrap">
+  <nav class="toc" id="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ul><li class="lv-art" data-text="改正 平成24年10月26日最高裁判所規則第１０号平成29年8月4日最高裁判所規則第４号令和5年10月20日最高裁判所規則第６号司法修習生の修習資金の貸与等に関する規則を次のように定める。司法修習生の修習専念資金の貸与等に関する規則"><a href="#body-1">本文</a></li><li class="lv-art" data-text="第一条1条貸与申請の方式等貸与申請の方式等裁判所法（昭和二十二年法律第五十九号。以下「法」という。）第六十七条の三第一項に規定する申請（以下「貸与申請」という。）は、最高裁判所の定める事項を記載した申請書（以下「貸与申請書」という。）を最高裁判所に提出してしなければならない。貸与申請書には、第四条第一項第一号に掲げる者を保証人に立てる場合にはその者の保証書を、同項第二号に掲げる金融機関を保証人に立てる場合には当該金融機関に保証を委託する旨を記載した書面を添付するほか、最高裁判所の定める書面を添付しなければならない。貸与申請書の提出は、司法修習生の採用の申込みをした者もすることができる。"><a href="#a1">第一条　貸与申請の方式等</a></li><li class="lv-art" data-text="第二条2条修習専念資金の貸与の方法修習専念資金の貸与の方法修習専念資金（法第六十七条の三第一項に規定する修習専念資金をいう。以下同じ。）は、貸与申請がされた日（貸与申請書を提出した日が同項に規定する修習のため通常必要な期間として最高裁判所が定める期間（以下この項及び第七条において「通常修習期間」という。）の開始の日前であるときは、当該開始の日に貸与申請がされたものとみなす。）の属する貸与単位期間（通常修習期間をその開始の日又は各月においてその日に応当する通常修習期間内の日（その日に応当する日がない月においては、その月の末日）から各翌月の通常修習期間の開始の日に応当する日（その日に応当する日がない月においては、その月の末日）の前日（当該前日が通常修習期間内にないときは、通常修習期間の末日）までの各期間に区分した場合における当該区分による一の期間をいう。以下同じ。）の次の貸与単位期間（貸与申請がされた日が貸与単位期間の初日であるときは、当該貸与単位期間）に係る分からこれを貸与する。修習専念資金は、次条の規定により各貸与単位期間ごとに定められる額の修習専念資金を、最高裁判所の定める日までに、最高裁判所の定める方法により交付して貸与するものとする。ただし、貸与申請に係る事実を確認することができない等の事情があるため、修習専念資金をその日までに交付することができないときは、その日後に交付することができる。"><a href="#a2">第二条　修習専念資金の貸与の方法</a></li><li class="lv-art" data-text="第三条3条修習専念資金の額修習専念資金の額修習専念資金の額は、一貸与単位期間につき十万円（以下この条において「基本額」という。）とする。修習専念資金の貸与を受けようとする者又は修習専念資金の貸与を受けている司法修習生が、次の各号のいずれかに該当する場合において、修習専念資金の額の変更を申請したときは、修習専念資金の額を一貸与単位期間につき十二万五千円に変更する。一配偶者（届出をしないが事実上婚姻関係と同様の事情にある者を含む。）がある場合二満二十二歳に達する日以後の最初の三月三十一日までの間にある子がある場合三一般職の職員の給与に関する法律（昭和二十五年法律第九十五号）第十一条第二項に規定する扶養親族（同項第一号に掲げる配偶者及び同項第二号に掲げる子を除く。）がある場合前項の規定による修習専念資金の額の変更を受けた者が、修習専念資金の額の基本額への変更を申請したときは、修習専念資金の額を基本額に変更する。前二項の規定による申請は、最高裁判所の定める事項を記載した申請書を最高裁判所に提出してしなければならない。前条第一項の規定は、第二項及び第三項の規定による修習専念資金の額の変更の申請があった場合について準用する。第二項に定める額の修習専念資金の貸与を受けている司法修習生が、同項各号に掲げる場合のいずれにも該当しないこととなったときは、当該該当しないこととなった日の属する貸与単位期間の次の貸与単位期間（その日が貸与単位期間の初日であるときは、当該貸与単位期間）以降に係る修習専念資金の額を基本額に変更する。"><a href="#a3">第三条　修習専念資金の額</a></li><li class="lv-art" data-text="第四条4条保証人保証人修習専念資金の貸与を受けようとする者は、次に掲げるいずれかの者を保証人に立てなければならない。一自然人二人二一の金融機関（最高裁判所の指定するものに限る。）前項に規定する保証人は、修習専念資金の貸与を受けた者と連帯して債務を負担するものとする。民法（明治二十九年法律第八十九号）第四百五十一条の規定は、修習専念資金の貸与については適用しない。"><a href="#a4">第四条　保証人</a></li><li class="lv-art" data-text="第五条5条貸与申請の撤回貸与申請の撤回貸与申請をした者は、最高裁判所の定める撤回書を提出することにより、いつでも将来に向かって貸与申請の撤回をすることができる。"><a href="#a5">第五条　貸与申請の撤回</a></li><li class="lv-art" data-text="第六条6条修習専念資金の貸与の終了修習専念資金の貸与の終了修習専念資金の貸与を受けている司法修習生について次に掲げる事由のいずれかが生じたときは、当該事由が生じた日の属する貸与単位期間の次の貸与単位期間（その日が貸与単位期間の初日であるときは、当該貸与単位期間）以降に係る修習専念資金を貸与しないものとする。一前条の規定による撤回をしたとき。二法第六十八条第一項又は第二項の規定により罷免されたとき。三死亡したとき。四第四条第一項に規定する保証人を欠くに至った後相当の期間内に同項に規定する保証人を新たに立てなかったとき。五その他最高裁判所の定める事由が生じたとき。"><a href="#a6">第六条　修習専念資金の貸与の終了</a></li><li class="lv-art" data-text="第七条7条修習専念資金の返還の期限等修習専念資金の返還の期限等修習専念資金の返還の期限は、通常修習期間の終了した月の翌月から起算して五年を経過した後十年以内で最高裁判所の定める日とし、その返還は、年賦の均等返還の方法によるものとする。ただし、最高裁判所の定めるところにより繰上返還をすることを妨げない。"><a href="#a7">第七条　修習専念資金の返還の期限等</a></li><li class="lv-art" data-text="第七条の二7条の2法第六十七条の三第三項に規定する最高裁判所の定める事由法第六十七条の三第三項に規定する最高裁判所の定める事由法第六十七条の三第三項に規定する最高裁判所の定める事由は、次に掲げるものとする。一修習専念資金の貸与を受けた者が給与所得（俸給、給料、賃金、歳費及び賞与並びにこれらの性質を有する給与に係る所得をいう。）以外の所得を有しない者（次号において「給与所得者」という。）である場合において、当該者の最高裁判所の定める期間における収入金額（法科大学院（学校教育法（昭和二十二年法律第二十六号）第九十九条第二項に規定する専門職大学院であって、法曹に必要な学識及び能力を培うことを目的とするものをいう。）における修学のための借入金（最高裁判所の定めるものを除く。次号において単に「借入金」という。）を当該期間中に返還したときは、その返還額を控除した残額）が三百万円以下であること（当該者について次条第二項第二号から第五号までに掲げる事由のいずれかが生じたときを除く。）。二修習専念資金の貸与を受けた者が給与所得者以外の者である場合において、当該者の前号に規定する期間における総収入金額（借入金を当該期間中に返還したときは、その返還額を控除した残額）から必要経費を控除した残額が二百万円以下であること"><a href="#a7-2">第七条の二　法第六十七条の三第三項に規定する最高裁判所の定める事由</a></li><li class="lv-art" data-text="第八条8条期限の利益の喪失期限の利益の喪失修習専念資金の貸与を受けた者は、その者について次に掲げる事由のいずれかが生じたときは、第七条の規定にかかわらず、最高裁判所の請求に基づき、その指定する日までに、返還未済額の全部を返還しなければならない。一正当な理由がなくて修習専念資金を返還すべき日までにこれを返還しなかったとき。二第六条第四号に掲げる事由が生じたとき。三次条に規定する返還明細書を提出すべき日までにこれを提出しなかったとき。四その他最高裁判所の定める事由が生じたとき。修習専念資金の貸与を受けた者は、その者について次に掲げる事由のいずれかが生じたときは、第七条の規定にかかわらず、直ちに返還未済額の全部を返還しなければならない。一第六条第二号に掲げる事由が生じたとき（最高裁判所の定める場合を除く。）。二強制執行を受けたとき。三租税その他の公課について滞納処分を受けたとき。四財産について競売の開始があったとき。五破産手続開始の決定又は再生手続開始の決定を受けたとき。六その他最高裁判所の定める事由が生じたとき。"><a href="#a8">第八条　期限の利益の喪失</a></li><li class="lv-art" data-text="第九条9条返還明細書の提出返還明細書の提出修習専念資金の貸与を受けた者は、その貸与申請に係る修習専念資金の最後の貸与単位期間の末日までに、最高裁判所の定める事項を記載した返還明細書を最高裁判所に提出しなければならない。前項の規定にかかわらず、第六条の規定により修習専念資金を貸与しないものとされた場合には、最高裁判所の指定する日までに、同項に規定する返還明細書を最高裁判所に提出しなければならない。"><a href="#a9">第九条　返還明細書の提出</a></li><li class="lv-art" data-text="第十条10条延滞利息延滞利息修習専念資金の貸与を受けた者は、正当な理由がなくて修習専念資金を返還すべき日までにこれを返還しなかったときは、当該返還すべき日の翌日から返還の日までの期間の日数に応じ、返還すべき額につき年十四・五パーセントの割合で計算した延滞利息を支払わなければならない。"><a href="#a10">第十条　延滞利息</a></li><li class="lv-art" data-text="第十一条11条修習専念資金の貸与及び返還に関する書面の提出修習専念資金の貸与及び返還に関する書面の提出最高裁判所は、修習専念資金の貸与を受け、又は受けようとする者及びその保証人又は保証人となるべき者に対し、この規則に定めるもののほか、最高裁判所の定めるところにより、修習専念資金の貸与及び返還に関し必要と認める書面の提出を求めることができる。"><a href="#a11">第十一条　修習専念資金の貸与及び返還に関する書面の提出</a></li><li class="lv-art" data-text="第十二条12条電子情報処理組織を使用する方法等による申請等電子情報処理組織を使用する方法等による申請等貸与申請書の提出、第三条第四項に規定する申請書の提出及び第五条に規定する撤回書の提出（以下この条において「貸与申請書等の提出」という。）については、これらの規定にかかわらず、最高裁判所の定めるところにより、最高裁判所の定める電子情報処理組織（最高裁判所若しくはこれに置かれる機関又はこれらの職員であって独立に権限を行使することを認められたものの使用に係る電子計算機（入出力装置を含む。以下同じ。）と貸与申請書等の提出をする者の使用に係る電子計算機とを電気通信回線で接続した電子情報処理組織をいう。）を使用する方法その他の情報通信技術を利用する方法であって最高裁判所が定めるものにより行うことができる。前項の方法により行われた貸与申請書等の提出については、当該貸与申請書等の提出に関するこの規則の規定に規定する方法により行われたものとみなして、この規則の規定を適用する。"><a href="#a12">第十二条　電子情報処理組織を使用する方法等による申請等</a></li><li class="lv-art" data-text="第十三条13条補則補則この規則に定めるもののほか、修習専念資金の貸与及び返還に関し必要な事項は、最高裁判所が定める。"><a href="#a13">第十三条　補則</a></li><li class="lv-div div-1"><a href="#sup1">附則</a><ul><li class="lv-art" data-text="第一条1条施行期日施行期日この規則は、裁判所法の一部を改正する法律（平成十六年法律第百六十三号）の施行の日（平成二十二年十一月一日）から施行する。"><a href="#sup1-a1">第一条　施行期日</a></li><li class="lv-art" data-text="第二条2条司法修習生の給与に関する規則の廃止司法修習生の給与に関する規則の廃止司法修習生の給与に関する規則（昭和五十五年最高裁判所規則第二号）は、廃止する。"><a href="#sup1-a2">第二条　司法修習生の給与に関する規則の廃止</a></li><li class="lv-art" data-text="第三条3条司法修習生の給与に関する規則の廃止に伴う経過措置司法修習生の給与に関する規則の廃止に伴う経過措置この規則の施行前に採用され、この規則の施行後も引き続き修習をする司法修習生の給与については、前条の規定による廃止前の司法修習生の給与に関する規則の規定は、この規則の施行後も、なおその効力を有する。"><a href="#sup1-a3">第三条　司法修習生の給与に関する規則の廃止に伴う経過措置</a></li><li class="lv-art" data-text="第四条4条裁判官等の寒冷地手当に関する規則の一部改正裁判官等の寒冷地手当に関する規則の一部改正裁判官等の寒冷地手当に関する規則（昭和二十四年最高裁判所規則第二十九号）の一部を次のように改正する。題名中「裁判官等」を「裁判官」に改める。本則中「及び司法修習生」を削る。"><a href="#sup1-a4">第四条　裁判官等の寒冷地手当に関する規則の一部改正</a></li><li class="lv-art" data-text="第五条5条裁判官の報酬等の支給定日に関する規則の一部改正裁判官の報酬等の支給定日に関する規則の一部改正裁判官の報酬等の支給定日に関する規則（昭和三十六年最高裁判所規則第二号）の一部を次のように改正する。第一条中「、裁判官」を「及び裁判官」に改め、「及び司法修習生の給与」を削る。第二条第一項中「、裁判官以外」を「若しくは裁判官以外」に改め、「若しくは司法修習生」を削る。"><a href="#sup1-a5">第五条　裁判官の報酬等の支給定日に関する規則の一部改正</a></li><li class="lv-art" data-text="第六条6条裁判官等の寒冷地手当に関する規則及び裁判官の報酬等の支給定日に関する規則の一部改正に伴う経過措置裁判官等の寒冷地手当に関する規則及び裁判官の報酬等の支給定日に関する規則の一部改正に伴う経過措置この規則の施行前に採用され、この規則の施行後も引き続き修習をする司法修習生の給与については、附則第四条の規定による改正後の裁判官の寒冷地手当に関する規則及び前条の規定による改正後の裁判官の報酬等の支給定日に関する規則の規定にかかわらず、なお従前の例による。"><a href="#sup1-a6">第六条　裁判官等の寒冷地手当に関する規則及び裁判官の報酬等の支給定日に関する規則の一部改正に伴う経過措置</a></li></ul></li><li class="lv-div div-1"><a href="#sup2">附則　（平成二四年一〇月二六日最高裁判所規則第一〇号）</a></li><li class="lv-div div-1"><a href="#sup3">附則　（平成二九年八月四日最高裁判所規則第四号）抄</a></li><li class="lv-div div-1"><a href="#sup4">附則　（令和五年一〇月二〇日最高裁判所規則第六号）</a></li></ul>
+  </nav>
+  <main class="doc" id="doc-outer">
+    <div class="doc-head">
+      <h1>司法修習生の修習専念資金の貸与等に関する規則</h1>
+      <div class="meta">平成21年10月30日最高裁判所規則第10号　／　令和5年11月1日施行　／　<a class="src" href="https://www.courts.go.jp/assets/051101_kisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本PDF p.1</a></div>
+    </div>
+    <div id="doc">
+<article class="art noarticle" id="body-1" data-path=""><div class="art-tools"><button type="button" data-anchor="body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/051101_kisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="body-1-p1"><span class="body-text">改正 平成24年10月26日最高裁判所規則第１０号平成29年8月4日最高裁判所規則第４号令和5年10月20日最高裁判所規則第６号司法修習生の修習資金の貸与等に関する規則を次のように定める。司法修習生の修習専念資金の貸与等に関する規則</span></p></article>
+<article class="art" id="a1" data-path=""><span class="anchor-alias" id="Mp-At_1"></span><div class="art-tools"><button type="button" data-anchor="a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/051101_kisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（貸与申請の方式等）</p><p class="para" id="a1-p1"><a class="art-no" href="#a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">裁判所法（昭和二十二年法律第五十九号。以下「法」という。）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/322AC0000000059#Mp-At_67_3" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第六十七条の三</a>第一項に規定する申請（以下「貸与申請」という。）は、最高裁判所の定める事項を記載した申請書（以下「貸与申請書」という。）を最高裁判所に提出してしなければならない。</span></p><p class="para" id="a1-p2"><span class="pno">2</span><span class="body-text">貸与申請書には、<a class="ref ref-self" href="#a4">第四条</a>第一項第一号に掲げる者を保証人に立てる場合にはその者の保証書を、同項第二号に掲げる金融機関を保証人に立てる場合には当該金融機関に保証を委託する旨を記載した書面を添付するほか、最高裁判所の定める書面を添付しなければならない。</span></p><p class="para" id="a1-p3"><span class="pno">3</span><span class="body-text">貸与申請書の提出は、司法修習生の採用の申込みをした者もすることができる。</span></p></article>
+<article class="art" id="a2" data-path=""><span class="anchor-alias" id="Mp-At_2"></span><div class="art-tools"><button type="button" data-anchor="a2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/051101_kisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（修習専念資金の貸与の方法）</p><p class="para" id="a2-p1"><a class="art-no" href="#a2" data-kan="第二条" data-num="第2条">第二条</a><span class="body-text">修習専念資金（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/322AC0000000059#Mp-At_67_3" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第六十七条の三</a>第一項に規定する修習専念資金をいう。以下同じ。）は、貸与申請がされた日（貸与申請書を提出した日が同項に規定する修習のため通常必要な期間として最高裁判所が定める期間（以下この項及び<a class="ref ref-self" href="#a7">第七条</a>において「通常修習期間」という。）の開始の日前であるときは、当該開始の日に貸与申請がされたものとみなす。）の属する貸与単位期間（通常修習期間をその開始の日又は各月においてその日に応当する通常修習期間内の日（その日に応当する日がない月においては、その月の末日）から各翌月の通常修習期間の開始の日に応当する日（その日に応当する日がない月においては、その月の末日）の前日（当該前日が通常修習期間内にないときは、通常修習期間の末日）までの各期間に区分した場合における当該区分による一の期間をいう。以下同じ。）の次の貸与単位期間（貸与申請がされた日が貸与単位期間の初日であるときは、当該貸与単位期間）に係る分からこれを貸与する。</span></p><p class="para" id="a2-p2"><span class="pno">2</span><span class="body-text">修習専念資金は、次条の規定により各貸与単位期間ごとに定められる額の修習専念資金を、最高裁判所の定める日までに、最高裁判所の定める方法により交付して貸与するものとする。ただし、貸与申請に係る事実を確認することができない等の事情があるため、修習専念資金をその日までに交付することができないときは、その日後に交付することができる。</span></p></article>
+<article class="art" id="a3" data-path=""><span class="anchor-alias" id="Mp-At_3"></span><div class="art-tools"><button type="button" data-anchor="a3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/051101_kisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（修習専念資金の額）</p><p class="para" id="a3-p1"><a class="art-no" href="#a3" data-kan="第三条" data-num="第3条">第三条</a><span class="body-text">修習専念資金の額は、一貸与単位期間につき十万円（以下この条において「基本額」という。）とする。</span></p><p class="para" id="a3-p2"><span class="pno">2</span><span class="body-text">修習専念資金の貸与を受けようとする者又は修習専念資金の貸与を受けている司法修習生が、次の各号のいずれかに該当する場合において、修習専念資金の額の変更を申請したときは、修習専念資金の額を一貸与単位期間につき十二万五千円に変更する。</span></p><ol class="items"><li id="a3-p2-1"><span class="mk">一</span><span class="tx">配偶者（届出をしないが事実上婚姻関係と同様の事情にある者を含む。）がある場合</span></li><li id="a3-p2-2"><span class="mk">二</span><span class="tx">満二十二歳に達する日以後の最初の三月三十一日までの間にある子がある場合</span></li><li id="a3-p2-3"><span class="mk">三</span><span class="tx">一般職の職員の給与に関する法律（昭和二十五年法律第九十五号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/325AC1000000095#Mp-At_11" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第十一条</a>第二項に規定する扶養親族（同項第一号に掲げる配偶者及び同項第二号に掲げる子を除く。）がある場合</span></li></ol><p class="para" id="a3-p3"><span class="pno">3</span><span class="body-text">前項の規定による修習専念資金の額の変更を受けた者が、修習専念資金の額の基本額への変更を申請したときは、修習専念資金の額を基本額に変更する。</span></p><p class="para" id="a3-p4"><span class="pno">4</span><span class="body-text">前二項の規定による申請は、最高裁判所の定める事項を記載した申請書を最高裁判所に提出してしなければならない。</span></p><p class="para" id="a3-p5"><span class="pno">5</span><span class="body-text">前条第一項の規定は、第二項及び第三項の規定による修習専念資金の額の変更の申請があった場合について準用する。</span></p><p class="para" id="a3-p6"><span class="pno">6</span><span class="body-text">第二項に定める額の修習専念資金の貸与を受けている司法修習生が、同項各号に掲げる場合のいずれにも該当しないこととなったときは、当該該当しないこととなった日の属する貸与単位期間の次の貸与単位期間（その日が貸与単位期間の初日であるときは、当該貸与単位期間）以降に係る修習専念資金の額を基本額に変更する。</span></p></article>
+<article class="art" id="a4" data-path=""><span class="anchor-alias" id="Mp-At_4"></span><div class="art-tools"><button type="button" data-anchor="a4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/051101_kisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（保証人）</p><p class="para" id="a4-p1"><a class="art-no" href="#a4" data-kan="第四条" data-num="第4条">第四条</a><span class="body-text">修習専念資金の貸与を受けようとする者は、次に掲げるいずれかの者を保証人に立てなければならない。</span></p><ol class="items"><li id="a4-p1-1"><span class="mk">一</span><span class="tx">自然人二人</span></li><li id="a4-p1-2"><span class="mk">二</span><span class="tx">一の金融機関（最高裁判所の指定するものに限る。）</span></li></ol><p class="para" id="a4-p2"><span class="pno">2</span><span class="body-text">前項に規定する保証人は、修習専念資金の貸与を受けた者と連帯して債務を負担するものとする。</span></p><p class="para" id="a4-p3"><span class="pno">3</span><span class="body-text">民法（明治二十九年法律第八十九号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/129AC0000000089#Mp-At_451" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第四百五十一条</a>の規定は、修習専念資金の貸与については適用しない。</span></p></article>
+<article class="art" id="a5" data-path=""><span class="anchor-alias" id="Mp-At_5"></span><div class="art-tools"><button type="button" data-anchor="a5" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/051101_kisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（貸与申請の撤回）</p><p class="para" id="a5-p1"><a class="art-no" href="#a5" data-kan="第五条" data-num="第5条">第五条</a><span class="body-text">貸与申請をした者は、最高裁判所の定める撤回書を提出することにより、いつでも将来に向かって貸与申請の撤回をすることができる。</span></p></article>
+<article class="art" id="a6" data-path=""><span class="anchor-alias" id="Mp-At_6"></span><div class="art-tools"><button type="button" data-anchor="a6" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/051101_kisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（修習専念資金の貸与の終了）</p><p class="para" id="a6-p1"><a class="art-no" href="#a6" data-kan="第六条" data-num="第6条">第六条</a><span class="body-text">修習専念資金の貸与を受けている司法修習生について次に掲げる事由のいずれかが生じたときは、当該事由が生じた日の属する貸与単位期間の次の貸与単位期間（その日が貸与単位期間の初日であるときは、当該貸与単位期間）以降に係る修習専念資金を貸与しないものとする。</span></p><ol class="items"><li id="a6-p1-1"><span class="mk">一</span><span class="tx">前条の規定による撤回をしたとき。</span></li><li id="a6-p1-2"><span class="mk">二</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/322AC0000000059#Mp-At_68" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第六十八条</a>第一項又は第二項の規定により罷免されたとき。</span></li><li id="a6-p1-3"><span class="mk">三</span><span class="tx">死亡したとき。</span></li><li id="a6-p1-4"><span class="mk">四</span><span class="tx"><a class="ref ref-self" href="#a4">第四条</a>第一項に規定する保証人を欠くに至った後相当の期間内に同項に規定する保証人を新たに立てなかったとき。</span></li><li id="a6-p1-5"><span class="mk">五</span><span class="tx">その他最高裁判所の定める事由が生じたとき。</span></li></ol></article>
+<article class="art" id="a7" data-path=""><span class="anchor-alias" id="Mp-At_7"></span><div class="art-tools"><button type="button" data-anchor="a7" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/051101_kisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（修習専念資金の返還の期限等）</p><p class="para" id="a7-p1"><a class="art-no" href="#a7" data-kan="第七条" data-num="第7条">第七条</a><span class="body-text">修習専念資金の返還の期限は、通常修習期間の終了した月の翌月から起算して五年を経過した後十年以内で最高裁判所の定める日とし、その返還は、年賦の均等返還の方法によるものとする。ただし、最高裁判所の定めるところにより繰上返還をすることを妨げない。</span></p></article>
+<article class="art" id="a7-2" data-path=""><span class="anchor-alias" id="Mp-At_7_2"></span><div class="art-tools"><button type="button" data-anchor="a7-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/051101_kisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/322AC0000000059#Mp-At_67_3" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第六十七条の三</a>第三項に規定する最高裁判所の定める事由）</p><p class="para" id="a7-2-p1"><a class="art-no" href="#a7-2" data-kan="第七条の二" data-num="第7条の2">第七条の二</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/322AC0000000059#Mp-At_67_3" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第六十七条の三</a>第三項に規定する最高裁判所の定める事由は、次に掲げるものとする。</span></p><ol class="items"><li id="a7-2-p1-1"><span class="mk">一</span><span class="tx">修習専念資金の貸与を受けた者が給与所得（俸給、給料、賃金、歳費及び賞与並びにこれらの性質を有する給与に係る所得をいう。）以外の所得を有しない者（次号において「給与所得者」という。）である場合において、当該者の最高裁判所の定める期間における収入金額（法科大学院（学校教育法（昭和二十二年法律第二十六号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/322AC0000000026#Mp-At_99" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第九十九条</a>第二項に規定する専門職大学院であって、法曹に必要な学識及び能力を培うことを目的とするものをいう。）における修学のための借入金（最高裁判所の定めるものを除く。次号において単に「借入金」という。）を当該期間中に返還したときは、その返還額を控除した残額）が三百万円以下であること（当該者について次条第二項第二号から第五号までに掲げる事由のいずれかが生じたときを除く。）。</span></li><li id="a7-2-p1-2"><span class="mk">二</span><span class="tx">修習専念資金の貸与を受けた者が給与所得者以外の者である場合において、当該者の前号に規定する期間における総収入金額（借入金を当該期間中に返還したときは、その返還額を控除した残額）から必要経費を控除した残額が二百万円以下であること</span></li></ol></article>
+<article class="art" id="a8" data-path=""><span class="anchor-alias" id="Mp-At_8"></span><div class="art-tools"><button type="button" data-anchor="a8" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/051101_kisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（期限の利益の喪失）</p><p class="para" id="a8-p1"><a class="art-no" href="#a8" data-kan="第八条" data-num="第8条">第八条</a><span class="body-text">修習専念資金の貸与を受けた者は、その者について次に掲げる事由のいずれかが生じたときは、<a class="ref ref-self" href="#a7">第七条</a>の規定にかかわらず、最高裁判所の請求に基づき、その指定する日までに、返還未済額の全部を返還しなければならない。</span></p><ol class="items"><li id="a8-p1-1"><span class="mk">一</span><span class="tx">正当な理由がなくて修習専念資金を返還すべき日までにこれを返還しなかったとき。</span></li><li id="a8-p1-2"><span class="mk">二</span><span class="tx"><a class="ref ref-self" href="#a6">第六条</a>第四号に掲げる事由が生じたとき。</span></li><li id="a8-p1-3"><span class="mk">三</span><span class="tx">次条に規定する返還明細書を提出すべき日までにこれを提出しなかったとき。</span></li><li id="a8-p1-4"><span class="mk">四</span><span class="tx">その他最高裁判所の定める事由が生じたとき。</span></li></ol><p class="para" id="a8-p2"><span class="pno">2</span><span class="body-text">修習専念資金の貸与を受けた者は、その者について次に掲げる事由のいずれかが生じたときは、<a class="ref ref-self" href="#a7">第七条</a>の規定にかかわらず、直ちに返還未済額の全部を返還しなければならない。</span></p><ol class="items"><li id="a8-p2-1"><span class="mk">一</span><span class="tx"><a class="ref ref-self" href="#a6">第六条</a>第二号に掲げる事由が生じたとき（最高裁判所の定める場合を除く。）。</span></li><li id="a8-p2-2"><span class="mk">二</span><span class="tx">強制執行を受けたとき。</span></li><li id="a8-p2-3"><span class="mk">三</span><span class="tx">租税その他の公課について滞納処分を受けたとき。</span></li><li id="a8-p2-4"><span class="mk">四</span><span class="tx">財産について競売の開始があったとき。</span></li><li id="a8-p2-5"><span class="mk">五</span><span class="tx">破産手続開始の決定又は再生手続開始の決定を受けたとき。</span></li><li id="a8-p2-6"><span class="mk">六</span><span class="tx">その他最高裁判所の定める事由が生じたとき。</span></li></ol></article>
+<article class="art" id="a9" data-path=""><span class="anchor-alias" id="Mp-At_9"></span><div class="art-tools"><button type="button" data-anchor="a9" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/051101_kisoku.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（返還明細書の提出）</p><p class="para" id="a9-p1"><a class="art-no" href="#a9" data-kan="第九条" data-num="第9条">第九条</a><span class="body-text">修習専念資金の貸与を受けた者は、その貸与申請に係る修習専念資金の最後の貸与単位期間の末日までに、最高裁判所の定める事項を記載した返還明細書を最高裁判所に提出しなければならない。</span></p><p class="para" id="a9-p2"><span class="pno">2</span><span class="body-text">前項の規定にかかわらず、<a class="ref ref-self" href="#a6">第六条</a>の規定により修習専念資金を貸与しないものとされた場合には、最高裁判所の指定する日までに、同項に規定する返還明細書を最高裁判所に提出しなければならない。</span></p></article>
+<article class="art" id="a10" data-path=""><span class="anchor-alias" id="Mp-At_10"></span><div class="art-tools"><button type="button" data-anchor="a10" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/051101_kisoku.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（延滞利息）</p><p class="para" id="a10-p1"><a class="art-no" href="#a10" data-kan="第十条" data-num="第10条">第十条</a><span class="body-text">修習専念資金の貸与を受けた者は、正当な理由がなくて修習専念資金を返還すべき日までにこれを返還しなかったときは、当該返還すべき日の翌日から返還の日までの期間の日数に応じ、返還すべき額につき年十四・五パーセントの割合で計算した延滞利息を支払わなければならない。</span></p></article>
+<article class="art" id="a11" data-path=""><span class="anchor-alias" id="Mp-At_11"></span><div class="art-tools"><button type="button" data-anchor="a11" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/051101_kisoku.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（修習専念資金の貸与及び返還に関する書面の提出）</p><p class="para" id="a11-p1"><a class="art-no" href="#a11" data-kan="第十一条" data-num="第11条">第十一条</a><span class="body-text">最高裁判所は、修習専念資金の貸与を受け、又は受けようとする者及びその保証人又は保証人となるべき者に対し、この規則に定めるもののほか、最高裁判所の定めるところにより、修習専念資金の貸与及び返還に関し必要と認める書面の提出を求めることができる。</span></p></article>
+<article class="art" id="a12" data-path=""><span class="anchor-alias" id="Mp-At_12"></span><div class="art-tools"><button type="button" data-anchor="a12" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/051101_kisoku.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（電子情報処理組織を使用する方法等による申請等）</p><p class="para" id="a12-p1"><a class="art-no" href="#a12" data-kan="第十二条" data-num="第12条">第十二条</a><span class="body-text">貸与申請書の提出、<a class="ref ref-self" href="#a3">第三条</a>第四項に規定する申請書の提出及び<a class="ref ref-self" href="#a5">第五条</a>に規定する撤回書の提出（以下この条において「貸与申請書等の提出」という。）については、これらの規定にかかわらず、最高裁判所の定めるところにより、最高裁判所の定める電子情報処理組織（最高裁判所若しくはこれに置かれる機関又はこれらの職員であって独立に権限を行使することを認められたものの使用に係る電子計算機（入出力装置を含む。以下同じ。）と貸与申請書等の提出をする者の使用に係る電子計算機とを電気通信回線で接続した電子情報処理組織をいう。）を使用する方法その他の情報通信技術を利用する方法であって最高裁判所が定めるものにより行うことができる。</span></p><p class="para" id="a12-p2"><span class="pno">2</span><span class="body-text">前項の方法により行われた貸与申請書等の提出については、当該貸与申請書等の提出に関するこの規則の規定に規定する方法により行われたものとみなして、この規則の規定を適用する。</span></p></article>
+<article class="art" id="a13" data-path=""><span class="anchor-alias" id="Mp-At_13"></span><div class="art-tools"><button type="button" data-anchor="a13" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/051101_kisoku.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（補則）</p><p class="para" id="a13-p1"><a class="art-no" href="#a13" data-kan="第十三条" data-num="第13条">第十三条</a><span class="body-text">この規則に定めるもののほか、修習専念資金の貸与及び返還に関し必要な事項は、最高裁判所が定める。</span></p></article>
+<h2 class="div-head" id="sup1" data-path="附則　"><span class="lbl">附則</span></h2>
+<article class="art" id="sup1-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup1-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/051101_kisoku.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（施行期日）</p><p class="para" id="sup1-a1-p1"><a class="art-no" href="#sup1-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、裁判所法の一部を改正する法律（平成十六年法律第百六十三号）の施行の日（平成二十二年十一月一日）から施行する。</span></p></article>
+<article class="art" id="sup1-a2" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup1-a2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/051101_kisoku.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（司法修習生の給与に関する規則の廃止）</p><p class="para" id="sup1-a2-p1"><a class="art-no" href="#sup1-a2" data-kan="第二条" data-num="第2条">第二条</a><span class="body-text">司法修習生の給与に関する規則（昭和五十五年最高裁判所規則第二号）は、廃止する。</span></p></article>
+<article class="art" id="sup1-a3" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup1-a3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/051101_kisoku.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（司法修習生の給与に関する規則の廃止に伴う経過措置）</p><p class="para" id="sup1-a3-p1"><a class="art-no" href="#sup1-a3" data-kan="第三条" data-num="第3条">第三条</a><span class="body-text">この規則の施行前に採用され、この規則の施行後も引き続き修習をする司法修習生の給与については、前条の規定による廃止前の司法修習生の給与に関する規則の規定は、この規則の施行後も、なおその効力を有する。</span></p></article>
+<article class="art" id="sup1-a4" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup1-a4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/051101_kisoku.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（裁判官等の寒冷地手当に関する規則の一部改正）</p><p class="para" id="sup1-a4-p1"><a class="art-no" href="#sup1-a4" data-kan="第四条" data-num="第4条">第四条</a><span class="body-text">裁判官等の寒冷地手当に関する規則（昭和二十四年最高裁判所規則第二十九号）の一部を次のように改正する。題名中「裁判官等」を「裁判官」に改める。本則中「及び司法修習生」を削る。</span></p></article>
+<article class="art" id="sup1-a5" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup1-a5" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/051101_kisoku.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（裁判官の報酬等の支給定日に関する規則の一部改正）</p><p class="para" id="sup1-a5-p1"><a class="art-no" href="#sup1-a5" data-kan="第五条" data-num="第5条">第五条</a><span class="body-text">裁判官の報酬等の支給定日に関する規則（昭和三十六年最高裁判所規則第二号）の一部を次のように改正する。<a class="ref ref-self" href="#a1">第一条</a>中「、裁判官」を「及び裁判官」に改め、「及び司法修習生の給与」を削る。<a class="ref ref-self" href="#a2">第二条</a>第一項中「、裁判官以外」を「若しくは裁判官以外」に改め、「若しくは司法修習生」を削る。</span></p></article>
+<article class="art" id="sup1-a6" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup1-a6" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/051101_kisoku.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（裁判官等の寒冷地手当に関する規則及び裁判官の報酬等の支給定日に関する規則の一部改正に伴う経過措置）</p><p class="para" id="sup1-a6-p1"><a class="art-no" href="#sup1-a6" data-kan="第六条" data-num="第6条">第六条</a><span class="body-text">この規則の施行前に採用され、この規則の施行後も引き続き修習をする司法修習生の給与については、附則<a class="ref ref-self" href="#a4">第四条</a>の規定による改正後の裁判官の寒冷地手当に関する規則及び前条の規定による改正後の裁判官の報酬等の支給定日に関する規則の規定にかかわらず、なお従前の例による。</span></p></article>
+<h2 class="div-head" id="sup2" data-path="附則　（平成二四年一〇月二六日最高裁判所規則第一〇号）"><span class="lbl">附則</span>　（平成二四年一〇月二六日最高裁判所規則第一〇号）</h2>
+<article class="art noarticle" id="sup-body-1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/051101_kisoku.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="para" id="sup-body-1-p1"><span class="body-text">この規則は、平成二十四年十一月三日から施行する。</span></p></article>
+<h2 class="div-head" id="sup3" data-path="附則　（平成二九年八月四日最高裁判所規則第四号）抄"><span class="lbl">附則</span>　（平成二九年八月四日最高裁判所規則第四号）抄</h2>
+<article class="art noarticle" id="sup-body-2" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/051101_kisoku.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="para" id="sup-body-2-p1"><span class="body-text">この規則は、平成二十九年十一月一日から施行する。</span></p></article>
+<article class="art noarticle" id="sup-body-3" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/051101_kisoku.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="para" id="sup-body-3-p1"><span class="body-text">３ <a class="ref ref-self" href="#a2">第二条</a>の規定による改正後の司法修習生の修習専念資金の貸与等に関する規則の規定は、この規則の施行後に採用された司法修習生について適用し、この規則の施行前に採用された司法修習生の修習資金については、なお従前の例による。</span></p></article>
+<h2 class="div-head" id="sup4" data-path="附則　（令和五年一〇月二〇日最高裁判所規則第六号）"><span class="lbl">附則</span>　（令和五年一〇月二〇日最高裁判所規則第六号）</h2>
+<article class="art noarticle" id="sup-body-4" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/051101_kisoku.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="para" id="sup-body-4-p1"><span class="body-text">この規則は、令和五年十一月一日から施行する。</span></p></article>
+    </div>
+    <aside class="notes"><p>読み取りに関する注意</p><ul><li>各条の「原本」は https://www.courts.go.jp/assets/051101_kisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。</li></ul></aside>
+    <div class="foot">出典：051101_kisoku.pdf　／　最高裁規則ビューア 1.9.0 で 2026年09月02日 に変換　
+    条文の正確な内容は原本で確認してください。</div>
+  </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  "use strict";
+  var doc = document.getElementById("doc");
+  var input = document.getElementById("q");
+  var hitLabel = document.getElementById("hits");
+  var crumb = document.getElementById("crumb");
+  var toc = document.getElementById("toc");
+  var toast = document.getElementById("toast");
+  var pristine = doc.innerHTML;
+  var hits = [];
+  var cursor = -1;
+
+  function say(msg){
+    toast.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(say._t);
+    say._t = setTimeout(function(){ toast.classList.remove("show"); }, 1600);
+  }
+
+  /* ---------------------------------------------------------- 条番号の表記 */
+  var numeralBtn = document.getElementById("numeral");
+  function applyNumeral(useArabic){
+    var nodes = doc.querySelectorAll(".art-no");
+    for (var i = 0; i < nodes.length; i++){
+      var el = nodes[i];
+      var v = useArabic ? el.getAttribute("data-num") : el.getAttribute("data-kan");
+      if (v) el.textContent = v;
+    }
+    numeralBtn.setAttribute("aria-pressed", useArabic ? "true" : "false");
+  }
+  numeralBtn.addEventListener("click", function(){
+    var next = numeralBtn.getAttribute("aria-pressed") !== "true";
+    applyNumeral(next);
+    try { localStorage.setItem("rule-numeral", next ? "1" : "0"); } catch(e){}
+    pristine = doc.innerHTML;
+  });
+  try {
+    /* 既定の表記は原本に合わせてある。前回の切り替えが残っていればそれに従う */
+    var saved = localStorage.getItem("rule-numeral");
+    if (saved === "1" || saved === "0"){ applyNumeral(saved === "1"); pristine = doc.innerHTML; }
+  } catch(e){}
+
+  /* -------------------------------------------------------------- 検索処理 */
+  var SKIP = {SCRIPT:1, STYLE:1, MARK:1, BUTTON:1, A:1};   /* 原本リンク等の道具立ては検索対象にしない */
+  function highlight(term){
+    doc.innerHTML = pristine;
+    hits = [];
+    cursor = -1;
+    if (!term){ hitLabel.textContent = ""; refreshToc(""); return; }
+    var walker = document.createTreeWalker(doc, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        if (!n.nodeValue || n.nodeValue.indexOf(term) < 0) return NodeFilter.FILTER_REJECT;
+        if (n.parentNode && SKIP[n.parentNode.nodeName]) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var targets = [];
+    var node;
+    while ((node = walker.nextNode())) targets.push(node);
+    for (var i = 0; i < targets.length; i++){
+      var t = targets[i], text = t.nodeValue, pos = 0, frag = document.createDocumentFragment();
+      var idx;
+      while ((idx = text.indexOf(term, pos)) >= 0){
+        if (idx > pos) frag.appendChild(document.createTextNode(text.slice(pos, idx)));
+        var m = document.createElement("mark");
+        m.textContent = text.substr(idx, term.length);
+        frag.appendChild(m);
+        hits.push(m);
+        pos = idx + term.length;
+      }
+      if (pos < text.length) frag.appendChild(document.createTextNode(text.slice(pos)));
+      t.parentNode.replaceChild(frag, t);
+    }
+    hitLabel.textContent = hits.length ? "1 / " + hits.length : "該当なし";
+    refreshToc(term);
+    if (hits.length){ cursor = 0; focusHit(0, false); }
+  }
+  function focusHit(i, scroll){
+    if (!hits.length) return;
+    for (var k = 0; k < hits.length; k++) hits[k].classList.remove("live");
+    cursor = (i + hits.length) % hits.length;
+    hits[cursor].classList.add("live");
+    hitLabel.textContent = (cursor + 1) + " / " + hits.length;
+    if (scroll !== false) hits[cursor].scrollIntoView({block:"center", behavior:"instant"});
+  }
+  function refreshToc(term){
+    var links = toc.querySelectorAll("li.lv-art");
+    for (var i = 0; i < links.length; i++){
+      var li = links[i];
+      var body = (li.getAttribute("data-text") || "");
+      li.classList.toggle("hidden", !!term && body.indexOf(term) < 0);
+    }
+    var divs = toc.querySelectorAll("li.lv-div");
+    for (var j = divs.length - 1; j >= 0; j--){
+      var d = divs[j];
+      var kids = d.querySelectorAll("li:not(.hidden)");
+      d.classList.toggle("hidden", !!term && kids.length === 0);
+    }
+  }
+  var timer = null;
+  input.addEventListener("input", function(){
+    clearTimeout(timer);
+    var v = input.value.trim();
+    timer = setTimeout(function(){ highlight(v); }, 180);
+  });
+  input.addEventListener("keydown", function(e){
+    if (e.key === "Enter"){ e.preventDefault(); focusHit(cursor + (e.shiftKey ? -1 : 1)); }
+    if (e.key === "Escape"){ input.value = ""; highlight(""); input.blur(); }
+  });
+  document.getElementById("prev").addEventListener("click", function(){ focusHit(cursor - 1); });
+  document.getElementById("next").addEventListener("click", function(){ focusHit(cursor + 1); });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "/" && e.target === document.body){ e.preventDefault(); input.focus(); }
+  });
+
+  /* -------------------------------------------------- リンクのコピー・共有 */
+  doc.addEventListener("click", function(e){
+    var btn = e.target.closest ? e.target.closest("button[data-anchor]") : null;
+    if (!btn) return;
+    var anchor = btn.getAttribute("data-anchor");
+    var url = location.href.split("#")[0] + "#" + anchor;
+    history.replaceState(null, "", "#" + anchor);
+    var done = function(){ say("リンクをコピーしました"); };
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(done, function(){ legacyCopy(url, done); });
+    } else {
+      legacyCopy(url, done);
+    }
+  });
+  function legacyCopy(text, done){
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); done(); }
+    catch(err){ say("コピーできませんでした。アドレス欄からURLを控えてください"); }
+    document.body.removeChild(ta);
+  }
+
+  /* ------------------------------------------------ 現在位置の表示と目次連動 */
+  var watched = doc.querySelectorAll(".art[id], .div-head[id]");
+  var tocLinks = {};
+  var links = toc.querySelectorAll("a[href^='#']");
+  for (var i = 0; i < links.length; i++) tocLinks[links[i].getAttribute("href").slice(1)] = links[i];
+  var currentLink = null;
+  if ("IntersectionObserver" in window){
+    var visible = [];
+    var io = new IntersectionObserver(function(entries){
+      for (var i = 0; i < entries.length; i++){
+        var id = entries[i].target.id;
+        var at = visible.indexOf(id);
+        if (entries[i].isIntersecting){ if (at < 0) visible.push(id); }
+        else if (at >= 0){ visible.splice(at, 1); }
+      }
+      if (!visible.length) return;
+      var first = null;
+      for (var k = 0; k < watched.length; k++){
+        if (visible.indexOf(watched[k].id) >= 0){ first = watched[k]; break; }
+      }
+      if (!first) return;
+      crumb.textContent = first.getAttribute("data-path") || "";
+      var link = tocLinks[first.id];
+      if (link && link !== currentLink){
+        if (currentLink) currentLink.classList.remove("current");
+        link.classList.add("current");
+        currentLink = link;
+      }
+    }, {rootMargin:"-20% 0px -70% 0px"});
+    for (var w = 0; w < watched.length; w++) io.observe(watched[w]);
+  }
+
+  /* -------------------------------------------------------- 目次の開閉（狭幅） */
+  var opener = document.getElementById("toc-open");
+  if (opener){
+    opener.addEventListener("click", function(){ toc.classList.toggle("open"); });
+    toc.addEventListener("click", function(e){
+      if (e.target.tagName === "A") toc.classList.remove("open");
+    });
+  }
+})();
+</script>
+</body>
+</html>

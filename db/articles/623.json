@@ -1,0 +1,124 @@
+{
+ "rule_id": "623",
+ "title": "総合法律支援法による国選弁護人等契約弁護士に係る費用の額の算定等に関する規則",
+ "enforcement_iso": "2007-11-01",
+ "url": "https://kmght.github.io/ksk/r/623.html",
+ "articles": [
+  {
+   "key": "1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "趣旨",
+   "anchor": "a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "2",
+   "label": "第二条",
+   "short": "2条",
+   "caption": "申立て裁判所",
+   "anchor": "a2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "3",
+   "label": "第三条",
+   "short": "3条",
+   "caption": "申立ての方式",
+   "anchor": "a3",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "4",
+   "label": "第四条",
+   "short": "4条",
+   "caption": "算定する裁判所等",
+   "anchor": "a4",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "5",
+   "label": "第五条",
+   "short": "5条",
+   "caption": "算定の決定",
+   "anchor": "a5",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "6",
+   "label": "第六条",
+   "short": "6条",
+   "caption": "決定書",
+   "anchor": "a6",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "7",
+   "label": "第七条",
+   "short": "7条",
+   "caption": "算定の決定の通知",
+   "anchor": "a7",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "8",
+   "label": "第八条",
+   "short": "8条",
+   "caption": "国選弁護人選任に関する通知",
+   "anchor": "a8",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "9",
+   "label": "第九条",
+   "short": "9条",
+   "caption": "刑事訴訟規則の準用等",
+   "anchor": "a9",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  }
+ ]
+}

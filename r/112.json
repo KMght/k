@@ -1,0 +1,2086 @@
+{
+  "title": "参与員規則",
+  "law_number": "",
+  "enforcement_date": "令和8年7月1日",
+  "enforcement_iso": "2026-07-01",
+  "pdf_link": "https://www.courts.go.jp/assets/20260701sanyoinkisoku.pdf",
+  "source": "20260701sanyoinkisoku.pdf",
+  "numeral": "kansuji",
+  "notes": [
+    "題名・制定文とみられる行を本文の前に検出しました：昭和22 年12 月20 日最高裁判所規則第１３号／改正 昭和23 年12 月28 日最高裁判所規則第３８号／昭和26 年9 月15 日最高裁判所規則第１３号",
+    "各条の「原本」は https://www.courts.go.jp/assets/20260701sanyoinkisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+  ],
+  "nodes": [
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "a1",
+      "caption": "参与員規則（昭四六最裁規六・改称",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "平一五最裁規二五・平二四最裁規九・一部改正",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "人事訴訟法（平成十五年法律第百九号）による参与員及び家事事件手続法（平成二十三年法律第五十二号）による参与員（以下これらを「参与員」と総称する。）となるべき者は、徳望良識のある者の中から、これを選任しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        2
+      ],
+      "label": "第二条",
+      "short_label": "2条",
+      "anchor": "a2",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "昭二三最裁規三八・昭二六最裁規一三・昭五〇最裁規三・平一二最裁規一・令七最裁規三・一部改正",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "次の各号のいずれかに該当する者は、これを参与員となるべき者に選任することができない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "拘禁刑以上の刑に処せられた者",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "公務員として免職の懲戒処分を受け、当該処分の日から二年を経過しない者",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "裁判官として弾劾裁判所の罷免の裁判を受けた者",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "弁護士として除名の懲戒処分を受け、当該処分の日から三年を経過しない者",
+              "children": []
+            }
+          ]
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        3
+      ],
+      "label": "第三条",
+      "short_label": "3条",
+      "anchor": "a3",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "昭二三最裁規三八・平成一五最裁規二五・一部改正",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "参与員となるべき者に選任される者の員数は、家庭裁判所ごとに二十人（家庭に関する事件の審判又は人事訴訟の第一審の裁判に関する事務を取り扱う支部があるときは、一の支部につき二十人をこれに加算した人数）以上とする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        4
+      ],
+      "label": "第四条",
+      "short_label": "4条",
+      "anchor": "a4",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "昭二六最裁規一三・追加、昭四六最裁規六・旧第四条の二繰下、平一六最裁規九・旧五条繰上",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "家庭裁判所は、参与員となるべき者に参与員たるにふさわしくない行為があつたときは、その選任を取り消さなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        5
+      ],
+      "label": "第五条",
+      "short_label": "5条",
+      "anchor": "a5",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "平一六最裁規九・追加、令七最裁規五・一部改正",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "参与員の旅費は、鉄道賃、船賃、航空賃及びその他の交通費の四種とし、国家公務員等の旅費に関する法律（昭和二十五年法律第百十四号。次項において「旅費法」という。）及び国家公務員等の旅費に関する法律施行令（令和六年政令第三百六号。同項において「旅費法施行令」という。）の規定に基づいて受ける旅費の金額と同一の金額を支給する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "参与員の宿泊料は、旅費法及び旅費法施行令の規定に基づいて受ける宿泊費の金額と同一の金額を支給する。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "前二項に定めるもののほか、参与員に支給する旅費及び宿泊料については、別に最高裁判所の定めるところによる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        6
+      ],
+      "label": "第六条",
+      "short_label": "6条",
+      "anchor": "a6",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "参与員の日当は、執務及びそのための旅行に必要な日数に応じて支給する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "日当の額は、一日当たり一万千二百円以内において、裁判所書記官が定める。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        7
+      ],
+      "label": "第七条",
+      "short_label": "7条",
+      "anchor": "a7",
+      "caption": "一〇・一部改正",
+      "deleted": false,
+      "section": "main",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則に定めるもののほか、参与員となるべき者の選任に関し必要な事項は、家庭裁判所においてこれを定めることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "",
+      "anchor": "sup1",
+      "level": 1,
+      "page": 3,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-1",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 1,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "① この規則は、昭和二十三年一月一日から、これを施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和二三年一二月二八日最高裁判所規則第三八号）抄",
+      "anchor": "sup2",
+      "level": 1,
+      "page": 3,
+      "note": ""
+    },
+    {
+      "number": [
+        8
+      ],
+      "label": "第八条",
+      "short_label": "8条",
+      "anchor": "sup2-a8",
+      "caption": "昭五四最裁規一・全改、平二最裁規二・一部改正、平一六最裁規九・第二項削除",
+      "deleted": false,
+      "section": "supplementary",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 2,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、昭和二十四年一月一日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和二六年九月一五日最高裁判所規則第一三号）",
+      "anchor": "sup3",
+      "level": 1,
+      "page": 3,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-2",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 3,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、昭和二十六年十月一日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和四六年六月一四日最高裁判所規則第六号）",
+      "anchor": "sup4",
+      "level": 1,
+      "page": 3,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-3",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 4,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、昭和四十六年七月一日から施行し、第六条の規定による改正後の参与員規則第七条第二項の規定、第八条の規定による改正後の司法委員規則第六条第二項の規定、第九条の規定による改正後の調停委員規則第十条第二項の規定及び第十条の規定による改正後の鑑定委員規則第七条第二項の規定は、昭和四十七年一月一日から適用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-4",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 4,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "２ この規則の施行前に要した参与員、人身保護法による国選代理人、司法委員、調停委員等及び鑑定委員の費用並びにこの規則の施行後昭和四十六年十二月三十一日までの間に支給原因の生じた参与員、司法委員、調停委員等及び鑑定委員の日当の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和四八年六月一一日最高裁判所規則第四号）",
+      "anchor": "sup5",
+      "level": 1,
+      "page": 3,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-5",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 5,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、昭和四十八年七月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に要した費用については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和四九年六月二一日最高裁判所規則第四号）",
+      "anchor": "sup6",
+      "level": 1,
+      "page": 3,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-6",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 6,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、昭和四十九年七月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因の生じた司法委員、参与員及び鑑定委員の日当の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和四九年九月一四日最高裁判所規則第六号）",
+      "anchor": "sup7",
+      "level": 1,
+      "page": 3,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-7",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 7,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、昭和四十九年十月一日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和五〇年九月二〇日最高裁判所規則第三号）",
+      "anchor": "sup8",
+      "level": 1,
+      "page": 3,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-8",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 8,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、公布の日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和五〇年一一月一五日最高裁判所規則第七号）",
+      "anchor": "sup9",
+      "level": 1,
+      "page": 3,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-9",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 9,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、公布の日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に要した費用については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和五一年六月一六日最高裁判所規則第五号）",
+      "anchor": "sup10",
+      "level": 1,
+      "page": 3,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-10",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 10,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、昭和五十一年七月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因の生じた日当の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和五二年六月一三日最高裁判所規則第一号）",
+      "anchor": "sup11",
+      "level": 1,
+      "page": 3,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-11",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 11,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、昭和五十二年七月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因の生じた日当の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和五三年六月一三日最高裁判所規則第二号）",
+      "anchor": "sup12",
+      "level": 1,
+      "page": 3,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-12",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 12,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、昭和五十三年七月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因の生じた日当の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和五四年三月三一日最高裁判所規則第一号）",
+      "anchor": "sup13",
+      "level": 1,
+      "page": 4,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-13",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 4,
+      "division_path": [],
+      "sup_index": 13,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、昭和五十四年四月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に要した費用については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和五四年六月一八日最高裁判所規則第三号）",
+      "anchor": "sup14",
+      "level": 1,
+      "page": 4,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-14",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 4,
+      "division_path": [],
+      "sup_index": 14,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、昭和五十四年七月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因の生じた日当の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和五五年六月一六日最高裁判所規則第四号）",
+      "anchor": "sup15",
+      "level": 1,
+      "page": 4,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-15",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 4,
+      "division_path": [],
+      "sup_index": 15,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、昭和五十五年七月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因の生じた日当の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和五六年六月一五日最高裁判所規則第五号）",
+      "anchor": "sup16",
+      "level": 1,
+      "page": 4,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-16",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 4,
+      "division_path": [],
+      "sup_index": 16,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、昭和五十六年七月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因の生じた日当の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和五七年六月一四日最高裁判所規則第三号）",
+      "anchor": "sup17",
+      "level": 1,
+      "page": 4,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-17",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 4,
+      "division_path": [],
+      "sup_index": 17,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、昭和五十七年七月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因の生じた日当の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和五九年六月一八日最高裁判所規則第四号）",
+      "anchor": "sup18",
+      "level": 1,
+      "page": 4,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-18",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 4,
+      "division_path": [],
+      "sup_index": 18,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、昭和五十九年七月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因となる事実が生じた日当の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和六〇年六月一七日最高裁判所規則第二号）",
+      "anchor": "sup19",
+      "level": 1,
+      "page": 4,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-19",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 4,
+      "division_path": [],
+      "sup_index": 19,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、昭和六十年七月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因となる事実が生じた日当の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和六一年六月一六日最高裁判所規則第三号）",
+      "anchor": "sup20",
+      "level": 1,
+      "page": 4,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-20",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 4,
+      "division_path": [],
+      "sup_index": 20,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、昭和六十一年七月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因となる事実が生じた日当の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和六二年六月一五日最高裁判所規則第二号）",
+      "anchor": "sup21",
+      "level": 1,
+      "page": 4,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-21",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 4,
+      "division_path": [],
+      "sup_index": 21,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、昭和六十二年七月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因となる事実が生じた日当の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和六三年六月一三日最高裁判所規則第三号）",
+      "anchor": "sup22",
+      "level": 1,
+      "page": 4,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-22",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 4,
+      "division_path": [],
+      "sup_index": 22,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、昭和六十三年七月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因となる事実が生じた日当の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成元年六月一四日最高裁判所規則第二号）",
+      "anchor": "sup23",
+      "level": 1,
+      "page": 4,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-23",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 4,
+      "division_path": [],
+      "sup_index": 23,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、平成元年七月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因となる事実が生じた日当の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成二年四月二四日最高裁判所規則第二号）",
+      "anchor": "sup24",
+      "level": 1,
+      "page": 4,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-24",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 4,
+      "division_path": [],
+      "sup_index": 24,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、公布の日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に要した費用については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成二年六月一三日最高裁判所規則第五号）",
+      "anchor": "sup25",
+      "level": 1,
+      "page": 4,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-25",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 4,
+      "division_path": [],
+      "sup_index": 25,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、平成二年七月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因となる事実が生じた日当の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成三年六月一二日最高裁判所規則第二号）",
+      "anchor": "sup26",
+      "level": 1,
+      "page": 5,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-26",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 5,
+      "division_path": [],
+      "sup_index": 26,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、平成三年七月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因となる事実が生じた日当の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成四年六月一〇日最高裁判所規則第七号）",
+      "anchor": "sup27",
+      "level": 1,
+      "page": 5,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-27",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 5,
+      "division_path": [],
+      "sup_index": 27,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、平成四年七月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因となる事実が生じた日当の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成五年六月一〇日最高裁判所規則第三号）",
+      "anchor": "sup28",
+      "level": 1,
+      "page": 5,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-28",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 5,
+      "division_path": [],
+      "sup_index": 28,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、平成五年七月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因となる事実が生じた日当の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成六年六月三〇日最高裁判所規則第四号）",
+      "anchor": "sup29",
+      "level": 1,
+      "page": 5,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-29",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 5,
+      "division_path": [],
+      "sup_index": 29,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、平成六年七月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因となる事実が生じた日当の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成七年六月七日最高裁判所規則第二号）",
+      "anchor": "sup30",
+      "level": 1,
+      "page": 5,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-30",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 5,
+      "division_path": [],
+      "sup_index": 30,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、平成七年七月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因となる事実が生じた日当の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成八年六月六日最高裁判所規則第三号）",
+      "anchor": "sup31",
+      "level": 1,
+      "page": 5,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-31",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 5,
+      "division_path": [],
+      "sup_index": 31,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、平成八年七月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因となる事実が生じた日当の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成九年六月五日最高裁判所規則第二号）",
+      "anchor": "sup32",
+      "level": 1,
+      "page": 5,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-32",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 5,
+      "division_path": [],
+      "sup_index": 32,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、平成九年七月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因となる事実が生じた日当の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成九年一二月一二日最高裁判所規則第九号）",
+      "anchor": "sup33",
+      "level": 1,
+      "page": 5,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-33",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 5,
+      "division_path": [],
+      "sup_index": 33,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、平成十年一月一日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成一○年六月一日最高裁判所規則第二号）",
+      "anchor": "sup34",
+      "level": 1,
+      "page": 5,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-34",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 5,
+      "division_path": [],
+      "sup_index": 34,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、平成十年七月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因となる事実が生じた日当の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成一一年六月九日最高裁判所規則第三号）",
+      "anchor": "sup35",
+      "level": 1,
+      "page": 5,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-35",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 5,
+      "division_path": [],
+      "sup_index": 35,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、平成十一年七月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因となる事実が生じた日当の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成一二年一月七日最高裁判所規則第一号）抄",
+      "anchor": "sup36",
+      "level": 1,
+      "page": 5,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "sup36-a1",
+      "caption": "施行期日",
+      "deleted": false,
+      "section": "supplementary",
+      "page": 5,
+      "division_path": [],
+      "sup_index": 36,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、平成十二年四月一日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成一二年六月九日最高裁判所規則第八号）",
+      "anchor": "sup37",
+      "level": 1,
+      "page": 5,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-36",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 5,
+      "division_path": [],
+      "sup_index": 37,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、平成十二年七月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因となる事実が生じた日当の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成一五年六月一六日最高裁判所規則第一三号）",
+      "anchor": "sup38",
+      "level": 1,
+      "page": 6,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-37",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 6,
+      "division_path": [],
+      "sup_index": 38,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、平成十五年七月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因となる事実が生じた日当の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成一五年一一月一二日最高裁判所規則第二五号）",
+      "anchor": "sup39",
+      "level": 1,
+      "page": 6,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-38",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 6,
+      "division_path": [],
+      "sup_index": 39,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、人事訴訟法の施行の日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成一六年四月二一日最高裁判所規則第九号）抄",
+      "anchor": "sup40",
+      "level": 1,
+      "page": 6,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-39",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 6,
+      "division_path": [],
+      "sup_index": 40,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、平成十六年五月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因となる事実が生じた司法委員及び参与員の旅費、日当及び宿泊料の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成二四年七月一七日最高裁判所規則第九号）抄",
+      "anchor": "sup41",
+      "level": 1,
+      "page": 6,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "sup41-a1",
+      "caption": "施行期日",
+      "deleted": false,
+      "section": "supplementary",
+      "page": 6,
+      "division_path": [],
+      "sup_index": 41,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、非訟事件手続法（平成二十三年法律第五十一号）の施行の日から施行する。（施行の日＝平成二五年一月一日）",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（令和元年七月九日最高裁判所規則第二号）",
+      "anchor": "sup42",
+      "level": 1,
+      "page": 6,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-40",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 6,
+      "division_path": [],
+      "sup_index": 42,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、令和元年八月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因となる事実が生じた日当の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（令和五年六月一日最高裁判所規則第二号）",
+      "anchor": "sup43",
+      "level": 1,
+      "page": 6,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-41",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 6,
+      "division_path": [],
+      "sup_index": 43,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、令和五年七月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因となる事実が生じた日当の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（令和六年六月一二日最高裁判所規則第一二号）",
+      "anchor": "sup44",
+      "level": 1,
+      "page": 6,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-42",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 6,
+      "division_path": [],
+      "sup_index": 44,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、令和六年七月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因となる事実が生じた日当の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（令和七年二月一二日最高裁判所規則第三号）抄",
+      "anchor": "sup45",
+      "level": 1,
+      "page": 6,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "sup45-a1",
+      "caption": "施行期日",
+      "deleted": false,
+      "section": "supplementary",
+      "page": 6,
+      "division_path": [],
+      "sup_index": 45,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、刑法等の一部を改正する法律（令和四年法律第六十七号。次条において「刑法等一部改正法」という。）の施行の日（令和七年六月一日）から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（令和七年三月三日最高裁判所規則第五号）",
+      "anchor": "sup46",
+      "level": 1,
+      "page": 6,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-43",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 6,
+      "division_path": [],
+      "sup_index": 46,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、国家公務員等の旅費に関する法律の一部を改正する法律（令和六年法律第二十二号）の施行の日（令和七年四月一日）から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因となる事実が生じた旅費、日当及び宿泊料の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（令和七年六月一一日最高裁判所規則第八号）",
+      "anchor": "sup47",
+      "level": 1,
+      "page": 6,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-44",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 6,
+      "division_path": [],
+      "sup_index": 47,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、令和七年七月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因となる事実が生じた日当の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（令和八年三月二四日最高裁判所規則第五号）",
+      "anchor": "sup48",
+      "level": 1,
+      "page": 6,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-45",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 6,
+      "division_path": [],
+      "sup_index": 48,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、民事訴訟法等の一部を改正する法律（令和四年法律第四十八号）の施行の日（令和八年五月二十一日。次項において「施行日」という。）から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-46",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 6,
+      "division_path": [],
+      "sup_index": 48,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "２ この規則による改正後の規定は、訴えに係る事件であって施行日以後に提起されるもの（施行日前にされた訴え以外の申立てについて、施行日以後に当該申立てに係る法令の規定により当該申立て時に訴えの提起があったものとみなされるものを除く。）並びに施行日以後に開始される民事事件、行政事件及び家事事件に関する手続の申立てに係る事件（訴えに係る事件を除く。）における旅費、日当及び宿泊料の額について適用し、訴えに係る事件であって施行日前に提起されたもの（施行日前にされた訴え以外の申立てについて、施行日以後に当該申立てに係る法令の規定により当該申立て時に訴えの提起があったものとみなされるものを含む。）並びに施行日前に開始された民事事件、行政事件及び家事事件に関する手続の申立てに係る事件（訴えに係る事件を除く。）における旅費、日当及び宿泊料の額は、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（令和八年六月一〇日最高裁判所規則第一〇号）",
+      "anchor": "sup49",
+      "level": 1,
+      "page": 7,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-47",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 7,
+      "division_path": [],
+      "sup_index": 49,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、令和八年七月一日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因となる事実が生じた日当の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    }
+  ]
+}

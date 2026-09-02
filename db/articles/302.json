@@ -1,0 +1,1085 @@
+{
+ "rule_id": "302",
+ "title": "会社更生規則",
+ "enforcement_iso": "2026-05-21",
+ "url": "https://kmght.github.io/ksk/r/302.html",
+ "articles": [
+  {
+   "key": "1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "申立ての方式等",
+   "anchor": "a1",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "2",
+   "label": "第二条",
+   "short": "2条",
+   "caption": "申立書の記載事項等",
+   "anchor": "a2",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "3",
+   "label": "第三条",
+   "short": "3条",
+   "caption": "通知先住所等の情報の裁判所への提供",
+   "anchor": "a3",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "3_2",
+   "label": "第三条の二",
+   "short": "3条の2",
+   "caption": "管財人による通知事務等の取扱い",
+   "anchor": "a3-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "3_3",
+   "label": "第三条の三",
+   "short": "3条の3",
+   "caption": "通知等を受けるべき場所の届出",
+   "anchor": "a3-3",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "4",
+   "label": "第四条",
+   "short": "4条",
+   "caption": "調書",
+   "anchor": "a4",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "5",
+   "label": "第五条",
+   "short": "5条",
+   "caption": "即時抗告に係る事件記録の送付・法第九条",
+   "anchor": "a5",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "6",
+   "label": "第六条",
+   "short": "6条",
+   "caption": "公告事務の取扱者・法第十条",
+   "anchor": "a6",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "7",
+   "label": "第七条",
+   "short": "7条",
+   "caption": "官庁等への通知",
+   "anchor": "a7",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "8",
+   "label": "第八条",
+   "short": "8条",
+   "caption": "事件に関する文書の閲覧等・法第十一条",
+   "anchor": "a8",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "9",
+   "label": "第九条",
+   "short": "9条",
+   "caption": "支障部分の閲覧等の制限の申立ての方式等・法第十二条",
+   "anchor": "a9",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "10",
+   "label": "第十条",
+   "short": "10条",
+   "caption": "催告",
+   "anchor": "a10",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "10_2",
+   "label": "第十条の二",
+   "short": "10条の2",
+   "caption": "送達すべき書類の提出に代えて調書を作成した場合に送達すべき書類",
+   "anchor": "a10-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "10_3",
+   "label": "第十条の三",
+   "short": "10条の3",
+   "caption": "呼出状の公示送達",
+   "anchor": "a10-3",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "10_4",
+   "label": "第十条の四",
+   "short": "10条の4",
+   "caption": "決定及び命令の方式",
+   "anchor": "a10-4",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "10_5",
+   "label": "第十条の五",
+   "short": "10条の5",
+   "caption": "申立書の却下の命令に対する即時抗告等",
+   "anchor": "a10-5",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "10_6",
+   "label": "第十条の六",
+   "short": "10条の6",
+   "caption": "証人の宣誓",
+   "anchor": "a10-6",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "10_7",
+   "label": "第十条の七",
+   "short": "10条の7",
+   "caption": "鑑定人の宣誓",
+   "anchor": "a10-7",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "10_8",
+   "label": "第十条の八",
+   "short": "10条の8",
+   "caption": "受命裁判官等の証拠調べの調書",
+   "anchor": "a10-8",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "10_9",
+   "label": "第十条の九",
+   "short": "10条の9",
+   "caption": "更正決定の方式",
+   "anchor": "a10-9",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "10_10",
+   "label": "第十条の十",
+   "short": "10条の10",
+   "caption": "特別抗告等を提起する場合における費用の予納",
+   "anchor": "a10-10",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "10_11",
+   "label": "第十条の十一",
+   "short": "10条の11",
+   "caption": "民事訴訟規則の準用・法第十三条",
+   "anchor": "a10-11",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "11",
+   "label": "第十一条",
+   "short": "11条",
+   "caption": "更生手続開始の申立書の記載事項・法第十七条",
+   "anchor": "a11",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "12",
+   "label": "第十二条",
+   "short": "12条",
+   "caption": "",
+   "anchor": "a12",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "13",
+   "label": "第十三条",
+   "short": "13条",
+   "caption": "更生手続開始の申立書の添付書類・法第十七条",
+   "anchor": "a13",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "13_2",
+   "label": "第十三条の二",
+   "short": "13条の2",
+   "caption": "更生手続開始の申立人に対する資料の提出の求め",
+   "anchor": "a13-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "14",
+   "label": "第十四条",
+   "short": "14条",
+   "caption": "裁判所書記官の事実調査・法第十七条等",
+   "anchor": "a14",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "15",
+   "label": "第十五条",
+   "short": "15条",
+   "caption": "費用の予納・法第二十一条",
+   "anchor": "a15",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "16",
+   "label": "第十六条",
+   "short": "16条",
+   "caption": "関係人説明会の結果の報告",
+   "anchor": "a16",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "17",
+   "label": "第十七条",
+   "short": "17条",
+   "caption": "保全管理人及び監督委員等",
+   "anchor": "a17",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "18",
+   "label": "第十八条",
+   "short": "18条",
+   "caption": "更生手続開始の決定の裁判書等・法第四十一条",
+   "anchor": "a18",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "19",
+   "label": "第十九条",
+   "short": "19条",
+   "caption": "更生債権等の届出をすべき期間等・法第四十二条",
+   "anchor": "a19",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "20",
+   "label": "第二十条",
+   "short": "20条",
+   "caption": "管財人の選任等・法第六十七条",
+   "anchor": "a20",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "21",
+   "label": "第二十一条",
+   "short": "21条",
+   "caption": "管財人に対する監督等・法第六十八条",
+   "anchor": "a21",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "21_2",
+   "label": "第二十一条の二",
+   "short": "21条の2",
+   "caption": "進行協議",
+   "anchor": "a21-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "22",
+   "label": "第二十二条",
+   "short": "22条",
+   "caption": "管財人の報酬等・法第八十一条",
+   "anchor": "a22",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "23",
+   "label": "第二十三条",
+   "short": "23条",
+   "caption": "財産の価額の評定に関する資料の提出・法第八十三条",
+   "anchor": "a23",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "24",
+   "label": "第二十四条",
+   "short": "24条",
+   "caption": "管財人による貸借対照表等の開示",
+   "anchor": "a24",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "25",
+   "label": "第二十五条",
+   "short": "25条",
+   "caption": "財産状況の管財人による周知等・法第八十四条等",
+   "anchor": "a25",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "25_2",
+   "label": "第二十五条の二",
+   "short": "25条の2",
+   "caption": "否認権のための保全処分に係る手続の続行の方式等・法第九十四条",
+   "anchor": "a25-2",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "26",
+   "label": "第二十六条",
+   "short": "26条",
+   "caption": "担保権消滅許可の申立ての取下げの通知",
+   "anchor": "a26",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "27",
+   "label": "第二十七条",
+   "short": "27条",
+   "caption": "価額決定の請求の手続・法第百五条等",
+   "anchor": "a27",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "28",
+   "label": "第二十八条",
+   "short": "28条",
+   "caption": "更生計画認可前に更生手続が終了した場合の納付された金銭の取扱い・法第百十条",
+   "anchor": "a28",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "28_2",
+   "label": "第二十八条の二",
+   "short": "28条の2",
+   "caption": "映像等の送受信による通話の方法による関係人集会・法第百十五条の二",
+   "anchor": "a28-2",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "29",
+   "label": "第二十九条",
+   "short": "29条",
+   "caption": "調査委員の関係人集会への出席等",
+   "anchor": "a29",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "30",
+   "label": "第三十条",
+   "short": "30条",
+   "caption": "更生債権者委員会等の委員の人数等・法第百十七条等",
+   "anchor": "a30",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "31",
+   "label": "第三十一条",
+   "short": "31条",
+   "caption": "代理委員の権限の証明等・法第百二十二条",
+   "anchor": "a31",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "32",
+   "label": "第三十二条",
+   "short": "32条",
+   "caption": "調査委員の選任等・法第百二十五条等",
+   "anchor": "a32",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "33",
+   "label": "第三十三条",
+   "short": "33条",
+   "caption": "管財人等に対する協力の求め",
+   "anchor": "a33",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "34",
+   "label": "第三十四条",
+   "short": "34条",
+   "caption": "共益債権とする旨の許可に代わる承認をしたことの報告・法第百二十八条",
+   "anchor": "a34",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "35",
+   "label": "第三十五条",
+   "short": "35条",
+   "caption": "更生債権者等が外国で受けた弁済の通知・法第百三十七条",
+   "anchor": "a35",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "36",
+   "label": "第三十六条",
+   "short": "36条",
+   "caption": "更生債権等の届出の方式・法第百三十八条",
+   "anchor": "a36",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "37",
+   "label": "第三十七条",
+   "short": "37条",
+   "caption": "更生債権等の届出書の写しの添付等",
+   "anchor": "a37",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "38",
+   "label": "第三十八条",
+   "short": "38条",
+   "caption": "届出事項の変更",
+   "anchor": "a38",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "39",
+   "label": "第三十九条",
+   "short": "39条",
+   "caption": "債権届出期間経過後の届出等の方式・法第百三十九条等",
+   "anchor": "a39",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "40",
+   "label": "第四十条",
+   "short": "40条",
+   "caption": "届出名義の変更の方式・法第百四十一条",
+   "anchor": "a40",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "41",
+   "label": "第四十一条",
+   "short": "41条",
+   "caption": "租税等の請求権等の届出の方式・法第百四十二条",
+   "anchor": "a41",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "42",
+   "label": "第四十二条",
+   "short": "42条",
+   "caption": "管財人による債権届出期間の末日の通知",
+   "anchor": "a42",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "43",
+   "label": "第四十三条",
+   "short": "43条",
+   "caption": "更生債権者表等の記載事項・法第百四十四条",
+   "anchor": "a43",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "44",
+   "label": "第四十四条",
+   "short": "44条",
+   "caption": "認否のための証拠書類の送付等・法第百四十六条等",
+   "anchor": "a44",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "45",
+   "label": "第四十五条",
+   "short": "45条",
+   "caption": "管財人による認否書等の開示",
+   "anchor": "a45",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "46",
+   "label": "第四十六条",
+   "short": "46条",
+   "caption": "異議の方式等・法第百四十七条等",
+   "anchor": "a46",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "46_2",
+   "label": "第四十六条の二",
+   "short": "46条の2",
+   "caption": "特別調査期間に関する費用の予納を命ずる処分の方式・法第百四十八条の二",
+   "anchor": "a46-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "47",
+   "label": "第四十七条",
+   "short": "47条",
+   "caption": "更生債権等の確定に関する訴訟の目的の価額・法第百五十二条等",
+   "anchor": "a47",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "48",
+   "label": "第四十八条",
+   "short": "48条",
+   "caption": "担保権の目的である財産の価額決定の手続・法第百五十三条等",
+   "anchor": "a48",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "49",
+   "label": "第四十九条",
+   "short": "49条",
+   "caption": "債務を負担する者等の同意の書面・法第百七十一条",
+   "anchor": "a49",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "50",
+   "label": "第五十条",
+   "short": "50条",
+   "caption": "更生計画案の提出の遅延に伴う措置・法第百八十四条",
+   "anchor": "a50",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "51",
+   "label": "第五十一条",
+   "short": "51条",
+   "caption": "更生計画案についての参考資料の提出",
+   "anchor": "a51",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "52",
+   "label": "第五十二条",
+   "short": "52条",
+   "caption": "議決権行使の方法等・法第百八十九条",
+   "anchor": "a52",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "53",
+   "label": "第五十三条",
+   "short": "53条",
+   "caption": "社債についての議決権行使の申出の方式等・法第百九十条",
+   "anchor": "a53",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "54",
+   "label": "第五十四条",
+   "short": "54条",
+   "caption": "議決権額等を定める決定の変更等の申立ての方式・法第百九十一条等",
+   "anchor": "a54",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "55",
+   "label": "第五十五条",
+   "short": "55条",
+   "caption": "代理権の証明・法第百九十三条",
+   "anchor": "a55",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "56",
+   "label": "第五十六条",
+   "short": "56条",
+   "caption": "更生計画変更の申立ての方式等・法第二百三十三条",
+   "anchor": "a56",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "57",
+   "label": "第五十七条",
+   "short": "57条",
+   "caption": "更生計画認可後の更生手続の廃止についての意見聴取・法第二百四十一条",
+   "anchor": "a57",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "58",
+   "label": "第五十八条",
+   "short": "58条",
+   "caption": "",
+   "anchor": "a58",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "59",
+   "label": "第五十九条",
+   "short": "59条",
+   "caption": "更生債権の届出を要しない旨の決定等があった場合の通知等を受けるべき場所の届出・法第二百四十七条等",
+   "anchor": "a59",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "60",
+   "label": "第六十条",
+   "short": "60条",
+   "caption": "破産手続から更生手続への移行等に伴う共益債権の申出",
+   "anchor": "a60",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "s2:1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "施行期日",
+   "anchor": "sup2-a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  },
+  {
+   "key": "s2:3",
+   "label": "第三条",
+   "short": "3条",
+   "caption": "会社更生規則の一部改正に伴う経過措置",
+   "anchor": "sup2-a3",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  },
+  {
+   "key": "s5:1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "施行期日",
+   "anchor": "sup5-a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  },
+  {
+   "key": "s6:1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "施行期日",
+   "anchor": "sup6-a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  },
+  {
+   "key": "s7:1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "施行期日",
+   "anchor": "sup7-a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  }
+ ]
+}

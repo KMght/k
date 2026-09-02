@@ -1,0 +1,2298 @@
+{
+ "rule_id": "301",
+ "title": "民事再生規則",
+ "enforcement_iso": "2026-05-21",
+ "url": "https://kmght.github.io/ksk/r/301.html",
+ "articles": [
+  {
+   "key": "1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "再生債務者の責務等",
+   "anchor": "a1",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "2",
+   "label": "第二条",
+   "short": "2条",
+   "caption": "申立ての方式等",
+   "anchor": "a2",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "3",
+   "label": "第三条",
+   "short": "3条",
+   "caption": "調書",
+   "anchor": "a3",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "4",
+   "label": "第四条",
+   "short": "4条",
+   "caption": "即時抗告に係る事件記録の送付・法第九条",
+   "anchor": "a4",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "5",
+   "label": "第五条",
+   "short": "5条",
+   "caption": "公告事務の取扱者・法第十条",
+   "anchor": "a5",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "5_2",
+   "label": "第五条の二",
+   "short": "5条の2",
+   "caption": "管財人による通知事務等の取扱い",
+   "anchor": "a5-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "5_3",
+   "label": "第五条の三",
+   "short": "5条の3",
+   "caption": "通知等を受けるべき場所の届出",
+   "anchor": "a5-3",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "6",
+   "label": "第六条",
+   "short": "6条",
+   "caption": "官庁等への通知",
+   "anchor": "a6",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "7",
+   "label": "第七条",
+   "short": "7条",
+   "caption": "法人の再生手続に関する登記の嘱託の手続・法第十一条",
+   "anchor": "a7",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "8",
+   "label": "第八条",
+   "short": "8条",
+   "caption": "登記のある権利についての登記等の嘱託の手続・法第十二条等",
+   "anchor": "a8",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "9",
+   "label": "第九条",
+   "short": "9条",
+   "caption": "事件に関する文書の閲覧等・法第十六条",
+   "anchor": "a9",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "10",
+   "label": "第十条",
+   "short": "10条",
+   "caption": "支障部分の閲覧等の制限の申立ての方式等・法第十七条",
+   "anchor": "a10",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "11",
+   "label": "第十一条",
+   "short": "11条",
+   "caption": "催告",
+   "anchor": "a11",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "11_2",
+   "label": "第十一条の二",
+   "short": "11条の2",
+   "caption": "送達すべき書類の提出に代えて調書を作成した場合に送達すべき書類",
+   "anchor": "a11-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "11_3",
+   "label": "第十一条の三",
+   "short": "11条の3",
+   "caption": "呼出状の公示送達",
+   "anchor": "a11-3",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "11_4",
+   "label": "第十一条の四",
+   "short": "11条の4",
+   "caption": "決定及び命令の方式",
+   "anchor": "a11-4",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "11_5",
+   "label": "第十一条の五",
+   "short": "11条の5",
+   "caption": "申立書の却下の命令に対する即時抗告等",
+   "anchor": "a11-5",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "11_6",
+   "label": "第十一条の六",
+   "short": "11条の6",
+   "caption": "証人の宣誓",
+   "anchor": "a11-6",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "11_7",
+   "label": "第十一条の七",
+   "short": "11条の7",
+   "caption": "鑑定人の宣誓",
+   "anchor": "a11-7",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "11_8",
+   "label": "第十一条の八",
+   "short": "11条の8",
+   "caption": "受命裁判官等の証拠調べの調書",
+   "anchor": "a11-8",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "11_9",
+   "label": "第十一条の九",
+   "short": "11条の9",
+   "caption": "更正決定の方式",
+   "anchor": "a11-9",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "11_10",
+   "label": "第十一条の十",
+   "short": "11条の10",
+   "caption": "特別抗告等を提起する場合における費用の予納",
+   "anchor": "a11-10",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "11_11",
+   "label": "第十一条の十一",
+   "short": "11条の11",
+   "caption": "民事訴訟規則の準用・法第十八条",
+   "anchor": "a11-11",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "12",
+   "label": "第十二条",
+   "short": "12条",
+   "caption": "再生手続開始の申立書の記載事項・法第二十一条",
+   "anchor": "a12",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "13",
+   "label": "第十三条",
+   "short": "13条",
+   "caption": "",
+   "anchor": "a13",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "14",
+   "label": "第十四条",
+   "short": "14条",
+   "caption": "再生手続開始の申立書の添付書面・法第二十一条",
+   "anchor": "a14",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "14_2",
+   "label": "第十四条の二",
+   "short": "14条の2",
+   "caption": "再生手続開始の申立人に対する資料の提出の求め",
+   "anchor": "a14-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "15",
+   "label": "第十五条",
+   "short": "15条",
+   "caption": "裁判所書記官の事実調査・法第二十一条等",
+   "anchor": "a15",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "16",
+   "label": "第十六条",
+   "short": "16条",
+   "caption": "費用の予納・法第二十四条",
+   "anchor": "a16",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "17",
+   "label": "第十七条",
+   "short": "17条",
+   "caption": "再生手続開始の決定の裁判書等・法第三十三条",
+   "anchor": "a17",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "18",
+   "label": "第十八条",
+   "short": "18条",
+   "caption": "再生債権の届出をすべき期間等・法第三十四条",
+   "anchor": "a18",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "19",
+   "label": "第十九条",
+   "short": "19条",
+   "caption": "事業等の譲渡に関する株主総会の決議による承認に代わる許可の株主に対する送達・法第四十三条",
+   "anchor": "a19",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "20",
+   "label": "第二十条",
+   "short": "20条",
+   "caption": "監督委員の選任等・法第五十四条",
+   "anchor": "a20",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "21",
+   "label": "第二十一条",
+   "short": "21条",
+   "caption": "監督委員の同意の申請の方式等・法第五十四条",
+   "anchor": "a21",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "22",
+   "label": "第二十二条",
+   "short": "22条",
+   "caption": "再生債務者の監督委員に対する報告",
+   "anchor": "a22",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "23",
+   "label": "第二十三条",
+   "short": "23条",
+   "caption": "監督委員に対する監督等・法第五十七条",
+   "anchor": "a23",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "23_2",
+   "label": "第二十三条の二",
+   "short": "23条の2",
+   "caption": "進行協議",
+   "anchor": "a23-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "24",
+   "label": "第二十四条",
+   "short": "24条",
+   "caption": "監督委員による鑑定人の選任・法第五十九条",
+   "anchor": "a24",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "25",
+   "label": "第二十五条",
+   "short": "25条",
+   "caption": "監督委員の報酬の額・法第六十一条",
+   "anchor": "a25",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "26",
+   "label": "第二十六条",
+   "short": "26条",
+   "caption": "調査委員の選任等・法第六十二条等",
+   "anchor": "a26",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "27",
+   "label": "第二十七条",
+   "short": "27条",
+   "caption": "監督委員に関する規定の準用等・法第七十八条等",
+   "anchor": "a27",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "28",
+   "label": "第二十八条",
+   "short": "28条",
+   "caption": "再生債権者が外国で受けた弁済の通知・法第八十九条",
+   "anchor": "a28",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "29",
+   "label": "第二十九条",
+   "short": "29条",
+   "caption": "代理委員の権限の証明等・法第九十条",
+   "anchor": "a29",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "30",
+   "label": "第三十条",
+   "short": "30条",
+   "caption": "",
+   "anchor": "a30",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "31",
+   "label": "第三十一条",
+   "short": "31条",
+   "caption": "届出の方式・法第九十四条",
+   "anchor": "a31",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "32",
+   "label": "第三十二条",
+   "short": "32条",
+   "caption": "債権届出書の写しの添付等",
+   "anchor": "a32",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "33",
+   "label": "第三十三条",
+   "short": "33条",
+   "caption": "届出事項等の変更",
+   "anchor": "a33",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "34",
+   "label": "第三十四条",
+   "short": "34条",
+   "caption": "届出の追完等の方式・法第九十五条",
+   "anchor": "a34",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "35",
+   "label": "第三十五条",
+   "short": "35条",
+   "caption": "届出名義の変更の方式・法第九十六条",
+   "anchor": "a35",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "35_2",
+   "label": "第三十五条の二",
+   "short": "35条の2",
+   "caption": "罰金、科料等の届出の方式・法第九十七条",
+   "anchor": "a35-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "36",
+   "label": "第三十六条",
+   "short": "36条",
+   "caption": "再生債権者表の作成時期及び記載事項・法第九十九条",
+   "anchor": "a36",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "37",
+   "label": "第三十七条",
+   "short": "37条",
+   "caption": "証拠書類の送付・法第百一条等",
+   "anchor": "a37",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "38",
+   "label": "第三十八条",
+   "short": "38条",
+   "caption": "認否書の記載の方式等・法第百一条等",
+   "anchor": "a38",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "39",
+   "label": "第三十九条",
+   "short": "39条",
+   "caption": "異議の方式・法第百二条等",
+   "anchor": "a39",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "40",
+   "label": "第四十条",
+   "short": "40条",
+   "caption": "一般調査期間を変更する決定等の送達・法第百二条等",
+   "anchor": "a40",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "41",
+   "label": "第四十一条",
+   "short": "41条",
+   "caption": "認否の変更等",
+   "anchor": "a41",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "42",
+   "label": "第四十二条",
+   "short": "42条",
+   "caption": "認否書等の副本による閲覧等",
+   "anchor": "a42",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "43",
+   "label": "第四十三条",
+   "short": "43条",
+   "caption": "再生債務者等による認否書等の開示",
+   "anchor": "a43",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "44",
+   "label": "第四十四条",
+   "short": "44条",
+   "caption": "異議の通知",
+   "anchor": "a44",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "44_2",
+   "label": "第四十四条の二",
+   "short": "44条の2",
+   "caption": "特別調査期間に関する費用の予納を命ずる処分の方式・法第百三条の二",
+   "anchor": "a44-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "45",
+   "label": "第四十五条",
+   "short": "45条",
+   "caption": "再生債権の査定の申立ての方式等・法第百五条",
+   "anchor": "a45",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "46",
+   "label": "第四十六条",
+   "short": "46条",
+   "caption": "再生債権の確定に関する訴訟の目的の価額・法第百六条等",
+   "anchor": "a46",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "47",
+   "label": "第四十七条",
+   "short": "47条",
+   "caption": "再生債権の確定に関する訴訟の結果の記載・法第百十条",
+   "anchor": "a47",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "48",
+   "label": "第四十八条",
+   "short": "48条",
+   "caption": "債権者集会の招集の申立ての方式・法第百十四条",
+   "anchor": "a48",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "49",
+   "label": "第四十九条",
+   "short": "49条",
+   "caption": "映像等の送受信による通話の方法による債権者集会・法第百十五条の二",
+   "anchor": "a49",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "50",
+   "label": "第五十条",
+   "short": "50条",
+   "caption": "監督委員等の債権者集会への出席等・法第百十六条",
+   "anchor": "a50",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "51",
+   "label": "第五十一条",
+   "short": "51条",
+   "caption": "",
+   "anchor": "a51",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "52",
+   "label": "第五十二条",
+   "short": "52条",
+   "caption": "債権者委員会の委員の人数・法第百十七条",
+   "anchor": "a52",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "53",
+   "label": "第五十三条",
+   "short": "53条",
+   "caption": "債権者委員会の承認の申立ての方式・法第百十七条",
+   "anchor": "a53",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "54",
+   "label": "第五十四条",
+   "short": "54条",
+   "caption": "債権者委員会の活動・法第百十七条",
+   "anchor": "a54",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "55",
+   "label": "第五十五条",
+   "short": "55条",
+   "caption": "共益債権とする旨の許可に代わる承認をしたことの報告・法第百二十条",
+   "anchor": "a55",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "55_2",
+   "label": "第五十五条の二",
+   "short": "55条の2",
+   "caption": "共益債権の申出",
+   "anchor": "a55-2",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "56",
+   "label": "第五十六条",
+   "short": "56条",
+   "caption": "価額の評定の基準等・法第百二十四条",
+   "anchor": "a56",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "57",
+   "label": "第五十七条",
+   "short": "57条",
+   "caption": "財産状況報告集会が招集されない場合の報告書の提出時期等・法第百二十五条",
+   "anchor": "a57",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "58",
+   "label": "第五十八条",
+   "short": "58条",
+   "caption": "貸借対照表等の報告書への添付等・法第百二十五条",
+   "anchor": "a58",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "59",
+   "label": "第五十九条",
+   "short": "59条",
+   "caption": "報告書の提出の促し等・法第百二十五条",
+   "anchor": "a59",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "60",
+   "label": "第六十条",
+   "short": "60条",
+   "caption": "財産状況報告集会の招集・法第百二十六条",
+   "anchor": "a60",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "61",
+   "label": "第六十一条",
+   "short": "61条",
+   "caption": "債権者説明会の開催",
+   "anchor": "a61",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "62",
+   "label": "第六十二条",
+   "short": "62条",
+   "caption": "財産目録等の副本による閲覧等",
+   "anchor": "a62",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "63",
+   "label": "第六十三条",
+   "short": "63条",
+   "caption": "財産状況の再生債務者等による周知",
+   "anchor": "a63",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "64",
+   "label": "第六十四条",
+   "short": "64条",
+   "caption": "再生債務者等による財産目録等の開示",
+   "anchor": "a64",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "65",
+   "label": "第六十五条",
+   "short": "65条",
+   "caption": "財産の保管方法等",
+   "anchor": "a65",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "65_2",
+   "label": "第六十五条の二",
+   "short": "65条の2",
+   "caption": "否認権のための保全処分の申立ての方式・法第百三十四条の四",
+   "anchor": "a65-2",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "65_3",
+   "label": "第六十五条の三",
+   "short": "65条の3",
+   "caption": "否認権のための保全処分に係る手続の続行の方式等・法第百三十四条の五",
+   "anchor": "a65-3",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "66",
+   "label": "第六十六条",
+   "short": "66条",
+   "caption": "否認の請求の方式等・法第百三十六条",
+   "anchor": "a66",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "67",
+   "label": "第六十七条",
+   "short": "67条",
+   "caption": "否認の訴えの係属の通知等・法第百三十八条",
+   "anchor": "a67",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "68",
+   "label": "第六十八条",
+   "short": "68条",
+   "caption": "法人の役員の財産に対する保全処分の申立ての方式・法第百四十二条",
+   "anchor": "a68",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "69",
+   "label": "第六十九条",
+   "short": "69条",
+   "caption": "損害賠償請求権の査定の申立ての方式等・法第百四十三条",
+   "anchor": "a69",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "70",
+   "label": "第七十条",
+   "short": "70条",
+   "caption": "担保権消滅の許可の申立書の記載事項・法第百四十八条",
+   "anchor": "a70",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "71",
+   "label": "第七十一条",
+   "short": "71条",
+   "caption": "担保権消滅の許可の申立てについて提出すべき書面等・法第百四十八条",
+   "anchor": "a71",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "72",
+   "label": "第七十二条",
+   "short": "72条",
+   "caption": "担保権消滅の許可の申立書の送達等・法第百四十八条",
+   "anchor": "a72",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "73",
+   "label": "第七十三条",
+   "short": "73条",
+   "caption": "担保権消滅の許可の申立て後の担保権の移転等の届出等",
+   "anchor": "a73",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "74",
+   "label": "第七十四条",
+   "short": "74条",
+   "caption": "担保権消滅の許可の申立ての取下げの通知",
+   "anchor": "a74",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "75",
+   "label": "第七十五条",
+   "short": "75条",
+   "caption": "価額決定の請求の方式等・法第百四十九条",
+   "anchor": "a75",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "76",
+   "label": "第七十六条",
+   "short": "76条",
+   "caption": "価額決定の請求に関する書面の提出",
+   "anchor": "a76",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "77",
+   "label": "第七十七条",
+   "short": "77条",
+   "caption": "価額決定の請求があった旨の通知",
+   "anchor": "a77",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "78",
+   "label": "第七十八条",
+   "short": "78条",
+   "caption": "評価人に対する協力",
+   "anchor": "a78",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "79",
+   "label": "第七十九条",
+   "short": "79条",
+   "caption": "財産の評価の基準等・法第百五十条",
+   "anchor": "a79",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "80",
+   "label": "第八十条",
+   "short": "80条",
+   "caption": "価額決定の裁判書等の送達までの担保権の移転等の届出等",
+   "anchor": "a80",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "81",
+   "label": "第八十一条",
+   "short": "81条",
+   "caption": "価額に相当する金銭の納付期限等・法第百五十二条",
+   "anchor": "a81",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "82",
+   "label": "第八十二条",
+   "short": "82条",
+   "caption": "配当等の実施・法第百五十三条",
+   "anchor": "a82",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "83",
+   "label": "第八十三条",
+   "short": "83条",
+   "caption": "共益債権及び一般優先債権に関する条項・法第百五十四条",
+   "anchor": "a83",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "84",
+   "label": "第八十四条",
+   "short": "84条",
+   "caption": "再生計画案の提出時期・法第百六十三条",
+   "anchor": "a84",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "85",
+   "label": "第八十五条",
+   "short": "85条",
+   "caption": "弁済した再生債権等の報告",
+   "anchor": "a85",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "86",
+   "label": "第八十六条",
+   "short": "86条",
+   "caption": "再生計画案が事前提出された場合の取扱い・法第百六十四条",
+   "anchor": "a86",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "87",
+   "label": "第八十七条",
+   "short": "87条",
+   "caption": "債務を負担する者等の同意の方式等・法第百六十五条",
+   "anchor": "a87",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "88",
+   "label": "第八十八条",
+   "short": "88条",
+   "caption": "再生債務者の株式の取得等を定める条項に関する許可の株主に対する送達・法第百六十六条等",
+   "anchor": "a88",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "89",
+   "label": "第八十九条",
+   "short": "89条",
+   "caption": "再生計画案の修正・法第百六十七条",
+   "anchor": "a89",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "90",
+   "label": "第九十条",
+   "short": "90条",
+   "caption": "議決権行使の方法等・法第百六十九条",
+   "anchor": "a90",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "90_2",
+   "label": "第九十条の二",
+   "short": "90条の2",
+   "caption": "社債についての議決権行使の申出の方式等・法第百六十九条の二",
+   "anchor": "a90-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "90_3",
+   "label": "第九十条の三",
+   "short": "90条の3",
+   "caption": "議決権額等を定める決定の変更の申立ての方式・法第百七十条",
+   "anchor": "a90-3",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "90_4",
+   "label": "第九十条の四",
+   "short": "90条の4",
+   "caption": "代理権の証明・法第百七十二条",
+   "anchor": "a90-4",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "91",
+   "label": "第九十一条",
+   "short": "91条",
+   "caption": "債権者集会の続行期日指定等の申立ての方式・法第百七十二条の五",
+   "anchor": "a91",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "92",
+   "label": "第九十二条",
+   "short": "92条",
+   "caption": "法人の継続に係る届出・法第百七十三条",
+   "anchor": "a92",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "93",
+   "label": "第九十三条",
+   "short": "93条",
+   "caption": "法人の継続と再生計画認可等の決定の時期・法第百七十四条",
+   "anchor": "a93",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "94",
+   "label": "第九十四条",
+   "short": "94条",
+   "caption": "再生計画変更の申立ての方式等・法第百八十七条",
+   "anchor": "a94",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "95",
+   "label": "第九十五条",
+   "short": "95条",
+   "caption": "再生計画取消しの申立ての方式・法第百八十九条",
+   "anchor": "a95",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "96",
+   "label": "第九十六条",
+   "short": "96条",
+   "caption": "破産手続開始の決定等がされた場合の再生計画取消しの申立ての取扱い・法第百九十条",
+   "anchor": "a96",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "97",
+   "label": "第九十七条",
+   "short": "97条",
+   "caption": "",
+   "anchor": "a97",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "98",
+   "label": "第九十八条",
+   "short": "98条",
+   "caption": "再生計画認可後の再生手続の廃止についての意見聴取・法第百九十四条",
+   "anchor": "a98",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "99",
+   "label": "第九十九条",
+   "short": "99条",
+   "caption": "住宅資金特別条項",
+   "anchor": "a99",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "100",
+   "label": "第百条",
+   "short": "100条",
+   "caption": "住宅資金特別条項によって権利の変更を受ける者の同意の方式等・法第百九十九条",
+   "anchor": "a100",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "101",
+   "label": "第百一条",
+   "short": "101条",
+   "caption": "事前協議・法第二百条",
+   "anchor": "a101",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "102",
+   "label": "第百二条",
+   "short": "102条",
+   "caption": "再生計画案と併せて提出すべき書面等・法第二百条",
+   "anchor": "a102",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "103",
+   "label": "第百三条",
+   "short": "103条",
+   "caption": "異議の失効に伴う通知・法第二百条",
+   "anchor": "a103",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "104",
+   "label": "第百四条",
+   "short": "104条",
+   "caption": "再生債務者の保証人等に対する通知・法第二百三条",
+   "anchor": "a104",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "105",
+   "label": "第百五条",
+   "short": "105条",
+   "caption": "外国管財人の資格等の証明・法第二百九条等",
+   "anchor": "a105",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "106",
+   "label": "第百六条",
+   "short": "106条",
+   "caption": "外国倒産処理手続への参加・法第二百十条",
+   "anchor": "a106",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "107",
+   "label": "第百七条",
+   "short": "107条",
+   "caption": "届出再生債権者の同意・法第二百十一条",
+   "anchor": "a107",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "108",
+   "label": "第百八条",
+   "short": "108条",
+   "caption": "簡易再生の決定があったときの債権者集会の期日・法第二百十二条",
+   "anchor": "a108",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "108_2",
+   "label": "第百八条の二",
+   "short": "108条の2",
+   "caption": "一般調査期間を定める決定の送達・法第二百十三条",
+   "anchor": "a108-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "109",
+   "label": "第百九条",
+   "short": "109条",
+   "caption": "再生債権の調査及び確定に関する規定等の適用除外・法第二百十六条",
+   "anchor": "a109",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "110",
+   "label": "第百十条",
+   "short": "110条",
+   "caption": "簡易再生に関する規定等の準用・法第二百十七条等",
+   "anchor": "a110",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "111",
+   "label": "第百十一条",
+   "short": "111条",
+   "caption": "再生債権の調査及び確定に関する規定等の適用除外・法第二百二十条",
+   "anchor": "a111",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "112",
+   "label": "第百十二条",
+   "short": "112条",
+   "caption": "債務者申立事件における小規模個人再生の申述の方式等・法第二百二十一条",
+   "anchor": "a112",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "113",
+   "label": "第百十三条",
+   "short": "113条",
+   "caption": "債権者申立事件における小規模個人再生の申述の方式等・法第二百二十一条",
+   "anchor": "a113",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "114",
+   "label": "第百十四条",
+   "short": "114条",
+   "caption": "債権者一覧表の記載事項等・法第二百二十一条",
+   "anchor": "a114",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "115",
+   "label": "第百十五条",
+   "short": "115条",
+   "caption": "住宅資金特別条項を定めた再生計画案を提出する意思がある場合の特則・法第二百二十一条",
+   "anchor": "a115",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "116",
+   "label": "第百十六条",
+   "short": "116条",
+   "caption": "再生手続開始の決定等・法第二百二十二条",
+   "anchor": "a116",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "117",
+   "label": "第百十七条",
+   "short": "117条",
+   "caption": "個人再生委員・法第二百二十三条",
+   "anchor": "a117",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "118",
+   "label": "第百十八条",
+   "short": "118条",
+   "caption": "再生債権の届出の方式・法第二百二十四条",
+   "anchor": "a118",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "119",
+   "label": "第百十九条",
+   "short": "119条",
+   "caption": "再生債権に関する資料の送付",
+   "anchor": "a119",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "120",
+   "label": "第百二十条",
+   "short": "120条",
+   "caption": "届出再生債権を記載した書面",
+   "anchor": "a120",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "121",
+   "label": "第百二十一条",
+   "short": "121条",
+   "caption": "異議の方式・法第二百二十六条",
+   "anchor": "a121",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "121_2",
+   "label": "第百二十一条の二",
+   "short": "121条の2",
+   "caption": "特別異議申述期間を定める決定等の送達・法第二百二十六条",
+   "anchor": "a121-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "122",
+   "label": "第百二十二条",
+   "short": "122条",
+   "caption": "異議の撤回",
+   "anchor": "a122",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "123",
+   "label": "第百二十三条",
+   "short": "123条",
+   "caption": "債権者一覧表等の副本等による閲覧等",
+   "anchor": "a123",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "124",
+   "label": "第百二十四条",
+   "short": "124条",
+   "caption": "再生債務者による債権者一覧表等の開示",
+   "anchor": "a124",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "125",
+   "label": "第百二十五条",
+   "short": "125条",
+   "caption": "異議の通知",
+   "anchor": "a125",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "126",
+   "label": "第百二十六条",
+   "short": "126条",
+   "caption": "再生債権の評価の申立ての方式等・法第二百二十七条",
+   "anchor": "a126",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "127",
+   "label": "第百二十七条",
+   "short": "127条",
+   "caption": "資料の提出を求める場合の制裁の告知・法第二百二十七条",
+   "anchor": "a127",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "128",
+   "label": "第百二十八条",
+   "short": "128条",
+   "caption": "財産目録の記載の簡略化",
+   "anchor": "a128",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "129",
+   "label": "第百二十九条",
+   "short": "129条",
+   "caption": "再生債務者による財産目録等の開示",
+   "anchor": "a129",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "130",
+   "label": "第百三十条",
+   "short": "130条",
+   "caption": "再生計画案の提出時期",
+   "anchor": "a130",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "130_2",
+   "label": "第百三十条の二",
+   "short": "130条の2",
+   "caption": "再生計画により変更されるべき権利等を記載した書面",
+   "anchor": "a130-2",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "131",
+   "label": "第百三十一条",
+   "short": "131条",
+   "caption": "書面による決議における回答期間等・法第二百三十条",
+   "anchor": "a131",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "132",
+   "label": "第百三十二条",
+   "short": "132条",
+   "caption": "再生計画変更の申立ての方式等・法第二百三十四条",
+   "anchor": "a132",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "133",
+   "label": "第百三十三条",
+   "short": "133条",
+   "caption": "計画遂行が極めて困難となった場合の免責の申立ての方式・法第二百三十五条",
+   "anchor": "a133",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "134",
+   "label": "第百三十四条",
+   "short": "134条",
+   "caption": "再生手続廃止の申立ての方式・法第二百三十七条",
+   "anchor": "a134",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "135",
+   "label": "第百三十五条",
+   "short": "135条",
+   "caption": "通常の再生手続に関する規定の適用除外・法第二百三十八条",
+   "anchor": "a135",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "136",
+   "label": "第百三十六条",
+   "short": "136条",
+   "caption": "債務者申立事件における給与所得者等再生の申述の方式等・法第二百三十九条",
+   "anchor": "a136",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "137",
+   "label": "第百三十七条",
+   "short": "137条",
+   "caption": "債権者申立事件における給与所得者等再生の申述の方式等・法第二百三十九条",
+   "anchor": "a137",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "138",
+   "label": "第百三十八条",
+   "short": "138条",
+   "caption": "再生手続開始の決定等",
+   "anchor": "a138",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "139",
+   "label": "第百三十九条",
+   "short": "139条",
+   "caption": "再生計画案についての意見聴取期間等・法第二百四十条",
+   "anchor": "a139",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "140",
+   "label": "第百四十条",
+   "short": "140条",
+   "caption": "小規模個人再生に関する規定の準用・法第二百四十四条",
+   "anchor": "a140",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "141",
+   "label": "第百四十一条",
+   "short": "141条",
+   "caption": "通常の再生手続に関する規定の適用除外・法第二百四十五条",
+   "anchor": "a141",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "142",
+   "label": "第百四十二条",
+   "short": "142条",
+   "caption": "再生債権の届出を要しない旨の決定等があった場合の通知等を受けるべき場所の届出・法第二百四十七条等",
+   "anchor": "a142",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "143",
+   "label": "第百四十三条",
+   "short": "143条",
+   "caption": "破産手続から再生手続への移行に伴う共益債権の申出",
+   "anchor": "a143",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "144",
+   "label": "第百四十四条",
+   "short": "144条",
+   "caption": "信用事業の譲渡に関する総会等の決議に代わる許可の組合員等に対する送達",
+   "anchor": "a144",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "145",
+   "label": "第百四十五条",
+   "short": "145条",
+   "caption": "再生手続参加の届出の方式等",
+   "anchor": "a145",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "146",
+   "label": "第百四十六条",
+   "short": "146条",
+   "caption": "異議の通知の特例",
+   "anchor": "a146",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "s5:1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "施行期日",
+   "anchor": "sup5-a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  },
+  {
+   "key": "s5:2",
+   "label": "第二条",
+   "short": "2条",
+   "caption": "民事再生規則の一部改正に伴う経過措置",
+   "anchor": "sup5-a2",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  },
+  {
+   "key": "s10:1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "施行期日",
+   "anchor": "sup10-a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  },
+  {
+   "key": "s11:1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "施行期日",
+   "anchor": "sup11-a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  },
+  {
+   "key": "s12:1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "施行期日",
+   "anchor": "sup12-a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  }
+ ]
+}

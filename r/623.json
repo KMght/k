@@ -1,0 +1,378 @@
+{
+  "title": "総合法律支援法による国選弁護人等契約弁護士に係る費用の額の算定等に関する規則",
+  "law_number": "平成十六年法律第七十四号",
+  "enforcement_date": "平成19年11月1日",
+  "enforcement_iso": "2007-11-01",
+  "pdf_link": "https://www.courts.go.jp/assets/kokusennbengohiyousanteikisoku.pdf",
+  "source": "kokusennbengohiyousanteikisoku.pdf",
+  "numeral": "kansuji",
+  "notes": [
+    "題名・制定文とみられる行を本文の前に検出しました：総合法律支援法による国選弁護人等契約弁護士に係る費用の額の算定等に関する規／則／平成18年7月28日最高裁判所規則第１２号",
+    "各条の「原本」は https://www.courts.go.jp/assets/kokusennbengohiyousanteikisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+  ],
+  "nodes": [
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "a1",
+      "caption": "趣旨",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "総合法律支援法（平成十六年法律第七十四号。以下「法」という。）第三十九条第三項の規定による同条第二項第二号に定める費用の額の算定に関する手続については、法に定めるもののほか、この規則の定めるところによる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        2
+      ],
+      "label": "第二条",
+      "short_label": "2条",
+      "anchor": "a2",
+      "caption": "申立て裁判所",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第三十九条第三項の申立ては、同項の検察官が所属する検察庁の対応する裁判所にこれをしなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        3
+      ],
+      "label": "第三条",
+      "short_label": "3条",
+      "anchor": "a3",
+      "caption": "申立ての方式",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第三十九条第三項の申立ては、訴訟費用の負担を命ずる裁判が確定した後速やかにこれをしなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "法第三十九条第三項の申立ては、次に掲げる事項を記載した書面でこれをしなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "訴訟費用の負担を命ずる裁判を特定するに足りる事項",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "前号の裁判が確定した日及び確定した事由",
+              "children": []
+            }
+          ]
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        4
+      ],
+      "label": "第四条",
+      "short_label": "4条",
+      "anchor": "a4",
+      "caption": "算定する裁判所等",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "第二条の申立てを受けた裁判所は、その申立てに係る費用の額を算定しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "第二条の申立てを受けた上訴裁判所は、自ら費用の額を算定するのが適当でないと認めるときは、前項の規定にかかわらず、当該被告事件を審理した下級の裁判所に同項の規定による算定をさせることができる。この場合には、その旨を記載し、かつ、裁判長が認印した送付書とともに申立書及び関係書類を送付するものとする。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "前項の場合において、上訴裁判所は、第一項の規定による算定についての意見を付することができる。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "第二項の規定による送付をしたときは、上訴裁判所は、直ちにその旨を検察官に通知しなければならない。",
+          "items": []
+        },
+        {
+          "number": 5,
+          "text": "第二項から前項までの規定は、上告裁判所から第二項の規定による送付をされた控訴裁判所が自ら費用の額を算定するのが適当でないと認めるときについて準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        5
+      ],
+      "label": "第五条",
+      "short_label": "5条",
+      "anchor": "a5",
+      "caption": "算定の決定",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第三十九条第三項の算定は、決定でしなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        6
+      ],
+      "label": "第六条",
+      "short_label": "6条",
+      "anchor": "a6",
+      "caption": "決定書",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "前条の決定をするときは、裁判官が、決定書を作成し、これに記名押印しなければならない。合議体で決定をする場合において、決定書に記名押印することができない裁判官があるときは、他の裁判官の一人（当該記名押印することができない裁判官が裁判長以外の裁判官である場合は、裁判長）が、その事由を付記して記名押印しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "決定書には、次に掲げる事項を記載しなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "申立てをした検察官の官氏名",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "算定した訴訟費用の負担を命ずる裁判を特定するに足りる事項",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "算定した費用の額",
+              "children": []
+            }
+          ]
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        7
+      ],
+      "label": "第七条",
+      "short_label": "7条",
+      "anchor": "a7",
+      "caption": "算定の決定の通知",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "第五条の決定をした場合には、その旨を検察官に通知しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        8
+      ],
+      "label": "第八条",
+      "short_label": "8条",
+      "anchor": "a8",
+      "caption": "国選弁護人選任に関する通知",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "日本司法支援センターは、法第三十八条第二項の規定により国選弁護人の候補を指名して裁判所若しくは裁判長又は裁判官に通知をする場合において、その国選弁護人の候補が法第三十九条第二項第二号に掲げる国選弁護人等契約弁護士であるときは、その旨をも通知しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "裁判長又は裁判官は、検察官に対して刑事訴訟規則（昭和二十三年最高裁判所規則第三十二号）第二十九条の三第一項の規定による通知をする場合において、選任した弁護人が前項の国選弁護人等契約弁護士であるときは、その旨をも通知しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        9
+      ],
+      "label": "第九条",
+      "short_label": "9条",
+      "anchor": "a9",
+      "caption": "刑事訴訟規則の準用等",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "刑事訴訟規則第三十七条、第五十七条第一項及び第五十八条から第六十一条まで（第六十条の二第一項ただし書を除く。）の規定は法又はこの規則の規定により裁判所に提出すべき書類及び裁判官その他の裁判所職員が作成すべき書類について、同規則第二百九十八条の規定はこれらの書類の発送及び受理並びにこの規則の規定による通知について準用する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項において準用する刑事訴訟規則第六十条の規定にかかわらず、日本司法支援センターの職員が作成すべき書類に署名押印すべき場合には、署名押印に代えて記名押印することができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "",
+      "anchor": "sup1",
+      "level": 1,
+      "page": 2,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-1",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 1,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、法附則第一条第二号に掲げる規定の施行の日（平成十八年十月二日）から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成一九年九月二七日最高裁判所規則第一一号）",
+      "anchor": "sup2",
+      "level": 1,
+      "page": 2,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-2",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 2,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、少年法等の一部を改正する法律（平成十九年法律第六十八号）の施行の日（平成十九年十一月一日）から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    }
+  ]
+}

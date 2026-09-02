@@ -1,0 +1,32 @@
+{
+ "rule_id": "606",
+ "title": "刑事事件における第三者所有物の没収手続に関する規則",
+ "enforcement_iso": "",
+ "url": "https://kmght.github.io/ksk/r/606.html",
+ "articles": [
+  {
+   "key": "1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "手続の基準",
+   "anchor": "a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "2",
+   "label": "第二条",
+   "short": "2条",
+   "caption": "検察官への通知・法第十三条",
+   "anchor": "a2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  }
+ ]
+}

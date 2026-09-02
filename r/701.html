@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>下級裁判所事務処理規則</title>
+<style>
+:root{
+  --paper:#ffffff;
+  --ink:#16181d;
+  --sub:#5f6875;
+  --rule:#dde2e9;
+  --chrome:#f4f6f9;
+  --accent:#14538a;
+  --accent-weak:#e7eff7;
+  --mark:#ffe08a;
+  --mark-live:#ff9d3d;
+  --gothic:"Yu Gothic UI","Yu Gothic","YuGothic","Hiragino Sans","Noto Sans JP","Meiryo",system-ui,sans-serif;
+  --mincho:"Yu Mincho","YuMincho","Hiragino Mincho ProN","Noto Serif JP","MS Mincho",serif;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:5.5rem}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--mincho);font-size:17px;line-height:1.9;
+  text-rendering:optimizeLegibility;
+}
+
+/* ---------------------------------------------------------------- ヘッダ */
+.top{
+  position:sticky;top:0;z-index:30;background:var(--chrome);
+  border-bottom:1px solid var(--rule);font-family:var(--gothic);
+}
+.top-inner{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;padding:.7rem 1.2rem}
+.law-title{font-size:1.12rem;font-weight:700;letter-spacing:.02em;margin:0}
+.law-number{font-size:.8rem;color:var(--sub);margin-left:.2rem}
+.top-tools{margin-left:auto;display:flex;align-items:center;gap:.5rem}
+.search-box{display:flex;align-items:center;gap:.35rem;background:var(--paper);
+  border:1px solid var(--rule);border-radius:2px;padding:.25rem .5rem}
+.search-box input{border:0;outline:0;font:inherit;font-size:.85rem;width:14rem;background:transparent;color:inherit}
+.hit-count{font-size:.78rem;color:var(--sub);min-width:4.2rem;text-align:right;font-variant-numeric:tabular-nums}
+button{font:inherit;font-family:var(--gothic);cursor:pointer}
+.btn{background:var(--paper);border:1px solid var(--rule);border-radius:2px;
+  color:var(--ink);font-size:.78rem;padding:.28rem .6rem;line-height:1.4}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.crumb{padding:.3rem 1.2rem;border-top:1px solid var(--rule);background:var(--paper);
+  font-family:var(--gothic);font-size:.78rem;color:var(--sub);min-height:1.7rem}
+
+/* ------------------------------------------------------------------ 骨格 */
+.wrap{display:grid;grid-template-columns:19rem minmax(0,1fr);align-items:start}
+.toc{
+  position:sticky;top:5.6rem;max-height:calc(100vh - 5.6rem);overflow-y:auto;
+  border-right:1px solid var(--rule);padding:1rem .6rem 4rem 1.2rem;
+  font-family:var(--gothic);font-size:.83rem;line-height:1.65;
+}
+.toc h2{font-size:.75rem;color:var(--sub);font-weight:700;margin:0 0 .6rem}
+.toc ul{list-style:none;margin:0;padding:0}
+.toc a{display:block;color:var(--ink);text-decoration:none;padding:.16rem .4rem;border-radius:2px}
+.toc a:hover{background:var(--accent-weak);color:var(--accent)}
+.toc a.current{background:var(--accent-weak);color:var(--accent);font-weight:700}
+.toc .div-1>a,.toc .div-2>a{font-weight:700}
+.toc .div-2{margin-top:.5rem}
+.toc .div-3,.toc .div-4,.toc .div-5{margin-top:.25rem}
+.toc .lv-art{padding-left:.9rem}
+.toc .lv-art.hidden,.toc .lv-div.hidden{display:none}
+.toc-toggle{background:none;border:0;color:var(--sub);padding:0 .3rem;font-size:.75rem}
+
+.doc{padding:2.2rem 2rem 8rem;max-width:44em}
+.doc-head{border-bottom:2px solid var(--ink);padding-bottom:.8rem;margin-bottom:2rem}
+.doc-head h1{font-size:1.5rem;margin:0 0 .3rem;letter-spacing:.04em}
+.doc-head .meta{font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+
+/* ------------------------------------------------------------------ 条文 */
+.div-head{font-family:var(--gothic);margin:2.6rem 0 1rem;scroll-margin-top:6rem}
+.div-head .lbl{color:var(--accent);font-weight:700}
+h2.div-head{font-size:1.12rem;border-bottom:1px solid var(--rule);padding-bottom:.35rem}
+h3.div-head{font-size:1.02rem}
+h4.div-head,h5.div-head,h6.div-head{font-size:.95rem}
+
+.art{position:relative;padding-left:2.6rem;margin:1.5rem 0 1.9rem;scroll-margin-top:6rem}
+.art:target{background:var(--accent-weak);box-shadow:-.4rem 0 0 var(--accent);border-radius:2px}
+.art-tools{position:absolute;left:0;top:.25rem;display:flex;flex-direction:column;gap:.2rem;
+  visibility:hidden}
+.art:hover .art-tools,.art:focus-within .art-tools,.art:target .art-tools{visibility:visible}
+.art-tools button,.art-tools a{background:none;border:0;color:var(--sub);font-size:.72rem;
+  font-family:var(--gothic);padding:.1rem .2rem;border-radius:2px;text-decoration:none;
+  white-space:nowrap;display:block}
+.art-tools button:hover,.art-tools a:hover{color:var(--accent);background:var(--accent-weak)}
+.raw h3 .src{font-size:.75rem;font-weight:400;color:var(--sub);margin-left:.5rem}
+.doc-head .src{color:var(--accent);text-decoration:none}
+.doc-head .src:hover{text-decoration:underline}
+.caption{font-family:var(--gothic);font-size:.88rem;font-weight:700;color:var(--sub);margin:0 0 .1rem}
+.amend-note{font-family:var(--gothic);font-size:.78rem;font-weight:400;color:var(--sub);margin:.1rem 0 0;text-align:right}
+h2 .amend-note,h3 .amend-note,h4 .amend-note,h5 .amend-note,h6 .amend-note{display:inline;text-align:left}
+.art-no{font-family:var(--gothic);font-weight:700;color:var(--accent);text-decoration:none;margin-right:.55em}
+.art-no:hover{text-decoration:underline}
+.para{margin:.35rem 0;text-indent:0}
+.para+.para{margin-top:.55rem}
+.pno{font-family:var(--gothic);color:var(--sub);font-size:.9em;margin-right:.5em;font-variant-numeric:tabular-nums}
+.deleted .body-text{color:var(--sub)}
+.art.noarticle .para{margin-top:0}
+
+ol.items{list-style:none;margin:.35rem 0 .35rem 1.1em;padding:0}
+ol.items>li{display:grid;grid-template-columns:2.4em minmax(0,1fr);margin:.2rem 0}
+ol.items .mk{font-family:var(--gothic);font-size:.9em;color:var(--sub);margin-right:.4em}
+ol.items ol.items{grid-column:1/-1;margin-left:1.2em}
+ol.items ol.items>li{grid-template-columns:2em minmax(0,1fr)}
+
+.raw{margin:1.6rem 0;scroll-margin-top:6rem}
+.raw h3{font-family:var(--gothic);font-size:1rem;margin:0 0 .4rem}
+.raw pre{font-family:var(--mincho);white-space:pre-wrap;margin:0;padding:.7rem .9rem;
+  background:var(--chrome);border:1px solid var(--rule);font-size:.92rem;line-height:1.75}
+
+.notes{margin:2.5rem 0 0;padding:.8rem 1rem;background:var(--chrome);
+  border-left:3px solid var(--accent);font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+.notes p{margin:0 0 .3rem;font-weight:700;color:var(--ink)}
+.notes ul{margin:0;padding-left:1.2rem}
+.foot{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);
+  font-family:var(--gothic);font-size:.75rem;color:var(--sub)}
+
+a.ref{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule)}
+a.ref:hover{color:var(--accent);border-bottom-color:var(--accent)}
+a.ref-egov{border-bottom-style:dotted}
+a.ref-rule{border-bottom-color:var(--accent)}
+mark{background:var(--mark);color:inherit;padding:0 .05em}
+mark.live{background:var(--mark-live)}
+.toast{position:fixed;left:50%;bottom:2rem;transform:translateX(-50%);
+  background:var(--ink);color:#fff;font-family:var(--gothic);font-size:.8rem;
+  padding:.5rem .9rem;border-radius:3px;pointer-events:none;z-index:60;display:none}
+.toast.show{display:block}
+
+.toc-open{display:none}
+@media (max-width:900px){
+  body{font-size:16px}
+  .wrap{grid-template-columns:minmax(0,1fr)}
+  .toc{position:fixed;inset:5.6rem auto 0 0;width:82vw;max-width:20rem;background:var(--paper);
+    z-index:25;box-shadow:0 0 0 100vmax rgba(0,0,0,.25);max-height:none;height:calc(100vh - 5.6rem);
+    display:none}
+  .toc.open{display:block}
+  .toc-open{display:inline-block}
+  .doc{padding:1.4rem 1.1rem 6rem}
+  .search-box input{width:8rem}
+  .art-tools{opacity:1;position:static;flex-direction:row;justify-content:flex-end;margin-bottom:.15rem}
+  .art-tools button,.art-tools a{border:1px solid var(--rule);border-radius:2px;
+    padding:.1rem .45rem;display:inline-block}
+  .art{padding-left:0}
+}
+
+@media print{
+  .top,.toc,.art-tools,.crumb,.toast{display:none!important}
+  a.ref{border-bottom:0}
+  .wrap{display:block}
+  .doc{max-width:none;padding:0}
+  body{font-size:10.5pt;line-height:1.7}
+  .art{page-break-inside:avoid}
+}
+
+.anchor-alias{position:absolute;scroll-margin-top:6rem}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <button type="button" class="btn toc-open" id="toc-open">目次</button>
+    <h1 class="law-title">下級裁判所事務処理規則</h1>
+    <span class="law-number">昭和23年8月18日最高裁判所規則第16号　／　平成24年4月1日施行</span>
+    <div class="top-tools">
+      <div class="search-box">
+        <input type="search" id="q" placeholder="条文を検索（/ キー）" aria-label="条文を検索">
+        <span class="hit-count" id="hits"></span>
+      </div>
+      <button type="button" class="btn" id="prev" title="前の該当箇所">前</button>
+      <button type="button" class="btn" id="next" title="次の該当箇所">次</button>
+      <button type="button" class="btn" id="numeral" aria-pressed="false"
+        title="条番号の表記を切り替える">123</button>
+    </div>
+  </div>
+  <div class="crumb" id="crumb"></div>
+</header>
+<div class="wrap">
+  <nav class="toc" id="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ul><li class="lv-art" data-text="改正 昭和23年12月28日最高裁判所規則第３８号昭和24年7月1日最高裁判所規則第１２号昭和25年11月15日最高裁判所規則第２５号昭和28年6月30日最高裁判所規則第９号昭和29年6月1日最高裁判所規則第８号昭和30年11月17日最高裁判所規則第１０号昭和32年6月15日最高裁判所規則第１１号昭和34年10月1日最高裁判所規則第１２号昭和39年3月26日最高裁判所規則第２号昭和40年3月31日最高裁判所規則第５号昭和41年10月15日最高裁判所規則第８号昭和44年3月25日最高裁判所規則第１号昭和44年9月1日最高裁判所規則第６号昭和48年7月16日最高裁判所規則第５号昭和59年3月29日最高裁判所規則第２号昭和61年10月30日最高裁判所規則第５号昭和63年7月20日最高裁判所規則第４号平成6年6月30日最高裁判所規則第３号平成16年3月31日最高裁判所規則第７号平成17年2月14日最高裁判所規則第７号平成24年3月12日最高裁判所規則第２号下級裁判所事務処理規則を次のように定める。下級裁判所事務処理規則"><a href="#body-1">本文</a></li><li class="lv-art" data-text="第一条1条この規則で、裁判所とは、高等裁判所、地方裁判所、家庭裁判所及び簡易裁判所をいう。"><a href="#a1">第一条</a></li><li class="lv-art" data-text="第二条2条司法年度は、一月一日に始まり、十二月三十一日に終る。"><a href="#a2">第二条</a></li><li class="lv-art" data-text="第三条3条高等裁判所、地方裁判所又は家庭裁判所の各支部に勤務する裁判官が一人のときは、その裁判官を支部長とし、二人以上のときは、最高裁判所がそのうちの一人に支部長を命ずる。支部長は、当該支部の事務を総括する。"><a href="#a3">第三条</a></li><li class="lv-art" data-text="第四条4条各高等裁判所及び各地方裁判所に部を置く。高等裁判所及び地方裁判所の支部並びに家庭裁判所及び家庭裁判所の支部に部を置くことができる。部の数は、最高裁判所が当該高等裁判所の長官又は当該地方裁判所若しくは家庭裁判所の所長の意見を聞いて、これを定める。部には、合議体を構成するに足りる裁判官を置く。部に属する裁判官のうち一人は、部の事務を総括する。前項の規定により部の事務を総括する裁判官は、高等裁判所長官、地方裁判所長、家庭裁判所長又は知的財産高等裁判所長若しくは高等裁判所、地方裁判所若しくは家庭裁判所の支部長が属する部においては、その者とし、その他の部においては、毎年あらかじめ、最高裁判所が、当該高等裁判所の長官又は当該地方裁判所若しくは家庭裁判所の所長の意見を聞いて、指名した者とする。最高裁判所は、前項の指名を受けた裁判官に病気その他の事由により引き続き差支のあるときは、当該高等裁判所の長官又は当該地方裁判所若しくは家庭裁判所の所長の意見を聞いて、その指名を取り消すことができる。"><a href="#a4">第四条</a></li><li class="lv-art" data-text="第五条5条合議体は、一の部又は支部の裁判官でこれを構成する。合議体では、第三条第二項又は前条第四項の裁判官が裁判長となる。但し、部が置かれない家庭裁判所においては、家庭裁判所長が裁判長となる。前項の裁判官に差し支えのあるときは、第六条第一項又は第三項の規定により定められた順序により、他の裁判官が裁判長となる。"><a href="#a5">第五条</a></li><li class="lv-art" data-text="第六条6条高等裁判所、地方裁判所及び家庭裁判所における裁判事務の分配、裁判官の配置及び裁判官に差支のあるときの代理順序については、毎年あらかじめ、当該裁判所の裁判官会議の議により、これを定める。各部又は各支部の裁判官に対する裁判事務の分配は、当該部又は当該支部において、これを定める。前二項の規定にかかわらず、知的財産高等裁判所における裁判事務の分配、裁判官の配置及び裁判官に差し支えのあるときの代理順序については、毎年あらかじめ、知的財産高等裁判所に勤務する裁判官の会議の議により、これを定め、知的財産高等裁判所の各部の裁判官に対する裁判事務の分配は、当該部において、これを定める。"><a href="#a6">第六条</a></li><li class="lv-art" data-text="第七条7条前条第一項又は第三項（各部の裁判官に対する裁判事務の分配に係る部分を除く。）の規定により定められた事務の分配、裁判官の配置及び裁判官に差し支えのあるときの代理順序は、一の部の事務が多過ぎる場合、裁判官が退官、転官又は転所した場合その他長期にわたる欠勤等のために裁判官に引き続き差支のある場合を除いては、司法年度中、これを変更しない。"><a href="#a7">第七条</a></li><li class="lv-art" data-text="第八条8条二人以上の裁判官を置く簡易裁判所の裁判官に対する裁判事務の分配及び簡易裁判所の裁判官に差支のあるときの代理順序は、毎年あらかじめ、監督地方裁判所が、これを定める。前条の規定は、前項の規定により定められた事務の分配及び裁判官に差支のあるときの代理順序について、これを準用する。"><a href="#a8">第八条</a></li><li class="lv-art" data-text="第九条9条開廷の日割は、各裁判所が、毎年あらかじめ、これを定め、庁内の公衆の見やすい場所に掲示しなければならない。但し、簡易裁判所においては、司法行政事務を掌理する裁判官がこれを定める。前項本文の規定にかかわらず、知的財産高等裁判所における開廷の日割は、知的財産高等裁判所が、毎年あらかじめ、これを定め、庁内の公衆の見やすい場所に掲示しなければならない。"><a href="#a9">第九条</a></li><li class="lv-art" data-text="第十条10条裁判官が、その勤務する裁判所の所在地外で職務を行おうとするときは、当該裁判所にその旨を届け出なければならない。"><a href="#a10">第十条</a></li><li class="lv-art" data-text="第十条の二10条の2第四条の部に裁判所書記官及び裁判所速記官を置く。各地方裁判所及び各家庭裁判所の裁判官で第四条の部に属しないもの及び各簡易裁判所の裁判官は、前項の規定の適用については、第四条の部とみなす。"><a href="#a10-2">第十条の二</a></li><li class="lv-art" data-text="第十一条11条裁判所は、当該裁判所及び管轄区域内の裁判所の裁判所書記官及び裁判所速記官に、互いにその職務を補助させることができる。"><a href="#a11">第十一条</a></li><li class="lv-art" data-text="第十二条12条裁判官会議は、高等裁判所においては高等裁判所長官が、地方裁判所においては地方裁判所長が、家庭裁判所においては家庭裁判所長が、必要に応じてこれを招集する。"><a href="#a12">第十二条</a></li><li class="lv-art" data-text="第十三条13条各高等裁判所、各地方裁判所又は各家庭裁判所の判事（判事の権限を有する判事補を含む。）の三分の一以上が会議の目的及び招集の理由を明らかにして請求したときは、高等裁判所長官、地方裁判所長又は家庭裁判所長は、速やかに裁判官会議を招集しなければならない。"><a href="#a13">第十三条</a></li><li class="lv-art" data-text="第十四条14条裁判官会議の議に付すべき事項は、あらかじめ、当該裁判官会議を組織する各裁判官にこれを通知しなければならない。但し、緊急やむを得ない場合は、この限りでない。"><a href="#a14">第十四条</a></li><li class="lv-art" data-text="第十五条15条裁判官会議は、公開しない。但し、裁判官会議の許可を受けた者は、これを傍聴することができる。判事補（判事の権限を有する者を除く。）及び高等裁判所、地方裁判所又は家庭裁判所の裁判官の職務を行う裁判官は、所属の裁判所又は当該職務を行う裁判所の裁判官会議に出席して、意見を述べることができる。事務局長は、裁判官会議に出席して、意見を述べることができる。但し、裁判官会議において適当と認めるときは、その出席を拒み、又はこれを退席させることができる。首席書記官及び首席家庭裁判所調査官は、所管事務に関し、裁判官会議に出席して、意見を述べることができる。この場合においては、前項但書の規定を準用する。裁判官会議において適当と認めるときは、当該裁判官会議を組織する裁判官以外の者の出席を求めて、説明又は意見を聞くことができる。"><a href="#a15">第十五条</a></li><li class="lv-art" data-text="第十五条の二15条の2検察審査会事務局長は、当該検察審査会の所在地を管轄する地方裁判所の定めるところにより、検察審査会の事務局の職員に関する事項について、裁判官会議に出席して、意見を述べることができる。"><a href="#a15-2">第十五条の二</a></li><li class="lv-art" data-text="第十六条16条裁判官会議は、当該裁判官会議を組織する裁判官の半数以上が出席しなければ決議をすることができない。"><a href="#a16">第十六条</a></li><li class="lv-art" data-text="第十七条17条裁判官会議の議事は、出席裁判官の過半数で、これを決し、可否同数のときは、議長の決するところによる。"><a href="#a17">第十七条</a></li><li class="lv-art" data-text="第十八条18条裁判官会議の議事については、議事録を作らなければならない。議事録には、出席者の氏名、議事の経過の要領及びその結果を記載し、議長及びこれを作つた者が、これに署名しなければならない。"><a href="#a18">第十八条</a></li><li class="lv-art" data-text="第十九条19条緊急の事情のため裁判官会議を開くことができない場合には、高等裁判所長官、地方裁判所長又は家庭裁判所長は、応急の措置を講ずることができる。この場合には、次の裁判官会議において承認を得なければならない。"><a href="#a19">第十九条</a></li><li class="lv-art" data-text="第二十条20条司法行政事務は、裁判官会議の議により、その一部を当該裁判官会議を組織する一人又は二人以上の裁判官に委任することができる。裁判官が、前項の規定により、その委任された事務を処理したときは、次の裁判官会議にこれを報告しなければならない。"><a href="#a20">第二十条</a></li><li class="lv-art" data-text="第二十条の二20条の2第十二条から前条まで（第十五条の二を除く。）の規定は、知的財産高等裁判所に勤務する裁判官の会議について準用する。この場合において、第十二条中「高等裁判所においては高等裁判所長官が、地方裁判所においては地方裁判所長が、家庭裁判所においては家庭裁判所長が」とあるのは「知的財産高等裁判所長が」と、第十三条中「各高等裁判所、各地方裁判所又は各家庭裁判所の判事（判事の権限を有する判事補を含む。）」とあるのは「知的財産高等裁判所に勤務する判事」と、同条及び第十九条中「高等裁判所長官、地方裁判所長又は家庭裁判所長」とあるのは「知的財産高等裁判所長」と、第十五条第二項中「判事補（判事の権限を有する者を除く。）及び高等裁判所、地方裁判所又は家庭裁判所の裁判官の職務を行う裁判官」とあるのは「高等裁判所の裁判官の職務を行う裁判官のうち知的財産高等裁判所に勤務する裁判官」と、同条第三項中「事務局長」とあるのは「知的財産高等裁判所事務局長」と、同条第四項中「首席書記官及び首席家庭裁判所調査官」とあるのは「知的財産高等裁判所首席書記官」と読み替えるものとする。"><a href="#a20-2">第二十条の二</a></li><li class="lv-art" data-text="第二十一条21条高等裁判所長官、地方裁判所長及び家庭裁判所長は、所属の裁判所の監督に服する裁判所職員に対し、事務の取扱及び行状について注意を与えることができる。"><a href="#a21">第二十一条</a></li><li class="lv-art" data-text="第二十二条22条各高等裁判所長官、各地方裁判所長、各家庭裁判所長、各支部長又は部の事務を総括する各裁判官に差支のある場合において、司法行政事務についてこれを代理する者の順序は、毎年あらかじめ、所属の裁判所の裁判官会議の議により、これを定める。前項の規定による代理順序を変更する必要が生じたときは、当該裁判官会議の議により、これを変更する。第一項の規定にかかわらず、知的財産高等裁判所長又は知的財産高等裁判所の部の事務を総括する各裁判官に差し支えのある場合において、司法行政事務についてこれを代理する者の順序は、毎年あらかじめ、知的財産高等裁判所に勤務する裁判官の会議の議により、これを定める。第二項の規定は、前項の規定による代理順序について準用する。この場合において、第二項中「裁判官会議」とあるのは、「知的財産高等裁判所に勤務する裁判官の会議」と読み替えるものとする。"><a href="#a22">第二十二条</a></li><li class="lv-art" data-text="第二十三条23条司法行政事務を掌理する簡易裁判所の裁判官に差支のある場合において、これを代理する者の順序は、毎年あらかじめ、所属の裁判所を監督する地方裁判所が、これを定める。前項の規定による代理順序を変更する必要が生じたときは、監督地方裁判所がこれを変更する。"><a href="#a23">第二十三条</a></li><li class="lv-art" data-text="第二十四条24条各高等裁判所の事務局に総務課、人事課及び会計課を、各地方裁判所及び各家庭裁判所の事務局に総務課及び会計課を置く。高等裁判所、地方裁判所及び家庭裁判所の各支部並びに各簡易裁判所に庶務課を置く。前項の規定にかかわらず、知的財産高等裁判所事務局に庶務第一課及び庶務第二課を置く。第二項の規定にかかわらず、最高裁判所の指定する簡易裁判所に、その庶務をつかさどらせるため、事務部を置く。事務部に第一課及び第二課を置く。各高等裁判所、各地方裁判所及び各家庭裁判所の事務局に事務局次長一人（最高裁判所の指定する裁判所にあつては最高裁判所の定める員数）を置き、裁判所事務官の中から、最高裁判所が、これを補する。事務局次長は、事務局長を助け、事務局の事務を整理する。知的財産高等裁判所事務局に知的財産高等裁判所事務局長を置き、裁判所事務官の中から、最高裁判所が、これを補する。知的財産高等裁判所事務局長は、知的財産高等裁判所長の監督を受けて、知的財産高等裁判所事務局の事務を掌理し、知的財産高等裁判所事務局の職員を指揮監督する。第四項に規定する事務部に事務部長を置き、裁判所事務官の中から、最高裁判所が、これを補する。事務部長は、簡易裁判所の司法行政事務を掌理する裁判官の監督を受けて、事務部の事務を掌理し、事務部の職員を指揮監督する。各課に課長一人を置き、当該裁判所に勤務する裁判所事務官で最高裁判所の定める基準に該当するものの中から、高等裁判所の課長については当該高等裁判所が、地方裁判所、家庭裁判所又は簡易裁判所の課長については当該裁判所の所在地を管轄する高等裁判所が、これを命ずる。課長は、上司の命を受けて課の事務を掌理する。各課の組織及び所掌事務に関しては、最高裁判所が別に定める。裁判所は、特別の事情があるときは、最高裁判所の認可を得て、第一項及び第二項の規定に異なる定をすることができる。"><a href="#a24">第二十四条</a></li><li class="lv-art" data-text="第二十五条25条削除（昭二八最裁規九）"><a href="#a25">第二十五条</a></li><li class="lv-art" data-text="第二十六条26条地方裁判所又は家庭裁判所が、最高裁判所に、簡易裁判所が、最高裁判所又はその監督上級の高等裁判所に指示を求め、又は報告をするには、特別の定のある場合を除いて、中間の監督上級裁判所を経由しなければならない。但し、緊急の事項については、直接に指示を求め、又は報告をすることができる。この場合においては、当該地方裁判所、当該家庭裁判所又は当該簡易裁判所は、速やかに中間の監督上級裁判所にその旨を報告しなければならない。"><a href="#a26">第二十六条</a></li><li class="lv-art" data-text="第二十七条27条裁判所と中央官庁、外国に在る日本の官庁及び外国官庁との間に文書を往復するには、特別の定のある場合を除いて、最高裁判所を経由しなければならない。但し、中央官庁との間に訴訟書類を往復する場合は、この限りでない。"><a href="#a27">第二十七条</a></li><li class="lv-art" data-text="第二十八条28条各高等裁判所、各地方裁判所、各家庭裁判所、知的財産高等裁判所及び司法行政事務を掌理する簡易裁判所の各裁判官は、この規則の施行に関して必要な事項を定めることができる。ただし、司法行政事務を掌理する簡易裁判所の裁判官が定める場合には、当該裁判所を監督する地方裁判所の認可を得なければならない。"><a href="#a28">第二十八条</a></li><li class="lv-div div-1"><a href="#sup1">附則</a></li><li class="lv-div div-1"><a href="#sup2">附則　（昭和二三年一二月二八日最高裁判所規則第三八号）抄</a><ul><li class="lv-art" data-text="第八条8条昭二三最裁規三八・平一七最裁規七・一部改正昭二三最裁規三八・平一七最裁規七・一部改正この規則は、昭和二十四年一月一日から施行する。"><a href="#sup2-a8">第八条　昭二三最裁規三八・平一七最裁規七・一部改正</a></li></ul></li><li class="lv-div div-1"><a href="#sup3">附則　（昭和二四年七月一日最高裁判所規則第一二号）</a></li><li class="lv-div div-1"><a href="#sup4">附則　（昭和二五年一一月一五日最高裁判所規則第二五号）</a></li><li class="lv-div div-1"><a href="#sup5">附則　（昭和二八年六月三〇日最高裁判所規則第九号）</a></li><li class="lv-div div-1"><a href="#sup6">附則　（昭和二九年六月一日最高裁判所規則第八号）</a></li><li class="lv-div div-1"><a href="#sup7">附則　（昭和三〇年一一月一七日最高裁判所規則第一〇号）</a></li><li class="lv-div div-1"><a href="#sup8">附則　（昭和三二年六月一五日最高裁判所規則第一一号）</a></li><li class="lv-div div-1"><a href="#sup9">附則　（昭和三四年一〇月一日最高裁判所規則第一二号）</a></li><li class="lv-div div-1"><a href="#sup10">附則　（昭和三九年三月二六日最高裁判所規則第二号）抄</a></li><li class="lv-div div-1"><a href="#sup11">附則　（昭和四〇年三月三一日最高裁判所規則第五号）</a></li><li class="lv-div div-1"><a href="#sup12">附則　（昭和四一年一〇月一五日最高裁判所規則第八号）</a></li><li class="lv-div div-1"><a href="#sup13">附則　（昭和四四年三月二五日最高裁判所規則第一号）</a></li><li class="lv-div div-1"><a href="#sup14">附則　（昭和四四年九月一日最高裁判所規則第六号）抄</a></li><li class="lv-div div-1"><a href="#sup15">附則　（昭和四八年七月一六日最高裁判所規則第五号）</a></li><li class="lv-div div-1"><a href="#sup16">附則　（昭和五九年三月二九日最高裁判所規則第二号）</a></li><li class="lv-div div-1"><a href="#sup17">附則　（昭和六一年一〇月三〇日最高裁判所規則第五号）</a></li><li class="lv-div div-1"><a href="#sup18">附則　（昭和六三年七月二〇日最高裁判所規則第四号）</a></li><li class="lv-div div-1"><a href="#sup19">附則　（平成六年六月三〇日最高裁判所規則第三号）</a></li><li class="lv-div div-1"><a href="#sup20">附則　（平成一六年三月三一日最高裁判所規則第七号）抄</a></li><li class="lv-div div-1"><a href="#sup21">附則　（平成一七年二月一四日最高裁判所規則第七号）</a></li><li class="lv-div div-1"><a href="#sup22">附則　（平成二四年三月一二日最高裁判所規則第二号）</a></li></ul>
+  </nav>
+  <main class="doc" id="doc-outer">
+    <div class="doc-head">
+      <h1>下級裁判所事務処理規則</h1>
+      <div class="meta">昭和23年8月18日最高裁判所規則第16号　／　平成24年4月1日施行　／　<a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本PDF p.1</a></div>
+    </div>
+    <div id="doc">
+<article class="art noarticle" id="body-1" data-path=""><div class="art-tools"><button type="button" data-anchor="body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="body-1-p1"><span class="body-text">改正 昭和23年12月28日最高裁判所規則第３８号昭和24年7月1日最高裁判所規則第１２号昭和25年11月15日最高裁判所規則第２５号昭和28年6月30日最高裁判所規則第９号昭和29年6月1日最高裁判所規則第８号昭和30年11月17日最高裁判所規則第１０号昭和32年6月15日最高裁判所規則第１１号昭和34年10月1日最高裁判所規則第１２号昭和39年3月26日最高裁判所規則第２号昭和40年3月31日最高裁判所規則第５号昭和41年10月15日最高裁判所規則第８号昭和44年3月25日最高裁判所規則第１号昭和44年9月1日最高裁判所規則第６号昭和48年7月16日最高裁判所規則第５号昭和59年3月29日最高裁判所規則第２号昭和61年10月30日最高裁判所規則第５号昭和63年7月20日最高裁判所規則第４号平成6年6月30日最高裁判所規則第３号平成16年3月31日最高裁判所規則第７号平成17年2月14日最高裁判所規則第７号平成24年3月12日最高裁判所規則第２号下級裁判所事務処理規則を次のように定める。下級裁判所事務処理規則</span></p></article>
+<article class="art" id="a1" data-path=""><span class="anchor-alias" id="Mp-At_1"></span><div class="art-tools"><button type="button" data-anchor="a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="a1-p1"><a class="art-no" href="#a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則で、裁判所とは、高等裁判所、地方裁判所、家庭裁判所及び簡易裁判所をいう。</span></p><p class="amend-note">（昭二三最裁規三八・一部改正）</p></article>
+<article class="art" id="a2" data-path=""><span class="anchor-alias" id="Mp-At_2"></span><div class="art-tools"><button type="button" data-anchor="a2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="a2-p1"><a class="art-no" href="#a2" data-kan="第二条" data-num="第2条">第二条</a><span class="body-text">司法年度は、一月一日に始まり、十二月三十一日に終る。</span></p></article>
+<article class="art" id="a3" data-path=""><span class="anchor-alias" id="Mp-At_3"></span><div class="art-tools"><button type="button" data-anchor="a3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="a3-p1"><a class="art-no" href="#a3" data-kan="第三条" data-num="第3条">第三条</a><span class="body-text">高等裁判所、地方裁判所又は家庭裁判所の各支部に勤務する裁判官が一人のときは、その裁判官を支部長とし、二人以上のときは、最高裁判所がそのうちの一人に支部長を命ずる。</span></p><p class="para" id="a3-p2"><span class="pno">2</span><span class="body-text">支部長は、当該支部の事務を総括する。</span></p><p class="amend-note">（昭二三最裁規三八・一部改正）</p></article>
+<article class="art" id="a4" data-path=""><span class="anchor-alias" id="Mp-At_4"></span><div class="art-tools"><button type="button" data-anchor="a4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="a4-p1"><a class="art-no" href="#a4" data-kan="第四条" data-num="第4条">第四条</a><span class="body-text">各高等裁判所及び各地方裁判所に部を置く。高等裁判所及び地方裁判所の支部並びに家庭裁判所及び家庭裁判所の支部に部を置くことができる。</span></p><p class="para" id="a4-p2"><span class="pno">2</span><span class="body-text">部の数は、最高裁判所が当該高等裁判所の長官又は当該地方裁判所若しくは家庭裁判所の所長の意見を聞いて、これを定める。</span></p><p class="para" id="a4-p3"><span class="pno">3</span><span class="body-text">部には、合議体を構成するに足りる裁判官を置く。</span></p><p class="para" id="a4-p4"><span class="pno">4</span><span class="body-text">部に属する裁判官のうち一人は、部の事務を総括する。</span></p><p class="para" id="a4-p5"><span class="pno">5</span><span class="body-text">前項の規定により部の事務を総括する裁判官は、高等裁判所長官、地方裁判所長、家庭裁判所長又は知的財産高等裁判所長若しくは高等裁判所、地方裁判所若しくは家庭裁判所の支部長が属する部においては、その者とし、その他の部においては、毎年あらかじめ、最高裁判所が、当該高等裁判所の長官又は当該地方裁判所若しくは家庭裁判所の所長の意見を聞いて、指名した者とする。</span></p><p class="para" id="a4-p6"><span class="pno">6</span><span class="body-text">最高裁判所は、前項の指名を受けた裁判官に病気その他の事由により引き続き差支のあるときは、当該高等裁判所の長官又は当該地方裁判所若しくは家庭裁判所の所長の意見を聞いて、その指名を取り消すことができる。</span></p><p class="amend-note">（昭二三最裁規三八・昭二九最裁規八・昭三〇最裁規一〇・昭五九最裁規二・平一七最裁規七・一部改正）</p></article>
+<article class="art" id="a5" data-path=""><span class="anchor-alias" id="Mp-At_5"></span><div class="art-tools"><button type="button" data-anchor="a5" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="para" id="a5-p1"><a class="art-no" href="#a5" data-kan="第五条" data-num="第5条">第五条</a><span class="body-text">合議体は、一の部又は支部の裁判官でこれを構成する。</span></p><p class="para" id="a5-p2"><span class="pno">2</span><span class="body-text">合議体では、<a class="ref ref-self" href="#a3">第三条</a>第二項又は前条第四項の裁判官が裁判長となる。但し、部が置かれない家庭裁判所においては、家庭裁判所長が裁判長となる。</span></p><p class="para" id="a5-p3"><span class="pno">3</span><span class="body-text">前項の裁判官に差し支えのあるときは、<a class="ref ref-self" href="#a6">第六条</a>第一項又は第三項の規定により定められた順序により、他の裁判官が裁判長となる。</span></p><p class="amend-note">（昭二三最裁規三八・平一七最裁規七・一部改正）</p></article>
+<article class="art" id="a6" data-path=""><span class="anchor-alias" id="Mp-At_6"></span><div class="art-tools"><button type="button" data-anchor="a6" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="para" id="a6-p1"><a class="art-no" href="#a6" data-kan="第六条" data-num="第6条">第六条</a><span class="body-text">高等裁判所、地方裁判所及び家庭裁判所における裁判事務の分配、裁判官の配置及び裁判官に差支のあるときの代理順序については、毎年あらかじめ、当該裁判所の裁判官会議の議により、これを定める。</span></p><p class="para" id="a6-p2"><span class="pno">2</span><span class="body-text">各部又は各支部の裁判官に対する裁判事務の分配は、当該部又は当該支部において、これを定める。</span></p><p class="para" id="a6-p3"><span class="pno">3</span><span class="body-text">前二項の規定にかかわらず、知的財産高等裁判所における裁判事務の分配、裁判官の配置及び裁判官に差し支えのあるときの代理順序については、毎年あらかじめ、知的財産高等裁判所に勤務する裁判官の会議の議により、これを定め、知的財産高等裁判所の各部の裁判官に対する裁判事務の分配は、当該部において、これを定める。</span></p><p class="amend-note">（昭二三最裁規三八・平一七最裁規七・一部改正）</p></article>
+<article class="art" id="a7" data-path=""><span class="anchor-alias" id="Mp-At_7"></span><div class="art-tools"><button type="button" data-anchor="a7" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="para" id="a7-p1"><a class="art-no" href="#a7" data-kan="第七条" data-num="第7条">第七条</a><span class="body-text">前条第一項又は第三項（各部の裁判官に対する裁判事務の分配に係る部分を除く。）の規定により定められた事務の分配、裁判官の配置及び裁判官に差し支えのあるときの代理順序は、一の部の事務が多過ぎる場合、裁判官が退官、転官又は転所した場合その他長期にわたる欠勤等のために裁判官に引き続き差支のある場合を除いては、司法年度中、これを変更しない。</span></p><p class="amend-note">（平一七最裁規七・一部改正）</p></article>
+<article class="art" id="a8" data-path=""><span class="anchor-alias" id="Mp-At_8"></span><div class="art-tools"><button type="button" data-anchor="a8" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="para" id="a8-p1"><a class="art-no" href="#a8" data-kan="第八条" data-num="第8条">第八条</a><span class="body-text">二人以上の裁判官を置く簡易裁判所の裁判官に対する裁判事務の分配及び簡易裁判所の裁判官に差支のあるときの代理順序は、毎年あらかじめ、監督地方裁判所が、これを定める。</span></p><p class="para" id="a8-p2"><span class="pno">2</span><span class="body-text">前条の規定は、前項の規定により定められた事務の分配及び裁判官に差支のあるときの代理順序について、これを準用する。</span></p></article>
+<article class="art" id="a9" data-path=""><span class="anchor-alias" id="Mp-At_9"></span><div class="art-tools"><button type="button" data-anchor="a9" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="para" id="a9-p1"><a class="art-no" href="#a9" data-kan="第九条" data-num="第9条">第九条</a><span class="body-text">開廷の日割は、各裁判所が、毎年あらかじめ、これを定め、庁内の公衆の見やすい場所に掲示しなければならない。但し、簡易裁判所においては、司法行政事務を掌理する裁判官がこれを定める。</span></p><p class="para" id="a9-p2"><span class="pno">2</span><span class="body-text">前項本文の規定にかかわらず、知的財産高等裁判所における開廷の日割は、知的財産高等裁判所が、毎年あらかじめ、これを定め、庁内の公衆の見やすい場所に掲示しなければならない。</span></p><p class="amend-note">（平一七最裁規七・一部改正）</p></article>
+<article class="art" id="a10" data-path=""><span class="anchor-alias" id="Mp-At_10"></span><div class="art-tools"><button type="button" data-anchor="a10" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="para" id="a10-p1"><a class="art-no" href="#a10" data-kan="第十条" data-num="第10条">第十条</a><span class="body-text">裁判官が、その勤務する裁判所の所在地外で職務を行おうとするときは、当該裁判所にその旨を届け出なければならない。</span></p></article>
+<article class="art" id="a10-2" data-path=""><span class="anchor-alias" id="Mp-At_10_2"></span><div class="art-tools"><button type="button" data-anchor="a10-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="para" id="a10-2-p1"><a class="art-no" href="#a10-2" data-kan="第十条の二" data-num="第10条の2">第十条の二</a><span class="body-text"><a class="ref ref-self" href="#a4">第四条</a>の部に裁判所書記官及び裁判所速記官を置く。</span></p><p class="para" id="a10-2-p2"><span class="pno">2</span><span class="body-text">各地方裁判所及び各家庭裁判所の裁判官で<a class="ref ref-self" href="#a4">第四条</a>の部に属しないもの及び各簡易裁判所の裁判官は、前項の規定の適用については、<a class="ref ref-self" href="#a4">第四条</a>の部とみなす。</span></p><p class="amend-note">（昭二五最裁規二五・追加、昭三二最裁規一一・昭四〇最裁規五・平一六最裁規七・一部改正）</p></article>
+<article class="art" id="a11" data-path=""><span class="anchor-alias" id="Mp-At_11"></span><div class="art-tools"><button type="button" data-anchor="a11" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="para" id="a11-p1"><a class="art-no" href="#a11" data-kan="第十一条" data-num="第11条">第十一条</a><span class="body-text">裁判所は、当該裁判所及び管轄区域内の裁判所の裁判所書記官及び裁判所速記官に、互いにその職務を補助させることができる。</span></p><p class="amend-note">（昭二四最裁規一二・昭三二最裁規一一・昭四〇最裁規五・平一六最裁規七・一部改正）</p></article>
+<article class="art" id="a12" data-path=""><span class="anchor-alias" id="Mp-At_12"></span><div class="art-tools"><button type="button" data-anchor="a12" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="para" id="a12-p1"><a class="art-no" href="#a12" data-kan="第十二条" data-num="第12条">第十二条</a><span class="body-text">裁判官会議は、高等裁判所においては高等裁判所長官が、地方裁判所においては地方裁判所長が、家庭裁判所においては家庭裁判所長が、必要に応じてこれを招集する。</span></p><p class="amend-note">（昭二三最裁規三八・一部改正）</p></article>
+<article class="art" id="a13" data-path=""><span class="anchor-alias" id="Mp-At_13"></span><div class="art-tools"><button type="button" data-anchor="a13" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="para" id="a13-p1"><a class="art-no" href="#a13" data-kan="第十三条" data-num="第13条">第十三条</a><span class="body-text">各高等裁判所、各地方裁判所又は各家庭裁判所の判事（判事の権限を有する判事補を含む。）の三分の一以上が会議の目的及び招集の理由を明らかにして請求したときは、高等裁判所長官、地方裁判所長又は家庭裁判所長は、速やかに裁判官会議を招集しなければならない。</span></p><p class="amend-note">（昭二三最裁規三八・一部改正）</p></article>
+<article class="art" id="a14" data-path=""><span class="anchor-alias" id="Mp-At_14"></span><div class="art-tools"><button type="button" data-anchor="a14" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="para" id="a14-p1"><a class="art-no" href="#a14" data-kan="第十四条" data-num="第14条">第十四条</a><span class="body-text">裁判官会議の議に付すべき事項は、あらかじめ、当該裁判官会議を組織する各裁判官にこれを通知しなければならない。但し、緊急やむを得ない場合は、この限りでない。</span></p></article>
+<article class="art" id="a15" data-path=""><span class="anchor-alias" id="Mp-At_15"></span><div class="art-tools"><button type="button" data-anchor="a15" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="para" id="a15-p1"><a class="art-no" href="#a15" data-kan="第十五条" data-num="第15条">第十五条</a><span class="body-text">裁判官会議は、公開しない。但し、裁判官会議の許可を受けた者は、これを傍聴することができる。</span></p><p class="para" id="a15-p2"><span class="pno">2</span><span class="body-text">判事補（判事の権限を有する者を除く。）及び高等裁判所、地方裁判所又は家庭裁判所の裁判官の職務を行う裁判官は、所属の裁判所又は当該職務を行う裁判所の裁判官会議に出席して、意見を述べることができる。</span></p><p class="para" id="a15-p3"><span class="pno">3</span><span class="body-text">事務局長は、裁判官会議に出席して、意見を述べることができる。但し、裁判官会議において適当と認めるときは、その出席を拒み、又はこれを退席させることができる。</span></p><p class="para" id="a15-p4"><span class="pno">4</span><span class="body-text">首席書記官及び首席家庭裁判所調査官は、所管事務に関し、裁判官会議に出席して、意見を述べることができる。この場合においては、前項但書の規定を準用する。</span></p><p class="para" id="a15-p5"><span class="pno">5</span><span class="body-text">裁判官会議において適当と認めるときは、当該裁判官会議を組織する裁判官以外の者の出席を求めて、説明又は意見を聞くことができる。</span></p><p class="amend-note">（昭二三最裁規三八・昭二五最裁規二五・昭四一最裁規八・一部改正）</p></article>
+<article class="art" id="a15-2" data-path=""><span class="anchor-alias" id="Mp-At_15_2"></span><div class="art-tools"><button type="button" data-anchor="a15-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="para" id="a15-2-p1"><a class="art-no" href="#a15-2" data-kan="第十五条の二" data-num="第15条の2">第十五条の二</a><span class="body-text">検察審査会事務局長は、当該検察審査会の所在地を管轄する地方裁判所の定めるところにより、検察審査会の事務局の職員に関する事項について、裁判官会議に出席して、意見を述べることができる。</span></p><p class="amend-note">（昭四四最裁規六・追加）</p></article>
+<article class="art" id="a16" data-path=""><span class="anchor-alias" id="Mp-At_16"></span><div class="art-tools"><button type="button" data-anchor="a16" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="para" id="a16-p1"><a class="art-no" href="#a16" data-kan="第十六条" data-num="第16条">第十六条</a><span class="body-text">裁判官会議は、当該裁判官会議を組織する裁判官の半数以上が出席しなければ決議をすることができない。</span></p></article>
+<article class="art" id="a17" data-path=""><span class="anchor-alias" id="Mp-At_17"></span><div class="art-tools"><button type="button" data-anchor="a17" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="para" id="a17-p1"><a class="art-no" href="#a17" data-kan="第十七条" data-num="第17条">第十七条</a><span class="body-text">裁判官会議の議事は、出席裁判官の過半数で、これを決し、可否同数のときは、議長の決するところによる。</span></p></article>
+<article class="art" id="a18" data-path=""><span class="anchor-alias" id="Mp-At_18"></span><div class="art-tools"><button type="button" data-anchor="a18" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="para" id="a18-p1"><a class="art-no" href="#a18" data-kan="第十八条" data-num="第18条">第十八条</a><span class="body-text">裁判官会議の議事については、議事録を作らなければならない。</span></p><p class="para" id="a18-p2"><span class="pno">2</span><span class="body-text">議事録には、出席者の氏名、議事の経過の要領及びその結果を記載し、議長及びこれを作つた者が、これに署名しなければならない。</span></p></article>
+<article class="art" id="a19" data-path=""><span class="anchor-alias" id="Mp-At_19"></span><div class="art-tools"><button type="button" data-anchor="a19" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="para" id="a19-p1"><a class="art-no" href="#a19" data-kan="第十九条" data-num="第19条">第十九条</a><span class="body-text">緊急の事情のため裁判官会議を開くことができない場合には、高等裁判所長官、地方裁判所長又は家庭裁判所長は、応急の措置を講ずることができる。この場合には、次の裁判官会議において承認を得なければならない。</span></p><p class="amend-note">（昭二三最裁規三八・一部改正）</p></article>
+<article class="art" id="a20" data-path=""><span class="anchor-alias" id="Mp-At_20"></span><div class="art-tools"><button type="button" data-anchor="a20" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="para" id="a20-p1"><a class="art-no" href="#a20" data-kan="第二十条" data-num="第20条">第二十条</a><span class="body-text">司法行政事務は、裁判官会議の議により、その一部を当該裁判官会議を組織する一人又は二人以上の裁判官に委任することができる。</span></p><p class="para" id="a20-p2"><span class="pno">2</span><span class="body-text">裁判官が、前項の規定により、その委任された事務を処理したときは、次の裁判官会議にこれを報告しなければならない。</span></p></article>
+<article class="art" id="a20-2" data-path=""><span class="anchor-alias" id="Mp-At_20_2"></span><div class="art-tools"><button type="button" data-anchor="a20-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="para" id="a20-2-p1"><a class="art-no" href="#a20-2" data-kan="第二十条の二" data-num="第20条の2">第二十条の二</a><span class="body-text"><a class="ref ref-self" href="#a12">第十二条</a>から前条まで（<a class="ref ref-self" href="#a15-2">第十五条の二</a>を除く。）の規定は、知的財産高等裁判所に勤務する裁判官の会議について準用する。この場合において、<a class="ref ref-self" href="#a12">第十二条</a>中「高等裁判所においては高等裁判所長官が、地方裁判所においては地方裁判所長が、家庭裁判所においては家庭裁判所長が」とあるのは「知的財産高等裁判所長が」と、<a class="ref ref-self" href="#a13">第十三条</a>中「各高等裁判所、各地方裁判所又は各家庭裁判所の判事（判事の権限を有する判事補を含む。）」とあるのは「知的財産高等裁判所に勤務する判事」と、同条及び<a class="ref ref-self" href="#a19">第十九条</a>中「高等裁判所長官、地方裁判所長又は家庭裁判所長」とあるのは「知的財産高等裁判所長」と、<a class="ref ref-self" href="#a15">第十五条</a>第二項中「判事補（判事の権限を有する者を除く。）及び高等裁判所、地方裁判所又は家庭裁判所の裁判官の職務を行う裁判官」とあるのは「高等裁判所の裁判官の職務を行う裁判官のうち知的財産高等裁判所に勤務する裁判官」と、同条第三項中「事務局長」とあるのは「知的財産高等裁判所事務局長」と、同条第四項中「首席書記官及び首席家庭裁判所調査官」とあるのは「知的財産高等裁判所首席書記官」と読み替えるものとする。</span></p><p class="amend-note">（平一七最裁規七・追加）</p></article>
+<article class="art" id="a21" data-path=""><span class="anchor-alias" id="Mp-At_21"></span><div class="art-tools"><button type="button" data-anchor="a21" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="para" id="a21-p1"><a class="art-no" href="#a21" data-kan="第二十一条" data-num="第21条">第二十一条</a><span class="body-text">高等裁判所長官、地方裁判所長及び家庭裁判所長は、所属の裁判所の監督に服する裁判所職員に対し、事務の取扱及び行状について注意を与えることができる。</span></p><p class="amend-note">（昭二三最裁規三八・一部改正）</p></article>
+<article class="art" id="a22" data-path=""><span class="anchor-alias" id="Mp-At_22"></span><div class="art-tools"><button type="button" data-anchor="a22" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="para" id="a22-p1"><a class="art-no" href="#a22" data-kan="第二十二条" data-num="第22条">第二十二条</a><span class="body-text">各高等裁判所長官、各地方裁判所長、各家庭裁判所長、各支部長又は部の事務を総括する各裁判官に差支のある場合において、司法行政事務についてこれを代理する者の順序は、毎年あらかじめ、所属の裁判所の裁判官会議の議により、これを定める。</span></p><p class="para" id="a22-p2"><span class="pno">2</span><span class="body-text">前項の規定による代理順序を変更する必要が生じたときは、当該裁判官会議の議により、これを変更する。</span></p><p class="para" id="a22-p3"><span class="pno">3</span><span class="body-text">第一項の規定にかかわらず、知的財産高等裁判所長又は知的財産高等裁判所の部の事務を総括する各裁判官に差し支えのある場合において、司法行政事務についてこれを代理する者の順序は、毎年あらかじめ、知的財産高等裁判所に勤務する裁判官の会議の議により、これを定める。</span></p><p class="para" id="a22-p4"><span class="pno">4</span><span class="body-text">第二項の規定は、前項の規定による代理順序について準用する。この場合において、第二項中「裁判官会議」とあるのは、「知的財産高等裁判所に勤務する裁判官の会議」と読み替えるものとする。</span></p><p class="amend-note">（昭二三最裁規三八・平一七最裁規七・一部改正）</p></article>
+<article class="art" id="a23" data-path=""><span class="anchor-alias" id="Mp-At_23"></span><div class="art-tools"><button type="button" data-anchor="a23" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="para" id="a23-p1"><a class="art-no" href="#a23" data-kan="第二十三条" data-num="第23条">第二十三条</a><span class="body-text">司法行政事務を掌理する簡易裁判所の裁判官に差支のある場合において、これを代理する者の順序は、毎年あらかじめ、所属の裁判所を監督する地方裁判所が、これを定める。</span></p><p class="para" id="a23-p2"><span class="pno">2</span><span class="body-text">前項の規定による代理順序を変更する必要が生じたときは、監督地方裁判所がこれを変更する。</span></p></article>
+<article class="art" id="a24" data-path=""><span class="anchor-alias" id="Mp-At_24"></span><div class="art-tools"><button type="button" data-anchor="a24" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="para" id="a24-p1"><a class="art-no" href="#a24" data-kan="第二十四条" data-num="第24条">第二十四条</a><span class="body-text">各高等裁判所の事務局に総務課、人事課及び会計課を、各地方裁判所及び各家庭裁判所の事務局に総務課及び会計課を置く。</span></p><p class="para" id="a24-p2"><span class="pno">2</span><span class="body-text">高等裁判所、地方裁判所及び家庭裁判所の各支部並びに各簡易裁判所に庶務課を置く。</span></p><p class="para" id="a24-p3"><span class="pno">3</span><span class="body-text">前項の規定にかかわらず、知的財産高等裁判所事務局に庶務第一課及び庶務第二課を置く。</span></p><p class="para" id="a24-p4"><span class="pno">4</span><span class="body-text">第二項の規定にかかわらず、最高裁判所の指定する簡易裁判所に、その庶務をつかさどらせるため、事務部を置く。事務部に第一課及び第二課を置く。</span></p><p class="para" id="a24-p5"><span class="pno">5</span><span class="body-text">各高等裁判所、各地方裁判所及び各家庭裁判所の事務局に事務局次長一人（最高裁判所の指定する裁判所にあつては最高裁判所の定める員数）を置き、裁判所事務官の中から、最高裁判所が、これを補する。事務局次長は、事務局長を助け、事務局の事務を整理する。</span></p><p class="para" id="a24-p6"><span class="pno">6</span><span class="body-text">知的財産高等裁判所事務局に知的財産高等裁判所事務局長を置き、裁判所事務官の中から、最高裁判所が、これを補する。知的財産高等裁判所事務局長は、知的財産高等裁判所長の監督を受けて、知的財産高等裁判所事務局の事務を掌理し、知的財産高等裁判所事務局の職員を指揮監督する。</span></p><p class="para" id="a24-p7"><span class="pno">7</span><span class="body-text">第四項に規定する事務部に事務部長を置き、裁判所事務官の中から、最高裁判所が、これを補する。事務部長は、簡易裁判所の司法行政事務を掌理する裁判官の監督を受けて、事務部の事務を掌理し、事務部の職員を指揮監督する。</span></p><p class="para" id="a24-p8"><span class="pno">8</span><span class="body-text">各課に課長一人を置き、当該裁判所に勤務する裁判所事務官で最高裁判所の定める基準に該当するものの中から、高等裁判所の課長については当該高等裁判所が、地方裁判所、家庭裁判所又は簡易裁判所の課長については当該裁判所の所在地を管轄する高等裁判所が、これを命ずる。課長は、上司の命を受けて課の事務を掌理する。</span></p><p class="para" id="a24-p9"><span class="pno">9</span><span class="body-text">各課の組織及び所掌事務に関しては、最高裁判所が別に定める。</span></p><p class="para" id="a24-p10"><span class="pno">10</span><span class="body-text">裁判所は、特別の事情があるときは、最高裁判所の認可を得て、第一項及び第二項の規定に異なる定をすることができる。</span></p><p class="amend-note">（昭三四最裁規一二・全改、昭三九最裁規二・昭四四最裁規一・昭四四最裁規六・昭四八最裁規五・昭六一最裁規五・昭六三最裁規四・平六最裁規三・平一七最裁規七・平二四最裁規二・一部改正）</p></article>
+<article class="art" id="a25" data-path=""><span class="anchor-alias" id="Mp-At_25"></span><div class="art-tools"><button type="button" data-anchor="a25" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="para" id="a25-p1"><a class="art-no" href="#a25" data-kan="第二十五条" data-num="第25条">第二十五条</a><span class="body-text">削除（昭二八最裁規九）</span></p></article>
+<article class="art" id="a26" data-path=""><span class="anchor-alias" id="Mp-At_26"></span><div class="art-tools"><button type="button" data-anchor="a26" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="para" id="a26-p1"><a class="art-no" href="#a26" data-kan="第二十六条" data-num="第26条">第二十六条</a><span class="body-text">地方裁判所又は家庭裁判所が、最高裁判所に、簡易裁判所が、最高裁判所又はその監督上級の高等裁判所に指示を求め、又は報告をするには、特別の定のある場合を除いて、中間の監督上級裁判所を経由しなければならない。但し、緊急の事項については、直接に指示を求め、又は報告をすることができる。この場合においては、当該地方裁判所、当該家庭裁判所又は当該簡易裁判所は、速やかに中間の監督上級裁判所にその旨を報告しなければならない。</span></p><p class="amend-note">（昭二三最裁規三八・一部改正）</p></article>
+<article class="art" id="a27" data-path=""><span class="anchor-alias" id="Mp-At_27"></span><div class="art-tools"><button type="button" data-anchor="a27" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="para" id="a27-p1"><a class="art-no" href="#a27" data-kan="第二十七条" data-num="第27条">第二十七条</a><span class="body-text">裁判所と中央官庁、外国に在る日本の官庁及び外国官庁との間に文書を往復するには、特別の定のある場合を除いて、最高裁判所を経由しなければならない。但し、中央官庁との間に訴訟書類を往復する場合は、この限りでない。</span></p></article>
+<article class="art" id="a28" data-path=""><span class="anchor-alias" id="Mp-At_28"></span><div class="art-tools"><button type="button" data-anchor="a28" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="para" id="a28-p1"><a class="art-no" href="#a28" data-kan="第二十八条" data-num="第28条">第二十八条</a><span class="body-text">各高等裁判所、各地方裁判所、各家庭裁判所、知的財産高等裁判所及び司法行政事務を掌理する簡易裁判所の各裁判官は、この規則の施行に関して必要な事項を定めることができる。ただし、司法行政事務を掌理する簡易裁判所の裁判官が定める場合には、当該裁判所を監督する地方裁判所の認可を得なければならない。</span></p></article>
+<h2 class="div-head" id="sup1" data-path="附則　"><span class="lbl">附則</span></h2>
+<article class="art noarticle" id="sup-body-1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="para" id="sup-body-1-p1"><span class="body-text">この規則は、昭和二十三年十月一日から、これを施行する。</span></p></article>
+<h2 class="div-head" id="sup2" data-path="附則　（昭和二三年一二月二八日最高裁判所規則第三八号）抄"><span class="lbl">附則</span>　（昭和二三年一二月二八日最高裁判所規則第三八号）抄</h2>
+<article class="art" id="sup2-a8" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup2-a8" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="caption">（昭二三最裁規三八・平一七最裁規七・一部改正）</p><p class="para" id="sup2-a8-p1"><a class="art-no" href="#sup2-a8" data-kan="第八条" data-num="第8条">第八条</a><span class="body-text">この規則は、昭和二十四年一月一日から施行する。</span></p></article>
+<h2 class="div-head" id="sup3" data-path="附則　（昭和二四年七月一日最高裁判所規則第一二号）"><span class="lbl">附則</span>　（昭和二四年七月一日最高裁判所規則第一二号）</h2>
+<article class="art noarticle" id="sup-body-2" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="para" id="sup-body-2-p1"><span class="body-text">この規則は、昭和二十四年七月一日から施行する。</span></p></article>
+<h2 class="div-head" id="sup4" data-path="附則　（昭和二五年一一月一五日最高裁判所規則第二五号）"><span class="lbl">附則</span>　（昭和二五年一一月一五日最高裁判所規則第二五号）</h2>
+<article class="art noarticle" id="sup-body-3" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="para" id="sup-body-3-p1"><span class="body-text">この規則は、公布の日から施行する。</span></p></article>
+<h2 class="div-head" id="sup5" data-path="附則　（昭和二八年六月三〇日最高裁判所規則第九号）"><span class="lbl">附則</span>　（昭和二八年六月三〇日最高裁判所規則第九号）</h2>
+<article class="art noarticle" id="sup-body-4" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="para" id="sup-body-4-p1"><span class="body-text">この規則は、昭和二十八年七月一日から施行する。</span></p></article>
+<h2 class="div-head" id="sup6" data-path="附則　（昭和二九年六月一日最高裁判所規則第八号）"><span class="lbl">附則</span>　（昭和二九年六月一日最高裁判所規則第八号）</h2>
+<article class="art noarticle" id="sup-body-5" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-5" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="para" id="sup-body-5-p1"><span class="body-text">この規則は、公布の日から施行する。</span></p></article>
+<h2 class="div-head" id="sup7" data-path="附則　（昭和三〇年一一月一七日最高裁判所規則第一〇号）"><span class="lbl">附則</span>　（昭和三〇年一一月一七日最高裁判所規則第一〇号）</h2>
+<article class="art noarticle" id="sup-body-6" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-6" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="para" id="sup-body-6-p1"><span class="body-text">この規則は、公布の日から施行する。</span></p></article>
+<h2 class="div-head" id="sup8" data-path="附則　（昭和三二年六月一五日最高裁判所規則第一一号）"><span class="lbl">附則</span>　（昭和三二年六月一五日最高裁判所規則第一一号）</h2>
+<article class="art noarticle" id="sup-body-7" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-7" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="para" id="sup-body-7-p1"><span class="body-text">この規則は、公布の日から施行する。</span></p></article>
+<h2 class="div-head" id="sup9" data-path="附則　（昭和三四年一〇月一日最高裁判所規則第一二号）"><span class="lbl">附則</span>　（昭和三四年一〇月一日最高裁判所規則第一二号）</h2>
+<article class="art noarticle" id="sup-body-8" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-8" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="para" id="sup-body-8-p1"><span class="body-text">この規則は、昭和三十四年十一月一日から施行する。</span></p><p class="para" id="sup-body-8-p2"><span class="pno">2</span><span class="body-text">この規則施行の際現に課長又は主任の職にある者は、この規則による改正後の<a class="ref ref-self" href="#a24">第二十四条</a>の規定により、この規則施行の日に、それぞれ課長又は室長を命ぜられたものとみなす。</span></p></article>
+<h2 class="div-head" id="sup10" data-path="附則　（昭和三九年三月二六日最高裁判所規則第二号）抄"><span class="lbl">附則</span>　（昭和三九年三月二六日最高裁判所規則第二号）抄</h2>
+<article class="art noarticle" id="sup-body-9" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-9" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="para" id="sup-body-9-p1"><span class="body-text">この規則は、昭和三十九年四月一日から施行する。</span></p></article>
+<h2 class="div-head" id="sup11" data-path="附則　（昭和四〇年三月三一日最高裁判所規則第五号）"><span class="lbl">附則</span>　（昭和四〇年三月三一日最高裁判所規則第五号）</h2>
+<article class="art noarticle" id="sup-body-10" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-10" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="para" id="sup-body-10-p1"><span class="body-text">この規則は、昭和四十年四月一日から施行する。</span></p></article>
+<h2 class="div-head" id="sup12" data-path="附則　（昭和四一年一〇月一五日最高裁判所規則第八号）"><span class="lbl">附則</span>　（昭和四一年一〇月一五日最高裁判所規則第八号）</h2>
+<article class="art noarticle" id="sup-body-11" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-11" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="para" id="sup-body-11-p1"><span class="body-text">この規則は、公布の日から施行する。</span></p></article>
+<h2 class="div-head" id="sup13" data-path="附則　（昭和四四年三月二五日最高裁判所規則第一号）"><span class="lbl">附則</span>　（昭和四四年三月二五日最高裁判所規則第一号）</h2>
+<article class="art noarticle" id="sup-body-12" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-12" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="para" id="sup-body-12-p1"><span class="body-text">この規則は、昭和四十四年四月一日から施行する。</span></p></article>
+<h2 class="div-head" id="sup14" data-path="附則　（昭和四四年九月一日最高裁判所規則第六号）抄"><span class="lbl">附則</span>　（昭和四四年九月一日最高裁判所規則第六号）抄</h2>
+<article class="art noarticle" id="sup-body-13" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-13" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="para" id="sup-body-13-p1"><span class="body-text">この規則は、昭和四十四年十月一日から施行する。</span></p><p class="para" id="sup-body-13-p2"><span class="pno">2</span><span class="body-text">この規則施行の際現に資料室長の職にある者は、別に辞令を発せられないときは、当該裁判所の資料課長を命ぜられたものとみなす。</span></p></article>
+<h2 class="div-head" id="sup15" data-path="附則　（昭和四八年七月一六日最高裁判所規則第五号）"><span class="lbl">附則</span>　（昭和四八年七月一六日最高裁判所規則第五号）</h2>
+<article class="art noarticle" id="sup-body-14" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-14" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="para" id="sup-body-14-p1"><span class="body-text">この規則は、昭和四十八年八月一日から施行する。</span></p></article>
+<h2 class="div-head" id="sup16" data-path="附則　（昭和五九年三月二九日最高裁判所規則第二号）"><span class="lbl">附則</span>　（昭和五九年三月二九日最高裁判所規則第二号）</h2>
+<article class="art noarticle" id="sup-body-15" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-15" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="para" id="sup-body-15-p1"><span class="body-text">この規則は、昭和五十九年四月一日から施行する。</span></p></article>
+<h2 class="div-head" id="sup17" data-path="附則　（昭和六一年一〇月三〇日最高裁判所規則第五号）"><span class="lbl">附則</span>　（昭和六一年一〇月三〇日最高裁判所規則第五号）</h2>
+<article class="art noarticle" id="sup-body-16" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-16" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="para" id="sup-body-16-p1"><span class="body-text">この規則は、昭和六十一年十一月一日から施行する。</span></p></article>
+<h2 class="div-head" id="sup18" data-path="附則　（昭和六三年七月二〇日最高裁判所規則第四号）"><span class="lbl">附則</span>　（昭和六三年七月二〇日最高裁判所規則第四号）</h2>
+<article class="art noarticle" id="sup-body-17" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-17" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="para" id="sup-body-17-p1"><span class="body-text">この規則は、昭和六十三年八月一日から施行する。</span></p></article>
+<h2 class="div-head" id="sup19" data-path="附則　（平成六年六月三〇日最高裁判所規則第三号）"><span class="lbl">附則</span>　（平成六年六月三〇日最高裁判所規則第三号）</h2>
+<article class="art noarticle" id="sup-body-18" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-18" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="para" id="sup-body-18-p1"><span class="body-text">この規則は、平成六年八月一日から施行する。</span></p></article>
+<h2 class="div-head" id="sup20" data-path="附則　（平成一六年三月三一日最高裁判所規則第七号）抄"><span class="lbl">附則</span>　（平成一六年三月三一日最高裁判所規則第七号）抄</h2>
+<article class="art noarticle" id="sup-body-19" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-19" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="para" id="sup-body-19-p1"><span class="body-text">この規則は、裁判所法の一部を改正する法律（平成十六年法律第八号）の施行の日（平成十六年四月一日）から施行する。</span></p></article>
+<h2 class="div-head" id="sup21" data-path="附則　（平成一七年二月一四日最高裁判所規則第七号）"><span class="lbl">附則</span>　（平成一七年二月一四日最高裁判所規則第七号）</h2>
+<article class="art noarticle" id="sup-body-20" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-20" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=7" target="_blank" rel="noopener" title="原本PDFの7ページを開きます">原本 p.7</a></div><p class="para" id="sup-body-20-p1"><span class="body-text">この規則は、知的財産高等裁判所設置法（平成十六年法律第百十九号）の施行の日（平成十七年四月一日）から施行する。</span></p></article>
+<h2 class="div-head" id="sup22" data-path="附則　（平成二四年三月一二日最高裁判所規則第二号）"><span class="lbl">附則</span>　（平成二四年三月一二日最高裁判所規則第二号）</h2>
+<article class="art noarticle" id="sup-body-21" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-21" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf#page=7" target="_blank" rel="noopener" title="原本PDFの7ページを開きます">原本 p.7</a></div><p class="para" id="sup-body-21-p1"><span class="body-text">この規則は，平成二十四年四月一日から施行する。</span></p></article>
+    </div>
+    <aside class="notes"><p>読み取りに関する注意</p><ul><li>各条の「原本」は https://www.courts.go.jp/assets/kakyuuki-H240401.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。</li></ul></aside>
+    <div class="foot">出典：kakyuuki-H240401.pdf　／　最高裁規則ビューア 1.9.0 で 2026年09月02日 に変換　
+    条文の正確な内容は原本で確認してください。</div>
+  </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  "use strict";
+  var doc = document.getElementById("doc");
+  var input = document.getElementById("q");
+  var hitLabel = document.getElementById("hits");
+  var crumb = document.getElementById("crumb");
+  var toc = document.getElementById("toc");
+  var toast = document.getElementById("toast");
+  var pristine = doc.innerHTML;
+  var hits = [];
+  var cursor = -1;
+
+  function say(msg){
+    toast.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(say._t);
+    say._t = setTimeout(function(){ toast.classList.remove("show"); }, 1600);
+  }
+
+  /* ---------------------------------------------------------- 条番号の表記 */
+  var numeralBtn = document.getElementById("numeral");
+  function applyNumeral(useArabic){
+    var nodes = doc.querySelectorAll(".art-no");
+    for (var i = 0; i < nodes.length; i++){
+      var el = nodes[i];
+      var v = useArabic ? el.getAttribute("data-num") : el.getAttribute("data-kan");
+      if (v) el.textContent = v;
+    }
+    numeralBtn.setAttribute("aria-pressed", useArabic ? "true" : "false");
+  }
+  numeralBtn.addEventListener("click", function(){
+    var next = numeralBtn.getAttribute("aria-pressed") !== "true";
+    applyNumeral(next);
+    try { localStorage.setItem("rule-numeral", next ? "1" : "0"); } catch(e){}
+    pristine = doc.innerHTML;
+  });
+  try {
+    /* 既定の表記は原本に合わせてある。前回の切り替えが残っていればそれに従う */
+    var saved = localStorage.getItem("rule-numeral");
+    if (saved === "1" || saved === "0"){ applyNumeral(saved === "1"); pristine = doc.innerHTML; }
+  } catch(e){}
+
+  /* -------------------------------------------------------------- 検索処理 */
+  var SKIP = {SCRIPT:1, STYLE:1, MARK:1, BUTTON:1, A:1};   /* 原本リンク等の道具立ては検索対象にしない */
+  function highlight(term){
+    doc.innerHTML = pristine;
+    hits = [];
+    cursor = -1;
+    if (!term){ hitLabel.textContent = ""; refreshToc(""); return; }
+    var walker = document.createTreeWalker(doc, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        if (!n.nodeValue || n.nodeValue.indexOf(term) < 0) return NodeFilter.FILTER_REJECT;
+        if (n.parentNode && SKIP[n.parentNode.nodeName]) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var targets = [];
+    var node;
+    while ((node = walker.nextNode())) targets.push(node);
+    for (var i = 0; i < targets.length; i++){
+      var t = targets[i], text = t.nodeValue, pos = 0, frag = document.createDocumentFragment();
+      var idx;
+      while ((idx = text.indexOf(term, pos)) >= 0){
+        if (idx > pos) frag.appendChild(document.createTextNode(text.slice(pos, idx)));
+        var m = document.createElement("mark");
+        m.textContent = text.substr(idx, term.length);
+        frag.appendChild(m);
+        hits.push(m);
+        pos = idx + term.length;
+      }
+      if (pos < text.length) frag.appendChild(document.createTextNode(text.slice(pos)));
+      t.parentNode.replaceChild(frag, t);
+    }
+    hitLabel.textContent = hits.length ? "1 / " + hits.length : "該当なし";
+    refreshToc(term);
+    if (hits.length){ cursor = 0; focusHit(0, false); }
+  }
+  function focusHit(i, scroll){
+    if (!hits.length) return;
+    for (var k = 0; k < hits.length; k++) hits[k].classList.remove("live");
+    cursor = (i + hits.length) % hits.length;
+    hits[cursor].classList.add("live");
+    hitLabel.textContent = (cursor + 1) + " / " + hits.length;
+    if (scroll !== false) hits[cursor].scrollIntoView({block:"center", behavior:"instant"});
+  }
+  function refreshToc(term){
+    var links = toc.querySelectorAll("li.lv-art");
+    for (var i = 0; i < links.length; i++){
+      var li = links[i];
+      var body = (li.getAttribute("data-text") || "");
+      li.classList.toggle("hidden", !!term && body.indexOf(term) < 0);
+    }
+    var divs = toc.querySelectorAll("li.lv-div");
+    for (var j = divs.length - 1; j >= 0; j--){
+      var d = divs[j];
+      var kids = d.querySelectorAll("li:not(.hidden)");
+      d.classList.toggle("hidden", !!term && kids.length === 0);
+    }
+  }
+  var timer = null;
+  input.addEventListener("input", function(){
+    clearTimeout(timer);
+    var v = input.value.trim();
+    timer = setTimeout(function(){ highlight(v); }, 180);
+  });
+  input.addEventListener("keydown", function(e){
+    if (e.key === "Enter"){ e.preventDefault(); focusHit(cursor + (e.shiftKey ? -1 : 1)); }
+    if (e.key === "Escape"){ input.value = ""; highlight(""); input.blur(); }
+  });
+  document.getElementById("prev").addEventListener("click", function(){ focusHit(cursor - 1); });
+  document.getElementById("next").addEventListener("click", function(){ focusHit(cursor + 1); });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "/" && e.target === document.body){ e.preventDefault(); input.focus(); }
+  });
+
+  /* -------------------------------------------------- リンクのコピー・共有 */
+  doc.addEventListener("click", function(e){
+    var btn = e.target.closest ? e.target.closest("button[data-anchor]") : null;
+    if (!btn) return;
+    var anchor = btn.getAttribute("data-anchor");
+    var url = location.href.split("#")[0] + "#" + anchor;
+    history.replaceState(null, "", "#" + anchor);
+    var done = function(){ say("リンクをコピーしました"); };
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(done, function(){ legacyCopy(url, done); });
+    } else {
+      legacyCopy(url, done);
+    }
+  });
+  function legacyCopy(text, done){
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); done(); }
+    catch(err){ say("コピーできませんでした。アドレス欄からURLを控えてください"); }
+    document.body.removeChild(ta);
+  }
+
+  /* ------------------------------------------------ 現在位置の表示と目次連動 */
+  var watched = doc.querySelectorAll(".art[id], .div-head[id]");
+  var tocLinks = {};
+  var links = toc.querySelectorAll("a[href^='#']");
+  for (var i = 0; i < links.length; i++) tocLinks[links[i].getAttribute("href").slice(1)] = links[i];
+  var currentLink = null;
+  if ("IntersectionObserver" in window){
+    var visible = [];
+    var io = new IntersectionObserver(function(entries){
+      for (var i = 0; i < entries.length; i++){
+        var id = entries[i].target.id;
+        var at = visible.indexOf(id);
+        if (entries[i].isIntersecting){ if (at < 0) visible.push(id); }
+        else if (at >= 0){ visible.splice(at, 1); }
+      }
+      if (!visible.length) return;
+      var first = null;
+      for (var k = 0; k < watched.length; k++){
+        if (visible.indexOf(watched[k].id) >= 0){ first = watched[k]; break; }
+      }
+      if (!first) return;
+      crumb.textContent = first.getAttribute("data-path") || "";
+      var link = tocLinks[first.id];
+      if (link && link !== currentLink){
+        if (currentLink) currentLink.classList.remove("current");
+        link.classList.add("current");
+        currentLink = link;
+      }
+    }, {rootMargin:"-20% 0px -70% 0px"});
+    for (var w = 0; w < watched.length; w++) io.observe(watched[w]);
+  }
+
+  /* -------------------------------------------------------- 目次の開閉（狭幅） */
+  var opener = document.getElementById("toc-open");
+  if (opener){
+    opener.addEventListener("click", function(){ toc.classList.toggle("open"); });
+    toc.addEventListener("click", function(e){
+      if (e.target.tagName === "A") toc.classList.remove("open");
+    });
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1278 @@
+{
+ "schema": "ksk-aliases/1",
+ "count": 159,
+ "aliases": [
+  {
+   "alias": "民事訴訟規則",
+   "alias_norm": "民事訴訟規則",
+   "rule_id": "100",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "民訴規",
+   "alias_norm": "民訴規",
+   "rule_id": "100",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "民訴規則",
+   "alias_norm": "民訴規則",
+   "rule_id": "100",
+   "kind": "略称",
+   "priority": 10,
+   "ambiguous": 0
+  },
+  {
+   "alias": "民訴則",
+   "alias_norm": "民訴則",
+   "rule_id": "100",
+   "kind": "略称",
+   "priority": 10,
+   "ambiguous": 0
+  },
+  {
+   "alias": "民事訴訟費用等に関する規則",
+   "alias_norm": "民事訴訟費用等に関する規則",
+   "rule_id": "101",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "民訴費規",
+   "alias_norm": "民訴費規",
+   "rule_id": "101",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "民訴費用規則",
+   "alias_norm": "民訴費用規則",
+   "rule_id": "101",
+   "kind": "略称",
+   "priority": 10,
+   "ambiguous": 0
+  },
+  {
+   "alias": "民事訴訟法第八編第二章の規定による督促手続に関する規則",
+   "alias_norm": "民事訴訟法第八編第二章の規定による督促手続に関する規則",
+   "rule_id": "102",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "督促手続規則",
+   "alias_norm": "督促手続規則",
+   "rule_id": "102",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "民事訴訟手続に関する条約等の実施に伴う民事訴訟手続の特例等に関する規則",
+   "alias_norm": "民事訴訟手続に関する条約等の実施に伴う民事訴訟手続の特例等に関する規則",
+   "rule_id": "103",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "特許法による査証の手続等に関する規則",
+   "alias_norm": "特許法による査証の手続等に関する規則",
+   "rule_id": "104",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "発信者情報開示命令事件手続規則",
+   "alias_norm": "発信者情報開示命令事件手続規則",
+   "rule_id": "105",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "消費者の財産的被害等の集団的な回復のための民事の裁判手続の特例に関する規則",
+   "alias_norm": "消費者の財産的被害等の集団的な回復のための民事の裁判手続の特例に関する規則",
+   "rule_id": "106",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "労働審判規則",
+   "alias_norm": "労働審判規則",
+   "rule_id": "107",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "労審規",
+   "alias_norm": "労審規",
+   "rule_id": "107",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "労審規則",
+   "alias_norm": "労審規則",
+   "rule_id": "107",
+   "kind": "略称",
+   "priority": 10,
+   "ambiguous": 0
+  },
+  {
+   "alias": "労働審判員規則",
+   "alias_norm": "労働審判員規則",
+   "rule_id": "108",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "専門委員規則",
+   "alias_norm": "専門委員規則",
+   "rule_id": "109",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "鑑定委員規則",
+   "alias_norm": "鑑定委員規則",
+   "rule_id": "110",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "司法委員規則",
+   "alias_norm": "司法委員規則",
+   "rule_id": "111",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "参与員規則",
+   "alias_norm": "参与員規則",
+   "rule_id": "112",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "民事執行規則",
+   "alias_norm": "民事執行規則",
+   "rule_id": "200",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "民執規",
+   "alias_norm": "民執規",
+   "rule_id": "200",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "民執規則",
+   "alias_norm": "民執規則",
+   "rule_id": "200",
+   "kind": "略称",
+   "priority": 10,
+   "ambiguous": 0
+  },
+  {
+   "alias": "民執則",
+   "alias_norm": "民執則",
+   "rule_id": "200",
+   "kind": "略称",
+   "priority": 10,
+   "ambiguous": 0
+  },
+  {
+   "alias": "民事保全規則",
+   "alias_norm": "民事保全規則",
+   "rule_id": "201",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "民保規",
+   "alias_norm": "民保規",
+   "rule_id": "201",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "民保規則",
+   "alias_norm": "民保規則",
+   "rule_id": "201",
+   "kind": "略称",
+   "priority": 10,
+   "ambiguous": 0
+  },
+  {
+   "alias": "執行官規則",
+   "alias_norm": "執行官規則",
+   "rule_id": "202",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "執行官の手数料及び費用に関する規則",
+   "alias_norm": "執行官の手数料及び費用に関する規則",
+   "rule_id": "203",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "執行官手数料規則",
+   "alias_norm": "執行官手数料規則",
+   "rule_id": "203",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "滞納処分と強制執行等との手続の調整に関する規則",
+   "alias_norm": "滞納処分と強制執行等との手続の調整に関する規則",
+   "rule_id": "204",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "土地の収用等と強制執行等との調整に関する規則",
+   "alias_norm": "土地の収用等と強制執行等との調整に関する規則",
+   "rule_id": "205",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "都市再開発法による権利の変換と強制執行等との調整に関する規則",
+   "alias_norm": "都市再開発法による権利の変換と強制執行等との調整に関する規則",
+   "rule_id": "206",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "密集市街地における防災街区の整備の促進に関する法律による権利の変換と強制執行等との調整に関する規則",
+   "alias_norm": "密集市街地における防災街区の整備の促進に関する法律による権利の変換と強制執行等との調整に関する規則",
+   "rule_id": "207",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "マンションの再生等の円滑化に関する法律による権利の変換等と強制執行等との調整に関する規則",
+   "alias_norm": "マンションの再生等の円滑化に関する法律による権利の変換等と強制執行等との調整に関する規則",
+   "rule_id": "208",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "企業担保権実行手続規則",
+   "alias_norm": "企業担保権実行手続規則",
+   "rule_id": "209",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "企業価値担保権実行手続規則",
+   "alias_norm": "企業価値担保権実行手続規則",
+   "rule_id": "210",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "不正競争防止法による保全手続等に関する規則",
+   "alias_norm": "不正競争防止法による保全手続等に関する規則",
+   "rule_id": "211",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "破産規則",
+   "alias_norm": "破産規則",
+   "rule_id": "300",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "破規",
+   "alias_norm": "破規",
+   "rule_id": "300",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "民事再生規則",
+   "alias_norm": "民事再生規則",
+   "rule_id": "301",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "民再規",
+   "alias_norm": "民再規",
+   "rule_id": "301",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "民再規則",
+   "alias_norm": "民再規則",
+   "rule_id": "301",
+   "kind": "略称",
+   "priority": 10,
+   "ambiguous": 0
+  },
+  {
+   "alias": "会社更生規則",
+   "alias_norm": "会社更生規則",
+   "rule_id": "302",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "会更規",
+   "alias_norm": "会更規",
+   "rule_id": "302",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "会更規則",
+   "alias_norm": "会更規則",
+   "rule_id": "302",
+   "kind": "略称",
+   "priority": 10,
+   "ambiguous": 0
+  },
+  {
+   "alias": "金融機関等の更生手続の特例等に関する規則",
+   "alias_norm": "金融機関等の更生手続の特例等に関する規則",
+   "rule_id": "303",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "金更特規",
+   "alias_norm": "金更特規",
+   "rule_id": "303",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "外国倒産処理手続の承認援助に関する規則",
+   "alias_norm": "外国倒産処理手続の承認援助に関する規則",
+   "rule_id": "304",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "承認援助規則",
+   "alias_norm": "承認援助規則",
+   "rule_id": "304",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "船舶所有者等責任制限事件手続規則",
+   "alias_norm": "船舶所有者等責任制限事件手続規則",
+   "rule_id": "305",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "船舶油濁等損害賠償責任制限事件等手続規則",
+   "alias_norm": "船舶油濁等損害賠償責任制限事件等手続規則",
+   "rule_id": "306",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "家事事件手続規則",
+   "alias_norm": "家事事件手続規則",
+   "rule_id": "400",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "家事規",
+   "alias_norm": "家事規",
+   "rule_id": "400",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "家事規則",
+   "alias_norm": "家事規則",
+   "rule_id": "400",
+   "kind": "略称",
+   "priority": 10,
+   "ambiguous": 0
+  },
+  {
+   "alias": "家手規",
+   "alias_norm": "家手規",
+   "rule_id": "400",
+   "kind": "略称",
+   "priority": 10,
+   "ambiguous": 0
+  },
+  {
+   "alias": "人事訴訟規則",
+   "alias_norm": "人事訴訟規則",
+   "rule_id": "401",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "人訴規",
+   "alias_norm": "人訴規",
+   "rule_id": "401",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "人訴規則",
+   "alias_norm": "人訴規則",
+   "rule_id": "401",
+   "kind": "略称",
+   "priority": 10,
+   "ambiguous": 0
+  },
+  {
+   "alias": "民事調停規則",
+   "alias_norm": "民事調停規則",
+   "rule_id": "402",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "民調規",
+   "alias_norm": "民調規",
+   "rule_id": "402",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "民調規則",
+   "alias_norm": "民調規則",
+   "rule_id": "402",
+   "kind": "略称",
+   "priority": 10,
+   "ambiguous": 0
+  },
+  {
+   "alias": "特定調停手続規則",
+   "alias_norm": "特定調停手続規則",
+   "rule_id": "403",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "特調規",
+   "alias_norm": "特調規",
+   "rule_id": "403",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "民事調停委員及び家事調停委員規則",
+   "alias_norm": "民事調停委員及び家事調停委員規則",
+   "rule_id": "404",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "民事調停官及び家事調停官規則",
+   "alias_norm": "民事調停官及び家事調停官規則",
+   "rule_id": "405",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "配偶者暴力等に関する保護命令手続規則",
+   "alias_norm": "配偶者暴力等に関する保護命令手続規則",
+   "rule_id": "406",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "保護命令規則",
+   "alias_norm": "保護命令規則",
+   "rule_id": "406",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "国際的な子の奪取の民事上の側面に関する条約の実施に関する法律による子の返還に関する事件の手続等に関する規則",
+   "alias_norm": "国際的な子の奪取の民事上の側面に関する条約の実施に関する法律による子の返還に関する事件の手続等に関する規則",
+   "rule_id": "407",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "ハーグ条約実施規則",
+   "alias_norm": "ハーグ条約実施規則",
+   "rule_id": "407",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "少年審判規則",
+   "alias_norm": "少年審判規則",
+   "rule_id": "408",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "少審規",
+   "alias_norm": "少審規",
+   "rule_id": "408",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "少年規則",
+   "alias_norm": "少年規則",
+   "rule_id": "408",
+   "kind": "略称",
+   "priority": 10,
+   "ambiguous": 0
+  },
+  {
+   "alias": "少年の保護事件に係る補償に関する規則",
+   "alias_norm": "少年の保護事件に係る補償に関する規則",
+   "rule_id": "409",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "少年法による調査及び観察のための援助費用に関する規則",
+   "alias_norm": "少年法による調査及び観察のための援助費用に関する規則",
+   "rule_id": "410",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "心神喪失等の状態で重大な他害行為を行った者の医療及び観察等に関する法律による審判の手続等に関する規則",
+   "alias_norm": "心神喪失等の状態で重大な他害行為を行った者の医療及び観察等に関する法律による審判の手続等に関する規則",
+   "rule_id": "411",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "医観規",
+   "alias_norm": "医観規",
+   "rule_id": "411",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "医療観察規則",
+   "alias_norm": "医療観察規則",
+   "rule_id": "411",
+   "kind": "略称",
+   "priority": 10,
+   "ambiguous": 0
+  },
+  {
+   "alias": "非訟事件手続規則",
+   "alias_norm": "非訟事件手続規則",
+   "rule_id": "500",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "非訟規",
+   "alias_norm": "非訟規",
+   "rule_id": "500",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "非訟規則",
+   "alias_norm": "非訟規則",
+   "rule_id": "500",
+   "kind": "略称",
+   "priority": 10,
+   "ambiguous": 0
+  },
+  {
+   "alias": "借地非訟事件手続規則",
+   "alias_norm": "借地非訟事件手続規則",
+   "rule_id": "501",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "借地非訟規則",
+   "alias_norm": "借地非訟規則",
+   "rule_id": "501",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "会社非訟事件等手続規則",
+   "alias_norm": "会社非訟事件等手続規則",
+   "rule_id": "502",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "会社非訟規則",
+   "alias_norm": "会社非訟規則",
+   "rule_id": "502",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "一般社団法人等非訟事件手続規則",
+   "alias_norm": "一般社団法人等非訟事件手続規則",
+   "rule_id": "503",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "共有、管理等に関する非訟事件に関する手続規則",
+   "alias_norm": "共有管理等に関する非訟事件に関する手続規則",
+   "rule_id": "504",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "共有非訟規則",
+   "alias_norm": "共有非訟規則",
+   "rule_id": "504",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "仲裁関係事件手続規則",
+   "alias_norm": "仲裁関係事件手続規則",
+   "rule_id": "505",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "仲裁規",
+   "alias_norm": "仲裁規",
+   "rule_id": "505",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "仲裁規則",
+   "alias_norm": "仲裁規則",
+   "rule_id": "505",
+   "kind": "略称",
+   "priority": 10,
+   "ambiguous": 0
+  },
+  {
+   "alias": "国際和解合意関係事件手続規則",
+   "alias_norm": "国際和解合意関係事件手続規則",
+   "rule_id": "506",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "特定和解関係事件手続規則",
+   "alias_norm": "特定和解関係事件手続規則",
+   "rule_id": "507",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "人身保護規則",
+   "alias_norm": "人身保護規則",
+   "rule_id": "508",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "人保規",
+   "alias_norm": "人保規",
+   "rule_id": "508",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "人身保護法による国選代理人の旅費等に関する規則",
+   "alias_norm": "人身保護法による国選代理人の旅費等に関する規則",
+   "rule_id": "509",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "刑事訴訟規則",
+   "alias_norm": "刑事訴訟規則",
+   "rule_id": "600",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "刑訴規",
+   "alias_norm": "刑訴規",
+   "rule_id": "600",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "刑訴規則",
+   "alias_norm": "刑訴規則",
+   "rule_id": "600",
+   "kind": "略称",
+   "priority": 10,
+   "ambiguous": 0
+  },
+  {
+   "alias": "刑訴則",
+   "alias_norm": "刑訴則",
+   "rule_id": "600",
+   "kind": "略称",
+   "priority": 10,
+   "ambiguous": 0
+  },
+  {
+   "alias": "刑事訴訟規則施行規則",
+   "alias_norm": "刑事訴訟規則施行規則",
+   "rule_id": "601",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "刑訴規施規",
+   "alias_norm": "刑訴規施規",
+   "rule_id": "601",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "刑訴規則施行規則",
+   "alias_norm": "刑訴規則施行規則",
+   "rule_id": "601",
+   "kind": "略称",
+   "priority": 10,
+   "ambiguous": 0
+  },
+  {
+   "alias": "裁判員の参加する刑事裁判に関する規則",
+   "alias_norm": "裁判員の参加する刑事裁判に関する規則",
+   "rule_id": "602",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "裁員規",
+   "alias_norm": "裁員規",
+   "rule_id": "602",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "裁判員規則",
+   "alias_norm": "裁判員規則",
+   "rule_id": "602",
+   "kind": "略称",
+   "priority": 10,
+   "ambiguous": 0
+  },
+  {
+   "alias": "犯罪被害者等の権利利益の保護を図るための刑事手続に付随する措置に関する規則",
+   "alias_norm": "犯罪被害者等の権利利益の保護を図るための刑事手続に付随する措置に関する規則",
+   "rule_id": "603",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "犯罪被害者保護規則",
+   "alias_norm": "犯罪被害者保護規則",
+   "rule_id": "603",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "刑事の手続における証人等に対する給付に関する規則",
+   "alias_norm": "刑事の手続における証人等に対する給付に関する規則",
+   "rule_id": "604",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "刑事補償規則",
+   "alias_norm": "刑事補償規則",
+   "rule_id": "605",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "刑事事件における第三者所有物の没収手続に関する規則",
+   "alias_norm": "刑事事件における第三者所有物の没収手続に関する規則",
+   "rule_id": "606",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "犯罪捜査のための通信傍受に関する規則",
+   "alias_norm": "犯罪捜査のための通信傍受に関する規則",
+   "rule_id": "607",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "通信傍受規則",
+   "alias_norm": "通信傍受規則",
+   "rule_id": "607",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "犯罪収益に係る保全手続等に関する規則",
+   "alias_norm": "犯罪収益に係る保全手続等に関する規則",
+   "rule_id": "608",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "薬物犯罪等に係る保全手続等に関する規則",
+   "alias_norm": "薬物犯罪等に係る保全手続等に関する規則",
+   "rule_id": "609",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "金融商品取引法等による第三者の財産等の没収手続に関する規則",
+   "alias_norm": "金融商品取引法等による第三者の財産等の没収手続に関する規則",
+   "rule_id": "610",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "不正競争防止法第二十三条第一項に規定する事件に係る刑事訴訟手続の特例に関する規則",
+   "alias_norm": "不正競争防止法第二十三条第一項に規定する事件に係る刑事訴訟手続の特例に関する規則",
+   "rule_id": "611",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "国税庁監察官の行う捜査に関する刑事訴訟規則の適用に関する規則",
+   "alias_norm": "国税庁監察官の行う捜査に関する刑事訴訟規則の適用に関する規則",
+   "rule_id": "612",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "交通事件即決裁判手続規則",
+   "alias_norm": "交通事件即決裁判手続規則",
+   "rule_id": "613",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "道路交通法の施行に伴う交通事件の即決裁判に関する手続の経過措置に関する規則",
+   "alias_norm": "道路交通法の施行に伴う交通事件の即決裁判に関する手続の経過措置に関する規則",
+   "rule_id": "614",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "逃亡犯罪人引渡法による審査等の手続に関する規則",
+   "alias_norm": "逃亡犯罪人引渡法による審査等の手続に関する規則",
+   "rule_id": "615",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "国際捜査共助規則",
+   "alias_norm": "国際捜査共助規則",
+   "rule_id": "616",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "国際受刑者移送法による東京地方裁判所の審査の手続に関する規則",
+   "alias_norm": "国際受刑者移送法による東京地方裁判所の審査の手続に関する規則",
+   "rule_id": "617",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "国際刑事裁判所に対する協力の手続に関する規則",
+   "alias_norm": "国際刑事裁判所に対する協力の手続に関する規則",
+   "rule_id": "618",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "性的な姿態を撮影する行為等の処罰及び押収物に記録された性的な姿態の影像に係る電磁的記録の消去等に関する法律による消去等の手続等に関する規則",
+   "alias_norm": "性的な姿態を撮影する行為等の処罰及び押収物に記録された性的な姿態の影像に係る電磁的記録の消去等に関する法律による消去等の手続等に関する規則",
+   "rule_id": "619",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "高等裁判所刑事上告事件移送規則",
+   "alias_norm": "高等裁判所刑事上告事件移送規則",
+   "rule_id": "620",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "旧刑事訴訟法事件の控訴審及び上告審における審判の特例に関する規則",
+   "alias_norm": "旧刑事訴訟法事件の控訴審及び上告審における審判の特例に関する規則",
+   "rule_id": "621",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "平和条約の実施に伴う刑事判決の再審査の手続に関する規則",
+   "alias_norm": "平和条約の実施に伴う刑事判決の再審査の手続に関する規則",
+   "rule_id": "622",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "総合法律支援法による国選弁護人等契約弁護士に係る費用の額の算定等に関する規則",
+   "alias_norm": "総合法律支援法による国選弁護人等契約弁護士に係る費用の額の算定等に関する規則",
+   "rule_id": "623",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "最高裁判所裁判事務処理規則",
+   "alias_norm": "最高裁判所裁判事務処理規則",
+   "rule_id": "700",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "下級裁判所事務処理規則",
+   "alias_norm": "下級裁判所事務処理規則",
+   "rule_id": "701",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "下級裁事務処理規則",
+   "alias_norm": "下級裁事務処理規則",
+   "rule_id": "701",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "最高裁判所事務総局規則",
+   "alias_norm": "最高裁判所事務総局規則",
+   "rule_id": "702",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "大法廷首席書記官等に関する規則",
+   "alias_norm": "大法廷首席書記官等に関する規則",
+   "rule_id": "703",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "地方裁判所委員会規則",
+   "alias_norm": "地方裁判所委員会規則",
+   "rule_id": "704",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "家庭裁判所委員会規則",
+   "alias_norm": "家庭裁判所委員会規則",
+   "rule_id": "705",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "下級裁判所裁判官指名諮問委員会規則",
+   "alias_norm": "下級裁判所裁判官指名諮問委員会規則",
+   "rule_id": "706",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "裁判官の人事評価に関する規則",
+   "alias_norm": "裁判官の人事評価に関する規則",
+   "rule_id": "707",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "裁判官の分限事件手続規則",
+   "alias_norm": "裁判官の分限事件手続規則",
+   "rule_id": "708",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "人事官弾劾裁判手続規則",
+   "alias_norm": "人事官弾劾裁判手続規則",
+   "rule_id": "709",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "簡易裁判所判事選考規則",
+   "alias_norm": "簡易裁判所判事選考規則",
+   "rule_id": "710",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "地方裁判所における審理に判事補の参与を認める規則",
+   "alias_norm": "地方裁判所における審理に判事補の参与を認める規則",
+   "rule_id": "711",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "司法修習委員会規則",
+   "alias_norm": "司法修習委員会規則",
+   "rule_id": "712",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "司法修習生の修習専念資金の貸与等に関する規則",
+   "alias_norm": "司法修習生の修習専念資金の貸与等に関する規則",
+   "rule_id": "713",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "法廷等の秩序維持に関する規則",
+   "alias_norm": "法廷等の秩序維持に関する規則",
+   "rule_id": "714",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "法廷の秩序維持等にあたる裁判所職員に関する規則",
+   "alias_norm": "法廷の秩序維持等にあたる裁判所職員に関する規則",
+   "rule_id": "715",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "裁判所傍聴規則",
+   "alias_norm": "裁判所傍聴規則",
+   "rule_id": "716",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "事件記録等の特別保存に関する規則",
+   "alias_norm": "事件記録等の特別保存に関する規則",
+   "rule_id": "717",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "裁判の迅速化に係る検証に関する規則",
+   "alias_norm": "裁判の迅速化に係る検証に関する規則",
+   "rule_id": "718",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "最高裁判所行政不服審査委員会規則",
+   "alias_norm": "最高裁判所行政不服審査委員会規則",
+   "rule_id": "719",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "民事事件等に関する手続において用いる識別符号の付与等に関する規則",
+   "alias_norm": "民事事件等に関する手続において用いる識別符号の付与等に関する規則",
+   "rule_id": "800",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "識別符号規則",
+   "alias_norm": "識別符号規則",
+   "rule_id": "800",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "民事事件等に関する手続において用いる識別符号の付与等に関する規則に規定する最高裁判所が定める事項等（令和8年最高裁判所告示第1号)",
+   "alias_norm": "民事事件等に関する手続において用いる識別符号の付与等に関する規則に規定する最高裁判所が定める事項等(令和8年最高裁判所告示第1号)",
+   "rule_id": "801",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "民事事件等に関する手続において用いる識別符号の付与における本人確認方法に関する要綱",
+   "alias_norm": "民事事件等に関する手続において用いる識別符号の付与における本人確認方法に関する要綱",
+   "rule_id": "802",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "民事事件等に関する手続における電子情報処理組織の使用に関する細則",
+   "alias_norm": "民事事件等に関する手続における電子情報処理組織の使用に関する細則",
+   "rule_id": "803",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "使用細則",
+   "alias_norm": "使用細則",
+   "rule_id": "803",
+   "kind": "略称",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "沖縄の復帰に伴う特別措置に関する規則",
+   "alias_norm": "沖縄の復帰に伴う特別措置に関する規則",
+   "rule_id": "900",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  },
+  {
+   "alias": "奄美群島の復帰に伴う民事に関する事件の手続の経過措置に関する規則",
+   "alias_norm": "奄美群島の復帰に伴う民事に関する事件の手続の経過措置に関する規則",
+   "rule_id": "901",
+   "kind": "正式",
+   "priority": 0,
+   "ambiguous": 0
+  }
+ ]
+}

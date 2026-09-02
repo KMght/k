@@ -1,0 +1,32 @@
+{
+ "rule_id": "616",
+ "title": "国際捜査共助規則",
+ "enforcement_iso": "2004-06-29",
+ "url": "https://kmght.github.io/ksk/r/616.html",
+ "articles": [
+  {
+   "key": "1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "令状の発付等の手続についての刑事訴訟規則の準用",
+   "anchor": "a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "2",
+   "label": "第二条",
+   "short": "2条",
+   "caption": "訳文の添付",
+   "anchor": "a2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  }
+ ]
+}

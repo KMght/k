@@ -1,0 +1,144 @@
+{
+ "rule_id": "110",
+ "title": "鑑定委員規則",
+ "enforcement_iso": "2026-07-01",
+ "url": "https://kmght.github.io/ksk/r/110.html",
+ "articles": [
+  {
+   "key": "1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "この規則の趣旨",
+   "anchor": "a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "2",
+   "label": "第二条",
+   "short": "2条",
+   "caption": "選任の不適格事由",
+   "anchor": "a2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "3",
+   "label": "第三条",
+   "short": "3条",
+   "caption": "選任の取消し",
+   "anchor": "a3",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "4",
+   "label": "第四条",
+   "short": "4条",
+   "caption": "指定の辞退の制限",
+   "anchor": "a4",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "5",
+   "label": "第五条",
+   "short": "5条",
+   "caption": "指定の取消し",
+   "anchor": "a5",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "6",
+   "label": "第六条",
+   "short": "6条",
+   "caption": "旅費及び宿泊料",
+   "anchor": "a6",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "7",
+   "label": "第七条",
+   "short": "7条",
+   "caption": "日当の支給基準及び額",
+   "anchor": "a7",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "8",
+   "label": "第八条",
+   "short": "8条",
+   "caption": "その他の事項",
+   "anchor": "a8",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "s35:1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "施行期日",
+   "anchor": "sup35-a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  },
+  {
+   "key": "s39:1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "施行期日",
+   "anchor": "sup39-a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  },
+  {
+   "key": "s44:1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "施行期日",
+   "anchor": "sup44-a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  }
+ ]
+}

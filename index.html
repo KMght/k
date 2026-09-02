@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>最高裁判所規則集</title><style>
+:root{
+  --paper:#ffffff;
+  --ink:#16181d;
+  --sub:#5f6875;
+  --rule:#dde2e9;
+  --chrome:#f4f6f9;
+  --accent:#14538a;
+  --accent-weak:#e7eff7;
+  --mark:#ffe08a;
+  --mark-live:#ff9d3d;
+  --gothic:"Yu Gothic UI","Yu Gothic","YuGothic","Hiragino Sans","Noto Sans JP","Meiryo",system-ui,sans-serif;
+  --mincho:"Yu Mincho","YuMincho","Hiragino Mincho ProN","Noto Serif JP","MS Mincho",serif;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:5.5rem}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--mincho);font-size:17px;line-height:1.9;
+  text-rendering:optimizeLegibility;
+}
+
+/* ---------------------------------------------------------------- ヘッダ */
+.top{
+  position:sticky;top:0;z-index:30;background:var(--chrome);
+  border-bottom:1px solid var(--rule);font-family:var(--gothic);
+}
+.top-inner{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;padding:.7rem 1.2rem}
+.law-title{font-size:1.12rem;font-weight:700;letter-spacing:.02em;margin:0}
+.law-number{font-size:.8rem;color:var(--sub);margin-left:.2rem}
+.top-tools{margin-left:auto;display:flex;align-items:center;gap:.5rem}
+.search-box{display:flex;align-items:center;gap:.35rem;background:var(--paper);
+  border:1px solid var(--rule);border-radius:2px;padding:.25rem .5rem}
+.search-box input{border:0;outline:0;font:inherit;font-size:.85rem;width:14rem;background:transparent;color:inherit}
+.hit-count{font-size:.78rem;color:var(--sub);min-width:4.2rem;text-align:right;font-variant-numeric:tabular-nums}
+button{font:inherit;font-family:var(--gothic);cursor:pointer}
+.btn{background:var(--paper);border:1px solid var(--rule);border-radius:2px;
+  color:var(--ink);font-size:.78rem;padding:.28rem .6rem;line-height:1.4}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.crumb{padding:.3rem 1.2rem;border-top:1px solid var(--rule);background:var(--paper);
+  font-family:var(--gothic);font-size:.78rem;color:var(--sub);min-height:1.7rem}
+
+/* ------------------------------------------------------------------ 骨格 */
+.wrap{display:grid;grid-template-columns:19rem minmax(0,1fr);align-items:start}
+.toc{
+  position:sticky;top:5.6rem;max-height:calc(100vh - 5.6rem);overflow-y:auto;
+  border-right:1px solid var(--rule);padding:1rem .6rem 4rem 1.2rem;
+  font-family:var(--gothic);font-size:.83rem;line-height:1.65;
+}
+.toc h2{font-size:.75rem;color:var(--sub);font-weight:700;margin:0 0 .6rem}
+.toc ul{list-style:none;margin:0;padding:0}
+.toc a{display:block;color:var(--ink);text-decoration:none;padding:.16rem .4rem;border-radius:2px}
+.toc a:hover{background:var(--accent-weak);color:var(--accent)}
+.toc a.current{background:var(--accent-weak);color:var(--accent);font-weight:700}
+.toc .div-1>a,.toc .div-2>a{font-weight:700}
+.toc .div-2{margin-top:.5rem}
+.toc .div-3,.toc .div-4,.toc .div-5{margin-top:.25rem}
+.toc .lv-art{padding-left:.9rem}
+.toc .lv-art.hidden,.toc .lv-div.hidden{display:none}
+.toc-toggle{background:none;border:0;color:var(--sub);padding:0 .3rem;font-size:.75rem}
+
+.doc{padding:2.2rem 2rem 8rem;max-width:44em}
+.doc-head{border-bottom:2px solid var(--ink);padding-bottom:.8rem;margin-bottom:2rem}
+.doc-head h1{font-size:1.5rem;margin:0 0 .3rem;letter-spacing:.04em}
+.doc-head .meta{font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+
+/* ------------------------------------------------------------------ 条文 */
+.div-head{font-family:var(--gothic);margin:2.6rem 0 1rem;scroll-margin-top:6rem}
+.div-head .lbl{color:var(--accent);font-weight:700}
+h2.div-head{font-size:1.12rem;border-bottom:1px solid var(--rule);padding-bottom:.35rem}
+h3.div-head{font-size:1.02rem}
+h4.div-head,h5.div-head,h6.div-head{font-size:.95rem}
+
+.art{position:relative;padding-left:2.6rem;margin:1.5rem 0 1.9rem;scroll-margin-top:6rem}
+.art:target{background:var(--accent-weak);box-shadow:-.4rem 0 0 var(--accent);border-radius:2px}
+.art-tools{position:absolute;left:0;top:.25rem;display:flex;flex-direction:column;gap:.2rem;
+  visibility:hidden}
+.art:hover .art-tools,.art:focus-within .art-tools,.art:target .art-tools{visibility:visible}
+.art-tools button,.art-tools a{background:none;border:0;color:var(--sub);font-size:.72rem;
+  font-family:var(--gothic);padding:.1rem .2rem;border-radius:2px;text-decoration:none;
+  white-space:nowrap;display:block}
+.art-tools button:hover,.art-tools a:hover{color:var(--accent);background:var(--accent-weak)}
+.raw h3 .src{font-size:.75rem;font-weight:400;color:var(--sub);margin-left:.5rem}
+.doc-head .src{color:var(--accent);text-decoration:none}
+.doc-head .src:hover{text-decoration:underline}
+.caption{font-family:var(--gothic);font-size:.88rem;font-weight:700;color:var(--sub);margin:0 0 .1rem}
+.amend-note{font-family:var(--gothic);font-size:.78rem;font-weight:400;color:var(--sub);margin:.1rem 0 0;text-align:right}
+h2 .amend-note,h3 .amend-note,h4 .amend-note,h5 .amend-note,h6 .amend-note{display:inline;text-align:left}
+.art-no{font-family:var(--gothic);font-weight:700;color:var(--accent);text-decoration:none;margin-right:.55em}
+.art-no:hover{text-decoration:underline}
+.para{margin:.35rem 0;text-indent:0}
+.para+.para{margin-top:.55rem}
+.pno{font-family:var(--gothic);color:var(--sub);font-size:.9em;margin-right:.5em;font-variant-numeric:tabular-nums}
+.deleted .body-text{color:var(--sub)}
+.art.noarticle .para{margin-top:0}
+
+ol.items{list-style:none;margin:.35rem 0 .35rem 1.1em;padding:0}
+ol.items>li{display:grid;grid-template-columns:2.4em minmax(0,1fr);margin:.2rem 0}
+ol.items .mk{font-family:var(--gothic);font-size:.9em;color:var(--sub);margin-right:.4em}
+ol.items ol.items{grid-column:1/-1;margin-left:1.2em}
+ol.items ol.items>li{grid-template-columns:2em minmax(0,1fr)}
+
+.raw{margin:1.6rem 0;scroll-margin-top:6rem}
+.raw h3{font-family:var(--gothic);font-size:1rem;margin:0 0 .4rem}
+.raw pre{font-family:var(--mincho);white-space:pre-wrap;margin:0;padding:.7rem .9rem;
+  background:var(--chrome);border:1px solid var(--rule);font-size:.92rem;line-height:1.75}
+
+.notes{margin:2.5rem 0 0;padding:.8rem 1rem;background:var(--chrome);
+  border-left:3px solid var(--accent);font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+.notes p{margin:0 0 .3rem;font-weight:700;color:var(--ink)}
+.notes ul{margin:0;padding-left:1.2rem}
+.foot{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);
+  font-family:var(--gothic);font-size:.75rem;color:var(--sub)}
+
+a.ref{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule)}
+a.ref:hover{color:var(--accent);border-bottom-color:var(--accent)}
+a.ref-egov{border-bottom-style:dotted}
+a.ref-rule{border-bottom-color:var(--accent)}
+mark{background:var(--mark);color:inherit;padding:0 .05em}
+mark.live{background:var(--mark-live)}
+.toast{position:fixed;left:50%;bottom:2rem;transform:translateX(-50%);
+  background:var(--ink);color:#fff;font-family:var(--gothic);font-size:.8rem;
+  padding:.5rem .9rem;border-radius:3px;pointer-events:none;z-index:60;display:none}
+.toast.show{display:block}
+
+.toc-open{display:none}
+@media (max-width:900px){
+  body{font-size:16px}
+  .wrap{grid-template-columns:minmax(0,1fr)}
+  .toc{position:fixed;inset:5.6rem auto 0 0;width:82vw;max-width:20rem;background:var(--paper);
+    z-index:25;box-shadow:0 0 0 100vmax rgba(0,0,0,.25);max-height:none;height:calc(100vh - 5.6rem);
+    display:none}
+  .toc.open{display:block}
+  .toc-open{display:inline-block}
+  .doc{padding:1.4rem 1.1rem 6rem}
+  .search-box input{width:8rem}
+  .art-tools{opacity:1;position:static;flex-direction:row;justify-content:flex-end;margin-bottom:.15rem}
+  .art-tools button,.art-tools a{border:1px solid var(--rule);border-radius:2px;
+    padding:.1rem .45rem;display:inline-block}
+  .art{padding-left:0}
+}
+
+@media print{
+  .top,.toc,.art-tools,.crumb,.toast{display:none!important}
+  a.ref{border-bottom:0}
+  .wrap{display:block}
+  .doc{max-width:none;padding:0}
+  body{font-size:10.5pt;line-height:1.7}
+  .art{page-break-inside:avoid}
+}
+
+.wrap{grid-template-columns:minmax(0,1fr)}
+.doc{max-width:52em}
+.lead{font-family:var(--gothic);font-size:.85rem;color:var(--sub);margin:0 0 1.2rem;line-height:1.8}
+.catnav{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 1.4rem;font-family:var(--gothic)}
+.catnav a{display:inline-flex;align-items:baseline;gap:.35rem;text-decoration:none;
+  color:var(--ink);border:1px solid var(--rule);border-radius:2px;padding:.3rem .7rem;font-size:.82rem}
+.catnav a:hover{border-color:var(--accent);color:var(--accent)}
+.catnav span{font-size:.72rem;color:var(--sub);font-variant-numeric:tabular-nums}
+.filter{font-family:var(--gothic);margin:0 0 1.6rem}
+.filter input{font:inherit;font-size:.85rem;padding:.35rem .6rem;width:20rem;max-width:100%;
+  border:1px solid var(--rule);border-radius:2px}
+.cat{margin:0 0 2.6rem;scroll-margin-top:5rem}
+.cat h2{font-family:var(--gothic);font-size:1.1rem;margin:0 0 .2rem;
+  border-bottom:2px solid var(--ink);padding-bottom:.35rem}
+.cat h2 .count{float:right;font-size:.75rem;font-weight:400;color:var(--sub)}
+.cat .note{font-family:var(--gothic);font-size:.76rem;color:var(--sub);margin:.4rem 0 .8rem}
+.rules{list-style:none;padding:0;margin:0;font-family:var(--gothic)}
+.rules li{padding:.55rem 0;border-bottom:1px solid var(--rule)}
+.rules .name{color:var(--accent);font-weight:700;text-decoration:none}
+.rules .name:hover{text-decoration:underline}
+.rules .rid{font-family:var(--gothic);font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+.rules .meta{display:block;font-size:.74rem;color:var(--sub);margin-top:.12rem}
+.rules .sub{display:block;margin-top:.25rem}
+.rules .sub a{font-size:.7rem;color:var(--sub);text-decoration:none;border:1px solid var(--rule);
+  border-radius:2px;padding:.06rem .4rem;margin-right:.3rem}
+.rules .sub a:hover{color:var(--accent);border-color:var(--accent)}
+.cat.hidden,.rules li.hidden{display:none}
+.rules li.pending{color:var(--sub)}
+.rules li.pending .head{font-weight:700;font-size:.82rem}
+.rules li.pending .list{display:block;font-size:.74rem;margin-top:.2rem;line-height:1.7}
+</style></head>
+<body>
+<header class="top"><div class="top-inner">
+<h1 class="law-title">最高裁判所規則集</h1>
+<span class="law-number">104件</span></div></header>
+<div class="wrap"><main class="doc">
+<p class="lead">分野ごとに、実務で使う頻度が高いと思われるものから並べています。
+規則名を選ぶと現行版が開き、条ごとにリンクを張れます。<br>
+このページは、裁判所が公開しているPDFを機械的に処理したものです。
+条文の正確な内容は、各ページの「原本 p.○」から裁判所のPDFでご確認ください。</p>
+<nav class="catnav"><a href="#c0">民事<span>51</span></a><a href="#c1">刑事<span>26</span></a><a href="#c2">家事・少年<span>9</span></a><a href="#c3">その他<span>20</span></a></nav>
+<p class="filter"><input type="search" id="f" placeholder="規則名でしぼり込む"
+  aria-label="規則名でしぼり込む"></p>
+<section class="cat" id="c0"><h2>民事<span class="count">51件</span></h2><p class="note">民事訴訟・執行・保全・倒産など、民事事件の手続に関する規則です。</p><ul class="rules"><li><a class="name" href="r/100.html">民事訴訟規則</a><span class="meta"><b class="rid">100</b>　／　平成8年12月17日最高裁判所規則第5号　／　令和8年5月21日施行　／　366条</span><span class="sub"><a href="https://www.courts.go.jp/assets/080521minnsokisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/200.html">民事執行規則</a><span class="meta"><b class="rid">200</b>　／　昭和五十四年十一月八日最高裁判所規則第五号　／　令和8年5月27日施行　／　306条</span><span class="sub"><a href="https://www.courts.go.jp/assets/20260527minjisikkoukisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/201.html">民事保全規則</a><span class="meta"><b class="rid">201</b>　／　平成二年五月十六日最高裁判所規則第三号　／　令和8年5月21日施行　／　71条</span><span class="sub"><a href="https://www.courts.go.jp/assets/080521minjihozenkisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/402.html">民事調停規則</a><span class="meta"><b class="rid">402</b>　／　昭和二六年九月一五日最高裁判所規則第八号　／　令和5年2月20日施行　／　47条</span><span class="sub"><a href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/101.html">民事訴訟費用等に関する規則</a><span class="meta"><b class="rid">101</b>　／　昭和四六年六月一四日最高裁判所規則第五号　／　令和8年7月1日施行　／　63条</span><span class="sub"><a href="https://www.courts.go.jp/assets/20260701minsohiyoukisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/300.html">破産規則</a><span class="meta"><b class="rid">300</b>　／　平成十六年十月六日最高裁判所規則第十四号　／　令和8年5月21日施行　／　106条</span><span class="sub"><a href="https://www.courts.go.jp/assets/080521hasannkisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/301.html">民事再生規則</a><span class="meta"><b class="rid">301</b>　／　平成十二年一月三十一日最高裁判所規則第三号　／　令和8年5月21日施行　／　176条</span><span class="sub"><a href="https://www.courts.go.jp/assets/080521minnjisaiseikisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/302.html">会社更生規則</a><span class="meta"><b class="rid">302</b>　／　平成十五年二月十九日最高裁判所規則第二号　／　令和8年5月21日施行　／　82条</span><span class="sub"><a href="https://www.courts.go.jp/assets/080521kaisyakouseikisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/107.html">労働審判規則</a><span class="meta"><b class="rid">107</b>　／　平成17年1月11日最高裁判所規則第2号　／　令和8年5月21日施行　／　45条</span><span class="sub"><a href="https://www.courts.go.jp/assets/080521roudoushinnpannkisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/108.html">労働審判員規則</a><span class="meta"><b class="rid">108</b>　／　平成十七年一月十一日最高裁判所規則第三号　／　令和7年6月1日施行　／　12条</span><span class="sub"><a href="https://www.courts.go.jp/vc-files/courts/roudou_kisokutou/20250212roudoushinpaninkisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/500.html">非訟事件手続規則</a><span class="meta"><b class="rid">500</b>　／　平成二十四年七月十七日最高裁判所規則第七号　／　令和8年5月21日施行　／　82条</span><span class="sub"><a href="https://www.courts.go.jp/assets/080521hisyoukisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/803.html">民事事件等に関する手続における電子情報処理組織の使用に関する細則</a><span class="meta"><b class="rid">803</b>　／　平成八年最高裁判所規則第五号　／　5条</span><span class="sub"><a href="https://www.courts.go.jp/assets/080521saisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/800.html">民事事件等に関する手続において用いる識別符号の付与等に関する規則</a><span class="meta"><b class="rid">800</b>　／　令和6年9月17日最高裁判所規則第15号　／　4条</span><span class="sub"><a href="https://www.courts.go.jp/assets/080521shikibetufugoukisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/801.html">民事事件等に関する手続において用いる識別符号の付与等に関する規則に規定する最高裁判所が定める事項等（令和8年最高裁判所告示第1号)</a><span class="meta"><b class="rid">801</b>　／　3条</span><span class="sub"><a href="https://www.courts.go.jp/assets/080521shikibetufugoukokuji1.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/802.html">民事事件等に関する手続において用いる識別符号の付与における本人確認方法に関する要綱</a><span class="meta"><b class="rid">802</b>　／　</span><span class="sub"><a href="https://www.courts.go.jp/assets/080521honnninnkakuninnyoukou.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/501.html">借地非訟事件手続規則</a><span class="meta"><b class="rid">501</b>　／　昭和四二年一月二六日最高裁判所規則第一号　／　令和5年2月20日施行　／　32条</span><span class="sub"><a href="https://www.courts.go.jp/assets/20260521shakuchihishoukisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/403.html">特定調停手続規則</a><span class="meta"><b class="rid">403</b>　／　平成一二年一月二○日最高裁判所規則第二号　／　平成12年2月17日施行　／　11条</span><span class="sub"><a href="https://www.courts.go.jp/assets/r080521tokuteityoutei.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/406.html">配偶者暴力等に関する保護命令手続規則</a><span class="meta"><b class="rid">406</b>　／　平成一三年七月二七日最高裁判所規則第七号　／　令和6年4月1日施行　／　24条</span><span class="sub"><a href="https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/105.html">発信者情報開示命令事件手続規則</a><span class="meta"><b class="rid">105</b>　／　令和4年3月15日最高裁判所規則第11号　／　令和8年5月21日施行　／　13条</span><span class="sub"><a href="https://www.courts.go.jp/assets/080521hasshinnsyajyouhoukaijimeireikisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/508.html">人身保護規則</a><span class="meta"><b class="rid">508</b>　／　昭和二十三年九月二十一日最高裁判所規則第二十二号　／　令和8年5月21日施行　／　50条</span><span class="sub"><a href="https://www.courts.go.jp/assets/080521jinnshinnhogokisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/102.html">民事訴訟法第八編第二章の規定による督促手続に関する規則</a><span class="meta"><b class="rid">102</b>　／　平成十八年七月二十六日最高裁判所規則第十号　／　令和8年5月21日施行　／　8条</span><span class="sub"><a href="https://www.courts.go.jp/assets/08521minnsohoudaihachihenntokusokutetudukinikannsurukisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/505.html">仲裁関係事件手続規則</a><span class="meta"><b class="rid">505</b>　／　平成一五年一一月二六日最高裁判所規則第二七号　／　令和6年4月1日施行　／　18条</span><span class="sub"><a href="https://www.courts.go.jp/assets/20260521chusaikisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/506.html">国際和解合意関係事件手続規則</a><span class="meta"><b class="rid">506</b>　／　令和六年二月一日最高裁判所規則第三号　／　令和6年4月1日施行　／　15条</span><span class="sub"><a href="https://www.courts.go.jp/assets/20260521kokusaiwakaigouikisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/507.html">特定和解関係事件手続規則</a><span class="meta"><b class="rid">507</b>　／　令和六年二月一日最高裁判所規則第四号　／　令和6年4月1日施行　／　14条</span><span class="sub"><a href="https://www.courts.go.jp/assets/20260521tokuteiwakaikisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/106.html">消費者の財産的被害等の集団的な回復のための民事の裁判手続の特例に関する規則</a><span class="meta"><b class="rid">106</b>　／　平成二十七年六月二九日最高裁判所規則第五号　／　令和8年5月21日施行　／　63条</span><span class="sub"><a href="https://www.courts.go.jp/assets/080521syouhisyatokureikisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/502.html">会社非訟事件等手続規則</a><span class="meta"><b class="rid">502</b>　／　平成一八年二月八日最高裁判所規則第一号　／　令和8年5月21日施行　／　50条</span><span class="sub"><a href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/503.html">一般社団法人等非訟事件手続規則</a><span class="meta"><b class="rid">503</b>　／　令和8年5月21日施行　／　15条</span><span class="sub"><a href="https://www.courts.go.jp/assets/080521ippannsyadannhoujinnkisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/504.html">共有、管理等に関する非訟事件に関する手続規則</a><span class="meta"><b class="rid">504</b>　／　令和四年五月十三日最高裁判所規則第一三号　／　令和8年5月21日施行　／　29条</span><span class="sub"><a href="https://www.courts.go.jp/assets/080521kyouyuukannrikisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/210.html">企業価値担保権実行手続規則</a><span class="meta"><b class="rid">210</b>　／　令和八年四月二二日最高裁判所規則第七号　／　令和8年5月25日施行　／　65条</span><span class="sub"><a href="https://www.courts.go.jp/assets/20260525kigyoukatitanpokenkikisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/209.html">企業担保権実行手続規則</a><span class="meta"><b class="rid">209</b>　／　昭和三十三年六月二十七日最高裁判所規則第五号　／　令和8年5月21日施行　／　42条</span><span class="sub"><a href="https://www.courts.go.jp/assets/080521kigyoutannpokennjikkou.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/304.html">外国倒産処理手続の承認援助に関する規則</a><span class="meta"><b class="rid">304</b>　／　平成十二年十二月二十七日最高裁判所規則第十七号　／　令和8年5月21日施行　／　59条</span><span class="sub"><a href="https://www.courts.go.jp/assets/080521gaikoukutousannsyori.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/303.html">金融機関等の更生手続の特例等に関する規則</a><span class="meta"><b class="rid">303</b>　／　平成十五年二月十九日最高裁判所規則第三号　／　17条</span><span class="sub"><a href="https://www.courts.go.jp/vc-files/courts/2022/kinnyukikankouseikisokuR4.2.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/305.html">船舶所有者等責任制限事件手続規則</a><span class="meta"><b class="rid">305</b>　／　昭和五十一年五月十五日最高裁判所規則第二号　／　令和8年5月21日施行　／　55条</span><span class="sub"><a href="https://www.courts.go.jp/assets/080521sennpakusyoyusya.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/306.html">船舶油濁等損害賠償責任制限事件等手続規則</a><span class="meta"><b class="rid">306</b>　／　昭和五十一年五月十五日最高裁判所規則第三号　／　令和2年10月1日施行　／　10条</span><span class="sub"><a href="https://www.courts.go.jp/vc-files/courts/2020/R021001sennpakuyudakutousongaibaisyousekininseigenjikentoutetuzukikisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/104.html">特許法による査証の手続等に関する規則</a><span class="meta"><b class="rid">104</b>　／　令和二年四月二二日最高裁判所規則第七号　／　12条</span><span class="sub"><a href="https://www.courts.go.jp/vc-files/courts/2020/20200422sasyoukisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/202.html">執行官規則</a><span class="meta"><b class="rid">202</b>　／　昭和41年11月8日最高裁判所規則第10号　／　平成19年4月1日施行　／　28条</span><span class="sub"><a href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/203.html">執行官の手数料及び費用に関する規則</a><span class="meta"><b class="rid">203</b>　／　昭和四一年一二月二八日最高裁判所規則第十五号　／　令和8年7月1日施行　／　48条</span><span class="sub"><a href="https://www.courts.go.jp/assets/20260701sikkoukantesuuryoukisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/404.html">民事調停委員及び家事調停委員規則</a><span class="meta"><b class="rid">404</b>　／　昭和四九年七月一三日最高裁判所規則第五号　／　令和7年6月1日施行　／　10条</span><span class="sub"><a href="https://www.courts.go.jp/vc-files/courts/2025/20250601minjicyouteiiinoyobikajicyouteiiinkisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/405.html">民事調停官及び家事調停官規則</a><span class="meta"><b class="rid">405</b>　／　平成一五年一〇月一日最高裁判所規則第一五号　／　平成16年1月1日施行　／　6条</span><span class="sub"><a href="https://www.courts.go.jp/vc-files/courts/file4/chouteikankisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/111.html">司法委員規則</a><span class="meta"><b class="rid">111</b>　／　昭和23年11月1日最高裁判所規則第29号　／　令和8年7月1日施行　／　10条</span><span class="sub"><a href="https://www.courts.go.jp/assets/20260701sihouiinkisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/109.html">専門委員規則</a><span class="meta"><b class="rid">109</b>　／　令和7年6月1日施行　／　9条</span><span class="sub"><a href="https://www.courts.go.jp/vc-files/courts/2025/20250601senmoniinkisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/110.html">鑑定委員規則</a><span class="meta"><b class="rid">110</b>　／　昭和四二年三月二三日最高裁判所規則第四号　／　令和8年7月1日施行　／　11条</span><span class="sub"><a href="https://www.courts.go.jp/assets/20260701kanteiiinkisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/204.html">滞納処分と強制執行等との手続の調整に関する規則</a><span class="meta"><b class="rid">204</b>　／　昭和三十二年八月一日最高裁判所規則第十二号　／　平成14年4月1日施行　／　59条</span><span class="sub"><a href="https://www.courts.go.jp/vc-files/courts/file2/20130701taichoukisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/206.html">都市再開発法による権利の変換と強制執行等との調整に関する規則</a><span class="meta"><b class="rid">206</b>　／　昭和四十五年四月二十五日最高裁判所規則第二号　／　10条</span><span class="sub"><a href="https://www.courts.go.jp/vc-files/courts/2022/toshisaikaihatsuhoutyouseikisokuR4.2.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/205.html">土地の収用等と強制執行等との調整に関する規則</a><span class="meta"><b class="rid">205</b>　／　昭和四十二年十二月十一日最高裁判所規則第十四号　／　昭和55年10月1日施行　／　12条</span><span class="sub"><a href="https://www.courts.go.jp/vc-files/courts/2022/tochisyuuyoutyouseikisokuR4.2.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/208.html">マンションの再生等の円滑化に関する法律による権利の変換等と強制執行等との調整に関する規則</a><span class="meta"><b class="rid">208</b>　／　平成一四年一二月一一日最高裁判所規則第一三号　／　令和8年4月1日施行　／　7条</span><span class="sub"><a href="https://www.courts.go.jp/assets/20260401mansionsaisei.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/207.html">密集市街地における防災街区の整備の促進に関する法律による権利の変換と強制執行等との調整に関する規則</a><span class="meta"><b class="rid">207</b>　／　平成十五年十一月二十六日最高裁判所規則第二十八号　／　平成15年12月19日施行　／　4条</span><span class="sub"><a href="https://www.courts.go.jp/assets/20031219missyuushigaichicyouseikisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/103.html">民事訴訟手続に関する条約等の実施に伴う民事訴訟手続の特例等に関する規則</a><span class="meta"><b class="rid">103</b>　／　昭和四五年七月七日最高裁判所規則第六号　／　昭和45年7月27日施行　／　20条</span><span class="sub"><a href="https://www.courts.go.jp/assets/tokureikisoku2.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/709.html">人事官弾劾裁判手続規則</a><span class="meta"><b class="rid">709</b>　／　昭和二十五年一月二十八日最高裁判所規則第五号　／　令和8年5月21日施行　／　10条</span><span class="sub"><a href="https://www.courts.go.jp/assets/080521jinnjikanndanngaikisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/509.html">人身保護法による国選代理人の旅費等に関する規則</a><span class="meta"><b class="rid">509</b>　／　昭和二三年九月二一日最高裁判所規則第二三号　／　令和8年7月1日施行　／　5条</span><span class="sub"><a href="https://www.courts.go.jp/assets/20260701jinsinhogoryohikisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/901.html">奄美群島の復帰に伴う民事に関する事件の手続の経過措置に関する規則</a><span class="meta"><b class="rid">901</b>　／　昭和28年12月24日最高裁判所規則第28号　／　昭和28年12月25日施行　／　4条</span><span class="sub"><a href="https://www.courts.go.jp/assets/amamiguntounohukkinitomonauminjinikansurujikennotetudukinokeikasotinikansurukisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li></ul></section><section class="cat" id="c1"><h2>刑事<span class="count">26件</span></h2><p class="note">刑事訴訟の手続、裁判員裁判、没収・保全などに関する規則です。</p><ul class="rules"><li><a class="name" href="r/600.html">刑事訴訟規則</a><span class="meta"><b class="rid">600</b>　／　昭和二三年一二月一日最高裁判所規則第三二号　／　令和8年5月21日施行　／　568条</span><span class="sub"><a href="https://www.courts.go.jp/assets/keijisosyoukisoku_20260521.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/601.html">刑事訴訟規則施行規則</a><span class="meta"><b class="rid">601</b>　／　昭和二三年一二月二三日最高裁判所規則第三四号　／　令和6年2月15日施行　／　6条</span><span class="sub"><a href="https://www.courts.go.jp/vc-files/courts/2023/keijisosyoukisokusekoukisoku.20240215.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/602.html">裁判員の参加する刑事裁判に関する規則</a><span class="meta"><b class="rid">602</b>　／　平成一九年七月五日最高裁判所規則第七号　／　令和8年7月1日施行　／　72条</span><span class="sub"><a href="https://www.courts.go.jp/assets/saibaninkisoku20260701.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/603.html">犯罪被害者等の権利利益の保護を図るための刑事手続に付随する措置に関する規則</a><span class="meta"><b class="rid">603</b>　／　平成12年9月27日最高裁判所規則第13号　／　令和8年5月21日施行　／　60条</span><span class="sub"><a href="https://www.courts.go.jp/assets/hanzaihigaisyakisoku.20260521.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/604.html">刑事の手続における証人等に対する給付に関する規則</a><span class="meta"><b class="rid">604</b>　／　昭和四六年六月一四日最高裁判所規則第八号　／　令和8年7月1日施行　／　6条</span><span class="sub"><a href="https://www.courts.go.jp/assets/shounintoukisoku20260701.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/623.html">総合法律支援法による国選弁護人等契約弁護士に係る費用の額の算定等に関する規則</a><span class="meta"><b class="rid">623</b>　／　平成十六年法律第七十四号　／　平成19年11月1日施行　／　9条</span><span class="sub"><a href="https://www.courts.go.jp/assets/kokusennbengohiyousanteikisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/605.html">刑事補償規則</a><span class="meta"><b class="rid">605</b>　／　昭和25年1月1日最高裁判所規則第1号</span><span class="sub"><a href="https://www.courts.go.jp/assets/keijihoshoukisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/411.html">心神喪失等の状態で重大な他害行為を行った者の医療及び観察等に関する法律による審判の手続等に関する規則</a><span class="meta"><b class="rid">411</b>　／　令和8年5月21日施行　／　110条</span><span class="sub"><a href="https://www.courts.go.jp/assets/iryoukansatsukisoku-20260521.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/607.html">犯罪捜査のための通信傍受に関する規則</a><span class="meta"><b class="rid">607</b>　／　平成十二年三月十五日最高裁判所規則第六号　／　平成13年1月6日施行　／　19条</span><span class="sub"><a href="https://www.courts.go.jp/vc-files/courts/file5/tuusinboujukisoku010601.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/608.html">犯罪収益に係る保全手続等に関する規則</a><span class="meta"><b class="rid">608</b>　／　平成15年1月6日施行　／　32条</span><span class="sub"><a href="https://www.courts.go.jp/vc-files/courts/2023/hanzaisyuuekihozennkisoku20230220.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/609.html">薬物犯罪等に係る保全手続等に関する規則</a><span class="meta"><b class="rid">609</b>　／　平成三年法律第九十四号　／　7条</span><span class="sub"><a href="https://www.courts.go.jp/assets/yakubutsuhanhozenkisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/606.html">刑事事件における第三者所有物の没収手続に関する規則</a><span class="meta"><b class="rid">606</b>　／　2条</span><span class="sub"><a href="https://www.courts.go.jp/assets/daisanshabosyukisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/610.html">金融商品取引法等による第三者の財産等の没収手続に関する規則</a><span class="meta"><b class="rid">610</b>　／　平成26年9月24日最高裁判所規則第6号</span><span class="sub"><a href="https://www.courts.go.jp/vc-files/courts/2024/20240701kinshouhoukisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/619.html">性的な姿態を撮影する行為等の処罰及び押収物に記録された性的な姿態の影像に係る電磁的記録の消去等に関する法律による消去等の手続等に関する規則</a><span class="meta"><b class="rid">619</b>　／　10条</span><span class="sub"><a href="https://www.courts.go.jp/assets/seitekishitaisatueikisoku20260521.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/613.html">交通事件即決裁判手続規則</a><span class="meta"><b class="rid">613</b>　／　昭和二十九年法律第百十三号　／　10条</span><span class="sub"><a href="https://www.courts.go.jp/assets/koutsusokketsukisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/620.html">高等裁判所刑事上告事件移送規則</a><span class="meta"><b class="rid">620</b>　／　昭和22年10月9日最高裁判所規則第5号　／　昭和31年6月1日施行</span><span class="sub"><a href="https://www.courts.go.jp/assets/kousaijikenisoukisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/615.html">逃亡犯罪人引渡法による審査等の手続に関する規則</a><span class="meta"><b class="rid">615</b>　／　昭和二十八年法律第六十八号　／　平成18年5月24日施行　／　29条</span><span class="sub"><a href="https://www.courts.go.jp/vc-files/courts/2022/toubouhanzaininhikiwatashikisoku20220221.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/617.html">国際受刑者移送法による東京地方裁判所の審査の手続に関する規則</a><span class="meta"><b class="rid">617</b>　／　平成十四年法律第六十六号　／　6条</span><span class="sub"><a href="https://www.courts.go.jp/assets/jyukeisyaisoushinnsa.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/616.html">国際捜査共助規則</a><span class="meta"><b class="rid">616</b>　／　昭和五十五年法律第六十九号　／　平成16年6月29日施行　／　2条</span><span class="sub"><a href="https://www.courts.go.jp/assets/kokusaisousakyoujyo.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/618.html">国際刑事裁判所に対する協力の手続に関する規則</a><span class="meta"><b class="rid">618</b>　／　平成19年7月19日最高裁判所規則第8号　／　平成21年1月5日施行　／　14条</span><span class="sub"><a href="https://www.courts.go.jp/vc-files/courts/2022/kokusaikeijisaibansyokisoku20220221.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/611.html">不正競争防止法第二十三条第一項に規定する事件に係る刑事訴訟手続の特例に関する規則</a><span class="meta"><b class="rid">611</b>　／　平成二十三年十月十一日最高裁判所規則第四号　／　令和6年2月15日施行　／　12条</span><span class="sub"><a href="https://www.courts.go.jp/vc-files/courts/2023/huseikyousouboushitokureikisoku.20240215.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/211.html">不正競争防止法による保全手続等に関する規則</a><span class="meta"><b class="rid">211</b>　／　平成二十七年十月二十八日最高裁判所規則第十号　／　5条</span><span class="sub"><a href="https://www.courts.go.jp/vc-files/courts/file4/huseikyousouboushikisoku-20160101.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/612.html">国税庁監察官の行う捜査に関する刑事訴訟規則の適用に関する規則</a><span class="meta"><b class="rid">612</b>　／　昭和二五年六月八日最高裁判所規則第一九号　／　令和6年2月15日施行　／　1条</span><span class="sub"><a href="https://www.courts.go.jp/vc-files/courts/2023/kokuzeichokansatukansousakisoku.20240215.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/614.html">道路交通法の施行に伴う交通事件の即決裁判に関する手続の経過措置に関する規則</a><span class="meta"><b class="rid">614</b>　／　昭和35年11月21日最高裁判所規則第15号　／　昭和35年12月20日施行</span><span class="sub"><a href="https://www.courts.go.jp/assets/koutsusokketsukeikasochikisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/621.html">旧刑事訴訟法事件の控訴審及び上告審における審判の特例に関する規則</a><span class="meta"><b class="rid">621</b>　／　昭和二十三年法律第百三十一号　／　昭和26年1月4日施行　／　20条</span><span class="sub"><a href="https://www.courts.go.jp/assets/jyousoshinpantokurei.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/622.html">平和条約の実施に伴う刑事判決の再審査の手続に関する規則</a><span class="meta"><b class="rid">622</b>　／　昭和27年4月28日最高裁判所規則第11号</span><span class="sub"><a href="https://www.courts.go.jp/assets/heiwajyouyakusaishinsa.pdf" target="_blank" rel="noopener">原本PDF</a></span></li></ul></section><section class="cat" id="c2"><h2>家事・少年<span class="count">9件</span></h2><p class="note">家事事件・人事訴訟・少年審判の手続に関する規則です。</p><ul class="rules"><li><a class="name" href="r/400.html">家事事件手続規則</a><span class="meta"><b class="rid">400</b>　／　平成24年7月17日最高裁判所規則第8号　／　令和8年5月21日施行　／　166条</span><span class="sub"><a href="https://www.courts.go.jp/assets/20260521kajikisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/401.html">人事訴訟規則</a><span class="meta"><b class="rid">401</b>　／　令和8年5月21日施行　／　64条</span><span class="sub"><a href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/408.html">少年審判規則</a><span class="meta"><b class="rid">408</b>　／　昭和23年12月21日最高裁判所規則第33号　／　令和8年5月21日施行　／　108条</span><span class="sub"><a href="https://www.courts.go.jp/assets/20260521shounenshinpankisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/407.html">国際的な子の奪取の民事上の側面に関する条約の実施に関する法律による子の返還に関する事件の手続等に関する規則</a><span class="meta"><b class="rid">407</b>　／　平成25年11月13日最高裁判所規則第5号　／　令和8年5月21日施行　／　109条</span><span class="sub"><a href="https://www.courts.go.jp/assets/20260521haguenokisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/404.html">民事調停委員及び家事調停委員規則</a><span class="meta"><b class="rid">404</b>　／　昭和四九年七月一三日最高裁判所規則第五号　／　令和7年6月1日施行　／　10条</span><span class="sub"><a href="https://www.courts.go.jp/vc-files/courts/2025/20250601minjicyouteiiinoyobikajicyouteiiinkisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/405.html">民事調停官及び家事調停官規則</a><span class="meta"><b class="rid">405</b>　／　平成一五年一〇月一日最高裁判所規則第一五号　／　平成16年1月1日施行　／　6条</span><span class="sub"><a href="https://www.courts.go.jp/vc-files/courts/file4/chouteikankisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/112.html">参与員規則</a><span class="meta"><b class="rid">112</b>　／　令和8年7月1日施行　／　11条</span><span class="sub"><a href="https://www.courts.go.jp/assets/20260701sanyoinkisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/409.html">少年の保護事件に係る補償に関する規則</a><span class="meta"><b class="rid">409</b>　／　平成13年4月1日施行　／　14条</span><span class="sub"><a href="https://www.courts.go.jp/assets/20260521shounenhoshoukisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/410.html">少年法による調査及び観察のための援助費用に関する規則</a><span class="meta"><b class="rid">410</b>　／　昭和25年12月28日最高裁判所規則第36号　／　令和7年4月1日施行</span><span class="sub"><a href="https://www.courts.go.jp/vc-files/courts/2025/20250401syounenenzyohiyoukisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li></ul></section><section class="cat" id="c3"><h2>その他<span class="count">20件</span></h2><p class="note">裁判所の組織・事務処理・法廷の秩序維持などに関する規則です。</p><ul class="rules"><li><a class="name" href="r/717.html">事件記録等の特別保存に関する規則</a><span class="meta"><b class="rid">717</b>　／　令和5年最高裁判所規則第9号　／　令和8年5月25日施行　／　20条</span><span class="sub"><a href="https://www.courts.go.jp/assets/R8_5tokubetuhozonkisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/714.html">法廷等の秩序維持に関する規則</a><span class="meta"><b class="rid">714</b>　／　昭和27年9月1日最高裁判所規則第20号　／　平成18年5月24日施行　／　32条</span><span class="sub"><a href="https://www.courts.go.jp/assets/R6.9.17houteitounotitujoijinikannsurukisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/716.html">裁判所傍聴規則</a><span class="meta"><b class="rid">716</b>　／　昭和27年9月1日最高裁判所規則第21号　／　3条</span><span class="sub"><a href="https://www.courts.go.jp/assets/saibansyoboutyoukisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/715.html">法廷の秩序維持等にあたる裁判所職員に関する規則</a><span class="meta"><b class="rid">715</b>　／　昭和27年9月16日最高裁判所規則第23号　／　3条</span><span class="sub"><a href="https://www.courts.go.jp/assets/houteinotitujoijitouniatarusaibansyosyokuinnikansurukisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/701.html">下級裁判所事務処理規則</a><span class="meta"><b class="rid">701</b>　／　昭和23年8月18日最高裁判所規則第16号　／　平成24年4月1日施行　／　32条</span><span class="sub"><a href="https://www.courts.go.jp/assets/kakyuuki-H240401.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/700.html">最高裁判所裁判事務処理規則</a><span class="meta"><b class="rid">700</b>　／　昭和22年11月1日最高裁判所規則第6号　／　昭和40年4月1日施行　／　15条</span><span class="sub"><a href="https://www.courts.go.jp/assets/R6.9.17saikousaibansyosaibanjimusyorikisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/702.html">最高裁判所事務総局規則</a><span class="meta"><b class="rid">702</b>　／　昭和22年12月1日最高裁判所規則第10号　／　令和6年5月1日施行　／　13条</span><span class="sub"><a href="https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/711.html">地方裁判所における審理に判事補の参与を認める規則</a><span class="meta"><b class="rid">711</b>　／　昭和47年9月18日最高裁判所規則第8号　／　昭和49年2月1日施行　／　5条</span><span class="sub"><a href="https://www.courts.go.jp/assets/R6.9.17tihousaibansyoniokerusinnrinihannjihonosannyowomitomerukisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/708.html">裁判官の分限事件手続規則</a><span class="meta"><b class="rid">708</b>　／　昭和23年6月7日最高裁判所規則第6号　／　平成25年1月1日施行　／　11条</span><span class="sub"><a href="https://www.courts.go.jp/assets/saibankannobungenjikentetudukikisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/706.html">下級裁判所裁判官指名諮問委員会規則</a><span class="meta"><b class="rid">706</b>　／　平成15年2月26日最高裁判所規則第6号　／　平成15年5月1日施行　／　19条</span><span class="sub"><a href="https://www.courts.go.jp/assets/kakyuusaibansyosaibankansimeisimoniinkai.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/707.html">裁判官の人事評価に関する規則</a><span class="meta"><b class="rid">707</b>　／　平成16年1月7日最高裁判所規則第1号　／　平成16年4月1日施行　／　6条</span><span class="sub"><a href="https://www.courts.go.jp/assets/saibankanjinjihyouka.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/710.html">簡易裁判所判事選考規則</a><span class="meta"><b class="rid">710</b>　／　昭和22年9月19日最高裁判所規則第2号　／　昭和24年1月1日施行　／　27条</span><span class="sub"><a href="https://www.courts.go.jp/assets/kansaihanjisenkou.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/704.html">地方裁判所委員会規則</a><span class="meta"><b class="rid">704</b>　／　平成15年4月2日最高裁判所規則第9号　／　平成15年8月1日施行　／　9条</span><span class="sub"><a href="https://www.courts.go.jp/assets/chihousaibannshoiinnkaikisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/705.html">家庭裁判所委員会規則</a><span class="meta"><b class="rid">705</b>　／　平成15年4月2日最高裁判所規則第10号　／　平成15年8月1日施行　／　13条</span><span class="sub"><a href="https://www.courts.go.jp/assets/kateisaibannshoiinnkaikisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/712.html">司法修習委員会規則</a><span class="meta"><b class="rid">712</b>　／　平成15年4月9日最高裁判所規則第11号　／　平成19年12月26日施行　／　10条</span><span class="sub"><a href="https://www.courts.go.jp/assets/shihousyusyuuiinnkai.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/713.html">司法修習生の修習専念資金の貸与等に関する規則</a><span class="meta"><b class="rid">713</b>　／　平成21年10月30日最高裁判所規則第10号　／　令和5年11月1日施行　／　20条</span><span class="sub"><a href="https://www.courts.go.jp/assets/051101_kisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/718.html">裁判の迅速化に係る検証に関する規則</a><span class="meta"><b class="rid">718</b>　／　平成15年11月13日最高裁判所規則第26号　／　4条</span><span class="sub"><a href="https://www.courts.go.jp/assets/r4kisokukaisei.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/719.html">最高裁判所行政不服審査委員会規則</a><span class="meta"><b class="rid">719</b>　／　平成28年3月24日最高裁判所規則第二号　／　平成28年4月1日施行　／　27条</span><span class="sub"><a href="https://www.courts.go.jp/assets/gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/703.html">大法廷首席書記官等に関する規則</a><span class="meta"><b class="rid">703</b>　／　昭和29年6月1日最高裁判所規則第9号　／　令和6年4月1日施行　／　13条</span><span class="sub"><a href="https://www.courts.go.jp/assets/daihouteisyusekisyokikantounikansurukisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li><li><a class="name" href="r/900.html">沖縄の復帰に伴う特別措置に関する規則</a><span class="meta"><b class="rid">900</b>　／　昭和47年5月2日最高裁判所規則第1号　／　平成19年4月1日施行　／　32条</span><span class="sub"><a href="https://www.courts.go.jp/assets/okinawanohukkinitomonautokubetusotinikansurukisoku.pdf" target="_blank" rel="noopener">原本PDF</a></span></li></ul></section>
+<div class="foot">最高裁規則ビューア 1.9.0 で 2026年09月02日 に作成</div>
+</main></div>
+<script>
+(function(){
+  var input = document.getElementById("f");
+  var cats = document.getElementsByClassName("cat");
+  input.addEventListener("input", function(){
+    var q = input.value.trim();
+    for (var c = 0; c < cats.length; c++) {
+      var items = cats[c].getElementsByTagName("li"), shown = 0;
+      for (var i = 0; i < items.length; i++) {
+        var hit = !q || items[i].textContent.indexOf(q) >= 0;
+        items[i].classList.toggle("hidden", !hit);
+        if (hit) shown++;
+      }
+      cats[c].classList.toggle("hidden", shown === 0);
+    }
+  });
+})();
+</script>
+</body></html>

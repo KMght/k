@@ -1,0 +1,182 @@
+{
+  "title": "国税庁監察官の行う捜査に関する刑事訴訟規則の適用に関する規則",
+  "law_number": "昭和二五年六月八日最高裁判所規則第一九号",
+  "enforcement_date": "令和6年2月15日",
+  "enforcement_iso": "2024-02-15",
+  "pdf_link": "https://www.courts.go.jp/vc-files/courts/2023/kokuzeichokansatukansousakisoku.20240215.pdf",
+  "source": "kokuzeichokansatukansousakisoku.20240215.pdf",
+  "numeral": "kansuji",
+  "notes": [
+    "題名・制定文とみられる行を本文の前に検出しました：改正 昭和二九年九月一五日最高裁判所規則第一五号／昭和六〇年九月二五日最高裁判所規則第三号／平成一二年一二月一五日最高裁判所規則第一五号",
+    "各条の「原本」は https://www.courts.go.jp/vc-files/courts/2023/kokuzeichokansatukansousakisoku.20240215.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+  ],
+  "nodes": [
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "",
+      "anchor": "sup1",
+      "level": 1,
+      "page": 1,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-1",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 1,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、公布の日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和二九年九月一五日最高裁判所規則第一五号）",
+      "anchor": "sup2",
+      "level": 1,
+      "page": 1,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-2",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 2,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、公布の日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和六〇年九月二五日最高裁判所規則第三号）",
+      "anchor": "sup3",
+      "level": 1,
+      "page": 1,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-3",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 3,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、公布の日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成一二年一二月一五日最高裁判所規則第一五号）",
+      "anchor": "sup4",
+      "level": 1,
+      "page": 1,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-4",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 4,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、平成十三年一月六日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（令和五年一二月二五日最高裁判所規則第一〇号）抄",
+      "anchor": "sup5",
+      "level": 1,
+      "page": 1,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "sup5-a1",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 5,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、刑事訴訟法等の一部を改正する法律（令和五年法律第二十八号）附則第一条第四号に掲げる規定の施行の日（令和六年二月一五日）から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    }
+  ]
+}

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>少年の保護事件に係る補償に関する規則</title>
+<style>
+:root{
+  --paper:#ffffff;
+  --ink:#16181d;
+  --sub:#5f6875;
+  --rule:#dde2e9;
+  --chrome:#f4f6f9;
+  --accent:#14538a;
+  --accent-weak:#e7eff7;
+  --mark:#ffe08a;
+  --mark-live:#ff9d3d;
+  --gothic:"Yu Gothic UI","Yu Gothic","YuGothic","Hiragino Sans","Noto Sans JP","Meiryo",system-ui,sans-serif;
+  --mincho:"Yu Mincho","YuMincho","Hiragino Mincho ProN","Noto Serif JP","MS Mincho",serif;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:5.5rem}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--mincho);font-size:17px;line-height:1.9;
+  text-rendering:optimizeLegibility;
+}
+
+/* ---------------------------------------------------------------- ヘッダ */
+.top{
+  position:sticky;top:0;z-index:30;background:var(--chrome);
+  border-bottom:1px solid var(--rule);font-family:var(--gothic);
+}
+.top-inner{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;padding:.7rem 1.2rem}
+.law-title{font-size:1.12rem;font-weight:700;letter-spacing:.02em;margin:0}
+.law-number{font-size:.8rem;color:var(--sub);margin-left:.2rem}
+.top-tools{margin-left:auto;display:flex;align-items:center;gap:.5rem}
+.search-box{display:flex;align-items:center;gap:.35rem;background:var(--paper);
+  border:1px solid var(--rule);border-radius:2px;padding:.25rem .5rem}
+.search-box input{border:0;outline:0;font:inherit;font-size:.85rem;width:14rem;background:transparent;color:inherit}
+.hit-count{font-size:.78rem;color:var(--sub);min-width:4.2rem;text-align:right;font-variant-numeric:tabular-nums}
+button{font:inherit;font-family:var(--gothic);cursor:pointer}
+.btn{background:var(--paper);border:1px solid var(--rule);border-radius:2px;
+  color:var(--ink);font-size:.78rem;padding:.28rem .6rem;line-height:1.4}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.crumb{padding:.3rem 1.2rem;border-top:1px solid var(--rule);background:var(--paper);
+  font-family:var(--gothic);font-size:.78rem;color:var(--sub);min-height:1.7rem}
+
+/* ------------------------------------------------------------------ 骨格 */
+.wrap{display:grid;grid-template-columns:19rem minmax(0,1fr);align-items:start}
+.toc{
+  position:sticky;top:5.6rem;max-height:calc(100vh - 5.6rem);overflow-y:auto;
+  border-right:1px solid var(--rule);padding:1rem .6rem 4rem 1.2rem;
+  font-family:var(--gothic);font-size:.83rem;line-height:1.65;
+}
+.toc h2{font-size:.75rem;color:var(--sub);font-weight:700;margin:0 0 .6rem}
+.toc ul{list-style:none;margin:0;padding:0}
+.toc a{display:block;color:var(--ink);text-decoration:none;padding:.16rem .4rem;border-radius:2px}
+.toc a:hover{background:var(--accent-weak);color:var(--accent)}
+.toc a.current{background:var(--accent-weak);color:var(--accent);font-weight:700}
+.toc .div-1>a,.toc .div-2>a{font-weight:700}
+.toc .div-2{margin-top:.5rem}
+.toc .div-3,.toc .div-4,.toc .div-5{margin-top:.25rem}
+.toc .lv-art{padding-left:.9rem}
+.toc .lv-art.hidden,.toc .lv-div.hidden{display:none}
+.toc-toggle{background:none;border:0;color:var(--sub);padding:0 .3rem;font-size:.75rem}
+
+.doc{padding:2.2rem 2rem 8rem;max-width:44em}
+.doc-head{border-bottom:2px solid var(--ink);padding-bottom:.8rem;margin-bottom:2rem}
+.doc-head h1{font-size:1.5rem;margin:0 0 .3rem;letter-spacing:.04em}
+.doc-head .meta{font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+
+/* ------------------------------------------------------------------ 条文 */
+.div-head{font-family:var(--gothic);margin:2.6rem 0 1rem;scroll-margin-top:6rem}
+.div-head .lbl{color:var(--accent);font-weight:700}
+h2.div-head{font-size:1.12rem;border-bottom:1px solid var(--rule);padding-bottom:.35rem}
+h3.div-head{font-size:1.02rem}
+h4.div-head,h5.div-head,h6.div-head{font-size:.95rem}
+
+.art{position:relative;padding-left:2.6rem;margin:1.5rem 0 1.9rem;scroll-margin-top:6rem}
+.art:target{background:var(--accent-weak);box-shadow:-.4rem 0 0 var(--accent);border-radius:2px}
+.art-tools{position:absolute;left:0;top:.25rem;display:flex;flex-direction:column;gap:.2rem;
+  visibility:hidden}
+.art:hover .art-tools,.art:focus-within .art-tools,.art:target .art-tools{visibility:visible}
+.art-tools button,.art-tools a{background:none;border:0;color:var(--sub);font-size:.72rem;
+  font-family:var(--gothic);padding:.1rem .2rem;border-radius:2px;text-decoration:none;
+  white-space:nowrap;display:block}
+.art-tools button:hover,.art-tools a:hover{color:var(--accent);background:var(--accent-weak)}
+.raw h3 .src{font-size:.75rem;font-weight:400;color:var(--sub);margin-left:.5rem}
+.doc-head .src{color:var(--accent);text-decoration:none}
+.doc-head .src:hover{text-decoration:underline}
+.caption{font-family:var(--gothic);font-size:.88rem;font-weight:700;color:var(--sub);margin:0 0 .1rem}
+.amend-note{font-family:var(--gothic);font-size:.78rem;font-weight:400;color:var(--sub);margin:.1rem 0 0;text-align:right}
+h2 .amend-note,h3 .amend-note,h4 .amend-note,h5 .amend-note,h6 .amend-note{display:inline;text-align:left}
+.art-no{font-family:var(--gothic);font-weight:700;color:var(--accent);text-decoration:none;margin-right:.55em}
+.art-no:hover{text-decoration:underline}
+.para{margin:.35rem 0;text-indent:0}
+.para+.para{margin-top:.55rem}
+.pno{font-family:var(--gothic);color:var(--sub);font-size:.9em;margin-right:.5em;font-variant-numeric:tabular-nums}
+.deleted .body-text{color:var(--sub)}
+.art.noarticle .para{margin-top:0}
+
+ol.items{list-style:none;margin:.35rem 0 .35rem 1.1em;padding:0}
+ol.items>li{display:grid;grid-template-columns:2.4em minmax(0,1fr);margin:.2rem 0}
+ol.items .mk{font-family:var(--gothic);font-size:.9em;color:var(--sub);margin-right:.4em}
+ol.items ol.items{grid-column:1/-1;margin-left:1.2em}
+ol.items ol.items>li{grid-template-columns:2em minmax(0,1fr)}
+
+.raw{margin:1.6rem 0;scroll-margin-top:6rem}
+.raw h3{font-family:var(--gothic);font-size:1rem;margin:0 0 .4rem}
+.raw pre{font-family:var(--mincho);white-space:pre-wrap;margin:0;padding:.7rem .9rem;
+  background:var(--chrome);border:1px solid var(--rule);font-size:.92rem;line-height:1.75}
+
+.notes{margin:2.5rem 0 0;padding:.8rem 1rem;background:var(--chrome);
+  border-left:3px solid var(--accent);font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+.notes p{margin:0 0 .3rem;font-weight:700;color:var(--ink)}
+.notes ul{margin:0;padding-left:1.2rem}
+.foot{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);
+  font-family:var(--gothic);font-size:.75rem;color:var(--sub)}
+
+a.ref{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule)}
+a.ref:hover{color:var(--accent);border-bottom-color:var(--accent)}
+a.ref-egov{border-bottom-style:dotted}
+a.ref-rule{border-bottom-color:var(--accent)}
+mark{background:var(--mark);color:inherit;padding:0 .05em}
+mark.live{background:var(--mark-live)}
+.toast{position:fixed;left:50%;bottom:2rem;transform:translateX(-50%);
+  background:var(--ink);color:#fff;font-family:var(--gothic);font-size:.8rem;
+  padding:.5rem .9rem;border-radius:3px;pointer-events:none;z-index:60;display:none}
+.toast.show{display:block}
+
+.toc-open{display:none}
+@media (max-width:900px){
+  body{font-size:16px}
+  .wrap{grid-template-columns:minmax(0,1fr)}
+  .toc{position:fixed;inset:5.6rem auto 0 0;width:82vw;max-width:20rem;background:var(--paper);
+    z-index:25;box-shadow:0 0 0 100vmax rgba(0,0,0,.25);max-height:none;height:calc(100vh - 5.6rem);
+    display:none}
+  .toc.open{display:block}
+  .toc-open{display:inline-block}
+  .doc{padding:1.4rem 1.1rem 6rem}
+  .search-box input{width:8rem}
+  .art-tools{opacity:1;position:static;flex-direction:row;justify-content:flex-end;margin-bottom:.15rem}
+  .art-tools button,.art-tools a{border:1px solid var(--rule);border-radius:2px;
+    padding:.1rem .45rem;display:inline-block}
+  .art{padding-left:0}
+}
+
+@media print{
+  .top,.toc,.art-tools,.crumb,.toast{display:none!important}
+  a.ref{border-bottom:0}
+  .wrap{display:block}
+  .doc{max-width:none;padding:0}
+  body{font-size:10.5pt;line-height:1.7}
+  .art{page-break-inside:avoid}
+}
+
+.anchor-alias{position:absolute;scroll-margin-top:6rem}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <button type="button" class="btn toc-open" id="toc-open">目次</button>
+    <h1 class="law-title">少年の保護事件に係る補償に関する規則</h1>
+    <span class="law-number">平成13年4月1日施行</span>
+    <div class="top-tools">
+      <div class="search-box">
+        <input type="search" id="q" placeholder="条文を検索（/ キー）" aria-label="条文を検索">
+        <span class="hit-count" id="hits"></span>
+      </div>
+      <button type="button" class="btn" id="prev" title="前の該当箇所">前</button>
+      <button type="button" class="btn" id="next" title="次の該当箇所">次</button>
+      <button type="button" class="btn" id="numeral" aria-pressed="false"
+        title="条番号の表記を切り替える">123</button>
+    </div>
+  </div>
+  <div class="crumb" id="crumb"></div>
+</header>
+<div class="wrap">
+  <nav class="toc" id="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ul><li class="lv-art" data-text="第一条1条趣旨趣旨少年の保護事件に係る補償に関する法律（平成四年法律第八十四号。以下「法」という。）による決定の告知及び補償の払渡しの方法その他補償の実施に関しては、法に定めるもののほか、この規則の定めるところによる。"><a href="#a1">第一条　趣旨</a></li><li class="lv-art" data-text="第二条2条事件の開始事件の開始法第二条第一項の決定において同項の判断がされ、その決定が確定した場合において、その決定をした家庭裁判所は、その決定を受けた者が審判事由（法第一条の審判事由をいう。次項において同じ。）で当該判断に係るものに関して法第二条第一項各号に掲げる身体の自由の拘束を受けたものであると思料するときは、事件を開始する手続として、裁判所書記官に命じて、当該決定において当該判断がされ、その決定が確定した旨を明らかにした書面を作成させなければならない。法第二条第二項の決定が確定した場合において、その決定をした家庭裁判所は、その決定を受けた者が当該決定に係る審判事由に関して同項の身体の自由の拘束又は没取を受けたものであると思料するときは、事件を開始する手続として、裁判所書記官に命じて、当該決定が確定した旨を明らかにした書面を作成させなければならない。"><a href="#a2">第二条　事件の開始</a></li><li class="lv-art" data-text="第三条3条代理代理本人又は法第六条第一項の特別関係者（これらの法定代理人を含む。）が弁護士でない者を代理人に選任するには、家庭裁判所の許可を受けなければならない。前項の許可は、いつでも取り消すことができる。代理人の権限（法定代理権を含む。）は、書面で証明しなければならない。"><a href="#a3">第三条　代理</a></li><li class="lv-art" data-text="第四条4条申出の方式申出の方式法第五条第三項の申出は、次に掲げる事項を明らかにしてしなければならない。一申出に係る決定の表示二本人及び代理人の氏名、名称又は商号及び住所又は居所三申出の趣旨及び理由法第六条第一項の申出は、次に掲げる事項を明らかにしてしなければならない。一申出人及び代理人の氏名、名称又は商号及び住所又は居所二本人が死亡した年月日及び申出人と本人との関係三申出の趣旨及び理由法第五条第三項又は法第六条第一項の申出を口頭でするには、裁判所書記官の面前で陳述しなければならない。この場合においては、裁判所書記官は、調書を作らなければならない。法第六条第一項の申出をする場合において、第二項第二号に掲げる事項を証する資料があるときは、申出人は、その資料を提出しなければならない。"><a href="#a4">第四条　申出の方式</a></li><li class="lv-art" data-text="第五条5条決定書の作成決定書の作成法第五条第一項の補償に関する決定若しくは同条第三項の変更の決定（次条において「補償に関する決定」と総称する。）又は法第六条第一項の特別関係者に対する補償の決定（次条において「特別関係者に対する補償の決定」という。）をするときは、決定書を作成しなければならない。前項の決定書には、次に掲げる事項を記載しなければならない。一事件の表示二本人又は申出人の氏名、名称又は商号及び住所又は居所並びに代理人の氏名、名称又は商号三主文及び理由四決定の年月日五裁判所の表示少年審判規則（昭和二十三年最高裁判所規則第三十三号）第二条第一項及び第二項の規定は、第一項の決定書の作成について準用する。"><a href="#a5">第五条　決定書の作成</a></li><li class="lv-art" data-text="第六条6条決定の告知決定の告知補償に関する決定の告知は、本人に対してしなければならない。ただし、本人の住所及び居所が明らかでない場合、外国においてすべき告知につき困難な事情がある場合、本人が告知を受ける能力を有しない場合又は本人が申し出た場合には、代理人に対してすることできる。本人に対して補償に関する決定の告知をするときは、裁判所書記官は、その旨を代理人に通知しなければならない。補償に関する決定又は特別関係者に対する補償の決定の告知は、決定書の謄本を送達してしなければならない。ただし、補償の全部をしない旨の決定については、相当と認める方法によってすることができる。民事訴訟法（平成八年法律第百九号）第九十八条、第九十九条第二項及び第三項、第百条第一項、第百一条から第百二条の二まで、第百三条（本人及びその法定代理人に対する送達にあっては、同条第二項を除く。）、第百五条、第百六条、第百七条第一項及び第三項並びに第百八条並びに民事訴訟規則（平成八年最高裁判所規則第五号）第三十九条、第四十条、第四十三条及び第四十四条の規定は前項の規定による送達について、同規則第五十条第一項の規定は補償に関する決定及び特別関係者に対する補償の決定の告知がされた場合について準用する。"><a href="#a6">第六条　決定の告知</a></li><li class="lv-art" data-text="第七条7条調査調査家庭裁判所調査官は、法第七条の調査を命じられたときは、その結果を書面で家庭裁判所に報告するものとする。この場合において、家庭裁判所調査官は、意見を付けることができる。少年審判規則第十二条、第十九条（検証、押収（刑事訴訟法第百二条の二第一項に規定する電磁的記録提供命令（同項第一号イに掲げる方法による提供を命ずるものに限る。）を含む。）、捜索及び同項に規定する電磁的記録提供命令（同号ロに掲げる方法による提供を命ずるものに限る。）に係る部分を除く。）及び第十九条の二の規定は、法第七条の調査について準用する。"><a href="#a7">第七条　調査</a></li><li class="lv-art" data-text="第八条8条補償の払渡し補償の払渡し補償金の払渡し又は没取に係る物の返付（以下「補償の払渡し」という。）は、法第五条第一項又は法第六条第一項の決定をした家庭裁判所に書面で請求しなければならない。前項の規定による請求が本人からされたときは、裁判所書記官は、遅滞なく、その旨を法定代理人に通知しなければならない。法第五条第三項の変更の決定（以下この項において「変更決定」という。）があった場合において、既に同条第一項の補償に関する決定に基づき補償の払渡しがされているときは、その補償の払渡しは、変更決定に基づく補償の払渡しの一部とみなす。"><a href="#a8">第八条　補償の払渡し</a></li><li class="lv-art" data-text="第九条9条事件の記録の閲覧等事件の記録の閲覧等家庭裁判所は、本人、申出人又は代理人の申出があった場合において、相当と認めるときは、事件の記録の閲覧若しくは謄写を許可し、又は裁判所書記官に命じて事件の記録の正本、謄本若しくは抄本若しくは事件に関する証明書を交付させることができる。"><a href="#a9">第九条　事件の記録の閲覧等</a></li><li class="lv-art" data-text="第十条10条刑事訴訟規則の準用刑事訴訟規則の準用刑事訴訟規則（昭和二十三年最高裁判所規則第三十二号）第五十八条から第六十一条までの規定は、書類の作成について準用する。"><a href="#a10">第十条　刑事訴訟規則の準用</a></li><li class="lv-div div-1"><a href="#sup1">附則</a></li><li class="lv-div div-1"><a href="#sup2">附則　（平成八年一二月一七日最高裁判所規則第六号）抄</a><ul><li class="lv-art" data-text="第一条1条施行期日施行期日この規則は、民事訴訟法（平成八年法律第百九号。以下「新法」という。）の施行の日から施行する。"><a href="#sup2-a1">第一条　施行期日</a></li><li class="lv-art" data-text="第四条4条少年の保護事件に係る補償に関する規則の一部改正に伴う経過措置少年の保護事件に係る補償に関する規則の一部改正に伴う経過措置第十七条の規定の施行前に書類の送達のために郵便を差し出した場合には、当該送達については、なお従前の例による。"><a href="#sup2-a4">第四条　少年の保護事件に係る補償に関する規則の一部改正に伴う経過措置</a></li></ul></li><li class="lv-div div-1"><a href="#sup3">附則　（平成一三年二月一九日最高裁判所規則第一号）</a></li><li class="lv-div div-1"><a href="#sup4">附則　（平成二三年一二月二日最高裁判所規則第五号）抄</a><ul><li class="lv-art" data-text="第一条1条施行期日施行期日この規則は、民法等の一部を改正する法律（平成二十三年法律第六十一号）の施行の日から施行する。"><a href="#sup4-a1">第一条　施行期日</a></li></ul></li><li class="lv-div div-1"><a href="#sup5">附則　（令和六年九月一七日最高裁判所規則第一四号）抄</a><ul><li class="lv-art" data-text="第一条1条施行期日施行期日この規則は、民事訴訟法等の一部を改正する法律（令和四年法律第四十八号。以下「改正法」という。）の施行の日（以下「施行日」という。）から施行する。ただし、第二条中民事訴訟費用等に関する規則第二条の三から第二条の五までの改正規定は、公布の日から施行する。"><a href="#sup5-a1">第一条　施行期日</a></li></ul></li><li class="lv-div div-1"><a href="#sup6">附則　（令和七年一二月二六日最高裁判所規則第一七号）</a></li></ul>
+  </nav>
+  <main class="doc" id="doc-outer">
+    <div class="doc-head">
+      <h1>少年の保護事件に係る補償に関する規則</h1>
+      <div class="meta">平成13年4月1日施行　／　<a class="src" href="https://www.courts.go.jp/assets/20260521shounenhoshoukisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本PDF p.1</a></div>
+    </div>
+    <div id="doc">
+<article class="art" id="a1" data-path=""><span class="anchor-alias" id="Mp-At_1"></span><div class="art-tools"><button type="button" data-anchor="a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521shounenhoshoukisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（趣旨）</p><p class="para" id="a1-p1"><a class="art-no" href="#a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">少年の保護事件に係る補償に関する法律（平成四年法律第八十四号。以下「法」という。）による決定の告知及び補償の払渡しの方法その他補償の実施に関しては、法に定めるもののほか、この規則の定めるところによる。</span></p></article>
+<article class="art" id="a2" data-path=""><span class="anchor-alias" id="Mp-At_2"></span><div class="art-tools"><button type="button" data-anchor="a2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521shounenhoshoukisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（事件の開始）</p><p class="para" id="a2-p1"><a class="art-no" href="#a2" data-kan="第二条" data-num="第2条">第二条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/404AC0000000084#Mp-At_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二条</a>第一項の決定において同項の判断がされ、その決定が確定した場合において、その決定をした家庭裁判所は、その決定を受けた者が審判事由（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/404AC0000000084#Mp-At_1" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第一条</a>の審判事由をいう。次項において同じ。）で当該判断に係るものに関して<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/404AC0000000084#Mp-At_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二条</a>第一項各号に掲げる身体の自由の拘束を受けたものであると思料するときは、事件を開始する手続として、裁判所書記官に命じて、当該決定において当該判断がされ、その決定が確定した旨を明らかにした書面を作成させなければならない。</span></p><p class="para" id="a2-p2"><span class="pno">2</span><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/404AC0000000084#Mp-At_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二条</a>第二項の決定が確定した場合において、その決定をした家庭裁判所は、その決定を受けた者が当該決定に係る審判事由に関して同項の身体の自由の拘束又は没取を受けたものであると思料するときは、事件を開始する手続として、裁判所書記官に命じて、当該決定が確定した旨を明らかにした書面を作成させなければならない。</span></p></article>
+<article class="art" id="a3" data-path=""><span class="anchor-alias" id="Mp-At_3"></span><div class="art-tools"><button type="button" data-anchor="a3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521shounenhoshoukisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（代理）</p><p class="para" id="a3-p1"><a class="art-no" href="#a3" data-kan="第三条" data-num="第3条">第三条</a><span class="body-text">本人又は<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/404AC0000000084#Mp-At_6" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第六条</a>第一項の特別関係者（これらの法定代理人を含む。）が弁護士でない者を代理人に選任するには、家庭裁判所の許可を受けなければならない。</span></p><p class="para" id="a3-p2"><span class="pno">2</span><span class="body-text">前項の許可は、いつでも取り消すことができる。</span></p><p class="para" id="a3-p3"><span class="pno">3</span><span class="body-text">代理人の権限（法定代理権を含む。）は、書面で証明しなければならない。</span></p></article>
+<article class="art" id="a4" data-path=""><span class="anchor-alias" id="Mp-At_4"></span><div class="art-tools"><button type="button" data-anchor="a4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521shounenhoshoukisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（申出の方式）</p><p class="para" id="a4-p1"><a class="art-no" href="#a4" data-kan="第四条" data-num="第4条">第四条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/404AC0000000084#Mp-At_5" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第五条</a>第三項の申出は、次に掲げる事項を明らかにしてしなければならない。</span></p><ol class="items"><li id="a4-p1-1"><span class="mk">一</span><span class="tx">申出に係る決定の表示</span></li><li id="a4-p1-2"><span class="mk">二</span><span class="tx">本人及び代理人の氏名、名称又は商号及び住所又は居所</span></li><li id="a4-p1-3"><span class="mk">三</span><span class="tx">申出の趣旨及び理由</span></li></ol><p class="para" id="a4-p2"><span class="pno">2</span><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/404AC0000000084#Mp-At_6" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第六条</a>第一項の申出は、次に掲げる事項を明らかにしてしなければならない。</span></p><ol class="items"><li id="a4-p2-1"><span class="mk">一</span><span class="tx">申出人及び代理人の氏名、名称又は商号及び住所又は居所</span></li><li id="a4-p2-2"><span class="mk">二</span><span class="tx">本人が死亡した年月日及び申出人と本人との関係</span></li><li id="a4-p2-3"><span class="mk">三</span><span class="tx">申出の趣旨及び理由</span></li></ol><p class="para" id="a4-p3"><span class="pno">3</span><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/404AC0000000084#Mp-At_5" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第五条</a>第三項又は<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/404AC0000000084#Mp-At_6" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第六条</a>第一項の申出を口頭でするには、裁判所書記官の面前で陳述しなければならない。この場合においては、裁判所書記官は、調書を作らなければならない。</span></p><p class="para" id="a4-p4"><span class="pno">4</span><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/404AC0000000084#Mp-At_6" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第六条</a>第一項の申出をする場合において、第二項第二号に掲げる事項を証する資料があるときは、申出人は、その資料を提出しなければならない。</span></p></article>
+<article class="art" id="a5" data-path=""><span class="anchor-alias" id="Mp-At_5"></span><div class="art-tools"><button type="button" data-anchor="a5" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521shounenhoshoukisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（決定書の作成）</p><p class="para" id="a5-p1"><a class="art-no" href="#a5" data-kan="第五条" data-num="第5条">第五条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/404AC0000000084#Mp-At_5" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第五条</a>第一項の補償に関する決定若しくは同条第三項の変更の決定（次条において「補償に関する決定」と総称する。）又は<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/404AC0000000084#Mp-At_6" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第六条</a>第一項の特別関係者に対する補償の決定（次条において「特別関係者に対する補償の決定」という。）をするときは、決定書を作成しなければならない。</span></p><p class="para" id="a5-p2"><span class="pno">2</span><span class="body-text">前項の決定書には、次に掲げる事項を記載しなければならない。</span></p><ol class="items"><li id="a5-p2-1"><span class="mk">一</span><span class="tx">事件の表示</span></li><li id="a5-p2-2"><span class="mk">二</span><span class="tx">本人又は申出人の氏名、名称又は商号及び住所又は居所並びに代理人の氏名、名称又は商号</span></li><li id="a5-p2-3"><span class="mk">三</span><span class="tx">主文及び理由</span></li><li id="a5-p2-4"><span class="mk">四</span><span class="tx">決定の年月日</span></li><li id="a5-p2-5"><span class="mk">五</span><span class="tx">裁判所の表示</span></li></ol><p class="para" id="a5-p3"><span class="pno">3</span><span class="body-text">少年審判規則（昭和二十三年最高裁判所規則第三十三号）<a class="ref ref-rule" href="408.html#a2" title="この規則集の中を開きます">第二条</a>第一項及び第二項の規定は、第一項の決定書の作成について準用する。</span></p></article>
+<article class="art" id="a6" data-path=""><span class="anchor-alias" id="Mp-At_6"></span><div class="art-tools"><button type="button" data-anchor="a6" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521shounenhoshoukisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（決定の告知）</p><p class="para" id="a6-p1"><a class="art-no" href="#a6" data-kan="第六条" data-num="第6条">第六条</a><span class="body-text">補償に関する決定の告知は、本人に対してしなければならない。ただし、本人の住所及び居所が明らかでない場合、外国においてすべき告知につき困難な事情がある場合、本人が告知を受ける能力を有しない場合又は本人が申し出た場合には、代理人に対してすることできる。</span></p><p class="para" id="a6-p2"><span class="pno">2</span><span class="body-text">本人に対して補償に関する決定の告知をするときは、裁判所書記官は、その旨を代理人に通知しなければならない。</span></p><p class="para" id="a6-p3"><span class="pno">3</span><span class="body-text">補償に関する決定又は特別関係者に対する補償の決定の告知は、決定書の謄本を送達してしなければならない。ただし、補償の全部をしない旨の決定については、相当と認める方法によってすることができる。</span></p><p class="para" id="a6-p4"><span class="pno">4</span><span class="body-text">民事訴訟法（平成八年法律第百九号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000109#Mp-At_98" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第九十八条</a>、第九十九条第二項及び第三項、第百条第一項、第百一条から第百二条の二まで、第百三条（本人及びその法定代理人に対する送達にあっては、同条第二項を除く。）、第百五条、第百六条、第百七条第一項及び第三項並びに第百八条並びに民事訴訟規則（平成八年最高裁判所規則第五号）<a class="ref ref-rule" href="100.html#a39" title="この規則集の中を開きます">第三十九条</a>、第四十条、第四十三条及び第四十四条の規定は前項の規定による送達について、同規則第五十条第一項の規定は補償に関する決定及び特別関係者に対する補償の決定の告知がされた場合について準用する。</span></p></article>
+<article class="art" id="a7" data-path=""><span class="anchor-alias" id="Mp-At_7"></span><div class="art-tools"><button type="button" data-anchor="a7" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521shounenhoshoukisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（調査）</p><p class="para" id="a7-p1"><a class="art-no" href="#a7" data-kan="第七条" data-num="第7条">第七条</a><span class="body-text">家庭裁判所調査官は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/404AC0000000084#Mp-At_7" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第七条</a>の調査を命じられたときは、その結果を書面で家庭裁判所に報告するものとする。この場合において、家庭裁判所調査官は、意見を付けることができる。</span></p><p class="para" id="a7-p2"><span class="pno">2</span><span class="body-text"><a class="ref ref-rule" href="408.html#a12" title="この規則集の中を開きます">少年審判規則第十二条</a>、第十九条（検証、押収（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/323AC0000000131#Mp-At_102_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">刑事訴訟法第百二条の二</a>第一項に規定する電磁的記録提供命令（同項第一号イに掲げる方法による提供を命ずるものに限る。）を含む。）、捜索及び同項に規定する電磁的記録提供命令（同号ロに掲げる方法による提供を命ずるものに限る。）に係る部分を除く。）及び第十九条の二の規定は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/404AC0000000084#Mp-At_7" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第七条</a>の調査について準用する。</span></p></article>
+<article class="art" id="a8" data-path=""><span class="anchor-alias" id="Mp-At_8"></span><div class="art-tools"><button type="button" data-anchor="a8" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521shounenhoshoukisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（補償の払渡し）</p><p class="para" id="a8-p1"><a class="art-no" href="#a8" data-kan="第八条" data-num="第8条">第八条</a><span class="body-text">補償金の払渡し又は没取に係る物の返付（以下「補償の払渡し」という。）は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/404AC0000000084#Mp-At_5" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第五条</a>第一項又は<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/404AC0000000084#Mp-At_6" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第六条</a>第一項の決定をした家庭裁判所に書面で請求しなければならない。</span></p><p class="para" id="a8-p2"><span class="pno">2</span><span class="body-text">前項の規定による請求が本人からされたときは、裁判所書記官は、遅滞なく、その旨を法定代理人に通知しなければならない。</span></p><p class="para" id="a8-p3"><span class="pno">3</span><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/404AC0000000084#Mp-At_5" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第五条</a>第三項の変更の決定（以下この項において「変更決定」という。）があった場合において、既に同条第一項の補償に関する決定に基づき補償の払渡しがされているときは、その補償の払渡しは、変更決定に基づく補償の払渡しの一部とみなす。</span></p></article>
+<article class="art" id="a9" data-path=""><span class="anchor-alias" id="Mp-At_9"></span><div class="art-tools"><button type="button" data-anchor="a9" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521shounenhoshoukisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（事件の記録の閲覧等）</p><p class="para" id="a9-p1"><a class="art-no" href="#a9" data-kan="第九条" data-num="第9条">第九条</a><span class="body-text">家庭裁判所は、本人、申出人又は代理人の申出があった場合において、相当と認めるときは、事件の記録の閲覧若しくは謄写を許可し、又は裁判所書記官に命じて事件の記録の正本、謄本若しくは抄本若しくは事件に関する証明書を交付させることができる。</span></p></article>
+<article class="art" id="a10" data-path=""><span class="anchor-alias" id="Mp-At_10"></span><div class="art-tools"><button type="button" data-anchor="a10" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521shounenhoshoukisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（刑事訴訟規則の準用）</p><p class="para" id="a10-p1"><a class="art-no" href="#a10" data-kan="第十条" data-num="第10条">第十条</a><span class="body-text">刑事訴訟規則（昭和二十三年最高裁判所規則第三十二号）<a class="ref ref-rule" href="600.html#a58" title="この規則集の中を開きます">第五十八条</a>から第六十一条までの規定は、書類の作成について準用する。</span></p></article>
+<h2 class="div-head" id="sup1" data-path="附則　"><span class="lbl">附則</span></h2>
+<article class="art noarticle" id="sup-body-1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521shounenhoshoukisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="para" id="sup-body-1-p1"><span class="body-text">この規則は、法の施行の日から施行し、法の施行後に<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/404AC0000000084#Mp-At_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二条</a>の決定があった<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/404AC0000000084#Mp-At_1" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第一条</a>の保護事件に係る身体の自由の拘束又は没取について適用する。</span></p></article>
+<h2 class="div-head" id="sup2" data-path="附則　（平成八年一二月一七日最高裁判所規則第六号）抄"><span class="lbl">附則</span>　（平成八年一二月一七日最高裁判所規則第六号）抄</h2>
+<article class="art" id="sup2-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup2-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521shounenhoshoukisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（施行期日）</p><p class="para" id="sup2-a1-p1"><a class="art-no" href="#sup2-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、民事訴訟法（平成八年法律第百九号。以下「新法」という。）の施行の日から施行する。</span></p></article>
+<article class="art" id="sup2-a4" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup2-a4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521shounenhoshoukisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（少年の保護事件に係る補償に関する規則の一部改正に伴う経過措置）</p><p class="para" id="sup2-a4-p1"><a class="art-no" href="#sup2-a4" data-kan="第四条" data-num="第4条">第四条</a><span class="body-text">第十七条の規定の施行前に書類の送達のために郵便を差し出した場合には、当該送達については、なお従前の例による。</span></p></article>
+<h2 class="div-head" id="sup3" data-path="附則　（平成一三年二月一九日最高裁判所規則第一号）"><span class="lbl">附則</span>　（平成一三年二月一九日最高裁判所規則第一号）</h2>
+<article class="art noarticle" id="sup-body-2" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521shounenhoshoukisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="para" id="sup-body-2-p1"><span class="body-text">この規則は、少年法等の一部を改正する法律（平成十二年法律第百四十二号）の施行の日（平成十三年四月一日）から施行する。</span></p></article>
+<h2 class="div-head" id="sup4" data-path="附則　（平成二三年一二月二日最高裁判所規則第五号）抄"><span class="lbl">附則</span>　（平成二三年一二月二日最高裁判所規則第五号）抄</h2>
+<article class="art" id="sup4-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup4-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521shounenhoshoukisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（施行期日）</p><p class="para" id="sup4-a1-p1"><a class="art-no" href="#sup4-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、民法等の一部を改正する法律（平成二十三年法律第六十一号）の施行の日から施行する。</span></p></article>
+<h2 class="div-head" id="sup5" data-path="附則　（令和六年九月一七日最高裁判所規則第一四号）抄"><span class="lbl">附則</span>　（令和六年九月一七日最高裁判所規則第一四号）抄</h2>
+<article class="art" id="sup5-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup5-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521shounenhoshoukisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（施行期日）</p><p class="para" id="sup5-a1-p1"><a class="art-no" href="#sup5-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、民事訴訟法等の一部を改正する法律（令和四年法律第四十八号。以下「改正法」という。）の施行の日（以下「施行日」という。）から施行する。ただし、第二条中<a class="ref ref-rule" href="101.html#a2-3" title="この規則集の中を開きます">民事訴訟費用等に関する規則第二条の三</a>から第二条の五までの改正規定は、公布の日から施行する。</span></p></article>
+<h2 class="div-head" id="sup6" data-path="附則　（令和七年一二月二六日最高裁判所規則第一七号）"><span class="lbl">附則</span>　（令和七年一二月二六日最高裁判所規則第一七号）</h2>
+<article class="art noarticle" id="sup-body-3" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521shounenhoshoukisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="para" id="sup-body-3-p1"><span class="body-text">この規則は、情報通信技術の進展等に対応するための刑事訴訟法等の一部を改正する法律（令和七年法律第三十九号）附則<a class="ref ref-self" href="#a1">第一条</a>第三号に掲げる規定の施行の日から施行する。</span></p></article>
+    </div>
+    <aside class="notes"><p>読み取りに関する注意</p><ul><li>題名・制定文とみられる行を本文の前に検出しました：平成4年7月20日最高裁判所規則第８号／改正 平成8年12月17日最高裁判所規則第６号／平成13年2月19日最高裁判所規則第１号</li><li>各条の「原本」は https://www.courts.go.jp/assets/20260521shounenhoshoukisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。</li></ul></aside>
+    <div class="foot">出典：20260521shounenhoshoukisoku.pdf　／　最高裁規則ビューア 1.9.0 で 2026年09月02日 に変換　
+    条文の正確な内容は原本で確認してください。</div>
+  </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  "use strict";
+  var doc = document.getElementById("doc");
+  var input = document.getElementById("q");
+  var hitLabel = document.getElementById("hits");
+  var crumb = document.getElementById("crumb");
+  var toc = document.getElementById("toc");
+  var toast = document.getElementById("toast");
+  var pristine = doc.innerHTML;
+  var hits = [];
+  var cursor = -1;
+
+  function say(msg){
+    toast.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(say._t);
+    say._t = setTimeout(function(){ toast.classList.remove("show"); }, 1600);
+  }
+
+  /* ---------------------------------------------------------- 条番号の表記 */
+  var numeralBtn = document.getElementById("numeral");
+  function applyNumeral(useArabic){
+    var nodes = doc.querySelectorAll(".art-no");
+    for (var i = 0; i < nodes.length; i++){
+      var el = nodes[i];
+      var v = useArabic ? el.getAttribute("data-num") : el.getAttribute("data-kan");
+      if (v) el.textContent = v;
+    }
+    numeralBtn.setAttribute("aria-pressed", useArabic ? "true" : "false");
+  }
+  numeralBtn.addEventListener("click", function(){
+    var next = numeralBtn.getAttribute("aria-pressed") !== "true";
+    applyNumeral(next);
+    try { localStorage.setItem("rule-numeral", next ? "1" : "0"); } catch(e){}
+    pristine = doc.innerHTML;
+  });
+  try {
+    /* 既定の表記は原本に合わせてある。前回の切り替えが残っていればそれに従う */
+    var saved = localStorage.getItem("rule-numeral");
+    if (saved === "1" || saved === "0"){ applyNumeral(saved === "1"); pristine = doc.innerHTML; }
+  } catch(e){}
+
+  /* -------------------------------------------------------------- 検索処理 */
+  var SKIP = {SCRIPT:1, STYLE:1, MARK:1, BUTTON:1, A:1};   /* 原本リンク等の道具立ては検索対象にしない */
+  function highlight(term){
+    doc.innerHTML = pristine;
+    hits = [];
+    cursor = -1;
+    if (!term){ hitLabel.textContent = ""; refreshToc(""); return; }
+    var walker = document.createTreeWalker(doc, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        if (!n.nodeValue || n.nodeValue.indexOf(term) < 0) return NodeFilter.FILTER_REJECT;
+        if (n.parentNode && SKIP[n.parentNode.nodeName]) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var targets = [];
+    var node;
+    while ((node = walker.nextNode())) targets.push(node);
+    for (var i = 0; i < targets.length; i++){
+      var t = targets[i], text = t.nodeValue, pos = 0, frag = document.createDocumentFragment();
+      var idx;
+      while ((idx = text.indexOf(term, pos)) >= 0){
+        if (idx > pos) frag.appendChild(document.createTextNode(text.slice(pos, idx)));
+        var m = document.createElement("mark");
+        m.textContent = text.substr(idx, term.length);
+        frag.appendChild(m);
+        hits.push(m);
+        pos = idx + term.length;
+      }
+      if (pos < text.length) frag.appendChild(document.createTextNode(text.slice(pos)));
+      t.parentNode.replaceChild(frag, t);
+    }
+    hitLabel.textContent = hits.length ? "1 / " + hits.length : "該当なし";
+    refreshToc(term);
+    if (hits.length){ cursor = 0; focusHit(0, false); }
+  }
+  function focusHit(i, scroll){
+    if (!hits.length) return;
+    for (var k = 0; k < hits.length; k++) hits[k].classList.remove("live");
+    cursor = (i + hits.length) % hits.length;
+    hits[cursor].classList.add("live");
+    hitLabel.textContent = (cursor + 1) + " / " + hits.length;
+    if (scroll !== false) hits[cursor].scrollIntoView({block:"center", behavior:"instant"});
+  }
+  function refreshToc(term){
+    var links = toc.querySelectorAll("li.lv-art");
+    for (var i = 0; i < links.length; i++){
+      var li = links[i];
+      var body = (li.getAttribute("data-text") || "");
+      li.classList.toggle("hidden", !!term && body.indexOf(term) < 0);
+    }
+    var divs = toc.querySelectorAll("li.lv-div");
+    for (var j = divs.length - 1; j >= 0; j--){
+      var d = divs[j];
+      var kids = d.querySelectorAll("li:not(.hidden)");
+      d.classList.toggle("hidden", !!term && kids.length === 0);
+    }
+  }
+  var timer = null;
+  input.addEventListener("input", function(){
+    clearTimeout(timer);
+    var v = input.value.trim();
+    timer = setTimeout(function(){ highlight(v); }, 180);
+  });
+  input.addEventListener("keydown", function(e){
+    if (e.key === "Enter"){ e.preventDefault(); focusHit(cursor + (e.shiftKey ? -1 : 1)); }
+    if (e.key === "Escape"){ input.value = ""; highlight(""); input.blur(); }
+  });
+  document.getElementById("prev").addEventListener("click", function(){ focusHit(cursor - 1); });
+  document.getElementById("next").addEventListener("click", function(){ focusHit(cursor + 1); });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "/" && e.target === document.body){ e.preventDefault(); input.focus(); }
+  });
+
+  /* -------------------------------------------------- リンクのコピー・共有 */
+  doc.addEventListener("click", function(e){
+    var btn = e.target.closest ? e.target.closest("button[data-anchor]") : null;
+    if (!btn) return;
+    var anchor = btn.getAttribute("data-anchor");
+    var url = location.href.split("#")[0] + "#" + anchor;
+    history.replaceState(null, "", "#" + anchor);
+    var done = function(){ say("リンクをコピーしました"); };
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(done, function(){ legacyCopy(url, done); });
+    } else {
+      legacyCopy(url, done);
+    }
+  });
+  function legacyCopy(text, done){
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); done(); }
+    catch(err){ say("コピーできませんでした。アドレス欄からURLを控えてください"); }
+    document.body.removeChild(ta);
+  }
+
+  /* ------------------------------------------------ 現在位置の表示と目次連動 */
+  var watched = doc.querySelectorAll(".art[id], .div-head[id]");
+  var tocLinks = {};
+  var links = toc.querySelectorAll("a[href^='#']");
+  for (var i = 0; i < links.length; i++) tocLinks[links[i].getAttribute("href").slice(1)] = links[i];
+  var currentLink = null;
+  if ("IntersectionObserver" in window){
+    var visible = [];
+    var io = new IntersectionObserver(function(entries){
+      for (var i = 0; i < entries.length; i++){
+        var id = entries[i].target.id;
+        var at = visible.indexOf(id);
+        if (entries[i].isIntersecting){ if (at < 0) visible.push(id); }
+        else if (at >= 0){ visible.splice(at, 1); }
+      }
+      if (!visible.length) return;
+      var first = null;
+      for (var k = 0; k < watched.length; k++){
+        if (visible.indexOf(watched[k].id) >= 0){ first = watched[k]; break; }
+      }
+      if (!first) return;
+      crumb.textContent = first.getAttribute("data-path") || "";
+      var link = tocLinks[first.id];
+      if (link && link !== currentLink){
+        if (currentLink) currentLink.classList.remove("current");
+        link.classList.add("current");
+        currentLink = link;
+      }
+    }, {rootMargin:"-20% 0px -70% 0px"});
+    for (var w = 0; w < watched.length; w++) io.observe(watched[w]);
+  }
+
+  /* -------------------------------------------------------- 目次の開閉（狭幅） */
+  var opener = document.getElementById("toc-open");
+  if (opener){
+    opener.addEventListener("click", function(){ toc.classList.toggle("open"); });
+    toc.addEventListener("click", function(e){
+      if (e.target.tagName === "A") toc.classList.remove("open");
+    });
+  }
+})();
+</script>
+</body>
+</html>

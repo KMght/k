@@ -1,0 +1,1061 @@
+{
+ "rule_id": "500",
+ "title": "非訟事件手続規則",
+ "enforcement_iso": "2026-05-21",
+ "url": "https://kmght.github.io/ksk/r/500.html",
+ "articles": [
+  {
+   "key": "1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "当事者等が裁判所に提出すべき書面の記載事項",
+   "anchor": "a1",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "2",
+   "label": "第二条",
+   "short": "2条",
+   "caption": "裁判所に提出すべき書面のファクシミリによる提出",
+   "anchor": "a2",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "3",
+   "label": "第三条",
+   "short": "3条",
+   "caption": "裁判所に提出する書面に記載した情報の電磁的方法による提供等",
+   "anchor": "a3",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "3_2",
+   "label": "第三条の二",
+   "short": "3条の2",
+   "caption": "催告及び通知",
+   "anchor": "a3-2",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "4",
+   "label": "第四条",
+   "short": "4条",
+   "caption": "申立てその他の申述の方式等に関する民事訴訟規則の準用",
+   "anchor": "a4",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "5",
+   "label": "第五条",
+   "short": "5条",
+   "caption": "移送における取扱い・法第六条等",
+   "anchor": "a5",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "6",
+   "label": "第六条",
+   "short": "6条",
+   "caption": "法第八条の最高裁判所規則で定める地の指定",
+   "anchor": "a6",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "7",
+   "label": "第七条",
+   "short": "7条",
+   "caption": "移送に関する民事訴訟規則の準用・法第十条",
+   "anchor": "a7",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "8",
+   "label": "第八条",
+   "short": "8条",
+   "caption": "除斥又は忌避の申立ての方式等・法第十一条等",
+   "anchor": "a8",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "9",
+   "label": "第九条",
+   "short": "9条",
+   "caption": "除斥又は忌避についての裁判官の意見陳述・法第十三条",
+   "anchor": "a9",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "10",
+   "label": "第十条",
+   "short": "10条",
+   "caption": "裁判官の回避",
+   "anchor": "a10",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "11",
+   "label": "第十一条",
+   "short": "11条",
+   "caption": "裁判所書記官及び専門委員の除斥等・法第十四条等",
+   "anchor": "a11",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "12",
+   "label": "第十二条",
+   "short": "12条",
+   "caption": "法人でない社団又は財団の当事者能力の判断資料の提出等・法第十六条",
+   "anchor": "a12",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "13",
+   "label": "第十三条",
+   "short": "13条",
+   "caption": "法定代理権の消滅の通知の方式・法第十八条",
+   "anchor": "a13",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "14",
+   "label": "第十四条",
+   "short": "14条",
+   "caption": "法人の代表者等への準用・法第十九条",
+   "anchor": "a14",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "15",
+   "label": "第十五条",
+   "short": "15条",
+   "caption": "参加の申出の方式等・法第二十条等",
+   "anchor": "a15",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "16",
+   "label": "第十六条",
+   "short": "16条",
+   "caption": "手続代理人の代理権の証明等・法第二十三条等",
+   "anchor": "a16",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "17",
+   "label": "第十七条",
+   "short": "17条",
+   "caption": "手続費用に関する民事訴訟規則の準用・法第二十八条",
+   "anchor": "a17",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "18",
+   "label": "第十八条",
+   "short": "18条",
+   "caption": "手続上の救助の申立ての方式等・法第二十九条",
+   "anchor": "a18",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "19",
+   "label": "第十九条",
+   "short": "19条",
+   "caption": "期日調書の形式的記載事項・法第三十一条",
+   "anchor": "a19",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "20",
+   "label": "第二十条",
+   "short": "20条",
+   "caption": "期日調書の実質的記載事項・法第三十一条",
+   "anchor": "a20",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "21",
+   "label": "第二十一条",
+   "short": "21条",
+   "caption": "期日及び期日調書に関する民事訴訟規則の準用・法第三十一条",
+   "anchor": "a21",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "22",
+   "label": "第二十二条",
+   "short": "22条",
+   "caption": "非訟事件の記録の正本等の様式・法第三十二条",
+   "anchor": "a22",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "23",
+   "label": "第二十三条",
+   "short": "23条",
+   "caption": "受命裁判官の指定及び裁判所の嘱託の手続",
+   "anchor": "a23",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "24",
+   "label": "第二十四条",
+   "short": "24条",
+   "caption": "専門委員の意見に関する取扱い・法第三十三条",
+   "anchor": "a24",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "25",
+   "label": "第二十五条",
+   "short": "25条",
+   "caption": "専門委員が関与する証拠調べ期日における裁判長の措置等・法第三十三条",
+   "anchor": "a25",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "26",
+   "label": "第二十六条",
+   "short": "26条",
+   "caption": "専門委員の意見に関する当事者及び利害関係参加人の意見陳述の機会の付与・法第三十三条",
+   "anchor": "a26",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "27",
+   "label": "第二十七条",
+   "short": "27条",
+   "caption": "専門委員に対する準備の指示等・法第三十三条",
+   "anchor": "a27",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "28",
+   "label": "第二十八条",
+   "short": "28条",
+   "caption": "音声の送受信による通話の方法による専門委員の関与・法第三十三条",
+   "anchor": "a28",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "29",
+   "label": "第二十九条",
+   "short": "29条",
+   "caption": "専門委員の関与する手続に関する受命裁判官及び受託裁判官の権限・法第三十三条",
+   "anchor": "a29",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "30",
+   "label": "第三十条",
+   "short": "30条",
+   "caption": "受命裁判官又は受託裁判官の期日指定等・法第三十四条",
+   "anchor": "a30",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "31",
+   "label": "第三十一条",
+   "short": "31条",
+   "caption": "",
+   "anchor": "a31",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "32",
+   "label": "第三十二条",
+   "short": "32条",
+   "caption": "裁判長等が定めた期間の伸縮・法第三十四条",
+   "anchor": "a32",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "33",
+   "label": "第三十三条",
+   "short": "33条",
+   "caption": "受継の申立ての方式等・法第三十六条等",
+   "anchor": "a33",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "34",
+   "label": "第三十四条",
+   "short": "34条",
+   "caption": "非訟事件の申立人の死亡等の届出・法第三十七条",
+   "anchor": "a34",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "35",
+   "label": "第三十五条",
+   "short": "35条",
+   "caption": "送達・法第三十八条",
+   "anchor": "a35",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "36",
+   "label": "第三十六条",
+   "short": "36条",
+   "caption": "書類の送付",
+   "anchor": "a36",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "36_2",
+   "label": "第三十六条の二",
+   "short": "36条の2",
+   "caption": "秘匿の申立ての方式等・法第四十二条の二",
+   "anchor": "a36-2",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "37",
+   "label": "第三十七条",
+   "short": "37条",
+   "caption": "非訟事件の申立書の記載事項等・法第四十三条",
+   "anchor": "a37",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "38",
+   "label": "第三十八条",
+   "short": "38条",
+   "caption": "非訟事件の申立書の補正の促し・法第四十三条",
+   "anchor": "a38",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "39",
+   "label": "第三十九条",
+   "short": "39条",
+   "caption": "非訟事件の申立書の却下の命令に対する即時抗告・法第四十三条",
+   "anchor": "a39",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "40",
+   "label": "第四十条",
+   "short": "40条",
+   "caption": "参考事項の聴取・法第四十三条",
+   "anchor": "a40",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "41",
+   "label": "第四十一条",
+   "short": "41条",
+   "caption": "申立ての変更の通知・法第四十四条",
+   "anchor": "a41",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "42",
+   "label": "第四十二条",
+   "short": "42条",
+   "caption": "音声の送受信による通話の方法による手続・法第四十七条",
+   "anchor": "a42",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "43",
+   "label": "第四十三条",
+   "short": "43条",
+   "caption": "手続代理人の陳述禁止等の通知・法第四十八条",
+   "anchor": "a43",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "44",
+   "label": "第四十四条",
+   "short": "44条",
+   "caption": "事実の調査の要旨の記録化・法第四十九条",
+   "anchor": "a44",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "45",
+   "label": "第四十五条",
+   "short": "45条",
+   "caption": "証拠調べ・法第五十三条",
+   "anchor": "a45",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "45_2",
+   "label": "第四十五条の二",
+   "short": "45条の2",
+   "caption": "証人の宣誓",
+   "anchor": "a45-2",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "45_3",
+   "label": "第四十五条の三",
+   "short": "45条の3",
+   "caption": "鑑定人の宣誓",
+   "anchor": "a45-3",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "45_4",
+   "label": "第四十五条の四",
+   "short": "45条の4",
+   "caption": "受命裁判官等の証拠調べの調書",
+   "anchor": "a45-4",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "46",
+   "label": "第四十六条",
+   "short": "46条",
+   "caption": "終局決定の確定証明書等・法第五十六条等",
+   "anchor": "a46",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "47",
+   "label": "第四十七条",
+   "short": "47条",
+   "caption": "決定及び命令の方式等・法第五十六条等",
+   "anchor": "a47",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "48",
+   "label": "第四十八条",
+   "short": "48条",
+   "caption": "脱漏した手続費用の負担の裁判を求める申立て・法第六十条等",
+   "anchor": "a48",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "49",
+   "label": "第四十九条",
+   "short": "49条",
+   "caption": "申立ての取下げがあった場合の取扱い等・法第六十三条等",
+   "anchor": "a49",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "50",
+   "label": "第五十条",
+   "short": "50条",
+   "caption": "和解・法第六十五条",
+   "anchor": "a50",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "51",
+   "label": "第五十一条",
+   "short": "51条",
+   "caption": "抗告状の写しの添付・法第六十九条",
+   "anchor": "a51",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "52",
+   "label": "第五十二条",
+   "short": "52条",
+   "caption": "原決定の取消事由等を記載した書面",
+   "anchor": "a52",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "53",
+   "label": "第五十三条",
+   "short": "53条",
+   "caption": "即時抗告の提起による事件送付",
+   "anchor": "a53",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "54",
+   "label": "第五十四条",
+   "short": "54条",
+   "caption": "原裁判所の意見",
+   "anchor": "a54",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "55",
+   "label": "第五十五条",
+   "short": "55条",
+   "caption": "原決定の取消事由等を記載した書面の写しの送付",
+   "anchor": "a55",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "56",
+   "label": "第五十六条",
+   "short": "56条",
+   "caption": "執行停止の申立ての方式・法第七十二条",
+   "anchor": "a56",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "57",
+   "label": "第五十七条",
+   "short": "57条",
+   "caption": "原審の決定書の引用",
+   "anchor": "a57",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "58",
+   "label": "第五十八条",
+   "short": "58条",
+   "caption": "第一審の手続の規定及び民事訴訟規則の準用・法第七十三条",
+   "anchor": "a58",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "59",
+   "label": "第五十九条",
+   "short": "59条",
+   "caption": "再抗告をする場合における費用の予納・法第七十四条",
+   "anchor": "a59",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "60",
+   "label": "第六十条",
+   "short": "60条",
+   "caption": "再抗告の抗告提起通知書の送達及び送付・法第七十四条",
+   "anchor": "a60",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "61",
+   "label": "第六十一条",
+   "short": "61条",
+   "caption": "再抗告の抗告理由書の提出期間・法第七十四条",
+   "anchor": "a61",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "62",
+   "label": "第六十二条",
+   "short": "62条",
+   "caption": "再抗告の理由を記載した書面の写しの添付・法第七十四条",
+   "anchor": "a62",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "63",
+   "label": "第六十三条",
+   "short": "63条",
+   "caption": "再抗告の提起による事件送付等・法第七十四条",
+   "anchor": "a63",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "64",
+   "label": "第六十四条",
+   "short": "64条",
+   "caption": "再抗告の抗告理由書の写しの送付・法第七十四条",
+   "anchor": "a64",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "65",
+   "label": "第六十五条",
+   "short": "65条",
+   "caption": "再抗告及びその抗告審に関する民事訴訟規則の準用・法第七十四条",
+   "anchor": "a65",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "66",
+   "label": "第六十六条",
+   "short": "66条",
+   "caption": "即時抗告の規定及び民事訴訟規則の準用等・法第七十六条",
+   "anchor": "a66",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "67",
+   "label": "第六十七条",
+   "short": "67条",
+   "caption": "即時抗告の規定及び民事訴訟規則の準用等・法第七十八条",
+   "anchor": "a67",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "68",
+   "label": "第六十八条",
+   "short": "68条",
+   "caption": "抗告状の記載事項・法第七十九条",
+   "anchor": "a68",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "69",
+   "label": "第六十九条",
+   "short": "69条",
+   "caption": "即時抗告の提起に係る記録の送付・法第七十九条",
+   "anchor": "a69",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "70",
+   "label": "第七十条",
+   "short": "70条",
+   "caption": "終局決定に対する不服申立ての規定の準用・法第八十二条",
+   "anchor": "a70",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "71",
+   "label": "第七十一条",
+   "short": "71条",
+   "caption": "再審の手続・法第八十三条",
+   "anchor": "a71",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "72",
+   "label": "第七十二条",
+   "short": "72条",
+   "caption": "執行停止の申立ての方式・法第八十四条",
+   "anchor": "a72",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "73",
+   "label": "第七十三条",
+   "short": "73条",
+   "caption": "過料の裁判の執行に関する調査・法第百二十一条",
+   "anchor": "a73",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "74",
+   "label": "第七十四条",
+   "short": "74条",
+   "caption": "法の規定を準用する他の法令の規定による非訟事件の手続への準用",
+   "anchor": "a74",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "s2:1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "施行期日",
+   "anchor": "sup2-a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  },
+  {
+   "key": "s3:1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "施行期日",
+   "anchor": "sup3-a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  },
+  {
+   "key": "s4:1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "施行期日",
+   "anchor": "sup4-a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  }
+ ]
+}

@@ -1,0 +1,633 @@
+{
+  "title": "少年の保護事件に係る補償に関する規則",
+  "law_number": "",
+  "enforcement_date": "平成13年4月1日",
+  "enforcement_iso": "2001-04-01",
+  "pdf_link": "https://www.courts.go.jp/assets/20260521shounenhoshoukisoku.pdf",
+  "source": "20260521shounenhoshoukisoku.pdf",
+  "numeral": "kansuji",
+  "notes": [
+    "題名・制定文とみられる行を本文の前に検出しました：平成4年7月20日最高裁判所規則第８号／改正 平成8年12月17日最高裁判所規則第６号／平成13年2月19日最高裁判所規則第１号",
+    "各条の「原本」は https://www.courts.go.jp/assets/20260521shounenhoshoukisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+  ],
+  "nodes": [
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "a1",
+      "caption": "趣旨",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "少年の保護事件に係る補償に関する法律（平成四年法律第八十四号。以下「法」という。）による決定の告知及び補償の払渡しの方法その他補償の実施に関しては、法に定めるもののほか、この規則の定めるところによる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        2
+      ],
+      "label": "第二条",
+      "short_label": "2条",
+      "anchor": "a2",
+      "caption": "事件の開始",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第二条第一項の決定において同項の判断がされ、その決定が確定した場合において、その決定をした家庭裁判所は、その決定を受けた者が審判事由（法第一条の審判事由をいう。次項において同じ。）で当該判断に係るものに関して法第二条第一項各号に掲げる身体の自由の拘束を受けたものであると思料するときは、事件を開始する手続として、裁判所書記官に命じて、当該決定において当該判断がされ、その決定が確定した旨を明らかにした書面を作成させなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "法第二条第二項の決定が確定した場合において、その決定をした家庭裁判所は、その決定を受けた者が当該決定に係る審判事由に関して同項の身体の自由の拘束又は没取を受けたものであると思料するときは、事件を開始する手続として、裁判所書記官に命じて、当該決定が確定した旨を明らかにした書面を作成させなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        3
+      ],
+      "label": "第三条",
+      "short_label": "3条",
+      "anchor": "a3",
+      "caption": "代理",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "本人又は法第六条第一項の特別関係者（これらの法定代理人を含む。）が弁護士でない者を代理人に選任するには、家庭裁判所の許可を受けなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の許可は、いつでも取り消すことができる。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "代理人の権限（法定代理権を含む。）は、書面で証明しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        4
+      ],
+      "label": "第四条",
+      "short_label": "4条",
+      "anchor": "a4",
+      "caption": "申出の方式",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第五条第三項の申出は、次に掲げる事項を明らかにしてしなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "申出に係る決定の表示",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "本人及び代理人の氏名、名称又は商号及び住所又は居所",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "申出の趣旨及び理由",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "text": "法第六条第一項の申出は、次に掲げる事項を明らかにしてしなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "申出人及び代理人の氏名、名称又は商号及び住所又は居所",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "本人が死亡した年月日及び申出人と本人との関係",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "申出の趣旨及び理由",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "text": "法第五条第三項又は法第六条第一項の申出を口頭でするには、裁判所書記官の面前で陳述しなければならない。この場合においては、裁判所書記官は、調書を作らなければならない。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "法第六条第一項の申出をする場合において、第二項第二号に掲げる事項を証する資料があるときは、申出人は、その資料を提出しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        5
+      ],
+      "label": "第五条",
+      "short_label": "5条",
+      "anchor": "a5",
+      "caption": "決定書の作成",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第五条第一項の補償に関する決定若しくは同条第三項の変更の決定（次条において「補償に関する決定」と総称する。）又は法第六条第一項の特別関係者に対する補償の決定（次条において「特別関係者に対する補償の決定」という。）をするときは、決定書を作成しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の決定書には、次に掲げる事項を記載しなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "事件の表示",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "本人又は申出人の氏名、名称又は商号及び住所又は居所並びに代理人の氏名、名称又は商号",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "主文及び理由",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "決定の年月日",
+              "children": []
+            },
+            {
+              "marker": "五",
+              "kind": "go",
+              "text": "裁判所の表示",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "text": "少年審判規則（昭和二十三年最高裁判所規則第三十三号）第二条第一項及び第二項の規定は、第一項の決定書の作成について準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        6
+      ],
+      "label": "第六条",
+      "short_label": "6条",
+      "anchor": "a6",
+      "caption": "決定の告知",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "補償に関する決定の告知は、本人に対してしなければならない。ただし、本人の住所及び居所が明らかでない場合、外国においてすべき告知につき困難な事情がある場合、本人が告知を受ける能力を有しない場合又は本人が申し出た場合には、代理人に対してすることできる。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "本人に対して補償に関する決定の告知をするときは、裁判所書記官は、その旨を代理人に通知しなければならない。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "補償に関する決定又は特別関係者に対する補償の決定の告知は、決定書の謄本を送達してしなければならない。ただし、補償の全部をしない旨の決定については、相当と認める方法によってすることができる。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "民事訴訟法（平成八年法律第百九号）第九十八条、第九十九条第二項及び第三項、第百条第一項、第百一条から第百二条の二まで、第百三条（本人及びその法定代理人に対する送達にあっては、同条第二項を除く。）、第百五条、第百六条、第百七条第一項及び第三項並びに第百八条並びに民事訴訟規則（平成八年最高裁判所規則第五号）第三十九条、第四十条、第四十三条及び第四十四条の規定は前項の規定による送達について、同規則第五十条第一項の規定は補償に関する決定及び特別関係者に対する補償の決定の告知がされた場合について準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        7
+      ],
+      "label": "第七条",
+      "short_label": "7条",
+      "anchor": "a7",
+      "caption": "調査",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "家庭裁判所調査官は、法第七条の調査を命じられたときは、その結果を書面で家庭裁判所に報告するものとする。この場合において、家庭裁判所調査官は、意見を付けることができる。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "少年審判規則第十二条、第十九条（検証、押収（刑事訴訟法第百二条の二第一項に規定する電磁的記録提供命令（同項第一号イに掲げる方法による提供を命ずるものに限る。）を含む。）、捜索及び同項に規定する電磁的記録提供命令（同号ロに掲げる方法による提供を命ずるものに限る。）に係る部分を除く。）及び第十九条の二の規定は、法第七条の調査について準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        8
+      ],
+      "label": "第八条",
+      "short_label": "8条",
+      "anchor": "a8",
+      "caption": "補償の払渡し",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "補償金の払渡し又は没取に係る物の返付（以下「補償の払渡し」という。）は、法第五条第一項又は法第六条第一項の決定をした家庭裁判所に書面で請求しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の規定による請求が本人からされたときは、裁判所書記官は、遅滞なく、その旨を法定代理人に通知しなければならない。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "法第五条第三項の変更の決定（以下この項において「変更決定」という。）があった場合において、既に同条第一項の補償に関する決定に基づき補償の払渡しがされているときは、その補償の払渡しは、変更決定に基づく補償の払渡しの一部とみなす。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        9
+      ],
+      "label": "第九条",
+      "short_label": "9条",
+      "anchor": "a9",
+      "caption": "事件の記録の閲覧等",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "家庭裁判所は、本人、申出人又は代理人の申出があった場合において、相当と認めるときは、事件の記録の閲覧若しくは謄写を許可し、又は裁判所書記官に命じて事件の記録の正本、謄本若しくは抄本若しくは事件に関する証明書を交付させることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        10
+      ],
+      "label": "第十条",
+      "short_label": "10条",
+      "anchor": "a10",
+      "caption": "刑事訴訟規則の準用",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "刑事訴訟規則（昭和二十三年最高裁判所規則第三十二号）第五十八条から第六十一条までの規定は、書類の作成について準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "",
+      "anchor": "sup1",
+      "level": 1,
+      "page": 2,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-1",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 1,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、法の施行の日から施行し、法の施行後に法第二条の決定があった法第一条の保護事件に係る身体の自由の拘束又は没取について適用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成八年一二月一七日最高裁判所規則第六号）抄",
+      "anchor": "sup2",
+      "level": 1,
+      "page": 2,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "sup2-a1",
+      "caption": "施行期日",
+      "deleted": false,
+      "section": "supplementary",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 2,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、民事訴訟法（平成八年法律第百九号。以下「新法」という。）の施行の日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        4
+      ],
+      "label": "第四条",
+      "short_label": "4条",
+      "anchor": "sup2-a4",
+      "caption": "少年の保護事件に係る補償に関する規則の一部改正に伴う経過措置",
+      "deleted": false,
+      "section": "supplementary",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 2,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "第十七条の規定の施行前に書類の送達のために郵便を差し出した場合には、当該送達については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成一三年二月一九日最高裁判所規則第一号）",
+      "anchor": "sup3",
+      "level": 1,
+      "page": 3,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-2",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 3,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、少年法等の一部を改正する法律（平成十二年法律第百四十二号）の施行の日（平成十三年四月一日）から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成二三年一二月二日最高裁判所規則第五号）抄",
+      "anchor": "sup4",
+      "level": 1,
+      "page": 3,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "sup4-a1",
+      "caption": "施行期日",
+      "deleted": false,
+      "section": "supplementary",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 4,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、民法等の一部を改正する法律（平成二十三年法律第六十一号）の施行の日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（令和六年九月一七日最高裁判所規則第一四号）抄",
+      "anchor": "sup5",
+      "level": 1,
+      "page": 3,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "sup5-a1",
+      "caption": "施行期日",
+      "deleted": false,
+      "section": "supplementary",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 5,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、民事訴訟法等の一部を改正する法律（令和四年法律第四十八号。以下「改正法」という。）の施行の日（以下「施行日」という。）から施行する。ただし、第二条中民事訴訟費用等に関する規則第二条の三から第二条の五までの改正規定は、公布の日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（令和七年一二月二六日最高裁判所規則第一七号）",
+      "anchor": "sup6",
+      "level": 1,
+      "page": 3,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-3",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 6,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、情報通信技術の進展等に対応するための刑事訴訟法等の一部を改正する法律（令和七年法律第三十九号）附則第一条第三号に掲げる規定の施行の日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    }
+  ]
+}

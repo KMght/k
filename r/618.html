@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>国際刑事裁判所に対する協力の手続に関する規則</title>
+<style>
+:root{
+  --paper:#ffffff;
+  --ink:#16181d;
+  --sub:#5f6875;
+  --rule:#dde2e9;
+  --chrome:#f4f6f9;
+  --accent:#14538a;
+  --accent-weak:#e7eff7;
+  --mark:#ffe08a;
+  --mark-live:#ff9d3d;
+  --gothic:"Yu Gothic UI","Yu Gothic","YuGothic","Hiragino Sans","Noto Sans JP","Meiryo",system-ui,sans-serif;
+  --mincho:"Yu Mincho","YuMincho","Hiragino Mincho ProN","Noto Serif JP","MS Mincho",serif;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:5.5rem}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--mincho);font-size:17px;line-height:1.9;
+  text-rendering:optimizeLegibility;
+}
+
+/* ---------------------------------------------------------------- ヘッダ */
+.top{
+  position:sticky;top:0;z-index:30;background:var(--chrome);
+  border-bottom:1px solid var(--rule);font-family:var(--gothic);
+}
+.top-inner{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;padding:.7rem 1.2rem}
+.law-title{font-size:1.12rem;font-weight:700;letter-spacing:.02em;margin:0}
+.law-number{font-size:.8rem;color:var(--sub);margin-left:.2rem}
+.top-tools{margin-left:auto;display:flex;align-items:center;gap:.5rem}
+.search-box{display:flex;align-items:center;gap:.35rem;background:var(--paper);
+  border:1px solid var(--rule);border-radius:2px;padding:.25rem .5rem}
+.search-box input{border:0;outline:0;font:inherit;font-size:.85rem;width:14rem;background:transparent;color:inherit}
+.hit-count{font-size:.78rem;color:var(--sub);min-width:4.2rem;text-align:right;font-variant-numeric:tabular-nums}
+button{font:inherit;font-family:var(--gothic);cursor:pointer}
+.btn{background:var(--paper);border:1px solid var(--rule);border-radius:2px;
+  color:var(--ink);font-size:.78rem;padding:.28rem .6rem;line-height:1.4}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.crumb{padding:.3rem 1.2rem;border-top:1px solid var(--rule);background:var(--paper);
+  font-family:var(--gothic);font-size:.78rem;color:var(--sub);min-height:1.7rem}
+
+/* ------------------------------------------------------------------ 骨格 */
+.wrap{display:grid;grid-template-columns:19rem minmax(0,1fr);align-items:start}
+.toc{
+  position:sticky;top:5.6rem;max-height:calc(100vh - 5.6rem);overflow-y:auto;
+  border-right:1px solid var(--rule);padding:1rem .6rem 4rem 1.2rem;
+  font-family:var(--gothic);font-size:.83rem;line-height:1.65;
+}
+.toc h2{font-size:.75rem;color:var(--sub);font-weight:700;margin:0 0 .6rem}
+.toc ul{list-style:none;margin:0;padding:0}
+.toc a{display:block;color:var(--ink);text-decoration:none;padding:.16rem .4rem;border-radius:2px}
+.toc a:hover{background:var(--accent-weak);color:var(--accent)}
+.toc a.current{background:var(--accent-weak);color:var(--accent);font-weight:700}
+.toc .div-1>a,.toc .div-2>a{font-weight:700}
+.toc .div-2{margin-top:.5rem}
+.toc .div-3,.toc .div-4,.toc .div-5{margin-top:.25rem}
+.toc .lv-art{padding-left:.9rem}
+.toc .lv-art.hidden,.toc .lv-div.hidden{display:none}
+.toc-toggle{background:none;border:0;color:var(--sub);padding:0 .3rem;font-size:.75rem}
+
+.doc{padding:2.2rem 2rem 8rem;max-width:44em}
+.doc-head{border-bottom:2px solid var(--ink);padding-bottom:.8rem;margin-bottom:2rem}
+.doc-head h1{font-size:1.5rem;margin:0 0 .3rem;letter-spacing:.04em}
+.doc-head .meta{font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+
+/* ------------------------------------------------------------------ 条文 */
+.div-head{font-family:var(--gothic);margin:2.6rem 0 1rem;scroll-margin-top:6rem}
+.div-head .lbl{color:var(--accent);font-weight:700}
+h2.div-head{font-size:1.12rem;border-bottom:1px solid var(--rule);padding-bottom:.35rem}
+h3.div-head{font-size:1.02rem}
+h4.div-head,h5.div-head,h6.div-head{font-size:.95rem}
+
+.art{position:relative;padding-left:2.6rem;margin:1.5rem 0 1.9rem;scroll-margin-top:6rem}
+.art:target{background:var(--accent-weak);box-shadow:-.4rem 0 0 var(--accent);border-radius:2px}
+.art-tools{position:absolute;left:0;top:.25rem;display:flex;flex-direction:column;gap:.2rem;
+  visibility:hidden}
+.art:hover .art-tools,.art:focus-within .art-tools,.art:target .art-tools{visibility:visible}
+.art-tools button,.art-tools a{background:none;border:0;color:var(--sub);font-size:.72rem;
+  font-family:var(--gothic);padding:.1rem .2rem;border-radius:2px;text-decoration:none;
+  white-space:nowrap;display:block}
+.art-tools button:hover,.art-tools a:hover{color:var(--accent);background:var(--accent-weak)}
+.raw h3 .src{font-size:.75rem;font-weight:400;color:var(--sub);margin-left:.5rem}
+.doc-head .src{color:var(--accent);text-decoration:none}
+.doc-head .src:hover{text-decoration:underline}
+.caption{font-family:var(--gothic);font-size:.88rem;font-weight:700;color:var(--sub);margin:0 0 .1rem}
+.amend-note{font-family:var(--gothic);font-size:.78rem;font-weight:400;color:var(--sub);margin:.1rem 0 0;text-align:right}
+h2 .amend-note,h3 .amend-note,h4 .amend-note,h5 .amend-note,h6 .amend-note{display:inline;text-align:left}
+.art-no{font-family:var(--gothic);font-weight:700;color:var(--accent);text-decoration:none;margin-right:.55em}
+.art-no:hover{text-decoration:underline}
+.para{margin:.35rem 0;text-indent:0}
+.para+.para{margin-top:.55rem}
+.pno{font-family:var(--gothic);color:var(--sub);font-size:.9em;margin-right:.5em;font-variant-numeric:tabular-nums}
+.deleted .body-text{color:var(--sub)}
+.art.noarticle .para{margin-top:0}
+
+ol.items{list-style:none;margin:.35rem 0 .35rem 1.1em;padding:0}
+ol.items>li{display:grid;grid-template-columns:2.4em minmax(0,1fr);margin:.2rem 0}
+ol.items .mk{font-family:var(--gothic);font-size:.9em;color:var(--sub);margin-right:.4em}
+ol.items ol.items{grid-column:1/-1;margin-left:1.2em}
+ol.items ol.items>li{grid-template-columns:2em minmax(0,1fr)}
+
+.raw{margin:1.6rem 0;scroll-margin-top:6rem}
+.raw h3{font-family:var(--gothic);font-size:1rem;margin:0 0 .4rem}
+.raw pre{font-family:var(--mincho);white-space:pre-wrap;margin:0;padding:.7rem .9rem;
+  background:var(--chrome);border:1px solid var(--rule);font-size:.92rem;line-height:1.75}
+
+.notes{margin:2.5rem 0 0;padding:.8rem 1rem;background:var(--chrome);
+  border-left:3px solid var(--accent);font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+.notes p{margin:0 0 .3rem;font-weight:700;color:var(--ink)}
+.notes ul{margin:0;padding-left:1.2rem}
+.foot{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);
+  font-family:var(--gothic);font-size:.75rem;color:var(--sub)}
+
+a.ref{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule)}
+a.ref:hover{color:var(--accent);border-bottom-color:var(--accent)}
+a.ref-egov{border-bottom-style:dotted}
+a.ref-rule{border-bottom-color:var(--accent)}
+mark{background:var(--mark);color:inherit;padding:0 .05em}
+mark.live{background:var(--mark-live)}
+.toast{position:fixed;left:50%;bottom:2rem;transform:translateX(-50%);
+  background:var(--ink);color:#fff;font-family:var(--gothic);font-size:.8rem;
+  padding:.5rem .9rem;border-radius:3px;pointer-events:none;z-index:60;display:none}
+.toast.show{display:block}
+
+.toc-open{display:none}
+@media (max-width:900px){
+  body{font-size:16px}
+  .wrap{grid-template-columns:minmax(0,1fr)}
+  .toc{position:fixed;inset:5.6rem auto 0 0;width:82vw;max-width:20rem;background:var(--paper);
+    z-index:25;box-shadow:0 0 0 100vmax rgba(0,0,0,.25);max-height:none;height:calc(100vh - 5.6rem);
+    display:none}
+  .toc.open{display:block}
+  .toc-open{display:inline-block}
+  .doc{padding:1.4rem 1.1rem 6rem}
+  .search-box input{width:8rem}
+  .art-tools{opacity:1;position:static;flex-direction:row;justify-content:flex-end;margin-bottom:.15rem}
+  .art-tools button,.art-tools a{border:1px solid var(--rule);border-radius:2px;
+    padding:.1rem .45rem;display:inline-block}
+  .art{padding-left:0}
+}
+
+@media print{
+  .top,.toc,.art-tools,.crumb,.toast{display:none!important}
+  a.ref{border-bottom:0}
+  .wrap{display:block}
+  .doc{max-width:none;padding:0}
+  body{font-size:10.5pt;line-height:1.7}
+  .art{page-break-inside:avoid}
+}
+
+.anchor-alias{position:absolute;scroll-margin-top:6rem}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <button type="button" class="btn toc-open" id="toc-open">目次</button>
+    <h1 class="law-title">国際刑事裁判所に対する協力の手続に関する規則</h1>
+    <span class="law-number">平成19年7月19日最高裁判所規則第8号　／　平成21年1月5日施行</span>
+    <div class="top-tools">
+      <div class="search-box">
+        <input type="search" id="q" placeholder="条文を検索（/ キー）" aria-label="条文を検索">
+        <span class="hit-count" id="hits"></span>
+      </div>
+      <button type="button" class="btn" id="prev" title="前の該当箇所">前</button>
+      <button type="button" class="btn" id="next" title="次の該当箇所">次</button>
+      <button type="button" class="btn" id="numeral" aria-pressed="false"
+        title="条番号の表記を切り替える">123</button>
+    </div>
+  </div>
+  <div class="crumb" id="crumb"></div>
+</header>
+<div class="wrap">
+  <nav class="toc" id="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ul><li class="lv-div div-2"><a href="#d0">第一章　総則</a><ul><li class="lv-art" data-text="第一条1条趣旨趣旨国際刑事裁判所に対する協力等に関する法律（平成十九年法律第三十七号。以下「法」という。）による証拠の提供に関する令状の発付、証人尋問及び不服申立てに関する手続、引渡犯罪人の引渡し及び仮拘禁に関する裁判所の審査及び令状の発付に関する手続並びに執行協力に関する手続については、法に定めるもののほか、この規則の定めるところによる。"><a href="#a1">第一条　趣旨</a></li><li class="lv-art" data-text="第二条2条訳文の添付訳文の添付外国語で記載された書面には、その訳文を添付しなければならない。"><a href="#a2">第二条　訳文の添付</a></li></ul></li><li class="lv-div div-2"><a href="#d3">第二章　証拠の提供に関する令状の発付、証人尋問及び不服申立てに関する手続</a><ul><li class="lv-art" data-text="第三条3条刑事訴訟規則の準用刑事訴訟規則の準用証拠の提供に関する令状の発付、証人尋問及び不服申立てに関する手続については、その性質に反しない限り、刑事訴訟規則（昭和二十三年最高裁判所規則第三十二号）第一編第二章及び第五章から第十三章まで、第二編第一章、第三編第一章、第三章及び第四章、第七編並びに第八編の規定を準用する。"><a href="#a3">第三条　刑事訴訟規則の準用</a></li></ul></li><li class="lv-div div-2"><a href="#d5">第三章　引渡犯罪人の引渡し及び仮拘禁に関する裁判所の審査及び令状の発付に関する手続</a><ul><li class="lv-art" data-text="第四条4条拘禁許可状の請求の方式・法第二十一条拘禁許可状の請求の方式・法第二十一条拘禁許可状の請求は、書面でしなければならない。前項の書面には、次に掲げる事項を記載しなければならない。一引渡犯罪人の氏名、年齢、性別、国籍、職業及び住居二引渡犯罪名及び引渡犯罪に係る行為三引渡犯罪に係る行為に適用すべき国際刑事裁判所に関するローマ規程（以下「規程」という。）の罰条及び引渡犯罪が規程第七十条１に規定する犯罪である場合には日本国の相当する罰条四引渡しの請求の年月日五引渡犯罪人に対して行われた国際刑事裁判所の捜査又は裁判に係る手続六必要とする有効期間七拘禁許可状を数通必要とするときは、その旨及び事由引渡犯罪人の氏名が明らかでないときは、人相、体格その他本人を特定するに足りる事項でこれを指定しなければならない。引渡犯罪人の年齢、性別、国籍、職業又は住居が明らかでないときは、その旨を記載すれば足りる。"><a href="#a4">第四条　拘禁許可状の請求の方式・法第二十一条</a></li><li class="lv-art" data-text="第五条5条法第二十四条第一項の申立ての方式等法第二十四条第一項の申立ての方式等法第二十四条第一項の申立ては、その理由を明示してしなければならない。前項の申立ては、審問期日においてする場合を除き、書面でしなければならない。前項の書面による申立てについては、刑事訴訟規則第二百九十七条の規定を準用する。第一項の申立てがあったときは、東京高等裁判所は、直ちにその旨を東京高等検察庁の検察官に通知しなければならない。"><a href="#a5">第五条　法第二十四条第一項の申立ての方式等</a></li><li class="lv-art" data-text="第六条6条審査手続の停止の決定の手続等・法第二十四条審査手続の停止の決定の手続等・法第二十四条東京高等裁判所は、法第二十四条第一項の決定をするには、東京高等検察庁の検察官の意見を聴かなければならない。前項の決定の告知は、審問期日においては宣告により、その他の場合には裁判書の謄本を送達して、これをしなければならない。前項の規定による裁判書の謄本の送達は、東京高等検察庁の検察官、引渡犯罪人及び補佐する弁護士に対してしなければならない。"><a href="#a6">第六条　審査手続の停止の決定の手続等・法第二十四条</a></li><li class="lv-art" data-text="第七条7条審査手続の停止の決定の取消し等・法第二十四条審査手続の停止の決定の取消し等・法第二十四条東京高等検察庁の検察官は、法第二十四条第一項の決定により審査の手続が停止されている場合において、国際刑事裁判所において引渡犯罪につき規程第十七条１の規定による事件を受理するかどうかの決定があったときは、速やかに、東京高等裁判所に対し、当該決定の内容を通知しなければならない。東京高等裁判所は、前項の規定により事件を受理する旨の決定があった旨の通知を受けたときは、決定をもって、法第二十四条第一項の決定を取り消さなければならない。東京高等裁判所は、前項の決定をしたときは、速やかに、東京高等検察庁の検察官、引渡犯罪人及び補佐する弁護士に裁判書の謄本を送達しなければならない。"><a href="#a7">第七条　審査手続の停止の決定の取消し等・法第二十四条</a></li><li class="lv-art" data-text="第八条8条逃亡犯罪人引渡法による審査等の手続に関する規則の準用逃亡犯罪人引渡法による審査等の手続に関する規則の準用この章に特別の定めがあるもののほか、引渡犯罪人の引渡し及び仮拘禁に関する裁判所の審査及び令状の発付に関する手続については、逃亡犯罪人引渡法による審査等の手続に関する規則（昭和二十八年最高裁判所規則第十一号）第二条第二項、第三条及び第六条から第二十八条までの規定を準用する。この場合において、同規則第三条中「法及びこの規則」とあるのは「国際刑事裁判所に対する協力等に関する法律（平成十九年法律第三十七号）第二章第三節並びにこの規則及び国際刑事裁判所に対する協力の手続に関する規則（平成十九年最高裁判所規則第八号）第三章」と、同規則第八条第一項中「法第五条第三項」とあるのは「国際刑事裁判所に対する協力等に関する法律第二十一条第二項において読み替えて準用する逃亡犯罪人引渡法第五条第三項」と、同項第四号中「法第五条第二項」とあるのは「国際刑事裁判所に対する協力等に関する法律第二十一条第二項において準用する逃亡犯罪人引渡法第五条第二項」と、同条第二項及び同規則第十条第二項中「第五条第三項及び第四項」とあるのは「国際刑事裁判所に対する協力の手続に関する規則第四条第三項及び第四項」と、同条第一項及び同規則第十一条第一項中「法第八条第二項」とあるのは「国際刑事裁判所に対する協力等に関する法律第二十二条第二項において準用する逃亡犯罪人引渡法第八条第二項」と、同規則第十条第一項中「第五条第二項第一号から第七号まで」とあるのは「国際刑事裁判所に対する協力の手続に関する規則第四条第二項第一号から第五号まで」と、同規則第十二条第一項第四号中「法第二十七条第一項」とあるのは「国際刑事裁判所に対する協力等に関する法律第三十五条第二項において準用する逃亡犯罪人引渡法第二十七条第一項」と、同規則第十八条中「法第九条第四項」とあるのは「国際刑事裁判所に対する協力等に関する法律第二十三条第二項において準用する逃亡犯罪人引渡法第九条第四項」と、同規則第十九条第一項第一号中「法第九条第三項」とあるのは「国際刑事裁判所に対する協力等に関する法律第二十三条第二項において読み替えて準用する逃亡犯罪人引渡法第九条第三項」と、同規則第二十二条第三項中「請求国の官憲」とあるのは「国際刑事裁判所の指定する者」と、同規則第二十五条第一項及び第二十七条中「法第十条第一項」とあるのは「国際刑事裁判所に対する協力等に関する法律第二十三条第一項」と、同規則第二十六条第一項中「法第十条第二項」とあるのは「国際刑事裁判所に対する協力等に関する法律第二十三条第二項において準用する逃亡犯罪人引渡法第十条第二項」と、「同条第一項」とあるのは「国際刑事裁判所に対する協力等に関する法律第二十三条第一項」と、同規則第二十八条中「第五条から第九条まで」とあるのは「国際刑事裁判所に対する協力の手続に関する規則第四条及び同規則第八条において準用する第六条から第九条まで」と読み替えるものとする。"><a href="#a8">第八条　逃亡犯罪人引渡法による審査等の手続に関する規則の準用</a></li></ul></li><li class="lv-div div-2"><a href="#d11">第四章　執行協力に関する手続</a><ul><li class="lv-art" data-text="第九条9条執行協力の請求に係る審査の請求の方式・法第四十条執行協力の請求に係る審査の請求の方式・法第四十条罰金刑（法第二条第十号に規定する罰金刑をいう。以下同じ。）の確定裁判の執行に係る執行協力の請求の審査の請求は、次に掲げる事項を記載した書面でしなければならない。一執行協力の請求に係る確定裁判を受けた者の氏名及び当該確定裁判の確定年月日二執行協力の請求に係る罰金刑の確定裁判における罰金額及びこれに相当する日本円の金額三請求犯罪の罪名、事実の要旨及び適用された罰条並びに罰金刑の根拠とされた法令の条項並びに請求犯罪が規程第七十条１に規定する犯罪である場合には日本国の相当する罰条没収刑（法第二条第十号に規定する没収刑をいう。以下同じ。）の確定裁判の執行に係る執行協力の請求の審査の請求は、前項第一号に掲げる事項のほか、次に掲げる事項を記載した書面でしなければならない。一執行協力の請求に係る財産並びにこれを有する者（名義人が異なる場合は、名義人を含む。）の氏名及び住所又は居所二請求犯罪の罪名、事実の要旨及び適用された罰条並びに没収刑の根拠とされた法令の条項並びに日本国の相当する罰条（請求犯罪が規程第七十条１に規定する犯罪である場合に限る。）及び法令の条項三請求犯罪につき日本国において刑罰を科すとした場合において日本国の法令によれば当該執行協力の請求に係る財産が没収の裁判をすることができる財産に当たるものでないと認めるべきときは、その旨四前号の場合において、当該執行協力の請求に係る財産が、請求犯罪に係る行為によりその被害を受けた者から得た財産であり、かつ、その者又はその一般承継人に帰属することを理由として没収の裁判をすることができる財産に当たるものでないと認めるべきときは、その旨五執行協力の請求に係る財産を有し又はその財産の上に地上権、抵当権その他の権利を有すると思料するに足りる相当な理由のある者が、自己の責めに帰することのできない理由により、当該確定裁判に係る手続において自己の権利を主張することができなかったと認めるべきときは、その旨六没収刑の確定裁判の執行に代えて当該確定裁判を受けた者から追徴すべき日本円の金額被害回復命令（法第二条第十号に規定する被害回復命令をいう。以下同じ。）の確定裁判の執行に係る執行協力の請求の審査の請求は、第一項第一号に掲げる事項のほか、次に掲げる事項を記載した書面でしなければならない。一請求犯罪の罪名、事実の要旨及び適用された罰条並びに被害回復命令の根拠とされた法令の条項並びに日本国の相当する法令の条項二法第四十条第二項後段に規定する意見三法第四十条第二項後段の規定により当該確定裁判が没収の確定裁判に相当する旨の意見を付したときは、次に掲げる事項イ執行協力の請求に係る財産並びにこれを有する者（名義人が異なる場合は、名義人を含む。）の氏名及び住所又は居所ロ請求犯罪につき日本国において刑罰を科すとした場合において日本国の法令によれば当該執行協力の請求に係る財産が没収の裁判をすることができる財産に当たるものでないと認めるべきときは、その旨ハロの場合において、当該執行協力の請求に係る財産が、重大犯罪（法第二条第三号に規定する重大犯罪をいう。以下同じ。）に係る行為によりその被害を受けた者から得た財産であって、被害回復命令によりその者又はその一般承継人に返還すべきものであり、かつ、それらの者に帰属することを理由として没収の裁判をすることができる財産に当たるものでないと認めるべきときは、 その旨ニ前項第五号に掲げる事項ホ被害回復命令の確定裁判の執行に代えて当該確定裁判を受けた者から追徴すべき日本円の金額四法第四十条第二項後段の規定により当該確定裁判が追徴の確定裁判に相当する旨の意見を付したときは、執行協力の請求に係る被害回復命令の確定裁判において示された金額及びこれに相当する日本円の金額前三項の審査の請求をする場合には、法第四十一条第一項第二号に定める決定をすることができる要件があると認められるべき資料（同条第三項から第六項まで及び次条に規定する当該決定をする場合において同時に示さなければならないとされている事項を認めるべき資料を含む。）を提出しなければならない。"><a href="#a9">第九条　執行協力の請求に係る審査の請求の方式・法第四十条</a></li><li class="lv-art" data-text="第十条10条日本円の金額の表示日本円の金額の表示裁判所は、罰金刑の確定裁判の執行に係る執行協力の請求につき、法第四十一条第一項第二号に定める決定をするときは、当該確定裁判における罰金額に相当する日本円の金額を同時に示さなければならない。裁判所は、被害回復命令の確定裁判の執行に係る執行協力の請求につき、法第四十一条第一項第二号に定める決定をする場合において、当該確定裁判が日本国の法令によれば追徴の確定裁判に相当する旨を示すときは、当該被害回復命令の確定裁判において示された金額に相当する日本円の金額を同時に示さなければならない。"><a href="#a10">第十条　日本円の金額の表示</a></li><li class="lv-art" data-text="第十一条11条執行協力の実施に関する決定の取消しの請求の方式等・法第四十二条執行協力の実施に関する決定の取消しの請求の方式等・法第四十二条法第四十二条第五項において準用する組織的な犯罪の処罰及び犯罪収益の規制等に関する法律（平成十一年法律第百三十六号。以下「組織的犯罪処罰法」という。）第六十五条第一項の規定による取消しの請求は、次に掲げる事項を記載した書面でしなければならない。一取消しを求める決定の表示二取消しを求める事由前項の請求をする場合には、法第四十二条第五項において準用する組織的犯罪処罰法第六十五条第一項に規定する事由があると認められるべき資料を提出しなければならない。裁判所は、検察官の請求による場合を除き、法第四十二条第五項において準用する組織的犯罪処罰法第六十五条第一項の決定をするときは、検察官の意見を聴かなければならない。"><a href="#a11">第十一条　執行協力の実施に関する決定の取消しの請求の方式等・法第四十二条</a></li><li class="lv-art" data-text="第十二条12条執行協力の請求に係る没収保全等の請求の方式・法第四十三条等執行協力の請求に係る没収保全等の請求の方式・法第四十三条等法第四十三条第一項前段の規定による請求は、第九条第二項第一号に掲げる事項のほか、次に掲げる事項を記載した書面でしなければならない。一請求犯罪に係る没収刑又は被害回復命令の裁判を受けるべき者の氏名二債権の没収のための保全にあっては、債務者の氏名及び住所又は居所三請求犯罪の罪名、事実の要旨及び適用された罰条並びに没収保全の根拠とされた法令の条項並びに日本国の相当する罰条（請求犯罪が規程第七十条１に規定する犯罪である場合に限る。）及び法令の条項四没収刑のための保全に係る執行協力において、当該執行協力の請求に係る財産が、請求犯罪に係る行為によりその被害を受けた者から得た財産であるときは、当該請求犯罪につき日本国において刑罰を科すとした場合において、日本国の法令によれば当該財産がその者又はその一般承継人に帰属することを理由として没収保全をすることができる財産に当たるものでないこと。五被害回復命令のための保全であって日本国の法令によれば没収の保全に相当するものに係る執行協力において、当該執行協力の請求に係る財産が、重大犯罪に係る行為によりその被害を受けた者から得た財産であって、被害回復命令によりその者又はその一般承継人に返還すべきものであるときは、当該重大犯罪につき日本国において刑罰を科すとした場合において、日本国の法令によれば当該財産がそれらの者に帰属することを理由として没収保全をすることができる財産に当たるものでないこと。法第四十五条第一項の規定による請求は、次に掲げる事項を記載した書面でしなければならない。一請求犯罪に係る被害回復命令の裁判を受けるべき者の氏名二執行協力の請求に係る追徴保全額三処分を禁止すべき財産四請求犯罪の罪名、事実の要旨及び適用された罰条並びに追徴保全の根拠とされた法令の条項並びに日本国の相当する法令の条項前二項の請求をする場合には、没収保全命令又は追徴保全命令を発することができる要件があると認められるべき資料を提出しなければならない。"><a href="#a12">第十二条　執行協力の請求に係る没収保全等の請求の方式・法第四十三条等</a></li><li class="lv-art" data-text="第十三条13条犯罪収益に係る保全手続等に関する規則等の準用犯罪収益に係る保全手続等に関する規則等の準用この章に特別の定めがあるもののほか、執行協力に関する手続については、その性質に反しない限り、犯罪収益に係る保全手続等に関する規則（平成十一年最高裁判所規則第十号）第三章（第三条、第六条、第七条第二項及び第三項、第十二条、第二十一条並びに第二十三条を除く。）、刑事訴訟規則（第一編第二章及び第五章から第十三章まで、第二編第一章、第三編第一章、第三章及び第四章、第七編並びに第八編に限る。）、刑事事件における第三者所有物の没収手続に関する規則（昭和三十八年最高裁判所規則第八号）並びに逃亡犯罪人引渡法による審査等の手続に関する規則第十九条、第二十一条及び第二十二条の規定を準用する。この場合において、犯罪収益に係る保全手続等に関する規則第四条第一項中「前条第一項各号」とあるのは「国際刑事裁判所に対する協力の手続に関する規則（平成十九年最高裁判所規則第八号）第九条第二項第一号及び第十二条第一項各号」と、「同条第一項第一号及び第六号」とあるのは「同項第一号」と、同項第三号及び同条第二項中「法第二十二条第二項」とあるのは「国際刑事裁判所に対する協力等に関する法律（平成十九年法律第三十七号）第四十四条第二項」と、同規則第五条中「法」とあるのは「国際刑事裁判所に対する協力等に関する法律第四十四条第三項において読み替えて準用する組織的な犯罪の処罰及び犯罪収益の規制等に関する法律」と、同規則第七条第一項及び第八条第一項第二号中「被疑者」とあり、並びに同規則第十条第一項及び第十四条第一項第二号中「被告人又は被疑者」とあるのは「請求犯罪に係る国際刑事裁判所に対する協力等に関する法律第二条第十号に規定する没収刑又は被害回復命令の裁判を受けるべき者」と、同規則第八条中「起訴前」とあるのは「国際刑事裁判所に関するローマ規程第六十一条１に規定する審理が行われる前」と、同条及び同規則第十一条第四項中「法第二十三条第四項」とあるのは「国際刑事裁判所に対する協力等に関する法律第四十四条第五項において読み替えて準用する組織的な犯罪の処罰及び犯罪収益の規制等に関する法律第六十八条第二項」と、同規則第十条第一項及び第十一条の二第十項中「法第三十条第四項」とあるのは「国際刑事裁判所に対する協力等に関する法律第四十七条において準用する組織的な犯罪の処罰及び犯罪収益の規制等に関する法律第三十条第四項」と、同規則第十一条第十項及び第十一条の二第十項中「法第三十六条第一項」とあるのは「国際刑事裁判所に対する協力等に関する法律第四十七条において準用する組織的な犯罪の処罰及び犯罪収益の規制等に関する法律第三十六条第一項」と、同規則第十一条第十一項、第十三条第一項、第十四条第一項、第十五条並びに第十七条第一項第二号及び第二項中「法」とあるのは「国際刑事裁判所に対する協力等に関する法律第四十七条において準用する組織的な犯罪の処罰及び犯罪収益の規制等に関する法律」と、同規則第十一条第十二項及び第十一条の二第十一項中「第三条第一項又は第二十六条第一項」とあるのは「国際刑事裁判所に対する協力の手続に関する規則第十二条第一項」と、同規則第二十二条中「第五条から第九条まで（第七条第二項及び第三項を除く。）及び第十二条」とあるのは「国際刑事裁判所に対する協力の手続に関する規則第十三条において準用する第五条、第七条第一項、第八条及び第九条」と、「「追徴保全解放金」と、第十二条中「第三十二条第一項」とあるのは「第四十七条」とあるのは「、「追徴保全解放金」と読み替えるものとする。"><a href="#a13">第十三条　犯罪収益に係る保全手続等に関する規則等の準用</a></li></ul></li><li class="lv-div div-1"><a href="#sup1">附則</a></li><li class="lv-div div-1"><a href="#sup2">附則　（平成二〇年一〇月一五日最高裁判所規則第一六号）抄</a></li><li class="lv-div div-1"><a href="#sup3">附則　（平成二〇年一一月一九日最高裁判所規則第二一号）抄</a><ul><li class="lv-art" data-text="第一条1条施行期日施行期日この規則は、株式等の取引に係る決済の合理化を図るための社債等の振替に関する法律等の一部を改正する法律（平成十六年法律第八十八号）の施行の日から施行する。（施行の日＝平成二一年一月五日）"><a href="#sup3-a1">第一条　施行期日</a></li></ul></li><li class="lv-div div-1"><a href="#sup4">附則　（令和四年二月二一日最高裁判所規則第九号）</a></li></ul>
+  </nav>
+  <main class="doc" id="doc-outer">
+    <div class="doc-head">
+      <h1>国際刑事裁判所に対する協力の手続に関する規則</h1>
+      <div class="meta">平成19年7月19日最高裁判所規則第8号　／　平成21年1月5日施行　／　<a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kokusaikeijisaibansyokisoku20220221.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本PDF p.1</a></div>
+    </div>
+    <div id="doc">
+<h3 class="div-head" id="d0" data-path="第一章　総則"><span class="lbl">第一章</span>　総則</h3>
+<article class="art" id="a1" data-path="第一章　総則"><span class="anchor-alias" id="Mp-At_1"></span><div class="art-tools"><button type="button" data-anchor="a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kokusaikeijisaibansyokisoku20220221.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（趣旨）</p><p class="para" id="a1-p1"><a class="art-no" href="#a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">国際刑事裁判所に対する協力等に関する法律（平成十九年法律第三十七号。以下「法」という。）による証拠の提供に関する令状の発付、証人尋問及び不服申立てに関する手続、引渡犯罪人の引渡し及び仮拘禁に関する裁判所の審査及び令状の発付に関する手続並びに執行協力に関する手続については、法に定めるもののほか、この規則の定めるところによる。</span></p></article>
+<article class="art" id="a2" data-path="第一章　総則"><span class="anchor-alias" id="Mp-At_2"></span><div class="art-tools"><button type="button" data-anchor="a2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kokusaikeijisaibansyokisoku20220221.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（訳文の添付）</p><p class="para" id="a2-p1"><a class="art-no" href="#a2" data-kan="第二条" data-num="第2条">第二条</a><span class="body-text">外国語で記載された書面には、その訳文を添付しなければならない。</span></p></article>
+<h3 class="div-head" id="d3" data-path="第二章　証拠の提供に関する令状の発付、証人尋問及び不服申立てに関する手続"><span class="lbl">第二章</span>　証拠の提供に関する令状の発付、証人尋問及び不服申立てに関する手続</h3>
+<article class="art" id="a3" data-path="第二章　証拠の提供に関する令状の発付、証人尋問及び不服申立てに関する手続"><span class="anchor-alias" id="Mp-At_3"></span><div class="art-tools"><button type="button" data-anchor="a3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kokusaikeijisaibansyokisoku20220221.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（刑事訴訟規則の準用）</p><p class="para" id="a3-p1"><a class="art-no" href="#a3" data-kan="第三条" data-num="第3条">第三条</a><span class="body-text">証拠の提供に関する令状の発付、証人尋問及び不服申立てに関する手続については、その性質に反しない限り、刑事訴訟規則（昭和二十三年最高裁判所規則第三十二号）第一編第二章及び第五章から第十三章まで、第二編第一章、第三編第一章、第三章及び第四章、第七編並びに第八編の規定を準用する。</span></p></article>
+<h3 class="div-head" id="d5" data-path="第三章　引渡犯罪人の引渡し及び仮拘禁に関する裁判所の審査及び令状の発付に関する手続"><span class="lbl">第三章</span>　引渡犯罪人の引渡し及び仮拘禁に関する裁判所の審査及び令状の発付に関する手続</h3>
+<article class="art" id="a4" data-path="第三章　引渡犯罪人の引渡し及び仮拘禁に関する裁判所の審査及び令状の発付に関する手続"><span class="anchor-alias" id="Mp-At_4"></span><div class="art-tools"><button type="button" data-anchor="a4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kokusaikeijisaibansyokisoku20220221.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（拘禁許可状の請求の方式・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_21" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十一条</a>）</p><p class="para" id="a4-p1"><a class="art-no" href="#a4" data-kan="第四条" data-num="第4条">第四条</a><span class="body-text">拘禁許可状の請求は、書面でしなければならない。</span></p><p class="para" id="a4-p2"><span class="pno">2</span><span class="body-text">前項の書面には、次に掲げる事項を記載しなければならない。</span></p><ol class="items"><li id="a4-p2-1"><span class="mk">一</span><span class="tx">引渡犯罪人の氏名、年齢、性別、国籍、職業及び住居</span></li><li id="a4-p2-2"><span class="mk">二</span><span class="tx">引渡犯罪名及び引渡犯罪に係る行為</span></li><li id="a4-p2-3"><span class="mk">三</span><span class="tx">引渡犯罪に係る行為に適用すべき国際刑事裁判所に関するローマ規程（以下「規程」という。）の罰条及び引渡犯罪が規程第七十条１に規定する犯罪である場合には日本国の相当する罰条</span></li><li id="a4-p2-4"><span class="mk">四</span><span class="tx">引渡しの請求の年月日</span></li><li id="a4-p2-5"><span class="mk">五</span><span class="tx">引渡犯罪人に対して行われた国際刑事裁判所の捜査又は裁判に係る手続</span></li><li id="a4-p2-6"><span class="mk">六</span><span class="tx">必要とする有効期間</span></li><li id="a4-p2-7"><span class="mk">七</span><span class="tx">拘禁許可状を数通必要とするときは、その旨及び事由</span></li></ol><p class="para" id="a4-p3"><span class="pno">3</span><span class="body-text">引渡犯罪人の氏名が明らかでないときは、人相、体格その他本人を特定するに足りる事項でこれを指定しなければならない。</span></p><p class="para" id="a4-p4"><span class="pno">4</span><span class="body-text">引渡犯罪人の年齢、性別、国籍、職業又は住居が明らかでないときは、その旨を記載すれば足りる。</span></p></article>
+<article class="art" id="a5" data-path="第三章　引渡犯罪人の引渡し及び仮拘禁に関する裁判所の審査及び令状の発付に関する手続"><span class="anchor-alias" id="Mp-At_5"></span><div class="art-tools"><button type="button" data-anchor="a5" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kokusaikeijisaibansyokisoku20220221.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_24" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十四条</a>第一項の申立ての方式等）</p><p class="para" id="a5-p1"><a class="art-no" href="#a5" data-kan="第五条" data-num="第5条">第五条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_24" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十四条</a>第一項の申立ては、その理由を明示してしなければならない。</span></p><p class="para" id="a5-p2"><span class="pno">2</span><span class="body-text">前項の申立ては、審問期日においてする場合を除き、書面でしなければならない。</span></p><p class="para" id="a5-p3"><span class="pno">3</span><span class="body-text">前項の書面による申立てについては、<a class="ref ref-rule" href="600.html#a297" title="この規則集の中を開きます">刑事訴訟規則第二百九十七条</a>の規定を準用する。</span></p><p class="para" id="a5-p4"><span class="pno">4</span><span class="body-text">第一項の申立てがあったときは、東京高等裁判所は、直ちにその旨を東京高等検察庁の検察官に通知しなければならない。</span></p></article>
+<article class="art" id="a6" data-path="第三章　引渡犯罪人の引渡し及び仮拘禁に関する裁判所の審査及び令状の発付に関する手続"><span class="anchor-alias" id="Mp-At_6"></span><div class="art-tools"><button type="button" data-anchor="a6" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kokusaikeijisaibansyokisoku20220221.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（審査手続の停止の決定の手続等・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_24" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十四条</a>）</p><p class="para" id="a6-p1"><a class="art-no" href="#a6" data-kan="第六条" data-num="第6条">第六条</a><span class="body-text">東京高等裁判所は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_24" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十四条</a>第一項の決定をするには、東京高等検察庁の検察官の意見を聴かなければならない。</span></p><p class="para" id="a6-p2"><span class="pno">2</span><span class="body-text">前項の決定の告知は、審問期日においては宣告により、その他の場合には裁判書の謄本を送達して、これをしなければならない。</span></p><p class="para" id="a6-p3"><span class="pno">3</span><span class="body-text">前項の規定による裁判書の謄本の送達は、東京高等検察庁の検察官、引渡犯罪人及び補佐する弁護士に対してしなければならない。</span></p></article>
+<article class="art" id="a7" data-path="第三章　引渡犯罪人の引渡し及び仮拘禁に関する裁判所の審査及び令状の発付に関する手続"><span class="anchor-alias" id="Mp-At_7"></span><div class="art-tools"><button type="button" data-anchor="a7" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kokusaikeijisaibansyokisoku20220221.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（審査手続の停止の決定の取消し等・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_24" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十四条</a>）</p><p class="para" id="a7-p1"><a class="art-no" href="#a7" data-kan="第七条" data-num="第7条">第七条</a><span class="body-text">東京高等検察庁の検察官は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_24" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十四条</a>第一項の決定により審査の手続が停止されている場合において、国際刑事裁判所において引渡犯罪につき規程第十七条１の規定による事件を受理するかどうかの決定があったときは、速やかに、東京高等裁判所に対し、当該決定の内容を通知しなければならない。</span></p><p class="para" id="a7-p2"><span class="pno">2</span><span class="body-text">東京高等裁判所は、前項の規定により事件を受理する旨の決定があった旨の通知を受けたときは、決定をもって、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_24" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十四条</a>第一項の決定を取り消さなければならない。</span></p><p class="para" id="a7-p3"><span class="pno">3</span><span class="body-text">東京高等裁判所は、前項の決定をしたときは、速やかに、東京高等検察庁の検察官、引渡犯罪人及び補佐する弁護士に裁判書の謄本を送達しなければならない。</span></p></article>
+<article class="art" id="a8" data-path="第三章　引渡犯罪人の引渡し及び仮拘禁に関する裁判所の審査及び令状の発付に関する手続"><span class="anchor-alias" id="Mp-At_8"></span><div class="art-tools"><button type="button" data-anchor="a8" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kokusaikeijisaibansyokisoku20220221.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（逃亡犯罪人引渡法による審査等の手続に関する規則の準用）</p><p class="para" id="a8-p1"><a class="art-no" href="#a8" data-kan="第八条" data-num="第8条">第八条</a><span class="body-text">この章に特別の定めがあるもののほか、引渡犯罪人の引渡し及び仮拘禁に関する裁判所の審査及び令状の発付に関する手続については、逃亡犯罪人引渡法による審査等の手続に関する規則（昭和二十八年最高裁判所規則第十一号）<a class="ref ref-rule" href="615.html#a2" title="この規則集の中を開きます">第二条</a>第二項、<a class="ref ref-self" href="#a3">第三条</a>及び<a class="ref ref-self" href="#a6">第六条</a>から第二十八条までの規定を準用する。この場合において、同規則第三条中「法及びこの規則」とあるのは「国際刑事裁判所に対する協力等に関する法律（平成十九年法律第三十七号）第二章第三節並びにこの規則及び国際刑事裁判所に対する協力の手続に関する規則（平成十九年最高裁判所規則第八号）第三章」と、同規則第八条第一項中「<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_5" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第五条</a>第三項」とあるのは「<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_21" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">国際刑事裁判所に対する協力等に関する法律第二十一条</a><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/328AC0000000068#Mp-At_5" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第二項において読み替えて準用する逃亡犯罪人引渡法第五条</a>第三項」と、同項第四号中「<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_5" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第五条</a>第二項」とあるのは「<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_21" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">国際刑事裁判所に対する協力等に関する法律第二十一条</a><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/328AC0000000068#Mp-At_5" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第二項において準用する逃亡犯罪人引渡法第五条</a>第二項」と、同条第二項及び同規則第十条第二項中「<a class="ref ref-self" href="#a5">第五条</a>第三項及び第四項」とあるのは「<a class="ref ref-self" href="#a4">国際刑事裁判所に対する協力の手続に関する規則第四条</a>第三項及び第四項」と、同条第一項及び同規則第十一条第一項中「<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_8" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第八条</a>第二項」とあるのは「<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_22" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">国際刑事裁判所に対する協力等に関する法律第二十二条</a><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/328AC0000000068#Mp-At_8" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第二項において準用する逃亡犯罪人引渡法第八条</a>第二項」と、同規則第十条第一項中「<a class="ref ref-self" href="#a5">第五条</a>第二項第一号から第七号まで」とあるのは「<a class="ref ref-self" href="#a4">国際刑事裁判所に対する協力の手続に関する規則第四条</a>第二項第一号から第五号まで」と、同規則第十二条第一項第四号中「<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_27" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十七条</a>第一項」とあるのは「<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_35" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">国際刑事裁判所に対する協力等に関する法律第三十五条</a><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/328AC0000000068#Mp-At_27" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第二項において準用する逃亡犯罪人引渡法第二十七条</a>第一項」と、同規則第十八条中「<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_9" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第九条</a>第四項」とあるのは「<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_23" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">国際刑事裁判所に対する協力等に関する法律第二十三条</a><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/328AC0000000068#Mp-At_9" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第二項において準用する逃亡犯罪人引渡法第九条</a>第四項」と、同規則第十九条第一項第一号中「<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_9" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第九条</a>第三項」とあるのは「<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_23" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">国際刑事裁判所に対する協力等に関する法律第二十三条</a><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/328AC0000000068#Mp-At_9" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第二項において読み替えて準用する逃亡犯罪人引渡法第九条</a>第三項」と、同規則第二十二条第三項中「請求国の官憲」とあるのは「国際刑事裁判所の指定する者」と、同規則第二十五条第一項及び第二十七条中「<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_10" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十条</a>第一項」とあるのは「<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_23" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">国際刑事裁判所に対する協力等に関する法律第二十三条</a>第一項」と、同規則第二十六条第一項中「<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_10" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十条</a>第二項」とあるのは「<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_23" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">国際刑事裁判所に対する協力等に関する法律第二十三条</a><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/328AC0000000068#Mp-At_10" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第二項において準用する逃亡犯罪人引渡法第十条</a>第二項」と、「同条第一項」とあるのは「<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_23" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">国際刑事裁判所に対する協力等に関する法律第二十三条</a>第一項」と、同規則第二十八条中「<a class="ref ref-self" href="#a5">第五条</a>から<a class="ref ref-self" href="#a9">第九条</a>まで」とあるのは「<a class="ref ref-self" href="#a4">国際刑事裁判所に対する協力の手続に関する規則第四条</a>及び同規則第八条において準用する<a class="ref ref-self" href="#a6">第六条</a>から<a class="ref ref-self" href="#a9">第九条</a>まで」と読み替えるものとする。</span></p></article>
+<h3 class="div-head" id="d11" data-path="第四章　執行協力に関する手続"><span class="lbl">第四章</span>　執行協力に関する手続</h3>
+<article class="art" id="a9" data-path="第四章　執行協力に関する手続"><span class="anchor-alias" id="Mp-At_9"></span><div class="art-tools"><button type="button" data-anchor="a9" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kokusaikeijisaibansyokisoku20220221.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（執行協力の請求に係る審査の請求の方式・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_40" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四十条</a>）</p><p class="para" id="a9-p1"><a class="art-no" href="#a9" data-kan="第九条" data-num="第9条">第九条</a><span class="body-text">罰金刑（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二条</a>第十号に規定する罰金刑をいう。以下同じ。）の確定裁判の執行に係る執行協力の請求の審査の請求は、次に掲げる事項を記載した書面でしなければならない。</span></p><ol class="items"><li id="a9-p1-1"><span class="mk">一</span><span class="tx">執行協力の請求に係る確定裁判を受けた者の氏名及び当該確定裁判の確定年月日</span></li><li id="a9-p1-2"><span class="mk">二</span><span class="tx">執行協力の請求に係る罰金刑の確定裁判における罰金額及びこれに相当する日本円の金額</span></li><li id="a9-p1-3"><span class="mk">三</span><span class="tx">請求犯罪の罪名、事実の要旨及び適用された罰条並びに罰金刑の根拠とされた法令の条項並びに請求犯罪が規程第七十条１に規定する犯罪である場合には日本国の相当する罰条</span></li></ol><p class="para" id="a9-p2"><span class="pno">2</span><span class="body-text">没収刑（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二条</a>第十号に規定する没収刑をいう。以下同じ。）の確定裁判の執行に係る執行協力の請求の審査の請求は、前項第一号に掲げる事項のほか、次に掲げる事項を記載した書面でしなければならない。</span></p><ol class="items"><li id="a9-p2-1"><span class="mk">一</span><span class="tx">執行協力の請求に係る財産並びにこれを有する者（名義人が異なる場合は、名義人を含む。）の氏名及び住所又は居所</span></li><li id="a9-p2-2"><span class="mk">二</span><span class="tx">請求犯罪の罪名、事実の要旨及び適用された罰条並びに没収刑の根拠とされた法令の条項並びに日本国の相当する罰条（請求犯罪が規程第七十条１に規定する犯罪である場合に限る。）及び法令の条項</span></li><li id="a9-p2-3"><span class="mk">三</span><span class="tx">請求犯罪につき日本国において刑罰を科すとした場合において日本国の法令によれば当該執行協力の請求に係る財産が没収の裁判をすることができる財産に当たるものでないと認めるべきときは、その旨</span></li><li id="a9-p2-4"><span class="mk">四</span><span class="tx">前号の場合において、当該執行協力の請求に係る財産が、請求犯罪に係る行為によりその被害を受けた者から得た財産であり、かつ、その者又はその一般承継人に帰属することを理由として没収の裁判をすることができる財産に当たるものでないと認めるべきときは、その旨</span></li><li id="a9-p2-5"><span class="mk">五</span><span class="tx">執行協力の請求に係る財産を有し又はその財産の上に地上権、抵当権その他の権利を有すると思料するに足りる相当な理由のある者が、自己の責めに帰することのできない理由により、当該確定裁判に係る手続において自己の権利を主張することができなかったと認めるべきときは、その旨</span></li><li id="a9-p2-6"><span class="mk">六</span><span class="tx">没収刑の確定裁判の執行に代えて当該確定裁判を受けた者から追徴すべき日本円の金額</span></li></ol><p class="para" id="a9-p3"><span class="pno">3</span><span class="body-text">被害回復命令（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二条</a>第十号に規定する被害回復命令をいう。以下同じ。）の確定裁判の執行に係る執行協力の請求の審査の請求は、第一項第一号に掲げる事項のほか、次に掲げる事項を記載した書面でしなければならない。</span></p><ol class="items"><li id="a9-p3-1"><span class="mk">一</span><span class="tx">請求犯罪の罪名、事実の要旨及び適用された罰条並びに被害回復命令の根拠とされた法令の条項並びに日本国の相当する法令の条項</span></li><li id="a9-p3-2"><span class="mk">二</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_40" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四十条</a>第二項後段に規定する意見</span></li><li id="a9-p3-3"><span class="mk">三</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_40" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四十条</a>第二項後段の規定により当該確定裁判が没収の確定裁判に相当する旨の意見を付したときは、次に掲げる事項</span><ol class="items"><li id="a9-p3-3-s1"><span class="mk">イ</span><span class="tx">執行協力の請求に係る財産並びにこれを有する者（名義人が異なる場合は、名義人を含む。）の氏名及び住所又は居所</span></li><li id="a9-p3-3-s2"><span class="mk">ロ</span><span class="tx">請求犯罪につき日本国において刑罰を科すとした場合において日本国の法令によれば当該執行協力の請求に係る財産が没収の裁判をすることができる財産に当たるものでないと認めるべきときは、その旨</span></li><li id="a9-p3-3-s3"><span class="mk">ハ</span><span class="tx">ロの場合において、当該執行協力の請求に係る財産が、重大犯罪（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二条</a>第三号に規定する重大犯罪をいう。以下同じ。）に係る行為によりその被害を受けた者から得た財産であって、被害回復命令によりその者又はその一般承継人に返還すべきものであり、かつ、それらの者に帰属することを理由として没収の裁判をすることができる財産に当たるものでないと認めるべきときは、 その旨</span></li><li id="a9-p3-3-s4"><span class="mk">ニ</span><span class="tx">前項第五号に掲げる事項</span></li><li id="a9-p3-3-s5"><span class="mk">ホ</span><span class="tx">被害回復命令の確定裁判の執行に代えて当該確定裁判を受けた者から追徴すべき日本円の金額</span></li></ol></li><li id="a9-p3-4"><span class="mk">四</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_40" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四十条</a>第二項後段の規定により当該確定裁判が追徴の確定裁判に相当する旨の意見を付したときは、執行協力の請求に係る被害回復命令の確定裁判において示された金額及びこれに相当する日本円の金額</span></li></ol><p class="para" id="a9-p4"><span class="pno">4</span><span class="body-text">前三項の審査の請求をする場合には、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_41" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四十一条</a>第一項第二号に定める決定をすることができる要件があると認められるべき資料（同条第三項から第六項まで及び次条に規定する当該決定をする場合において同時に示さなければならないとされている事項を認めるべき資料を含む。）を提出しなければならない。</span></p></article>
+<article class="art" id="a10" data-path="第四章　執行協力に関する手続"><span class="anchor-alias" id="Mp-At_10"></span><div class="art-tools"><button type="button" data-anchor="a10" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kokusaikeijisaibansyokisoku20220221.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（日本円の金額の表示）</p><p class="para" id="a10-p1"><a class="art-no" href="#a10" data-kan="第十条" data-num="第10条">第十条</a><span class="body-text">裁判所は、罰金刑の確定裁判の執行に係る執行協力の請求につき、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_41" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四十一条</a>第一項第二号に定める決定をするときは、当該確定裁判における罰金額に相当する日本円の金額を同時に示さなければならない。</span></p><p class="para" id="a10-p2"><span class="pno">2</span><span class="body-text">裁判所は、被害回復命令の確定裁判の執行に係る執行協力の請求につき、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_41" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四十一条</a>第一項第二号に定める決定をする場合において、当該確定裁判が日本国の法令によれば追徴の確定裁判に相当する旨を示すときは、当該被害回復命令の確定裁判において示された金額に相当する日本円の金額を同時に示さなければならない。</span></p></article>
+<article class="art" id="a11" data-path="第四章　執行協力に関する手続"><span class="anchor-alias" id="Mp-At_11"></span><div class="art-tools"><button type="button" data-anchor="a11" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kokusaikeijisaibansyokisoku20220221.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（執行協力の実施に関する決定の取消しの請求の方式等・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_42" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四十二条</a>）</p><p class="para" id="a11-p1"><a class="art-no" href="#a11" data-kan="第十一条" data-num="第11条">第十一条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_42" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四十二条</a>第五項において準用する組織的な犯罪の処罰及び犯罪収益の規制等に関する法律（平成十一年法律第百三十六号。以下「組織的犯罪処罰法」という。）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000136#Mp-At_65" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第六十五条</a>第一項の規定による取消しの請求は、次に掲げる事項を記載した書面でしなければならない。</span></p><ol class="items"><li id="a11-p1-1"><span class="mk">一</span><span class="tx">取消しを求める決定の表示</span></li><li id="a11-p1-2"><span class="mk">二</span><span class="tx">取消しを求める事由</span></li></ol><p class="para" id="a11-p2"><span class="pno">2</span><span class="body-text">前項の請求をする場合には、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_42" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四十二条</a>第五項において準用する<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000136#Mp-At_65" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">組織的犯罪処罰法第六十五条</a>第一項に規定する事由があると認められるべき資料を提出しなければならない。</span></p><p class="para" id="a11-p3"><span class="pno">3</span><span class="body-text">裁判所は、検察官の請求による場合を除き、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_42" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四十二条</a>第五項において準用する<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000136#Mp-At_65" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">組織的犯罪処罰法第六十五条</a>第一項の決定をするときは、検察官の意見を聴かなければならない。</span></p></article>
+<article class="art" id="a12" data-path="第四章　執行協力に関する手続"><span class="anchor-alias" id="Mp-At_12"></span><div class="art-tools"><button type="button" data-anchor="a12" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kokusaikeijisaibansyokisoku20220221.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（執行協力の請求に係る没収保全等の請求の方式・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_43" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四十三条</a>等）</p><p class="para" id="a12-p1"><a class="art-no" href="#a12" data-kan="第十二条" data-num="第12条">第十二条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_43" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四十三条</a>第一項前段の規定による請求は、<a class="ref ref-self" href="#a9">第九条</a>第二項第一号に掲げる事項のほか、次に掲げる事項を記載した書面でしなければならない。</span></p><ol class="items"><li id="a12-p1-1"><span class="mk">一</span><span class="tx">請求犯罪に係る没収刑又は被害回復命令の裁判を受けるべき者の氏名</span></li><li id="a12-p1-2"><span class="mk">二</span><span class="tx">債権の没収のための保全にあっては、債務者の氏名及び住所又は居所</span></li><li id="a12-p1-3"><span class="mk">三</span><span class="tx">請求犯罪の罪名、事実の要旨及び適用された罰条並びに没収保全の根拠とされた法令の条項並びに日本国の相当する罰条（請求犯罪が規程第七十条１に規定する犯罪である場合に限る。）及び法令の条項</span></li><li id="a12-p1-4"><span class="mk">四</span><span class="tx">没収刑のための保全に係る執行協力において、当該執行協力の請求に係る財産が、請求犯罪に係る行為によりその被害を受けた者から得た財産であるときは、当該請求犯罪につき日本国において刑罰を科すとした場合において、日本国の法令によれば当該財産がその者又はその一般承継人に帰属することを理由として没収保全をすることができる財産に当たるものでないこと。</span></li><li id="a12-p1-5"><span class="mk">五</span><span class="tx">被害回復命令のための保全であって日本国の法令によれば没収の保全に相当するものに係る執行協力において、当該執行協力の請求に係る財産が、重大犯罪に係る行為によりその被害を受けた者から得た財産であって、被害回復命令によりその者又はその一般承継人に返還すべきものであるときは、当該重大犯罪につき日本国において刑罰を科すとした場合において、日本国の法令によれば当該財産がそれらの者に帰属することを理由として没収保全をすることができる財産に当たるものでないこと。</span></li></ol><p class="para" id="a12-p2"><span class="pno">2</span><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_45" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四十五条</a>第一項の規定による請求は、次に掲げる事項を記載した書面でしなければならない。</span></p><ol class="items"><li id="a12-p2-1"><span class="mk">一</span><span class="tx">請求犯罪に係る被害回復命令の裁判を受けるべき者の氏名</span></li><li id="a12-p2-2"><span class="mk">二</span><span class="tx">執行協力の請求に係る追徴保全額</span></li><li id="a12-p2-3"><span class="mk">三</span><span class="tx">処分を禁止すべき財産</span></li><li id="a12-p2-4"><span class="mk">四</span><span class="tx">請求犯罪の罪名、事実の要旨及び適用された罰条並びに追徴保全の根拠とされた法令の条項並びに日本国の相当する法令の条項</span></li></ol><p class="para" id="a12-p3"><span class="pno">3</span><span class="body-text">前二項の請求をする場合には、没収保全命令又は追徴保全命令を発することができる要件があると認められるべき資料を提出しなければならない。</span></p></article>
+<article class="art" id="a13" data-path="第四章　執行協力に関する手続"><span class="anchor-alias" id="Mp-At_13"></span><div class="art-tools"><button type="button" data-anchor="a13" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kokusaikeijisaibansyokisoku20220221.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（犯罪収益に係る保全手続等に関する規則等の準用）</p><p class="para" id="a13-p1"><a class="art-no" href="#a13" data-kan="第十三条" data-num="第13条">第十三条</a><span class="body-text">この章に特別の定めがあるもののほか、執行協力に関する手続については、その性質に反しない限り、犯罪収益に係る保全手続等に関する規則（平成十一年最高裁判所規則第十号）第三章（<a class="ref ref-self" href="#a3">第三条</a>、<a class="ref ref-self" href="#a6">第六条</a>、<a class="ref ref-self" href="#a7">第七条</a>第二項及び第三項、<a class="ref ref-self" href="#a12">第十二条</a>、第二十一条並びに第二十三条を除く。）、刑事訴訟規則（第一編第二章及び第五章から第十三章まで、第二編第一章、第三編第一章、第三章及び第四章、第七編並びに第八編に限る。）、刑事事件における第三者所有物の没収手続に関する規則（昭和三十八年最高裁判所規則第八号）並びに<a class="ref ref-rule" href="615.html#a19" title="この規則集の中を開きます">逃亡犯罪人引渡法による審査等の手続に関する規則第十九条</a>、第二十一条及び第二十二条の規定を準用する。この場合において、<a class="ref ref-rule" href="608.html#a4" title="この規則集の中を開きます">犯罪収益に係る保全手続等に関する規則第四条</a>第一項中「前条第一項各号」とあるのは「国際刑事裁判所に対する協力の手続に関する規則（平成十九年最高裁判所規則第八号）<a class="ref ref-self" href="#a9">第九条</a>第二項第一号及び<a class="ref ref-self" href="#a12">第十二条</a>第一項各号」と、「同条第一項第一号及び第六号」とあるのは「同項第一号」と、同項第三号及び同条第二項中「<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_22" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十二条</a>第二項」とあるのは「国際刑事裁判所に対する協力等に関する法律（平成十九年法律第三十七号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_44" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第四十四条</a>第二項」と、同規則第五条中「法」とあるのは「<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_44" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">国際刑事裁判所に対する協力等に関する法律第四十四条</a>第三項において読み替えて準用する組織的な犯罪の処罰及び犯罪収益の規制等に関する法律」と、同規則第七条第一項及び<a class="ref ref-self" href="#a8">第八条</a>第一項第二号中「被疑者」とあり、並びに同規則第十条第一項及び第十四条第一項第二号中「被告人又は被疑者」とあるのは「請<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">求犯罪に係る国際刑事裁判所に対する協力等に関する法律第二条</a>第十号に規定する没収刑又は被害回復命令の裁判を受けるべき者」と、同規則第八条中「起訴前」とあるのは「国際刑事裁判所に関するローマ規程第六十一条１に規定する審理が行われる前」と、同条及び同規則第十一条第四項中「<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_23" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十三条</a>第四項」とあるのは「<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_44" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">国際刑事裁判所に対する協力等に関する法律第四十四条</a>第五項において読み替えて準用す<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000136#Mp-At_68" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">る組織的な犯罪の処罰及び犯罪収益の規制等に関する法律第六十八条</a>第二項」と、同規則第十条第一項及び第十一条の二第十項中「<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_30" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十条</a>第四項」とあるのは「<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_47" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">国際刑事裁判所に対する協力等に関する法律第四十七条</a>において準用す<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000136#Mp-At_30" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">る組織的な犯罪の処罰及び犯罪収益の規制等に関する法律第三十条</a>第四項」と、同規則第十一条第十項及び第十一条の二第十項中「<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_36" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十六条</a>第一項」とあるのは「<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_47" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">国際刑事裁判所に対する協力等に関する法律第四十七条</a>において準用す<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000136#Mp-At_36" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">る組織的な犯罪の処罰及び犯罪収益の規制等に関する法律第三十六条</a>第一項」と、同規則第十一条第十一項、<a class="ref ref-self" href="#a13">第十三条</a>第一項、第十四条第一項、第十五条並びに第十七条第一項第二号及び第二項中「法」とあるのは「<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/419AC0000000037#Mp-At_47" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">国際刑事裁判所に対する協力等に関する法律第四十七条</a>において準用する組織的な犯罪の処罰及び犯罪収益の規制等に関する法律」と、同規則第十一条第十二項及び第十一条の二第十一項中「<a class="ref ref-self" href="#a3">第三条</a>第一項又は第二十六条第一項」とあるのは「<a class="ref ref-self" href="#a12">国際刑事裁判所に対する協力の手続に関する規則第十二条</a>第一項」と、同規則第二十二条中「<a class="ref ref-self" href="#a5">第五条</a>から<a class="ref ref-self" href="#a9">第九条</a>まで（<a class="ref ref-self" href="#a7">第七条</a>第二項及び第三項を除く。）及び<a class="ref ref-self" href="#a12">第十二条</a>」とあるのは「<a class="ref ref-self" href="#a13">国際刑事裁判所に対する協力の手続に関する規則第十三条</a>において準用する<a class="ref ref-self" href="#a5">第五条</a>、<a class="ref ref-self" href="#a7">第七条</a>第一項、<a class="ref ref-self" href="#a8">第八条</a>及び<a class="ref ref-self" href="#a9">第九条</a>」と、「「追徴保全解放金」と、<a class="ref ref-self" href="#a12">第十二条</a>中「第三十二条第一項」とあるのは「第四十七条」とあるのは「、「追徴保全解放金」と読み替えるものとする。</span></p><p class="amend-note">（平二〇最裁規一六・平二〇最裁規二一・令四最裁規九・一部改正）</p></article>
+<h2 class="div-head" id="sup1" data-path="附則　"><span class="lbl">附則</span></h2>
+<article class="art noarticle" id="sup-body-1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kokusaikeijisaibansyokisoku20220221.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="para" id="sup-body-1-p1"><span class="body-text">この規則は、法の施行の日（平成十九年十月一日）から施行する。</span></p></article>
+<h2 class="div-head" id="sup2" data-path="附則　（平成二〇年一〇月一五日最高裁判所規則第一六号）抄"><span class="lbl">附則</span>　（平成二〇年一〇月一五日最高裁判所規則第一六号）抄</h2>
+<article class="art noarticle" id="sup-body-2" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kokusaikeijisaibansyokisoku20220221.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="para" id="sup-body-2-p1"><span class="body-text">この規則は、電子記録債権法（平成十九年法律第百二号）の施行の日から施行する。（施行の日＝平成二〇年一二月一日）</span></p></article>
+<h2 class="div-head" id="sup3" data-path="附則　（平成二〇年一一月一九日最高裁判所規則第二一号）抄"><span class="lbl">附則</span>　（平成二〇年一一月一九日最高裁判所規則第二一号）抄</h2>
+<article class="art" id="sup3-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup3-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kokusaikeijisaibansyokisoku20220221.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（施行期日）</p><p class="para" id="sup3-a1-p1"><a class="art-no" href="#sup3-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、株式等の取引に係る決済の合理化を図るための社債等の振替に関する法律等の一部を改正する法律（平成十六年法律第八十八号）の施行の日から施行する。（施行の日＝平成二一年一月五日）</span></p></article>
+<h2 class="div-head" id="sup4" data-path="附則　（令和四年二月二一日最高裁判所規則第九号）"><span class="lbl">附則</span>　（令和四年二月二一日最高裁判所規則第九号）</h2>
+<article class="art noarticle" id="sup-body-3" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kokusaikeijisaibansyokisoku20220221.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="para" id="sup-body-3-p1"><span class="body-text">この規則は、公布の日から施行する。</span></p></article>
+    </div>
+    <aside class="notes"><p>読み取りに関する注意</p><ul><li>題名に続く改正経過・制定文の5行は本文に含めていません。</li><li>PDF中の目次は読み飛ばし、条見出しから目次を再構成しました。</li><li>原本のページ番号は、同じ規則の以前の解析結果から25件引き継ぎました。</li><li>各条の「原本」は https://www.courts.go.jp/vc-files/courts/2022/kokusaikeijisaibansyokisoku20220221.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。</li></ul></aside>
+    <div class="foot">出典：kokusaikeijisaibansyokisoku20220221.pdf　／　最高裁規則ビューア 1.9.0 で 2026年09月02日 に変換　
+    条文の正確な内容は原本で確認してください。</div>
+  </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  "use strict";
+  var doc = document.getElementById("doc");
+  var input = document.getElementById("q");
+  var hitLabel = document.getElementById("hits");
+  var crumb = document.getElementById("crumb");
+  var toc = document.getElementById("toc");
+  var toast = document.getElementById("toast");
+  var pristine = doc.innerHTML;
+  var hits = [];
+  var cursor = -1;
+
+  function say(msg){
+    toast.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(say._t);
+    say._t = setTimeout(function(){ toast.classList.remove("show"); }, 1600);
+  }
+
+  /* ---------------------------------------------------------- 条番号の表記 */
+  var numeralBtn = document.getElementById("numeral");
+  function applyNumeral(useArabic){
+    var nodes = doc.querySelectorAll(".art-no");
+    for (var i = 0; i < nodes.length; i++){
+      var el = nodes[i];
+      var v = useArabic ? el.getAttribute("data-num") : el.getAttribute("data-kan");
+      if (v) el.textContent = v;
+    }
+    numeralBtn.setAttribute("aria-pressed", useArabic ? "true" : "false");
+  }
+  numeralBtn.addEventListener("click", function(){
+    var next = numeralBtn.getAttribute("aria-pressed") !== "true";
+    applyNumeral(next);
+    try { localStorage.setItem("rule-numeral", next ? "1" : "0"); } catch(e){}
+    pristine = doc.innerHTML;
+  });
+  try {
+    /* 既定の表記は原本に合わせてある。前回の切り替えが残っていればそれに従う */
+    var saved = localStorage.getItem("rule-numeral");
+    if (saved === "1" || saved === "0"){ applyNumeral(saved === "1"); pristine = doc.innerHTML; }
+  } catch(e){}
+
+  /* -------------------------------------------------------------- 検索処理 */
+  var SKIP = {SCRIPT:1, STYLE:1, MARK:1, BUTTON:1, A:1};   /* 原本リンク等の道具立ては検索対象にしない */
+  function highlight(term){
+    doc.innerHTML = pristine;
+    hits = [];
+    cursor = -1;
+    if (!term){ hitLabel.textContent = ""; refreshToc(""); return; }
+    var walker = document.createTreeWalker(doc, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        if (!n.nodeValue || n.nodeValue.indexOf(term) < 0) return NodeFilter.FILTER_REJECT;
+        if (n.parentNode && SKIP[n.parentNode.nodeName]) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var targets = [];
+    var node;
+    while ((node = walker.nextNode())) targets.push(node);
+    for (var i = 0; i < targets.length; i++){
+      var t = targets[i], text = t.nodeValue, pos = 0, frag = document.createDocumentFragment();
+      var idx;
+      while ((idx = text.indexOf(term, pos)) >= 0){
+        if (idx > pos) frag.appendChild(document.createTextNode(text.slice(pos, idx)));
+        var m = document.createElement("mark");
+        m.textContent = text.substr(idx, term.length);
+        frag.appendChild(m);
+        hits.push(m);
+        pos = idx + term.length;
+      }
+      if (pos < text.length) frag.appendChild(document.createTextNode(text.slice(pos)));
+      t.parentNode.replaceChild(frag, t);
+    }
+    hitLabel.textContent = hits.length ? "1 / " + hits.length : "該当なし";
+    refreshToc(term);
+    if (hits.length){ cursor = 0; focusHit(0, false); }
+  }
+  function focusHit(i, scroll){
+    if (!hits.length) return;
+    for (var k = 0; k < hits.length; k++) hits[k].classList.remove("live");
+    cursor = (i + hits.length) % hits.length;
+    hits[cursor].classList.add("live");
+    hitLabel.textContent = (cursor + 1) + " / " + hits.length;
+    if (scroll !== false) hits[cursor].scrollIntoView({block:"center", behavior:"instant"});
+  }
+  function refreshToc(term){
+    var links = toc.querySelectorAll("li.lv-art");
+    for (var i = 0; i < links.length; i++){
+      var li = links[i];
+      var body = (li.getAttribute("data-text") || "");
+      li.classList.toggle("hidden", !!term && body.indexOf(term) < 0);
+    }
+    var divs = toc.querySelectorAll("li.lv-div");
+    for (var j = divs.length - 1; j >= 0; j--){
+      var d = divs[j];
+      var kids = d.querySelectorAll("li:not(.hidden)");
+      d.classList.toggle("hidden", !!term && kids.length === 0);
+    }
+  }
+  var timer = null;
+  input.addEventListener("input", function(){
+    clearTimeout(timer);
+    var v = input.value.trim();
+    timer = setTimeout(function(){ highlight(v); }, 180);
+  });
+  input.addEventListener("keydown", function(e){
+    if (e.key === "Enter"){ e.preventDefault(); focusHit(cursor + (e.shiftKey ? -1 : 1)); }
+    if (e.key === "Escape"){ input.value = ""; highlight(""); input.blur(); }
+  });
+  document.getElementById("prev").addEventListener("click", function(){ focusHit(cursor - 1); });
+  document.getElementById("next").addEventListener("click", function(){ focusHit(cursor + 1); });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "/" && e.target === document.body){ e.preventDefault(); input.focus(); }
+  });
+
+  /* -------------------------------------------------- リンクのコピー・共有 */
+  doc.addEventListener("click", function(e){
+    var btn = e.target.closest ? e.target.closest("button[data-anchor]") : null;
+    if (!btn) return;
+    var anchor = btn.getAttribute("data-anchor");
+    var url = location.href.split("#")[0] + "#" + anchor;
+    history.replaceState(null, "", "#" + anchor);
+    var done = function(){ say("リンクをコピーしました"); };
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(done, function(){ legacyCopy(url, done); });
+    } else {
+      legacyCopy(url, done);
+    }
+  });
+  function legacyCopy(text, done){
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); done(); }
+    catch(err){ say("コピーできませんでした。アドレス欄からURLを控えてください"); }
+    document.body.removeChild(ta);
+  }
+
+  /* ------------------------------------------------ 現在位置の表示と目次連動 */
+  var watched = doc.querySelectorAll(".art[id], .div-head[id]");
+  var tocLinks = {};
+  var links = toc.querySelectorAll("a[href^='#']");
+  for (var i = 0; i < links.length; i++) tocLinks[links[i].getAttribute("href").slice(1)] = links[i];
+  var currentLink = null;
+  if ("IntersectionObserver" in window){
+    var visible = [];
+    var io = new IntersectionObserver(function(entries){
+      for (var i = 0; i < entries.length; i++){
+        var id = entries[i].target.id;
+        var at = visible.indexOf(id);
+        if (entries[i].isIntersecting){ if (at < 0) visible.push(id); }
+        else if (at >= 0){ visible.splice(at, 1); }
+      }
+      if (!visible.length) return;
+      var first = null;
+      for (var k = 0; k < watched.length; k++){
+        if (visible.indexOf(watched[k].id) >= 0){ first = watched[k]; break; }
+      }
+      if (!first) return;
+      crumb.textContent = first.getAttribute("data-path") || "";
+      var link = tocLinks[first.id];
+      if (link && link !== currentLink){
+        if (currentLink) currentLink.classList.remove("current");
+        link.classList.add("current");
+        currentLink = link;
+      }
+    }, {rootMargin:"-20% 0px -70% 0px"});
+    for (var w = 0; w < watched.length; w++) io.observe(watched[w]);
+  }
+
+  /* -------------------------------------------------------- 目次の開閉（狭幅） */
+  var opener = document.getElementById("toc-open");
+  if (opener){
+    opener.addEventListener("click", function(){ toc.classList.toggle("open"); });
+    toc.addEventListener("click", function(e){
+      if (e.target.tagName === "A") toc.classList.remove("open");
+    });
+  }
+})();
+</script>
+</body>
+</html>

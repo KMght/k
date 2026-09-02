@@ -1,0 +1,440 @@
+{
+  "title": "専門委員規則",
+  "law_number": "",
+  "enforcement_date": "令和7年6月1日",
+  "enforcement_iso": "2025-06-01",
+  "pdf_link": "https://www.courts.go.jp/vc-files/courts/2025/20250601senmoniinkisoku.pdf",
+  "source": "20250601senmoniinkisoku.pdf",
+  "numeral": "kansuji",
+  "notes": [
+    "各条の「原本」は https://www.courts.go.jp/vc-files/courts/2025/20250601senmoniinkisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+  ],
+  "nodes": [
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "body-1",
+      "caption": "専門委員規則（原文は縦書き",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "平成一五年一一月一二日最高裁判所規則第二○号改正 同二四年七月一七日最高裁判所規則第九号令和四年二月二一日同第五号同七年二月一二日同第三号同七年三月三日同第五号専門委員規則を次のように定める。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "a1",
+      "caption": "任命",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "専門委員は、専門的な知見に基づく説明をし、又は意見を述べるために必要な知識経験を有する者の中から、最高裁判所が任命する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        2
+      ],
+      "label": "第二条",
+      "short_label": "2条",
+      "anchor": "a2",
+      "caption": "欠格事由",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "次の各号のいずれかに該当する者は、専門委員に任命することができない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "拘禁刑以上の刑に処せられた者",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "公務員として免職の懲戒処分を受け、当該処分の日から二年を経過しない者",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "裁判官として裁判官弾劾裁判所の罷免の裁判を受けた者",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "弁護士、公認会計士、司法書士、土地家屋調査士、税理士、弁理士、建築士、不動産鑑定士若しくは不動産鑑定士補又は社会保険労務士として除名、登録の抹消、業務の禁止、免許の取消し、登録の消除又は失格処分の懲戒処分を受け、当該処分に係る欠格事由に該当する者",
+              "children": []
+            },
+            {
+              "marker": "五",
+              "kind": "go",
+              "text": "医師として医師法（昭和二十三年法律第二百一号）第七条第一項の規定により免許を取り消され、又は歯科医師として歯科医師法（昭和二十三年法律第二百二号）第七条第一項の規定により免許を取り消され、再免許を受けていない者",
+              "children": []
+            }
+          ]
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        3
+      ],
+      "label": "第三条",
+      "short_label": "3条",
+      "anchor": "a3",
+      "caption": "任期",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "専門委員の任期は、二年とする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        4
+      ],
+      "label": "第四条",
+      "short_label": "4条",
+      "anchor": "a4",
+      "caption": "所属等",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "専門委員の所属する裁判所は、最高裁判所が定める。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        5
+      ],
+      "label": "第五条",
+      "short_label": "5条",
+      "anchor": "a5",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "所属の裁判所以外の他の裁判所における事件の処理のために特に必要がある場合において、当該他の裁判所又は所属の裁判所のいずれか一方が他方の所在地を管轄する上級裁判所であるときはその上級裁判所が、それ以外のときは当該他の裁判所と所属の裁判所に共通する直近上級の裁判所が、所属の裁判所の専門委員に当該他の裁判所の専門委員の職務を行わせることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        6
+      ],
+      "label": "第六条",
+      "short_label": "6条",
+      "anchor": "a6",
+      "caption": "解任",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "最高裁判所は、専門委員が第二条各号のいずれかに該当するに至ったときは、これを解任しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "最高裁判所は、専門委員が次の各号のいずれかに該当するときは、これを解任することができる。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "心身の故障のため職務の執行ができないと認められるとき。",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "職務上の義務違反その他専門委員たるに適しない行為があると認められるとき。",
+              "children": []
+            }
+          ]
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        7
+      ],
+      "label": "第七条",
+      "short_label": "7条",
+      "anchor": "a7",
+      "caption": "旅費、日当及び宿泊料",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "専門委員に支給する旅費、日当及び宿泊料の金額は、国家公務員等の旅費に関する法律（昭和二十五年法律第百十四号）及び国家公務員等の旅費に関する法律施行令（令和六年政令第三百六号）の規定に基づいて受ける鉄道賃、船賃、航空賃及びその他の交通費、宿泊手当並びに宿泊費の金額と同一とする。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項に定めるもののほか、専門委員に支給する旅費、日当及び宿泊料については、別に最高裁判所の定めるところによる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "抄",
+      "anchor": "sup1",
+      "level": 1,
+      "page": 2,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-1",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 1,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、民事訴訟法等の一部を改正する法律（平成十五年法律第百八号）の施行の日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成二四年七月一七日最高裁判所規則第九号）抄",
+      "anchor": "sup2",
+      "level": 1,
+      "page": 2,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "sup2-a1",
+      "caption": "施行期日",
+      "deleted": false,
+      "section": "supplementary",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 2,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、非訟事件手続法（平成二十三年法律第五十一号）の施行の日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（令和四年二月二一日最高裁判所規則第五号）",
+      "anchor": "sup3",
+      "level": 1,
+      "page": 2,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-2",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 3,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、公布の日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（令和七年二月十二日最高裁判所規則第三号）抄",
+      "anchor": "sup4",
+      "level": 1,
+      "page": 2,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "sup4-a1",
+      "caption": "施行期日",
+      "deleted": false,
+      "section": "supplementary",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 4,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、刑法等の一部を改正する法律（令和四年法律第六十七号。次条において「刑法等一部改正法」という。）の施行の日（令和七年六月一日）から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（令和七年三月三日最高裁判所規則第五号）",
+      "anchor": "sup5",
+      "level": 1,
+      "page": 2,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-3",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 5,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、国家公務員等の旅費に関する法律の一部を改正する法律（令和六年法律第二十二号）の施行の日（令和七年四月一日）から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因となる事実が生じた旅費、日当及び宿泊料の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    }
+  ]
+}

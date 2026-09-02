@@ -1,0 +1,198 @@
+{
+ "rule_id": "503",
+ "title": "一般社団法人等非訟事件手続規則",
+ "enforcement_iso": "2026-05-21",
+ "url": "https://kmght.github.io/ksk/r/503.html",
+ "articles": [
+  {
+   "key": "1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "申立て等の方式",
+   "anchor": "a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "2",
+   "label": "第二条",
+   "short": "2条",
+   "caption": "申立書の記載事項",
+   "anchor": "a2",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "3",
+   "label": "第三条",
+   "short": "3条",
+   "caption": "申立書の添付書類",
+   "anchor": "a3",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "4",
+   "label": "第四条",
+   "short": "4条",
+   "caption": "申立人に対する資料の提出の求め",
+   "anchor": "a4",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "5",
+   "label": "第五条",
+   "short": "5条",
+   "caption": "裁判所書記官の事実調査",
+   "anchor": "a5",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "6",
+   "label": "第六条",
+   "short": "6条",
+   "caption": "報告書の提出期限の定め",
+   "anchor": "a6",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "7",
+   "label": "第七条",
+   "short": "7条",
+   "caption": "即時抗告に係る事件記録の送付",
+   "anchor": "a7",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "8",
+   "label": "第八条",
+   "short": "8条",
+   "caption": "管理人の選任等",
+   "anchor": "a8",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "9",
+   "label": "第九条",
+   "short": "9条",
+   "caption": "管理人に対する監督",
+   "anchor": "a9",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "10",
+   "label": "第十条",
+   "short": "10条",
+   "caption": "管理人の報酬の額",
+   "anchor": "a10",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "11",
+   "label": "第十一条",
+   "short": "11条",
+   "caption": "即時抗告に係る事件記録の送付",
+   "anchor": "a11",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "12",
+   "label": "第十二条",
+   "short": "12条",
+   "caption": "報告又は計算に関する資料の閲覧等",
+   "anchor": "a12",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "13",
+   "label": "第十三条",
+   "short": "13条",
+   "caption": "裁判による登記の嘱託",
+   "anchor": "a13",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "s2:1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "施行期日",
+   "anchor": "sup2-a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  },
+  {
+   "key": "s3:1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "施行期日",
+   "anchor": "sup3-a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  }
+ ]
+}

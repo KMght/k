@@ -1,0 +1,48 @@
+{
+ "rule_id": "715",
+ "title": "法廷の秩序維持等にあたる裁判所職員に関する規則",
+ "enforcement_iso": "",
+ "url": "https://kmght.github.io/ksk/r/715.html",
+ "articles": [
+  {
+   "key": "1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "",
+   "anchor": "a1",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "2",
+   "label": "第二条",
+   "short": "2条",
+   "caption": "",
+   "anchor": "a2",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "3",
+   "label": "第三条",
+   "short": "3条",
+   "caption": "",
+   "anchor": "a3",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  }
+ ]
+}

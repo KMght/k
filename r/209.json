@@ -1,0 +1,2259 @@
+{
+  "title": "企業担保権実行手続規則",
+  "law_number": "昭和三十三年六月二十七日最高裁判所規則第五号",
+  "enforcement_date": "令和8年5月21日",
+  "enforcement_iso": "2026-05-21",
+  "pdf_link": "https://www.courts.go.jp/assets/080521kigyoutannpokennjikkou.pdf",
+  "source": "080521kigyoutannpokennjikkou.pdf",
+  "numeral": "kansuji",
+  "notes": [
+    "PDF中の目次は読み飛ばし、条見出しから目次を再構成しました。",
+    "各条の「原本」は https://www.courts.go.jp/assets/080521kigyoutannpokennjikkou.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+  ],
+  "nodes": [
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "body-1",
+      "caption": "企業担保権実行手続規則 （原文は縦書き",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "改正 昭和四六年六月二三日最高裁判所規則第九号同五五年五月六日同第三号平成二年五月一六日同第三号同八年三月一日同第二号同八年一二月一七日同第六号同一〇年一一月一九日同第五号同一五年一一月一二日同第二二号同一六年一〇月六日同第一五号同一七年一月一一日同第一号同一七年二月九日同第六号令和元年一一月二七日同第五号同四年一一月七日同第一七号同六年九月一七日同第一四号同七年八月二九日同第一〇号企業担保権実行手続規則を次のように定める。企業担保権実行手続規則",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "章",
+      "label": "第一章",
+      "title": "総則",
+      "anchor": "d1",
+      "level": 2,
+      "page": 1,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "a1",
+      "caption": "趣旨",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [
+        "",
+        "第一章　総則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "企業担保法（昭和三十三年法律第百六号。以下「法」という。）による企業担保権の実行手続（以下「実行手続」という。）に関する事項（ただし、登記又は登録に関する事項を除く。）については、法に定めるもののほか、この規則の定めるところによる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        2
+      ],
+      "label": "第二条",
+      "short_label": "2条",
+      "anchor": "a2",
+      "caption": "実行の申立",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第一章　総則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "昭四六最裁規九・平八最裁規二・平八最裁規六・平一七最裁規六・令七最裁規一〇・一部改正",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "企業担保権の実行の申立は、書面でしなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "申立書には、次に掲げる事項を記載して申立人又はその代理人が記名押印しなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "申立人の表示",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "企業担保権を設定した株式会社又は相互会社（以下「会社」と総称する。）の表示",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "申立ての趣旨",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "実行の原因となる事由",
+              "children": []
+            },
+            {
+              "marker": "五",
+              "kind": "go",
+              "text": "年月日",
+              "children": []
+            },
+            {
+              "marker": "六",
+              "kind": "go",
+              "text": "裁判所の表示",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "text": "申立書には、企業担保権に関する公正証書（電磁的記録（電子的方式、磁気的方式その他人の知覚によつては認識することができない方式で作られる記録であつて、電子計算機による情報処理の用に供されるものをいう。）をもつて作成されている場合にあつては、公証人法（明治四十一年法律第五十三号）第四十四条第一項第二号の書面）及び会社の登記事項証明書を添付しなければな らない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        3
+      ],
+      "label": "第三条",
+      "short_label": "3条",
+      "anchor": "a3",
+      "caption": null,
+      "deleted": true,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第一章　総則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "削除",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        4
+      ],
+      "label": "第四条",
+      "short_label": "4条",
+      "anchor": "a4",
+      "caption": "新聞紙の指定",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第一章　総則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判所は、実行手続の開始の決定をしたときは、ただちに、法第十三条の規定により公告を掲載する新聞紙を定めなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の規定により新聞紙が定められたときは、裁判所書記官は、直ちに、その旨を管財人に通知しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        5
+      ],
+      "label": "第五条",
+      "short_label": "5条",
+      "anchor": "a5",
+      "caption": "報告の方式等",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第一章　総則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第十五条の報告は、書面でしなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "裁判所は、前項の報告に関し管財人に説明をさせることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        6
+      ],
+      "label": "第六条",
+      "short_label": "6条",
+      "anchor": "a6",
+      "caption": "民事訴訟規則及び民事執行規則の準用",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第一章　総則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "特別の定めがある場合を除き、実行手続に関しては、その性質に反しない限り、民事 訴訟規則（平成八年最高裁判所規則第五号）第一編から第四編までの規定（同規則第一条第三項、第一条の二、第十四条第二項から第四項まで、第十五条第二項及び第三項、第十八条第二項及び第三項、第二十三条第三項、第三十三条の三、第三十三条の四第二項から第四項まで、第三十三条の五、第三十四条第八項から第十一項まで、第一編第五章第四節第三款、第四十六条第一項、第四十七条第三項及び第四項、第四十七条の二第四項及び第五項、第五十一条第三項から第七項まで、第一編第七章、第五十二条の二十第七項から第九項まで、第五十二条の二十二第二項及び第三項、第五十二条の二十三、第五十三条第四項第二号、第五十五条第三項から第六項まで、第五十五条の二、第六十三条の二、第七十六条の二第一項後段、第八十一条第二項、第八十二条第三項及び第四項、第百五条の二、第百五条の三、第百八条第二項、第百十二条第三項及び第四項、第百二十四条第四項、第百三十一条、第百三十二条第三項、第百三十五条の二、第百三十七条第三項及び第四項、第百四十三条第三項、第百四十九条の二第三項、第百四十九条の三、第百五十一条の二、第百八十九条第四項並びに第二百十一条第二項及び第三項の規定を除く。）を準用する。この場合において、別表の上欄に掲げる同規則の規定中同表の中欄に掲げる字句は、それぞれ同表の下欄に掲げる字句に読み替えるものとする。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "民事執行規則（昭和五十四年最高裁判所規則第五号）第三条第一項、第六条から第八条まで、第十条から第十条の五まで、第十二条、第十四条、第十五条の二から第十五条の十まで及び第二十二条の三の規定は、実行手続 に関し準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "章",
+      "label": "第二章",
+      "title": "実行手続の開始",
+      "anchor": "d8",
+      "level": 2,
+      "page": 3,
+      "note": ""
+    },
+    {
+      "number": [
+        7
+      ],
+      "label": "第七条",
+      "short_label": "7条",
+      "anchor": "a7",
+      "caption": "書類添付の通知",
+      "deleted": false,
+      "section": "main",
+      "page": 3,
+      "division_path": [
+        "",
+        "第二章　実行手続の開始"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第二十九条第二項の規定により後の実行の申立てが実行手続の開始の決定を受けたものとみなされたときは、裁判所書記官は、直ちに、その申立書を実行手続に関する書類に添付した年月日を管財人、会社及び当該申立人に通知しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "章",
+      "label": "第三章",
+      "title": "会社の総財産の管理",
+      "anchor": "d10",
+      "level": 2,
+      "page": 3,
+      "note": ""
+    },
+    {
+      "number": [
+        8
+      ],
+      "label": "第八条",
+      "short_label": "8条",
+      "anchor": "a8",
+      "caption": "管財人が選任された場合の手続等",
+      "deleted": false,
+      "section": "main",
+      "page": 3,
+      "division_path": [
+        "",
+        "第三章　会社の総財産の管理"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法人が管財人に選任された場合には、その法人は、代表者のうち管財人の職務を行うべき者を指名し、裁判所に届け出なければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "裁判所書記官は、管財人に対し、その選任を証する書面を交付しなければならない。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "管財人は、正当な理由があるときは、裁判所の許可を得て辞任することができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        9
+      ],
+      "label": "第九条",
+      "short_label": "9条",
+      "anchor": "a9",
+      "caption": "財産明細表の謄本の提出等",
+      "deleted": false,
+      "section": "main",
+      "page": 3,
+      "division_path": [
+        "",
+        "第三章　会社の総財産の管理"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "管財人は、就職の後、遅滞なく、財産明細表を作成し、その謄本を裁判所に提出しなければならない。財産明細表に掲げる事項に変更があつた場合において、その変更部分についても、同様とする。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "財産明細表の謄本には、謄本であることを記載して管財人が記名押印しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        10
+      ],
+      "label": "第十条",
+      "short_label": "10条",
+      "anchor": "a10",
+      "caption": "財産明細表の記載事項",
+      "deleted": false,
+      "section": "main",
+      "page": 4,
+      "division_path": [
+        "",
+        "第三章　会社の総財産の管理"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "財産明細表には、次に掲げる事項を記載して管財人が記名押印しなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "事件の表示",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "会社の動産、不動産、債権その他の財産の表示",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "会社の財産につき実行手続において主張することができる権利を有することが明らかな者があるときは、その権利の表示",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "会社の財産で権利の移転につき行政庁の許可、認可その他の処分を要するものがあるときは、当該財産及びこれに関する権利の移転に必要な許可等の表示",
+              "children": []
+            },
+            {
+              "marker": "五",
+              "kind": "go",
+              "text": "その他会社の財産の現状を明らかにするについて必要と認める事項",
+              "children": []
+            },
+            {
+              "marker": "六",
+              "kind": "go",
+              "text": "年月日",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "text": "前条第一項後段の規定により作成する財産明細表には、変更の事由をも記載しなければな らない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        11
+      ],
+      "label": "第十一条",
+      "short_label": "11条",
+      "anchor": "a11",
+      "caption": "財産帳簿の閉鎖の請求",
+      "deleted": false,
+      "section": "main",
+      "page": 4,
+      "division_path": [
+        "",
+        "第三章　会社の総財産の管理"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "会社の財産に関する帳簿の閉鎖の請求は、書面で、帳簿の閉鎖をすべき地を管轄する地方裁判所の裁判所書記官にしなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        12
+      ],
+      "label": "第十二条",
+      "short_label": "12条",
+      "anchor": "a12",
+      "caption": "封印等の方式",
+      "deleted": false,
+      "section": "main",
+      "page": 4,
+      "division_path": [
+        "",
+        "第三章　会社の総財産の管理"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "破産規則（平成十六年最高裁判所規則第十四号）第五十三条第一項及び第二項の規定は、法第三十六条第一項において準用する破産法（平成十六年法律第七十五号）第百五十五条第一項の規定による封印又は封印の除去をした場合について準用する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "破産規則第五十三条第四項の規定は法第三十六条第一項において準用する破産法第百五 十五条第二項の規定により会社の財産に関する帳簿を閉鎖する場合について、同規則第五十三 条第一項及び第二項の規定は法第三十六条第一項において準用する破産法第百五十五条第二 項の規定により会社の財産に関する帳簿を閉鎖した場合について準用する。この場合において、 同規則第五十三条第二項中「封印等をした財産」とあるのは、「閉鎖した会社の財産に関する帳簿」と読み替えるものとする。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "管財人は、封印に関する調書及び帳簿の閉鎖に関する調書の謄本を裁判所に提出しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "章",
+      "label": "第四章",
+      "title": "換価",
+      "anchor": "d16",
+      "level": 2,
+      "page": 5,
+      "note": ""
+    },
+    {
+      "number": [
+        13
+      ],
+      "label": "第十三条",
+      "short_label": "13条",
+      "anchor": "a13",
+      "caption": "一括競売の場合の評価の報告",
+      "deleted": false,
+      "section": "main",
+      "page": 5,
+      "division_path": [
+        "",
+        "第四章　換価"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "管財人は、法第三十八条の規定により評価をさせたときは、ただちに、その結果を書面で裁判所に報告しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        14
+      ],
+      "label": "第十四条",
+      "short_label": "14条",
+      "anchor": "a14",
+      "caption": "競落期日指定の申出等",
+      "deleted": false,
+      "section": "main",
+      "page": 5,
+      "division_path": [
+        "",
+        "第四章　換価"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "競落期日の指定は、管財人の申出による。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の申出は、書面で、競売期日を記載してしなければならない。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "競落期日が定められたときは、裁判所書記官は、速やかに、その日時を管財人に通知しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        15
+      ],
+      "label": "第十五条",
+      "short_label": "15条",
+      "anchor": "a15",
+      "caption": "公告",
+      "deleted": false,
+      "section": "main",
+      "page": 5,
+      "division_path": [
+        "",
+        "第四章　換価"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "管財人は、法第四十一条の規定に定める事項のほか、次に掲げる事項を公告しなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "事件の表示",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "申立人及び会社の表示",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "会社の総財産（金銭を除く。）の一括競売をする旨",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "競売をすべき管財人の氏名及び住所又は、管財人が法人であるときは、その名称、住所及び代表者の氏名",
+              "children": []
+            },
+            {
+              "marker": "五",
+              "kind": "go",
+              "text": "最低競売価額",
+              "children": []
+            },
+            {
+              "marker": "六",
+              "kind": "go",
+              "text": "買受けの申出の保証の額及び提供の方法",
+              "children": []
+            },
+            {
+              "marker": "七",
+              "kind": "go",
+              "text": "第二十二条の二において準用する民事執行規則第三十三条の規定により買受けの申出をすることができる者の資格が制限されたときは、その制限の内容",
+              "children": []
+            },
+            {
+              "marker": "八",
+              "kind": "go",
+              "text": "財産明細表及び財産の評価に関する書類を競売期日の一週間前から一般の閲覧に供する旨及び閲覧することができる場所",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "text": "競売期日及び競落期日を公告するには、その場所及び日時を明らかにしてしなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        16
+      ],
+      "label": "第十六条",
+      "short_label": "16条",
+      "anchor": "a16",
+      "caption": "競売期日の通知",
+      "deleted": false,
+      "section": "main",
+      "page": 5,
+      "division_path": [
+        "",
+        "第四章　換価"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "管財人は、法第十四条第一号から第三号までに掲げる者に競売期日の日時及び場所を通知しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        16,
+        2
+      ],
+      "label": "第十六条の二",
+      "short_label": "16条の2",
+      "anchor": "a16-2",
+      "caption": "財産明細表等の閲覧",
+      "deleted": false,
+      "section": "main",
+      "page": 6,
+      "division_path": [
+        "",
+        "第四章　換価"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "一括競売によるときは、管財人は、競売期日の一週間前から財産明細表及び財産の評価に関する書類を一般の閲覧に供しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        17
+      ],
+      "label": "第十七条",
+      "short_label": "17条",
+      "anchor": "a17",
+      "caption": "法第五十条において準用する民事執行法第五十九条第五項の届出等の通知",
+      "deleted": false,
+      "section": "main",
+      "page": 6,
+      "division_path": [
+        "",
+        "第四章　換価"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第五十条において準用する民事執行法（昭和五十四年法律第四号）第五十九条第五項の届出があつたとき、又は第二十二条の二において準用する民事執行規則第三十三条、第三十九条第二項若しくは第四十条第二項の規定による決定がされたときは、裁判所書記官は、直ちに、その旨を管財人に通知しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        18
+      ],
+      "label": "第十八条",
+      "short_label": "18条",
+      "anchor": "a18",
+      "caption": "競売調書の記載事項",
+      "deleted": false,
+      "section": "main",
+      "page": 6,
+      "division_path": [
+        "",
+        "第四章　換価"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "競売につき作成すべき調書には、第二十二条の二において準用する民事執行規則第四十四条第一項（同規則第五十条第四項において準用する場合を含む。）の規定により記載すべき事項のほか、次に掲げる事項を記載して、管財人が記名押印しなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "事件の表示",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "実行手続の基本となる企業担保権の表示",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "競売期日の場所",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "調書を作成した場所及び年月日",
+              "children": []
+            }
+          ]
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        19
+      ],
+      "label": "第十九条",
+      "short_label": "19条",
+      "anchor": "a19",
+      "caption": "競落期日の場所",
+      "deleted": false,
+      "section": "main",
+      "page": 6,
+      "division_path": [
+        "",
+        "第四章　換価"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "競落期日は、裁判所において開く。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        20
+      ],
+      "label": "第二十条",
+      "short_label": "20条",
+      "anchor": "a20",
+      "caption": "競落を許さないで更に競売をすることができる場合等の通知",
+      "deleted": false,
+      "section": "main",
+      "page": 6,
+      "division_path": [
+        "",
+        "第四章　換価"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "競落不許可決定が確定した場合において、更に競売をすることができるときは、裁判所書記官は、直ちに、その旨を管財人に通知しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の規定は、法第五十条において準用する民事執行法第七十五条第一項の申立てにより競落許可決定を取り消す決定が確定したとき、又は競落人が代金を支払わない場合において、次順位買受申出人がないときについて準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        21
+      ],
+      "label": "第二十一条",
+      "short_label": "21条",
+      "anchor": "a21",
+      "caption": "競落人に対する会社の総財産の引渡し",
+      "deleted": false,
+      "section": "main",
+      "page": 6,
+      "division_path": [
+        "",
+        "第四章　換価"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "競落人が代金を支払つたときは、裁判所書記官は、直ちに、その旨を管財人に通知しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "管財人は、前項の規定による通知を受けたときは、すみやかに、会社の総財産（金銭を除く。）を競落人に引き渡さなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        22
+      ],
+      "label": "第二十二条",
+      "short_label": "22条",
+      "anchor": "a22",
+      "caption": "任意売却の認可の申請",
+      "deleted": false,
+      "section": "main",
+      "page": 7,
+      "division_path": [
+        "",
+        "第四章　換価"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "任意売却の認可の申請は、書面でしなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "申請書には、次に掲げる事項を記載して管財人が記名押印しなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "事件の表示",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "任意売却をしようとする財産及び売却価額その他の売却条件の表示",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "会社の総財産若しくはこれを組成する財産の負担で申立人の企業担保権に先立つものを買受人に引き受けさせるか、又はこれを会社の金銭及びその他の財産の売却代金で弁済するに足りる見込みがある旨",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "年月日",
+              "children": []
+            },
+            {
+              "marker": "五",
+              "kind": "go",
+              "text": "裁判所の表示",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "text": "申請書には、企業担保権者、特別担保を有する債権者又は会社の任意売却の申出を証する書面、企業担保権者全員及び、任意売却をしようとする財産が特別担保の目的となつているときは、その特別担保を有する債権者の同意を証する書面並びに第二項第三号に掲げる事項を証する書面を添付しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        22,
+        2
+      ],
+      "label": "第二十二条の二",
+      "short_label": "22条の2",
+      "anchor": "a22-2",
+      "caption": "民事執行規則の準用",
+      "deleted": false,
+      "section": "main",
+      "page": 7,
+      "division_path": [
+        "",
+        "第四章　換価"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "民事執行規則第三十一条の二、第三十二条、第三十三条、第三十四条中期日 入札に係る部分、第三十八条から第四十五条まで、第五十条（同条第四項において準用する第 三十五条から第三十七条までを除く。）、第五十一条の七、第五十二条、第五十四条、第五十 五条及び第五十六条から第五十八条までの規定は、換価に関し準用する。この場合において、 同規則第三十一条の二、第三十八条第七項及び第五十条第四項中「差押債権者」とあるのは「実 行の申立てをした債権者」と、同規則第三十八条第一項、第三項から第五項まで及び第七項、 第四十条第一項、第四十一条、第四十二条第一項、第四十三条、第四十四条第一項及び第二項、 第四十五条第一項及び第三項、第五十条第三項及び第四項並びに第五十七条中「執行官」とあ るのは「管財人」と、同規則第三十九条第一項中「売却基準価額」とあるのは「最低競売価額」 と読み替えるものとする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "章",
+      "label": "第五章",
+      "title": "配当",
+      "anchor": "d29",
+      "level": 2,
+      "page": 7,
+      "note": ""
+    },
+    {
+      "number": [
+        23
+      ],
+      "label": "第二十三条",
+      "short_label": "23条",
+      "anchor": "a23",
+      "caption": "配当要求の通知等",
+      "deleted": false,
+      "section": "main",
+      "page": 8,
+      "division_path": [
+        "",
+        "第五章　配当"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "配当要求があつたときは、裁判所書記官は、その旨を利害関係人に通知しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "民事執行法第五十一条第一項に規定する執行力のある債務名義の正本によらないで配当 を要求する債権者があるときは、会社は、前項の規定による通知を受けた日から三日の期間内 に、その債権を認諾するかどうかを裁判所に申し出なければならない。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "債権者は、裁判所書記官から会社が認諾しない旨の通知を受けたときは、その通知を受けた日から三日の期間内に会社に対し訴えを提起してその債権を確定しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        24
+      ],
+      "label": "第二十四条",
+      "short_label": "24条",
+      "anchor": "a24",
+      "caption": "費用の計算書",
+      "deleted": false,
+      "section": "main",
+      "page": 8,
+      "division_path": [
+        "",
+        "第五章　配当"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第五十一条の規定により提出すべき職務の執行に関する費用の計算書には、次 に掲げる事項を記載して管財人が記名押印しなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "事件の表示",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "費用の項目別の表示",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "法第三十五条第一項の規定により会社の金銭を費用及び報酬に充てた場合又は同条第二 項の規定により申立人が費用及び報酬を立て替えた場合には、当該費用の項目にその旨の表示",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "年月日",
+              "children": []
+            },
+            {
+              "marker": "五",
+              "kind": "go",
+              "text": "裁判所の表示",
+              "children": []
+            }
+          ]
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        25
+      ],
+      "label": "第二十五条",
+      "short_label": "25条",
+      "anchor": "a25",
+      "caption": "会社の金銭の明細表",
+      "deleted": false,
+      "section": "main",
+      "page": 8,
+      "division_path": [
+        "",
+        "第五章　配当"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第五十一条の規定による会社の金銭の引渡は、明細表を添えてしなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の明細表には、事件の表示、年月日及び裁判所の表示のほか、次に掲げる区分による金銭の額を記載して、管財人が記名押印しなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "管財人が会社の総財産の占有及び管理に着手した際に引渡しを受けた会社の金銭",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "法第三十二条第二項の規定により会社の商品又は有価証券を売却して得た金銭",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "法第三十二条第三項の規定により会社の金銭債権を取り立てて得た金銭",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "任意売却により換価した場合には、これにより得た金銭",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "text": "前項第二号の金銭については、商品又は有価証券の表示並びに、商品又は有価証券が特別担保の目的となつていたときは、その特別担保の表示及び財産ごとの売却価額、第三号の金銭 については、金銭債権の表示をも記載しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        26
+      ],
+      "label": "第二十六条",
+      "short_label": "26条",
+      "anchor": "a26",
+      "caption": "任意売却の場合の配当要求のできる最終日の公告",
+      "deleted": false,
+      "section": "main",
+      "page": 8,
+      "division_path": [
+        "",
+        "第五章　配当"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第五十一条の二の規定による公告は、最初の任意売却の認可の後、速やかにしなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        27
+      ],
+      "label": "第二十七条",
+      "short_label": "27条",
+      "anchor": "a27",
+      "caption": "任意売却による換価を完了した場合の届出",
+      "deleted": false,
+      "section": "main",
+      "page": 9,
+      "division_path": [
+        "",
+        "第五章　配当"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "任意売却による換価が完了したときは、管財人は、ただちに、その旨を裁判所に届け出なければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        28
+      ],
+      "label": "第二十八条",
+      "short_label": "28条",
+      "anchor": "a28",
+      "caption": "任意売却による換価に関する報告書",
+      "deleted": false,
+      "section": "main",
+      "page": 9,
+      "division_path": [
+        "",
+        "第五章　配当"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第五十一条の規定により提出すべき換価に関する報告書には、事件の表示、年月日及び裁判所の表示のほか、任意売却による換価の日時、買受人、目的物及び売却価額その 他の売却条件、並びに特別担保の目的となつていた財産については、その特別担保の表示及び 財産ごとの売却価額を記載して管財人が記名押印しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        29
+      ],
+      "label": "第二十九条",
+      "short_label": "29条",
+      "anchor": "a29",
+      "caption": "配当表が実施された場合の通知",
+      "deleted": false,
+      "section": "main",
+      "page": 9,
+      "division_path": [
+        "",
+        "第五章　配当"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "企業担保権者及びこれに優先する債権者の配当表が実施されたときは、裁判所書記官は、直ちに、その旨を管財人に通知しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        29,
+        2
+      ],
+      "label": "第二十九条の二",
+      "short_label": "29条の2",
+      "anchor": "a29-2",
+      "caption": "民事執行規則の準用",
+      "deleted": false,
+      "section": "main",
+      "page": 9,
+      "division_path": [
+        "",
+        "第五章　配当"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "民事執行規則第二十六条、第五十七条、第五十八条、第五十九条から第六十 一条まで、第六十二条の二から第六十二条の四まで及び第百七十二条の規定は、配当に関し準用する。この場合において、同規則第五十 七条中「執行官」とあるのは、「管財人」と読み替えるものとする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "章",
+      "label": "第六章",
+      "title": "雑則",
+      "anchor": "d38",
+      "level": 2,
+      "page": 9,
+      "note": ""
+    },
+    {
+      "number": [
+        30
+      ],
+      "label": "第三十条",
+      "short_label": "30条",
+      "anchor": "a30",
+      "caption": "申立ての取下げ等の通知",
+      "deleted": false,
+      "section": "main",
+      "page": 9,
+      "division_path": [
+        "",
+        "第六章　雑則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "実行手続が実行の申立ての取下げ又は実行手続の開始の決定の取消しにより終結 したときは、裁判所書記官は、直ちに、その旨を管財人に通知しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "",
+      "anchor": "sup1",
+      "level": 1,
+      "page": 9,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-1",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 9,
+      "division_path": [],
+      "sup_index": 1,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、昭和三十三年七月一日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和四六年六月二三日最高裁判所規則第九号） この規則は、昭和四十六年七月一日から",
+      "anchor": "sup2",
+      "level": 1,
+      "page": 10,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-2",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 10,
+      "division_path": [],
+      "sup_index": 2,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和五五年五月六日最高裁判所規則第三号）抄",
+      "anchor": "sup3",
+      "level": 1,
+      "page": 10,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-3",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 10,
+      "division_path": [],
+      "sup_index": 3,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成二年五月一六日最高裁判所規則第三号）抄",
+      "anchor": "sup4",
+      "level": 1,
+      "page": 10,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "sup4-a1",
+      "caption": "施行期日",
+      "deleted": false,
+      "section": "supplementary",
+      "page": 10,
+      "division_path": [],
+      "sup_index": 4,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、法〔民事保全法=平成元年一二月法律第九一号〕の施行の日〔平成三年 一月一日〕から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成八年三月一日最高裁判所規則第二号） この規則は、平成八年四月一日から施行す",
+      "anchor": "sup5",
+      "level": 1,
+      "page": 10,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-4",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 10,
+      "division_path": [],
+      "sup_index": 5,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "る。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成八年一二月一七日最高裁判所規則第六号抄）",
+      "anchor": "sup6",
+      "level": 1,
+      "page": 10,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "sup6-a1",
+      "caption": "施行期日",
+      "deleted": false,
+      "section": "supplementary",
+      "page": 10,
+      "division_path": [],
+      "sup_index": 6,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、民事訴訟法（平成八年法律第百九号。以下「新法」という。）の施行の 日（平成一〇年一月一日）から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成一〇年一一月一九日最高裁判所規則第五号）抄",
+      "anchor": "sup7",
+      "level": 1,
+      "page": 10,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-5",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 10,
+      "division_path": [],
+      "sup_index": 7,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、競売手続の円滑化等を図るための関係法律の整備に関する法律（平成十年法 律第百二十八号）の施行の日（平成十年十二月十六日）から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成一五年一一月一二日最高裁判所規則第二二号）抄",
+      "anchor": "sup8",
+      "level": 1,
+      "page": 10,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "sup8-a1",
+      "caption": "施行期日",
+      "deleted": false,
+      "section": "supplementary",
+      "page": 10,
+      "division_path": [],
+      "sup_index": 8,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、担保物権及び民事執行制度の改善のための民法等の一部を改正する法律（平成十五年法律第百三十四号）の施行の日（平成一六年四月一日）から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成一六年一〇月六日最高裁判所規則第一五号）抄",
+      "anchor": "sup9",
+      "level": 1,
+      "page": 10,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "sup9-a1",
+      "caption": "施行期日",
+      "deleted": false,
+      "section": "supplementary",
+      "page": 10,
+      "division_path": [],
+      "sup_index": 9,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、破産法（平成十六年法律第七十五号。附則第七条において「新破産法」 という。）及び破産法の施行に伴う関係法律の整備等に関する法律（平成十六年法律第七十六号）の施行の日（平成一七年一月一日）から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成一七年一月一一日最高裁判所規則第一号）抄",
+      "anchor": "sup10",
+      "level": 1,
+      "page": 11,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "sup10-a1",
+      "caption": "施行期日",
+      "deleted": false,
+      "section": "supplementary",
+      "page": 11,
+      "division_path": [],
+      "sup_index": 10,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、民事関係手続の改善のための民事訴訟法等の一部を改正する法律（平成 十六年法律第百五十二号）の施行の日（平成一七年四月一日）から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成一七年二月九日最高裁判所規則第六号）",
+      "anchor": "sup11",
+      "level": 1,
+      "page": 11,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-6",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 11,
+      "division_path": [],
+      "sup_index": 11,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、不動産登記法（平成十六年法律第百二十三号）の施行の日（平成十七年三月七日） から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（令和元年一一月二七日最高裁判所規則第五号）抄",
+      "anchor": "sup12",
+      "level": 1,
+      "page": 11,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "sup12-a1",
+      "caption": "施行期日",
+      "deleted": false,
+      "section": "supplementary",
+      "page": 11,
+      "division_path": [],
+      "sup_index": 12,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、民事執行法及び国際的な子の奪取の民事上の側面に関する条約の実施に 関する法律の一部を改正する法律（令和元年法律第二号。以下「民事執行法等改正法」という。） の施行の日〔令和二年四月一日〕から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（令和四年一一月七日最高裁判所規則第一七号）抄",
+      "anchor": "sup13",
+      "level": 1,
+      "page": 11,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "sup13-a1",
+      "caption": "施行期日",
+      "deleted": false,
+      "section": "supplementary",
+      "page": 11,
+      "division_path": [],
+      "sup_index": 13,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、民事訴訟法等の一部を改正する法律（令和四年法律第四十八号。以下こ の条において「改正法」という。） 附則第一条第二号に掲げる規定の施行の日〔令和五年二月 二〇日〕から施行する。ただし、次の各号に掲げる規定は、当該各号に定める日から施行する。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "第一条中民事訴訟規則第三十二条、第七十七条、第七十八条、第九十六条及び第百六十三 条第一項の改正規定、第十四条の規定、第十八条中労働審判規則第三十七条の改正規定（「第 七十七条」を「第七十七条前段」に改める部分に限る。）、第二十条中非訟事件手続規則第二十 一条及び第五十条の改正規定、第二十一条中家事事件手続規則第三十三条及び第百二十六条第 二項の改正規定並びに第二十二条中国際的な子の奪取の民事上の側面に関する条約の実施に 関する法律による子の返還に関する事件の手続等に関する規則第二十三条及び第五十三条第 一項の改正規定 改正法附則第一条第三号に掲げる規定の施行の日〔令和五年三月一日〕",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "第一条中民事訴訟規則目次の改正規定（「第三十一条」を「第三十条の二」に改める部分 に限る。）及び同規則第一編第五章第一節中第三十一条の前に二条を加える改正規定、第三条 の規定、第六条の規定、第七条中民事執行規則第十五条の二の改正規定、第八条中民事保全規 則第六条の改正規定、第十条中民事再生規則第十一条の改正規定、第十二条中外国倒産処理手 続の承認援助に関する規則第十二条の改正規定、第十三条中会社更生規則第十条の改正規定、 第十六条の規定、第十七条中破産規則第十二条の改正規定並びに第二十三条の規定 改正法附 則第一条第四号に掲げる規定の施行の日〔令和六年三月一日〕",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "第十五条の規定 改正法附則第一条第五号に掲げる規定の施行の日",
+              "children": []
+            }
+          ]
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（令和六年九月十七日最高裁判所規則第一四号）抄",
+      "anchor": "sup14",
+      "level": 1,
+      "page": 12,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "sup14-a1",
+      "caption": "施行期日",
+      "deleted": false,
+      "section": "supplementary",
+      "page": 12,
+      "division_path": [],
+      "sup_index": 14,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、民事訴訟法等の一部を改正する法律（令和四年法律第四十八号。）の施行の日（令和八年五月二一日）から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（令和七年八月二九日最高裁判所規則第一〇号）抄",
+      "anchor": "sup15",
+      "level": 1,
+      "page": 12,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "sup15-a1",
+      "caption": "施行期日",
+      "deleted": false,
+      "section": "supplementary",
+      "page": 12,
+      "division_path": [],
+      "sup_index": 15,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、民事関係手続等における情報通信技術の活用等の推進を図るための関係法律の整備に関する法律（令和五年法律第五十三号）附則第二号に掲げる規定の施行の日（令和七年一〇月一日）から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "raw",
+      "title": "別表（第六条関係）（令六最裁規一四・追加）",
+      "anchor": "table-70",
+      "kind": "table",
+      "page": 12,
+      "lines": [
+        "第一条第二項",
+        "陳述の内容を電子調書に記録し、こ",
+        "調書を作成し、記名押印しなければ",
+        "れを裁判所の使用に係る電子計算",
+        "機（入出力装置を含む。以下同じ。）",
+        "に備えられたファイル（第三十三条",
+        "の三（電磁的訴訟記録の閲覧等の方",
+        "法等）第二項第一号を除き、以下単",
+        "に「ファイル」という。）に記録し",
+        "なければ",
+        "第三条の二第一項",
+        "電子判決書",
+        "判決書",
+        "第十五条第一項及び",
+        "書面又は電磁的記録により",
+        "書面で",
+        "第二十三条第一項",
+        "第十五条第四項及び",
+        "前三項",
+        "第一項",
+        "第二百十一条第四項",
+        "第二十三条第二項",
+        "又は電磁的記録が私人により作成",
+        "が私文書",
+        "されたもの",
+        "第二十七条",
+        "資料",
+        "書面",
+        "第三十条の二第二",
+        "に係る電子調書",
+        "の調書",
+        "項、第六十六条第一",
+        "項、第六十七条第一",
+        "項及び第三項、第六",
+        "十九条並びに第七十",
+        "六条の二第一項前段",
+        "第三十条の二第二記録しなければ",
+        "記載しなければ",
+        "項、第三十四条の七",
+        "第二項、第六十六条",
+        "第一項、第百二十二",
+        "条の二第二項及び第",
+        "百二十二条の三第二",
+        "項",
+        "第三十三条第一項",
+        "訴訟記録の閲覧等の請求又は法第",
+        "実行手続に係る事件の記録の閲覧",
+        "九十一条の三（訴訟に関する事項の",
+        "若しくは謄写、その正本、謄本若し",
+        "証明）に規定する訴訟に関する事項",
+        "くは抄本の交付、その複製又は事件",
+        "を証明した書面の交付若しくは当",
+        "に関する事項の証明書の交付",
+        "該事項を証明した電磁的記録の提",
+        "供",
+        "第三十三条第二項",
+        "訴訟記録の閲覧等の請求は、訴訟記",
+        "請求（事件に関する事項の証明書の",
+        "録",
+        "交付の請求を除く。）は、実行手続",
+        "に係る事件の記録",
+        "第三十四条の七第二",
+        "電子調書",
+        "調書",
+        "項、第七十二条、第",
+        "七十六条、第百十六",
+        "条第三項、第百十八",
+        "条第二項、第百二十",
+        "二条の二第二項、第",
+        "百二十二条の三第二",
+        "項、第百四十二条及",
+        "び第百四十六条第一",
+        "項",
+        "第四十七条第一項及",
+        "書類又は電磁的記録",
+        "書類",
+        "び第四十七条の二第",
+        "二項",
+        "第四十七条の二第一",
+        "書類又は電磁的記録の相手方",
+        "書類の相手方",
+        "項",
+        "書類又は電磁的記録について直送",
+        "書類について直送（当事者の相手方",
+        "（当事者が前条（書類又は電磁的記",
+        "に対する直接の送付",
+        "録の送付）第二項又は第三項の方法",
+        "により相手方に対して直接送付す",
+        "ること",
+        "第四十八条第一項及",
+        "交付又は電磁的記録の提供",
+        "交付",
+        "び第二項",
+        "第五十条の二",
+        "電子決定書（法第百二十二条（判決",
+        "決定書",
+        "に関する規定の準用）において準用",
+        "する法第二百五十二条（電子判決",
+        "書）第一項の規定により作成される",
+        "電磁的記録であって、決定に係るも",
+        "のをいう。第六十七条（口頭弁論に",
+        "係る電子調書の実質的記録事項等）",
+        "第一項第七号及び第百六十条（判決",
+        "の更正決定等の方式）第一項におい",
+        "て同じ。）",
+        "電子調書に記録させる",
+        "調書に記載させる",
+        "第六十六条第二項",
+        "裁判長は、前項の電子調書の内容を",
+        "前項の調書には、裁判所書記官が記",
+        "確認するとともに、これを確認した",
+        "名押印し、裁判長が認印しなければ",
+        "ことを当該電子調書上明らかにす",
+        "る措置を講じなければ",
+        "第六十六条第三項",
+        "当該電子調書に記録するとともに、",
+        "付記して認印しなければ",
+        "当該電子調書の内容を確認し、か",
+        "つ、これを確認したことを当該電子",
+        "調書上明らかにする措置を講じな",
+        "ければ",
+        "記録すれば",
+        "記載すれば",
+        "第六十七条第一項",
+        "記録し",
+        "記載し",
+        "第六十七条第一項第",
+        "記録",
+        "記載",
+        "六号及び同条第二項",
+        "並びに第百八十四条",
+        "第六十七条第一項第",
+        "電子決定書又は電子命令書（法第百",
+        "書面",
+        "七号",
+        "二十二条（判決に関する規定の準",
+        "用）において準用する法第二百五十",
+        "二条（電子判決書）第一項の規定に",
+        "より作成される電磁的記録であっ",
+        "て、命令に係るものをいう。）",
+        "第六十七条第三項",
+        "記録する",
+        "記載する",
+        "第六十七条第四項",
+        "記録した電磁的記録を作成し、これ",
+        "調書に記載しなければ",
+        "をファイルに記録しなければ",
+        "第六十八条第一項",
+        "の録音又は録画により作成された",
+        "を録音テープ又はビデオテープ（こ",
+        "電磁的記録をファイル",
+        "れらに準ずる方法により一定の事",
+        "項を記録することができる物を含",
+        "む。）",
+        "電子調書の記録",
+        "調書の記載",
+        "第六十八条第二項",
+        "前条第一項（第三号に係る部分に限",
+        "証人等の陳述を記載した書面を作",
+        "る。）の規定により電子調書に記録",
+        "成しなければ",
+        "すべき事項を記録した電磁的記録",
+        "を作成し、ファイルに記録しなけれ",
+        "ば",
+        "第六十九条",
+        "他の電磁的記録",
+        "書面、写真、録音テープ、ビデオテ",
+        "ープその他裁判所において適当と",
+        "認めるもの",
+        "これをファイルに記録して電子調",
+        "実行手続に係る事件の記録に添付",
+        "書",
+        "して調書",
+        "第七十一条",
+        "速記に係る電磁的記録（以下「電子",
+        "速記録",
+        "速記録」という。）",
+        "電子速記録を",
+        "速記録を",
+        "第七十二条",
+        "電子速記録",
+        "速記録",
+        "ファイルに記録して",
+        "実行手続に係る事件の記録に添付",
+        "して",
+        "第七十六条",
+        "当該陳述の録音により作成された",
+        "録音テープ",
+        "電磁的記録",
+        "第七十六条の二第一",
+        "記録した電磁的記録を作成し、これ",
+        "記載した調書を作成し、記名押印し",
+        "項前段",
+        "をファイルに記録しなければ",
+        "なければ",
+        "第七十六条の二第二",
+        "電磁的記録",
+        "調書",
+        "項",
+        "第八十条第三項",
+        "第四項の規定は答弁書について、第",
+        "第四項（第一号に係る部分に限る。）",
+        "五十五条（訴状の添付書類等）第三",
+        "の規定は、答弁書",
+        "項及び第四項の規定は前項の書証",
+        "の写しの添付",
+        "第百八条第一項",
+        "電子呼出状",
+        "呼出状",
+        "記録しなければ",
+        "記載し、尋問事項書を添付しなけれ",
+        "ば",
+        "第百十六条第三項",
+        "の作成に用いる場合",
+        "への添付",
+        "第百十八条第二項",
+        "記録させなければ",
+        "記載させなければ",
+        "第百二十七条",
+        "前節（証人尋問）",
+        "前節及び企業担保権実行手続規則",
+        "第六条第二項において準用する民",
+        "事執行規則第十五条の六",
+        "第百三十四条",
+        "第百八条（電子呼出状の記録事項",
+        "企業担保権実行手続規則第六条第",
+        "等）",
+        "一項において読み替えて準用する",
+        "第百八条第一項",
+        "の電子呼出状",
+        "の呼出状",
+        "第二項、第四項及び第五項",
+        "第二項及び第五項並びに同規則第",
+        "六条第二項において準用する民事",
+        "執行規則第十五条の六第一項及び",
+        "第二項",
+        "第百四十二条",
+        "記録すべき",
+        "記載すべき",
+        "第百四十六条第一項 裁判所書記官は、法",
+        "法",
+        "画像情報を",
+        "原本、謄本又は抄本は、",
+        "第百四十六条第二項",
+        "第百四十二条（受命裁判官等の証拠",
+        "企業担保権実行手続規則第六条第",
+        "及び第百五十一条",
+        "調べの電子調書）",
+        "一項において読み替えて準用する",
+        "第百四十二条及び同規則第六条第",
+        "二項において準用する民事執行規",
+        "則第十五条の八",
+        "電子調書について",
+        "調書について",
+        "第百四十七条",
+        "第一項から第三項まで及び第百三",
+        "から前条まで（第百三十七条第三項",
+        "十七条の二から前条まで",
+        "及び第四項並びに第百四十三条第",
+        "三項を除く。）",
+        "の規定",
+        "及び企業担保権実行手続規則第六",
+        "条第二項において準用する民事執",
+        "行規則第十五条の八の規定",
+        "第百四十九条の二第",
+        "最高裁判所の細則で定めるところ",
+        "当該電磁的記録",
+        "一項",
+        "により、当該申出に係る電磁的記録",
+        "の複製を第五十二条の十（電子情報",
+        "処理組織）第一項の電子情報処理組",
+        "織を使用する方法によりファイル",
+        "に記録し、又は電磁的記録の複製",
+        "電磁的記録をいう",
+        "書面をいう",
+        "第百四十九条の二第",
+        "電子証拠説明書",
+        "証拠説明書",
+        "一項及び第二項",
+        "第百四十九条の二第電磁的記録の複製",
+        "電磁的記録を記録した記録媒体",
+        "二項及び第百四十九",
+        "条の四",
+        "第百四十九条の四",
+        "提出等）",
+        "提出等）並びに企業担保権実行手続",
+        "規則第六条第二項において準用す",
+        "る民事執行規則第十五条の八",
+        "読み替える",
+        "、企業担保権実行手続規則第六条第",
+        "二項において準用する民事執行規",
+        "則第十五条の八中「同条の文書の写",
+        "し」とあるのは「企業担保権実行手",
+        "続規則第六条第一項において読み",
+        "替えて準用する民事訴訟規則第百",
+        "四十九条の二第一項の電磁的記録",
+        "を記録した記録媒体」と読み替える",
+        "第百八十四条及び第",
+        "電子判決書又は電子判決書に代わ",
+        "判決書",
+        "百八十九条第三項",
+        "る電子調書",
+        "第百八十九条第一項 電子上告提起通知書（上告の提起が",
+        "上告提起通知書",
+        "あった旨を通知するために裁判所",
+        "書記官が作成する電磁的記録をい",
+        "う。以下同じ。）",
+        "第百八十九条第二項",
+        "電子上告提起通知書",
+        "上告提起通知書",
+        "及び第三項",
+        "第百九十四条",
+        "による電子上告提起通知書",
+        "による上告提起通知書",
+        "第百九十五条",
+        "被上告人（当該書面の送達について",
+        "被上告人の数に六を加えた数の副",
+        "法第百九条の二（電子情報処理組織",
+        "本",
+        "による送達）第一項ただし書の届出",
+        "をしている者を除く。）の数の副本",
+        "（法第百三十二条の十（電子情報処",
+        "理組織による申立て等）第一項の規",
+        "定により当該書面に記載すべき事",
+        "項をファイルに記録した場合にあ",
+        "っては、当該事項を出力することに",
+        "より作成した書面）",
+        "第百九十九条第二項 電子上告提起通知書」とあるのは",
+        "上告提起通知書」とあるのは「上告",
+        "「電子上告受理申立て通知書",
+        "受理申立て通知書",
+        "第二百九条",
+        "電子上告提起通知書」とあるのは",
+        "上告提起通知書」とあるのは「抗告",
+        "「電子抗告許可申立て通知書",
+        "許可申立て通知書",
+        "第二百十条第一項",
+        "電子抗告提起通知書（法第三百三十",
+        "抗告提起通知書",
+        "条の抗告又は法第三百三十六条第",
+        "一項の抗告があった旨を通知する",
+        "ために裁判所書記官が作成する電",
+        "磁的記録をいう。）",
+        "第二百十条第二項",
+        "電子抗告提起通知書",
+        "抗告提起通知書",
+        "電子抗告許可申立て通知書",
+        "抗告許可申立て通知書"
+      ]
+    }
+  ]
+}

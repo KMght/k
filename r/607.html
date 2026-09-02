@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>犯罪捜査のための通信傍受に関する規則</title>
+<style>
+:root{
+  --paper:#ffffff;
+  --ink:#16181d;
+  --sub:#5f6875;
+  --rule:#dde2e9;
+  --chrome:#f4f6f9;
+  --accent:#14538a;
+  --accent-weak:#e7eff7;
+  --mark:#ffe08a;
+  --mark-live:#ff9d3d;
+  --gothic:"Yu Gothic UI","Yu Gothic","YuGothic","Hiragino Sans","Noto Sans JP","Meiryo",system-ui,sans-serif;
+  --mincho:"Yu Mincho","YuMincho","Hiragino Mincho ProN","Noto Serif JP","MS Mincho",serif;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:5.5rem}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--mincho);font-size:17px;line-height:1.9;
+  text-rendering:optimizeLegibility;
+}
+
+/* ---------------------------------------------------------------- ヘッダ */
+.top{
+  position:sticky;top:0;z-index:30;background:var(--chrome);
+  border-bottom:1px solid var(--rule);font-family:var(--gothic);
+}
+.top-inner{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;padding:.7rem 1.2rem}
+.law-title{font-size:1.12rem;font-weight:700;letter-spacing:.02em;margin:0}
+.law-number{font-size:.8rem;color:var(--sub);margin-left:.2rem}
+.top-tools{margin-left:auto;display:flex;align-items:center;gap:.5rem}
+.search-box{display:flex;align-items:center;gap:.35rem;background:var(--paper);
+  border:1px solid var(--rule);border-radius:2px;padding:.25rem .5rem}
+.search-box input{border:0;outline:0;font:inherit;font-size:.85rem;width:14rem;background:transparent;color:inherit}
+.hit-count{font-size:.78rem;color:var(--sub);min-width:4.2rem;text-align:right;font-variant-numeric:tabular-nums}
+button{font:inherit;font-family:var(--gothic);cursor:pointer}
+.btn{background:var(--paper);border:1px solid var(--rule);border-radius:2px;
+  color:var(--ink);font-size:.78rem;padding:.28rem .6rem;line-height:1.4}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.crumb{padding:.3rem 1.2rem;border-top:1px solid var(--rule);background:var(--paper);
+  font-family:var(--gothic);font-size:.78rem;color:var(--sub);min-height:1.7rem}
+
+/* ------------------------------------------------------------------ 骨格 */
+.wrap{display:grid;grid-template-columns:19rem minmax(0,1fr);align-items:start}
+.toc{
+  position:sticky;top:5.6rem;max-height:calc(100vh - 5.6rem);overflow-y:auto;
+  border-right:1px solid var(--rule);padding:1rem .6rem 4rem 1.2rem;
+  font-family:var(--gothic);font-size:.83rem;line-height:1.65;
+}
+.toc h2{font-size:.75rem;color:var(--sub);font-weight:700;margin:0 0 .6rem}
+.toc ul{list-style:none;margin:0;padding:0}
+.toc a{display:block;color:var(--ink);text-decoration:none;padding:.16rem .4rem;border-radius:2px}
+.toc a:hover{background:var(--accent-weak);color:var(--accent)}
+.toc a.current{background:var(--accent-weak);color:var(--accent);font-weight:700}
+.toc .div-1>a,.toc .div-2>a{font-weight:700}
+.toc .div-2{margin-top:.5rem}
+.toc .div-3,.toc .div-4,.toc .div-5{margin-top:.25rem}
+.toc .lv-art{padding-left:.9rem}
+.toc .lv-art.hidden,.toc .lv-div.hidden{display:none}
+.toc-toggle{background:none;border:0;color:var(--sub);padding:0 .3rem;font-size:.75rem}
+
+.doc{padding:2.2rem 2rem 8rem;max-width:44em}
+.doc-head{border-bottom:2px solid var(--ink);padding-bottom:.8rem;margin-bottom:2rem}
+.doc-head h1{font-size:1.5rem;margin:0 0 .3rem;letter-spacing:.04em}
+.doc-head .meta{font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+
+/* ------------------------------------------------------------------ 条文 */
+.div-head{font-family:var(--gothic);margin:2.6rem 0 1rem;scroll-margin-top:6rem}
+.div-head .lbl{color:var(--accent);font-weight:700}
+h2.div-head{font-size:1.12rem;border-bottom:1px solid var(--rule);padding-bottom:.35rem}
+h3.div-head{font-size:1.02rem}
+h4.div-head,h5.div-head,h6.div-head{font-size:.95rem}
+
+.art{position:relative;padding-left:2.6rem;margin:1.5rem 0 1.9rem;scroll-margin-top:6rem}
+.art:target{background:var(--accent-weak);box-shadow:-.4rem 0 0 var(--accent);border-radius:2px}
+.art-tools{position:absolute;left:0;top:.25rem;display:flex;flex-direction:column;gap:.2rem;
+  visibility:hidden}
+.art:hover .art-tools,.art:focus-within .art-tools,.art:target .art-tools{visibility:visible}
+.art-tools button,.art-tools a{background:none;border:0;color:var(--sub);font-size:.72rem;
+  font-family:var(--gothic);padding:.1rem .2rem;border-radius:2px;text-decoration:none;
+  white-space:nowrap;display:block}
+.art-tools button:hover,.art-tools a:hover{color:var(--accent);background:var(--accent-weak)}
+.raw h3 .src{font-size:.75rem;font-weight:400;color:var(--sub);margin-left:.5rem}
+.doc-head .src{color:var(--accent);text-decoration:none}
+.doc-head .src:hover{text-decoration:underline}
+.caption{font-family:var(--gothic);font-size:.88rem;font-weight:700;color:var(--sub);margin:0 0 .1rem}
+.amend-note{font-family:var(--gothic);font-size:.78rem;font-weight:400;color:var(--sub);margin:.1rem 0 0;text-align:right}
+h2 .amend-note,h3 .amend-note,h4 .amend-note,h5 .amend-note,h6 .amend-note{display:inline;text-align:left}
+.art-no{font-family:var(--gothic);font-weight:700;color:var(--accent);text-decoration:none;margin-right:.55em}
+.art-no:hover{text-decoration:underline}
+.para{margin:.35rem 0;text-indent:0}
+.para+.para{margin-top:.55rem}
+.pno{font-family:var(--gothic);color:var(--sub);font-size:.9em;margin-right:.5em;font-variant-numeric:tabular-nums}
+.deleted .body-text{color:var(--sub)}
+.art.noarticle .para{margin-top:0}
+
+ol.items{list-style:none;margin:.35rem 0 .35rem 1.1em;padding:0}
+ol.items>li{display:grid;grid-template-columns:2.4em minmax(0,1fr);margin:.2rem 0}
+ol.items .mk{font-family:var(--gothic);font-size:.9em;color:var(--sub);margin-right:.4em}
+ol.items ol.items{grid-column:1/-1;margin-left:1.2em}
+ol.items ol.items>li{grid-template-columns:2em minmax(0,1fr)}
+
+.raw{margin:1.6rem 0;scroll-margin-top:6rem}
+.raw h3{font-family:var(--gothic);font-size:1rem;margin:0 0 .4rem}
+.raw pre{font-family:var(--mincho);white-space:pre-wrap;margin:0;padding:.7rem .9rem;
+  background:var(--chrome);border:1px solid var(--rule);font-size:.92rem;line-height:1.75}
+
+.notes{margin:2.5rem 0 0;padding:.8rem 1rem;background:var(--chrome);
+  border-left:3px solid var(--accent);font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+.notes p{margin:0 0 .3rem;font-weight:700;color:var(--ink)}
+.notes ul{margin:0;padding-left:1.2rem}
+.foot{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);
+  font-family:var(--gothic);font-size:.75rem;color:var(--sub)}
+
+a.ref{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule)}
+a.ref:hover{color:var(--accent);border-bottom-color:var(--accent)}
+a.ref-egov{border-bottom-style:dotted}
+a.ref-rule{border-bottom-color:var(--accent)}
+mark{background:var(--mark);color:inherit;padding:0 .05em}
+mark.live{background:var(--mark-live)}
+.toast{position:fixed;left:50%;bottom:2rem;transform:translateX(-50%);
+  background:var(--ink);color:#fff;font-family:var(--gothic);font-size:.8rem;
+  padding:.5rem .9rem;border-radius:3px;pointer-events:none;z-index:60;display:none}
+.toast.show{display:block}
+
+.toc-open{display:none}
+@media (max-width:900px){
+  body{font-size:16px}
+  .wrap{grid-template-columns:minmax(0,1fr)}
+  .toc{position:fixed;inset:5.6rem auto 0 0;width:82vw;max-width:20rem;background:var(--paper);
+    z-index:25;box-shadow:0 0 0 100vmax rgba(0,0,0,.25);max-height:none;height:calc(100vh - 5.6rem);
+    display:none}
+  .toc.open{display:block}
+  .toc-open{display:inline-block}
+  .doc{padding:1.4rem 1.1rem 6rem}
+  .search-box input{width:8rem}
+  .art-tools{opacity:1;position:static;flex-direction:row;justify-content:flex-end;margin-bottom:.15rem}
+  .art-tools button,.art-tools a{border:1px solid var(--rule);border-radius:2px;
+    padding:.1rem .45rem;display:inline-block}
+  .art{padding-left:0}
+}
+
+@media print{
+  .top,.toc,.art-tools,.crumb,.toast{display:none!important}
+  a.ref{border-bottom:0}
+  .wrap{display:block}
+  .doc{max-width:none;padding:0}
+  body{font-size:10.5pt;line-height:1.7}
+  .art{page-break-inside:avoid}
+}
+
+.anchor-alias{position:absolute;scroll-margin-top:6rem}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <button type="button" class="btn toc-open" id="toc-open">目次</button>
+    <h1 class="law-title">犯罪捜査のための通信傍受に関する規則</h1>
+    <span class="law-number">平成十二年三月十五日最高裁判所規則第六号　／　平成13年1月6日施行</span>
+    <div class="top-tools">
+      <div class="search-box">
+        <input type="search" id="q" placeholder="条文を検索（/ キー）" aria-label="条文を検索">
+        <span class="hit-count" id="hits"></span>
+      </div>
+      <button type="button" class="btn" id="prev" title="前の該当箇所">前</button>
+      <button type="button" class="btn" id="next" title="次の該当箇所">次</button>
+      <button type="button" class="btn" id="numeral" aria-pressed="false"
+        title="条番号の表記を切り替える">123</button>
+    </div>
+  </div>
+  <div class="crumb" id="crumb"></div>
+</header>
+<div class="wrap">
+  <nav class="toc" id="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ul><li class="lv-div div-2"><a href="#d0">第一章　総則</a><ul><li class="lv-art" data-text="第一条1条趣旨趣旨犯罪捜査のための通信傍受に関する法律（平成十一年法律第百三十七号。以下「法」という。）による傍受令状の発付、傍受ができる期間の延長、記録媒体の封印及び提出、傍受の原記録の保管その他の取扱い、傍受の実施の状況を記載した書面の提出、法第十五条に規定する通信に該当するかどうかの審査、通信の当事者に対する通知を発しなければならない期間の延長、裁判所が保管する傍受記録の聴取及び閲覧並びにその複製の作成並びに不服申立てに関する手続については、法に定めるもののほか、この規則の定めるところによる。"><a href="#a1">第一条　趣旨</a></li></ul></li><li class="lv-div div-2"><a href="#d2">第二章　傍受令状の請求等の手続</a><ul><li class="lv-art" data-text="第二条2条傍受令状請求権者の指定、変更の通知傍受令状請求権者の指定、変更の通知検事総長は、法第四条第一項の規定により傍受令状を請求することができる検察官を指定したときは、最高裁判所にその旨を通知しなければならない。その通知の内容に変更を生じたときも、同様とする。国家公安委員会、都道府県公安委員会、厚生労働大臣又は海上保安庁長官は、法第四条第一項の規定により傍受令状を請求することができる司法警察員を指定したときは、国家公安委員会、厚生労働大臣又は海上保安庁長官においては最高裁判所に、都道府県公安委員会においてはその所在地を管轄する地方裁判所にその旨を通知しなければならない。その通知の内容に変更を生じたときも、同様とする。"><a href="#a2">第二条　傍受令状請求権者の指定、変更の通知</a></li><li class="lv-art" data-text="第三条3条傍受令状請求書の記載事項傍受令状請求書の記載事項傍受令状の請求書には、次に掲げる事項及び傍受令状発付の要件たる事項を記載しなければならない。一被疑者の氏名二被疑事実の要旨、罪名及び罰条三傍受すべき通信四傍受の実施の対象とすべき通信手段五傍受の実施の方法及び場所（法第五条第四項後段の申立てをする場合にあっては、傍受の実施の方法、当該申立てをする旨及びその理由並びに指定期間における傍受の実施の場所及び指定期間以外の期間における傍受の実施の場所）六傍受ができる期間七請求者の官公職氏名八請求者が、法第四条第一項の規定による指定を受けた者である旨九七日を超える有効期間を必要とするときは、その旨及び事由十請求に係る被疑事実の全部又は一部と同一の被疑事実について、前に同一の通信手段を対象とする傍受令状の請求又はその発付があったときは、その旨十一法第二十条第一項の許可の請求をするときは、その旨及びその理由並びに通信管理者等に関する事項十二法第二十三条第一項の許可の請求をするときは、その旨及びその理由並びに通信管理者等に関する事項及び傍受の実施に用いるものとして指定する特定電子計算機を特定するに足りる事項被疑者の氏名が明らかでないときは、その旨を記載すれば足りる。"><a href="#a3">第三条　傍受令状請求書の記載事項</a></li><li class="lv-art" data-text="第四条4条資料の提供・法第四条等資料の提供・法第四条等傍受令状を請求するには、傍受の理由及び必要があることを認めるべき資料を提供しなければならない。法第四条第三項の請求をするには、その請求が相当であることを認めるべき資料をも提供しなければならない。法第五条第四項後段の申立てをするには、その申立てが相当であることを認めるべき資料をも提供しなければならない。"><a href="#a4">第四条　資料の提供・法第四条等</a></li><li class="lv-art" data-text="第五条5条傍受令状の記載事項傍受令状の記載事項法第六条第一項の最高裁判所規則で定める事項は、次に掲げる事項とする。一請求者の官公職氏名二有効期間内であっても、その理由又は必要がなくなったときは、直ちにこれを返還しなければならない旨三法第五条第三項の規定により法第二十三条第一項の許可をするときは、傍受の実施に用いるものとして指定された特定電子計算機を特定するに足りる事項"><a href="#a5">第五条　傍受令状の記載事項</a></li><li class="lv-art" data-text="第六条6条傍受ができる期間の延長請求の方式傍受ができる期間の延長請求の方式法第七条第一項の規定による傍受ができる期間の延長の請求は、書面でしなければならない。前項の書面には、延長を必要とする事由及び延長を求める期間を記載しなければならない。第一項の請求をするには、傍受令状を差し出し、かつ、延長を必要とする事由があることを認めるべき資料を提供しなければならない。"><a href="#a6">第六条　傍受ができる期間の延長請求の方式</a></li><li class="lv-art" data-text="第七条7条傍受ができる期間の延長の裁判傍受ができる期間の延長の裁判裁判官は、前条第一項の請求を理由があるものと認めて延長の裁判をしたときは、延長する期間及び理由を記載した傍受令状を裁判所書記官をして請求者に交付させなければならない。裁判所書記官は、傍受令状を請求者に交付する場合には、傍受令状に交付の年月日を記載して記名押印しなければならない。前条第一項の請求については、刑事訴訟規則（昭和二十三年最高裁判所規則第三十二号）第百四十条及び第百四十一条の規定を準用する。"><a href="#a7">第七条　傍受ができる期間の延長の裁判</a></li></ul></li><li class="lv-div div-2"><a href="#d9">第三章　通信傍受の記録等</a><ul><li class="lv-art" data-text="第八条8条記録媒体の封印の方法記録媒体の封印の方法法第二十五条第一項又は第二項の規定により立会人が記録媒体を封印する場合においては、封印上に、封印した年月日時を記載して署名押印しなければならない。"><a href="#a8">第八条　記録媒体の封印の方法</a></li><li class="lv-art" data-text="第九条9条傍受の原記録の提出傍受の原記録の提出法第二十五条第四項又は第二十六条第四項の規定により記録媒体を裁判官に提出する場合においては、次に掲げる事項を記載した書面及び傍受令状の写しを添付しなければならない。一記録媒体を提出する者の官公職氏名二記録媒体の種類及び数量三各記録媒体への記録の開始及び終了の年月日時四法第二十六条第一項の規定により記録をした記録媒体があるときは、その旨"><a href="#a9">第九条　傍受の原記録の提出</a></li><li class="lv-art" data-text="第十条10条傍受の処分着手後の措置傍受の処分着手後の措置傍受令状に基づき傍受の処分に着手したときは、傍受令状に着手の年月日時及び傍受の実施を終了した年月日時を記載して記名押印しなければならない。"><a href="#a10">第十条　傍受の処分着手後の措置</a></li><li class="lv-art" data-text="第十一条11条傍受の実施の状況を記載した書面等の記載事項傍受の実施の状況を記載した書面等の記載事項法第二十七条第一項第九号の最高裁判所規則で定める事項は、次に掲げる事項とする。一傍受令状の発付及び傍受ができる期間の延長の裁判の年月日並びに傍受令状を発付した裁判官が所属する裁判所名二被疑者の氏名三傍受の実施をした者の官公職氏名四傍受の実施の対象とされた通信手段五傍受の実施の方法及び場所六法第十四条第二項の規定により傍受をした通信について法第二十九条第五項の規定により通信の記録を消去したときは、消去した者の官公職氏名、消去した年月日時及び消去した部分七傍受をした通信について、記録媒体中の記録箇所を特定するに足りる事項法第二十七条第二項第六号の最高裁判所規則で定める事項は、前項各号に掲げる事項のほか、次に掲げる事項とする。一法第二十三条第一項の規定による通信の原信号の暗号化及び暗号化信号の伝送を行った通信管理者等の氏名及び職業二傍受の実施に用いた特定電子計算機を特定するに足りる事項法第二十八条第一項第十二号の最高裁判所規則で定める事項は、第一項第一号から第五号までに掲げる事項のほか、次に掲げる事項とする。一法第二十条第一項の規定による通信の原信号の暗号化及び暗号化信号の一時的保存並びに法第二十一条第一項の規定による暗号化信号の復号を行った通信管理者等の氏名及び職業二再生の実施をした者の官公職氏名三法第二十一条第四項の規定により再生した通信について法第二十九条第五項の規定により通信の記録を消去したときは、消去した者の官公職氏名、消去した年月日時及び消去した部分四再生をした通信について、記録媒体中の記録箇所を特定するに足りる事項法第二十八条第二項第八号の最高裁判所規則で定める事項は、第一項第一号から第五号まで、第二項各号並びに前項第二号及び第四号に掲げる事項並びに法第二十三条第四項においてその例によることとされる法第二十一条第四項の規定により再生した通信について法第二十九条第五項の規定により通信の記録を消去したときは、消去した者の官公職氏名、消去した年月日時及び消去した部分とする。"><a href="#a11">第十一条　傍受の実施の状況を記載した書面等の記載事項</a></li><li class="lv-art" data-text="第十二条12条傍受をした通信の記録消去後の措置傍受をした通信の記録消去後の措置検察官又は司法警察員は、傍受の実施の状況を記載した書面を裁判官に提出した後、法第二十九条第五項の規定又は法第三十三条第三項（法第二十七条第三項又は第二十八条第三項において準用する場合を含む。）に規定する消去命令により通信の記録を消去したときは、速やかに、消去した者の官公職氏名、消去した年月日時及び消去した部分を当該裁判官に通知しなければならない。"><a href="#a12">第十二条　傍受をした通信の記録消去後の措置</a></li><li class="lv-art" data-text="第十三条13条通信の当事者に対する通知をした場合の事後措置通信の当事者に対する通知をした場合の事後措置検察官又は司法警察員は、傍受記録に記録されている通信の当事者に対し、法第三十条の規定による通知をしたときは、速やかに、通知書の写しを添付した書面をもって、その旨を原記録保管裁判官に通知しなければならない。"><a href="#a13">第十三条　通信の当事者に対する通知をした場合の事後措置</a></li><li class="lv-art" data-text="第十四条14条通信の当事者に対する通知を発しなければならない期間の延長請求の方式通信の当事者に対する通知を発しなければならない期間の延長請求の方式法第三十条第二項の規定による通知を発しなければならない期間の延長の請求は、書面でしなければならない。前項の書面には、傍受の実施を終了した年月日、通知によって捜査が妨げられるおそれがあることを認めるべき事由及び延長を求める期間を記載しなければならない。前に通知を発しなければならない期間が延長されたときは、その旨及びその期間をも記載しなければならない。第一項の請求をするには、通知によって捜査が妨げられるおそれがあることを認めるべき資料を提供しなければならない。"><a href="#a14">第十四条　通信の当事者に対する通知を発しなければならない期間の延長請求の方式</a></li><li class="lv-art" data-text="第十五条15条傍受の原記録の聴取及び閲覧等の請求の方式傍受の原記録の聴取及び閲覧等の請求の方式法第三十二条第一項から第五項までの規定による傍受の原記録の聴取若しくは閲覧又はその複製の作成の請求は、書面でしなければならない。前項の書面には、聴取若しくは閲覧又は複製の作成を求める部分を特定するに足りる事項及び法に定める聴取若しくは閲覧又は複製の作成の理由が存在すると認められる事由を記載しなければならない。第一項の請求を受けた原記録保管裁判官は、必要があると認めるときは、請求者に対し、法に定める聴取若しくは閲覧又は複製の作成の理由が存在することを認めるべき資料の提示を求めることができる。"><a href="#a15">第十五条　傍受の原記録の聴取及び閲覧等の請求の方式</a></li><li class="lv-art" data-text="第十六条16条傍受の原記録等の聴取及び閲覧等傍受の原記録等の聴取及び閲覧等法第三十二条第一項から第五項までの規定による傍受の原記録の聴取及び閲覧並びにその複製の作成は、裁判所において行う。ただし、原記録保管裁判官が必要と認めるときは、この限りでない。原記録保管裁判官は、傍受の原記録の聴取及び閲覧並びにその複製の作成について、日時、場所及び時間を指定することができる。原記録保管裁判官は、傍受の原記録の聴取及び閲覧並びにその複製の作成について、傍受の原記録の破棄その他不法な行為を防ぐため必要があると認めるときは、裁判所書記官その他の裁判所職員をこれに立ち会わせ、又はその他の適当な措置を講じなければならない。原記録保管裁判官は、傍受の原記録を聴取させ、又は閲覧させる場合において、必要があると認めるときは、その複製を聴取させ、又は閲覧させることができる。法第三十一条の規定による傍受記録の聴取若しくは閲覧又はその複製の作成に関する手続のうち、裁判所が保管する傍受記録に係る手続については、前各項の規定を準用する。"><a href="#a16">第十六条　傍受の原記録等の聴取及び閲覧等</a></li><li class="lv-art" data-text="第十七条17条傍受の原記録の保管に関する通知傍受の原記録の保管に関する通知次に掲げる場合には、検察官は、速やかに、それぞれその旨を当該傍受の原記録保管裁判官に通知しなければならない。一傍受が行われた事件に係る被疑事件について公訴が提起されたとき及び当該被告事件が終結したとき。二傍受が行われた事件に係る被告事件以外の被告事件において傍受記録又はその複製等が証拠として取り調べられたとき及び当該被告事件が終結したとき。三法第三十七条に規定する罪に係る被疑事件について公訴が提起されたとき、当該被告事件が終結したとき及び右の罪に係る被疑事件について刑事訴訟法（昭和二十三年法律第百三十一号）第二百六十二条第一項の請求がされたとき。"><a href="#a17">第十七条　傍受の原記録の保管に関する通知</a></li></ul></li><li class="lv-div div-2"><a href="#d20">第四章　補則</a><ul><li class="lv-art" data-text="第十八条18条刑事訴訟規則との関係刑事訴訟規則との関係通信の傍受に関する手続については、法及びこの規則に定めるもののほか、刑事訴訟規則による。"><a href="#a18">第十八条　刑事訴訟規則との関係</a></li></ul></li><li class="lv-div div-1"><a href="#sup1">附則</a></li><li class="lv-div div-1"><a href="#sup2">附則　（平成一二年一二月一五日最高裁判所規則第一五号）</a></li><li class="lv-div div-1"><a href="#sup3">附則　（平成三〇年一月一五日最高裁判所規則第一号）抄</a><ul><li class="lv-art" data-text="第一条1条施行期日施行期日この規則は、刑事訴訟法等の一部を改正する法律（平成二十八年法律第五十四号）附則第一条第四号に掲げる規定の施行の日から施行する。ただし、第三条の規定は、同法の"><a href="#sup3-a1">第一条　施行期日</a></li></ul></li></ul>
+  </nav>
+  <main class="doc" id="doc-outer">
+    <div class="doc-head">
+      <h1>犯罪捜査のための通信傍受に関する規則</h1>
+      <div class="meta">平成十二年三月十五日最高裁判所規則第六号　／　平成13年1月6日施行　／　<a class="src" href="https://www.courts.go.jp/vc-files/courts/file5/tuusinboujukisoku010601.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本PDF p.1</a></div>
+    </div>
+    <div id="doc">
+<h3 class="div-head" id="d0" data-path="第一章　総則"><span class="lbl">第一章</span>　総則</h3>
+<article class="art" id="a1" data-path="第一章　総則"><span class="anchor-alias" id="Mp-At_1"></span><div class="art-tools"><button type="button" data-anchor="a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/file5/tuusinboujukisoku010601.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（趣旨）</p><p class="para" id="a1-p1"><a class="art-no" href="#a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">犯罪捜査のための通信傍受に関する法律（平成十一年法律第百三十七号。以下「法」という。）による傍受令状の発付、傍受ができる期間の延長、記録媒体の封印及び提出、傍受の原記録の保管その他の取扱い、傍受の実施の状況を記載した書面の提出、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_15" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十五条</a>に規定する通信に該当するかどうかの審査、通信の当事者に対する通知を発しなければならない期間の延長、裁判所が保管する傍受記録の聴取及び閲覧並びにその複製の作成並びに不服申立てに関する手続については、法に定めるもののほか、この規則の定めるところによる。</span></p></article>
+<h3 class="div-head" id="d2" data-path="第二章　傍受令状の請求等の手続"><span class="lbl">第二章</span>　傍受令状の請求等の手続</h3>
+<article class="art" id="a2" data-path="第二章　傍受令状の請求等の手続"><span class="anchor-alias" id="Mp-At_2"></span><div class="art-tools"><button type="button" data-anchor="a2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/file5/tuusinboujukisoku010601.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（傍受令状請求権者の指定、変更の通知）</p><p class="para" id="a2-p1"><a class="art-no" href="#a2" data-kan="第二条" data-num="第2条">第二条</a><span class="body-text">検事総長は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_4" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四条</a>第一項の規定により傍受令状を請求することができる検察官を指定したときは、最高裁判所にその旨を通知しなければならない。その通知の内容に変更を生じたときも、同様とする。</span></p><p class="para" id="a2-p2"><span class="pno">2</span><span class="body-text">国家公安委員会、都道府県公安委員会、厚生労働大臣又は海上保安庁長官は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_4" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四条</a>第一項の規定により傍受令状を請求することができる司法警察員を指定したときは、国家公安委員会、厚生労働大臣又は海上保安庁長官においては最高裁判所に、都道府県公安委員会においてはその所在地を管轄する地方裁判所にその旨を通知しなければならない。その通知の内容に変更を生じたときも、同様とする。</span></p></article>
+<article class="art" id="a3" data-path="第二章　傍受令状の請求等の手続"><span class="anchor-alias" id="Mp-At_3"></span><div class="art-tools"><button type="button" data-anchor="a3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/file5/tuusinboujukisoku010601.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（傍受令状請求書の記載事項）</p><p class="para" id="a3-p1"><a class="art-no" href="#a3" data-kan="第三条" data-num="第3条">第三条</a><span class="body-text">傍受令状の請求書には、次に掲げる事項及び傍受令状発付の要件たる事項を記載しなければならない。</span></p><ol class="items"><li id="a3-p1-1"><span class="mk">一</span><span class="tx">被疑者の氏名</span></li><li id="a3-p1-2"><span class="mk">二</span><span class="tx">被疑事実の要旨、罪名及び罰条</span></li><li id="a3-p1-3"><span class="mk">三</span><span class="tx">傍受すべき通信</span></li><li id="a3-p1-4"><span class="mk">四</span><span class="tx">傍受の実施の対象とすべき通信手段</span></li><li id="a3-p1-5"><span class="mk">五</span><span class="tx">傍受の実施の方法及び場所（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_5" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第五条</a>第四項後段の申立てをする場合にあっては、傍受の実施の方法、当該申立てをする旨及びその理由並びに指定期間における傍受の実施の場所及び指定期間以外の期間における傍受の実施の場所）</span></li><li id="a3-p1-6"><span class="mk">六</span><span class="tx">傍受ができる期間</span></li><li id="a3-p1-7"><span class="mk">七</span><span class="tx">請求者の官公職氏名</span></li><li id="a3-p1-8"><span class="mk">八</span><span class="tx">請求者が、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_4" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四条</a>第一項の規定による指定を受けた者である旨</span></li><li id="a3-p1-9"><span class="mk">九</span><span class="tx">七日を超える有効期間を必要とするときは、その旨及び事由</span></li><li id="a3-p1-10"><span class="mk">十</span><span class="tx">請求に係る被疑事実の全部又は一部と同一の被疑事実について、前に同一の通信手段を対象とする傍受令状の請求又はその発付があったときは、その旨</span></li><li id="a3-p1-11"><span class="mk">十一</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_20" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十条</a>第一項の許可の請求をするときは、その旨及びその理由並びに通信管理者等に関する事項</span></li><li id="a3-p1-12"><span class="mk">十二</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_23" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十三条</a>第一項の許可の請求をするときは、その旨及びその理由並びに通信管理者等に関する事項及び傍受の実施に用いるものとして指定する特定電子計算機を特定するに足りる事項</span></li></ol><p class="para" id="a3-p2"><span class="pno">2</span><span class="body-text">被疑者の氏名が明らかでないときは、その旨を記載すれば足りる。</span></p></article>
+<article class="art" id="a4" data-path="第二章　傍受令状の請求等の手続"><span class="anchor-alias" id="Mp-At_4"></span><div class="art-tools"><button type="button" data-anchor="a4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/file5/tuusinboujukisoku010601.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（資料の提供・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_4" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四条</a>等）</p><p class="para" id="a4-p1"><a class="art-no" href="#a4" data-kan="第四条" data-num="第4条">第四条</a><span class="body-text">傍受令状を請求するには、傍受の理由及び必要があることを認めるべき資料を提供しなければならない。</span></p><p class="para" id="a4-p2"><span class="pno">2</span><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_4" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四条</a>第三項の請求をするには、その請求が相当であることを認めるべき資料をも提供しなければならない。</span></p><p class="para" id="a4-p3"><span class="pno">3</span><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_5" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第五条</a>第四項後段の申立てをするには、その申立てが相当であることを認めるべき資料をも提供しなければならない。</span></p></article>
+<article class="art" id="a5" data-path="第二章　傍受令状の請求等の手続"><span class="anchor-alias" id="Mp-At_5"></span><div class="art-tools"><button type="button" data-anchor="a5" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/file5/tuusinboujukisoku010601.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（傍受令状の記載事項）</p><p class="para" id="a5-p1"><a class="art-no" href="#a5" data-kan="第五条" data-num="第5条">第五条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_6" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第六条</a>第一項の最高裁判所規則で定める事項は、次に掲げる事項とする。</span></p><ol class="items"><li id="a5-p1-1"><span class="mk">一</span><span class="tx">請求者の官公職氏名</span></li><li id="a5-p1-2"><span class="mk">二</span><span class="tx">有効期間内であっても、その理由又は必要がなくなったときは、直ちにこれを返還しなければならない旨</span></li><li id="a5-p1-3"><span class="mk">三</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_5" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第五条</a>第三項の規定により<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_23" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十三条</a>第一項の許可をするときは、傍受の実施に用いるものとして指定された特定電子計算機を特定するに足りる事項</span></li></ol></article>
+<article class="art" id="a6" data-path="第二章　傍受令状の請求等の手続"><span class="anchor-alias" id="Mp-At_6"></span><div class="art-tools"><button type="button" data-anchor="a6" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/file5/tuusinboujukisoku010601.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（傍受ができる期間の延長請求の方式）</p><p class="para" id="a6-p1"><a class="art-no" href="#a6" data-kan="第六条" data-num="第6条">第六条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_7" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第七条</a>第一項の規定による傍受ができる期間の延長の請求は、書面でしなければならない。</span></p><p class="para" id="a6-p2"><span class="pno">2</span><span class="body-text">前項の書面には、延長を必要とする事由及び延長を求める期間を記載しなければならない。</span></p><p class="para" id="a6-p3"><span class="pno">3</span><span class="body-text">第一項の請求をするには、傍受令状を差し出し、かつ、延長を必要とする事由があることを認めるべき資料を提供しなければならない。</span></p></article>
+<article class="art" id="a7" data-path="第二章　傍受令状の請求等の手続"><span class="anchor-alias" id="Mp-At_7"></span><div class="art-tools"><button type="button" data-anchor="a7" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/file5/tuusinboujukisoku010601.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（傍受ができる期間の延長の裁判）</p><p class="para" id="a7-p1"><a class="art-no" href="#a7" data-kan="第七条" data-num="第7条">第七条</a><span class="body-text">裁判官は、前条第一項の請求を理由があるものと認めて延長の裁判をしたときは、延長する期間及び理由を記載した傍受令状を裁判所書記官をして請求者に交付させなければならない。</span></p><p class="para" id="a7-p2"><span class="pno">2</span><span class="body-text">裁判所書記官は、傍受令状を請求者に交付する場合には、傍受令状に交付の年月日を記載して記名押印しなければならない。</span></p><p class="para" id="a7-p3"><span class="pno">3</span><span class="body-text">前条第一項の請求については、刑事訴訟規則（昭和二十三年最高裁判所規則第三十二号）<a class="ref ref-rule" href="600.html#a140" title="この規則集の中を開きます">第百四十条</a>及び第百四十一条の規定を準用する。</span></p></article>
+<h3 class="div-head" id="d9" data-path="第三章　通信傍受の記録等"><span class="lbl">第三章</span>　通信傍受の記録等</h3>
+<article class="art" id="a8" data-path="第三章　通信傍受の記録等"><span class="anchor-alias" id="Mp-At_8"></span><div class="art-tools"><button type="button" data-anchor="a8" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/file5/tuusinboujukisoku010601.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（記録媒体の封印の方法）</p><p class="para" id="a8-p1"><a class="art-no" href="#a8" data-kan="第八条" data-num="第8条">第八条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_25" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十五条</a>第一項又は第二項の規定により立会人が記録媒体を封印する場合においては、封印上に、封印した年月日時を記載して署名押印しなければならない。</span></p></article>
+<article class="art" id="a9" data-path="第三章　通信傍受の記録等"><span class="anchor-alias" id="Mp-At_9"></span><div class="art-tools"><button type="button" data-anchor="a9" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/file5/tuusinboujukisoku010601.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（傍受の原記録の提出）</p><p class="para" id="a9-p1"><a class="art-no" href="#a9" data-kan="第九条" data-num="第9条">第九条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_25" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十五条</a>第四項又は第二十六条第四項の規定により記録媒体を裁判官に提出する場合においては、次に掲げる事項を記載した書面及び傍受令状の写しを添付しなければならない。</span></p><ol class="items"><li id="a9-p1-1"><span class="mk">一</span><span class="tx">記録媒体を提出する者の官公職氏名</span></li><li id="a9-p1-2"><span class="mk">二</span><span class="tx">記録媒体の種類及び数量</span></li><li id="a9-p1-3"><span class="mk">三</span><span class="tx">各記録媒体への記録の開始及び終了の年月日時</span></li><li id="a9-p1-4"><span class="mk">四</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_26" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十六条</a>第一項の規定により記録をした記録媒体があるときは、その旨</span></li></ol></article>
+<article class="art" id="a10" data-path="第三章　通信傍受の記録等"><span class="anchor-alias" id="Mp-At_10"></span><div class="art-tools"><button type="button" data-anchor="a10" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/file5/tuusinboujukisoku010601.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（傍受の処分着手後の措置）</p><p class="para" id="a10-p1"><a class="art-no" href="#a10" data-kan="第十条" data-num="第10条">第十条</a><span class="body-text">傍受令状に基づき傍受の処分に着手したときは、傍受令状に着手の年月日時及び傍受の実施を終了した年月日時を記載して記名押印しなければならない。</span></p></article>
+<article class="art" id="a11" data-path="第三章　通信傍受の記録等"><span class="anchor-alias" id="Mp-At_11"></span><div class="art-tools"><button type="button" data-anchor="a11" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/file5/tuusinboujukisoku010601.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（傍受の実施の状況を記載した書面等の記載事項）</p><p class="para" id="a11-p1"><a class="art-no" href="#a11" data-kan="第十一条" data-num="第11条">第十一条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_27" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十七条</a>第一項第九号の最高裁判所規則で定める事項は、次に掲げる事項とする。</span></p><ol class="items"><li id="a11-p1-1"><span class="mk">一</span><span class="tx">傍受令状の発付及び傍受ができる期間の延長の裁判の年月日並びに傍受令状を発付した裁判官が所属する裁判所名</span></li><li id="a11-p1-2"><span class="mk">二</span><span class="tx">被疑者の氏名</span></li><li id="a11-p1-3"><span class="mk">三</span><span class="tx">傍受の実施をした者の官公職氏名</span></li><li id="a11-p1-4"><span class="mk">四</span><span class="tx">傍受の実施の対象とされた通信手段</span></li><li id="a11-p1-5"><span class="mk">五</span><span class="tx">傍受の実施の方法及び場所</span></li><li id="a11-p1-6"><span class="mk">六</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_14" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十四条</a>第二項の規定により傍受をした通信について<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_29" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十九条</a>第五項の規定により通信の記録を消去したときは、消去した者の官公職氏名、消去した年月日時及び消去した部分</span></li><li id="a11-p1-7"><span class="mk">七</span><span class="tx">傍受をした通信について、記録媒体中の記録箇所を特定するに足りる事項</span></li></ol><p class="para" id="a11-p2"><span class="pno">2</span><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_27" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十七条</a>第二項第六号の最高裁判所規則で定める事項は、前項各号に掲げる事項のほか、次に掲げる事項とする。</span></p><ol class="items"><li id="a11-p2-1"><span class="mk">一</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_23" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十三条</a>第一項の規定による通信の原信号の暗号化及び暗号化信号の伝送を行った通信管理者等の氏名及び職業</span></li><li id="a11-p2-2"><span class="mk">二</span><span class="tx">傍受の実施に用いた特定電子計算機を特定するに足りる事項</span></li></ol><p class="para" id="a11-p3"><span class="pno">3</span><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_28" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十八条</a>第一項第十二号の最高裁判所規則で定める事項は、第一項第一号から第五号までに掲げる事項のほか、次に掲げる事項とする。</span></p><ol class="items"><li id="a11-p3-1"><span class="mk">一</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_20" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十条</a>第一項の規定による通信の原信号の暗号化及び暗号化信号の一時的保存並びに<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_21" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十一条</a>第一項の規定による暗号化信号の復号を行った通信管理者等の氏名及び職業</span></li><li id="a11-p3-2"><span class="mk">二</span><span class="tx">再生の実施をした者の官公職氏名</span></li><li id="a11-p3-3"><span class="mk">三</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_21" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十一条</a>第四項の規定により再生した通信について<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_29" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十九条</a>第五項の規定により通信の記録を消去したときは、消去した者の官公職氏名、消去した年月日時及び消去した部分</span></li><li id="a11-p3-4"><span class="mk">四</span><span class="tx">再生をした通信について、記録媒体中の記録箇所を特定するに足りる事項</span></li></ol><p class="para" id="a11-p4"><span class="pno">4</span><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_28" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十八条</a>第二項第八号の最高裁判所規則で定める事項は、第一項第一号から第五号まで、第二項各号並びに前項第二号及び第四号に掲げる事項並びに<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_23" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十三条</a>第四項においてその例によることとされる<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_21" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十一条</a>第四項の規定により再生した通信について<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_29" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十九条</a>第五項の規定により通信の記録を消去したときは、消去した者の官公職氏名、消去した年月日時及び消去した部分とする。</span></p></article>
+<article class="art" id="a12" data-path="第三章　通信傍受の記録等"><span class="anchor-alias" id="Mp-At_12"></span><div class="art-tools"><button type="button" data-anchor="a12" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/file5/tuusinboujukisoku010601.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（傍受をした通信の記録消去後の措置）</p><p class="para" id="a12-p1"><a class="art-no" href="#a12" data-kan="第十二条" data-num="第12条">第十二条</a><span class="body-text">検察官又は司法警察員は、傍受の実施の状況を記載した書面を裁判官に提出した後、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_29" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十九条</a>第五項の規定又は<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_33" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十三条</a>第三項（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_27" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十七条</a>第三項又は第二十八条第三項において準用する場合を含む。）に規定する消去命令により通信の記録を消去したときは、速やかに、消去した者の官公職氏名、消去した年月日時及び消去した部分を当該裁判官に通知しなければならない。</span></p></article>
+<article class="art" id="a13" data-path="第三章　通信傍受の記録等"><span class="anchor-alias" id="Mp-At_13"></span><div class="art-tools"><button type="button" data-anchor="a13" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/file5/tuusinboujukisoku010601.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（通信の当事者に対する通知をした場合の事後措置）</p><p class="para" id="a13-p1"><a class="art-no" href="#a13" data-kan="第十三条" data-num="第13条">第十三条</a><span class="body-text">検察官又は司法警察員は、傍受記録に記録されている通信の当事者に対し、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_30" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十条</a>の規定による通知をしたときは、速やかに、通知書の写しを添付した書面をもって、その旨を原記録保管裁判官に通知しなければならない。</span></p></article>
+<article class="art" id="a14" data-path="第三章　通信傍受の記録等"><span class="anchor-alias" id="Mp-At_14"></span><div class="art-tools"><button type="button" data-anchor="a14" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/file5/tuusinboujukisoku010601.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（通信の当事者に対する通知を発しなければならない期間の延長請求の方式）</p><p class="para" id="a14-p1"><a class="art-no" href="#a14" data-kan="第十四条" data-num="第14条">第十四条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_30" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十条</a>第二項の規定による通知を発しなければならない期間の延長の請求は、書面でしなければならない。</span></p><p class="para" id="a14-p2"><span class="pno">2</span><span class="body-text">前項の書面には、傍受の実施を終了した年月日、通知によって捜査が妨げられるおそれがあることを認めるべき事由及び延長を求める期間を記載しなければならない。前に通知を発しなければならない期間が延長されたときは、その旨及びその期間をも記載しなければならない。</span></p><p class="para" id="a14-p3"><span class="pno">3</span><span class="body-text">第一項の請求をするには、通知によって捜査が妨げられるおそれがあることを認めるべき資料を提供しなければならない。</span></p></article>
+<article class="art" id="a15" data-path="第三章　通信傍受の記録等"><span class="anchor-alias" id="Mp-At_15"></span><div class="art-tools"><button type="button" data-anchor="a15" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/file5/tuusinboujukisoku010601.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（傍受の原記録の聴取及び閲覧等の請求の方式）</p><p class="para" id="a15-p1"><a class="art-no" href="#a15" data-kan="第十五条" data-num="第15条">第十五条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_32" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十二条</a>第一項から第五項までの規定による傍受の原記録の聴取若しくは閲覧又はその複製の作成の請求は、書面でしなければならない。</span></p><p class="para" id="a15-p2"><span class="pno">2</span><span class="body-text">前項の書面には、聴取若しくは閲覧又は複製の作成を求める部分を特定するに足りる事項及び法に定める聴取若しくは閲覧又は複製の作成の理由が存在すると認められる事由を記載しなければならない。</span></p><p class="para" id="a15-p3"><span class="pno">3</span><span class="body-text">第一項の請求を受けた原記録保管裁判官は、必要があると認めるときは、請求者に対し、法に定める聴取若しくは閲覧又は複製の作成の理由が存在することを認めるべき資料の提示を求めることができる。</span></p></article>
+<article class="art" id="a16" data-path="第三章　通信傍受の記録等"><span class="anchor-alias" id="Mp-At_16"></span><div class="art-tools"><button type="button" data-anchor="a16" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/file5/tuusinboujukisoku010601.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（傍受の原記録等の聴取及び閲覧等）</p><p class="para" id="a16-p1"><a class="art-no" href="#a16" data-kan="第十六条" data-num="第16条">第十六条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_32" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十二条</a>第一項から第五項までの規定による傍受の原記録の聴取及び閲覧並びにその複製の作成は、裁判所において行う。ただし、原記録保管裁判官が必要と認めるときは、この限りでない。</span></p><p class="para" id="a16-p2"><span class="pno">2</span><span class="body-text">原記録保管裁判官は、傍受の原記録の聴取及び閲覧並びにその複製の作成について、日時、場所及び時間を指定することができる。</span></p><p class="para" id="a16-p3"><span class="pno">3</span><span class="body-text">原記録保管裁判官は、傍受の原記録の聴取及び閲覧並びにその複製の作成について、傍受の原記録の破棄その他不法な行為を防ぐため必要があると認めるときは、裁判所書記官その他の裁判所職員をこれに立ち会わせ、又はその他の適当な措置を講じなければならない。</span></p><p class="para" id="a16-p4"><span class="pno">4</span><span class="body-text">原記録保管裁判官は、傍受の原記録を聴取させ、又は閲覧させる場合において、必要があると認めるときは、その複製を聴取させ、又は閲覧させることができる。</span></p><p class="para" id="a16-p5"><span class="pno">5</span><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_31" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十一条</a>の規定による傍受記録の聴取若しくは閲覧又はその複製の作成に関する手続のうち、裁判所が保管する傍受記録に係る手続については、前各項の規定を準用する。</span></p></article>
+<article class="art" id="a17" data-path="第三章　通信傍受の記録等"><span class="anchor-alias" id="Mp-At_17"></span><div class="art-tools"><button type="button" data-anchor="a17" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/file5/tuusinboujukisoku010601.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="caption">（傍受の原記録の保管に関する通知）</p><p class="para" id="a17-p1"><a class="art-no" href="#a17" data-kan="第十七条" data-num="第17条">第十七条</a><span class="body-text">次に掲げる場合には、検察官は、速やかに、それぞれその旨を当該傍受の原記録保管裁判官に通知しなければならない。</span></p><ol class="items"><li id="a17-p1-1"><span class="mk">一</span><span class="tx">傍受が行われた事件に係る被疑事件について公訴が提起されたとき及び当該被告事件が終結したとき。</span></li><li id="a17-p1-2"><span class="mk">二</span><span class="tx">傍受が行われた事件に係る被告事件以外の被告事件において傍受記録又はその複製等が証拠として取り調べられたとき及び当該被告事件が終結したとき。</span></li><li id="a17-p1-3"><span class="mk">三</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000137#Mp-At_37" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十七条</a>に規定する罪に係る被疑事件について公訴が提起されたとき、当該被告事件が終結したとき及び右の罪に係る被疑事件について刑事訴訟法（昭和二十三年法律第百三十一号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/323AC0000000131#Mp-At_262" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第二百六十二条</a>第一項の請求がされたとき。</span></li></ol></article>
+<h3 class="div-head" id="d20" data-path="第四章　補則"><span class="lbl">第四章</span>　補則</h3>
+<article class="art" id="a18" data-path="第四章　補則"><span class="anchor-alias" id="Mp-At_18"></span><div class="art-tools"><button type="button" data-anchor="a18" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/file5/tuusinboujukisoku010601.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="caption">（刑事訴訟規則との関係）</p><p class="para" id="a18-p1"><a class="art-no" href="#a18" data-kan="第十八条" data-num="第18条">第十八条</a><span class="body-text">通信の傍受に関する手続については、法及びこの規則に定めるもののほか、刑事訴訟規則による。</span></p></article>
+<h2 class="div-head" id="sup1" data-path="附則　"><span class="lbl">附則</span></h2>
+<article class="art noarticle" id="sup-body-1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/file5/tuusinboujukisoku010601.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="para" id="sup-body-1-p1"><span class="body-text">この規則は、法の施行の日から施行する。</span></p></article>
+<h2 class="div-head" id="sup2" data-path="附則　（平成一二年一二月一五日最高裁判所規則第一五号）"><span class="lbl">附則</span>　（平成一二年一二月一五日最高裁判所規則第一五号）</h2>
+<article class="art noarticle" id="sup-body-2" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/file5/tuusinboujukisoku010601.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="para" id="sup-body-2-p1"><span class="body-text">この規則は、平成十三年一月六日から施行する。</span></p></article>
+<h2 class="div-head" id="sup3" data-path="附則　（平成三〇年一月一五日最高裁判所規則第一号）抄"><span class="lbl">附則</span>　（平成三〇年一月一五日最高裁判所規則第一号）抄</h2>
+<article class="art" id="sup3-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup3-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/file5/tuusinboujukisoku010601.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="caption">（施行期日）</p><p class="para" id="sup3-a1-p1"><a class="art-no" href="#sup3-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、刑事訴訟法等の一部を改正する法律（平成二十八年法律第五十四号）附則<a class="ref ref-self" href="#a1">第一条</a>第四号に掲げる規定の施行の日から施行する。ただし、<a class="ref ref-self" href="#a3">第三条</a>の規定は、同法の</span></p></article>
+<article class="art noarticle" id="sup-body-3" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/file5/tuusinboujukisoku010601.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="para" id="sup-body-3-p1"><span class="body-text">施行の日から施行する。</span></p></article>
+    </div>
+    <aside class="notes"><p>読み取りに関する注意</p><ul><li>PDF中の目次は読み飛ばし、条見出しから目次を再構成しました。</li><li>題名・制定文とみられる行を本文の前に検出しました：改正 平成十二年十二月十五日最高裁判所規則第十五号／平成三十年一月十五日最高裁判所規則第一号／犯罪捜査のための通信傍受に関する規則を次のように定める。</li><li>各条の「原本」は https://www.courts.go.jp/vc-files/courts/file5/tuusinboujukisoku010601.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。</li></ul></aside>
+    <div class="foot">出典：tuusinboujukisoku010601.pdf　／　最高裁規則ビューア 1.9.0 で 2026年09月02日 に変換　
+    条文の正確な内容は原本で確認してください。</div>
+  </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  "use strict";
+  var doc = document.getElementById("doc");
+  var input = document.getElementById("q");
+  var hitLabel = document.getElementById("hits");
+  var crumb = document.getElementById("crumb");
+  var toc = document.getElementById("toc");
+  var toast = document.getElementById("toast");
+  var pristine = doc.innerHTML;
+  var hits = [];
+  var cursor = -1;
+
+  function say(msg){
+    toast.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(say._t);
+    say._t = setTimeout(function(){ toast.classList.remove("show"); }, 1600);
+  }
+
+  /* ---------------------------------------------------------- 条番号の表記 */
+  var numeralBtn = document.getElementById("numeral");
+  function applyNumeral(useArabic){
+    var nodes = doc.querySelectorAll(".art-no");
+    for (var i = 0; i < nodes.length; i++){
+      var el = nodes[i];
+      var v = useArabic ? el.getAttribute("data-num") : el.getAttribute("data-kan");
+      if (v) el.textContent = v;
+    }
+    numeralBtn.setAttribute("aria-pressed", useArabic ? "true" : "false");
+  }
+  numeralBtn.addEventListener("click", function(){
+    var next = numeralBtn.getAttribute("aria-pressed") !== "true";
+    applyNumeral(next);
+    try { localStorage.setItem("rule-numeral", next ? "1" : "0"); } catch(e){}
+    pristine = doc.innerHTML;
+  });
+  try {
+    /* 既定の表記は原本に合わせてある。前回の切り替えが残っていればそれに従う */
+    var saved = localStorage.getItem("rule-numeral");
+    if (saved === "1" || saved === "0"){ applyNumeral(saved === "1"); pristine = doc.innerHTML; }
+  } catch(e){}
+
+  /* -------------------------------------------------------------- 検索処理 */
+  var SKIP = {SCRIPT:1, STYLE:1, MARK:1, BUTTON:1, A:1};   /* 原本リンク等の道具立ては検索対象にしない */
+  function highlight(term){
+    doc.innerHTML = pristine;
+    hits = [];
+    cursor = -1;
+    if (!term){ hitLabel.textContent = ""; refreshToc(""); return; }
+    var walker = document.createTreeWalker(doc, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        if (!n.nodeValue || n.nodeValue.indexOf(term) < 0) return NodeFilter.FILTER_REJECT;
+        if (n.parentNode && SKIP[n.parentNode.nodeName]) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var targets = [];
+    var node;
+    while ((node = walker.nextNode())) targets.push(node);
+    for (var i = 0; i < targets.length; i++){
+      var t = targets[i], text = t.nodeValue, pos = 0, frag = document.createDocumentFragment();
+      var idx;
+      while ((idx = text.indexOf(term, pos)) >= 0){
+        if (idx > pos) frag.appendChild(document.createTextNode(text.slice(pos, idx)));
+        var m = document.createElement("mark");
+        m.textContent = text.substr(idx, term.length);
+        frag.appendChild(m);
+        hits.push(m);
+        pos = idx + term.length;
+      }
+      if (pos < text.length) frag.appendChild(document.createTextNode(text.slice(pos)));
+      t.parentNode.replaceChild(frag, t);
+    }
+    hitLabel.textContent = hits.length ? "1 / " + hits.length : "該当なし";
+    refreshToc(term);
+    if (hits.length){ cursor = 0; focusHit(0, false); }
+  }
+  function focusHit(i, scroll){
+    if (!hits.length) return;
+    for (var k = 0; k < hits.length; k++) hits[k].classList.remove("live");
+    cursor = (i + hits.length) % hits.length;
+    hits[cursor].classList.add("live");
+    hitLabel.textContent = (cursor + 1) + " / " + hits.length;
+    if (scroll !== false) hits[cursor].scrollIntoView({block:"center", behavior:"instant"});
+  }
+  function refreshToc(term){
+    var links = toc.querySelectorAll("li.lv-art");
+    for (var i = 0; i < links.length; i++){
+      var li = links[i];
+      var body = (li.getAttribute("data-text") || "");
+      li.classList.toggle("hidden", !!term && body.indexOf(term) < 0);
+    }
+    var divs = toc.querySelectorAll("li.lv-div");
+    for (var j = divs.length - 1; j >= 0; j--){
+      var d = divs[j];
+      var kids = d.querySelectorAll("li:not(.hidden)");
+      d.classList.toggle("hidden", !!term && kids.length === 0);
+    }
+  }
+  var timer = null;
+  input.addEventListener("input", function(){
+    clearTimeout(timer);
+    var v = input.value.trim();
+    timer = setTimeout(function(){ highlight(v); }, 180);
+  });
+  input.addEventListener("keydown", function(e){
+    if (e.key === "Enter"){ e.preventDefault(); focusHit(cursor + (e.shiftKey ? -1 : 1)); }
+    if (e.key === "Escape"){ input.value = ""; highlight(""); input.blur(); }
+  });
+  document.getElementById("prev").addEventListener("click", function(){ focusHit(cursor - 1); });
+  document.getElementById("next").addEventListener("click", function(){ focusHit(cursor + 1); });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "/" && e.target === document.body){ e.preventDefault(); input.focus(); }
+  });
+
+  /* -------------------------------------------------- リンクのコピー・共有 */
+  doc.addEventListener("click", function(e){
+    var btn = e.target.closest ? e.target.closest("button[data-anchor]") : null;
+    if (!btn) return;
+    var anchor = btn.getAttribute("data-anchor");
+    var url = location.href.split("#")[0] + "#" + anchor;
+    history.replaceState(null, "", "#" + anchor);
+    var done = function(){ say("リンクをコピーしました"); };
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(done, function(){ legacyCopy(url, done); });
+    } else {
+      legacyCopy(url, done);
+    }
+  });
+  function legacyCopy(text, done){
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); done(); }
+    catch(err){ say("コピーできませんでした。アドレス欄からURLを控えてください"); }
+    document.body.removeChild(ta);
+  }
+
+  /* ------------------------------------------------ 現在位置の表示と目次連動 */
+  var watched = doc.querySelectorAll(".art[id], .div-head[id]");
+  var tocLinks = {};
+  var links = toc.querySelectorAll("a[href^='#']");
+  for (var i = 0; i < links.length; i++) tocLinks[links[i].getAttribute("href").slice(1)] = links[i];
+  var currentLink = null;
+  if ("IntersectionObserver" in window){
+    var visible = [];
+    var io = new IntersectionObserver(function(entries){
+      for (var i = 0; i < entries.length; i++){
+        var id = entries[i].target.id;
+        var at = visible.indexOf(id);
+        if (entries[i].isIntersecting){ if (at < 0) visible.push(id); }
+        else if (at >= 0){ visible.splice(at, 1); }
+      }
+      if (!visible.length) return;
+      var first = null;
+      for (var k = 0; k < watched.length; k++){
+        if (visible.indexOf(watched[k].id) >= 0){ first = watched[k]; break; }
+      }
+      if (!first) return;
+      crumb.textContent = first.getAttribute("data-path") || "";
+      var link = tocLinks[first.id];
+      if (link && link !== currentLink){
+        if (currentLink) currentLink.classList.remove("current");
+        link.classList.add("current");
+        currentLink = link;
+      }
+    }, {rootMargin:"-20% 0px -70% 0px"});
+    for (var w = 0; w < watched.length; w++) io.observe(watched[w]);
+  }
+
+  /* -------------------------------------------------------- 目次の開閉（狭幅） */
+  var opener = document.getElementById("toc-open");
+  if (opener){
+    opener.addEventListener("click", function(){ toc.classList.toggle("open"); });
+    toc.addEventListener("click", function(e){
+      if (e.target.tagName === "A") toc.classList.remove("open");
+    });
+  }
+})();
+</script>
+</body>
+</html>

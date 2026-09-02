@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>簡易裁判所判事選考規則</title>
+<style>
+:root{
+  --paper:#ffffff;
+  --ink:#16181d;
+  --sub:#5f6875;
+  --rule:#dde2e9;
+  --chrome:#f4f6f9;
+  --accent:#14538a;
+  --accent-weak:#e7eff7;
+  --mark:#ffe08a;
+  --mark-live:#ff9d3d;
+  --gothic:"Yu Gothic UI","Yu Gothic","YuGothic","Hiragino Sans","Noto Sans JP","Meiryo",system-ui,sans-serif;
+  --mincho:"Yu Mincho","YuMincho","Hiragino Mincho ProN","Noto Serif JP","MS Mincho",serif;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:5.5rem}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--mincho);font-size:17px;line-height:1.9;
+  text-rendering:optimizeLegibility;
+}
+
+/* ---------------------------------------------------------------- ヘッダ */
+.top{
+  position:sticky;top:0;z-index:30;background:var(--chrome);
+  border-bottom:1px solid var(--rule);font-family:var(--gothic);
+}
+.top-inner{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;padding:.7rem 1.2rem}
+.law-title{font-size:1.12rem;font-weight:700;letter-spacing:.02em;margin:0}
+.law-number{font-size:.8rem;color:var(--sub);margin-left:.2rem}
+.top-tools{margin-left:auto;display:flex;align-items:center;gap:.5rem}
+.search-box{display:flex;align-items:center;gap:.35rem;background:var(--paper);
+  border:1px solid var(--rule);border-radius:2px;padding:.25rem .5rem}
+.search-box input{border:0;outline:0;font:inherit;font-size:.85rem;width:14rem;background:transparent;color:inherit}
+.hit-count{font-size:.78rem;color:var(--sub);min-width:4.2rem;text-align:right;font-variant-numeric:tabular-nums}
+button{font:inherit;font-family:var(--gothic);cursor:pointer}
+.btn{background:var(--paper);border:1px solid var(--rule);border-radius:2px;
+  color:var(--ink);font-size:.78rem;padding:.28rem .6rem;line-height:1.4}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.crumb{padding:.3rem 1.2rem;border-top:1px solid var(--rule);background:var(--paper);
+  font-family:var(--gothic);font-size:.78rem;color:var(--sub);min-height:1.7rem}
+
+/* ------------------------------------------------------------------ 骨格 */
+.wrap{display:grid;grid-template-columns:19rem minmax(0,1fr);align-items:start}
+.toc{
+  position:sticky;top:5.6rem;max-height:calc(100vh - 5.6rem);overflow-y:auto;
+  border-right:1px solid var(--rule);padding:1rem .6rem 4rem 1.2rem;
+  font-family:var(--gothic);font-size:.83rem;line-height:1.65;
+}
+.toc h2{font-size:.75rem;color:var(--sub);font-weight:700;margin:0 0 .6rem}
+.toc ul{list-style:none;margin:0;padding:0}
+.toc a{display:block;color:var(--ink);text-decoration:none;padding:.16rem .4rem;border-radius:2px}
+.toc a:hover{background:var(--accent-weak);color:var(--accent)}
+.toc a.current{background:var(--accent-weak);color:var(--accent);font-weight:700}
+.toc .div-1>a,.toc .div-2>a{font-weight:700}
+.toc .div-2{margin-top:.5rem}
+.toc .div-3,.toc .div-4,.toc .div-5{margin-top:.25rem}
+.toc .lv-art{padding-left:.9rem}
+.toc .lv-art.hidden,.toc .lv-div.hidden{display:none}
+.toc-toggle{background:none;border:0;color:var(--sub);padding:0 .3rem;font-size:.75rem}
+
+.doc{padding:2.2rem 2rem 8rem;max-width:44em}
+.doc-head{border-bottom:2px solid var(--ink);padding-bottom:.8rem;margin-bottom:2rem}
+.doc-head h1{font-size:1.5rem;margin:0 0 .3rem;letter-spacing:.04em}
+.doc-head .meta{font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+
+/* ------------------------------------------------------------------ 条文 */
+.div-head{font-family:var(--gothic);margin:2.6rem 0 1rem;scroll-margin-top:6rem}
+.div-head .lbl{color:var(--accent);font-weight:700}
+h2.div-head{font-size:1.12rem;border-bottom:1px solid var(--rule);padding-bottom:.35rem}
+h3.div-head{font-size:1.02rem}
+h4.div-head,h5.div-head,h6.div-head{font-size:.95rem}
+
+.art{position:relative;padding-left:2.6rem;margin:1.5rem 0 1.9rem;scroll-margin-top:6rem}
+.art:target{background:var(--accent-weak);box-shadow:-.4rem 0 0 var(--accent);border-radius:2px}
+.art-tools{position:absolute;left:0;top:.25rem;display:flex;flex-direction:column;gap:.2rem;
+  visibility:hidden}
+.art:hover .art-tools,.art:focus-within .art-tools,.art:target .art-tools{visibility:visible}
+.art-tools button,.art-tools a{background:none;border:0;color:var(--sub);font-size:.72rem;
+  font-family:var(--gothic);padding:.1rem .2rem;border-radius:2px;text-decoration:none;
+  white-space:nowrap;display:block}
+.art-tools button:hover,.art-tools a:hover{color:var(--accent);background:var(--accent-weak)}
+.raw h3 .src{font-size:.75rem;font-weight:400;color:var(--sub);margin-left:.5rem}
+.doc-head .src{color:var(--accent);text-decoration:none}
+.doc-head .src:hover{text-decoration:underline}
+.caption{font-family:var(--gothic);font-size:.88rem;font-weight:700;color:var(--sub);margin:0 0 .1rem}
+.amend-note{font-family:var(--gothic);font-size:.78rem;font-weight:400;color:var(--sub);margin:.1rem 0 0;text-align:right}
+h2 .amend-note,h3 .amend-note,h4 .amend-note,h5 .amend-note,h6 .amend-note{display:inline;text-align:left}
+.art-no{font-family:var(--gothic);font-weight:700;color:var(--accent);text-decoration:none;margin-right:.55em}
+.art-no:hover{text-decoration:underline}
+.para{margin:.35rem 0;text-indent:0}
+.para+.para{margin-top:.55rem}
+.pno{font-family:var(--gothic);color:var(--sub);font-size:.9em;margin-right:.5em;font-variant-numeric:tabular-nums}
+.deleted .body-text{color:var(--sub)}
+.art.noarticle .para{margin-top:0}
+
+ol.items{list-style:none;margin:.35rem 0 .35rem 1.1em;padding:0}
+ol.items>li{display:grid;grid-template-columns:2.4em minmax(0,1fr);margin:.2rem 0}
+ol.items .mk{font-family:var(--gothic);font-size:.9em;color:var(--sub);margin-right:.4em}
+ol.items ol.items{grid-column:1/-1;margin-left:1.2em}
+ol.items ol.items>li{grid-template-columns:2em minmax(0,1fr)}
+
+.raw{margin:1.6rem 0;scroll-margin-top:6rem}
+.raw h3{font-family:var(--gothic);font-size:1rem;margin:0 0 .4rem}
+.raw pre{font-family:var(--mincho);white-space:pre-wrap;margin:0;padding:.7rem .9rem;
+  background:var(--chrome);border:1px solid var(--rule);font-size:.92rem;line-height:1.75}
+
+.notes{margin:2.5rem 0 0;padding:.8rem 1rem;background:var(--chrome);
+  border-left:3px solid var(--accent);font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+.notes p{margin:0 0 .3rem;font-weight:700;color:var(--ink)}
+.notes ul{margin:0;padding-left:1.2rem}
+.foot{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);
+  font-family:var(--gothic);font-size:.75rem;color:var(--sub)}
+
+a.ref{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule)}
+a.ref:hover{color:var(--accent);border-bottom-color:var(--accent)}
+a.ref-egov{border-bottom-style:dotted}
+a.ref-rule{border-bottom-color:var(--accent)}
+mark{background:var(--mark);color:inherit;padding:0 .05em}
+mark.live{background:var(--mark-live)}
+.toast{position:fixed;left:50%;bottom:2rem;transform:translateX(-50%);
+  background:var(--ink);color:#fff;font-family:var(--gothic);font-size:.8rem;
+  padding:.5rem .9rem;border-radius:3px;pointer-events:none;z-index:60;display:none}
+.toast.show{display:block}
+
+.toc-open{display:none}
+@media (max-width:900px){
+  body{font-size:16px}
+  .wrap{grid-template-columns:minmax(0,1fr)}
+  .toc{position:fixed;inset:5.6rem auto 0 0;width:82vw;max-width:20rem;background:var(--paper);
+    z-index:25;box-shadow:0 0 0 100vmax rgba(0,0,0,.25);max-height:none;height:calc(100vh - 5.6rem);
+    display:none}
+  .toc.open{display:block}
+  .toc-open{display:inline-block}
+  .doc{padding:1.4rem 1.1rem 6rem}
+  .search-box input{width:8rem}
+  .art-tools{opacity:1;position:static;flex-direction:row;justify-content:flex-end;margin-bottom:.15rem}
+  .art-tools button,.art-tools a{border:1px solid var(--rule);border-radius:2px;
+    padding:.1rem .45rem;display:inline-block}
+  .art{padding-left:0}
+}
+
+@media print{
+  .top,.toc,.art-tools,.crumb,.toast{display:none!important}
+  a.ref{border-bottom:0}
+  .wrap{display:block}
+  .doc{max-width:none;padding:0}
+  body{font-size:10.5pt;line-height:1.7}
+  .art{page-break-inside:avoid}
+}
+
+.anchor-alias{position:absolute;scroll-margin-top:6rem}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <button type="button" class="btn toc-open" id="toc-open">目次</button>
+    <h1 class="law-title">簡易裁判所判事選考規則</h1>
+    <span class="law-number">昭和22年9月19日最高裁判所規則第2号　／　昭和24年1月1日施行</span>
+    <div class="top-tools">
+      <div class="search-box">
+        <input type="search" id="q" placeholder="条文を検索（/ キー）" aria-label="条文を検索">
+        <span class="hit-count" id="hits"></span>
+      </div>
+      <button type="button" class="btn" id="prev" title="前の該当箇所">前</button>
+      <button type="button" class="btn" id="next" title="次の該当箇所">次</button>
+      <button type="button" class="btn" id="numeral" aria-pressed="false"
+        title="条番号の表記を切り替える">123</button>
+    </div>
+  </div>
+  <div class="crumb" id="crumb"></div>
+</header>
+<div class="wrap">
+  <nav class="toc" id="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ul><li class="lv-art" data-text="改正 昭和23年12月28日最高裁判所規則第３８号平成15年2月19日最高裁判所規則第５号簡易裁判所判事選考規則を次のように定める。簡易裁判所判事選考規則"><a href="#body-1">本文</a></li><li class="lv-div div-2"><a href="#d1">第一章　簡易裁判所判事選考委員会</a><ul><li class="lv-art" data-text="第一条1条簡易裁判所判事選考委員会は、最高裁判所の監督に属し、簡易裁判所判事の任命に関する裁判所法第四十五条第一項の選考を行う。"><a href="#a1">第一条</a></li><li class="lv-art" data-text="第二条2条委員会は、委員九人でこれを組織し、そのうち一人を委員長とする。"><a href="#a2">第二条</a></li><li class="lv-art" data-text="第三条3条委員は、次に掲げる者をもってこれに充てることとし、最高裁判所長官が、これを委嘱する。一裁判官 三人二検察官 一人三弁護士 二人四学識経験のある者 三人"><a href="#a3">第三条</a></li><li class="lv-art" data-text="第四条4条委員会の委員長は、最高裁判所長官が、これを委嘱する。委員長は、会務を総理する。委員長に事故のあるときは、委員長の指名する委員が、その職務を代理する。"><a href="#a4">第四条</a></li><li class="lv-art" data-text="第五条5条最高裁判所が委員会に対し第一条の選考を行うべきことを命じたときは、委員会は、簡易裁判所判事推薦委員会が推薦した者の中から、簡易裁判所判事の候補者を選考しなければならない。委員会は、前項の場合において、必要があると認めるときは、同項の規定にかかわらず、簡易裁判所判事推薦委員会が推薦した者以外の者の中から、簡易裁判所判事の候補者を選考することができる。委員会は、前二項の規定により、簡易裁判所判事の候補者を選考したときは、速やかに、その氏名、選考の理由及び選考の日を最高裁判所に報告しなければならない。"><a href="#a5">第五条</a></li><li class="lv-art" data-text="第六条6条委員会は、委員長が、これを招集する。委員長は、会議の議長となり、議事を整理する。"><a href="#a6">第六条</a></li><li class="lv-art" data-text="第七条7条委員会の会議は、秘密とする。"><a href="#a7">第七条</a></li><li class="lv-art" data-text="第八条8条委員会は、五人以上の委員が出席しなければ、会議を開くことができない。委員会の議事は、出席した委員長及びその他の委員の過半数によりこれを決する。可否同数のときは、委員長が、これを決する。"><a href="#a8">第八条</a></li><li class="lv-art" data-text="第九条9条委員会は、適当と認めるときは、委員でない者の出席を求めてその説明又は意見を聴くことができる。"><a href="#a9">第九条</a></li><li class="lv-art" data-text="第十条10条委員会の選考は、選考の日から一年を経過したときは、その効力を失う。"><a href="#a10">第十条</a></li><li class="lv-art" data-text="第十一条11条委員の任期は、三年とする。ただし、再任を妨げない。"><a href="#a11">第十一条</a></li><li class="lv-art" data-text="第十二条12条委員会に幹事一人を置く。幹事は、最高裁判所の裁判所事務官の中から、委員長が、これを委嘱する。幹事は、委員長の命を受けて、庶務を掌る。"><a href="#a12">第十二条</a></li><li class="lv-art" data-text="第十三条13条委員会に書記を置く。書記は、委員長及び幹事の命を受けて、庶務に従事する。前条第二項の規定は、書記にこれを準用する。"><a href="#a13">第十三条</a></li><li class="lv-art" data-text="第十四条14条この規則に定めるものの外、委員会に関し必要な事項は、委員会がこれを定める。"><a href="#a14">第十四条</a></li></ul></li><li class="lv-div div-2"><a href="#d16">第二章　簡易裁判所判事推薦委員会</a><ul><li class="lv-art" data-text="第十五条15条各地方裁判所に、簡易裁判所判事推薦委員会を置く。"><a href="#a15">第十五条</a></li><li class="lv-art" data-text="第十六条16条委員会は、当該地方裁判所の所長の監督に属し、簡易裁判所判事として適当と認める者を簡易裁判所判事選考委員会に推薦する。"><a href="#a16">第十六条</a></li><li class="lv-art" data-text="第十七条17条委員会は、委員八人でこれを組織する。但し、東京地方裁判所の委員会については、委員の数を十二人とする。"><a href="#a17">第十七条</a></li><li class="lv-art" data-text="第十八条18条委員は、左に掲げる者を以てこれに充てる。一当該地方裁判所の所長二当該地方裁判所の判事で前号に該当しない者 二人二の二 当該地方裁判所の所在地を管轄する家庭裁判所の所長三当該地方裁判所に対応する地方検察庁の検事正四当該地方裁判所の管轄区域内の弁護士会の会長五学識経験のある者 二人前条但書の委員会については、前項第二号及び第五号の委員は、これらの各号の規定にかかわらず、その員数を各々三人とする。第一項第二号及び第五号の委員は、当該地方裁判所の所長が、これを委嘱する。地方裁判所長は、前項の規定により委員を委嘱したときは、速やかに、当該地方裁判所の所在地を管轄する高等裁判所の長官を経て、最高裁判所にこれを報告しなければならない。"><a href="#a18">第十八条</a></li><li class="lv-art" data-text="第十九条19条委員会に委員長一人を置き、地方裁判所長たる委員を以てこれに充てる。第四条第二項及び第三項の規定は、前項の委員長にこれを準用する。"><a href="#a19">第十九条</a></li><li class="lv-art" data-text="第二十条20条委員会は何時でも、簡易裁判所判事として適当と認める者を、当該地方裁判所の所在地を管轄する高等裁判所の長官を経て、簡易裁判所判事選考委員会に推薦することができる。前項の高等裁判所長官は、委員会の推薦に意見を附することができる。"><a href="#a20">第二十条</a></li><li class="lv-art" data-text="第二十一条21条第十七条但書の委員会は、七人以上、その他の委員会は、五人以上の委員が出席しなければ、会議を開くことができない。"><a href="#a21">第二十一条</a></li><li class="lv-art" data-text="第二十二条22条高等裁判所長官又はその指名する高等裁判所判事は、何時でも、当該高等裁判所の管轄区域内の地方裁判所の委員会に出席して意見を述べることができる。"><a href="#a22">第二十二条</a></li><li class="lv-art" data-text="第二十三条23条第十八条第一項第二号及び第五号の委員の任期は、三年とする。但し、再任を妨げない。"><a href="#a23">第二十三条</a></li><li class="lv-art" data-text="第二十四条24条委員会に幹事一人を置く。幹事は、当該地方裁判所の裁判官又は裁判所事務官の中から、委員長が、これを委嘱する。幹事は、委員長の命を受けて、庶務を掌る。"><a href="#a24">第二十四条</a></li><li class="lv-art" data-text="第二十五条25条委員会に書記を置く。書記は、当該地方裁判所の裁判所事務官の中から、委員長が、これを委嘱する。書記は、委員長及び幹事の命を受けて、庶務に従事する。"><a href="#a25">第二十五条</a></li><li class="lv-art" data-text="第二十六条26条第六条、第七条、第八条第二項、第九条及び第十四条の規定は、この章の委員会にこれを準用する。"><a href="#a26">第二十六条</a></li></ul></li><li class="lv-div div-1"><a href="#sup1">附則</a></li><li class="lv-div div-1"><a href="#sup2">附則　（昭和二三年一二月二八日最高裁判所規則第三八号）抄</a><ul><li class="lv-art" data-text="第八条8条この規則は、昭和二十四年一月一日から施行する。"><a href="#sup2-a8">第八条</a></li></ul></li><li class="lv-div div-1"><a href="#sup3">附則　（平成一五年二月一九日最高裁判所規則第五号）</a></li></ul>
+  </nav>
+  <main class="doc" id="doc-outer">
+    <div class="doc-head">
+      <h1>簡易裁判所判事選考規則</h1>
+      <div class="meta">昭和22年9月19日最高裁判所規則第2号　／　昭和24年1月1日施行　／　<a class="src" href="https://www.courts.go.jp/assets/kansaihanjisenkou.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本PDF p.1</a></div>
+    </div>
+    <div id="doc">
+<article class="art noarticle" id="body-1" data-path=""><div class="art-tools"><button type="button" data-anchor="body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kansaihanjisenkou.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="body-1-p1"><span class="body-text">改正 昭和23年12月28日最高裁判所規則第３８号平成15年2月19日最高裁判所規則第５号簡易裁判所判事選考規則を次のように定める。簡易裁判所判事選考規則</span></p></article>
+<h3 class="div-head" id="d1" data-path="第一章　簡易裁判所判事選考委員会"><span class="lbl">第一章</span>　簡易裁判所判事選考委員会</h3>
+<article class="art" id="a1" data-path="第一章　簡易裁判所判事選考委員会"><span class="anchor-alias" id="Mp-At_1"></span><div class="art-tools"><button type="button" data-anchor="a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kansaihanjisenkou.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="a1-p1"><a class="art-no" href="#a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">簡易裁判所判事選考委員会は、最高裁判所の監督に属し、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/322AC0000000059#Mp-At_45" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">簡易裁判所判事の任命に関する裁判所法第四十五条</a>第一項の選考を行う。</span></p></article>
+<article class="art" id="a2" data-path="第一章　簡易裁判所判事選考委員会"><span class="anchor-alias" id="Mp-At_2"></span><div class="art-tools"><button type="button" data-anchor="a2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kansaihanjisenkou.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="a2-p1"><a class="art-no" href="#a2" data-kan="第二条" data-num="第2条">第二条</a><span class="body-text">委員会は、委員九人でこれを組織し、そのうち一人を委員長とする。</span></p></article>
+<article class="art" id="a3" data-path="第一章　簡易裁判所判事選考委員会"><span class="anchor-alias" id="Mp-At_3"></span><div class="art-tools"><button type="button" data-anchor="a3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kansaihanjisenkou.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="a3-p1"><a class="art-no" href="#a3" data-kan="第三条" data-num="第3条">第三条</a><span class="body-text">委員は、次に掲げる者をもってこれに充てることとし、最高裁判所長官が、これを委嘱する。</span></p><ol class="items"><li id="a3-p1-1"><span class="mk">一</span><span class="tx">裁判官 三人</span></li><li id="a3-p1-2"><span class="mk">二</span><span class="tx">検察官 一人</span></li><li id="a3-p1-3"><span class="mk">三</span><span class="tx">弁護士 二人</span></li><li id="a3-p1-4"><span class="mk">四</span><span class="tx">学識経験のある者 三人</span></li></ol><p class="amend-note">（平一五最裁規五・一部改正）</p></article>
+<article class="art" id="a4" data-path="第一章　簡易裁判所判事選考委員会"><span class="anchor-alias" id="Mp-At_4"></span><div class="art-tools"><button type="button" data-anchor="a4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kansaihanjisenkou.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="a4-p1"><a class="art-no" href="#a4" data-kan="第四条" data-num="第4条">第四条</a><span class="body-text">委員会の委員長は、最高裁判所長官が、これを委嘱する。</span></p><p class="para" id="a4-p2"><span class="pno">2</span><span class="body-text">委員長は、会務を総理する。</span></p><p class="para" id="a4-p3"><span class="pno">3</span><span class="body-text">委員長に事故のあるときは、委員長の指名する委員が、その職務を代理する。</span></p></article>
+<article class="art" id="a5" data-path="第一章　簡易裁判所判事選考委員会"><span class="anchor-alias" id="Mp-At_5"></span><div class="art-tools"><button type="button" data-anchor="a5" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kansaihanjisenkou.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="a5-p1"><a class="art-no" href="#a5" data-kan="第五条" data-num="第5条">第五条</a><span class="body-text">最高裁判所が委員会に対し<a class="ref ref-self" href="#a1">第一条</a>の選考を行うべきことを命じたときは、委員会は、簡易裁判所判事推薦委員会が推薦した者の中から、簡易裁判所判事の候補者を選考しなければならない。</span></p><p class="para" id="a5-p2"><span class="pno">2</span><span class="body-text">委員会は、前項の場合において、必要があると認めるときは、同項の規定にかかわらず、簡易裁判所判事推薦委員会が推薦した者以外の者の中から、簡易裁判所判事の候補者を選考することができる。</span></p><p class="para" id="a5-p3"><span class="pno">3</span><span class="body-text">委員会は、前二項の規定により、簡易裁判所判事の候補者を選考したときは、速やかに、その氏名、選考の理由及び選考の日を最高裁判所に報告しなければならない。</span></p></article>
+<article class="art" id="a6" data-path="第一章　簡易裁判所判事選考委員会"><span class="anchor-alias" id="Mp-At_6"></span><div class="art-tools"><button type="button" data-anchor="a6" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kansaihanjisenkou.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="a6-p1"><a class="art-no" href="#a6" data-kan="第六条" data-num="第6条">第六条</a><span class="body-text">委員会は、委員長が、これを招集する。</span></p><p class="para" id="a6-p2"><span class="pno">2</span><span class="body-text">委員長は、会議の議長となり、議事を整理する。</span></p></article>
+<article class="art" id="a7" data-path="第一章　簡易裁判所判事選考委員会"><span class="anchor-alias" id="Mp-At_7"></span><div class="art-tools"><button type="button" data-anchor="a7" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kansaihanjisenkou.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="a7-p1"><a class="art-no" href="#a7" data-kan="第七条" data-num="第7条">第七条</a><span class="body-text">委員会の会議は、秘密とする。</span></p></article>
+<article class="art" id="a8" data-path="第一章　簡易裁判所判事選考委員会"><span class="anchor-alias" id="Mp-At_8"></span><div class="art-tools"><button type="button" data-anchor="a8" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kansaihanjisenkou.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="a8-p1"><a class="art-no" href="#a8" data-kan="第八条" data-num="第8条">第八条</a><span class="body-text">委員会は、五人以上の委員が出席しなければ、会議を開くことができない。</span></p><p class="para" id="a8-p2"><span class="pno">2</span><span class="body-text">委員会の議事は、出席した委員長及びその他の委員の過半数によりこれを決する。可否同数のときは、委員長が、これを決する。</span></p></article>
+<article class="art" id="a9" data-path="第一章　簡易裁判所判事選考委員会"><span class="anchor-alias" id="Mp-At_9"></span><div class="art-tools"><button type="button" data-anchor="a9" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kansaihanjisenkou.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="a9-p1"><a class="art-no" href="#a9" data-kan="第九条" data-num="第9条">第九条</a><span class="body-text">委員会は、適当と認めるときは、委員でない者の出席を求めてその説明又は意見を聴くことができる。</span></p></article>
+<article class="art" id="a10" data-path="第一章　簡易裁判所判事選考委員会"><span class="anchor-alias" id="Mp-At_10"></span><div class="art-tools"><button type="button" data-anchor="a10" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kansaihanjisenkou.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="a10-p1"><a class="art-no" href="#a10" data-kan="第十条" data-num="第10条">第十条</a><span class="body-text">委員会の選考は、選考の日から一年を経過したときは、その効力を失う。</span></p></article>
+<article class="art" id="a11" data-path="第一章　簡易裁判所判事選考委員会"><span class="anchor-alias" id="Mp-At_11"></span><div class="art-tools"><button type="button" data-anchor="a11" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kansaihanjisenkou.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="a11-p1"><a class="art-no" href="#a11" data-kan="第十一条" data-num="第11条">第十一条</a><span class="body-text">委員の任期は、三年とする。ただし、再任を妨げない。</span></p><p class="amend-note">（平一五最裁規五・一部改正）</p></article>
+<article class="art" id="a12" data-path="第一章　簡易裁判所判事選考委員会"><span class="anchor-alias" id="Mp-At_12"></span><div class="art-tools"><button type="button" data-anchor="a12" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kansaihanjisenkou.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="a12-p1"><a class="art-no" href="#a12" data-kan="第十二条" data-num="第12条">第十二条</a><span class="body-text">委員会に幹事一人を置く。</span></p><p class="para" id="a12-p2"><span class="pno">2</span><span class="body-text">幹事は、最高裁判所の裁判所事務官の中から、委員長が、これを委嘱する。</span></p><p class="para" id="a12-p3"><span class="pno">3</span><span class="body-text">幹事は、委員長の命を受けて、庶務を掌る。</span></p></article>
+<article class="art" id="a13" data-path="第一章　簡易裁判所判事選考委員会"><span class="anchor-alias" id="Mp-At_13"></span><div class="art-tools"><button type="button" data-anchor="a13" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kansaihanjisenkou.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="a13-p1"><a class="art-no" href="#a13" data-kan="第十三条" data-num="第13条">第十三条</a><span class="body-text">委員会に書記を置く。</span></p><p class="para" id="a13-p2"><span class="pno">2</span><span class="body-text">書記は、委員長及び幹事の命を受けて、庶務に従事する。</span></p><p class="para" id="a13-p3"><span class="pno">3</span><span class="body-text">前条第二項の規定は、書記にこれを準用する。</span></p></article>
+<article class="art" id="a14" data-path="第一章　簡易裁判所判事選考委員会"><span class="anchor-alias" id="Mp-At_14"></span><div class="art-tools"><button type="button" data-anchor="a14" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kansaihanjisenkou.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="a14-p1"><a class="art-no" href="#a14" data-kan="第十四条" data-num="第14条">第十四条</a><span class="body-text">この規則に定めるものの外、委員会に関し必要な事項は、委員会がこれを定める。</span></p></article>
+<h3 class="div-head" id="d16" data-path="第二章　簡易裁判所判事推薦委員会"><span class="lbl">第二章</span>　簡易裁判所判事推薦委員会</h3>
+<article class="art" id="a15" data-path="第二章　簡易裁判所判事推薦委員会"><span class="anchor-alias" id="Mp-At_15"></span><div class="art-tools"><button type="button" data-anchor="a15" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kansaihanjisenkou.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="a15-p1"><a class="art-no" href="#a15" data-kan="第十五条" data-num="第15条">第十五条</a><span class="body-text">各地方裁判所に、簡易裁判所判事推薦委員会を置く。</span></p></article>
+<article class="art" id="a16" data-path="第二章　簡易裁判所判事推薦委員会"><span class="anchor-alias" id="Mp-At_16"></span><div class="art-tools"><button type="button" data-anchor="a16" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kansaihanjisenkou.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="a16-p1"><a class="art-no" href="#a16" data-kan="第十六条" data-num="第16条">第十六条</a><span class="body-text">委員会は、当該地方裁判所の所長の監督に属し、簡易裁判所判事として適当と認める者を簡易裁判所判事選考委員会に推薦する。</span></p></article>
+<article class="art" id="a17" data-path="第二章　簡易裁判所判事推薦委員会"><span class="anchor-alias" id="Mp-At_17"></span><div class="art-tools"><button type="button" data-anchor="a17" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kansaihanjisenkou.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="a17-p1"><a class="art-no" href="#a17" data-kan="第十七条" data-num="第17条">第十七条</a><span class="body-text">委員会は、委員八人でこれを組織する。但し、東京地方裁判所の委員会については、委員の数を十二人とする。</span></p><p class="amend-note">（昭二三最裁規三八・一部改正）</p></article>
+<article class="art" id="a18" data-path="第二章　簡易裁判所判事推薦委員会"><span class="anchor-alias" id="Mp-At_18"></span><div class="art-tools"><button type="button" data-anchor="a18" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kansaihanjisenkou.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="para" id="a18-p1"><a class="art-no" href="#a18" data-kan="第十八条" data-num="第18条">第十八条</a><span class="body-text">委員は、左に掲げる者を以てこれに充てる。</span></p><ol class="items"><li id="a18-p1-1"><span class="mk">一</span><span class="tx">当該地方裁判所の所長</span></li><li id="a18-p1-2"><span class="mk">二</span><span class="tx">当該地方裁判所の判事で前号に該当しない者 二人二の二 当該地方裁判所の所在地を管轄する家庭裁判所の所長</span></li><li id="a18-p1-3"><span class="mk">三</span><span class="tx">当該地方裁判所に対応する地方検察庁の検事正</span></li><li id="a18-p1-4"><span class="mk">四</span><span class="tx">当該地方裁判所の管轄区域内の弁護士会の会長</span></li><li id="a18-p1-5"><span class="mk">五</span><span class="tx">学識経験のある者 二人</span></li></ol><p class="para" id="a18-p2"><span class="pno">2</span><span class="body-text">前条但書の委員会については、前項第二号及び第五号の委員は、これらの各号の規定にかかわらず、その員数を各々三人とする。</span></p><p class="para" id="a18-p3"><span class="pno">3</span><span class="body-text">第一項第二号及び第五号の委員は、当該地方裁判所の所長が、これを委嘱する。</span></p><p class="para" id="a18-p4"><span class="pno">4</span><span class="body-text">地方裁判所長は、前項の規定により委員を委嘱したときは、速やかに、当該地方裁判所の所在地を管轄する高等裁判所の長官を経て、最高裁判所にこれを報告しなければならない。</span></p><p class="amend-note">（昭二三最裁規三八・一部改正）</p></article>
+<article class="art" id="a19" data-path="第二章　簡易裁判所判事推薦委員会"><span class="anchor-alias" id="Mp-At_19"></span><div class="art-tools"><button type="button" data-anchor="a19" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kansaihanjisenkou.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="para" id="a19-p1"><a class="art-no" href="#a19" data-kan="第十九条" data-num="第19条">第十九条</a><span class="body-text">委員会に委員長一人を置き、地方裁判所長たる委員を以てこれに充てる。</span></p><p class="para" id="a19-p2"><span class="pno">2</span><span class="body-text"><a class="ref ref-self" href="#a4">第四条</a>第二項及び第三項の規定は、前項の委員長にこれを準用する。</span></p></article>
+<article class="art" id="a20" data-path="第二章　簡易裁判所判事推薦委員会"><span class="anchor-alias" id="Mp-At_20"></span><div class="art-tools"><button type="button" data-anchor="a20" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kansaihanjisenkou.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="para" id="a20-p1"><a class="art-no" href="#a20" data-kan="第二十条" data-num="第20条">第二十条</a><span class="body-text">委員会は何時でも、簡易裁判所判事として適当と認める者を、当該地方裁判所の所在地を管轄する高等裁判所の長官を経て、簡易裁判所判事選考委員会に推薦することができる。</span></p><p class="para" id="a20-p2"><span class="pno">2</span><span class="body-text">前項の高等裁判所長官は、委員会の推薦に意見を附することができる。</span></p></article>
+<article class="art" id="a21" data-path="第二章　簡易裁判所判事推薦委員会"><span class="anchor-alias" id="Mp-At_21"></span><div class="art-tools"><button type="button" data-anchor="a21" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kansaihanjisenkou.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="para" id="a21-p1"><a class="art-no" href="#a21" data-kan="第二十一条" data-num="第21条">第二十一条</a><span class="body-text"><a class="ref ref-self" href="#a17">第十七条</a>但書の委員会は、七人以上、その他の委員会は、五人以上の委員が出席しなければ、会議を開くことができない。</span></p></article>
+<article class="art" id="a22" data-path="第二章　簡易裁判所判事推薦委員会"><span class="anchor-alias" id="Mp-At_22"></span><div class="art-tools"><button type="button" data-anchor="a22" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kansaihanjisenkou.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="para" id="a22-p1"><a class="art-no" href="#a22" data-kan="第二十二条" data-num="第22条">第二十二条</a><span class="body-text">高等裁判所長官又はその指名する高等裁判所判事は、何時でも、当該高等裁判所の管轄区域内の地方裁判所の委員会に出席して意見を述べることができる。</span></p></article>
+<article class="art" id="a23" data-path="第二章　簡易裁判所判事推薦委員会"><span class="anchor-alias" id="Mp-At_23"></span><div class="art-tools"><button type="button" data-anchor="a23" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kansaihanjisenkou.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="para" id="a23-p1"><a class="art-no" href="#a23" data-kan="第二十三条" data-num="第23条">第二十三条</a><span class="body-text"><a class="ref ref-self" href="#a18">第十八条</a>第一項第二号及び第五号の委員の任期は、三年とする。但し、再任を妨げない。</span></p></article>
+<article class="art" id="a24" data-path="第二章　簡易裁判所判事推薦委員会"><span class="anchor-alias" id="Mp-At_24"></span><div class="art-tools"><button type="button" data-anchor="a24" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kansaihanjisenkou.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="para" id="a24-p1"><a class="art-no" href="#a24" data-kan="第二十四条" data-num="第24条">第二十四条</a><span class="body-text">委員会に幹事一人を置く。</span></p><p class="para" id="a24-p2"><span class="pno">2</span><span class="body-text">幹事は、当該地方裁判所の裁判官又は裁判所事務官の中から、委員長が、これを委嘱する。</span></p><p class="para" id="a24-p3"><span class="pno">3</span><span class="body-text">幹事は、委員長の命を受けて、庶務を掌る。</span></p></article>
+<article class="art" id="a25" data-path="第二章　簡易裁判所判事推薦委員会"><span class="anchor-alias" id="Mp-At_25"></span><div class="art-tools"><button type="button" data-anchor="a25" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kansaihanjisenkou.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="para" id="a25-p1"><a class="art-no" href="#a25" data-kan="第二十五条" data-num="第25条">第二十五条</a><span class="body-text">委員会に書記を置く。</span></p><p class="para" id="a25-p2"><span class="pno">2</span><span class="body-text">書記は、当該地方裁判所の裁判所事務官の中から、委員長が、これを委嘱する。</span></p><p class="para" id="a25-p3"><span class="pno">3</span><span class="body-text">書記は、委員長及び幹事の命を受けて、庶務に従事する。</span></p></article>
+<article class="art" id="a26" data-path="第二章　簡易裁判所判事推薦委員会"><span class="anchor-alias" id="Mp-At_26"></span><div class="art-tools"><button type="button" data-anchor="a26" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kansaihanjisenkou.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="para" id="a26-p1"><a class="art-no" href="#a26" data-kan="第二十六条" data-num="第26条">第二十六条</a><span class="body-text"><a class="ref ref-self" href="#a6">第六条</a>、<a class="ref ref-self" href="#a7">第七条</a>、<a class="ref ref-self" href="#a8">第八条</a>第二項、<a class="ref ref-self" href="#a9">第九条</a>及び<a class="ref ref-self" href="#a14">第十四条</a>の規定は、この章の委員会にこれを準用する。</span></p></article>
+<h2 class="div-head" id="sup1" data-path="附則　"><span class="lbl">附則</span></h2>
+<article class="art noarticle" id="sup-body-1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kansaihanjisenkou.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="para" id="sup-body-1-p1"><span class="body-text">この規則は、公布の日から、これを施行する。</span></p></article>
+<h2 class="div-head" id="sup2" data-path="附則　（昭和二三年一二月二八日最高裁判所規則第三八号）抄"><span class="lbl">附則</span>　（昭和二三年一二月二八日最高裁判所規則第三八号）抄</h2>
+<article class="art" id="sup2-a8" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup2-a8" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kansaihanjisenkou.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="para" id="sup2-a8-p1"><a class="art-no" href="#sup2-a8" data-kan="第八条" data-num="第8条">第八条</a><span class="body-text">この規則は、昭和二十四年一月一日から施行する。</span></p></article>
+<h2 class="div-head" id="sup3" data-path="附則　（平成一五年二月一九日最高裁判所規則第五号）"><span class="lbl">附則</span>　（平成一五年二月一九日最高裁判所規則第五号）</h2>
+<article class="art noarticle" id="sup-body-2" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kansaihanjisenkou.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="para" id="sup-body-2-p1"><span class="body-text">この規則は、公布の日から施行する。</span></p><p class="para" id="sup-body-2-p2"><span class="pno">2</span><span class="body-text"><a class="ref ref-self" href="#a3">この規則の施行の際現に改正前の簡易裁判所判事選考規則第三条</a>第一項第四号又は第５号の委員に委嘱されている者は、<a class="ref ref-self" href="#a3">改正後の簡易裁判所判事選考規則第三条</a>の規程により同条第三号又は第四号の委員に委嘱されたものとみなす。</span></p></article>
+    </div>
+    <aside class="notes"><p>読み取りに関する注意</p><ul><li>各条の「原本」は https://www.courts.go.jp/assets/kansaihanjisenkou.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。</li></ul></aside>
+    <div class="foot">出典：kansaihanjisenkou.pdf　／　最高裁規則ビューア 1.9.0 で 2026年09月02日 に変換　
+    条文の正確な内容は原本で確認してください。</div>
+  </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  "use strict";
+  var doc = document.getElementById("doc");
+  var input = document.getElementById("q");
+  var hitLabel = document.getElementById("hits");
+  var crumb = document.getElementById("crumb");
+  var toc = document.getElementById("toc");
+  var toast = document.getElementById("toast");
+  var pristine = doc.innerHTML;
+  var hits = [];
+  var cursor = -1;
+
+  function say(msg){
+    toast.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(say._t);
+    say._t = setTimeout(function(){ toast.classList.remove("show"); }, 1600);
+  }
+
+  /* ---------------------------------------------------------- 条番号の表記 */
+  var numeralBtn = document.getElementById("numeral");
+  function applyNumeral(useArabic){
+    var nodes = doc.querySelectorAll(".art-no");
+    for (var i = 0; i < nodes.length; i++){
+      var el = nodes[i];
+      var v = useArabic ? el.getAttribute("data-num") : el.getAttribute("data-kan");
+      if (v) el.textContent = v;
+    }
+    numeralBtn.setAttribute("aria-pressed", useArabic ? "true" : "false");
+  }
+  numeralBtn.addEventListener("click", function(){
+    var next = numeralBtn.getAttribute("aria-pressed") !== "true";
+    applyNumeral(next);
+    try { localStorage.setItem("rule-numeral", next ? "1" : "0"); } catch(e){}
+    pristine = doc.innerHTML;
+  });
+  try {
+    /* 既定の表記は原本に合わせてある。前回の切り替えが残っていればそれに従う */
+    var saved = localStorage.getItem("rule-numeral");
+    if (saved === "1" || saved === "0"){ applyNumeral(saved === "1"); pristine = doc.innerHTML; }
+  } catch(e){}
+
+  /* -------------------------------------------------------------- 検索処理 */
+  var SKIP = {SCRIPT:1, STYLE:1, MARK:1, BUTTON:1, A:1};   /* 原本リンク等の道具立ては検索対象にしない */
+  function highlight(term){
+    doc.innerHTML = pristine;
+    hits = [];
+    cursor = -1;
+    if (!term){ hitLabel.textContent = ""; refreshToc(""); return; }
+    var walker = document.createTreeWalker(doc, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        if (!n.nodeValue || n.nodeValue.indexOf(term) < 0) return NodeFilter.FILTER_REJECT;
+        if (n.parentNode && SKIP[n.parentNode.nodeName]) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var targets = [];
+    var node;
+    while ((node = walker.nextNode())) targets.push(node);
+    for (var i = 0; i < targets.length; i++){
+      var t = targets[i], text = t.nodeValue, pos = 0, frag = document.createDocumentFragment();
+      var idx;
+      while ((idx = text.indexOf(term, pos)) >= 0){
+        if (idx > pos) frag.appendChild(document.createTextNode(text.slice(pos, idx)));
+        var m = document.createElement("mark");
+        m.textContent = text.substr(idx, term.length);
+        frag.appendChild(m);
+        hits.push(m);
+        pos = idx + term.length;
+      }
+      if (pos < text.length) frag.appendChild(document.createTextNode(text.slice(pos)));
+      t.parentNode.replaceChild(frag, t);
+    }
+    hitLabel.textContent = hits.length ? "1 / " + hits.length : "該当なし";
+    refreshToc(term);
+    if (hits.length){ cursor = 0; focusHit(0, false); }
+  }
+  function focusHit(i, scroll){
+    if (!hits.length) return;
+    for (var k = 0; k < hits.length; k++) hits[k].classList.remove("live");
+    cursor = (i + hits.length) % hits.length;
+    hits[cursor].classList.add("live");
+    hitLabel.textContent = (cursor + 1) + " / " + hits.length;
+    if (scroll !== false) hits[cursor].scrollIntoView({block:"center", behavior:"instant"});
+  }
+  function refreshToc(term){
+    var links = toc.querySelectorAll("li.lv-art");
+    for (var i = 0; i < links.length; i++){
+      var li = links[i];
+      var body = (li.getAttribute("data-text") || "");
+      li.classList.toggle("hidden", !!term && body.indexOf(term) < 0);
+    }
+    var divs = toc.querySelectorAll("li.lv-div");
+    for (var j = divs.length - 1; j >= 0; j--){
+      var d = divs[j];
+      var kids = d.querySelectorAll("li:not(.hidden)");
+      d.classList.toggle("hidden", !!term && kids.length === 0);
+    }
+  }
+  var timer = null;
+  input.addEventListener("input", function(){
+    clearTimeout(timer);
+    var v = input.value.trim();
+    timer = setTimeout(function(){ highlight(v); }, 180);
+  });
+  input.addEventListener("keydown", function(e){
+    if (e.key === "Enter"){ e.preventDefault(); focusHit(cursor + (e.shiftKey ? -1 : 1)); }
+    if (e.key === "Escape"){ input.value = ""; highlight(""); input.blur(); }
+  });
+  document.getElementById("prev").addEventListener("click", function(){ focusHit(cursor - 1); });
+  document.getElementById("next").addEventListener("click", function(){ focusHit(cursor + 1); });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "/" && e.target === document.body){ e.preventDefault(); input.focus(); }
+  });
+
+  /* -------------------------------------------------- リンクのコピー・共有 */
+  doc.addEventListener("click", function(e){
+    var btn = e.target.closest ? e.target.closest("button[data-anchor]") : null;
+    if (!btn) return;
+    var anchor = btn.getAttribute("data-anchor");
+    var url = location.href.split("#")[0] + "#" + anchor;
+    history.replaceState(null, "", "#" + anchor);
+    var done = function(){ say("リンクをコピーしました"); };
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(done, function(){ legacyCopy(url, done); });
+    } else {
+      legacyCopy(url, done);
+    }
+  });
+  function legacyCopy(text, done){
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); done(); }
+    catch(err){ say("コピーできませんでした。アドレス欄からURLを控えてください"); }
+    document.body.removeChild(ta);
+  }
+
+  /* ------------------------------------------------ 現在位置の表示と目次連動 */
+  var watched = doc.querySelectorAll(".art[id], .div-head[id]");
+  var tocLinks = {};
+  var links = toc.querySelectorAll("a[href^='#']");
+  for (var i = 0; i < links.length; i++) tocLinks[links[i].getAttribute("href").slice(1)] = links[i];
+  var currentLink = null;
+  if ("IntersectionObserver" in window){
+    var visible = [];
+    var io = new IntersectionObserver(function(entries){
+      for (var i = 0; i < entries.length; i++){
+        var id = entries[i].target.id;
+        var at = visible.indexOf(id);
+        if (entries[i].isIntersecting){ if (at < 0) visible.push(id); }
+        else if (at >= 0){ visible.splice(at, 1); }
+      }
+      if (!visible.length) return;
+      var first = null;
+      for (var k = 0; k < watched.length; k++){
+        if (visible.indexOf(watched[k].id) >= 0){ first = watched[k]; break; }
+      }
+      if (!first) return;
+      crumb.textContent = first.getAttribute("data-path") || "";
+      var link = tocLinks[first.id];
+      if (link && link !== currentLink){
+        if (currentLink) currentLink.classList.remove("current");
+        link.classList.add("current");
+        currentLink = link;
+      }
+    }, {rootMargin:"-20% 0px -70% 0px"});
+    for (var w = 0; w < watched.length; w++) io.observe(watched[w]);
+  }
+
+  /* -------------------------------------------------------- 目次の開閉（狭幅） */
+  var opener = document.getElementById("toc-open");
+  if (opener){
+    opener.addEventListener("click", function(){ toc.classList.toggle("open"); });
+    toc.addEventListener("click", function(e){
+      if (e.target.tagName === "A") toc.classList.remove("open");
+    });
+  }
+})();
+</script>
+</body>
+</html>

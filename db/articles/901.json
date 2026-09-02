@@ -1,0 +1,56 @@
+{
+ "rule_id": "901",
+ "title": "奄美群島の復帰に伴う民事に関する事件の手続の経過措置に関する規則",
+ "enforcement_iso": "1953-12-25",
+ "url": "https://kmght.github.io/ksk/r/901.html",
+ "articles": [
+  {
+   "key": "1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "趣旨",
+   "anchor": "a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "2",
+   "label": "第二条",
+   "short": "2条",
+   "caption": "上訴期間等の特例",
+   "anchor": "a2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "3",
+   "label": "第三条",
+   "short": "3条",
+   "caption": "親族及び相続に関する経過措置に伴う手続の特例",
+   "anchor": "a3",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "4",
+   "label": "第四条",
+   "short": "4条",
+   "caption": "会社に関する経過措置に伴う手続の特例",
+   "anchor": "a4",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  }
+ ]
+}

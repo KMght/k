@@ -1,0 +1,165 @@
+{
+  "title": "法廷の秩序維持等にあたる裁判所職員に関する規則",
+  "law_number": "昭和27年9月16日最高裁判所規則第23号",
+  "enforcement_date": "",
+  "enforcement_iso": "",
+  "pdf_link": "https://www.courts.go.jp/assets/houteinotitujoijitouniatarusaibansyosyokuinnikansurukisoku.pdf",
+  "source": "houteinotitujoijitouniatarusaibansyosyokuinnikansurukisoku.pdf",
+  "numeral": "kansuji",
+  "notes": [
+    "各条の「原本」は https://www.courts.go.jp/assets/houteinotitujoijitouniatarusaibansyosyokuinnikansurukisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+  ],
+  "nodes": [
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "body-1",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法廷の秩序維持等にあたる裁判所職員に関する規則を次のように定める。法廷の秩序維持等にあたる裁判所職員に関する規則",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "a1",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判所（簡易裁判所にあつては司法行政事務を掌理する裁判官）又はその委任を受けた裁判官は、その裁判所の裁判官以外の職員に、裁判長又は一人の裁判官が法廷の秩序維持のため命ずる事務を取り扱うべきことを命ずることができる。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "裁判所（簡易裁判所にあつては司法行政事務を掌理する裁判官）又はその委任を受けた裁判官は、その裁判所の裁判官以外の職員に、裁判所又は裁判官が法廷外の場所で職務を行う場合において裁判長又は裁判官が職務の執行に対する妨害を防ぐため命ずる事務を取り扱うべきことを命ずることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        2
+      ],
+      "label": "第二条",
+      "short_label": "2条",
+      "anchor": "a2",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "最高裁判所、高等裁判所、地方裁判所及び家庭裁判所の長並びに簡易裁判所の司法行政事務を掌理する裁判官は、その裁判所の職員又は庁舎その他の施設の安全を保持するため必要があると認めるときは、その裁判所の裁判官以外の職員に警備を命ずることができる。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "高等裁判所、地方裁判所及び家庭裁判所の長は、その支部における前項の規定による警備に関する事務を当該支部の長に取り扱わせることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        3
+      ],
+      "label": "第三条",
+      "short_label": "3条",
+      "anchor": "a3",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "高等裁判所及びその管轄区域内の裁判所（簡易裁判所にあつては司法行政事務を掌理する裁判官）は、その裁判所の裁判官以外の職員に、互に他の裁判所において第一条の規定による事務を取り扱うべきことを命ずることができる。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "高等裁判所並びにその管轄区域内の地方裁判所及び家庭裁判所の長並びに当該高等裁判所の管轄区域内の簡易裁判所の司法行政事務を掌理する裁判官は、その裁判所の裁判官以外の職員に、互に他の裁判所において第二条の規定による警備をすべきことを命ずることができる。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "前二項の規定により命令を受けた職員は、第一条及び第二条の規定の適用については、その裁判所の職員とみなす。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "",
+      "anchor": "sup1",
+      "level": 1,
+      "page": 1,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-1",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 1,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、公布の日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    }
+  ]
+}

@@ -1,0 +1,446 @@
+{
+ "rule_id": "608",
+ "title": "犯罪収益に係る保全手続等に関する規則",
+ "enforcement_iso": "2003-01-06",
+ "url": "https://kmght.github.io/ksk/r/608.html",
+ "articles": [
+  {
+   "key": "1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "趣旨",
+   "anchor": "a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "2",
+   "label": "第二条",
+   "short": "2条",
+   "caption": "刑事事件における第三者所有物の没収手続に関する規則の準用",
+   "anchor": "a2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "3",
+   "label": "第三条",
+   "short": "3条",
+   "caption": "没収保全の請求の方式",
+   "anchor": "a3",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "4",
+   "label": "第四条",
+   "short": "4条",
+   "caption": "附帯保全の請求の方式",
+   "anchor": "a4",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "5",
+   "label": "第五条",
+   "short": "5条",
+   "caption": "急速を要する場合の没収保全命令等の記載事項",
+   "anchor": "a5",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "6",
+   "label": "第六条",
+   "short": "6条",
+   "caption": "没収保全に関する処分をすべき裁判官",
+   "anchor": "a6",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "7",
+   "label": "第七条",
+   "short": "7条",
+   "caption": "没収保全命令が発せられている場合の起訴状の記載要件等",
+   "anchor": "a7",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "8",
+   "label": "第八条",
+   "short": "8条",
+   "caption": "起訴前の没収保全の期間の更新の請求の方式",
+   "anchor": "a8",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "9",
+   "label": "第九条",
+   "short": "9条",
+   "caption": "代替金の納付及び還付",
+   "anchor": "a9",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "10",
+   "label": "第十条",
+   "short": "10条",
+   "caption": "債権の没収保全に係る債務者の供託の事情届の方式等",
+   "anchor": "a10",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "11",
+   "label": "第十一条",
+   "short": "11条",
+   "caption": "振替社債等の没収保全",
+   "anchor": "a11",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "11_2",
+   "label": "第十一条の二",
+   "short": "11条の2",
+   "caption": "電子記録債権の没収保全",
+   "anchor": "a11-2",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "12",
+   "label": "第十二条",
+   "short": "12条",
+   "caption": "没収保全命令の取消しの請求の方式",
+   "anchor": "a12",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "13",
+   "label": "第十三条",
+   "short": "13条",
+   "caption": "没収保全財産に対し強制執行による差押え等がされた場合の通知",
+   "anchor": "a13",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "14",
+   "label": "第十四条",
+   "short": "14条",
+   "caption": "没収保全がされている金銭債権に対し強制執行による差押えがされた場合の供託の事情届の方式等",
+   "anchor": "a14",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "15",
+   "label": "第十五条",
+   "short": "15条",
+   "caption": "強制執行による差押えがされている金銭債権につき没収保全がされた場合の供託の事情届の方式等",
+   "anchor": "a15",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "16",
+   "label": "第十六条",
+   "short": "16条",
+   "caption": "強制執行による差押え等がされている財産につき没収保全がされた場合の通知",
+   "anchor": "a16",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "17",
+   "label": "第十七条",
+   "short": "17条",
+   "caption": "強制執行の停止及びその決定の取消しの請求の方式",
+   "anchor": "a17",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "18",
+   "label": "第十八条",
+   "short": "18条",
+   "caption": "没収保全と担保権の実行による差押えとが競合する場合の通知",
+   "anchor": "a18",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "19",
+   "label": "第十九条",
+   "short": "19条",
+   "caption": "没収保全と仮差押えの執行又は滞納処分による差押えとが競合する場合の通知等",
+   "anchor": "a19",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "20",
+   "label": "第二十条",
+   "short": "20条",
+   "caption": "附帯保全手続への準用",
+   "anchor": "a20",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "21",
+   "label": "第二十一条",
+   "short": "21条",
+   "caption": "追徴保全の請求の方式",
+   "anchor": "a21",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "22",
+   "label": "第二十二条",
+   "short": "22条",
+   "caption": "追徴保全命令等への準用",
+   "anchor": "a22",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "23",
+   "label": "第二十三条",
+   "short": "23条",
+   "caption": "刑事訴訟規則の準用",
+   "anchor": "a23",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "24",
+   "label": "第二十四条",
+   "short": "24条",
+   "caption": "共助要請に係る審査の請求の方式",
+   "anchor": "a24",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "25",
+   "label": "第二十五条",
+   "short": "25条",
+   "caption": "執行共助の決定の取消しの請求の方式",
+   "anchor": "a25",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "26",
+   "label": "第二十六条",
+   "short": "26条",
+   "caption": "共助要請に係る没収保全等の請求の方式",
+   "anchor": "a26",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "27",
+   "label": "第二十七条",
+   "short": "27条",
+   "caption": "刑事訴訟規則等の準用",
+   "anchor": "a27",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "s1:1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "施行期日",
+   "anchor": "sup1-a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  },
+  {
+   "key": "s8:1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "施行期日",
+   "anchor": "sup8-a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  },
+  {
+   "key": "s8:2",
+   "label": "第二条",
+   "short": "2条",
+   "caption": "経過措置",
+   "anchor": "sup8-a2",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "supplementary",
+   "deleted": false
+  },
+  {
+   "key": "s11:1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "施行期日",
+   "anchor": "sup11-a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  }
+ ]
+}

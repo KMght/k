@@ -1,0 +1,233 @@
+{
+  "title": "薬物犯罪等に係る保全手続等に関する規則",
+  "law_number": "平成三年法律第九十四号",
+  "enforcement_date": "",
+  "enforcement_iso": "",
+  "pdf_link": "https://www.courts.go.jp/assets/yakubutsuhanhozenkisoku.pdf",
+  "source": "yakubutsuhanhozenkisoku.pdf",
+  "numeral": "kansuji",
+  "notes": [
+    "題名・制定文とみられる行を本文の前に検出しました：薬物犯罪等に係る保全手続等に関する規則／平成4年3月31日最高裁判所規則第５号／改正 平成11年12月1日最高裁判所規則第１０号",
+    "各条の「原本」は https://www.courts.go.jp/assets/yakubutsuhanhozenkisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+  ],
+  "nodes": [
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "a1",
+      "caption": "趣旨",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "国際的な協力の下に規制薬物に係る不正行為を助長する行為等の防止を図るため条及び次条において「法」という。）による被告人以外の者の財産等の没収に関する手続、没収保全及び追徴保全に関する手続並びに没収及び追徴の裁判の執行及び保全についての国際共助手続については、法に定めるもののほか、この規則の定めるところによる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        2
+      ],
+      "label": "第二条",
+      "short_label": "2条",
+      "anchor": "a2",
+      "caption": "刑事事件における第三者所有物の没収手続に関する規則の準用",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第十六条第一項及び第二項の没収に関する手続については、刑事事件における第三者所有物の没収手続に関する規則（昭和三十八年最高裁判所規則第八号）の規定を準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        3
+      ],
+      "label": "第三条",
+      "short_label": "3条",
+      "anchor": "a3",
+      "caption": "没収保全の請求の方式",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "没収保全の請求については、犯罪収益に係る保全手続等に関する規則（平成十一年最高裁判所規則第十号。以下「犯罪収益保全規則」という。）第三条の規定を準用する。この場合において、同条第一項第五号及び第二項中「法第二十二条第一項」とあるのは「国際的な協力の下に規制薬物に係る不正行為を助長する行為等の防止を図るための麻薬及び向精神薬取締法等の特例等に関する法律（以下「麻薬特例法」という。）第十九条第一項」と、同条第一項第六号中「法第二十三条第一項」とあるのは「麻薬特例法第十九条第三項」と読み替えるものとする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        4
+      ],
+      "label": "第四条",
+      "short_label": "4条",
+      "anchor": "a4",
+      "caption": "附帯保全の請求の方式",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "附帯保全の請求については、犯罪収益保全規則第四条の規定を準用する。この場合において、同条第一項第三号及び第二項中「法第二十二条第二項」とあるのは、「国際的な協力の下に規制薬物に係る不正行為を助長する行為等の防止を図るための麻薬及び向精神薬取締法等の特例等に関する法律第十九条第二項」と読み替えるものとする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        5
+      ],
+      "label": "第五条",
+      "short_label": "5条",
+      "anchor": "a5",
+      "caption": "追徴保全の請求の方式",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "追徴保全の請求については、犯罪収益保全規則第二十一条の規定を準用する。この場合において、同条第一項第五号及び第二項中「法第四十二条第一項」とあるのは、「国際的な協力の下に規制薬物に係る不正行為を助長する行為等の防止を図るための麻薬及び向精神薬取締法等の特例等に関する法律第二十条第一項」と読み替えるものとする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        6
+      ],
+      "label": "第六条",
+      "short_label": "6条",
+      "anchor": "a6",
+      "caption": "共助要請に係る審査等の請求の方式の特例",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "共助の要請に係る審査又は没収保全若しくは追徴保全を請求する書面には、日本国が行う同種の要請に応ずる旨の要請国の保証がなされている旨に代えて、共助の要請の根拠となる条約の条項を記載しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "",
+      "anchor": "sup1",
+      "level": 1,
+      "page": 1,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-1",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 1,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、法の施行の日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成一一年一二月一日最高裁判所規則第一〇号）抄",
+      "anchor": "sup2",
+      "level": 1,
+      "page": 1,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "sup2-a1",
+      "caption": "施行期日",
+      "deleted": false,
+      "section": "supplementary",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 2,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、法の施行の日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    }
+  ]
+}

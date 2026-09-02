@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>会社非訟事件等手続規則</title>
+<style>
+:root{
+  --paper:#ffffff;
+  --ink:#16181d;
+  --sub:#5f6875;
+  --rule:#dde2e9;
+  --chrome:#f4f6f9;
+  --accent:#14538a;
+  --accent-weak:#e7eff7;
+  --mark:#ffe08a;
+  --mark-live:#ff9d3d;
+  --gothic:"Yu Gothic UI","Yu Gothic","YuGothic","Hiragino Sans","Noto Sans JP","Meiryo",system-ui,sans-serif;
+  --mincho:"Yu Mincho","YuMincho","Hiragino Mincho ProN","Noto Serif JP","MS Mincho",serif;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:5.5rem}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--mincho);font-size:17px;line-height:1.9;
+  text-rendering:optimizeLegibility;
+}
+
+/* ---------------------------------------------------------------- ヘッダ */
+.top{
+  position:sticky;top:0;z-index:30;background:var(--chrome);
+  border-bottom:1px solid var(--rule);font-family:var(--gothic);
+}
+.top-inner{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;padding:.7rem 1.2rem}
+.law-title{font-size:1.12rem;font-weight:700;letter-spacing:.02em;margin:0}
+.law-number{font-size:.8rem;color:var(--sub);margin-left:.2rem}
+.top-tools{margin-left:auto;display:flex;align-items:center;gap:.5rem}
+.search-box{display:flex;align-items:center;gap:.35rem;background:var(--paper);
+  border:1px solid var(--rule);border-radius:2px;padding:.25rem .5rem}
+.search-box input{border:0;outline:0;font:inherit;font-size:.85rem;width:14rem;background:transparent;color:inherit}
+.hit-count{font-size:.78rem;color:var(--sub);min-width:4.2rem;text-align:right;font-variant-numeric:tabular-nums}
+button{font:inherit;font-family:var(--gothic);cursor:pointer}
+.btn{background:var(--paper);border:1px solid var(--rule);border-radius:2px;
+  color:var(--ink);font-size:.78rem;padding:.28rem .6rem;line-height:1.4}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.crumb{padding:.3rem 1.2rem;border-top:1px solid var(--rule);background:var(--paper);
+  font-family:var(--gothic);font-size:.78rem;color:var(--sub);min-height:1.7rem}
+
+/* ------------------------------------------------------------------ 骨格 */
+.wrap{display:grid;grid-template-columns:19rem minmax(0,1fr);align-items:start}
+.toc{
+  position:sticky;top:5.6rem;max-height:calc(100vh - 5.6rem);overflow-y:auto;
+  border-right:1px solid var(--rule);padding:1rem .6rem 4rem 1.2rem;
+  font-family:var(--gothic);font-size:.83rem;line-height:1.65;
+}
+.toc h2{font-size:.75rem;color:var(--sub);font-weight:700;margin:0 0 .6rem}
+.toc ul{list-style:none;margin:0;padding:0}
+.toc a{display:block;color:var(--ink);text-decoration:none;padding:.16rem .4rem;border-radius:2px}
+.toc a:hover{background:var(--accent-weak);color:var(--accent)}
+.toc a.current{background:var(--accent-weak);color:var(--accent);font-weight:700}
+.toc .div-1>a,.toc .div-2>a{font-weight:700}
+.toc .div-2{margin-top:.5rem}
+.toc .div-3,.toc .div-4,.toc .div-5{margin-top:.25rem}
+.toc .lv-art{padding-left:.9rem}
+.toc .lv-art.hidden,.toc .lv-div.hidden{display:none}
+.toc-toggle{background:none;border:0;color:var(--sub);padding:0 .3rem;font-size:.75rem}
+
+.doc{padding:2.2rem 2rem 8rem;max-width:44em}
+.doc-head{border-bottom:2px solid var(--ink);padding-bottom:.8rem;margin-bottom:2rem}
+.doc-head h1{font-size:1.5rem;margin:0 0 .3rem;letter-spacing:.04em}
+.doc-head .meta{font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+
+/* ------------------------------------------------------------------ 条文 */
+.div-head{font-family:var(--gothic);margin:2.6rem 0 1rem;scroll-margin-top:6rem}
+.div-head .lbl{color:var(--accent);font-weight:700}
+h2.div-head{font-size:1.12rem;border-bottom:1px solid var(--rule);padding-bottom:.35rem}
+h3.div-head{font-size:1.02rem}
+h4.div-head,h5.div-head,h6.div-head{font-size:.95rem}
+
+.art{position:relative;padding-left:2.6rem;margin:1.5rem 0 1.9rem;scroll-margin-top:6rem}
+.art:target{background:var(--accent-weak);box-shadow:-.4rem 0 0 var(--accent);border-radius:2px}
+.art-tools{position:absolute;left:0;top:.25rem;display:flex;flex-direction:column;gap:.2rem;
+  visibility:hidden}
+.art:hover .art-tools,.art:focus-within .art-tools,.art:target .art-tools{visibility:visible}
+.art-tools button,.art-tools a{background:none;border:0;color:var(--sub);font-size:.72rem;
+  font-family:var(--gothic);padding:.1rem .2rem;border-radius:2px;text-decoration:none;
+  white-space:nowrap;display:block}
+.art-tools button:hover,.art-tools a:hover{color:var(--accent);background:var(--accent-weak)}
+.raw h3 .src{font-size:.75rem;font-weight:400;color:var(--sub);margin-left:.5rem}
+.doc-head .src{color:var(--accent);text-decoration:none}
+.doc-head .src:hover{text-decoration:underline}
+.caption{font-family:var(--gothic);font-size:.88rem;font-weight:700;color:var(--sub);margin:0 0 .1rem}
+.amend-note{font-family:var(--gothic);font-size:.78rem;font-weight:400;color:var(--sub);margin:.1rem 0 0;text-align:right}
+h2 .amend-note,h3 .amend-note,h4 .amend-note,h5 .amend-note,h6 .amend-note{display:inline;text-align:left}
+.art-no{font-family:var(--gothic);font-weight:700;color:var(--accent);text-decoration:none;margin-right:.55em}
+.art-no:hover{text-decoration:underline}
+.para{margin:.35rem 0;text-indent:0}
+.para+.para{margin-top:.55rem}
+.pno{font-family:var(--gothic);color:var(--sub);font-size:.9em;margin-right:.5em;font-variant-numeric:tabular-nums}
+.deleted .body-text{color:var(--sub)}
+.art.noarticle .para{margin-top:0}
+
+ol.items{list-style:none;margin:.35rem 0 .35rem 1.1em;padding:0}
+ol.items>li{display:grid;grid-template-columns:2.4em minmax(0,1fr);margin:.2rem 0}
+ol.items .mk{font-family:var(--gothic);font-size:.9em;color:var(--sub);margin-right:.4em}
+ol.items ol.items{grid-column:1/-1;margin-left:1.2em}
+ol.items ol.items>li{grid-template-columns:2em minmax(0,1fr)}
+
+.raw{margin:1.6rem 0;scroll-margin-top:6rem}
+.raw h3{font-family:var(--gothic);font-size:1rem;margin:0 0 .4rem}
+.raw pre{font-family:var(--mincho);white-space:pre-wrap;margin:0;padding:.7rem .9rem;
+  background:var(--chrome);border:1px solid var(--rule);font-size:.92rem;line-height:1.75}
+
+.notes{margin:2.5rem 0 0;padding:.8rem 1rem;background:var(--chrome);
+  border-left:3px solid var(--accent);font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+.notes p{margin:0 0 .3rem;font-weight:700;color:var(--ink)}
+.notes ul{margin:0;padding-left:1.2rem}
+.foot{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);
+  font-family:var(--gothic);font-size:.75rem;color:var(--sub)}
+
+a.ref{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule)}
+a.ref:hover{color:var(--accent);border-bottom-color:var(--accent)}
+a.ref-egov{border-bottom-style:dotted}
+a.ref-rule{border-bottom-color:var(--accent)}
+mark{background:var(--mark);color:inherit;padding:0 .05em}
+mark.live{background:var(--mark-live)}
+.toast{position:fixed;left:50%;bottom:2rem;transform:translateX(-50%);
+  background:var(--ink);color:#fff;font-family:var(--gothic);font-size:.8rem;
+  padding:.5rem .9rem;border-radius:3px;pointer-events:none;z-index:60;display:none}
+.toast.show{display:block}
+
+.toc-open{display:none}
+@media (max-width:900px){
+  body{font-size:16px}
+  .wrap{grid-template-columns:minmax(0,1fr)}
+  .toc{position:fixed;inset:5.6rem auto 0 0;width:82vw;max-width:20rem;background:var(--paper);
+    z-index:25;box-shadow:0 0 0 100vmax rgba(0,0,0,.25);max-height:none;height:calc(100vh - 5.6rem);
+    display:none}
+  .toc.open{display:block}
+  .toc-open{display:inline-block}
+  .doc{padding:1.4rem 1.1rem 6rem}
+  .search-box input{width:8rem}
+  .art-tools{opacity:1;position:static;flex-direction:row;justify-content:flex-end;margin-bottom:.15rem}
+  .art-tools button,.art-tools a{border:1px solid var(--rule);border-radius:2px;
+    padding:.1rem .45rem;display:inline-block}
+  .art{padding-left:0}
+}
+
+@media print{
+  .top,.toc,.art-tools,.crumb,.toast{display:none!important}
+  a.ref{border-bottom:0}
+  .wrap{display:block}
+  .doc{max-width:none;padding:0}
+  body{font-size:10.5pt;line-height:1.7}
+  .art{page-break-inside:avoid}
+}
+
+.anchor-alias{position:absolute;scroll-margin-top:6rem}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <button type="button" class="btn toc-open" id="toc-open">目次</button>
+    <h1 class="law-title">会社非訟事件等手続規則</h1>
+    <span class="law-number">平成一八年二月八日最高裁判所規則第一号　／　令和8年5月21日施行</span>
+    <div class="top-tools">
+      <div class="search-box">
+        <input type="search" id="q" placeholder="条文を検索（/ キー）" aria-label="条文を検索">
+        <span class="hit-count" id="hits"></span>
+      </div>
+      <button type="button" class="btn" id="prev" title="前の該当箇所">前</button>
+      <button type="button" class="btn" id="next" title="次の該当箇所">次</button>
+      <button type="button" class="btn" id="numeral" aria-pressed="false"
+        title="条番号の表記を切り替える">123</button>
+    </div>
+  </div>
+  <div class="crumb" id="crumb"></div>
+</header>
+<div class="wrap">
+  <nav class="toc" id="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ul><li class="lv-art" data-text="会社非訟事件等手続規則（原文は縦書き会社非訟事件等手続規則（原文は縦書き改正 同一九年四月一一日最高裁判所規則第五号同二○年一○月一日同第一○号同二四年七月一七日同第九号令和二年四月二二日同第六号同四年二月二一日同第八号同四年五月一三日同第一三号同四年一一月七日同第一七号同六年九月十七日同第一四号同七年一二月一五日同第一六号会社非訟事件等手続規則を次のように定める。会社非訟事件等手続規則"><a href="#body-1">本文　会社非訟事件等手続規則（原文は縦書き</a></li><li class="lv-div div-2"><a href="#d1">第一章　総則</a><ul><li class="lv-art" data-text="第一条1条申立て等の方式申立て等の方式会社法（平成十七年法律第八十六号。以下「法」という。）の規定による非訟事件の手続（以下「会社非訟事件手続」という。）に関する申立て、届出及び裁判所に対する報告は、特別の定めがある場合を除き、書面でしなければならない。"><a href="#a1">第一条　申立て等の方式</a></li><li class="lv-art" data-text="第二条2条申立書の記載事項申立書の記載事項会社非訟事件手続に関する申立書には、申立ての趣旨及び原因並びに申立てを理由づける事実を記載するほか、次に掲げる事項を記載し、申立人又は代理人が記名（当該申立書がその提出により会社非訟事件手続の開始、続行、停止又は完結をさせるものである場合にあっては、記名押印）をしなければならない。一当事者の氏名又は名称及び住所並びに法定代理人の氏名及び住所二申立てに係る会社（法第八百六十八条第四項に規定する裁判の申立てに係る事件にあっては、社債を発行した会社。以下この章において同じ。）の商号及び本店の所在地並びに代表者の氏名前項の申立書には、同項に規定する事項のほか、次に掲げる事項を記載するものとする。一代理人（前項第一号の法定代理人を除く。）の氏名及び住所二申立てに係る会社が外国会社であるときは、当該外国会社の日本における営業所の所在地（日本に営業所を設けていない場合にあっては、日本における代表者の住所地）三申立てを理由づける具体的な事実ごとの証拠四事件の表示五附属書類の表示六年月日七裁判所の表示八申立人又は代理人の郵便番号及び電話番号（ファクシミリの番号を含む。）九法第八百四十条第二項（法第八百四十一条第二項及び第八百四十二条第二項において準用する場合を含む。）又は第八百四十三条第四項の申立てについては、法第八百四十条第一項、第八百四十一条第一項若しくは第八百四十二条第一項又は第八百四十三条第一項に規定する判決（電子判決書（民事訴訟法（平成八年法律第百九号）第二百五十二条第一項に規定する電子判決書（同法第二百五十三条第二項の規定により裁判所の使用に係る電子計算機（入出力装置を含む。）に備えられたファイル（第四十二条第一項において単に「ファイル」という。）に記録されたものに限る。）をいう。次条第一項第三号及び第四十二条第一項において同じ。）が作成されているものに限る。）をした裁判所の名称、事件番号及び当該判決を識別するために裁判所が付した符号十その他裁判所が定める事項検査役の選任の申立てをするときは、申立ての趣旨において、検査の目的を記載しなければならない。第一項及び第二項の規定にかかわらず、会社非訟事件手続に関し、申立人又は代理人から第一項第二号又は第二項第二号若しくは第八号に掲げる事項を記載した申立書が提出されているときは、以後裁判所に提出する当該手続を基本とする手続の申立書については、これらの事項を記載することを要しない。"><a href="#a2">第二条　申立書の記載事項</a></li><li class="lv-art" data-text="第三条3条申立書の添付書類申立書の添付書類前条第一項の申立書には、次に掲げる書類を添付しなければならない。一申立てに係る会社の登記事項証明書二法第七百三十二条の規定による社債権者集会の決議の認可の申立てについては、当該社債権者集会の議事録の写し三法第八百四十条第二項（法第八百四十一条第二項及び第八百四十二条第二項において準用する場合を含む。）の申立てについては、法第八百四十条第一項、第八百四十一条第一項又は第八百四十二条第一項に規定する判決（電子判決書が作成されているものを除く。次号において同じ。）の判決書の写し及び当該判決の確定についての証明書四法第八百四十三条第四項の申立てについては、同条第一項に規定する判決の判決書の写し及び当該判決の確定についての証明書前項第一号の規定にかかわらず、会社非訟事件手続に関し、申立人又は代理人から同号に掲げる書面が提出されているときは、以後裁判所に提出する当該手続を基本とする手続の申立書には、これを添付することを要しない。"><a href="#a3">第三条　申立書の添付書類</a></li><li class="lv-art" data-text="第四条4条申立人に対する資料の提出の求め申立人に対する資料の提出の求め裁判所は、会社非訟事件手続に関する申立てをした者又はしようとする者に対し、第二条第一項の申立書及び当該申立書に添付すべき書類のほか、申立てを理由づける事実に関する資料、申立てに係る会社に関する資料その他会社非訟事件手続の円滑な進行を図るために必要な資料の提出を求めることができる。"><a href="#a4">第四条　申立人に対する資料の提出の求め</a></li><li class="lv-art" data-text="第五条5条裁判所書記官の事実調査裁判所書記官の事実調査裁判所は、相当と認めるときは、会社非訟事件手続に関する申立てを理由づける事実（特別清算の手続に関する法第五百十四条各号に掲げる事由に係る事実を含む。）の調査を裁判所書記官に命じて行わせることができる。"><a href="#a5">第五条　裁判所書記官の事実調査</a></li><li class="lv-art" data-text="第六条6条申立書の写しの提出申立書の写しの提出法第八百七十条第二項各号に掲げる裁判の申立てをするときは、申立書に当該各号に定める者の数と同数の写しを添付しなければならない。"><a href="#a6">第六条　申立書の写しの提出</a></li><li class="lv-art" data-text="第七条7条参加の申出書の送付等参加の申出書の送付等法第八百七十条第二項各号に掲げる裁判の申立てに係る事件の手続における非訟事件手続法（平成二十三年法律第五十一号）第二十条第二項（同法第二十一条第三項において準用する場合を含む。）の書面には、当事者及び利害関係参加人の数に応じた当該書面の写しを添付しなければならない。前項の事件の手続における非訟事件手続規則（平成二十四年最高裁判所規則第七号）第十五条第二項（同条第四項において準用する場合を含む。）の規定による通知は、非訟事件手続法第二十条第二項（同法第二十一条第三項（同条第一項の規定による参加の申出に係る部分に限る。）において準用する場合を含む。）の書面の写しを送付する方法によってする。第一項の事件について非訟事件手続法第二十一条第二項の規定による参加の許可の裁判があったときは、裁判所書記官は、非訟事件手続規則第十五条第三項の規定による通知をするほか、当事者及び利害関係参加人（同法第二十一条第二項の規定による参加の許可の申立てをした者を除く。）に対し、同法第二十一条第三項（同条第二項の規定による参加の許可の申立てに係る部分に限る。）において準用する同法第二十条第二項の書面の写しを送付しなければならない。"><a href="#a7">第七条　参加の申出書の送付等</a></li><li class="lv-art" data-text="第八条8条申立ての変更の取扱い申立ての変更の取扱い法第八百七十条第二項各号に掲げる裁判の申立てについて、申立人が書面で申立ての趣旨又は原因の変更をした場合には、その変更を許さない旨の裁判があったときを除き、裁判所書記官は、その書面を当事者（その変更をした者を除く。）、利害関係参加人及び当該各号に定める者に送付しなければならない。法第八百七十条第二項各号に掲げる裁判の申立てに係る事件の手続の期日において申立人が口頭で申立ての趣旨又は原因の変更をした場合には、その変更を許さない旨の裁判があったときを除き、裁判所書記官は、その期日の調書の謄本を当事者、利害関係参加人及び当該各号に定める者（その期日に出頭した者を除く。）に送付しなければならない。"><a href="#a8">第八条　申立ての変更の取扱い</a></li><li class="lv-art" data-text="第九条9条申立ての取下げがあった場合の取扱い申立ての取下げがあった場合の取扱い終局決定がされる前に法第八百七十条第二項各号に掲げる裁判の申立ての取下げがあったときは、裁判所書記官は、その旨を当事者、利害関係参加人及び当該各号に定める者に通知しなければならない。終局決定がされた後に同項各号に掲げる裁判の申立ての取下げがあった場合において、裁判所が取下げを許可したときも、同様とする。法第八百七十条第二項各号に掲げる裁判の申立ての取下げについては、非訟事件手続規則第四十九条第一項及び第三項の規定は、適用しない。"><a href="#a9">第九条　申立ての取下げがあった場合の取扱い</a></li><li class="lv-art" data-text="第九条の二9条の2抗告状の写しの添付抗告状の写しの添付法第八百七十条第二項各号に掲げる裁判に対する即時抗告をするときは、抗告状に申立人及び当該各号に定める者（抗告人を除く。）の数と同数の写しを添付しなければならない。"><a href="#a9-2">第九条の二　抗告状の写しの添付</a></li></ul></li><li class="lv-div div-2"><a href="#d12">第二章　検査役の選任の手続に関する特則</a><ul><li class="lv-art" data-text="第十条10条報告書の提出期限の定め報告書の提出期限の定め裁判所は、検査役が調査の結果を報告すべき期限を定めることができる。"><a href="#a10">第十条　報告書の提出期限の定め</a></li><li class="lv-art" data-text="第十一条11条即時抗告に係る事件記録の送付即時抗告に係る事件記録の送付検査役の報酬の額の決定に対する即時抗告があった場合において、原裁判所が原審の記録を送付する必要がないと認めたときは、非訟事件手続規則第五十三条第二項及び第六十三条第二項の規定にかかわらず、原裁判所の裁判所書記官は、抗告事件の記録のみを抗告裁判所の裁判所書記官に送付すれば足りる。前項の規定により抗告事件の記録が送付された場合において、抗告裁判所が原審の記録が必要であると認めたときは、抗告裁判所の裁判所書記官は、速やかに、その送付を原裁判所の裁判所書記官に求めなければならない。"><a href="#a11">第十一条　即時抗告に係る事件記録の送付</a></li></ul></li><li class="lv-div div-2"><a href="#d15">第三章　特別清算の手続に関する特則</a><ul><li class="lv-div div-3"><a href="#d16">第一節　通則</a><ul><li class="lv-art" data-text="第十二条12条口頭による報告の許可口頭による報告の許可第一条の規定にかかわらず、裁判所は、特別清算の手続に関する報告については、当該手続の円滑な進行を図るために必要があると認めるときは、口頭で同条の報告をすることを許可することができる。"><a href="#a12">第十二条　口頭による報告の許可</a></li><li class="lv-art" data-text="第十三条13条登記事項証明書等の提出の求め登記事項証明書等の提出の求め裁判所は、必要があると認めるときは、特別清算開始の申立てその他の特別清算の手続に関する申立てをした者に対し、清算株式会社の財産に属する権利で登記又は登録がされたものについての登記事項証明書又は登録原簿に記載されている事項を証明した書面を提出させることができる。"><a href="#a13">第十三条　登記事項証明書等の提出の求め</a></li><li class="lv-art" data-text="第十四条14条調書調書特別清算の手続における調書は、作成することを要しない。ただし、裁判長が作成を命じたときは、この限りでない。"><a href="#a14">第十四条　調書</a></li><li class="lv-art" data-text="第十五条15条即時抗告に係る事件記録の送付即時抗告に係る事件記録の送付特別清算の手続における非訟事件手続規則第五十三条第一項（同規則第七十条において準用する場合を含む。）の規定による事件の送付は、特別清算裁判所の裁判所書記官が、特別清算事件の記録を抗告裁判所の裁判所書記官に送付してするものとする。この場合において、裁判所が特別清算事件の記録を送付する必要がないと認めたときは、特別清算裁判所の裁判所書記官は、抗告事件の記録のみを抗告裁判所の裁判所書記官に送付すれば足りる。前項の規定により抗告事件の記録が送付された場合において、抗告裁判所が特別清算事件の記録が必要であると認めたときは、抗告裁判所の裁判所書記官は、速やかに、その送付を特別清算裁判所の裁判所書記官に求めなければならない。"><a href="#a15">第十五条　即時抗告に係る事件記録の送付</a></li><li class="lv-art" data-text="第十六条16条公告事務の取扱者公告事務の取扱者公告に関する事務は、裁判所書記官が取り扱う。"><a href="#a16">第十六条　公告事務の取扱者</a></li><li class="lv-art" data-text="第十七条17条官庁等への通知官庁等への通知官庁その他の機関の許可（免許、登録その他の許可に類する行政処分を含む。以下この項において同じ。）がなければ開始することができない事業を営む清算株式会社について特別清算開始の命令があったときは、裁判所書記官は、その旨を当該機関に通知しなければならない。官庁その他の機関の許可がなければ設立することができない清算株式会社について特別清算開始の命令があったときも、同様とする。前項の規定は、特別清算開始の命令を取り消す決定が確定した場合又は特別清算終結の決定が確定した場合について準用する。法第五百七十四条第一項又は第二項の規定による破産手続開始の決定があった場合において、破産規則（平成十六年最高裁判所規則第十四号）第九条第一項の規定による通知をするときは、裁判所書記官は、当該破産手続開始の決定により特別清算が終了した旨をも通知しなければならない。"><a href="#a17">第十七条　官庁等への通知</a></li><li class="lv-art" data-text="第十八条18条事件に関する文書の閲覧等事件に関する文書の閲覧等法第八百八十六条（第五項を除く。）の規定は、第一章及びこの章の規定又は非訟事件手続規則（同規則において準用する民事訴訟規則（平成八年最高裁判所規則第五号）の規定を含む。第三項において同じ。）に基づき、裁判所に提出され、又は裁判所が作成した文書その他の物件について準用する。法第八百八十六条第一項又は前項に規定する文書その他の物件の閲覧若しくは謄写、その正本、謄本若しくは抄本の交付又はその複製の請求は、当該請求に係る文書その他の物件を特定するに足りる事項を明らかにしてしなければならない。裁判所は、利害関係人の閲覧に供するため必要があると認めるときは、法第八百八十六条第一項に規定する規定、第一章及びこの章の規定又は非訟事件手続規則の規定に基づき書面を裁判所に提出した者又は提出しようとする者に対し、その写しを提出することを求めることができる。前項の規定により書面の写しが提出された場合には、当該書面の閲覧又は謄写は、提出された写しによってさせることができる。"><a href="#a18">第十八条　事件に関する文書の閲覧等</a></li><li class="lv-art" data-text="第十九条19条支障部分の閲覧等の制限の申立ての方式等支障部分の閲覧等の制限の申立ての方式等法第八百八十七条第一項の申立ては、支障部分を特定してしなければならない。前項の申立ては、当該申立てに係る文書その他の物件の提出の際にしなければならない。第一項の申立てをするときは、当該申立てに係る文書その他の物件から支障部分を除いたものをも作成し、裁判所に提出しなければならない。ただし、同項の申立てに係る支障部分が当該申立てに係る文書その他の物件の全部であるときは、この限りでない。法第八百八十七条第一項の規定による決定においては、支障部分を特定しなければならない。前項の決定があったときは、第一項の申立てをした者は、遅滞なく、当該申立てに係る文書その他の物件から当該決定により特定された支障部分を除いたものを作成し、裁判所に提出しなければならない。ただし、当該申立てにより特定された支障部分と当該決定により特定された支障部分とが同一である場合は、この限りでない。法第八百八十七条第一項の規定による決定の一部を取り消す決定が確定したときは、第一項の申立てをした者は、遅滞なく、当該申立てに係る文書その他の物件から当該法第八百八十七条第一項の規定による決定において特定された支障部分のうち当該決定の一部を取り消す決定に係る部分以外の部分を除いたものを作成し、裁判所に提出しなければならない。前条第四項の規定は、第三項本文、第五項本文又は前項の規定により文書その他の物件から支障部分を除いたものが提出された場合について準用する。"><a href="#a19">第十九条　支障部分の閲覧等の制限の申立ての方式等</a></li><li class="lv-art" data-text="第二十条20条非訟事件手続規則の適用除外非訟事件手続規則の適用除外非訟事件手続規則第三十五条（民事訴訟規則第四十一条及び第四十二条の規定を準用する部分に限る。）の規定は、法第八百八十三条に規定する裁判書の送達については、適用しない。"><a href="#a20">第二十条　非訟事件手続規則の適用除外</a></li></ul></li><li class="lv-div div-3"><a href="#d26">第二節　特別清算の開始の手続に関する特則</a><ul><li class="lv-art" data-text="第二十一条21条費用の予納費用の予納法第八百八十八条第三項の金額は、清算株式会社の事業の内容、資産及び負債その他の財産の状況、債権者及び株主の数、監督委員又は調査委員の選任の要否その他の事情を考慮して定める。特別清算開始の命令があるまでの間において、予納した費用が不足するときは、裁判所は、申立人に、更に予納させることができる。"><a href="#a21">第二十一条　費用の予納</a></li><li class="lv-art" data-text="第二十二条22条特別清算開始の申立てについての裁判の方式特別清算開始の申立てについての裁判の方式特別清算開始の申立てについての裁判は、裁判書を作成してしなければならない。"><a href="#a22">第二十二条　特別清算開始の申立てについての裁判の方式</a></li></ul></li><li class="lv-div div-3"><a href="#d29">第三節　特別清算の実行の手続に関する特則</a><ul><li class="lv-art" data-text="第二十三条23条清算の監督清算の監督裁判所は、清算株式会社に対して報告書の提出を促すこと又は清算の遂行の状況に関し問い合わせをすることその他の清算の監督に関する事務を裁判所書記官に命じて行わせることができる。"><a href="#a23">第二十三条　清算の監督</a></li><li class="lv-art" data-text="第二十四条24条手続の進行に関する定め手続の進行に関する定め裁判所は、清算株式会社の財産の状況、清算株式会社による清算の遂行の状況その他の事情を考慮して、特別清算の手続の円滑な進行を図るために必要があると認めるときは、清算株式会社が債権者集会の招集をすべき時期及び協定の申出をすべき時期を定めることができる。"><a href="#a24">第二十四条　手続の進行に関する定め</a></li><li class="lv-art" data-text="第二十五条25条清算株式会社による財産目録等の開示清算株式会社による財産目録等の開示清算株式会社は、法第五百二十一条の規定により同条に規定する財産目録等を裁判所に提出したときは、次の各号に掲げる事由のいずれかが生ずるまで、当該財産目録等を、その本店において、協定債権者又は株主が閲覧することができる状態に置く措置を執らなければならない。一特別清算開始の命令を取り消す決定の確定二協定の認可の決定の確定三特別清算終結の決定の確定四法第五百七十四条第一項又は第二項の規定による破産手続開始の決定の確定"><a href="#a25">第二十五条　清算株式会社による財産目録等の開示</a></li><li class="lv-art" data-text="第二十六条26条貸借対照表の提出貸借対照表の提出清算株式会社は、特別清算開始後において、法第四百九十四条第一項の貸借対照表を作成したときは、遅滞なく、これを裁判所に提出しなければならない。ただし、当該貸借対照表が同条第二項の規定により電磁的記録をもって作成されているときは、当該電磁的記録に記録された事項を記載した書面を裁判所に提出しなければならない。"><a href="#a26">第二十六条　貸借対照表の提出</a></li><li class="lv-art" data-text="第二十七条27条監督委員の選任等監督委員の選任等裁判所は、監督委員を選任するに当たっては、その職務を行うに適した者を選任するものとする。法人が監督委員に選任された場合には、当該法人は、役員又は職員のうちから監督委員の職務を行うべき者を指名し、指名された者の氏名を裁判所に届け出るとともに、清算株式会社に通知しなければならない。裁判所書記官は、監督委員に対し、その選任を証する書面を交付しなければならない。監督委員は、正当な理由があるときは、裁判所の許可を得て辞任することができる。"><a href="#a27">第二十七条　監督委員の選任等</a></li><li class="lv-art" data-text="第二十八条28条監督委員の同意の申請の方式等監督委員の同意の申請の方式等監督委員の同意を求める旨の申請及び監督委員の同意は、書面でしなければならない。清算株式会社は、監督委員の同意を得たときは、遅滞なく、その旨を裁判所に報告しなければならない。"><a href="#a28">第二十八条　監督委員の同意の申請の方式等</a></li><li class="lv-art" data-text="第二十九条29条清算株式会社の監督委員に対する報告清算株式会社の監督委員に対する報告裁判所は、監督委員が選任されている場合において、必要があると認めるときは、清算株式会社について、監督委員への報告を要する行為を指定することができる。清算株式会社は、前項に規定する行為をしたときは、速やかに、その旨を監督委員に報告しなければならない。"><a href="#a29">第二十九条　清算株式会社の監督委員に対する報告</a></li><li class="lv-art" data-text="第三十条30条監督委員に対する監督監督委員に対する監督裁判所は、報告書の提出を促すことその他の監督委員に対する監督に関する事務を裁判所書記官に命じて行わせることができる。"><a href="#a30">第三十条　監督委員に対する監督</a></li><li class="lv-art" data-text="第三十一条31条監督委員の報酬の額監督委員の報酬の額裁判所が定める監督委員の報酬の額は、その職務と責任にふさわしいものでなければならない。"><a href="#a31">第三十一条　監督委員の報酬の額</a></li><li class="lv-art" data-text="第三十二条32条調査委員の選任等調査委員の選任等裁判所は、調査委員を選任するに当たっては、その職務を行うに適した者で利害関係のないものを選任するものとする。第二十七条（第一項を除く。）、第三十条及び前条の規定は、調査委員について準用する。"><a href="#a32">第三十二条　調査委員の選任等</a></li><li class="lv-art" data-text="第三十三条33条裁判所の許可を要しない行為裁判所の許可を要しない行為法第五百三十五条第二項第一号の最高裁判所規則で定める額は、百万円とする。"><a href="#a33">第三十三条　裁判所の許可を要しない行為</a></li><li class="lv-art" data-text="第三十四条34条役員等責任査定決定の申立書等の送付役員等責任査定決定の申立書等の送付法第五百四十五条第一項の申立てをする者は、当該申立てをする際、申立書及び証拠書類の写しについて相手方に直送をしなければならない。"><a href="#a34">第三十四条　役員等責任査定決定の申立書等の送付</a></li><li class="lv-art" data-text="第三十五条35条議決権に関する定めについての届出議決権に関する定めについての届出清算株式会社は、法第五百四十八条第二項又は第三項後段の規定により各協定債権について債権者集会における議決権の行使の許否及びその額を定めた場合において、議決権の行使を許さない旨を定め、又は法第四百九十九条第一項の期間内に申出がされた債権の額と異なる額を定めたときは、遅滞なく、その旨を裁判所に届け出なければならない。"><a href="#a35">第三十五条　議決権に関する定めについての届出</a></li><li class="lv-art" data-text="第三十六条36条協定の認可の申立ての方式協定の認可の申立ての方式第一条の規定にかかわらず、債権者集会においてする法第五百六十八条の申立ては、口頭ですることができる。"><a href="#a36">第三十六条　協定の認可の申立ての方式</a></li></ul></li></ul></li><li class="lv-div div-2"><a href="#d44">第四章　外国会社の清算の手続に関する特則</a><ul><li class="lv-art" data-text="第三十七条37条特別清算の手続に関する規定の準用特別清算の手続に関する規定の準用前章の規定は、その性質上許されないものを除き、法第八百二十二条第一項の規定による日本にある外国会社の財産についての清算について準用する。"><a href="#a37">第三十七条　特別清算の手続に関する規定の準用</a></li></ul></li><li class="lv-div div-2"><a href="#d46">第五章　会社の解散命令等の手続に関する特則</a><ul><li class="lv-art" data-text="第三十八条38条管理人の選任等管理人の選任等第二十七条、第三十条及び第三十一条の規定は、法第八百二十五条第二項（法第八百二十七条第二項において準用する場合を含む。）の管理人について準用する。"><a href="#a38">第三十八条　管理人の選任等</a></li><li class="lv-art" data-text="第三十九条39条即時抗告に係る事件記録の送付即時抗告に係る事件記録の送付第十一条の規定は、前条の管理人の報酬の額の決定に対する即時抗告があった場合について準用する。"><a href="#a39">第三十九条　即時抗告に係る事件記録の送付</a></li><li class="lv-art" data-text="第四十条40条報告又は計算に関する資料の閲覧等報告又は計算に関する資料の閲覧等第十八条第二項の規定は法第九百六条第一項の資料の閲覧若しくは謄写、その正本、謄本若しくは抄本の交付又はその複製の請求について、第十八条第三項及び第四項の規定は当該資料の閲覧又は謄写について準用する。"><a href="#a40">第四十条　報告又は計算に関する資料の閲覧等</a></li><li class="lv-art" data-text="第四十一条41条削除（平二四最裁規九）"><a href="#a41">第四十一条</a></li></ul></li><li class="lv-div div-2"><a href="#d51">第六章　雑則</a><ul><li class="lv-art" data-text="第四十二条42条裁判による登記の嘱託等裁判による登記の嘱託等法第九百三十七条及び第九百三十八条第一項から第三項までの規定による登記の嘱託は、嘱託書に裁判書の謄本又は電子判決書に記録されている事項を記載した書面であって裁判所書記官が当該書面の内容がファイルに記録されている事項と同一であることを証明したものを添付してしなければならない。法第九百三十八条第四項において準用する同条第三項の規定による登記の嘱託は、嘱託書に、同項に規定する保全処分を変更し、若しくは取り消す旨の決定の裁判書の謄本又は当該保全処分が効力を失ったことを証する書面を添付してしなければならない。前二項の規定は、法第九百三十八条第五項において準用する同条第三項及び第四項の規定による登録の嘱託について準用する。前三項の規定は、その性質上許されないものを除き、法第九百三十八条第六項において準用する同条第一項から第五項までの規定による登記又は登録の嘱託について準用する。"><a href="#a42">第四十二条　裁判による登記の嘱託等</a></li><li class="lv-art" data-text="第四十三条43条会社法の規定を準用する他の法令の規定による非訟事件の手続への準用会社法の規定を準用する他の法令の規定による非訟事件の手続への準用第一章から前章までの規定は、その性質に反しない限り、他の法令において準用する法第八百六十八条、第八百七十九条又は第八百八十条の規定により当該規定に規定する裁判所に係属すべき非訟事件の手続について準用する。前条の規定は、他の法令において準用する法第九百三十七条及び第九百三十八条の規定による登記又は登録の嘱託について準用する。"><a href="#a43">第四十三条　会社法の規定を準用する他の法令の規定による非訟事件の手続への準用</a></li><li class="lv-art" data-text="第四十四条44条信託法の規定による非訟事件及び公益信託に関する法律の規定による非訟事件の手続への準用信託法の規定による非訟事件及び公益信託に関する法律の規定による非訟事件の手続への準用第一章及び第二章の規定は、その性質に反しない限り、信託法（平成十八年法律第百八号）の規定による非訟事件及び公益信託に関する法律（令和六年法律第三十号）の規定による非訟事件の手続について準用する。この場合において、第二条第一項第二号中「会社（法第八百六十八条第四項に規定する裁判の申立てに係る事件にあっては、社債を発行した会社。以下この章において同じ。）の商号及び本店の所在地並びに代表者の氏名」とあるのは「限定責任信託の名称及び事務処理地並びに受託者の氏名又は名称」と、第三条第一項中「申立書」とあるのは「申立書（限定責任信託に係るものに限る。）」と、「次に掲げる書類」とあるのは「申立てに係る限定責任信託の登記に係る登記事項証明書」と、同条第二項中「前項第一号」とあるのは「前項」と、「同号に掲げる」とあるのは「同項に規定する」と読み替えるものとする。第二十七条、第三十条及び第三十一条の規定は、信託法第百七十条第一項の管理人について準用する。第十一条の規定は、前項の管理人の報酬の額の決定に対する即時抗告があった場合について準用する。第十八条第二項の規定は信託法第百七十二条第一項の資料の閲覧若しくは謄写、その正本、謄本若しくは抄本の交付又はその複製の請求について、第十八条第三項及び第四項の規定は当該資料の閲覧又は謄写について準用する。第四十二条第一項から第三項までの規定は、信託法第六十四条第五項及び第六項（これらの規定を同法第七十四条第六項において準用する場合を含む。）、第百七十条第五項（同条第六項において準用する場合を含む。）並びに第二百四十六条の規定による登記又は登録の嘱託について準用する。"><a href="#a44">第四十四条　信託法の規定による非訟事件及び公益信託に関する法律の規定による非訟事件の手続への準用</a></li><li class="lv-art" data-text="第四十四条の二44条の2表題部所有者不明土地の登記及び管理の適正化に関する法律の規定による非訟事件の手続への準用表題部所有者不明土地の登記及び管理の適正化に関する法律の規定による非訟事件の手続への準用削除（令四最裁規一三）"><a href="#a44-2">第四十四条の二　表題部所有者不明土地の登記及び管理の適正化に関する法律の規定による非訟事件の手続への準用</a></li><li class="lv-art" data-text="第四十五条45条その他の法令の規定による非訟事件の手続への準用その他の法令の規定による非訟事件の手続への準用第二章の規定は、無尽業法（昭和六年法律第四十二号）第三十一条第三項及び銀行法（昭和五十六年法律第五十九号）第四十五条第三項に規定する特別検査人について準用する。第四十二条第一項の規定は、組合等登記令（昭和三十九年政令第二十九号）第十四条第一項から第三項までの規定による登記の嘱託について準用する。"><a href="#a45">第四十五条　その他の法令の規定による非訟事件の手続への準用</a></li></ul></li><li class="lv-div div-1"><a href="#sup1">附則</a></li><li class="lv-div div-1"><a href="#sup2">附則　（平成一九年四月一一日最高裁判所規則第五号）</a></li><li class="lv-div div-1"><a href="#sup3">附則　（平成二〇年一〇月一日最高裁判所規則第一〇号）</a></li><li class="lv-div div-1"><a href="#sup4">附則　（平成二四年七月一七日最高裁判所規則第九号）抄</a><ul><li class="lv-art" data-text="第一条1条施行期日施行期日この規則は、非訟事件手続法（平成二十三年法律第五十一号）の施行の日から施行する。"><a href="#sup4-a1">第一条　施行期日</a></li></ul></li><li class="lv-div div-1"><a href="#sup5">附則　（令和二年四月二二日最高裁判所規則第六号）</a></li><li class="lv-div div-1"><a href="#sup6">附則　（令和四年二月二一日最高裁判所規則第八号）</a></li><li class="lv-div div-1"><a href="#sup7">附則　（令和四年五月一三日最高裁判所規則第一三号）</a></li><li class="lv-div div-1"><a href="#sup8">附則　（令和四年一一月七日最高裁判所規則第一七号）抄</a><ul><li class="lv-art" data-text="第一条1条施行期日施行期日この規則は、民事訴訟法等の一部を改正する法律（令和四年法律第四十八号。以下この条において「改正法」という。）附則第一条第二号に掲げる規定の施行の日（令和五年二月二〇日）から施行する。ただし、次の各号に掲げる規定は、当該各号に定める日から施行する。一第一条中民事訴訟規則第三十二条、第七十七条、第七十八条、第九十六条及び第百六十三条第一項の改正規定、第十四条の規定、第十八条中労働審判規則第三十七条の改正規定（「第七十七条」を「第七十七条前段」に改める部分に限る。）、第二十条中非訟事件手続規則第二十一条及び第五十条の改正規定、第二十一条中家事事件手続規則第三十三条及び第百二十六条第二項の改正規定並びに第二十二条中国際的な子の奪取の民事上の側面に関する条約の実施に関する法律による子の返還に関する事件の手続等に関する規則第二十三条及び第五十三条第一項の改正規定 改正法附則第一条第三号に掲げる規定の施行の日（令和五年三月一日）二第一条中民事訴訟規則目次の改正規定（「第三十一条」を「第三十条の二」に改める部分に限る。）及び同規則第一編第五章第一節中第三十一条の前に二条を加える改正規定、第三条の規定、第六条の規定、第七条中民事執行規則第十五条の二の改正規定、第八条中民事保全規則第六条の改正規定、第十条中民事再生規則第十一条の改正規定、第十二条中外国倒産処理手続の承認援助に関する規則第十二条の改正規定、第十三条中会社更生規則第十条の改正規定、第十六条の規定、第十七条中破産規則第十二条の改正規定並びに第二十三条の規定 改正法附則第一条第四号に掲げる規定の施行の日三第十五条の規定 改正法附則第一条第五号に掲げる規定の施行の日"><a href="#sup8-a1">第一条　施行期日</a></li></ul></li><li class="lv-div div-1"><a href="#sup9">附則　（令和六年九月一七日最高裁判所規則第一四号）抄</a><ul><li class="lv-art" data-text="第一条1条施行期日施行期日この規則は、民事訴訟法等の一部を改正する法律（令和四年法律第四十八号）の施行の日（令和八年五月二一日）から施行する。"><a href="#sup9-a1">第一条　施行期日</a></li></ul></li><li class="lv-div div-1"><a href="#sup10">附則　（令和七年一二月一五日最高裁判所規則第一六号）</a></li></ul>
+  </nav>
+  <main class="doc" id="doc-outer">
+    <div class="doc-head">
+      <h1>会社非訟事件等手続規則</h1>
+      <div class="meta">平成一八年二月八日最高裁判所規則第一号　／　令和8年5月21日施行　／　<a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本PDF p.1</a></div>
+    </div>
+    <div id="doc">
+<article class="art noarticle" id="body-1" data-path=""><div class="art-tools"><button type="button" data-anchor="body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（会社非訟事件等手続規則（原文は縦書き）</p><p class="para" id="body-1-p1"><span class="body-text">改正 同一九年四月一一日最高裁判所規則第五号同二○年一○月一日同第一○号同二四年七月一七日同第九号令和二年四月二二日同第六号同四年二月二一日同第八号同四年五月一三日同第一三号同四年一一月七日同第一七号同六年九月十七日同第一四号同七年一二月一五日同第一六号会社非訟事件等手続規則を次のように定める。会社非訟事件等手続規則</span></p></article>
+<h3 class="div-head" id="d1" data-path="第一章　総則"><span class="lbl">第一章</span>　総則</h3>
+<article class="art" id="a1" data-path="第一章　総則"><span class="anchor-alias" id="Mp-At_1"></span><div class="art-tools"><button type="button" data-anchor="a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（申立て等の方式）</p><p class="para" id="a1-p1"><a class="art-no" href="#a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">会社法（平成十七年法律第八十六号。以下「法」という。）の規定による非訟事件の手続（以下「会社非訟事件手続」という。）に関する申立て、届出及び裁判所に対する報告は、特別の定めがある場合を除き、書面でしなければならない。</span></p></article>
+<article class="art" id="a2" data-path="第一章　総則"><span class="anchor-alias" id="Mp-At_2"></span><div class="art-tools"><button type="button" data-anchor="a2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（申立書の記載事項）</p><p class="para" id="a2-p1"><a class="art-no" href="#a2" data-kan="第二条" data-num="第2条">第二条</a><span class="body-text">会社非訟事件手続に関する申立書には、申立ての趣旨及び原因並びに申立てを理由づける事実を記載するほか、次に掲げる事項を記載し、申立人又は代理人が記名（当該申立書がその提出により会社非訟事件手続の開始、続行、停止又は完結をさせるものである場合にあっては、記名押印）をしなければならない。</span></p><ol class="items"><li id="a2-p1-1"><span class="mk">一</span><span class="tx">当事者の氏名又は名称及び住所並びに法定代理人の氏名及び住所</span></li><li id="a2-p1-2"><span class="mk">二</span><span class="tx">申立てに係る会社（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_868" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第八百六十八条</a>第四項に規定する裁判の申立てに係る事件にあっては、社債を発行した会社。以下この章において同じ。）の商号及び本店の所在地並びに代表者の氏名</span></li></ol><p class="para" id="a2-p2"><span class="pno">2</span><span class="body-text">前項の申立書には、同項に規定する事項のほか、次に掲げる事項を記載するものとする。</span></p><ol class="items"><li id="a2-p2-1"><span class="mk">一</span><span class="tx">代理人（前項第一号の法定代理人を除く。）の氏名及び住所</span></li><li id="a2-p2-2"><span class="mk">二</span><span class="tx">申立てに係る会社が外国会社であるときは、当該外国会社の日本における営業所の所在地（日本に営業所を設けていない場合にあっては、日本における代表者の住所地）</span></li><li id="a2-p2-3"><span class="mk">三</span><span class="tx">申立てを理由づける具体的な事実ごとの証拠</span></li><li id="a2-p2-4"><span class="mk">四</span><span class="tx">事件の表示</span></li><li id="a2-p2-5"><span class="mk">五</span><span class="tx">附属書類の表示</span></li><li id="a2-p2-6"><span class="mk">六</span><span class="tx">年月日</span></li><li id="a2-p2-7"><span class="mk">七</span><span class="tx">裁判所の表示</span></li><li id="a2-p2-8"><span class="mk">八</span><span class="tx">申立人又は代理人の郵便番号及び電話番号（ファクシミリの番号を含む。）</span></li><li id="a2-p2-9"><span class="mk">九</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_840" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第八百四十条</a>第二項（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_841" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第八百四十一条</a>第二項及び第八百四十二条第二項において準用する場合を含む。）又は第八百四十三条第四項の申立てについては、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_840" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第八百四十条</a>第一項、第八百四十一条第一項若しくは第八百四十二条第一項又は第八百四十三条第一項に規定する判決（電子判決書（民事訴訟法（平成八年法律第百九号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000109#Mp-At_252" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第二百五十二条</a>第一項に規定する電子判決書（同法第二百五十三条第二項の規定により裁判所の使用に係る電子計算機（入出力装置を含む。）に備えられたファイル（<a class="ref ref-self" href="#a42">第四十二条</a>第一項において単に「ファイル」という。）に記録されたものに限る。）をいう。次条第一項第三号及び<a class="ref ref-self" href="#a42">第四十二条</a>第一項において同じ。）が作成されているものに限る。）をした裁判所の名称、事件番号及び当該判決を識別するために裁判所が付した符号</span></li><li id="a2-p2-10"><span class="mk">十</span><span class="tx">その他裁判所が定める事項</span></li></ol><p class="para" id="a2-p3"><span class="pno">3</span><span class="body-text">検査役の選任の申立てをするときは、申立ての趣旨において、検査の目的を記載しなければならない。</span></p><p class="para" id="a2-p4"><span class="pno">4</span><span class="body-text">第一項及び第二項の規定にかかわらず、会社非訟事件手続に関し、申立人又は代理人から第一項第二号又は第二項第二号若しくは第八号に掲げる事項を記載した申立書が提出されているときは、以後裁判所に提出する当該手続を基本とする手続の申立書については、これらの事項を記載することを要しない。</span></p></article>
+<article class="art" id="a3" data-path="第一章　総則"><span class="anchor-alias" id="Mp-At_3"></span><div class="art-tools"><button type="button" data-anchor="a3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（申立書の添付書類）</p><p class="para" id="a3-p1"><a class="art-no" href="#a3" data-kan="第三条" data-num="第3条">第三条</a><span class="body-text">前条第一項の申立書には、次に掲げる書類を添付しなければならない。</span></p><ol class="items"><li id="a3-p1-1"><span class="mk">一</span><span class="tx">申立てに係る会社の登記事項証明書</span></li><li id="a3-p1-2"><span class="mk">二</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_732" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第七百三十二条</a>の規定による社債権者集会の決議の認可の申立てについては、当該社債権者集会の議事録の写し</span></li><li id="a3-p1-3"><span class="mk">三</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_840" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第八百四十条</a>第二項（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_841" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第八百四十一条</a>第二項及び第八百四十二条第二項において準用する場合を含む。）の申立てについては、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_840" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第八百四十条</a>第一項、第八百四十一条第一項又は第八百四十二条第一項に規定する判決（電子判決書が作成されているものを除く。次号において同じ。）の判決書の写し及び当該判決の確定についての証明書</span></li><li id="a3-p1-4"><span class="mk">四</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_843" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第八百四十三条</a>第四項の申立てについては、同条第一項に規定する判決の判決書の写し及び当該判決の確定についての証明書</span></li></ol><p class="para" id="a3-p2"><span class="pno">2</span><span class="body-text">前項第一号の規定にかかわらず、会社非訟事件手続に関し、申立人又は代理人から同号に掲げる書面が提出されているときは、以後裁判所に提出する当該手続を基本とする手続の申立書には、これを添付することを要しない。</span></p></article>
+<article class="art" id="a4" data-path="第一章　総則"><span class="anchor-alias" id="Mp-At_4"></span><div class="art-tools"><button type="button" data-anchor="a4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（申立人に対する資料の提出の求め）</p><p class="para" id="a4-p1"><a class="art-no" href="#a4" data-kan="第四条" data-num="第4条">第四条</a><span class="body-text">裁判所は、会社非訟事件手続に関する申立てをした者又はしようとする者に対し、<a class="ref ref-self" href="#a2">第二条</a>第一項の申立書及び当該申立書に添付すべき書類のほか、申立てを理由づける事実に関する資料、申立てに係る会社に関する資料その他会社非訟事件手続の円滑な進行を図るために必要な資料の提出を求めることができる。</span></p></article>
+<article class="art" id="a5" data-path="第一章　総則"><span class="anchor-alias" id="Mp-At_5"></span><div class="art-tools"><button type="button" data-anchor="a5" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（裁判所書記官の事実調査）</p><p class="para" id="a5-p1"><a class="art-no" href="#a5" data-kan="第五条" data-num="第5条">第五条</a><span class="body-text">裁判所は、相当と認めるときは、会社非訟事件手続に関する申立てを理由づける事実（特別清算の手続に関する<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_514" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第五百十四条</a>各号に掲げる事由に係る事実を含む。）の調査を裁判所書記官に命じて行わせることができる。</span></p></article>
+<article class="art" id="a6" data-path="第一章　総則"><span class="anchor-alias" id="Mp-At_6"></span><div class="art-tools"><button type="button" data-anchor="a6" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（申立書の写しの提出）</p><p class="para" id="a6-p1"><a class="art-no" href="#a6" data-kan="第六条" data-num="第6条">第六条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_870" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第八百七十条</a>第二項各号に掲げる裁判の申立てをするときは、申立書に当該各号に定める者の数と同数の写しを添付しなければならない。</span></p></article>
+<article class="art" id="a7" data-path="第一章　総則"><span class="anchor-alias" id="Mp-At_7"></span><div class="art-tools"><button type="button" data-anchor="a7" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（参加の申出書の送付等）</p><p class="para" id="a7-p1"><a class="art-no" href="#a7" data-kan="第七条" data-num="第7条">第七条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_870" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第八百七十条</a>第二項各号に掲げる裁判の申立てに係る事件の手続における非訟事件手続法（平成二十三年法律第五十一号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/423AC0000000051#Mp-At_20" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第二十条</a>第二項（同法第二十一条第三項において準用する場合を含む。）の書面には、当事者及び利害関係参加人の数に応じた当該書面の写しを添付しなければならない。</span></p><p class="para" id="a7-p2"><span class="pno">2</span><span class="body-text">前項の事件の手続における非訟事件手続規則（平成二十四年最高裁判所規則第七号）<a class="ref ref-rule" href="500.html#a15" title="この規則集の中を開きます">第十五条</a>第二項（同条第四項において準用する場合を含む。）の規定による通知は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/423AC0000000051#Mp-At_20" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">非訟事件手続法第二十条</a>第二項（同法第二十一条第三項（同条第一項の規定による参加の申出に係る部分に限る。）において準用する場合を含む。）の書面の写しを送付する方法によってする。</span></p><p class="para" id="a7-p3"><span class="pno">3</span><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/423AC0000000051#Mp-At_21" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第一項の事件について非訟事件手続法第二十一条</a>第二項の規定による参加の許可の裁判があったときは、裁判所書記官は、<a class="ref ref-rule" href="500.html#a15" title="この規則集の中を開きます">非訟事件手続規則第十五条</a>第三項の規定による通知をするほか、当事者及び利害関係参加人（同法第二十一条第二項の規定による参加の許可の申立てをした者を除く。）に対し、同法第二十一条第三項（同条第二項の規定による参加の許可の申立てに係る部分に限る。）において準用する同法第二十条第二項の書面の写しを送付しなければならない。</span></p></article>
+<article class="art" id="a8" data-path="第一章　総則"><span class="anchor-alias" id="Mp-At_8"></span><div class="art-tools"><button type="button" data-anchor="a8" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（申立ての変更の取扱い）</p><p class="para" id="a8-p1"><a class="art-no" href="#a8" data-kan="第八条" data-num="第8条">第八条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_870" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第八百七十条</a>第二項各号に掲げる裁判の申立てについて、申立人が書面で申立ての趣旨又は原因の変更をした場合には、その変更を許さない旨の裁判があったときを除き、裁判所書記官は、その書面を当事者（その変更をした者を除く。）、利害関係参加人及び当該各号に定める者に送付しなければならない。</span></p><p class="para" id="a8-p2"><span class="pno">2</span><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_870" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第八百七十条</a>第二項各号に掲げる裁判の申立てに係る事件の手続の期日において申立人が口頭で申立ての趣旨又は原因の変更をした場合には、その変更を許さない旨の裁判があったときを除き、裁判所書記官は、その期日の調書の謄本を当事者、利害関係参加人及び当該各号に定める者（その期日に出頭した者を除く。）に送付しなければならない。</span></p></article>
+<article class="art" id="a9" data-path="第一章　総則"><span class="anchor-alias" id="Mp-At_9"></span><div class="art-tools"><button type="button" data-anchor="a9" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（申立ての取下げがあった場合の取扱い）</p><p class="para" id="a9-p1"><a class="art-no" href="#a9" data-kan="第九条" data-num="第9条">第九条</a><span class="body-text">終局決定がされる前に<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_870" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第八百七十条</a>第二項各号に掲げる裁判の申立ての取下げがあったときは、裁判所書記官は、その旨を当事者、利害関係参加人及び当該各号に定める者に通知しなければならない。終局決定がされた後に同項各号に掲げる裁判の申立ての取下げがあった場合において、裁判所が取下げを許可したときも、同様とする。</span></p><p class="para" id="a9-p2"><span class="pno">2</span><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_870" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第八百七十条</a>第二項各号に掲げる裁判の申立ての取下げについては、<a class="ref ref-rule" href="500.html#a49" title="この規則集の中を開きます">非訟事件手続規則第四十九条</a>第一項及び第三項の規定は、適用しない。</span></p></article>
+<article class="art" id="a9-2" data-path="第一章　総則"><span class="anchor-alias" id="Mp-At_9_2"></span><div class="art-tools"><button type="button" data-anchor="a9-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（抗告状の写しの添付）</p><p class="para" id="a9-2-p1"><a class="art-no" href="#a9-2" data-kan="第九条の二" data-num="第9条の2">第九条の二</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_870" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第八百七十条</a>第二項各号に掲げる裁判に対する即時抗告をするときは、抗告状に申立人及び当該各号に定める者（抗告人を除く。）の数と同数の写しを添付しなければならない。</span></p></article>
+<h3 class="div-head" id="d12" data-path="第二章　検査役の選任の手続に関する特則"><span class="lbl">第二章</span>　検査役の選任の手続に関する特則</h3>
+<article class="art" id="a10" data-path="第二章　検査役の選任の手続に関する特則"><span class="anchor-alias" id="Mp-At_10"></span><div class="art-tools"><button type="button" data-anchor="a10" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（報告書の提出期限の定め）</p><p class="para" id="a10-p1"><a class="art-no" href="#a10" data-kan="第十条" data-num="第10条">第十条</a><span class="body-text">裁判所は、検査役が調査の結果を報告すべき期限を定めることができる。</span></p></article>
+<article class="art" id="a11" data-path="第二章　検査役の選任の手続に関する特則"><span class="anchor-alias" id="Mp-At_11"></span><div class="art-tools"><button type="button" data-anchor="a11" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（即時抗告に係る事件記録の送付）</p><p class="para" id="a11-p1"><a class="art-no" href="#a11" data-kan="第十一条" data-num="第11条">第十一条</a><span class="body-text">検査役の報酬の額の決定に対する即時抗告があった場合において、原裁判所が原審の記録を送付する必要がないと認めたときは、<a class="ref ref-rule" href="500.html#a53" title="この規則集の中を開きます">非訟事件手続規則第五十三条</a>第二項及び第六十三条第二項の規定にかかわらず、原裁判所の裁判所書記官は、抗告事件の記録のみを抗告裁判所の裁判所書記官に送付すれば足りる。</span></p><p class="para" id="a11-p2"><span class="pno">2</span><span class="body-text">前項の規定により抗告事件の記録が送付された場合において、抗告裁判所が原審の記録が必要であると認めたときは、抗告裁判所の裁判所書記官は、速やかに、その送付を原裁判所の裁判所書記官に求めなければならない。</span></p></article>
+<h3 class="div-head" id="d15" data-path="第三章　特別清算の手続に関する特則"><span class="lbl">第三章</span>　特別清算の手続に関する特則</h3>
+<h4 class="div-head" id="d16" data-path="第一節　通則"><span class="lbl">第一節</span>　通則</h4>
+<article class="art" id="a12" data-path="第三章　特別清算の手続に関する特則　＞　第一節　通則"><span class="anchor-alias" id="Mp-At_12"></span><div class="art-tools"><button type="button" data-anchor="a12" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（口頭による報告の許可）</p><p class="para" id="a12-p1"><a class="art-no" href="#a12" data-kan="第十二条" data-num="第12条">第十二条</a><span class="body-text"><a class="ref ref-self" href="#a1">第一条</a>の規定にかかわらず、裁判所は、特別清算の手続に関する報告については、当該手続の円滑な進行を図るために必要があると認めるときは、口頭で同条の報告をすることを許可することができる。</span></p></article>
+<article class="art" id="a13" data-path="第三章　特別清算の手続に関する特則　＞　第一節　通則"><span class="anchor-alias" id="Mp-At_13"></span><div class="art-tools"><button type="button" data-anchor="a13" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（登記事項証明書等の提出の求め）</p><p class="para" id="a13-p1"><a class="art-no" href="#a13" data-kan="第十三条" data-num="第13条">第十三条</a><span class="body-text">裁判所は、必要があると認めるときは、特別清算開始の申立てその他の特別清算の手続に関する申立てをした者に対し、清算株式会社の財産に属する権利で登記又は登録がされたものについての登記事項証明書又は登録原簿に記載されている事項を証明した書面を提出させることができる。</span></p></article>
+<article class="art" id="a14" data-path="第三章　特別清算の手続に関する特則　＞　第一節　通則"><span class="anchor-alias" id="Mp-At_14"></span><div class="art-tools"><button type="button" data-anchor="a14" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="caption">（調書）</p><p class="para" id="a14-p1"><a class="art-no" href="#a14" data-kan="第十四条" data-num="第14条">第十四条</a><span class="body-text">特別清算の手続における調書は、作成することを要しない。ただし、裁判長が作成を命じたときは、この限りでない。</span></p></article>
+<article class="art" id="a15" data-path="第三章　特別清算の手続に関する特則　＞　第一節　通則"><span class="anchor-alias" id="Mp-At_15"></span><div class="art-tools"><button type="button" data-anchor="a15" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="caption">（即時抗告に係る事件記録の送付）</p><p class="para" id="a15-p1"><a class="art-no" href="#a15" data-kan="第十五条" data-num="第15条">第十五条</a><span class="body-text">特別清算の手続における<a class="ref ref-rule" href="500.html#a53" title="この規則集の中を開きます">非訟事件手続規則第五十三条</a>第一項（同規則第七十条において準用する場合を含む。）の規定による事件の送付は、特別清算裁判所の裁判所書記官が、特別清算事件の記録を抗告裁判所の裁判所書記官に送付してするものとする。この場合において、裁判所が特別清算事件の記録を送付する必要がないと認めたときは、特別清算裁判所の裁判所書記官は、抗告事件の記録のみを抗告裁判所の裁判所書記官に送付すれば足りる。</span></p><p class="para" id="a15-p2"><span class="pno">2</span><span class="body-text">前項の規定により抗告事件の記録が送付された場合において、抗告裁判所が特別清算事件の記録が必要であると認めたときは、抗告裁判所の裁判所書記官は、速やかに、その送付を特別清算裁判所の裁判所書記官に求めなければならない。</span></p></article>
+<article class="art" id="a16" data-path="第三章　特別清算の手続に関する特則　＞　第一節　通則"><span class="anchor-alias" id="Mp-At_16"></span><div class="art-tools"><button type="button" data-anchor="a16" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="caption">（公告事務の取扱者）</p><p class="para" id="a16-p1"><a class="art-no" href="#a16" data-kan="第十六条" data-num="第16条">第十六条</a><span class="body-text">公告に関する事務は、裁判所書記官が取り扱う。</span></p></article>
+<article class="art" id="a17" data-path="第三章　特別清算の手続に関する特則　＞　第一節　通則"><span class="anchor-alias" id="Mp-At_17"></span><div class="art-tools"><button type="button" data-anchor="a17" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="caption">（官庁等への通知）</p><p class="para" id="a17-p1"><a class="art-no" href="#a17" data-kan="第十七条" data-num="第17条">第十七条</a><span class="body-text">官庁その他の機関の許可（免許、登録その他の許可に類する行政処分を含む。以下この項において同じ。）がなければ開始することができない事業を営む清算株式会社について特別清算開始の命令があったときは、裁判所書記官は、その旨を当該機関に通知しなければならない。官庁その他の機関の許可がなければ設立することができない清算株式会社について特別清算開始の命令があったときも、同様とする。</span></p><p class="para" id="a17-p2"><span class="pno">2</span><span class="body-text">前項の規定は、特別清算開始の命令を取り消す決定が確定した場合又は特別清算終結の決定が確定した場合について準用する。</span></p><p class="para" id="a17-p3"><span class="pno">3</span><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_574" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第五百七十四条</a>第一項又は第二項の規定による破産手続開始の決定があった場合において、破産規則（平成十六年最高裁判所規則第十四号）<a class="ref ref-rule" href="300.html#a9" title="この規則集の中を開きます">第九条</a>第一項の規定による通知をするときは、裁判所書記官は、当該破産手続開始の決定により特別清算が終了した旨をも通知しなければならない。</span></p></article>
+<article class="art" id="a18" data-path="第三章　特別清算の手続に関する特則　＞　第一節　通則"><span class="anchor-alias" id="Mp-At_18"></span><div class="art-tools"><button type="button" data-anchor="a18" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=7" target="_blank" rel="noopener" title="原本PDFの7ページを開きます">原本 p.7</a></div><p class="caption">（事件に関する文書の閲覧等）</p><p class="para" id="a18-p1"><a class="art-no" href="#a18" data-kan="第十八条" data-num="第18条">第十八条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_886" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第八百八十六条</a>（第五項を除く。）の規定は、第一章及びこの章の規定又は非訟事件手続規則（同規則において準用する民事訴訟規則（平成八年最高裁判所規則第五号）の規定を含む。第三項において同じ。）に基づき、裁判所に提出され、又は裁判所が作成した文書その他の物件について準用する。</span></p><p class="para" id="a18-p2"><span class="pno">2</span><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_886" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第八百八十六条</a>第一項又は前項に規定する文書その他の物件の閲覧若しくは謄写、その正本、謄本若しくは抄本の交付又はその複製の請求は、当該請求に係る文書その他の物件を特定するに足りる事項を明らかにしてしなければならない。</span></p><p class="para" id="a18-p3"><span class="pno">3</span><span class="body-text">裁判所は、利害関係人の閲覧に供するため必要があると認めるときは、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_886" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第八百八十六条</a>第一項に規定する規定、第一章及びこの章の規定又は非訟事件手続規則の規定に基づき書面を裁判所に提出した者又は提出しようとする者に対し、その写しを提出することを求めることができる。</span></p><p class="para" id="a18-p4"><span class="pno">4</span><span class="body-text">前項の規定により書面の写しが提出された場合には、当該書面の閲覧又は謄写は、提出された写しによってさせることができる。</span></p></article>
+<article class="art" id="a19" data-path="第三章　特別清算の手続に関する特則　＞　第一節　通則"><span class="anchor-alias" id="Mp-At_19"></span><div class="art-tools"><button type="button" data-anchor="a19" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=7" target="_blank" rel="noopener" title="原本PDFの7ページを開きます">原本 p.7</a></div><p class="caption">（支障部分の閲覧等の制限の申立ての方式等）</p><p class="para" id="a19-p1"><a class="art-no" href="#a19" data-kan="第十九条" data-num="第19条">第十九条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_887" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第八百八十七条</a>第一項の申立ては、支障部分を特定してしなければならない。</span></p><p class="para" id="a19-p2"><span class="pno">2</span><span class="body-text">前項の申立ては、当該申立てに係る文書その他の物件の提出の際にしなければならない。</span></p><p class="para" id="a19-p3"><span class="pno">3</span><span class="body-text">第一項の申立てをするときは、当該申立てに係る文書その他の物件から支障部分を除いたものをも作成し、裁判所に提出しなければならない。ただし、同項の申立てに係る支障部分が当該申立てに係る文書その他の物件の全部であるときは、この限りでない。</span></p><p class="para" id="a19-p4"><span class="pno">4</span><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_887" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第八百八十七条</a>第一項の規定による決定においては、支障部分を特定しなければならない。</span></p><p class="para" id="a19-p5"><span class="pno">5</span><span class="body-text">前項の決定があったときは、第一項の申立てをした者は、遅滞なく、当該申立てに係る文書その他の物件から当該決定により特定された支障部分を除いたものを作成し、裁判所に提出しなければならない。ただし、当該申立てにより特定された支障部分と当該決定により特定された支障部分とが同一である場合は、この限りでない。</span></p><p class="para" id="a19-p6"><span class="pno">6</span><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_887" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第八百八十七条</a>第一項の規定による決定の一部を取り消す決定が確定したときは、第一項の申立てをした者は、遅滞なく、当該申立てに係る文書その他の物件から当該法第八百八十七条第一項の規定による決定において特定された支障部分のうち当該決定の一部を取り消す決定に係る部分以外の部分を除いたものを作成し、裁判所に提出しなければならない。</span></p><p class="para" id="a19-p7"><span class="pno">7</span><span class="body-text">前条第四項の規定は、第三項本文、第五項本文又は前項の規定により文書その他の物件から支障部分を除いたものが提出された場合について準用する。</span></p></article>
+<article class="art" id="a20" data-path="第三章　特別清算の手続に関する特則　＞　第一節　通則"><span class="anchor-alias" id="Mp-At_20"></span><div class="art-tools"><button type="button" data-anchor="a20" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=8" target="_blank" rel="noopener" title="原本PDFの8ページを開きます">原本 p.8</a></div><p class="caption">（非訟事件手続規則の適用除外）</p><p class="para" id="a20-p1"><a class="art-no" href="#a20" data-kan="第二十条" data-num="第20条">第二十条</a><span class="body-text"><a class="ref ref-rule" href="500.html#a35" title="この規則集の中を開きます">非訟事件手続規則第三十五条</a>（<a class="ref ref-rule" href="100.html#a41" title="この規則集の中を開きます">民事訴訟規則第四十一条</a>及び<a class="ref ref-self" href="#a42">第四十二条</a>の規定を準用する部分に限る。）の規定は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_883" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第八百八十三条</a>に規定する裁判書の送達については、適用しない。</span></p></article>
+<h4 class="div-head" id="d26" data-path="第二節　特別清算の開始の手続に関する特則"><span class="lbl">第二節</span>　特別清算の開始の手続に関する特則</h4>
+<article class="art" id="a21" data-path="第三章　特別清算の手続に関する特則　＞　第二節　特別清算の開始の手続に関する特則"><span class="anchor-alias" id="Mp-At_21"></span><div class="art-tools"><button type="button" data-anchor="a21" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=8" target="_blank" rel="noopener" title="原本PDFの8ページを開きます">原本 p.8</a></div><p class="caption">（費用の予納）</p><p class="para" id="a21-p1"><a class="art-no" href="#a21" data-kan="第二十一条" data-num="第21条">第二十一条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_888" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第八百八十八条</a>第三項の金額は、清算株式会社の事業の内容、資産及び負債その他の財産の状況、債権者及び株主の数、監督委員又は調査委員の選任の要否その他の事情を考慮して定める。</span></p><p class="para" id="a21-p2"><span class="pno">2</span><span class="body-text">特別清算開始の命令があるまでの間において、予納した費用が不足するときは、裁判所は、申立人に、更に予納させることができる。</span></p></article>
+<article class="art" id="a22" data-path="第三章　特別清算の手続に関する特則　＞　第二節　特別清算の開始の手続に関する特則"><span class="anchor-alias" id="Mp-At_22"></span><div class="art-tools"><button type="button" data-anchor="a22" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=8" target="_blank" rel="noopener" title="原本PDFの8ページを開きます">原本 p.8</a></div><p class="caption">（特別清算開始の申立てについての裁判の方式）</p><p class="para" id="a22-p1"><a class="art-no" href="#a22" data-kan="第二十二条" data-num="第22条">第二十二条</a><span class="body-text">特別清算開始の申立てについての裁判は、裁判書を作成してしなければならない。</span></p></article>
+<h4 class="div-head" id="d29" data-path="第三節　特別清算の実行の手続に関する特則"><span class="lbl">第三節</span>　特別清算の実行の手続に関する特則</h4>
+<article class="art" id="a23" data-path="第三章　特別清算の手続に関する特則　＞　第三節　特別清算の実行の手続に関する特則"><span class="anchor-alias" id="Mp-At_23"></span><div class="art-tools"><button type="button" data-anchor="a23" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=8" target="_blank" rel="noopener" title="原本PDFの8ページを開きます">原本 p.8</a></div><p class="caption">（清算の監督）</p><p class="para" id="a23-p1"><a class="art-no" href="#a23" data-kan="第二十三条" data-num="第23条">第二十三条</a><span class="body-text">裁判所は、清算株式会社に対して報告書の提出を促すこと又は清算の遂行の状況に関し問い合わせをすることその他の清算の監督に関する事務を裁判所書記官に命じて行わせることができる。</span></p></article>
+<article class="art" id="a24" data-path="第三章　特別清算の手続に関する特則　＞　第三節　特別清算の実行の手続に関する特則"><span class="anchor-alias" id="Mp-At_24"></span><div class="art-tools"><button type="button" data-anchor="a24" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=8" target="_blank" rel="noopener" title="原本PDFの8ページを開きます">原本 p.8</a></div><p class="caption">（手続の進行に関する定め）</p><p class="para" id="a24-p1"><a class="art-no" href="#a24" data-kan="第二十四条" data-num="第24条">第二十四条</a><span class="body-text">裁判所は、清算株式会社の財産の状況、清算株式会社による清算の遂行の状況その他の事情を考慮して、特別清算の手続の円滑な進行を図るために必要があると認めるときは、清算株式会社が債権者集会の招集をすべき時期及び協定の申出をすべき時期を定めることができる。</span></p></article>
+<article class="art" id="a25" data-path="第三章　特別清算の手続に関する特則　＞　第三節　特別清算の実行の手続に関する特則"><span class="anchor-alias" id="Mp-At_25"></span><div class="art-tools"><button type="button" data-anchor="a25" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=9" target="_blank" rel="noopener" title="原本PDFの9ページを開きます">原本 p.9</a></div><p class="caption">（清算株式会社による財産目録等の開示）</p><p class="para" id="a25-p1"><a class="art-no" href="#a25" data-kan="第二十五条" data-num="第25条">第二十五条</a><span class="body-text">清算株式会社は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_521" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第五百二十一条</a>の規定により同条に規定する財産目録等を裁判所に提出したときは、次の各号に掲げる事由のいずれかが生ずるまで、当該財産目録等を、その本店において、協定債権者又は株主が閲覧することができる状態に置く措置を執らなければならない。</span></p><ol class="items"><li id="a25-p1-1"><span class="mk">一</span><span class="tx">特別清算開始の命令を取り消す決定の確定</span></li><li id="a25-p1-2"><span class="mk">二</span><span class="tx">協定の認可の決定の確定</span></li><li id="a25-p1-3"><span class="mk">三</span><span class="tx">特別清算終結の決定の確定</span></li><li id="a25-p1-4"><span class="mk">四</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_574" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第五百七十四条</a>第一項又は第二項の規定による破産手続開始の決定の確定</span></li></ol></article>
+<article class="art" id="a26" data-path="第三章　特別清算の手続に関する特則　＞　第三節　特別清算の実行の手続に関する特則"><span class="anchor-alias" id="Mp-At_26"></span><div class="art-tools"><button type="button" data-anchor="a26" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=9" target="_blank" rel="noopener" title="原本PDFの9ページを開きます">原本 p.9</a></div><p class="caption">（貸借対照表の提出）</p><p class="para" id="a26-p1"><a class="art-no" href="#a26" data-kan="第二十六条" data-num="第26条">第二十六条</a><span class="body-text">清算株式会社は、特別清算開始後において、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_494" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四百九十四条</a>第一項の貸借対照表を作成したときは、遅滞なく、これを裁判所に提出しなければならない。ただし、当該貸借対照表が同条第二項の規定により電磁的記録をもって作成されているときは、当該電磁的記録に記録された事項を記載した書面を裁判所に提出しなければならない。</span></p></article>
+<article class="art" id="a27" data-path="第三章　特別清算の手続に関する特則　＞　第三節　特別清算の実行の手続に関する特則"><span class="anchor-alias" id="Mp-At_27"></span><div class="art-tools"><button type="button" data-anchor="a27" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=9" target="_blank" rel="noopener" title="原本PDFの9ページを開きます">原本 p.9</a></div><p class="caption">（監督委員の選任等）</p><p class="para" id="a27-p1"><a class="art-no" href="#a27" data-kan="第二十七条" data-num="第27条">第二十七条</a><span class="body-text">裁判所は、監督委員を選任するに当たっては、その職務を行うに適した者を選任するものとする。</span></p><p class="para" id="a27-p2"><span class="pno">2</span><span class="body-text">法人が監督委員に選任された場合には、当該法人は、役員又は職員のうちから監督委員の職務を行うべき者を指名し、指名された者の氏名を裁判所に届け出るとともに、清算株式会社に通知しなければならない。</span></p><p class="para" id="a27-p3"><span class="pno">3</span><span class="body-text">裁判所書記官は、監督委員に対し、その選任を証する書面を交付しなければならない。</span></p><p class="para" id="a27-p4"><span class="pno">4</span><span class="body-text">監督委員は、正当な理由があるときは、裁判所の許可を得て辞任することができる。</span></p></article>
+<article class="art" id="a28" data-path="第三章　特別清算の手続に関する特則　＞　第三節　特別清算の実行の手続に関する特則"><span class="anchor-alias" id="Mp-At_28"></span><div class="art-tools"><button type="button" data-anchor="a28" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=9" target="_blank" rel="noopener" title="原本PDFの9ページを開きます">原本 p.9</a></div><p class="caption">（監督委員の同意の申請の方式等）</p><p class="para" id="a28-p1"><a class="art-no" href="#a28" data-kan="第二十八条" data-num="第28条">第二十八条</a><span class="body-text">監督委員の同意を求める旨の申請及び監督委員の同意は、書面でしなければならない。</span></p><p class="para" id="a28-p2"><span class="pno">2</span><span class="body-text">清算株式会社は、監督委員の同意を得たときは、遅滞なく、その旨を裁判所に報告しなければならない。</span></p></article>
+<article class="art" id="a29" data-path="第三章　特別清算の手続に関する特則　＞　第三節　特別清算の実行の手続に関する特則"><span class="anchor-alias" id="Mp-At_29"></span><div class="art-tools"><button type="button" data-anchor="a29" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=9" target="_blank" rel="noopener" title="原本PDFの9ページを開きます">原本 p.9</a></div><p class="caption">（清算株式会社の監督委員に対する報告）</p><p class="para" id="a29-p1"><a class="art-no" href="#a29" data-kan="第二十九条" data-num="第29条">第二十九条</a><span class="body-text">裁判所は、監督委員が選任されている場合において、必要があると認めるときは、清算株式会社について、監督委員への報告を要する行為を指定することができる。</span></p><p class="para" id="a29-p2"><span class="pno">2</span><span class="body-text">清算株式会社は、前項に規定する行為をしたときは、速やかに、その旨を監督委員に報告しなければならない。</span></p></article>
+<article class="art" id="a30" data-path="第三章　特別清算の手続に関する特則　＞　第三節　特別清算の実行の手続に関する特則"><span class="anchor-alias" id="Mp-At_30"></span><div class="art-tools"><button type="button" data-anchor="a30" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=10" target="_blank" rel="noopener" title="原本PDFの10ページを開きます">原本 p.10</a></div><p class="caption">（監督委員に対する監督）</p><p class="para" id="a30-p1"><a class="art-no" href="#a30" data-kan="第三十条" data-num="第30条">第三十条</a><span class="body-text">裁判所は、報告書の提出を促すことその他の監督委員に対する監督に関する事務を裁判所書記官に命じて行わせることができる。</span></p></article>
+<article class="art" id="a31" data-path="第三章　特別清算の手続に関する特則　＞　第三節　特別清算の実行の手続に関する特則"><span class="anchor-alias" id="Mp-At_31"></span><div class="art-tools"><button type="button" data-anchor="a31" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=10" target="_blank" rel="noopener" title="原本PDFの10ページを開きます">原本 p.10</a></div><p class="caption">（監督委員の報酬の額）</p><p class="para" id="a31-p1"><a class="art-no" href="#a31" data-kan="第三十一条" data-num="第31条">第三十一条</a><span class="body-text">裁判所が定める監督委員の報酬の額は、その職務と責任にふさわしいものでなければならない。</span></p></article>
+<article class="art" id="a32" data-path="第三章　特別清算の手続に関する特則　＞　第三節　特別清算の実行の手続に関する特則"><span class="anchor-alias" id="Mp-At_32"></span><div class="art-tools"><button type="button" data-anchor="a32" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=10" target="_blank" rel="noopener" title="原本PDFの10ページを開きます">原本 p.10</a></div><p class="caption">（調査委員の選任等）</p><p class="para" id="a32-p1"><a class="art-no" href="#a32" data-kan="第三十二条" data-num="第32条">第三十二条</a><span class="body-text">裁判所は、調査委員を選任するに当たっては、その職務を行うに適した者で利害関係のないものを選任するものとする。</span></p><p class="para" id="a32-p2"><span class="pno">2</span><span class="body-text"><a class="ref ref-self" href="#a27">第二十七条</a>（第一項を除く。）、<a class="ref ref-self" href="#a30">第三十条</a>及び前条の規定は、調査委員について準用する。</span></p></article>
+<article class="art" id="a33" data-path="第三章　特別清算の手続に関する特則　＞　第三節　特別清算の実行の手続に関する特則"><span class="anchor-alias" id="Mp-At_33"></span><div class="art-tools"><button type="button" data-anchor="a33" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=10" target="_blank" rel="noopener" title="原本PDFの10ページを開きます">原本 p.10</a></div><p class="caption">（裁判所の許可を要しない行為）</p><p class="para" id="a33-p1"><a class="art-no" href="#a33" data-kan="第三十三条" data-num="第33条">第三十三条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_535" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第五百三十五条</a>第二項第一号の最高裁判所規則で定める額は、百万円とする。</span></p></article>
+<article class="art" id="a34" data-path="第三章　特別清算の手続に関する特則　＞　第三節　特別清算の実行の手続に関する特則"><span class="anchor-alias" id="Mp-At_34"></span><div class="art-tools"><button type="button" data-anchor="a34" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=10" target="_blank" rel="noopener" title="原本PDFの10ページを開きます">原本 p.10</a></div><p class="caption">（役員等責任査定決定の申立書等の送付）</p><p class="para" id="a34-p1"><a class="art-no" href="#a34" data-kan="第三十四条" data-num="第34条">第三十四条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_545" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第五百四十五条</a>第一項の申立てをする者は、当該申立てをする際、申立書及び証拠書類の写しについて相手方に直送をしなければならない。</span></p></article>
+<article class="art" id="a35" data-path="第三章　特別清算の手続に関する特則　＞　第三節　特別清算の実行の手続に関する特則"><span class="anchor-alias" id="Mp-At_35"></span><div class="art-tools"><button type="button" data-anchor="a35" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=10" target="_blank" rel="noopener" title="原本PDFの10ページを開きます">原本 p.10</a></div><p class="caption">（議決権に関する定めについての届出）</p><p class="para" id="a35-p1"><a class="art-no" href="#a35" data-kan="第三十五条" data-num="第35条">第三十五条</a><span class="body-text">清算株式会社は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_548" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第五百四十八条</a>第二項又は第三項後段の規定により各協定債権について債権者集会における議決権の行使の許否及びその額を定めた場合において、議決権の行使を許さない旨を定め、又は<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_499" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四百九十九条</a>第一項の期間内に申出がされた債権の額と異なる額を定めたときは、遅滞なく、その旨を裁判所に届け出なければならない。</span></p></article>
+<article class="art" id="a36" data-path="第三章　特別清算の手続に関する特則　＞　第三節　特別清算の実行の手続に関する特則"><span class="anchor-alias" id="Mp-At_36"></span><div class="art-tools"><button type="button" data-anchor="a36" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=11" target="_blank" rel="noopener" title="原本PDFの11ページを開きます">原本 p.11</a></div><p class="caption">（協定の認可の申立ての方式）</p><p class="para" id="a36-p1"><a class="art-no" href="#a36" data-kan="第三十六条" data-num="第36条">第三十六条</a><span class="body-text"><a class="ref ref-self" href="#a1">第一条</a>の規定にかかわらず、債権者集会においてする<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_568" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第五百六十八条</a>の申立ては、口頭ですることができる。</span></p></article>
+<h3 class="div-head" id="d44" data-path="第四章　外国会社の清算の手続に関する特則"><span class="lbl">第四章</span>　外国会社の清算の手続に関する特則</h3>
+<article class="art" id="a37" data-path="第四章　外国会社の清算の手続に関する特則"><span class="anchor-alias" id="Mp-At_37"></span><div class="art-tools"><button type="button" data-anchor="a37" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=11" target="_blank" rel="noopener" title="原本PDFの11ページを開きます">原本 p.11</a></div><p class="caption">（特別清算の手続に関する規定の準用）</p><p class="para" id="a37-p1"><a class="art-no" href="#a37" data-kan="第三十七条" data-num="第37条">第三十七条</a><span class="body-text">前章の規定は、その性質上許されないものを除き、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_822" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第八百二十二条</a>第一項の規定による日本にある外国会社の財産についての清算について準用する。</span></p></article>
+<h3 class="div-head" id="d46" data-path="第五章　会社の解散命令等の手続に関する特則"><span class="lbl">第五章</span>　会社の解散命令等の手続に関する特則</h3>
+<article class="art" id="a38" data-path="第五章　会社の解散命令等の手続に関する特則"><span class="anchor-alias" id="Mp-At_38"></span><div class="art-tools"><button type="button" data-anchor="a38" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=11" target="_blank" rel="noopener" title="原本PDFの11ページを開きます">原本 p.11</a></div><p class="caption">（管理人の選任等）</p><p class="para" id="a38-p1"><a class="art-no" href="#a38" data-kan="第三十八条" data-num="第38条">第三十八条</a><span class="body-text"><a class="ref ref-self" href="#a27">第二十七条</a>、<a class="ref ref-self" href="#a30">第三十条</a>及び<a class="ref ref-self" href="#a31">第三十一条</a>の規定は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_825" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第八百二十五条</a>第二項（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_827" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第八百二十七条</a>第二項において準用する場合を含む。）の管理人について準用する。</span></p></article>
+<article class="art" id="a39" data-path="第五章　会社の解散命令等の手続に関する特則"><span class="anchor-alias" id="Mp-At_39"></span><div class="art-tools"><button type="button" data-anchor="a39" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=11" target="_blank" rel="noopener" title="原本PDFの11ページを開きます">原本 p.11</a></div><p class="caption">（即時抗告に係る事件記録の送付）</p><p class="para" id="a39-p1"><a class="art-no" href="#a39" data-kan="第三十九条" data-num="第39条">第三十九条</a><span class="body-text"><a class="ref ref-self" href="#a11">第十一条</a>の規定は、前条の管理人の報酬の額の決定に対する即時抗告があった場合について準用する。</span></p></article>
+<article class="art" id="a40" data-path="第五章　会社の解散命令等の手続に関する特則"><span class="anchor-alias" id="Mp-At_40"></span><div class="art-tools"><button type="button" data-anchor="a40" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=11" target="_blank" rel="noopener" title="原本PDFの11ページを開きます">原本 p.11</a></div><p class="caption">（報告又は計算に関する資料の閲覧等）</p><p class="para" id="a40-p1"><a class="art-no" href="#a40" data-kan="第四十条" data-num="第40条">第四十条</a><span class="body-text">第十八条第二項の規定は<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_906" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第九百六条</a>第一項の資料の閲覧若しくは謄写、その正本、謄本若しくは抄本の交付又はその複製の請求について、<a class="ref ref-self" href="#a18">第十八条</a>第三項及び第四項の規定は当該資料の閲覧又は謄写について準用する。</span></p></article>
+<article class="art" id="a41" data-path="第五章　会社の解散命令等の手続に関する特則"><span class="anchor-alias" id="Mp-At_41"></span><div class="art-tools"><button type="button" data-anchor="a41" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=11" target="_blank" rel="noopener" title="原本PDFの11ページを開きます">原本 p.11</a></div><p class="para" id="a41-p1"><a class="art-no" href="#a41" data-kan="第四十一条" data-num="第41条">第四十一条</a><span class="body-text">削除（平二四最裁規九）</span></p></article>
+<h3 class="div-head" id="d51" data-path="第六章　雑則"><span class="lbl">第六章</span>　雑則</h3>
+<article class="art" id="a42" data-path="第六章　雑則"><span class="anchor-alias" id="Mp-At_42"></span><div class="art-tools"><button type="button" data-anchor="a42" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=11" target="_blank" rel="noopener" title="原本PDFの11ページを開きます">原本 p.11</a></div><p class="caption">（裁判による登記の嘱託等）</p><p class="para" id="a42-p1"><a class="art-no" href="#a42" data-kan="第四十二条" data-num="第42条">第四十二条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_937" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第九百三十七条</a>及び第九百三十八条第一項から第三項までの規定による登記の嘱託は、嘱託書に裁判書の謄本又は電子判決書に記録されている事項を記載した書面であって裁判所書記官が当該書面の内容がファイルに記録されている事項と同一であることを証明したものを添付してしなければならない。</span></p><p class="para" id="a42-p2"><span class="pno">2</span><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_938" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第九百三十八条</a>第四項において準用する同条第三項の規定による登記の嘱託は、嘱託書に、同項に規定する保全処分を変更し、若しくは取り消す旨の決定の裁判書の謄本又は当該保全処分が効力を失ったことを証する書面を添付してしなければならない。</span></p><p class="para" id="a42-p3"><span class="pno">3</span><span class="body-text">前二項の規定は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_938" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第九百三十八条</a>第五項において準用する同条第三項及び第四項の規定による登録の嘱託について準用する。</span></p><p class="para" id="a42-p4"><span class="pno">4</span><span class="body-text">前三項の規定は、その性質上許されないものを除き、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_938" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第九百三十八条</a>第六項において準用する同条第一項から第五項までの規定による登記又は登録の嘱託について準用する。</span></p></article>
+<article class="art" id="a43" data-path="第六章　雑則"><span class="anchor-alias" id="Mp-At_43"></span><div class="art-tools"><button type="button" data-anchor="a43" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=12" target="_blank" rel="noopener" title="原本PDFの12ページを開きます">原本 p.12</a></div><p class="caption">（会社法の規定を準用する他の法令の規定による非訟事件の手続への準用）</p><p class="para" id="a43-p1"><a class="art-no" href="#a43" data-kan="第四十三条" data-num="第43条">第四十三条</a><span class="body-text">第一章から前章までの規定は、その性質に反しない限り、他の法令において準用する<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_868" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第八百六十八条</a>、第八百七十九条又は第八百八十条の規定により当該規定に規定する裁判所に係属すべき非訟事件の手続について準用する。</span></p><p class="para" id="a43-p2"><span class="pno">2</span><span class="body-text">前条の規定は、他の法令において準用する<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_937" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第九百三十七条</a>及び第九百三十八条の規定による登記又は登録の嘱託について準用する。</span></p></article>
+<article class="art" id="a44" data-path="第六章　雑則"><span class="anchor-alias" id="Mp-At_44"></span><div class="art-tools"><button type="button" data-anchor="a44" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=12" target="_blank" rel="noopener" title="原本PDFの12ページを開きます">原本 p.12</a></div><p class="caption">（信託法の規定による非訟事件及び公益信託に関する法律の規定による非訟事件の手続への準用）</p><p class="para" id="a44-p1"><a class="art-no" href="#a44" data-kan="第四十四条" data-num="第44条">第四十四条</a><span class="body-text">第一章及び第二章の規定は、その性質に反しない限り、信託法（平成十八年法律第百八号）の規定による非訟事件及び公益信託に関する法律（令和六年法律第三十号）の規定による非訟事件の手続について準用する。この場合において、<a class="ref ref-self" href="#a2">第二条</a>第一項第二号中「会社（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/417AC0000000086#Mp-At_868" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第八百六十八条</a>第四項に規定する裁判の申立てに係る事件にあっては、社債を発行した会社。以下この章において同じ。）の商号及び本店の所在地並びに代表者の氏名」とあるのは「限定責任信託の名称及び事務処理地並びに受託者の氏名又は名称」と、<a class="ref ref-self" href="#a3">第三条</a>第一項中「申立書」とあるのは「申立書（限定責任信託に係るものに限る。）」と、「次に掲げる書類」とあるのは「申立てに係る限定責任信託の登記に係る登記事項証明書」と、同条第二項中「前項第一号」とあるのは「前項」と、「同号に掲げる」とあるのは「同項に規定する」と読み替えるものとする。</span></p><p class="para" id="a44-p2"><span class="pno">2</span><span class="body-text"><a class="ref ref-self" href="#a27">第二十七条</a>、<a class="ref ref-self" href="#a30">第三十条</a>及び<a class="ref ref-self" href="#a31">第三十一条</a>の規定は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/418AC0000000108#Mp-At_170" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">信託法第百七十条</a>第一項の管理人について準用する。</span></p><p class="para" id="a44-p3"><span class="pno">3</span><span class="body-text"><a class="ref ref-self" href="#a11">第十一条</a>の規定は、前項の管理人の報酬の額の決定に対する即時抗告があった場合について準用する。</span></p><p class="para" id="a44-p4"><span class="pno">4</span><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/418AC0000000108#Mp-At_172" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第十八条第二項の規定は信託法第百七十二条</a>第一項の資料の閲覧若しくは謄写、その正本、謄本若しくは抄本の交付又はその複製の請求について、<a class="ref ref-self" href="#a18">第十八条</a>第三項及び第四項の規定は当該資料の閲覧又は謄写について準用する。</span></p><p class="para" id="a44-p5"><span class="pno">5</span><span class="body-text"><a class="ref ref-self" href="#a42">第四十二条</a>第一項から第三項までの規定は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/418AC0000000108#Mp-At_64" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">信託法第六十四条</a>第五項及び第六項（これらの規定を同法第七十四条第六項において準用する場合を含む。）、第百七十条第五項（同条第六項において準用する場合を含む。）並びに第二百四十六条の規定による登記又は登録の嘱託について準用する。</span></p></article>
+<article class="art" id="a44-2" data-path="第六章　雑則"><span class="anchor-alias" id="Mp-At_44_2"></span><div class="art-tools"><button type="button" data-anchor="a44-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=13" target="_blank" rel="noopener" title="原本PDFの13ページを開きます">原本 p.13</a></div><p class="caption">（表題部所有者不明土地の登記及び管理の適正化に関する法律の規定による非訟事件の手続への準用）</p><p class="para" id="a44-2-p1"><a class="art-no" href="#a44-2" data-kan="第四十四条の二" data-num="第44条の2">第四十四条の二</a><span class="body-text">削除（令四最裁規一三）</span></p></article>
+<article class="art" id="a45" data-path="第六章　雑則"><span class="anchor-alias" id="Mp-At_45"></span><div class="art-tools"><button type="button" data-anchor="a45" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=13" target="_blank" rel="noopener" title="原本PDFの13ページを開きます">原本 p.13</a></div><p class="caption">（その他の法令の規定による非訟事件の手続への準用）</p><p class="para" id="a45-p1"><a class="art-no" href="#a45" data-kan="第四十五条" data-num="第45条">第四十五条</a><span class="body-text">第二章の規定は、無尽業法（昭和六年法律第四十二号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/306AC0000000042#Mp-At_31" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第三十一条</a>第三項及び銀行法（昭和五十六年法律第五十九号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/356AC0000000059#Mp-At_45" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第四十五条</a>第三項に規定する特別検査人について準用する。</span></p><p class="para" id="a45-p2"><span class="pno">2</span><span class="body-text"><a class="ref ref-self" href="#a42">第四十二条</a>第一項の規定は、組合等登記令（昭和三十九年政令第二十九号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/339CO0000000029#Mp-At_14" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第十四条</a>第一項から第三項までの規定による登記の嘱託について準用する。</span></p></article>
+<h2 class="div-head" id="sup1" data-path="附則　"><span class="lbl">附則</span></h2>
+<article class="art noarticle" id="sup-body-1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=13" target="_blank" rel="noopener" title="原本PDFの13ページを開きます">原本 p.13</a></div><p class="para" id="sup-body-1-p1"><span class="body-text">この規則は、法の施行の日から施行する。</span></p></article>
+<h2 class="div-head" id="sup2" data-path="附則　（平成一九年四月一一日最高裁判所規則第五号）"><span class="lbl">附則</span>　（平成一九年四月一一日最高裁判所規則第五号）</h2>
+<article class="art noarticle" id="sup-body-2" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=13" target="_blank" rel="noopener" title="原本PDFの13ページを開きます">原本 p.13</a></div><p class="para" id="sup-body-2-p1"><span class="body-text">この規則は、信託法（平成十八年法律第百八号）の施行の日から施行する。</span></p></article>
+<h2 class="div-head" id="sup3" data-path="附則　（平成二〇年一〇月一日最高裁判所規則第一〇号）"><span class="lbl">附則</span>　（平成二〇年一〇月一日最高裁判所規則第一〇号）</h2>
+<article class="art noarticle" id="sup-body-3" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=13" target="_blank" rel="noopener" title="原本PDFの13ページを開きます">原本 p.13</a></div><p class="para" id="sup-body-3-p1"><span class="body-text">この規則は、一般社団法人及び一般財団法人に関する法律（平成十八年法律第四十八号）の施行の日から施行する。</span></p></article>
+<h2 class="div-head" id="sup4" data-path="附則　（平成二四年七月一七日最高裁判所規則第九号）抄"><span class="lbl">附則</span>　（平成二四年七月一七日最高裁判所規則第九号）抄</h2>
+<article class="art" id="sup4-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup4-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=13" target="_blank" rel="noopener" title="原本PDFの13ページを開きます">原本 p.13</a></div><p class="caption">（施行期日）</p><p class="para" id="sup4-a1-p1"><a class="art-no" href="#sup4-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、非訟事件手続法（平成二十三年法律第五十一号）の施行の日から施行する。</span></p></article>
+<h2 class="div-head" id="sup5" data-path="附則　（令和二年四月二二日最高裁判所規則第六号）"><span class="lbl">附則</span>　（令和二年四月二二日最高裁判所規則第六号）</h2>
+<article class="art noarticle" id="sup-body-4" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=14" target="_blank" rel="noopener" title="原本PDFの14ページを開きます">原本 p.14</a></div><p class="para" id="sup-body-4-p1"><span class="body-text">この規則は、表題部所有者不明土地の登記及び管理の適正化に関する法律（令和元年法律第十五号）附則ただし書に規定する規定の施行の日から施行する。</span></p></article>
+<h2 class="div-head" id="sup6" data-path="附則　（令和四年二月二一日最高裁判所規則第八号）"><span class="lbl">附則</span>　（令和四年二月二一日最高裁判所規則第八号）</h2>
+<article class="art noarticle" id="sup-body-5" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-5" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=14" target="_blank" rel="noopener" title="原本PDFの14ページを開きます">原本 p.14</a></div><p class="para" id="sup-body-5-p1"><span class="body-text">この規則は、公布の日から施行する。</span></p></article>
+<h2 class="div-head" id="sup7" data-path="附則　（令和四年五月一三日最高裁判所規則第一三号）"><span class="lbl">附則</span>　（令和四年五月一三日最高裁判所規則第一三号）</h2>
+<article class="art noarticle" id="sup-body-6" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-6" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=14" target="_blank" rel="noopener" title="原本PDFの14ページを開きます">原本 p.14</a></div><p class="para" id="sup-body-6-p1"><span class="body-text">この規則は、民法等の一部を改正する法律（令和三年法律第二十四号）の施行の日 （令和五年四月一日）から施行する。</span></p></article>
+<h2 class="div-head" id="sup8" data-path="附則　（令和四年一一月七日最高裁判所規則第一七号）抄"><span class="lbl">附則</span>　（令和四年一一月七日最高裁判所規則第一七号）抄</h2>
+<article class="art" id="sup8-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup8-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=14" target="_blank" rel="noopener" title="原本PDFの14ページを開きます">原本 p.14</a></div><p class="caption">（施行期日）</p><p class="para" id="sup8-a1-p1"><a class="art-no" href="#sup8-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、民事訴訟法等の一部を改正する法律（令和四年法律第四十八号。以下この条において「改正法」という。）附則<a class="ref ref-self" href="#a1">第一条</a>第二号に掲げる規定の施行の日（令和五年二月二〇日）から施行する。ただし、次の各号に掲げる規定は、当該各号に定める日から施行する。</span></p><ol class="items"><li id="sup8-a1-p1-1"><span class="mk">一</span><span class="tx">第一条中<a class="ref ref-rule" href="100.html#a32" title="この規則集の中を開きます">民事訴訟規則第三十二条</a>、第七十七条、第七十八条、第九十六条及び第百六十三条第一項の改正規定、<a class="ref ref-self" href="#a14">第十四条</a>の規定、第十八条中<a class="ref ref-rule" href="107.html#a37" title="この規則集の中を開きます">労働審判規則第三十七条</a>の改正規定（「第七十七条」を「第七十七条前段」に改める部分に限る。）、第二十条中<a class="ref ref-rule" href="500.html#a21" title="この規則集の中を開きます">非訟事件手続規則第二十一条</a>及び第五十条の改正規定、第二十一条中<a class="ref ref-rule" href="400.html#a33" title="この規則集の中を開きます">家事事件手続規則第三十三条</a>及び第百二十六条第二項の改正規定並びに<a class="ref ref-self" href="#a22">第二十二条</a>中国際的な子の奪取の民事上の側面に関する条約の実施に関する法律による子の返還に関する事件の手続等に関する規則第二十三条及び第五十三条第一項の改正規定 改正法附則<a class="ref ref-self" href="#a1">第一条</a>第三号に掲げる規定の施行の日（令和五年三月一日）</span></li><li id="sup8-a1-p1-2"><span class="mk">二</span><span class="tx"><a class="ref ref-self" href="#a1">第一条</a>中民事訴訟規則目次の改正規定（「<a class="ref ref-self" href="#a31">第三十一条</a>」を「第三十条の二」に改める部分に限る。）及び同規則第一編第五章第一節中<a class="ref ref-self" href="#a31">第三十一条</a>の前に二条を加える改正規定、<a class="ref ref-self" href="#a3">第三条</a>の規定、<a class="ref ref-self" href="#a6">第六条</a>の規定、第七条中<a class="ref ref-rule" href="200.html#a15-2" title="この規則集の中を開きます">民事執行規則第十五条の二</a>の改正規定、第八条中<a class="ref ref-rule" href="201.html#a6" title="この規則集の中を開きます">民事保全規則第六条</a>の改正規定、第十条中<a class="ref ref-rule" href="301.html#a11" title="この規則集の中を開きます">民事再生規則第十一条</a>の改正規定、第十二条中<a class="ref ref-rule" href="304.html#a12" title="この規則集の中を開きます">外国倒産処理手続の承認援助に関する規則第十二条</a>の改正規定、第十三条中<a class="ref ref-rule" href="302.html#a10" title="この規則集の中を開きます">会社更生規則第十条</a>の改正規定、<a class="ref ref-self" href="#a16">第十六条</a>の規定、第十七条中<a class="ref ref-rule" href="300.html#a12" title="この規則集の中を開きます">破産規則第十二条</a>の改正規定並びに<a class="ref ref-self" href="#a23">第二十三条</a>の規定 改正法附則<a class="ref ref-self" href="#a1">第一条</a>第四号に掲げる規定の施行の日</span></li><li id="sup8-a1-p1-3"><span class="mk">三</span><span class="tx"><a class="ref ref-self" href="#a15">第十五条</a>の規定 改正法附則<a class="ref ref-self" href="#a1">第一条</a>第五号に掲げる規定の施行の日</span></li></ol></article>
+<h2 class="div-head" id="sup9" data-path="附則　（令和六年九月一七日最高裁判所規則第一四号）抄"><span class="lbl">附則</span>　（令和六年九月一七日最高裁判所規則第一四号）抄</h2>
+<article class="art" id="sup9-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup9-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=15" target="_blank" rel="noopener" title="原本PDFの15ページを開きます">原本 p.15</a></div><p class="caption">（施行期日）</p><p class="para" id="sup9-a1-p1"><a class="art-no" href="#sup9-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、民事訴訟法等の一部を改正する法律（令和四年法律第四十八号）の施行の日（令和八年五月二一日）から施行する。</span></p></article>
+<h2 class="div-head" id="sup10" data-path="附則　（令和七年一二月一五日最高裁判所規則第一六号）"><span class="lbl">附則</span>　（令和七年一二月一五日最高裁判所規則第一六号）</h2>
+<article class="art noarticle" id="sup-body-7" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-7" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521kaisyahisyou.pdf#page=15" target="_blank" rel="noopener" title="原本PDFの15ページを開きます">原本 p.15</a></div><p class="para" id="sup-body-7-p1"><span class="body-text">この規則は、公益信託に関する法律（令和六年法律第三十号）の施行の日（令和八年四月一日）から施行する。</span></p></article>
+    </div>
+    <aside class="notes"><p>読み取りに関する注意</p><ul><li>PDF中の目次は読み飛ばし、条見出しから目次を再構成しました。</li><li>各条の「原本」は https://www.courts.go.jp/assets/080521kaisyahisyou.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。</li></ul></aside>
+    <div class="foot">出典：080521kaisyahisyou.pdf　／　最高裁規則ビューア 1.9.0 で 2026年09月02日 に変換　
+    条文の正確な内容は原本で確認してください。</div>
+  </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  "use strict";
+  var doc = document.getElementById("doc");
+  var input = document.getElementById("q");
+  var hitLabel = document.getElementById("hits");
+  var crumb = document.getElementById("crumb");
+  var toc = document.getElementById("toc");
+  var toast = document.getElementById("toast");
+  var pristine = doc.innerHTML;
+  var hits = [];
+  var cursor = -1;
+
+  function say(msg){
+    toast.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(say._t);
+    say._t = setTimeout(function(){ toast.classList.remove("show"); }, 1600);
+  }
+
+  /* ---------------------------------------------------------- 条番号の表記 */
+  var numeralBtn = document.getElementById("numeral");
+  function applyNumeral(useArabic){
+    var nodes = doc.querySelectorAll(".art-no");
+    for (var i = 0; i < nodes.length; i++){
+      var el = nodes[i];
+      var v = useArabic ? el.getAttribute("data-num") : el.getAttribute("data-kan");
+      if (v) el.textContent = v;
+    }
+    numeralBtn.setAttribute("aria-pressed", useArabic ? "true" : "false");
+  }
+  numeralBtn.addEventListener("click", function(){
+    var next = numeralBtn.getAttribute("aria-pressed") !== "true";
+    applyNumeral(next);
+    try { localStorage.setItem("rule-numeral", next ? "1" : "0"); } catch(e){}
+    pristine = doc.innerHTML;
+  });
+  try {
+    /* 既定の表記は原本に合わせてある。前回の切り替えが残っていればそれに従う */
+    var saved = localStorage.getItem("rule-numeral");
+    if (saved === "1" || saved === "0"){ applyNumeral(saved === "1"); pristine = doc.innerHTML; }
+  } catch(e){}
+
+  /* -------------------------------------------------------------- 検索処理 */
+  var SKIP = {SCRIPT:1, STYLE:1, MARK:1, BUTTON:1, A:1};   /* 原本リンク等の道具立ては検索対象にしない */
+  function highlight(term){
+    doc.innerHTML = pristine;
+    hits = [];
+    cursor = -1;
+    if (!term){ hitLabel.textContent = ""; refreshToc(""); return; }
+    var walker = document.createTreeWalker(doc, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        if (!n.nodeValue || n.nodeValue.indexOf(term) < 0) return NodeFilter.FILTER_REJECT;
+        if (n.parentNode && SKIP[n.parentNode.nodeName]) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var targets = [];
+    var node;
+    while ((node = walker.nextNode())) targets.push(node);
+    for (var i = 0; i < targets.length; i++){
+      var t = targets[i], text = t.nodeValue, pos = 0, frag = document.createDocumentFragment();
+      var idx;
+      while ((idx = text.indexOf(term, pos)) >= 0){
+        if (idx > pos) frag.appendChild(document.createTextNode(text.slice(pos, idx)));
+        var m = document.createElement("mark");
+        m.textContent = text.substr(idx, term.length);
+        frag.appendChild(m);
+        hits.push(m);
+        pos = idx + term.length;
+      }
+      if (pos < text.length) frag.appendChild(document.createTextNode(text.slice(pos)));
+      t.parentNode.replaceChild(frag, t);
+    }
+    hitLabel.textContent = hits.length ? "1 / " + hits.length : "該当なし";
+    refreshToc(term);
+    if (hits.length){ cursor = 0; focusHit(0, false); }
+  }
+  function focusHit(i, scroll){
+    if (!hits.length) return;
+    for (var k = 0; k < hits.length; k++) hits[k].classList.remove("live");
+    cursor = (i + hits.length) % hits.length;
+    hits[cursor].classList.add("live");
+    hitLabel.textContent = (cursor + 1) + " / " + hits.length;
+    if (scroll !== false) hits[cursor].scrollIntoView({block:"center", behavior:"instant"});
+  }
+  function refreshToc(term){
+    var links = toc.querySelectorAll("li.lv-art");
+    for (var i = 0; i < links.length; i++){
+      var li = links[i];
+      var body = (li.getAttribute("data-text") || "");
+      li.classList.toggle("hidden", !!term && body.indexOf(term) < 0);
+    }
+    var divs = toc.querySelectorAll("li.lv-div");
+    for (var j = divs.length - 1; j >= 0; j--){
+      var d = divs[j];
+      var kids = d.querySelectorAll("li:not(.hidden)");
+      d.classList.toggle("hidden", !!term && kids.length === 0);
+    }
+  }
+  var timer = null;
+  input.addEventListener("input", function(){
+    clearTimeout(timer);
+    var v = input.value.trim();
+    timer = setTimeout(function(){ highlight(v); }, 180);
+  });
+  input.addEventListener("keydown", function(e){
+    if (e.key === "Enter"){ e.preventDefault(); focusHit(cursor + (e.shiftKey ? -1 : 1)); }
+    if (e.key === "Escape"){ input.value = ""; highlight(""); input.blur(); }
+  });
+  document.getElementById("prev").addEventListener("click", function(){ focusHit(cursor - 1); });
+  document.getElementById("next").addEventListener("click", function(){ focusHit(cursor + 1); });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "/" && e.target === document.body){ e.preventDefault(); input.focus(); }
+  });
+
+  /* -------------------------------------------------- リンクのコピー・共有 */
+  doc.addEventListener("click", function(e){
+    var btn = e.target.closest ? e.target.closest("button[data-anchor]") : null;
+    if (!btn) return;
+    var anchor = btn.getAttribute("data-anchor");
+    var url = location.href.split("#")[0] + "#" + anchor;
+    history.replaceState(null, "", "#" + anchor);
+    var done = function(){ say("リンクをコピーしました"); };
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(done, function(){ legacyCopy(url, done); });
+    } else {
+      legacyCopy(url, done);
+    }
+  });
+  function legacyCopy(text, done){
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); done(); }
+    catch(err){ say("コピーできませんでした。アドレス欄からURLを控えてください"); }
+    document.body.removeChild(ta);
+  }
+
+  /* ------------------------------------------------ 現在位置の表示と目次連動 */
+  var watched = doc.querySelectorAll(".art[id], .div-head[id]");
+  var tocLinks = {};
+  var links = toc.querySelectorAll("a[href^='#']");
+  for (var i = 0; i < links.length; i++) tocLinks[links[i].getAttribute("href").slice(1)] = links[i];
+  var currentLink = null;
+  if ("IntersectionObserver" in window){
+    var visible = [];
+    var io = new IntersectionObserver(function(entries){
+      for (var i = 0; i < entries.length; i++){
+        var id = entries[i].target.id;
+        var at = visible.indexOf(id);
+        if (entries[i].isIntersecting){ if (at < 0) visible.push(id); }
+        else if (at >= 0){ visible.splice(at, 1); }
+      }
+      if (!visible.length) return;
+      var first = null;
+      for (var k = 0; k < watched.length; k++){
+        if (visible.indexOf(watched[k].id) >= 0){ first = watched[k]; break; }
+      }
+      if (!first) return;
+      crumb.textContent = first.getAttribute("data-path") || "";
+      var link = tocLinks[first.id];
+      if (link && link !== currentLink){
+        if (currentLink) currentLink.classList.remove("current");
+        link.classList.add("current");
+        currentLink = link;
+      }
+    }, {rootMargin:"-20% 0px -70% 0px"});
+    for (var w = 0; w < watched.length; w++) io.observe(watched[w]);
+  }
+
+  /* -------------------------------------------------------- 目次の開閉（狭幅） */
+  var opener = document.getElementById("toc-open");
+  if (opener){
+    opener.addEventListener("click", function(){ toc.classList.toggle("open"); });
+    toc.addEventListener("click", function(e){
+      if (e.target.tagName === "A") toc.classList.remove("open");
+    });
+  }
+})();
+</script>
+</body>
+</html>

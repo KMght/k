@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>最高裁判所行政不服審査委員会規則</title>
+<style>
+:root{
+  --paper:#ffffff;
+  --ink:#16181d;
+  --sub:#5f6875;
+  --rule:#dde2e9;
+  --chrome:#f4f6f9;
+  --accent:#14538a;
+  --accent-weak:#e7eff7;
+  --mark:#ffe08a;
+  --mark-live:#ff9d3d;
+  --gothic:"Yu Gothic UI","Yu Gothic","YuGothic","Hiragino Sans","Noto Sans JP","Meiryo",system-ui,sans-serif;
+  --mincho:"Yu Mincho","YuMincho","Hiragino Mincho ProN","Noto Serif JP","MS Mincho",serif;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:5.5rem}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--mincho);font-size:17px;line-height:1.9;
+  text-rendering:optimizeLegibility;
+}
+
+/* ---------------------------------------------------------------- ヘッダ */
+.top{
+  position:sticky;top:0;z-index:30;background:var(--chrome);
+  border-bottom:1px solid var(--rule);font-family:var(--gothic);
+}
+.top-inner{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;padding:.7rem 1.2rem}
+.law-title{font-size:1.12rem;font-weight:700;letter-spacing:.02em;margin:0}
+.law-number{font-size:.8rem;color:var(--sub);margin-left:.2rem}
+.top-tools{margin-left:auto;display:flex;align-items:center;gap:.5rem}
+.search-box{display:flex;align-items:center;gap:.35rem;background:var(--paper);
+  border:1px solid var(--rule);border-radius:2px;padding:.25rem .5rem}
+.search-box input{border:0;outline:0;font:inherit;font-size:.85rem;width:14rem;background:transparent;color:inherit}
+.hit-count{font-size:.78rem;color:var(--sub);min-width:4.2rem;text-align:right;font-variant-numeric:tabular-nums}
+button{font:inherit;font-family:var(--gothic);cursor:pointer}
+.btn{background:var(--paper);border:1px solid var(--rule);border-radius:2px;
+  color:var(--ink);font-size:.78rem;padding:.28rem .6rem;line-height:1.4}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.crumb{padding:.3rem 1.2rem;border-top:1px solid var(--rule);background:var(--paper);
+  font-family:var(--gothic);font-size:.78rem;color:var(--sub);min-height:1.7rem}
+
+/* ------------------------------------------------------------------ 骨格 */
+.wrap{display:grid;grid-template-columns:19rem minmax(0,1fr);align-items:start}
+.toc{
+  position:sticky;top:5.6rem;max-height:calc(100vh - 5.6rem);overflow-y:auto;
+  border-right:1px solid var(--rule);padding:1rem .6rem 4rem 1.2rem;
+  font-family:var(--gothic);font-size:.83rem;line-height:1.65;
+}
+.toc h2{font-size:.75rem;color:var(--sub);font-weight:700;margin:0 0 .6rem}
+.toc ul{list-style:none;margin:0;padding:0}
+.toc a{display:block;color:var(--ink);text-decoration:none;padding:.16rem .4rem;border-radius:2px}
+.toc a:hover{background:var(--accent-weak);color:var(--accent)}
+.toc a.current{background:var(--accent-weak);color:var(--accent);font-weight:700}
+.toc .div-1>a,.toc .div-2>a{font-weight:700}
+.toc .div-2{margin-top:.5rem}
+.toc .div-3,.toc .div-4,.toc .div-5{margin-top:.25rem}
+.toc .lv-art{padding-left:.9rem}
+.toc .lv-art.hidden,.toc .lv-div.hidden{display:none}
+.toc-toggle{background:none;border:0;color:var(--sub);padding:0 .3rem;font-size:.75rem}
+
+.doc{padding:2.2rem 2rem 8rem;max-width:44em}
+.doc-head{border-bottom:2px solid var(--ink);padding-bottom:.8rem;margin-bottom:2rem}
+.doc-head h1{font-size:1.5rem;margin:0 0 .3rem;letter-spacing:.04em}
+.doc-head .meta{font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+
+/* ------------------------------------------------------------------ 条文 */
+.div-head{font-family:var(--gothic);margin:2.6rem 0 1rem;scroll-margin-top:6rem}
+.div-head .lbl{color:var(--accent);font-weight:700}
+h2.div-head{font-size:1.12rem;border-bottom:1px solid var(--rule);padding-bottom:.35rem}
+h3.div-head{font-size:1.02rem}
+h4.div-head,h5.div-head,h6.div-head{font-size:.95rem}
+
+.art{position:relative;padding-left:2.6rem;margin:1.5rem 0 1.9rem;scroll-margin-top:6rem}
+.art:target{background:var(--accent-weak);box-shadow:-.4rem 0 0 var(--accent);border-radius:2px}
+.art-tools{position:absolute;left:0;top:.25rem;display:flex;flex-direction:column;gap:.2rem;
+  visibility:hidden}
+.art:hover .art-tools,.art:focus-within .art-tools,.art:target .art-tools{visibility:visible}
+.art-tools button,.art-tools a{background:none;border:0;color:var(--sub);font-size:.72rem;
+  font-family:var(--gothic);padding:.1rem .2rem;border-radius:2px;text-decoration:none;
+  white-space:nowrap;display:block}
+.art-tools button:hover,.art-tools a:hover{color:var(--accent);background:var(--accent-weak)}
+.raw h3 .src{font-size:.75rem;font-weight:400;color:var(--sub);margin-left:.5rem}
+.doc-head .src{color:var(--accent);text-decoration:none}
+.doc-head .src:hover{text-decoration:underline}
+.caption{font-family:var(--gothic);font-size:.88rem;font-weight:700;color:var(--sub);margin:0 0 .1rem}
+.amend-note{font-family:var(--gothic);font-size:.78rem;font-weight:400;color:var(--sub);margin:.1rem 0 0;text-align:right}
+h2 .amend-note,h3 .amend-note,h4 .amend-note,h5 .amend-note,h6 .amend-note{display:inline;text-align:left}
+.art-no{font-family:var(--gothic);font-weight:700;color:var(--accent);text-decoration:none;margin-right:.55em}
+.art-no:hover{text-decoration:underline}
+.para{margin:.35rem 0;text-indent:0}
+.para+.para{margin-top:.55rem}
+.pno{font-family:var(--gothic);color:var(--sub);font-size:.9em;margin-right:.5em;font-variant-numeric:tabular-nums}
+.deleted .body-text{color:var(--sub)}
+.art.noarticle .para{margin-top:0}
+
+ol.items{list-style:none;margin:.35rem 0 .35rem 1.1em;padding:0}
+ol.items>li{display:grid;grid-template-columns:2.4em minmax(0,1fr);margin:.2rem 0}
+ol.items .mk{font-family:var(--gothic);font-size:.9em;color:var(--sub);margin-right:.4em}
+ol.items ol.items{grid-column:1/-1;margin-left:1.2em}
+ol.items ol.items>li{grid-template-columns:2em minmax(0,1fr)}
+
+.raw{margin:1.6rem 0;scroll-margin-top:6rem}
+.raw h3{font-family:var(--gothic);font-size:1rem;margin:0 0 .4rem}
+.raw pre{font-family:var(--mincho);white-space:pre-wrap;margin:0;padding:.7rem .9rem;
+  background:var(--chrome);border:1px solid var(--rule);font-size:.92rem;line-height:1.75}
+
+.notes{margin:2.5rem 0 0;padding:.8rem 1rem;background:var(--chrome);
+  border-left:3px solid var(--accent);font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+.notes p{margin:0 0 .3rem;font-weight:700;color:var(--ink)}
+.notes ul{margin:0;padding-left:1.2rem}
+.foot{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);
+  font-family:var(--gothic);font-size:.75rem;color:var(--sub)}
+
+a.ref{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule)}
+a.ref:hover{color:var(--accent);border-bottom-color:var(--accent)}
+a.ref-egov{border-bottom-style:dotted}
+a.ref-rule{border-bottom-color:var(--accent)}
+mark{background:var(--mark);color:inherit;padding:0 .05em}
+mark.live{background:var(--mark-live)}
+.toast{position:fixed;left:50%;bottom:2rem;transform:translateX(-50%);
+  background:var(--ink);color:#fff;font-family:var(--gothic);font-size:.8rem;
+  padding:.5rem .9rem;border-radius:3px;pointer-events:none;z-index:60;display:none}
+.toast.show{display:block}
+
+.toc-open{display:none}
+@media (max-width:900px){
+  body{font-size:16px}
+  .wrap{grid-template-columns:minmax(0,1fr)}
+  .toc{position:fixed;inset:5.6rem auto 0 0;width:82vw;max-width:20rem;background:var(--paper);
+    z-index:25;box-shadow:0 0 0 100vmax rgba(0,0,0,.25);max-height:none;height:calc(100vh - 5.6rem);
+    display:none}
+  .toc.open{display:block}
+  .toc-open{display:inline-block}
+  .doc{padding:1.4rem 1.1rem 6rem}
+  .search-box input{width:8rem}
+  .art-tools{opacity:1;position:static;flex-direction:row;justify-content:flex-end;margin-bottom:.15rem}
+  .art-tools button,.art-tools a{border:1px solid var(--rule);border-radius:2px;
+    padding:.1rem .45rem;display:inline-block}
+  .art{padding-left:0}
+}
+
+@media print{
+  .top,.toc,.art-tools,.crumb,.toast{display:none!important}
+  a.ref{border-bottom:0}
+  .wrap{display:block}
+  .doc{max-width:none;padding:0}
+  body{font-size:10.5pt;line-height:1.7}
+  .art{page-break-inside:avoid}
+}
+
+.anchor-alias{position:absolute;scroll-margin-top:6rem}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <button type="button" class="btn toc-open" id="toc-open">目次</button>
+    <h1 class="law-title">最高裁判所行政不服審査委員会規則</h1>
+    <span class="law-number">平成28年3月24日最高裁判所規則第二号　／　平成28年4月1日施行</span>
+    <div class="top-tools">
+      <div class="search-box">
+        <input type="search" id="q" placeholder="条文を検索（/ キー）" aria-label="条文を検索">
+        <span class="hit-count" id="hits"></span>
+      </div>
+      <button type="button" class="btn" id="prev" title="前の該当箇所">前</button>
+      <button type="button" class="btn" id="next" title="次の該当箇所">次</button>
+      <button type="button" class="btn" id="numeral" aria-pressed="false"
+        title="条番号の表記を切り替える">123</button>
+    </div>
+  </div>
+  <div class="crumb" id="crumb"></div>
+</header>
+<div class="wrap">
+  <nav class="toc" id="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ul><li class="lv-art" data-text="最高裁判所行政不服審査委員会規則を次のように定める。"><a href="#body-1">本文</a></li><li class="lv-div div-2"><a href="#d1">第一章　総則</a><ul><li class="lv-art" data-text="第一条1条目的目的この規則は、裁判所における行政不服審査法（平成二十六年法律第六十八号。以下「法」という。）に基づく審査請求に係る事件について、審理手続及び裁決の一層の公正性を確保するため、最高裁判所又は最高裁判所長官の諮問に応じ、審査請求に係る事件について調査審議するための機関として、最高裁判所に、最高裁判所行政不服審査委員会を設置するとともに、その組織及び調査審議の手続並びに同委員会への諮問等について定めることを目的とする。"><a href="#a1">第一条　目的</a></li><li class="lv-art" data-text="第二条2条定義定義この規則において、次の各号に掲げる用語の意義は、当該各号に定めるところによる。一処分 法第一条第二項に規定する行政庁の処分その他公権力の行使に当たる行為をいう。二処分庁等 法第四条第一号に規定する処分庁等をいう。三参加人 法第十三条第一項又は第二項の規定により当該審査請求に参加する者をいう。四審理関係人 法第二十八条に規定する審査請求人、参加人及び処分庁等をいう。五意見書 法第三十条第二項に規定する審査請求に係る事件に関する意見を記載した書面をいう。六口頭意見陳述 法第三十一条第一項本文の規定による意見の陳述をいう。七事件記録 法第四十一条第三項に規定する事件記録をいう。八審理員意見書 法第四十二条第一項に規定する審査庁がすべき裁決に関する意見書をいう。"><a href="#a2">第二条　定義</a></li></ul></li><li class="lv-div div-2"><a href="#d4">第二章　最高裁判所行政不服審査委員会への諮問</a><ul><li class="lv-art" data-text="第三条3条最高裁判所又は最高裁判所長官（以下「審査庁」という。）は、法第四十二条第二項の規定により審理員意見書の提出を受けたときは、次の各号のいずれかに該当する場合を除き、最高裁判所行政不服審査委員会に諮問しなければならない。一審査請求に係る処分をしようとするときに法律又は政令に法第九条第一項各号に掲げる機関又はこれ らの機関に類するものとして政令で定めるもの（以下「審議会等」という。）の議を経るべき旨又は経ることができる旨の定めがあり、かつ、当該議を経て当該処分がされた場合二裁決をしようとするときに法律又は政令に法第九条第一項各号に掲げる機関又はこれらの機関に類するものとして政令で定めるものの議を経るべき旨又は経ることができる旨の定めがあり、かつ、当該議を経て裁決をしようとする場合三法第四十六条第三項又は第四十九条第四項の規定により審議会等の議を経て裁決をしようとする場合四審査請求人から、最高裁判所行政不服審査委員会への諮問を希望しない旨の申出がされている場合（参加人から、最高裁判所行政不服審査委員会に諮問しないことについて反対する旨の申出がされている場合を除く。）五審査請求が、最高裁判所行政不服審査委員会によって、国民の権利利益及び司法行政の運営に対する影響の程度その他当該事件の性質を勘案して、諮問を要しないものと認められたものである場合六審査請求が不適法であり、却下する場合七法第四十六条第一項の規定により審査請求に係る処分（法令に基づく申請を却下し、又は棄却する処分及び事実上の行為を除く。）の全部を取り消し、又は法第四十七条第一号若しくは第二号の規定により審査請求に係る事実上の行為の全部を撤廃すべき旨を命じ、若しくは撤廃することとする場合（当該処分の全部を取り消すこと又は当該事実上の行為の全部を撤廃すべき旨を命じ、若しくは撤廃することについて反対する旨の意見書が提出されている場合及び口頭意見陳述においてその旨の意見が述べられている場合を除く。）八法第四十六条第二項各号又は第四十九条第三項各号に定める措置（法令に基づく申請の全部を認容すべき旨を命じ、又は認容するものに限る。）をとることとする場合（当該申請の全部を認容することについて反対する旨の意見書が提出されている場合及び口頭意見陳述においてその旨の意見が述べられている場合を除く。）前項の規定による諮問は、審理員意見書及び事件記録の写しを添えてしなければならない。第一項の規定により諮問をした審査庁は、審理関係人（当該審査庁が処分庁等である場合にあっては、 審査請求人及び参加人）に対し、当該諮問をした旨を通知するとともに、審理員意見書の写しを送付し なければならない。"><a href="#a3">第三条</a></li></ul></li><li class="lv-div div-2"><a href="#d6">第三章　裁決</a><ul><li class="lv-art" data-text="第四条4条裁決の時期裁決の時期審査庁は、最高裁判所行政不服審査委員会から諮問に対する答申を受けたときは、遅滞なく、裁決をしなければならない。"><a href="#a4">第四条　裁決の時期</a></li><li class="lv-art" data-text="第五条5条裁決の方式裁決の方式審査庁は、法第五十条の規定により裁決をする場合において、その主文が最高裁判所行政不服審査委員会の答申書と異なる内容であるときは、異なることとなった理由を裁決書に記載しなければならない。"><a href="#a5">第五条　裁決の方式</a></li></ul></li><li class="lv-div div-2"><a href="#d9">第四章　最高裁判所行政不服審査委員会</a><ul><li class="lv-div div-3"><a href="#d10">第一節　設置及び組織</a><ul><li class="lv-art" data-text="第六条6条設置設置第三条の規定による諮問に応じ、審査請求に係る事件について調査審議するため、最高裁判所に、 最高裁判所行政不服審査委員会（以下「審査委員会」という。）を置く。"><a href="#a6">第六条　設置</a></li><li class="lv-art" data-text="第七条7条組織組織審査委員会は、委員三人をもって組織する。委員は、非常勤とする。"><a href="#a7">第七条　組織</a></li><li class="lv-art" data-text="第八条8条委員委員委員は、審査委員会の権限に属する事項に関し公正な判断をすることができ、かつ、法律又は行政に関して優れた識見を有する者のうちから、最高裁判所が任命する。委員の任期は、三年とする。ただし、補欠の委員の任期は、前任者の残任期間とする。委員は、再任されることができる。委員の任期が満了したときは、当該委員は、後任者が任命されるまで引き続きその職務を行うものとする。最高裁判所は、委員が心身の故障のために職務の執行ができないと認める場合又は委員に職務上の義務違反その他委員たるに適しない非行があると認める場合には、その委員を罷免することができる。委員は、在任中、政党その他の政治的団体の役員となり、又は積極的に政治運動をしてはならない。"><a href="#a8">第八条　委員</a></li><li class="lv-art" data-text="第九条9条委員長委員長審査委員会に、委員長を置き、委員の互選により選任する。委員長は、会務を総理し、審査委員会を代表する。委員長に事故があるときは、あらかじめその指名する委員が、その職務を代理する。"><a href="#a9">第九条　委員長</a></li><li class="lv-art" data-text="第十条10条議事議事審査委員会は、委員長が招集する。審査委員会は、委員長及び少なくとも一人の委員の出席がなければ、会議を開き、議決することができない。審査委員会の議事は、出席者の過半数をもって決し、可否同数のときは、委員長の決するところによる。委員は、自己の利害に関係する議事に参与することができない。委員長に事故がある場合又は前項の規定により委員長が議事に参与することができない場合における第二項及び第三項の規定の適用については、前条第三項に規定する委員は、委員長とみなす。"><a href="#a10">第十条　議事</a></li><li class="lv-art" data-text="第十一条11条庶務庶務審査委員会の庶務は、最高裁判所事務総局総務局において処理する。"><a href="#a11">第十一条　庶務</a></li></ul></li><li class="lv-div div-3"><a href="#d17">第二節　調査審議の手続</a><ul><li class="lv-art" data-text="第十二条12条審査委員会の調査権限審査委員会の調査権限審査委員会は、必要があると認める場合には、審査請求に係る事件に関し、審査請求人、参加人又は第三条第一項の規定により審査委員会に諮問をした審査庁（以下「審査関係人」という。）にその主張を記載した書面（以下「主張書面」という。）又は資料の提出を求めること、適当と認める者にその知っている事実の陳述又は鑑定を求めることその他必要な調査をすることができる。"><a href="#a12">第十二条　審査委員会の調査権限</a></li><li class="lv-art" data-text="第十三条13条調査審議の手続の併合又は分離調査審議の手続の併合又は分離審査委員会は、必要があると認める場合には、数個の事件に係る調査審議の手続を併合し、又は併合された数個の事件に係る調査審議の手続を分離することができる。審査委員会は、前項の規定により、事件に係る調査審議の手続を併合し、又は分離したときは、審査関係人にその旨を通知しなければならない。"><a href="#a13">第十三条　調査審議の手続の併合又は分離</a></li><li class="lv-art" data-text="第十四条14条意見の陳述意見の陳述審査委員会は、審査関係人の申立てがあった場合には、当該審査関係人に口頭で意見を述べる機会を与えなければならない。ただし、審査委員会が、その必要がないと認める場合には、この限りでない。前項本文の場合において、審査請求人又は参加人は、審査委員会の許可を得て、補佐人とともに出頭することができる。"><a href="#a14">第十四条　意見の陳述</a></li><li class="lv-art" data-text="第十五条15条映像等の送受信による通話の方法による意見の陳述等映像等の送受信による通話の方法による意見の陳述等審査委員会は、前条第一項本文の規定による意見の陳述の機会を与えた場合において、遠隔の地に居住する審査関係人があるとき、その他相当と認めるときは、委員及び審査関係人が映像と音声の送受信により相手の状態を相互に認識しながら通話をすることができる方法によって、調査審議を行うことができる。前項の場合には、審査関係人の意見を聴いて、当該調査審議に必要な装置が設置された場所であって審査委員会が相当と認める場所を、審査関係人ごとに指定して行う。"><a href="#a15">第十五条　映像等の送受信による通話の方法による意見の陳述等</a></li><li class="lv-art" data-text="第十六条16条主張書面等の提出主張書面等の提出審査関係人は、審査委員会に対し、主張書面又は資料を提出することができる。この場合において、審査委員会が、主張書面又は資料を提出すべき相当の期間を定めたときは、その期間内にこれを提出しなければならない。"><a href="#a16">第十六条　主張書面等の提出</a></li><li class="lv-art" data-text="第十七条17条委員による調査手続委員による調査手続審査委員会は、必要があると認める場合には、その指名する委員に、第十二条の規定による調査をさせ、又は第十四条第一項本文の規定による審査関係人の意見の陳述を聴かせることができる。"><a href="#a17">第十七条　委員による調査手続</a></li><li class="lv-art" data-text="第十八条18条提出資料の閲覧等提出資料の閲覧等審査関係人は、審査委員会に対し、審査委員会に提出された主張書面若しくは資料の閲覧（電磁的記録にあっては、記録された事項を審査委員会が定める方法により表示したものの閲覧）又は当該主張書面若しくは当該資料の写し若しくは当該電磁的記録に記録された事項を記載した書面の交付を求めることができる。この場合において、審査委員会は、第三者の利益を害するおそれがあると認めるとき、その他正当な理由があるときでなければ、その閲覧又は交付を拒むことができない。審査委員会は、前項の規定による閲覧をさせ、又は同項の規定による交付をしようとするときは、当該閲覧又は交付に係る主張書面又は資料の提出人の意見を聴かなければならない。ただし、審査委員会が、その必要がないと認めるときは、この限りでない。審査委員会は、第一項の規定による閲覧について、日時及び場所を指定することができる。"><a href="#a18">第十八条　提出資料の閲覧等</a></li><li class="lv-art" data-text="第十九条19条交付の求め交付の求め前条第一項の規定による交付の求めは、次に掲げる事項を記載した書面を提出してしなければならない。一交付に係る前条第一項に規定する主張書面若しくは資料（以下「対象主張書面等」という。）又は交付に係る同項に規定する電磁的記録（以下「対象電磁的記録」という。）を特定するに足りる事項二対象主張書面等又は対象電磁的記録について求める交付の方法（次条各号に掲げる交付の方法をいう。）三対象主張書面等又は対象電磁的記録について第二十一条に規定する送付による交付を求める場合にあっては、その旨"><a href="#a19">第十九条　交付の求め</a></li><li class="lv-art" data-text="第二十条20条交付の方法交付の方法第十八条第一項の規定による交付は、次の各号のいずれかの方法によってする。一対象主張書面等の写しの交付にあっては、当該対象主張書面等を複写機により用紙の片面又は両面に白黒又はカラーで複写したものの交付二対象電磁的記録に記録された事項を記載した書面の交付にあっては、当該事項を用紙の片面又は両面に白黒又はカラーで出力したものの交付"><a href="#a20">第二十条　交付の方法</a></li><li class="lv-art" data-text="第二十一条21条送付による交付送付による交付第十八条第一項の規定による交付を受ける審査請求人又は参加人は、対象主張書面等の写し又は対象電磁的記録に記録された事項を記載した書面の送付を求めることができる。"><a href="#a21">第二十一条　送付による交付</a></li><li class="lv-art" data-text="第二十二条22条答申書の送付等答申書の送付等審査委員会は、諮問に対する答申をしたときは、答申書の写しを審査請求人及び参加人に送付するとともに、答申の内容を公表するものとする。"><a href="#a22">第二十二条　答申書の送付等</a></li><li class="lv-art" data-text="第二十三条23条審査委員会の調査審議の手続審査委員会の調査審議の手続この規則に定めるもののほか、審査委員会の調査審議の手続に関し必要な事項は、委員長が審査委員会に諮って定める。"><a href="#a23">第二十三条　審査委員会の調査審議の手続</a></li></ul></li></ul></li><li class="lv-div div-1"><a href="#sup1">附則</a><ul><li class="lv-art" data-text="第一条1条施行期日施行期日この規則は、法の施行の日（平成二十八年四月一日）から施行する。ただし、次条の規定は、公布の日から施行する。"><a href="#sup1-a1">第一条　施行期日</a></li><li class="lv-art" data-text="第二条2条準備行為準備行為第八条第一項の規定による審査委員会の委員の任命に関し必要な行為は、この規則の施行の日前においても、同項の規定の例によりすることができる。"><a href="#sup1-a2">第二条　準備行為</a></li><li class="lv-art" data-text="第三条3条経過措置経過措置裁判所の処分又は不作為（法令に基づく申請に対して何らの処分をもしないことをいう。以下この条において同じ。）についての不服申立てであって、この規則の施行前にされた裁判所の処分又はこの規則の施行前にされた申請に係る裁判所の不作為に係るものについては、なお従前の例による。"><a href="#sup1-a3">第三条　経過措置</a></li><li class="lv-art" data-text="第四条4条この規則の施行後最初に任命される審査委員会の委員の任期は、第八条第二項本文の規定にかかわらず、三人のうち、一人は二年、二人は三年とする。前項に規定する各委員の任期は、最高裁判所が定める"><a href="#sup1-a4">第四条</a></li></ul></li></ul>
+  </nav>
+  <main class="doc" id="doc-outer">
+    <div class="doc-head">
+      <h1>最高裁判所行政不服審査委員会規則</h1>
+      <div class="meta">平成28年3月24日最高裁判所規則第二号　／　平成28年4月1日施行　／　<a class="src" href="https://www.courts.go.jp/assets/gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本PDF p.1</a></div>
+    </div>
+    <div id="doc">
+<article class="art noarticle" id="body-1" data-path=""><div class="art-tools"><button type="button" data-anchor="body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="body-1-p1"><span class="body-text">最高裁判所行政不服審査委員会規則を次のように定める。</span></p></article>
+<h3 class="div-head" id="d1" data-path="第一章　総則"><span class="lbl">第一章</span>　総則</h3>
+<article class="art" id="a1" data-path="第一章　総則"><span class="anchor-alias" id="Mp-At_1"></span><div class="art-tools"><button type="button" data-anchor="a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（目的）</p><p class="para" id="a1-p1"><a class="art-no" href="#a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、裁判所における行政不服審査法（平成二十六年法律第六十八号。以下「法」という。）に基づく審査請求に係る事件について、審理手続及び裁決の一層の公正性を確保するため、最高裁判所又は最高裁判所長官の諮問に応じ、審査請求に係る事件について調査審議するための機関として、最高裁判所に、最高裁判所行政不服審査委員会を設置するとともに、その組織及び調査審議の手続並びに同委員会への諮問等について定めることを目的とする。</span></p></article>
+<article class="art" id="a2" data-path="第一章　総則"><span class="anchor-alias" id="Mp-At_2"></span><div class="art-tools"><button type="button" data-anchor="a2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（定義）</p><p class="para" id="a2-p1"><a class="art-no" href="#a2" data-kan="第二条" data-num="第2条">第二条</a><span class="body-text">この規則において、次の各号に掲げる用語の意義は、当該各号に定めるところによる。</span></p><ol class="items"><li id="a2-p1-1"><span class="mk">一</span><span class="tx">処分 <a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/426AC0000000068#Mp-At_1" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第一条</a>第二項に規定する行政庁の処分その他公権力の行使に当たる行為をいう。</span></li><li id="a2-p1-2"><span class="mk">二</span><span class="tx">処分庁等 <a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/426AC0000000068#Mp-At_4" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四条</a>第一号に規定する処分庁等をいう。</span></li><li id="a2-p1-3"><span class="mk">三</span><span class="tx">参加人 <a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/426AC0000000068#Mp-At_13" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十三条</a>第一項又は第二項の規定により当該審査請求に参加する者をいう。</span></li><li id="a2-p1-4"><span class="mk">四</span><span class="tx">審理関係人 <a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/426AC0000000068#Mp-At_28" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十八条</a>に規定する審査請求人、参加人及び処分庁等をいう。</span></li><li id="a2-p1-5"><span class="mk">五</span><span class="tx">意見書 <a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/426AC0000000068#Mp-At_30" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十条</a>第二項に規定する審査請求に係る事件に関する意見を記載した書面をいう。</span></li><li id="a2-p1-6"><span class="mk">六</span><span class="tx">口頭意見陳述 <a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/426AC0000000068#Mp-At_31" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十一条</a>第一項本文の規定による意見の陳述をいう。</span></li><li id="a2-p1-7"><span class="mk">七</span><span class="tx">事件記録 <a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/426AC0000000068#Mp-At_41" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四十一条</a>第三項に規定する事件記録をいう。</span></li><li id="a2-p1-8"><span class="mk">八</span><span class="tx">審理員意見書 <a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/426AC0000000068#Mp-At_42" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四十二条</a>第一項に規定する審査庁がすべき裁決に関する意見書をいう。</span></li></ol></article>
+<h3 class="div-head" id="d4" data-path="第二章　最高裁判所行政不服審査委員会への諮問"><span class="lbl">第二章</span>　最高裁判所行政不服審査委員会への諮問</h3>
+<article class="art" id="a3" data-path="第二章　最高裁判所行政不服審査委員会への諮問"><span class="anchor-alias" id="Mp-At_3"></span><div class="art-tools"><button type="button" data-anchor="a3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="a3-p1"><a class="art-no" href="#a3" data-kan="第三条" data-num="第3条">第三条</a><span class="body-text">最高裁判所又は最高裁判所長官（以下「審査庁」という。）は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/426AC0000000068#Mp-At_42" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四十二条</a>第二項の規定により審理員意見書の提出を受けたときは、次の各号のいずれかに該当する場合を除き、最高裁判所行政不服審査委員会に諮問しなければならない。</span></p><ol class="items"><li id="a3-p1-1"><span class="mk">一</span><span class="tx">審査請求に係る処分をしようとするときに法律又は政令に<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/426AC0000000068#Mp-At_9" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第九条</a>第一項各号に掲げる機関又はこれ らの機関に類するものとして政令で定めるもの（以下「審議会等」という。）の議を経るべき旨又は経ることができる旨の定めがあり、かつ、当該議を経て当該処分がされた場合</span></li><li id="a3-p1-2"><span class="mk">二</span><span class="tx">裁決をしようとするときに法律又は政令に<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/426AC0000000068#Mp-At_9" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第九条</a>第一項各号に掲げる機関又はこれらの機関に類するものとして政令で定めるものの議を経るべき旨又は経ることができる旨の定めがあり、かつ、当該議を経て裁決をしようとする場合</span></li><li id="a3-p1-3"><span class="mk">三</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/426AC0000000068#Mp-At_46" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四十六条</a>第三項又は第四十九条第四項の規定により審議会等の議を経て裁決をしようとする場合</span></li><li id="a3-p1-4"><span class="mk">四</span><span class="tx">審査請求人から、最高裁判所行政不服審査委員会への諮問を希望しない旨の申出がされている場合（参加人から、最高裁判所行政不服審査委員会に諮問しないことについて反対する旨の申出がされている場合を除く。）</span></li><li id="a3-p1-5"><span class="mk">五</span><span class="tx">審査請求が、最高裁判所行政不服審査委員会によって、国民の権利利益及び司法行政の運営に対する影響の程度その他当該事件の性質を勘案して、諮問を要しないものと認められたものである場合</span></li><li id="a3-p1-6"><span class="mk">六</span><span class="tx">審査請求が不適法であり、却下する場合</span></li><li id="a3-p1-7"><span class="mk">七</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/426AC0000000068#Mp-At_46" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四十六条</a>第一項の規定により審査請求に係る処分（法令に基づく申請を却下し、又は棄却する処分及び事実上の行為を除く。）の全部を取り消し、又は<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/426AC0000000068#Mp-At_47" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四十七条</a>第一号若しくは第二号の規定により審査請求に係る事実上の行為の全部を撤廃すべき旨を命じ、若しくは撤廃することとする場合（当該処分の全部を取り消すこと又は当該事実上の行為の全部を撤廃すべき旨を命じ、若しくは撤廃することについて反対する旨の意見書が提出されている場合及び口頭意見陳述においてその旨の意見が述べられている場合を除く。）</span></li><li id="a3-p1-8"><span class="mk">八</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/426AC0000000068#Mp-At_46" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四十六条</a>第二項各号又は第四十九条第三項各号に定める措置（法令に基づく申請の全部を認容すべき旨を命じ、又は認容するものに限る。）をとることとする場合（当該申請の全部を認容することについて反対する旨の意見書が提出されている場合及び口頭意見陳述においてその旨の意見が述べられている場合を除く。）</span></li></ol><p class="para" id="a3-p2"><span class="pno">2</span><span class="body-text">前項の規定による諮問は、審理員意見書及び事件記録の写しを添えてしなければならない。</span></p><p class="para" id="a3-p3"><span class="pno">3</span><span class="body-text">第一項の規定により諮問をした審査庁は、審理関係人（当該審査庁が処分庁等である場合にあっては、 審査請求人及び参加人）に対し、当該諮問をした旨を通知するとともに、審理員意見書の写しを送付し なければならない。</span></p></article>
+<h3 class="div-head" id="d6" data-path="第三章　裁決"><span class="lbl">第三章</span>　裁決</h3>
+<article class="art" id="a4" data-path="第三章　裁決"><span class="anchor-alias" id="Mp-At_4"></span><div class="art-tools"><button type="button" data-anchor="a4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（裁決の時期）</p><p class="para" id="a4-p1"><a class="art-no" href="#a4" data-kan="第四条" data-num="第4条">第四条</a><span class="body-text">審査庁は、最高裁判所行政不服審査委員会から諮問に対する答申を受けたときは、遅滞なく、裁決をしなければならない。</span></p></article>
+<article class="art" id="a5" data-path="第三章　裁決"><span class="anchor-alias" id="Mp-At_5"></span><div class="art-tools"><button type="button" data-anchor="a5" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（裁決の方式）</p><p class="para" id="a5-p1"><a class="art-no" href="#a5" data-kan="第五条" data-num="第5条">第五条</a><span class="body-text">審査庁は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/426AC0000000068#Mp-At_50" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第五十条</a>の規定により裁決をする場合において、その主文が最高裁判所行政不服審査委員会の答申書と異なる内容であるときは、異なることとなった理由を裁決書に記載しなければならない。</span></p></article>
+<h3 class="div-head" id="d9" data-path="第四章　最高裁判所行政不服審査委員会"><span class="lbl">第四章</span>　最高裁判所行政不服審査委員会</h3>
+<h4 class="div-head" id="d10" data-path="第一節　設置及び組織"><span class="lbl">第一節</span>　設置及び組織</h4>
+<article class="art" id="a6" data-path="第四章　最高裁判所行政不服審査委員会　＞　第一節　設置及び組織"><span class="anchor-alias" id="Mp-At_6"></span><div class="art-tools"><button type="button" data-anchor="a6" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（設置）</p><p class="para" id="a6-p1"><a class="art-no" href="#a6" data-kan="第六条" data-num="第6条">第六条</a><span class="body-text"><a class="ref ref-self" href="#a3">第三条</a>の規定による諮問に応じ、審査請求に係る事件について調査審議するため、最高裁判所に、 最高裁判所行政不服審査委員会（以下「審査委員会」という。）を置く。</span></p></article>
+<article class="art" id="a7" data-path="第四章　最高裁判所行政不服審査委員会　＞　第一節　設置及び組織"><span class="anchor-alias" id="Mp-At_7"></span><div class="art-tools"><button type="button" data-anchor="a7" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（組織）</p><p class="para" id="a7-p1"><a class="art-no" href="#a7" data-kan="第七条" data-num="第7条">第七条</a><span class="body-text">審査委員会は、委員三人をもって組織する。</span></p><p class="para" id="a7-p2"><span class="pno">2</span><span class="body-text">委員は、非常勤とする。</span></p></article>
+<article class="art" id="a8" data-path="第四章　最高裁判所行政不服審査委員会　＞　第一節　設置及び組織"><span class="anchor-alias" id="Mp-At_8"></span><div class="art-tools"><button type="button" data-anchor="a8" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（委員）</p><p class="para" id="a8-p1"><a class="art-no" href="#a8" data-kan="第八条" data-num="第8条">第八条</a><span class="body-text">委員は、審査委員会の権限に属する事項に関し公正な判断をすることができ、かつ、法律又は行政に関して優れた識見を有する者のうちから、最高裁判所が任命する。</span></p><p class="para" id="a8-p2"><span class="pno">2</span><span class="body-text">委員の任期は、三年とする。ただし、補欠の委員の任期は、前任者の残任期間とする。</span></p><p class="para" id="a8-p3"><span class="pno">3</span><span class="body-text">委員は、再任されることができる。</span></p><p class="para" id="a8-p4"><span class="pno">4</span><span class="body-text">委員の任期が満了したときは、当該委員は、後任者が任命されるまで引き続きその職務を行うものとする。</span></p><p class="para" id="a8-p5"><span class="pno">5</span><span class="body-text">最高裁判所は、委員が心身の故障のために職務の執行ができないと認める場合又は委員に職務上の義務違反その他委員たるに適しない非行があると認める場合には、その委員を罷免することができる。</span></p><p class="para" id="a8-p6"><span class="pno">6</span><span class="body-text">委員は、在任中、政党その他の政治的団体の役員となり、又は積極的に政治運動をしてはならない。</span></p></article>
+<article class="art" id="a9" data-path="第四章　最高裁判所行政不服審査委員会　＞　第一節　設置及び組織"><span class="anchor-alias" id="Mp-At_9"></span><div class="art-tools"><button type="button" data-anchor="a9" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（委員長）</p><p class="para" id="a9-p1"><a class="art-no" href="#a9" data-kan="第九条" data-num="第9条">第九条</a><span class="body-text">審査委員会に、委員長を置き、委員の互選により選任する。</span></p><p class="para" id="a9-p2"><span class="pno">2</span><span class="body-text">委員長は、会務を総理し、審査委員会を代表する。</span></p><p class="para" id="a9-p3"><span class="pno">3</span><span class="body-text">委員長に事故があるときは、あらかじめその指名する委員が、その職務を代理する。</span></p></article>
+<article class="art" id="a10" data-path="第四章　最高裁判所行政不服審査委員会　＞　第一節　設置及び組織"><span class="anchor-alias" id="Mp-At_10"></span><div class="art-tools"><button type="button" data-anchor="a10" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（議事）</p><p class="para" id="a10-p1"><a class="art-no" href="#a10" data-kan="第十条" data-num="第10条">第十条</a><span class="body-text">審査委員会は、委員長が招集する。</span></p><p class="para" id="a10-p2"><span class="pno">2</span><span class="body-text">審査委員会は、委員長及び少なくとも一人の委員の出席がなければ、会議を開き、議決することができない。</span></p><p class="para" id="a10-p3"><span class="pno">3</span><span class="body-text">審査委員会の議事は、出席者の過半数をもって決し、可否同数のときは、委員長の決するところによる。</span></p><p class="para" id="a10-p4"><span class="pno">4</span><span class="body-text">委員は、自己の利害に関係する議事に参与することができない。</span></p><p class="para" id="a10-p5"><span class="pno">5</span><span class="body-text">委員長に事故がある場合又は前項の規定により委員長が議事に参与することができない場合における第二項及び第三項の規定の適用については、前条第三項に規定する委員は、委員長とみなす。</span></p></article>
+<article class="art" id="a11" data-path="第四章　最高裁判所行政不服審査委員会　＞　第一節　設置及び組織"><span class="anchor-alias" id="Mp-At_11"></span><div class="art-tools"><button type="button" data-anchor="a11" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（庶務）</p><p class="para" id="a11-p1"><a class="art-no" href="#a11" data-kan="第十一条" data-num="第11条">第十一条</a><span class="body-text">審査委員会の庶務は、最高裁判所事務総局総務局において処理する。</span></p></article>
+<h4 class="div-head" id="d17" data-path="第二節　調査審議の手続"><span class="lbl">第二節</span>　調査審議の手続</h4>
+<article class="art" id="a12" data-path="第四章　最高裁判所行政不服審査委員会　＞　第二節　調査審議の手続"><span class="anchor-alias" id="Mp-At_12"></span><div class="art-tools"><button type="button" data-anchor="a12" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（審査委員会の調査権限）</p><p class="para" id="a12-p1"><a class="art-no" href="#a12" data-kan="第十二条" data-num="第12条">第十二条</a><span class="body-text">審査委員会は、必要があると認める場合には、審査請求に係る事件に関し、審査請求人、参加人又は<a class="ref ref-self" href="#a3">第三条</a>第一項の規定により審査委員会に諮問をした審査庁（以下「審査関係人」という。）にその主張を記載した書面（以下「主張書面」という。）又は資料の提出を求めること、適当と認める者にその知っている事実の陳述又は鑑定を求めることその他必要な調査をすることができる。</span></p></article>
+<article class="art" id="a13" data-path="第四章　最高裁判所行政不服審査委員会　＞　第二節　調査審議の手続"><span class="anchor-alias" id="Mp-At_13"></span><div class="art-tools"><button type="button" data-anchor="a13" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（調査審議の手続の併合又は分離）</p><p class="para" id="a13-p1"><a class="art-no" href="#a13" data-kan="第十三条" data-num="第13条">第十三条</a><span class="body-text">審査委員会は、必要があると認める場合には、数個の事件に係る調査審議の手続を併合し、又は併合された数個の事件に係る調査審議の手続を分離することができる。</span></p><p class="para" id="a13-p2"><span class="pno">2</span><span class="body-text">審査委員会は、前項の規定により、事件に係る調査審議の手続を併合し、又は分離したときは、審査関係人にその旨を通知しなければならない。</span></p></article>
+<article class="art" id="a14" data-path="第四章　最高裁判所行政不服審査委員会　＞　第二節　調査審議の手続"><span class="anchor-alias" id="Mp-At_14"></span><div class="art-tools"><button type="button" data-anchor="a14" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（意見の陳述）</p><p class="para" id="a14-p1"><a class="art-no" href="#a14" data-kan="第十四条" data-num="第14条">第十四条</a><span class="body-text">審査委員会は、審査関係人の申立てがあった場合には、当該審査関係人に口頭で意見を述べる機会を与えなければならない。ただし、審査委員会が、その必要がないと認める場合には、この限りでない。</span></p><p class="para" id="a14-p2"><span class="pno">2</span><span class="body-text">前項本文の場合において、審査請求人又は参加人は、審査委員会の許可を得て、補佐人とともに出頭することができる。</span></p></article>
+<article class="art" id="a15" data-path="第四章　最高裁判所行政不服審査委員会　＞　第二節　調査審議の手続"><span class="anchor-alias" id="Mp-At_15"></span><div class="art-tools"><button type="button" data-anchor="a15" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（映像等の送受信による通話の方法による意見の陳述等）</p><p class="para" id="a15-p1"><a class="art-no" href="#a15" data-kan="第十五条" data-num="第15条">第十五条</a><span class="body-text">審査委員会は、前条第一項本文の規定による意見の陳述の機会を与えた場合において、遠隔の地に居住する審査関係人があるとき、その他相当と認めるときは、委員及び審査関係人が映像と音声の送受信により相手の状態を相互に認識しながら通話をすることができる方法によって、調査審議を行うことができる。</span></p><p class="para" id="a15-p2"><span class="pno">2</span><span class="body-text">前項の場合には、審査関係人の意見を聴いて、当該調査審議に必要な装置が設置された場所であって審査委員会が相当と認める場所を、審査関係人ごとに指定して行う。</span></p></article>
+<article class="art" id="a16" data-path="第四章　最高裁判所行政不服審査委員会　＞　第二節　調査審議の手続"><span class="anchor-alias" id="Mp-At_16"></span><div class="art-tools"><button type="button" data-anchor="a16" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（主張書面等の提出）</p><p class="para" id="a16-p1"><a class="art-no" href="#a16" data-kan="第十六条" data-num="第16条">第十六条</a><span class="body-text">審査関係人は、審査委員会に対し、主張書面又は資料を提出することができる。この場合において、審査委員会が、主張書面又は資料を提出すべき相当の期間を定めたときは、その期間内にこれを提出しなければならない。</span></p></article>
+<article class="art" id="a17" data-path="第四章　最高裁判所行政不服審査委員会　＞　第二節　調査審議の手続"><span class="anchor-alias" id="Mp-At_17"></span><div class="art-tools"><button type="button" data-anchor="a17" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（委員による調査手続）</p><p class="para" id="a17-p1"><a class="art-no" href="#a17" data-kan="第十七条" data-num="第17条">第十七条</a><span class="body-text">審査委員会は、必要があると認める場合には、その指名する委員に、<a class="ref ref-self" href="#a12">第十二条</a>の規定による調査をさせ、又は<a class="ref ref-self" href="#a14">第十四条</a>第一項本文の規定による審査関係人の意見の陳述を聴かせることができる。</span></p></article>
+<article class="art" id="a18" data-path="第四章　最高裁判所行政不服審査委員会　＞　第二節　調査審議の手続"><span class="anchor-alias" id="Mp-At_18"></span><div class="art-tools"><button type="button" data-anchor="a18" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（提出資料の閲覧等）</p><p class="para" id="a18-p1"><a class="art-no" href="#a18" data-kan="第十八条" data-num="第18条">第十八条</a><span class="body-text">審査関係人は、審査委員会に対し、審査委員会に提出された主張書面若しくは資料の閲覧（電磁的記録にあっては、記録された事項を審査委員会が定める方法により表示したものの閲覧）又は当該主張書面若しくは当該資料の写し若しくは当該電磁的記録に記録された事項を記載した書面の交付を求めることができる。この場合において、審査委員会は、第三者の利益を害するおそれがあると認めるとき、その他正当な理由があるときでなければ、その閲覧又は交付を拒むことができない。</span></p><p class="para" id="a18-p2"><span class="pno">2</span><span class="body-text">審査委員会は、前項の規定による閲覧をさせ、又は同項の規定による交付をしようとするときは、当該閲覧又は交付に係る主張書面又は資料の提出人の意見を聴かなければならない。ただし、審査委員会が、その必要がないと認めるときは、この限りでない。</span></p><p class="para" id="a18-p3"><span class="pno">3</span><span class="body-text">審査委員会は、第一項の規定による閲覧について、日時及び場所を指定することができる。</span></p></article>
+<article class="art" id="a19" data-path="第四章　最高裁判所行政不服審査委員会　＞　第二節　調査審議の手続"><span class="anchor-alias" id="Mp-At_19"></span><div class="art-tools"><button type="button" data-anchor="a19" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（交付の求め）</p><p class="para" id="a19-p1"><a class="art-no" href="#a19" data-kan="第十九条" data-num="第19条">第十九条</a><span class="body-text">前条第一項の規定による交付の求めは、次に掲げる事項を記載した書面を提出してしなければならない。</span></p><ol class="items"><li id="a19-p1-1"><span class="mk">一</span><span class="tx">交付に係る前条第一項に規定する主張書面若しくは資料（以下「対象主張書面等」という。）又は交付に係る同項に規定する電磁的記録（以下「対象電磁的記録」という。）を特定するに足りる事項</span></li><li id="a19-p1-2"><span class="mk">二</span><span class="tx">対象主張書面等又は対象電磁的記録について求める交付の方法（次条各号に掲げる交付の方法をいう。）</span></li><li id="a19-p1-3"><span class="mk">三</span><span class="tx">対象主張書面等又は対象電磁的記録について<a class="ref ref-self" href="#a21">第二十一条</a>に規定する送付による交付を求める場合にあっては、その旨</span></li></ol></article>
+<article class="art" id="a20" data-path="第四章　最高裁判所行政不服審査委員会　＞　第二節　調査審議の手続"><span class="anchor-alias" id="Mp-At_20"></span><div class="art-tools"><button type="button" data-anchor="a20" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（交付の方法）</p><p class="para" id="a20-p1"><a class="art-no" href="#a20" data-kan="第二十条" data-num="第20条">第二十条</a><span class="body-text"><a class="ref ref-self" href="#a18">第十八条</a>第一項の規定による交付は、次の各号のいずれかの方法によってする。</span></p><ol class="items"><li id="a20-p1-1"><span class="mk">一</span><span class="tx">対象主張書面等の写しの交付にあっては、当該対象主張書面等を複写機により用紙の片面又は両面に白黒又はカラーで複写したものの交付</span></li><li id="a20-p1-2"><span class="mk">二</span><span class="tx">対象電磁的記録に記録された事項を記載した書面の交付にあっては、当該事項を用紙の片面又は両面に白黒又はカラーで出力したものの交付</span></li></ol></article>
+<article class="art" id="a21" data-path="第四章　最高裁判所行政不服審査委員会　＞　第二節　調査審議の手続"><span class="anchor-alias" id="Mp-At_21"></span><div class="art-tools"><button type="button" data-anchor="a21" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（送付による交付）</p><p class="para" id="a21-p1"><a class="art-no" href="#a21" data-kan="第二十一条" data-num="第21条">第二十一条</a><span class="body-text"><a class="ref ref-self" href="#a18">第十八条</a>第一項の規定による交付を受ける審査請求人又は参加人は、対象主張書面等の写し又は対象電磁的記録に記録された事項を記載した書面の送付を求めることができる。</span></p></article>
+<article class="art" id="a22" data-path="第四章　最高裁判所行政不服審査委員会　＞　第二節　調査審議の手続"><span class="anchor-alias" id="Mp-At_22"></span><div class="art-tools"><button type="button" data-anchor="a22" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（答申書の送付等）</p><p class="para" id="a22-p1"><a class="art-no" href="#a22" data-kan="第二十二条" data-num="第22条">第二十二条</a><span class="body-text">審査委員会は、諮問に対する答申をしたときは、答申書の写しを審査請求人及び参加人に送付するとともに、答申の内容を公表するものとする。</span></p></article>
+<article class="art" id="a23" data-path="第四章　最高裁判所行政不服審査委員会　＞　第二節　調査審議の手続"><span class="anchor-alias" id="Mp-At_23"></span><div class="art-tools"><button type="button" data-anchor="a23" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（審査委員会の調査審議の手続）</p><p class="para" id="a23-p1"><a class="art-no" href="#a23" data-kan="第二十三条" data-num="第23条">第二十三条</a><span class="body-text">この規則に定めるもののほか、審査委員会の調査審議の手続に関し必要な事項は、委員長が審査委員会に諮って定める。</span></p></article>
+<h2 class="div-head" id="sup1" data-path="附則　"><span class="lbl">附則</span></h2>
+<article class="art" id="sup1-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup1-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（施行期日）</p><p class="para" id="sup1-a1-p1"><a class="art-no" href="#sup1-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、法の施行の日（平成二十八年四月一日）から施行する。ただし、次条の規定は、公布の日から施行する。</span></p></article>
+<article class="art" id="sup1-a2" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup1-a2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（準備行為）</p><p class="para" id="sup1-a2-p1"><a class="art-no" href="#sup1-a2" data-kan="第二条" data-num="第2条">第二条</a><span class="body-text"><a class="ref ref-self" href="#a8">第八条</a>第一項の規定による審査委員会の委員の任命に関し必要な行為は、この規則の施行の日前においても、同項の規定の例によりすることができる。</span></p></article>
+<article class="art" id="sup1-a3" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup1-a3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（経過措置）</p><p class="para" id="sup1-a3-p1"><a class="art-no" href="#sup1-a3" data-kan="第三条" data-num="第3条">第三条</a><span class="body-text">裁判所の処分又は不作為（法令に基づく申請に対して何らの処分をもしないことをいう。以下この条において同じ。）についての不服申立てであって、この規則の施行前にされた裁判所の処分又はこの規則の施行前にされた申請に係る裁判所の不作為に係るものについては、なお従前の例による。</span></p></article>
+<article class="art" id="sup1-a4" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup1-a4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="para" id="sup1-a4-p1"><a class="art-no" href="#sup1-a4" data-kan="第四条" data-num="第4条">第四条</a><span class="body-text">この規則の施行後最初に任命される審査委員会の委員の任期は、<a class="ref ref-self" href="#a8">第八条</a>第二項本文の規定にかかわらず、三人のうち、一人は二年、二人は三年とする。</span></p><p class="para" id="sup1-a4-p2"><span class="pno">2</span><span class="body-text">前項に規定する各委員の任期は、最高裁判所が定める</span></p></article>
+    </div>
+    <aside class="notes"><p>読み取りに関する注意</p><ul><li>PDF中の目次は読み飛ばし、条見出しから目次を再構成しました。</li><li>各条の「原本」は https://www.courts.go.jp/assets/gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。</li></ul></aside>
+    <div class="foot">出典：gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf　／　最高裁規則ビューア 1.9.0 で 2026年09月02日 に変換　
+    条文の正確な内容は原本で確認してください。</div>
+  </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  "use strict";
+  var doc = document.getElementById("doc");
+  var input = document.getElementById("q");
+  var hitLabel = document.getElementById("hits");
+  var crumb = document.getElementById("crumb");
+  var toc = document.getElementById("toc");
+  var toast = document.getElementById("toast");
+  var pristine = doc.innerHTML;
+  var hits = [];
+  var cursor = -1;
+
+  function say(msg){
+    toast.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(say._t);
+    say._t = setTimeout(function(){ toast.classList.remove("show"); }, 1600);
+  }
+
+  /* ---------------------------------------------------------- 条番号の表記 */
+  var numeralBtn = document.getElementById("numeral");
+  function applyNumeral(useArabic){
+    var nodes = doc.querySelectorAll(".art-no");
+    for (var i = 0; i < nodes.length; i++){
+      var el = nodes[i];
+      var v = useArabic ? el.getAttribute("data-num") : el.getAttribute("data-kan");
+      if (v) el.textContent = v;
+    }
+    numeralBtn.setAttribute("aria-pressed", useArabic ? "true" : "false");
+  }
+  numeralBtn.addEventListener("click", function(){
+    var next = numeralBtn.getAttribute("aria-pressed") !== "true";
+    applyNumeral(next);
+    try { localStorage.setItem("rule-numeral", next ? "1" : "0"); } catch(e){}
+    pristine = doc.innerHTML;
+  });
+  try {
+    /* 既定の表記は原本に合わせてある。前回の切り替えが残っていればそれに従う */
+    var saved = localStorage.getItem("rule-numeral");
+    if (saved === "1" || saved === "0"){ applyNumeral(saved === "1"); pristine = doc.innerHTML; }
+  } catch(e){}
+
+  /* -------------------------------------------------------------- 検索処理 */
+  var SKIP = {SCRIPT:1, STYLE:1, MARK:1, BUTTON:1, A:1};   /* 原本リンク等の道具立ては検索対象にしない */
+  function highlight(term){
+    doc.innerHTML = pristine;
+    hits = [];
+    cursor = -1;
+    if (!term){ hitLabel.textContent = ""; refreshToc(""); return; }
+    var walker = document.createTreeWalker(doc, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        if (!n.nodeValue || n.nodeValue.indexOf(term) < 0) return NodeFilter.FILTER_REJECT;
+        if (n.parentNode && SKIP[n.parentNode.nodeName]) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var targets = [];
+    var node;
+    while ((node = walker.nextNode())) targets.push(node);
+    for (var i = 0; i < targets.length; i++){
+      var t = targets[i], text = t.nodeValue, pos = 0, frag = document.createDocumentFragment();
+      var idx;
+      while ((idx = text.indexOf(term, pos)) >= 0){
+        if (idx > pos) frag.appendChild(document.createTextNode(text.slice(pos, idx)));
+        var m = document.createElement("mark");
+        m.textContent = text.substr(idx, term.length);
+        frag.appendChild(m);
+        hits.push(m);
+        pos = idx + term.length;
+      }
+      if (pos < text.length) frag.appendChild(document.createTextNode(text.slice(pos)));
+      t.parentNode.replaceChild(frag, t);
+    }
+    hitLabel.textContent = hits.length ? "1 / " + hits.length : "該当なし";
+    refreshToc(term);
+    if (hits.length){ cursor = 0; focusHit(0, false); }
+  }
+  function focusHit(i, scroll){
+    if (!hits.length) return;
+    for (var k = 0; k < hits.length; k++) hits[k].classList.remove("live");
+    cursor = (i + hits.length) % hits.length;
+    hits[cursor].classList.add("live");
+    hitLabel.textContent = (cursor + 1) + " / " + hits.length;
+    if (scroll !== false) hits[cursor].scrollIntoView({block:"center", behavior:"instant"});
+  }
+  function refreshToc(term){
+    var links = toc.querySelectorAll("li.lv-art");
+    for (var i = 0; i < links.length; i++){
+      var li = links[i];
+      var body = (li.getAttribute("data-text") || "");
+      li.classList.toggle("hidden", !!term && body.indexOf(term) < 0);
+    }
+    var divs = toc.querySelectorAll("li.lv-div");
+    for (var j = divs.length - 1; j >= 0; j--){
+      var d = divs[j];
+      var kids = d.querySelectorAll("li:not(.hidden)");
+      d.classList.toggle("hidden", !!term && kids.length === 0);
+    }
+  }
+  var timer = null;
+  input.addEventListener("input", function(){
+    clearTimeout(timer);
+    var v = input.value.trim();
+    timer = setTimeout(function(){ highlight(v); }, 180);
+  });
+  input.addEventListener("keydown", function(e){
+    if (e.key === "Enter"){ e.preventDefault(); focusHit(cursor + (e.shiftKey ? -1 : 1)); }
+    if (e.key === "Escape"){ input.value = ""; highlight(""); input.blur(); }
+  });
+  document.getElementById("prev").addEventListener("click", function(){ focusHit(cursor - 1); });
+  document.getElementById("next").addEventListener("click", function(){ focusHit(cursor + 1); });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "/" && e.target === document.body){ e.preventDefault(); input.focus(); }
+  });
+
+  /* -------------------------------------------------- リンクのコピー・共有 */
+  doc.addEventListener("click", function(e){
+    var btn = e.target.closest ? e.target.closest("button[data-anchor]") : null;
+    if (!btn) return;
+    var anchor = btn.getAttribute("data-anchor");
+    var url = location.href.split("#")[0] + "#" + anchor;
+    history.replaceState(null, "", "#" + anchor);
+    var done = function(){ say("リンクをコピーしました"); };
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(done, function(){ legacyCopy(url, done); });
+    } else {
+      legacyCopy(url, done);
+    }
+  });
+  function legacyCopy(text, done){
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); done(); }
+    catch(err){ say("コピーできませんでした。アドレス欄からURLを控えてください"); }
+    document.body.removeChild(ta);
+  }
+
+  /* ------------------------------------------------ 現在位置の表示と目次連動 */
+  var watched = doc.querySelectorAll(".art[id], .div-head[id]");
+  var tocLinks = {};
+  var links = toc.querySelectorAll("a[href^='#']");
+  for (var i = 0; i < links.length; i++) tocLinks[links[i].getAttribute("href").slice(1)] = links[i];
+  var currentLink = null;
+  if ("IntersectionObserver" in window){
+    var visible = [];
+    var io = new IntersectionObserver(function(entries){
+      for (var i = 0; i < entries.length; i++){
+        var id = entries[i].target.id;
+        var at = visible.indexOf(id);
+        if (entries[i].isIntersecting){ if (at < 0) visible.push(id); }
+        else if (at >= 0){ visible.splice(at, 1); }
+      }
+      if (!visible.length) return;
+      var first = null;
+      for (var k = 0; k < watched.length; k++){
+        if (visible.indexOf(watched[k].id) >= 0){ first = watched[k]; break; }
+      }
+      if (!first) return;
+      crumb.textContent = first.getAttribute("data-path") || "";
+      var link = tocLinks[first.id];
+      if (link && link !== currentLink){
+        if (currentLink) currentLink.classList.remove("current");
+        link.classList.add("current");
+        currentLink = link;
+      }
+    }, {rootMargin:"-20% 0px -70% 0px"});
+    for (var w = 0; w < watched.length; w++) io.observe(watched[w]);
+  }
+
+  /* -------------------------------------------------------- 目次の開閉（狭幅） */
+  var opener = document.getElementById("toc-open");
+  if (opener){
+    opener.addEventListener("click", function(){ toc.classList.toggle("open"); });
+    toc.addEventListener("click", function(e){
+      if (e.target.tagName === "A") toc.classList.remove("open");
+    });
+  }
+})();
+</script>
+</body>
+</html>

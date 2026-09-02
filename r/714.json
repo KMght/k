@@ -1,0 +1,1302 @@
+{
+  "title": "法廷等の秩序維持に関する規則",
+  "law_number": "昭和27年9月1日最高裁判所規則第20号",
+  "enforcement_date": "平成18年5月24日",
+  "enforcement_iso": "2006-05-24",
+  "pdf_link": "https://www.courts.go.jp/assets/R6.9.17houteitounotitujoijinikannsurukisoku.pdf",
+  "source": "R6.9.17houteitounotitujoijinikannsurukisoku.pdf",
+  "numeral": "kansuji",
+  "notes": [
+    "各条の「原本」は https://www.courts.go.jp/assets/R6.9.17houteitounotitujoijinikannsurukisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+  ],
+  "nodes": [
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "body-1",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "改正 昭和46年6月23日最高裁判所規則第９号平成18年5月12日最高裁判所規則第６号令和6年9月17日最高裁判所規則第１４号法廷等の秩序維持に関する規則を次のように定める。法廷等の秩序維持に関する規則",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "a1",
+      "caption": "この規則の趣旨",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法廷等の秩序維持に関する法律（昭和二十七年法律第二百八十六号。以下法という。）による制裁の手続に関しては、法に定めるもののほか、この規則の定めるところによる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        2
+      ],
+      "label": "第二条",
+      "short_label": "2条",
+      "anchor": "a2",
+      "caption": "拘束の手続・法第三条第二項",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第三条第二項の規定による行為者の拘束は、急速を要する場合には、裁判長がさせることができる。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "裁判所職員又は警察官は、法第三条第二項の規定により行為者の拘束を命ぜられた場合には、その者を裁判所若しくは裁判長又は裁判官の指示する場所に留め置かなければならない。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "裁判所又は裁判官は、拘束を解く場合においては、被拘束者の釈放を命じなければならない。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "拘束の時から二十四時間以内に監置に処する裁判がされたときは、その裁判を受けた者を監置場に留置する時まで、二十四時間をこえてこれを拘束することができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        3
+      ],
+      "label": "第三条",
+      "short_label": "3条",
+      "anchor": "a3",
+      "caption": "迅速な裁判",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "制裁を科する裁判は、できる限りその日のうちにするものとする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        4
+      ],
+      "label": "第四条",
+      "short_label": "4条",
+      "anchor": "a4",
+      "caption": "本人を特定するための処置",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判所又は裁判官は、本人を特定するため必要があると認めるときは、被拘束者の写真を撮影し、又は指紋を採取することができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        5
+      ],
+      "label": "第五条",
+      "short_label": "5条",
+      "anchor": "a5",
+      "caption": "制裁を科する裁判所・法第三条第一項",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第二条第一項の規定にあたる行為を直接に知り得た裁判所又は裁判官は、自ら裁判をする場合を除いて、当該裁判所を構成する裁判官所属の裁判所又は当該裁判官所属の裁判所に、制裁を科すべき旨の請求をすることができる。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の請求は、次に掲げる事項を記載した書面を差し出してしなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "本人の氏名、住居その他本人を特定するに足りる事項",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "法第二条第一項の規定にあたる事実",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "請求をする裁判所又は裁判官の意見",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "法第三条第二項の規定により本人が拘束されているときは、拘束の年月日時及び場所",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "text": "第一項の請求をする場合において、前項第二号の事実を認めるべき資料があるときは、これを提供しなければならない。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "第一項の請求があつたときは、請求をした裁判所を構成する裁判官又は請求をした裁判官以外の裁判官の構成する裁判所が、裁判をする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        6
+      ],
+      "label": "第六条",
+      "short_label": "6条",
+      "anchor": "a6",
+      "caption": "弁護士の補佐",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判所又は裁判官は、裁判が遅延する虞がないと認める場合には、本人に事件につき弁護士の補佐を受けさせることができる。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前条第四項の規定により裁判をする場合には、本人は、事件につき弁護士の補佐を受けることができる。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "前二項の場合において、補佐する者の数は、一人とする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        7
+      ],
+      "label": "第七条",
+      "short_label": "7条",
+      "anchor": "a7",
+      "caption": "本人の在席",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "制裁を科する裁判の手続は、本人が在席しなければすることができない。但し、本人が正当な理由がなく出席しないとき、又は本人が許可を受けないで退席し若しくは秩序維持のため退席を命ぜられたときは、この限りでない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        8
+      ],
+      "label": "第八条",
+      "short_label": "8条",
+      "anchor": "a8",
+      "caption": "事実の調査",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判所又は裁判官は、必要があると認めるときは、職権で本人の審問その他事実の調査をすることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        9
+      ],
+      "label": "第九条",
+      "short_label": "9条",
+      "anchor": "a9",
+      "caption": "調書",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "制裁を科する裁判の手続については、裁判所書記官が調書を作らなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の調書には、次に掲げる事項その他手続に関する重要な事項を記載し、裁判所書記官が年月日を記載して署名押印し、裁判長又は裁判官が認印しなければならない。ただし、裁判所書記官は、署名押印に代えて記名押印することができる。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "本人を拘束させたこと又はその拘束を解いたこと及びその年月日時",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "事実の調査又は証拠調の結果",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "裁判の宣告をしたこと及びその年月日時",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "text": "裁判長又は裁判官は、相当と認めるときは、法第二条第一項の規定にあたる行為が行われた際にされている審判その他の手続について作られる調書に前項の事項を記載させて、第一項の調書に代えさせることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        10
+      ],
+      "label": "第十条",
+      "short_label": "10条",
+      "anchor": "a10",
+      "caption": "制裁を科する裁判・法第四条第一項",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判所又は裁判官が法第二条第一項の規定にあたる事実を認めた場合において、制裁を科するのを相当とするときは、その旨の裁判をしなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の裁判には、事実の要旨及び適用した法条を示さなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        11
+      ],
+      "label": "第十一条",
+      "short_label": "11条",
+      "anchor": "a11",
+      "caption": "制裁を科する裁判の告知・法第四条第一項",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "制裁を科する裁判は、宣告によつてその効力を生ずる。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "本人の在席しないままで制裁を科する裁判の宣告をしたときは、すみやかに、裁判書又は裁判の内容を記載した調書の謄本を本人に送達しなければならない。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "前項の場合においては、抗告の提起期間は、送達のあつた日の翌日から起算する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        12
+      ],
+      "label": "第十二条",
+      "short_label": "12条",
+      "anchor": "a12",
+      "caption": "裁判書・法第四条第一項",
+      "deleted": false,
+      "section": "main",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "制裁を科する裁判については、裁判をした裁判官が裁判書を作り、これに記名押印しなければならない。但し、裁判の内容を第九条第一項の調書又は同条第三項の規定によりこれに代えられる調書に記載させて、裁判書に代えることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        12,
+        2
+      ],
+      "label": "第十二条の二",
+      "short_label": "12条の2",
+      "anchor": "a12-2",
+      "caption": "証拠調べ・法第四条第三項第四項",
+      "deleted": false,
+      "section": "main",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "制裁を科する裁判における証拠調べについては、民事訴訟規則（平成八年最高裁判所規則第五号）第二編第三章第一節から第六節までの規定（同規則第九十九条第二項、第百条、第百一条、第百五条の二から第百五条の四まで、第百七条第三項、第百八条第二項、第百十二条第三項及び第四項、第百二十一条、第百二十四条第四項、第百二十九条第二項、第百三十一条、第百三十二条第三項、第百三十二条の二第三項、第百三十五条の二、第百三十七条第二項から第四項まで、第百三十九条、第百四十三条第三項、第百四十四条、第百四十九条第二項、第百四十九条の二第三項、第百四十九条の三並びに第百五十一条の二の規定を除く。）を準用する。この場合において、別表の上欄に掲げる同規則の規定中同表の中欄に掲げる字句は、それぞれ同表の下欄に掲げる字句に読み替えるものとする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        12,
+        3
+      ],
+      "label": "第十二条の三",
+      "short_label": "12条の3",
+      "anchor": "a12-3",
+      "caption": "証人の宣誓",
+      "deleted": false,
+      "section": "main",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判長は、証人に宣誓書を朗読させ、かつ、これに署名させなければならない。証人が宣誓書を朗読することができないときは、裁判長は、裁判所書記官にこれを朗読させなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "裁判長は、相当と認めるときは、前項前段の規定にかかわらず、同項前段に規定する署名に代えて、宣誓書に宣誓の趣旨を理解した旨の記載をさせることができる。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "前二項の宣誓書には、良心に従つて真実を述べ、何事も隠さず、また、何事も付け加えないことを誓う旨を記載しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        12,
+        4
+      ],
+      "label": "第十二条の四",
+      "short_label": "12条の4",
+      "anchor": "a12-4",
+      "caption": "鑑定人の宣誓",
+      "deleted": false,
+      "section": "main",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "鑑定人の宣誓書には、良心に従つて誠実に鑑定をすることを誓う旨を記載しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "鑑定人の宣誓は、宣誓書を裁判所に提出する方式によつてもさせることができる。この場合における裁判長による宣誓の趣旨の説明及び虚偽鑑定の罰の告知は、これらの事項を記載した書面を鑑定人に送付する方法によつて行う。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        12,
+        5
+      ],
+      "label": "第十二条の五",
+      "short_label": "12条の5",
+      "anchor": "a12-5",
+      "caption": "受命裁判官等の証拠調べの調書",
+      "deleted": false,
+      "section": "main",
+      "page": 4,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "受命裁判官又は受託裁判官の所属する裁判所の裁判所書記官は、第十二条の二において読み替えて準用する民事訴訟規則第百四十二条の調書に同条の文書の写しを添付することができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        13
+      ],
+      "label": "第十三条",
+      "short_label": "13条",
+      "anchor": "a13",
+      "caption": "抗告の代理人・法第五条第一項",
+      "deleted": false,
+      "section": "main",
+      "page": 4,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "抗告については、弁護士を代理人に選任することができる。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "代理人の選任は、書面で届け出なければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        14
+      ],
+      "label": "第十四条",
+      "short_label": "14条",
+      "anchor": "a14",
+      "caption": "被拘禁者の抗告・法第五条第一項第二項",
+      "deleted": false,
+      "section": "main",
+      "page": 4,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "制裁を科する裁判を受けた者が監置場、刑事施設その他の施設に拘禁されている場合において、抗告の提起期間内に抗告の申立書をその施設の長又はその代理者に提出したときは、抗告の提起期間内に抗告をしたものとみなす。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        15
+      ],
+      "label": "第十五条",
+      "short_label": "15条",
+      "anchor": "a15",
+      "caption": "抗告権回復の請求・法第五条第一項",
+      "deleted": false,
+      "section": "main",
+      "page": 4,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "制裁を科する裁判を受けた者は、自己の責に帰することができない事由によつて抗告の提起期間内に抗告をすることができなかつたときは、原裁判所に抗告権回復の請求をすることができる。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "抗告権回復の請求は、事由が止んだ日から五日以内に抗告の申立と同時にしなければならない。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "前条の規定は、監置場、刑事施設その他の施設に拘禁されている者が抗告権回復の請求をする場合に準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        16
+      ],
+      "label": "第十六条",
+      "short_label": "16条",
+      "anchor": "a16",
+      "caption": "抗告申立書の方式・法第五条第二項",
+      "deleted": false,
+      "section": "main",
+      "page": 4,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "抗告の申立書には、抗告の理由を記載しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        17
+      ],
+      "label": "第十七条",
+      "short_label": "17条",
+      "anchor": "a17",
+      "caption": "抗告事件の送付・法第五条第二項",
+      "deleted": false,
+      "section": "main",
+      "page": 4,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "抗告の申立があつた場合において、原裁判所は、法第五条第二項後段の規定により原裁判を更正するのを相当と認めるときは、決定でその旨の裁判をしなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の場合を除いて、原裁判所は、すみやかに、意見を付して事件を抗告裁判所に送付しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        18
+      ],
+      "label": "第十八条",
+      "short_label": "18条",
+      "anchor": "a18",
+      "caption": "抗告審の裁判・法第五条第一項",
+      "deleted": false,
+      "section": "main",
+      "page": 4,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "抗告裁判所は、抗告の手続がその規定に違反したとき、又は抗告が理由のないときは、決定で抗告を棄却しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "抗告が理由のあるときは、決定で原裁判を取り消し、必要がある場合には、更に裁判をしなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        19
+      ],
+      "label": "第十九条",
+      "short_label": "19条",
+      "anchor": "a19",
+      "caption": "異議の申立及び特別抗告についての準用規定・法第五条第四項、第六条第一項",
+      "deleted": false,
+      "section": "main",
+      "page": 4,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "異議の申立及び特別抗告については、その性質に反しない限り、抗告に関する規定を準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        20
+      ],
+      "label": "第二十条",
+      "short_label": "20条",
+      "anchor": "a20",
+      "caption": "制裁を科する裁判等の執行命令・法第七条第一項第六項",
+      "deleted": false,
+      "section": "main",
+      "page": 5,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "制裁を科する裁判の執行の命令は、裁判書又は裁判の内容を記載した調書の謄本又は抄本に執行を命ずる旨及び年月日を記載し、裁判官が押印してしなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の謄本又は抄本は、急速を要する場合には、制裁を受けた者の氏名、住居その他その者を特定するに足りる事項、裁判の主文、宣告の年月日及び裁判所又は裁判官の氏名を記載した書面をもつて、これに代えることができる。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "前二項の規定は、法第四条第五項の規定による裁判の執行の命令について準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        21
+      ],
+      "label": "第二十一条",
+      "short_label": "21条",
+      "anchor": "a21",
+      "caption": "収容状の記載事項・法第七条第二項",
+      "deleted": false,
+      "section": "main",
+      "page": 5,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "収容状には、制裁を受けた者の氏名、住居、年令、監置の期間その他収容に必要な事項を記載し、裁判官が記名押印しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        22
+      ],
+      "label": "第二十二条",
+      "short_label": "22条",
+      "anchor": "a22",
+      "caption": "収容状の執行についての準用規定・法第七条第二項",
+      "deleted": false,
+      "section": "main",
+      "page": 5,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "収容状の執行については、刑事訴訟規則（昭和二十三年最高裁判所規則第三十二号）中勾引状の執行に関する規定を準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        23
+      ],
+      "label": "第二十三条",
+      "short_label": "23条",
+      "anchor": "a23",
+      "caption": "勾留の執行停止",
+      "deleted": false,
+      "section": "main",
+      "page": 5,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "勾留されている者に対し監置の裁判を執行するときは、その間、勾留の執行は停止されるものとする。但し、刑事訴訟法（昭和二十三年法律第百三十一号）第八十一条の規定によつてされた裁判は、その効力を失わない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        24
+      ],
+      "label": "第二十四条",
+      "short_label": "24条",
+      "anchor": "a24",
+      "caption": "監置の期間の計算",
+      "deleted": false,
+      "section": "main",
+      "page": 5,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "監置の期間は、監置に処する裁判の宣告の日から起算する。但し、裁判の宣告後においても、法及びこの規則の規定により拘禁されていない日数は、監置の期間に算入しない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "監置の期間については、初日は、その時間にかかわらず、一日として計算する。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "釈放は、監置の期間満了の翌日午前中に行う。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        25
+      ],
+      "label": "第二十五条",
+      "short_label": "25条",
+      "anchor": "a25",
+      "caption": "裁判の執行停止・法第五条第三項第四項、第六条第三項、第七条第八項",
+      "deleted": false,
+      "section": "main",
+      "page": 5,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第五条第三項但書（法第五条第四項及び法第六条第三項において準用する場合を含む。）及び法第七条第八項の規定による裁判の執行の停止は、決定でする。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "監置の裁判の執行を停止するときは、住居の制限その他適当と認める条件を付することができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        26
+      ],
+      "label": "第二十六条",
+      "short_label": "26条",
+      "anchor": "a26",
+      "caption": "補償についての準用規定・法第八条第一項",
+      "deleted": false,
+      "section": "main",
+      "page": 5,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第八条第一項の規定による補償については、刑事補償規則（昭和二十五年最高裁判所規則第一号）を準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        27
+      ],
+      "label": "第二十七条",
+      "short_label": "27条",
+      "anchor": "a27",
+      "caption": "決定の告知",
+      "deleted": false,
+      "section": "main",
+      "page": 5,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "決定は、この規則に特別の定がある場合を除いて、送達その他相当と認める方法で告知することによつて、その効力を生ずる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        28
+      ],
+      "label": "第二十八条",
+      "short_label": "28条",
+      "anchor": "a28",
+      "caption": "送達",
+      "deleted": false,
+      "section": "main",
+      "page": 6,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "送達については、民事訴訟に関する法令の規定を準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "",
+      "anchor": "sup1",
+      "level": 1,
+      "page": 6,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-1",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 6,
+      "division_path": [],
+      "sup_index": 1,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、法施行の日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和四六年六月二三日最高裁判所規則第九号）",
+      "anchor": "sup2",
+      "level": 1,
+      "page": 6,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-2",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 6,
+      "division_path": [],
+      "sup_index": 2,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、昭和四十六年七月一日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成一八年五月一二日最高裁判所規則第六号）",
+      "anchor": "sup3",
+      "level": 1,
+      "page": 6,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-3",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 6,
+      "division_path": [],
+      "sup_index": 3,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、刑事施設及び受刑者の処遇等に関する法律（平成十七年法律第五十号）の施行の日（平成十八年五月二十四日）から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（令和六年九月一七日最高裁判所規則第一四号）",
+      "anchor": "sup4",
+      "level": 1,
+      "page": 6,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-4",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 6,
+      "division_path": [],
+      "sup_index": 4,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、民事訴訟法等の一部を改正する法律（令和四年法律第四十八号）の施行の日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "raw",
+      "title": "別表（第十二条の二関係）",
+      "anchor": "table-41",
+      "kind": "table",
+      "page": 6,
+      "lines": [
+        "第百八条第一項",
+        "電子呼出状",
+        "呼出状",
+        "記録しなければ",
+        "記載し、尋問事項書を添付",
+        "しなければ",
+        "電子調書",
+        "調書",
+        "第百十六条第三",
+        "項、第百十八条第",
+        "二項、第百二十二",
+        "条の二第二項、第",
+        "百二十二条の三第",
+        "二項、第百四十二",
+        "条及び第百四十六",
+        "条第一項",
+        "第百十六条第三項 の作成に用いる場合",
+        "への添付",
+        "第百十八条第二項 記録させなければ",
+        "記載させなければ",
+        "記録しなければ",
+        "記載しなければ",
+        "第百二十二条の二",
+        "第二項及び第百二",
+        "十二条の三第二項",
+        "準用する",
+        "第百二十三条第四",
+        "準用する。この場合におい",
+        "項、第百三十二条",
+        "て、同条第二項中「口頭弁",
+        "の五第三項及び第",
+        "論に係る電子調書に記録",
+        "百三十三条第三項",
+        "しなければ」とあるのは、",
+        "「調書に記載しなければ」",
+        "と読み替えるものとする",
+        "第百二十七条",
+        "前節（証人尋問）",
+        "前節及び法廷等の秩序維",
+        "持に関する規則第十二条",
+        "の三",
+        "第百二十九条の二 口頭弁論若しくは弁論準",
+        "事件の期日",
+        "備手続の期日又は進行協",
+        "議期日",
+        "第百三十四条",
+        "第百八条（電子呼出状の記",
+        "法廷等の秩序維持に関す",
+        "録事項等）",
+        "る規則第十二条の二にお",
+        "いて読み替えて準用する",
+        "第百八条第一項",
+        "の電子呼出状",
+        "の呼出状",
+        "第二項、第四項及び第五項 第二項及び第五項並びに",
+        "同規則第十二条の三第一",
+        "項及び第二項",
+        "及び",
+        "、第百二十一条（傍聴人の",
+        "退廷）及び",
+        "第百四十条第三項 第九十九条（証拠の申出）",
+        "前二項の規定",
+        "第二項及び前二項の規定",
+        "第百四十二条",
+        "記録すべき",
+        "記載すべき",
+        "裁判所書記官は、法",
+        "法",
+        "第百四十六条第一",
+        "項",
+        "画像情報を",
+        "原本、謄本又は抄本は、",
+        "第百四十六条第二",
+        "第百四十二条（受命裁判官",
+        "法廷等の秩序維持に関す",
+        "等の証拠調べの電子調書）",
+        "項及び第百五十一",
+        "る規則第十二条の二にお",
+        "条",
+        "電子調書について",
+        "第百四十七条",
+        "第一項から第三項まで及",
+        "び第百三十七条の二から",
+        "前条まで",
+        "の規定",
+        "第百四十九条の二",
+        "最高裁判所の細則で定め",
+        "第一項",
+        "るところにより、当該申出",
+        "に係る電磁的記録の複製",
+        "を第五十二条の十（電子情",
+        "報処理組織）第一項の電子",
+        "情報処理組織を使用する",
+        "方法によりファイルに記",
+        "録し、又は電磁的記録の複",
+        "製",
+        "電磁的記録をいう",
+        "電子証拠説明書",
+        "第百四十九条の二",
+        "第一項及び第二項",
+        "電磁的記録の複製",
+        "第百四十九条の二",
+        "第二項",
+        "第百四十九条の四 から第百三十九条まで",
+        "提出等）",
+        "文書の写し」とあるのは",
+        "いて読み替えて準用する",
+        "第百四十二条及び同規則",
+        "第十二条の五",
+        "調書について",
+        "から前条まで（第百三十七",
+        "条第二項から第四項まで、",
+        "第百三十九条、第百四十三",
+        "条第三項及び第百四十四",
+        "条を除く。）",
+        "及び法廷等の秩序維持に",
+        "関する規則第十二条の五",
+        "の規定",
+        "当該電磁的記録",
+        "書面をいう",
+        "証拠説明書",
+        "電磁的記録を記録した記",
+        "録媒体",
+        "、第百三十八条",
+        "提出等）並びに法廷等の秩",
+        "序維持に関する規則第十",
+        "二条の五",
+        "文書の写し」とあるのは",
+        "「電磁的記録の複製",
+        "第百三十九条中「書証の写",
+        "し」とあるのは「電磁的記",
+        "録の複製」と、第百四十八",
+        "条",
+        "読み替える",
+        "（令六最裁規一四・追加）",
+        "「電磁的記録を記録した",
+        "記録媒体",
+        "第百四十八条",
+        "、法廷等の秩序維持に関す",
+        "る規則第十二条の五中「同",
+        "条の文書の写し」とあるの",
+        "は「第十二条の二において",
+        "読み替えて準用する同規",
+        "則第百四十九条の二第一",
+        "項の電磁的記録を記録し",
+        "た記録媒体」と読み替える"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,328 @@
+{
+ "rule_id": "406",
+ "title": "配偶者暴力等に関する保護命令手続規則",
+ "enforcement_iso": "2024-04-01",
+ "url": "https://kmght.github.io/ksk/r/406.html",
+ "articles": [
+  {
+   "key": "1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "保護命令の申立書の記載事項等・法第十二条",
+   "anchor": "a1",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "2",
+   "label": "第二条",
+   "short": "2条",
+   "caption": "保護命令事件における期日の呼出し",
+   "anchor": "a2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "3",
+   "label": "第三条",
+   "short": "3条",
+   "caption": "保護命令事件における調書の省略等",
+   "anchor": "a3",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "4",
+   "label": "第四条",
+   "short": "4条",
+   "caption": "保護命令事件における主張書面の提出及び書証の申出の方法等",
+   "anchor": "a4",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "5",
+   "label": "第五条",
+   "short": "5条",
+   "caption": "保護命令の申立てについての決定・法第十五条",
+   "anchor": "a5",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "6",
+   "label": "第六条",
+   "short": "6条",
+   "caption": "保護命令の申立ての取下げの方式等",
+   "anchor": "a6",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "7",
+   "label": "第七条",
+   "short": "7条",
+   "caption": "即時抗告・法第十六条",
+   "anchor": "a7",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "8",
+   "label": "第八条",
+   "short": "8条",
+   "caption": "保護命令の効力の停止・法第十六条",
+   "anchor": "a8",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "9",
+   "label": "第九条",
+   "short": "9条",
+   "caption": "保護命令の取消し・法第十七条",
+   "anchor": "a9",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "10",
+   "label": "第十条",
+   "short": "10条",
+   "caption": "即時抗告・法第十七条",
+   "anchor": "a10",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "11",
+   "label": "第十一条",
+   "short": "11条",
+   "caption": "催告",
+   "anchor": "a11",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "11_2",
+   "label": "第十一条の二",
+   "short": "11条の2",
+   "caption": "送達すべき書類の提出に代えて調書を作成した場合に送達すべき書類",
+   "anchor": "a11-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "11_3",
+   "label": "第十一条の三",
+   "short": "11条の3",
+   "caption": "呼出状の公示送達",
+   "anchor": "a11-3",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "11_4",
+   "label": "第十一条の四",
+   "short": "11条の4",
+   "caption": "決定及び命令の方式",
+   "anchor": "a11-4",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "11_5",
+   "label": "第十一条の五",
+   "short": "11条の5",
+   "caption": "事件の記録の閲覧等",
+   "anchor": "a11-5",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "11_6",
+   "label": "第十一条の六",
+   "short": "11条の6",
+   "caption": "申立書の却下の命令に対する即時抗告等",
+   "anchor": "a11-6",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "11_7",
+   "label": "第十一条の七",
+   "short": "11条の7",
+   "caption": "証人の宣誓",
+   "anchor": "a11-7",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "11_8",
+   "label": "第十一条の八",
+   "short": "11条の8",
+   "caption": "鑑定人の宣誓",
+   "anchor": "a11-8",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "11_9",
+   "label": "第十一条の九",
+   "short": "11条の9",
+   "caption": "受命裁判官等の証拠調べの調書",
+   "anchor": "a11-9",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "11_10",
+   "label": "第十一条の十",
+   "short": "11条の10",
+   "caption": "更正決定の方式",
+   "anchor": "a11-10",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "11_11",
+   "label": "第十一条の十一",
+   "short": "11条の11",
+   "caption": "特別抗告等を提起する場合における費用の予納",
+   "anchor": "a11-11",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "11_12",
+   "label": "第十一条の十二",
+   "short": "11条の12",
+   "caption": "民事訴訟規則の準用",
+   "anchor": "a11-12",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "12",
+   "label": "第十二条",
+   "short": "12条",
+   "caption": "この規則の準用・法第二十八条の二",
+   "anchor": "a12",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "s6:1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "施行期日",
+   "anchor": "sup6-a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  }
+ ]
+}

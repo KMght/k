@@ -1,0 +1,4550 @@
+{
+  "title": "心神喪失等の状態で重大な他害行為を行った者の医療及び観察等に関する法律による審判の手続等に関する規則",
+  "law_number": "",
+  "enforcement_date": "令和8年5月21日",
+  "enforcement_iso": "2026-05-21",
+  "pdf_link": "https://www.courts.go.jp/assets/iryoukansatsukisoku-20260521.pdf",
+  "source": "iryoukansatsukisoku-20260521.pdf",
+  "numeral": "kansuji",
+  "notes": [
+    "PDF中の目次は読み飛ばし、条見出しから目次を再構成しました。",
+    "題名・制定文とみられる行を本文の前に検出しました：心神喪失等の状態で重大な他害行為を行った者の医療及び観察等に関する法律による審判の／平成16 年8 月9 日最高裁判所規則第１３号／改正平成26 年1 月6 日最高裁判所規則第１号",
+    "各条の「原本」は https://www.courts.go.jp/assets/iryoukansatsukisoku-20260521.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+  ],
+  "nodes": [
+    {
+      "type": "division",
+      "kind": "章",
+      "label": "第一章",
+      "title": "総則",
+      "anchor": "d0",
+      "level": 2,
+      "page": 1,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "a1",
+      "caption": "趣旨",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [
+        "",
+        "第一章　総則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "心神喪失等の状態で重大な他害行為を行った者の医療及び観察等に関する法律（平成十五年法律第百十号。以下「法」という。）による審判の手続等については、法に定めるもののほか、この規則の定めるところによる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        2
+      ],
+      "label": "第二条",
+      "short_label": "2条",
+      "anchor": "a2",
+      "caption": "精神保健判定医の名簿の通知・法第六条",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [
+        "",
+        "第一章　総則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第六条第二項の規定による精神保健判定医の名簿の送付があったときは、最高裁判所は、速やかに、その内容を各地方裁判所に通知しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        3
+      ],
+      "label": "第三条",
+      "short_label": "3条",
+      "anchor": "a3",
+      "caption": "精神保健審判員として任命すべき者の選任の取消し・法第六条",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第一章　総則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "地方裁判所は、精神保健審判員として任命すべき者に選任された者が法第七条各号のいずれかに該当するに至ったときは、その選任を取り消さなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        4
+      ],
+      "label": "第四条",
+      "short_label": "4条",
+      "anchor": "a4",
+      "caption": "精神保健審判員の解任・法第六条等",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第一章　総則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "地方裁判所は、精神保健審判員が心身の故障その他の事由により職務の執行ができないと認めるときは、当該精神保健審判員を解任することができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        5
+      ],
+      "label": "第五条",
+      "short_label": "5条",
+      "anchor": "a5",
+      "caption": "地方裁判所への委任・法第六条等",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第一章　総則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "前三条に定めるもののほか、精神保健審判員として任命すべき者の選任及び精神保健審判員の任命に関し必要な事項は、地方裁判所において定めることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        6
+      ],
+      "label": "第六条",
+      "short_label": "6条",
+      "anchor": "a6",
+      "caption": "精神保健審判員の旅費、日当及び宿泊料・法第六条",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第一章　総則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "精神保健審判員に支給する旅費、日当及び宿泊料の額は、国家公務員等の旅費に関する法律（昭和二十五年法律第百十四号）及び国家公務員等の旅費に関する法律施行令（令和六年政令第三百六号）の規定に基づいて受ける鉄道賃、船賃、航空賃及びその他の交通費、宿泊手当並びに宿泊費の額と同一とする。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項に定めるもののほか、精神保健審判員に支給する旅費、日当及び宿泊料については、別に最高裁判所の定めるところによる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        7
+      ],
+      "label": "第七条",
+      "short_label": "7条",
+      "anchor": "a7",
+      "caption": "宣誓の方式・法第九条",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第一章　総則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "精神保健審判員がする法第九条第二項の規定による宣誓は、法令に従い公平誠実にその職務を行うべきことを誓う旨を記載した書面に署名押印して、これを当該精神保健審判員を任命した地方裁判所に提出することによって行うものとする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        8
+      ],
+      "label": "第八条",
+      "short_label": "8条",
+      "anchor": "a8",
+      "caption": "除斥・法第十条",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第一章　総則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判官又は精神保健審判員の監督権を有する裁判所は、裁判官又は精神保健審判員が法第十条において準用する刑事訴訟法（昭和二十三年法律第百三十一号）第二十条各号のいずれかに該当すると認めるときは、除斥の決定をしなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の決定をするには、当該裁判官又は精神保健審判員の意見を聴かなければならない。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "当該裁判官は、第一項の決定に関与することができない。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "裁判所が当該裁判官の退去により第一項の決定をすることができないときは、直近上級の裁判所が、当該決定をしなければならない。",
+          "items": []
+        },
+        {
+          "number": 5,
+          "text": "第一項及び第二項の規定は、裁判所書記官について準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        9
+      ],
+      "label": "第九条",
+      "short_label": "9条",
+      "anchor": "a9",
+      "caption": "回避",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第一章　総則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判官、精神保健審判員又は裁判所書記官は、職務の執行から除斥されるべきとき、又は審判の公正を妨げるべき事情があるときは、監督権を有する裁判所の許可を得て、回避することができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        10
+      ],
+      "label": "第十条",
+      "short_label": "10条",
+      "anchor": "a10",
+      "caption": "裁判官のみによる裁判又は処分・法第十一条",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第一章　総則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "次に掲げる裁判又は処分は、法第十一条第一項の合議体の構成員である裁判官のみでする。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "第二十九条第二項の規定により出頭を命ずること。",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "第三十条第一項の規定により呼出しをすること。",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "第三十七条において準用する刑事訴訟規則（昭和二十三年最高裁判所規則第三十二号）第二十六条第一項の規定により付添人の数を制限すること。",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "第五十六条第一項の規定により付添人を選任するかどうかについて回答を求めること。",
+              "children": []
+            }
+          ]
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        11
+      ],
+      "label": "第十一条",
+      "short_label": "11条",
+      "anchor": "a11",
+      "caption": "精神保健参与員として指定すべき者の欠格事由・法第十五条",
+      "deleted": false,
+      "section": "main",
+      "page": 3,
+      "division_path": [
+        "",
+        "第一章　総則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "次の各号のいずれかに掲げる者は、精神保健参与員として指定すべき者に選任することができない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "拘禁刑以上の刑に処せられた者",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "公務員で懲戒免職の処分を受け、当該処分の日から二年を経過しない者",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "第十三条第一項第二号の規定により精神保健参与員の指定を取り消された者",
+              "children": []
+            }
+          ]
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        12
+      ],
+      "label": "第十二条",
+      "short_label": "12条",
+      "anchor": "a12",
+      "caption": "精神保健参与員として指定すべき者の選任の取消し・法第十五条",
+      "deleted": false,
+      "section": "main",
+      "page": 3,
+      "division_path": [
+        "",
+        "第一章　総則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "地方裁判所は、精神保健参与員として指定すべき者に選任された者が前条各号のいずれかに該当するに至ったときは、その選任を取り消さなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        13
+      ],
+      "label": "第十三条",
+      "short_label": "13条",
+      "anchor": "a13",
+      "caption": "精神保健参与員の指定の取消し・法第十五条",
+      "deleted": false,
+      "section": "main",
+      "page": 3,
+      "division_path": [
+        "",
+        "第一章　総則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判所は、精神保健参与員が次の各号のいずれかに該当するときは、その指定を取り消さなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "第十一条第一号又は第二号のいずれかに該当するに至ったとき。",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "職務上の義務違反その他精神保健参与員たるに適しない非行があると認めるとき。",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "text": "裁判所は、精神保健参与員が心身の故障その他の事由により職務の執行ができないと認めるときは、その指定を取り消すことができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        14
+      ],
+      "label": "第十四条",
+      "short_label": "14条",
+      "anchor": "a14",
+      "caption": "地方裁判所への委任・法第十五条",
+      "deleted": false,
+      "section": "main",
+      "page": 3,
+      "division_path": [
+        "",
+        "第一章　総則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "前三条に定めるもののほか、精神保健参与員として指定すべき者の選任及び精神保健参与員の指定に関し必要な事項は、地方裁判所において定めることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        15
+      ],
+      "label": "第十五条",
+      "short_label": "15条",
+      "anchor": "a15",
+      "caption": "精神保健参与員の旅費、日当及び宿泊料・法第十五条",
+      "deleted": false,
+      "section": "main",
+      "page": 3,
+      "division_path": [
+        "",
+        "第一章　総則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "第六条の規定は、精神保健参与員について準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        16
+      ],
+      "label": "第十六条",
+      "short_label": "16条",
+      "anchor": "a16",
+      "caption": "資料提供の求めの方式等・法第二十三条等",
+      "deleted": false,
+      "section": "main",
+      "page": 3,
+      "division_path": [
+        "",
+        "第一章　総則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第二十三条又は第九十条第一項の規定による資料の提供の求めは、次に掲げる事項を明らかにしてしなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "対象者の氏名その他の対象者を特定するに足りる事項",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "提供を求める資料を特定するに足りる事項",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "資料の提供を求める理由",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "text": "裁判所は、前項の求めに応じて刑事事件に係る訴訟に関する書類を提供しようとするときは、あらかじめ、検察官の意見を聴かなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "章",
+      "label": "第二章",
+      "title": "審判",
+      "anchor": "d17",
+      "level": 2,
+      "page": 3,
+      "note": ""
+    },
+    {
+      "type": "division",
+      "kind": "節",
+      "label": "第一節",
+      "title": "通則",
+      "anchor": "d18",
+      "level": 3,
+      "page": 3,
+      "note": ""
+    },
+    {
+      "number": [
+        17
+      ],
+      "label": "第十七条",
+      "short_label": "17条",
+      "anchor": "a17",
+      "caption": "裁判書",
+      "deleted": false,
+      "section": "main",
+      "page": 3,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第一節　通則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判官及び精神保健審判員は、裁判をするときは、裁判書を作成し、これに記名押印しなければならない。合議体で決定をする場合において、裁判書に記名押印できない裁判官又は精神保健審判員があるときは、他の裁判官の一人（当該記名押印できない裁判官が裁判長以外の裁判官である場合は、裁判長）又は精神保健審判員が、その事由を付記して記名押印しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "次に掲げる裁判を除く裁判の裁判書には、前項の規定により記名押印することに代えて押印することをもって足りる。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "処遇事件を終局させる決定",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "法第四条第一項及び第二項、第五条、第二十九条第一項、第三十四条第三項ただし書（法第三十七条第五項後段において準用する場合を含む。）、第三十七条第五項前段、第四十条第二項前段、第四十一条第八項、第六十条第三項ただし書（法第六十二条第二項後段において準用する場合を含む。）、第六十一条第三項、第六十二条第二項前段並びに第六十九条ただし書（法第七十条第二項において準用する場合を含む。）の決定",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "法第三十四条第一項前段及び第六十条第一項前段の命令",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "第五十一条第二項（第八十五条第一項において準用する場合を含む。）の命令及び第五十一条第三項（第五十七条、第八十五条第一項及び第八十七条第一項において準用する場合を含む。）の決定",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "text": "裁判書には、次に掲げる事項を記載しなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "主文",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "理由",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "裁判を受ける者の氏名",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "裁判を受ける者の年齢、職業、住居及び本籍",
+              "children": []
+            },
+            {
+              "marker": "五",
+              "kind": "go",
+              "text": "処遇事件を特定するに足りる事項",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 4,
+          "text": "次に掲げる裁判を除く裁判の裁判書には、前項第二号及び第四号に掲げる事項の記載を省略することができる。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "処遇事件を終局させる決定",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "法第三十四条第三項ただし書（法第三十七条第五項後段において準用する場合を含む。）、第三十七条第五項前段、第四十条第二項前段、第四十一条第八項、第六十条第三項ただし書（法第六十二条第二項後段において準用する場合を含む。）、第六十一条第三項及び第六十二条第二項前段の決定",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "法第三十四条第一項前段及び第六十条第一項前段の命令",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 5,
+          "text": "裁判書には、処遇事件の記録中の書類の記載を引用することができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        18
+      ],
+      "label": "第十八条",
+      "short_label": "18条",
+      "anchor": "a18",
+      "caption": "裁判の告知等",
+      "deleted": false,
+      "section": "main",
+      "page": 4,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第一節　通則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "次に掲げる決定の告知は、審判期日における言渡し又は裁判書の謄本の送達によってしなければならない。ただし、この規則に特別の定めがある場合は、この限りでない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "処遇事件を終局させる決定",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "法第二十九条第一項、第三十四条第三項ただし書（法第三十七条第五項後段において準用する場合を含む。）、第三十七条第五項前段、第四十条第二項前段、第四十一条第八項、第六十条第三項ただし書（法第六十二条第二項後段において準用する場合を含む。）、第六十一条第三項及び第六十二条第二項前段の決定",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "第五十一条第三項（第五十七条、第八十五条第一項及び第八十七条第一項において準用する場合を含む。）の決定",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "text": "次に掲げる命令の告知は、対象者の面前における言渡し又は裁判書の謄本の送達によってしなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "法第三十四条第一項前段及び第六十条第一項前段の命令",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "第五十一条第二項（第八十五条第一項において準用する場合を含む。）の命令",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "text": "第一項各号に掲げる決定及び前項各号に掲げる命令を除く裁判の告知は、相当と認める方法によってするものとする。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "裁判を審判期日又は裁判を受ける者の面前において言い渡す場合において、相当と認めるときは、前条第一項の規定にかかわらず、裁判所書記官に当該裁判を調書に記載させることにより、裁判書の作成に代えることができる。",
+          "items": []
+        },
+        {
+          "number": 5,
+          "text": "裁判を裁判書の謄本の送達以外の方法により告知した場合には、裁判所書記官は、告知の方法、場所及び年月日を裁判書又は裁判を記載した調書に付記して押印しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        19
+      ],
+      "label": "第十九条",
+      "short_label": "19条",
+      "anchor": "a19",
+      "caption": "裁判と同行状の執行指揮",
+      "deleted": false,
+      "section": "main",
+      "page": 5,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第一節　通則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第三十四条第一項前段及び第三十七条第五項前段の裁判、この規則第五十一条第二項及び第三項（第五十七条において準用する場合を含む。）の裁判並びに同行状（検察官にその執行を嘱託した場合に限る。）は、検察官の指揮によって執行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "法第四十二条第一項第一号、第六十条第一項前段、第六十一条第一項第一号及び第六十二条第二項前段の裁判、この規則第八十五条第一項において準用する第五十一条第二項及び第三項の裁判、第八十七条第一項において準用する第五十一条第三項の裁判並びに同行状（検察官にその執行を嘱託した場合を除く。）は、裁判長等（法第十一条第一項の合議体の構成員である裁判官又は裁判長をいう。以下同じ。）又は裁判官の指揮によって執行する。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "前二項の指揮は、裁判書若しくは裁判を記載した調書の謄本若しくは抄本又は同行状に押印して行うものとする。ただし、急速を要するときは、対象者の氏名及び年齢、裁判の主文及び年月日、裁判所並びに裁判官及び精神保健審判員（精神保健審判員にあっては、法第十一条第一項の合議体が裁判をした場合に限る。）の氏名を記載した書面に押印して行うことができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        20
+      ],
+      "label": "第二十条",
+      "short_label": "20条",
+      "anchor": "a20",
+      "caption": "陳述録取調書の作成",
+      "deleted": false,
+      "section": "main",
+      "page": 5,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第一節　通則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判長等又は裁判官は、対象者、保護者又は参考人の陳述の内容が審判上必要であると認めるときは、裁判所書記官に、調書を作成させなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の調書には、対象者、保護者又は参考人の陳述の要旨及び裁判長等又は裁判官が記載を命じた事項を記載するものとする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        21
+      ],
+      "label": "第二十一条",
+      "short_label": "21条",
+      "anchor": "a21",
+      "caption": "調書への引用",
+      "deleted": false,
+      "section": "main",
+      "page": 5,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第一節　通則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "調書には、書面、写真その他適当と認めるものを引用し、記録に添付して調書の一部とすることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        22
+      ],
+      "label": "第二十二条",
+      "short_label": "22条",
+      "anchor": "a22",
+      "caption": "医師等の指定及び変更の通知",
+      "deleted": false,
+      "section": "main",
+      "page": 5,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第一節　通則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "指定医療機関の管理者又は保護観察所の長は、法第三十一条第五項及び第三十二条第二項並びにこの規則第四十条第一項の医師又は社会復帰調整官を指定したときは、書面をもって、その旨を裁判所に通知しなければならない。その通知の内容に変更が生じたときも、同様とする。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の規定は、法第二十三条の三の規定により保護者となる市町村長（特別区の長を含む。以下同じ。）が法第三十一条第六項及びこの規則第四十三条第二項の職員を指定した場合について準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        23
+      ],
+      "label": "第二十三条",
+      "short_label": "23条",
+      "anchor": "a23",
+      "caption": "書類及び送達等",
+      "deleted": false,
+      "section": "main",
+      "page": 6,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第一節　通則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "刑事訴訟法第一編第六章及び刑事訴訟規則第一編第六章の規定は、処遇事件の性質に反しない限り、処遇事件に関する書類及び送達について準用する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "刑事訴訟規則第二百九十六条の規定は裁判所又は裁判官に対する申立てその他の申述について、同規則第二百九十八条の規定は処遇事件に関する書類の発送及び受理並びに処遇事件の関係人その他の者に対する通知について、それぞれ準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        24
+      ],
+      "label": "第二十四条",
+      "short_label": "24条",
+      "anchor": "a24",
+      "caption": "事実の取調べの申出・法第二十四条",
+      "deleted": false,
+      "section": "main",
+      "page": 6,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第一節　通則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "検察官、法第二条第四項に規定する指定入院医療機関の管理者若しくは保護観察所の長又は対象者、保護者若しくは付添人は、裁判所又は裁判官に対し、証人尋問、鑑定、検証、押収（刑事訴訟法第百二条の二第一項に規定する電磁的記録提供命令（同項第一号イに掲げる方法による提供を命ずるものに限る。）を含む。）、捜索、同法第百二条の二第一項に規定する電磁的記録提供命令（同号ロに掲げる方法による提供を命ずるものに限る。）、通訳及び翻訳並びに官公署、医療施設その他の公私の団体に対して必要な事項の報告、資料の提出その他の協力を求める処分の申出をすることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        25
+      ],
+      "label": "第二十五条",
+      "short_label": "25条",
+      "anchor": "a25",
+      "caption": "鑑定人の宣誓の方式・法第二十四条等",
+      "deleted": false,
+      "section": "main",
+      "page": 6,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第一節　通則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "宣誓は、鑑定人が、良心に従って誠実に鑑定することを誓う旨を述べる方式",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        26
+      ],
+      "label": "第二十六条",
+      "short_label": "26条",
+      "anchor": "a26",
+      "caption": "鑑定の経過及び結果の報告期限・法第二十四条等",
+      "deleted": false,
+      "section": "main",
+      "page": 6,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第一節　通則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判所は、鑑定の経過及び結果を報告すべき期限を定めることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        27
+      ],
+      "label": "第二十七条",
+      "short_label": "27条",
+      "anchor": "a27",
+      "caption": "証人尋問等・法第二十四条",
+      "deleted": false,
+      "section": "main",
+      "page": 6,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第一節　通則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "刑事訴訟規則中裁判所の行う証人尋問、鑑定、検証、押収（刑事訴訟法第百二条の二第一項に規定する電磁的記録提供命令（同項第一号イに掲げる方法による提供を命ずるものに限る。）を含む。）、同項に規定する電磁的記録提供命令（同号ロに掲げる方法による提供を命ずるものに限る。）、捜索、通訳及び翻訳に関する規定は、処遇事件の性質に反しない限り、法第二十四条第三項の規定による証人尋問、鑑定、検証、押収、電磁的記録提供命令、捜索、通訳及び翻訳について準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        28
+      ],
+      "label": "第二十八条",
+      "short_label": "28条",
+      "anchor": "a28",
+      "caption": "呼出状の記載要件・法第二十六条",
+      "deleted": false,
+      "section": "main",
+      "page": 7,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第一節　通則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第二十六条第一項の呼出状には、対象者の氏名、年齢及び住居、処遇事件について呼び出す旨、出頭すべき年月日時及び場所並びに正当な理由がなく出頭しないときは同行状を発することがある旨を記載し、裁判長等又は裁判官が記名押印しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "審判期日に呼び出す場合における前項の呼出状には、前項に規定する事項のほか、心身の障害のため、又は正当な理由がなく審判期日に出席しないときは、対象者が出席しないでも審判を行うことがある旨を記載しなければならない。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "法第三十四条第二項本文（法第三十七条第五項後段において準用する場合を含む。）又は第六十条第二項本文（法第六十二条第二項後段において準用する場合を含む。）の手続に呼び出す場合における第一項の呼出状には、同項に規定する事項のほか、心身の障害のため、又は正当な理由がなく裁判官又は裁判所の面前に出頭しないときは、対象者に陳述の機会を与えることなく、法第三十四条第一項前段若しくは第六十条第一項前段の命令又は法第三十七条第五項前段若しくは第六十二条第二項前段の決定をすることがある旨を記載しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        29
+      ],
+      "label": "第二十九条",
+      "short_label": "29条",
+      "anchor": "a29",
+      "caption": "呼出状の送達等・法第二十六条",
+      "deleted": false,
+      "section": "main",
+      "page": 7,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第一節　通則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "前条第一項の呼出状は、対象者に送達しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "出頭した対象者に対し口頭で次回の出頭を命じたときは、呼出状を送達した場合と同一の効力を有する。この場合においては、当該出頭を命じた旨を調書に記載しなければならない。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "第一項の規定により送達をし、又は前項の規定により出頭を命じたときは、速やかに、その旨を付添人（付添人がない場合にあっては保護者）に通知しなければならない。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "法第三十四条第一項前段若しくは第六十条第一項前段の命令又は法第三十七条第五項前段、第四十二条第一項第一号、第六十一条第一項第一号若しくは第六十二条第二項前段の決定により入院している対象者に対し、第一項の規定により送達をし、又は第二項前段の規定により出頭を命じたときは、速やかに、その旨を当該対象者が入院している医療施設の管理者に通知しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        30
+      ],
+      "label": "第三十条",
+      "short_label": "30条",
+      "anchor": "a30",
+      "caption": "簡易の呼出し",
+      "deleted": false,
+      "section": "main",
+      "page": 7,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第一節　通則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "処遇事件についての呼出しは、呼出状の送達以外の相当と認める方法によってすることができる。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前条第四項の規定は、前項の規定により呼出しをした場合について準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        31
+      ],
+      "label": "第三十一条",
+      "short_label": "31条",
+      "anchor": "a31",
+      "caption": "同行状の記載要件・法第二十六条",
+      "deleted": false,
+      "section": "main",
+      "page": 7,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第一節　通則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第二十六条第二項及び第三項の同行状には、対象者の氏名、年齢及び住居、処遇事件名、同行すべき場所、有効期間及びその期間経過後は執行に着手することができず当該同行状は返還しなければならない旨並びに発付の年月日を記載し、裁判長等又は裁判官が記名押印しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "法第二十六条第三項の同行状には、前項に規定する事項のほか、特に発付を必要とする理由を具体的に記載しなければならない。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "第一項の同行状の有効期間は、発付の日から七日とする。ただし、相当と認めるときは、七日を超える期間を定めることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        32
+      ],
+      "label": "第三十二条",
+      "short_label": "32条",
+      "anchor": "a32",
+      "caption": "同行状の執行と執行後の処置・法第二十八条",
+      "deleted": false,
+      "section": "main",
+      "page": 8,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第一節　通則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "前条第一項の同行状の執行を検察官に嘱託する場合には、当該同行状の原本を検察官に送付しなければならない。同項の同行状を保護観察所の職員に執行させる場合には、当該同行状の原本を保護観察所の長に送付しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前条第一項の同行状は、数通を発することができる。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "前条第一項の同行状を執行したときはこれに執行の場所及び年月日時を記載し、執行することができなかったときはこれにその事由を記載して、記名押印しなければならない。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "前項の同行状は、これを発した裁判所又は裁判官に提出しなければならない。検察官にその執行を嘱託した同行状については、検察官を経由してしなければならない。",
+          "items": []
+        },
+        {
+          "number": 5,
+          "text": "裁判所又は裁判官は、前項の同行状を受け取ったときは、執行することができなかった場合を除き、裁判所書記官に引致された年月日時を当該同行状に記載させなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        33
+      ],
+      "label": "第三十三条",
+      "short_label": "33条",
+      "anchor": "a33",
+      "caption": "出頭命令・法第二十九条",
+      "deleted": false,
+      "section": "main",
+      "page": 8,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第一節　通則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判所は、法第二十九条第一項の決定をしたときは、速やかに、その旨を付添人（付添人がない場合にあっては保護者）及び対象者が入院している医療施設の管理者に通知しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "法第二十九条第二項の規定による護送の嘱託は、同条第一項の決定の裁判書又は当該決定を記載した調書の謄本又は抄本を検察官に送付してしなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        34
+      ],
+      "label": "第三十四条",
+      "short_label": "34条",
+      "anchor": "a34",
+      "caption": "不出頭の場合の資料",
+      "deleted": false,
+      "section": "main",
+      "page": 8,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第一節　通則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "対象者は、呼出しを受け、又は出頭を命ぜられた場合において、出頭することができないと思料するときは、速やかに、その理由を記載した書面及びその理由を明らかにすべき資料を裁判所又は裁判官に提出しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        35
+      ],
+      "label": "第三十五条",
+      "short_label": "35条",
+      "anchor": "a35",
+      "caption": "付添人の選任・法第三十条",
+      "deleted": false,
+      "section": "main",
+      "page": 8,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第一節　通則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "付添人の選任は、付添人と連署した書面を提出してしなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "付添人の選任は、審級ごとにしなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        36
+      ],
+      "label": "第三十六条",
+      "short_label": "36条",
+      "anchor": "a36",
+      "caption": "主任付添人等・法第三十条",
+      "deleted": false,
+      "section": "main",
+      "page": 8,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第一節　通則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "刑事訴訟規則第十九条から第二十五条までの規定は、対象者に二以上の付添人がある場合について準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        37
+      ],
+      "label": "第三十七条",
+      "short_label": "37条",
+      "anchor": "a37",
+      "caption": "付添人の数の制限・法第三十条",
+      "deleted": false,
+      "section": "main",
+      "page": 8,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第一節　通則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "刑事訴訟規則第二十六条の規定は、法第三十条第二項の規定により付添人の数を制限する場合について準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        38
+      ],
+      "label": "第三十八条",
+      "short_label": "38条",
+      "anchor": "a38",
+      "caption": "国選付添人の選任・法第三十条",
+      "deleted": false,
+      "section": "main",
+      "page": 8,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第一節　通則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第三十条第三項の規定により裁判所が付すべき付添人は、裁判所の所在地にある弁護士の中から裁判長等がこれを選任しなければならない。ただし、裁判所の所在地に弁護士がないときその他やむを得ない事情があるときは、その裁判所の所在地を管轄する地方裁判所の管轄区域又はこれに隣接する他の地方裁判所の管轄区域内にある弁護士の中からこれを選任することができる。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の規定にかかわらず、抗告裁判所が付添人を付する場合であって、抗告審の審理のために特に必要があると認めるときは、裁判長は、原裁判所が付した付添人であった弁護士を選任することができる。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "前項の規定は、法第七十条第一項の抗告に関する手続において最高裁判所が付添人を付する場合について準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        39
+      ],
+      "label": "第三十九条",
+      "short_label": "39条",
+      "anchor": "a39",
+      "caption": "付添人選任の通知・法第三十条",
+      "deleted": false,
+      "section": "main",
+      "page": 9,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第一節　通則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第三十四条第一項前段若しくは第六十条第一項前段の命令又は法第三十七条第五項前段、第四十二条第一項第一号、第六十一条第一項第一号若しくは第六十二条第二項前段の決定により入院している対象者について、法第三十条第一項の規定により付添人が選任されたときは、裁判所（法第十一条第一項の合議体による裁判所で審判すべき場合であって、精神保健審判員が任命されるまでの間においては、法第三十三条第一項、第四十九条第一項若しくは第二項、第五十条又は第五十九条第一項若しくは第二項の申立てを受けた地方裁判所の裁判官）は、速やかに、その旨を当該対象者が入院している医療施設の管理者に通知しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "裁判長等は、前項に規定する対象者について、前条の規定により付添人を選任したときは、速やかに、その旨を当該対象者が入院している医療施設の管理者に通知しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        40
+      ],
+      "label": "第四十条",
+      "short_label": "40条",
+      "anchor": "a40",
+      "caption": "審判の準備・法第三十一条",
+      "deleted": false,
+      "section": "main",
+      "page": 9,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第一節　通則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判所は、適当と認めるときは、検察官、指定入院医療機関の管理者若しくはその指定する医師又は保護観察所の長若しくはその指定する社会復帰調整官及び付添人を出頭させた上、審判の進行に関し必要な事項について打合せを行うことができる。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の打合せは、合議体の構成員（精神保健審判員を除く。）に行わせることができる。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "裁判所は、裁判所書記官に命じて、審判の進行に関し必要な事項について、検察官、指定入院医療機関の管理者、保護観察所の長又は付添人に問合せをさせることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        41
+      ],
+      "label": "第四十一条",
+      "short_label": "41条",
+      "anchor": "a41",
+      "caption": "審判期日の指定及び通知・法第三十一条",
+      "deleted": false,
+      "section": "main",
+      "page": 9,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第一節　通則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "審判期日は、裁判長等が定める。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "審判期日は、保護者及び付添人に通知しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        42
+      ],
+      "label": "第四十二条",
+      "short_label": "42条",
+      "anchor": "a42",
+      "caption": "審判期日の列席者・法第三十一条",
+      "deleted": false,
+      "section": "main",
+      "page": 9,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第一節　通則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "審判期日には、裁判官、精神保健審判員（法第十一条第一項の合議体が審判期日を開く場合に限る。）及び裁判所書記官が列席する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        43
+      ],
+      "label": "第四十三条",
+      "short_label": "43条",
+      "anchor": "a43",
+      "caption": "対象者の任意の供述",
+      "deleted": false,
+      "section": "main",
+      "page": 9,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第一節　通則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判長等は、審判期日において、対象者が任意に供述をする場合には、必要とする事項につき対象者の供述を求めることができる。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "精神保健審判員、陪席の裁判官、検察官、指定入院医療機関の管理者若しくはその指定する医師、保護観察所の長若しくはその指定する社会復帰調整官、保護者（法第二十三条の三の規定により保護者となる市町村長については、その指定する職員を含む。次条において同じ。）又は付添人は、裁判長等に告げて、前項の供述を求めることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        44
+      ],
+      "label": "第四十四条",
+      "short_label": "44条",
+      "anchor": "a44",
+      "caption": "審判調書",
+      "deleted": false,
+      "section": "main",
+      "page": 9,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第一節　通則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "審判期日における手続については、審判調書を作成する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "審判調書には、次に掲げる事項その他審判に関する重要な事項を記載するものとする。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "審判をした裁判所、年月日及び場所",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "処遇事件名及び対象者の氏名",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "列席した裁判官、精神保健審判員（法第四十一条第七項の規定により出席した場合を含む。）及び裁判所書記官並びに出席した精神保健参与員、検察官、指定医療機関の管理者又はその指定する医師及び保護観察所の長又はその指定する社会復帰調整官の氏名",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "出席した対象者、保護者及び付添人の氏名",
+              "children": []
+            },
+            {
+              "marker": "五",
+              "kind": "go",
+              "text": "検察官、指定医療機関の管理者又はその指定する医師、保護観察所の長又はその指定する社会復帰調整官、保護者及び付添人の陳述の要旨",
+              "children": []
+            },
+            {
+              "marker": "六",
+              "kind": "go",
+              "text": "対象者の陳述の要旨",
+              "children": []
+            },
+            {
+              "marker": "七",
+              "kind": "go",
+              "text": "証人、鑑定人、通訳人、翻訳人及び参考人の供述の要旨",
+              "children": []
+            },
+            {
+              "marker": "八",
+              "kind": "go",
+              "text": "裁判その他の処分をしたこと。",
+              "children": []
+            },
+            {
+              "marker": "九",
+              "kind": "go",
+              "text": "裁判長等が記載を命じた事項",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "text": "裁判所書記官は、裁判長等の許可があるときは、審判調書の作成又は前項第一号から第八号までに掲げる記載事項の一部を省略することができる。ただし、法第六十四条第一項及び第二項並びに第七十条第一項の抗告があった場合並びにこれらの抗告の手続における審判調書については、この限りでない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        45
+      ],
+      "label": "第四十五条",
+      "short_label": "45条",
+      "anchor": "a45",
+      "caption": "審判調書の記名押印及び認印",
+      "deleted": false,
+      "section": "main",
+      "page": 10,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第一節　通則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "審判調書には、裁判所書記官が記名押印し、裁判長等が認印しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "法第十一条第一項の合議体の構成員である裁判官に差し支えがあるときは、裁判所書記官がその事由を付記して記名押印しなければならない。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "裁判長に差し支えがあるときは、他の裁判官の一人がその事由を付記して認印しなければならない。ただし、いずれの裁判官にも差し支えがあるときは、裁判所書記官がその事由を付記して記名押印すれば足りる。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "裁判所書記官に差し支えがあるときは、裁判長等がその事由を付記して認印すれば足りる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        46
+      ],
+      "label": "第四十六条",
+      "short_label": "46条",
+      "anchor": "a46",
+      "caption": "適正な審判のための措置等",
+      "deleted": false,
+      "section": "main",
+      "page": 10,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第一節　通則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判長等は、審判期日において、適正な審判をするため必要があると認めるときは、発言を制止し、対象者以外の者を退席させ、又はその他の適当な措置を講ずることができる。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "裁判長等は、対象者の精神障害の状態を考慮し、必要があると認めるときは、指定医療機関の管理者又はその指定する医師の協力を求めることその他の当該精神障害の状態に応じた適当な措置を講ずることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        47
+      ],
+      "label": "第四十七条",
+      "short_label": "47条",
+      "anchor": "a47",
+      "caption": "記録等の閲覧又は謄写・法第三十二条",
+      "deleted": false,
+      "section": "main",
+      "page": 10,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第一節　通則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判長等は、処遇事件の記録又は証拠物の閲覧又は謄写について、その日時、場所及び時間を指定することができる。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "裁判長等は、処遇事件の記録又は証拠物の閲覧又は謄写について、書類の破棄その他不法な行為を防ぐため必要があると認めるときは、裁判所書記官その他の裁判所職員を閲覧若しくは謄写に立ち会わせ、又はその他の適当な措置を講じなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        48
+      ],
+      "label": "第四十八条",
+      "short_label": "48条",
+      "anchor": "a48",
+      "caption": "検察官の意見の聴取・法第三十二条",
+      "deleted": false,
+      "section": "main",
+      "page": 11,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第一節　通則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判所は、刑事事件に係る訴訟に関する書類について、法第三十二条第一項の許可をしようとするときは、あらかじめ、検察官の意見を聴かなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "節",
+      "label": "第二節",
+      "title": "入院又は通院",
+      "anchor": "d51",
+      "level": 3,
+      "page": 11,
+      "note": ""
+    },
+    {
+      "number": [
+        49
+      ],
+      "label": "第四十九条",
+      "short_label": "49条",
+      "anchor": "a49",
+      "caption": "申立ての方式・法第三十三条",
+      "deleted": false,
+      "section": "main",
+      "page": 11,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第二節　入院又は通院"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第三十三条第一項の申立ては、次に掲げる事項を記載した書面でしなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "対象者の氏名、年齢、職業、住居及び本籍",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "対象者が法第二条第二項に該当するとする理由の要旨",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "法第三十四条第一項前段の命令により対象者を入院させるべき医療施設の名称、所在地及び管理者の氏名",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "対象者に対する他の処遇事件があるときは、その旨及び当該他の処遇事件が係属する裁判所",
+              "children": []
+            },
+            {
+              "marker": "五",
+              "kind": "go",
+              "text": "保護者の氏名及び住居（保護者が判明しない場合は、後見人又は保佐人、配偶者、親権を行う者及び扶養義務者の氏名及び住居）",
+              "children": []
+            }
+          ]
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        50
+      ],
+      "label": "第五十条",
+      "short_label": "50条",
+      "anchor": "a50",
+      "caption": "申立ての通知・法第三十三条",
+      "deleted": false,
+      "section": "main",
+      "page": 11,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第二節　入院又は通院"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第三十三条第一項の申立てがあったときは、これを受けた地方裁判所の裁判官は、速やかに、その旨を対象者及び付添人（付添人がない場合にあっては保護者）に通知しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        51
+      ],
+      "label": "第五十一条",
+      "short_label": "51条",
+      "anchor": "a51",
+      "caption": "鑑定入院命令・法第三十四条",
+      "deleted": false,
+      "section": "main",
+      "page": 11,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第二節　入院又は通院"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第三十四条第一項前段の命令においては、対象者を入院させるべき医療施設を指定しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "法第三十三条第一項の申立てを受けた地方裁判所の裁判官は、必要があると認めるときは、命令をもって、前項の規定による指定を変更することができる。ただし、精神保健審判員が任命された後においては、この限りでない。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "裁判所は、必要があると認めるときは、決定をもって、第一項の規定による指定を変更することができる。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "法第三十四条第四項及び第五項の規定は、第二項の命令及び前項（第五十七条において準用する場合を含む。）の決定について準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        52
+      ],
+      "label": "第五十二条",
+      "short_label": "52条",
+      "anchor": "a52",
+      "caption": "鑑定入院命令に関する通知・法第三十四条",
+      "deleted": false,
+      "section": "main",
+      "page": 11,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第二節　入院又は通院"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第三十四条第一項前段の命令、同条第三項ただし書の決定、前条第二項の命令及び同条第三項の決定をしたときは、速やかに、その旨を付添人及び保護者に通知しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "法第三十四条第三項ただし書の決定をしたときは、速やかに、その旨を対象者が入院している医療施設の管理者に通知しなければならない。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "法第三十四条第一項前段の命令を取り消し、若しくはその執行を停止したとき、又は法第三十四条第三項ただし書の決定を取り消し、若しくはその執行を停止したときも、前項と同様とする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        53
+      ],
+      "label": "第五十三条",
+      "short_label": "53条",
+      "anchor": "a53",
+      "caption": "裁判所書記官の立会い及び調書の作成・法第三十四条",
+      "deleted": false,
+      "section": "main",
+      "page": 12,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第二節　入院又は通院"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第三十四条第二項本文の手続には、裁判所書記官を立ち会わせなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "裁判所書記官は、前項に規定する手続について、調書を作らなければならない。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "前項の調書には、対象者の陳述の要旨及び裁判官が記載を命じた事項を記載するものとする。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "第二項の調書には、裁判所書記官が記名押印し、裁判官が認印しなければならない。",
+          "items": []
+        },
+        {
+          "number": 5,
+          "text": "裁判官に差し支えがあるときは、裁判所書記官がその事由を付記して記名押印しなければならない。",
+          "items": []
+        },
+        {
+          "number": 6,
+          "text": "裁判所書記官に差し支えがあるときは、裁判官がその事由を付記して認印すれば足りる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        54
+      ],
+      "label": "第五十四条",
+      "short_label": "54条",
+      "anchor": "a54",
+      "caption": "鑑定入院命令等の執行と執行後の処置・法第三十四条",
+      "deleted": false,
+      "section": "main",
+      "page": 12,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第二節　入院又は通院"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第三十四条第一項前段の命令、この規則第五十一条第二項の命令又は同条第三項の決定は、裁判書又は裁判を記載した調書の謄本又は抄本を検察官に送付してその執行を嘱託しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項に規定する命令又は決定を執行したときは執行の場所及び年月日時を記載した書面を、執行することができなかったときはその事由を記載した書面を、執行を指揮した検察官を経由して、当該命令又は決定をした裁判官又は裁判所に提出しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        55
+      ],
+      "label": "第五十五条",
+      "short_label": "55条",
+      "anchor": "a55",
+      "caption": "入院費等の支払・法第三十四条",
+      "deleted": false,
+      "section": "main",
+      "page": 12,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第二節　入院又は通院"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判所は、法第三十四条第一項前段の命令が執行された場合には、医療施設の管理者の請求により、入院に要した費用及び精神障害の治療に要した費用を支払うものとする。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の規定により支払うべき費用の額は、裁判所の相当と認めるところによる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        56
+      ],
+      "label": "第五十六条",
+      "short_label": "56条",
+      "anchor": "a56",
+      "caption": "付添人の選任に関する処分・法第三十五条",
+      "deleted": false,
+      "section": "main",
+      "page": 12,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第二節　入院又は通院"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判所は、法第三十三条第一項の申立てがあった場合において、対象者に付添人がないときは、遅滞なく、対象者及び保護者に対し、一定の期間を定めて、付添人を選任するかどうかについて回答を求めなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の期間内に回答がなく又は付添人の選任がないときは、法第十一条第一項の合議体の構成員である裁判官は、直ちに対象者のため付添人を選任しなければならない。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "第一項の処分は、法第三十四条第二項本文の手続を行う裁判官がすることもできる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        57
+      ],
+      "label": "第五十七条",
+      "short_label": "57条",
+      "anchor": "a57",
+      "caption": "鑑定入院決定・法第三十七条",
+      "deleted": false,
+      "section": "main",
+      "page": 12,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第二節　入院又は通院"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "第五十一条第一項及び第三項並びに第五十二条から第五十五条までの規定は、法第三十七条第五項前段の決定について準用する。この場合において、第五十二条第一項中「法第三十四条第一項前段の命令、同条第三項ただし書の決定、前条第二項の命令及び同条第三項の決定」とあるのは「法第三十七条第五項前段及び同項後段において準用する法第三十四条第三項ただし書の決定並びに第五十七条において準用する前条第三項の決定」と、同条第二項及び第三項中「法第三十四条第三項ただし書」とあるのは「法第三十七条第五項後段において準用する法第三十四条第三項ただし書」と、同項中「法第三十四条第一項前段の命令」とあるのは「法第三十七条第五項前段の決定」と、第五十三条第一項中「法第三十四条第二項本文」とあるのは「法第三十七条第五項後段において準用する法第三十四条第二項本文」と、同条第三項から第六項までの規定中「裁判官」とあるのは「法第十一条第一項の合議体の構成員である裁判官」と、第五十四条第一項中「法第三十四条第一項前段の命令、この規則第五十一条第二項の命令又は同条第三項の決定」とあるのは「法第三十七条第五項前段の決定及び第五十七条において準用する第五十一条第三項の決定」と読み替えるものとする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        58
+      ],
+      "label": "第五十八条",
+      "short_label": "58条",
+      "anchor": "a58",
+      "caption": "保護観察所による生活環境の調査・法第三十八条",
+      "deleted": false,
+      "section": "main",
+      "page": 13,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第二節　入院又は通院"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判所は、保護観察所の長に対し、法第三十八条の規定により調査及び報告を求める場合には、必要な事項を指示しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "裁判所は、前項に規定する場合には、同項の報告の期限を定めることができる。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "裁判所は、第一項に規定する場合には、保護観察所の長に対し、必要な資料を提供することができる。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "前項の規定により刑事事件に係る訴訟に関する書類を提供しようとするときは、あらかじめ、検察官の意見を聴かなければならない。",
+          "items": []
+        },
+        {
+          "number": 5,
+          "text": "第一項の調査及び報告の求めを受けた保護観察所の長は、意見を付して、調査の結果を書面で報告するものとする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        59
+      ],
+      "label": "第五十九条",
+      "short_label": "59条",
+      "anchor": "a59",
+      "caption": "審判期日の通知・法第三十九条",
+      "deleted": false,
+      "section": "main",
+      "page": 13,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第二節　入院又は通院"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第十一条第一項の合議体による裁判所が開く審判期日（法第三十三条第一項の申立てに係るものに限る。）は、検察官に通知しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        60
+      ],
+      "label": "第六十条",
+      "short_label": "60条",
+      "anchor": "a60",
+      "caption": "医療施設の管理者への通知等・法第四十条",
+      "deleted": false,
+      "section": "main",
+      "page": 13,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第二節　入院又は通院"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判所は、法第三十四条第一項前段の命令又は法第三十七条第五項前段の決定により入院している対象者に対し、法第四十条第一項の決定をしたときは、速やかに、その旨を当該対象者が入院している医療施設の管理者に通知しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の通知を受けた医療施設の管理者は、対象者を退院させなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        61
+      ],
+      "label": "第六十一条",
+      "short_label": "61条",
+      "anchor": "a61",
+      "caption": "検察官の通知・法第四十条",
+      "deleted": false,
+      "section": "main",
+      "page": 13,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第二節　入院又は通院"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第四十条第二項後段の規定による検察官の通知は、書面でしなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        62
+      ],
+      "label": "第六十二条",
+      "short_label": "62条",
+      "anchor": "a62",
+      "caption": "審判期日の通知・法第四十一条",
+      "deleted": false,
+      "section": "main",
+      "page": 13,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第二節　入院又は通院"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "第五十九条の規定は、法第四十一条第一項の合議体による裁判所が開く審判期日について準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        63
+      ],
+      "label": "第六十三条",
+      "short_label": "63条",
+      "anchor": "a63",
+      "caption": "決定の告知方法・法第四十二条",
+      "deleted": false,
+      "section": "main",
+      "page": 13,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第二節　入院又は通院"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "対象者に対する法第四十二条第一項第一号の決定の告知は、裁判書の謄本を厚生労働省の職員を介して対象者に交付する方法によってすることができる。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "対象者に対する法第四十二条第一項第二号の決定の告知は、裁判書の謄本を社会復帰調整官を介して対象者に交付する方法によってすることができる。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "前二項の規定により告知をする場合において、対象者が正当な理由がなく裁判書の謄本の交付を受けることを拒んだときは、対象者にこれを提示すれば足りる。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "前三項の規定により告知をしたときは告知の方法、場所及び年月日を記載した書面を、告知をすることができなかったときはその事由を記載した書面を、法第四十二条第一項第一号又は第二号の決定をした裁判所に提出しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        64
+      ],
+      "label": "第六十四条",
+      "short_label": "64条",
+      "anchor": "a64",
+      "caption": "厚生労働大臣への通知等・法第四十二条",
+      "deleted": false,
+      "section": "main",
+      "page": 14,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第二節　入院又は通院"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判所は、法第四十二条第一項の決定をしたときは、速やかに、その旨を厚生労働大臣に通知しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "裁判所は、法第四十二条第一項の決定をする場合において、必要があると認めるときは、あらかじめ、当該決定の予定日を厚生労働大臣に通知することができる。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "裁判所は、法第四十二条第一項第二号の決定をしたときは、速やかに、その旨を保護観察所の長に通知しなければならない。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "第六十条の規定は、法第三十四条第一項前段の命令又は法第三十七条第五項前段の決定により入院している対象者に対し、法第四十二条の決定をした場合について準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        65
+      ],
+      "label": "第六十五条",
+      "short_label": "65条",
+      "anchor": "a65",
+      "caption": "資料提供の求め・法第四十三条",
+      "deleted": false,
+      "section": "main",
+      "page": 14,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第二節　入院又は通院"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "厚生労働大臣は、法第四十三条第三項の規定により指定入院医療機関又は指定通院医療機関を定めるため必要があると認めるときは、その必要な限度において、裁判所に対し、法第三十七条第一項に規定する鑑定の経過及び結果を記載した書面その他の必要な資料の提供を求めることができる。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "第十六条の規定は、前項の規定による資料の提供の求めについて準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        66
+      ],
+      "label": "第六十六条",
+      "short_label": "66条",
+      "anchor": "a66",
+      "caption": "決定の執行等・法第四十五条",
+      "deleted": false,
+      "section": "main",
+      "page": 14,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第二節　入院又は通院"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判所は、法第四十二条第一項第一号の決定を執行させるため、裁判書若しくは決定を記載した調書の謄本若しくは抄本又は対象者の氏名及び年齢、決定の主文及び年月日、裁判所並びに裁判官及び精神保健審判員の氏名を記載した書面を厚生労働大臣に送付しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "法第四十二条第一項第一号の決定を執行したときは執行の場所及び年月日時並びに対象者を入院させた指定入院医療機関の名称、所在地及び管理者の氏名を記載した書面を、執行することができなかったときはその事由を記載した書面を、当該決定をした裁判所に提出しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        67
+      ],
+      "label": "第六十七条",
+      "short_label": "67条",
+      "anchor": "a67",
+      "caption": "呼出状の記載要件等・法第四十五条",
+      "deleted": false,
+      "section": "main",
+      "page": 14,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第二節　入院又は通院"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第四十五条第三項の呼出状には、対象者の氏名、年齢及び住居、法第四十二条第一項第一号の決定の執行のために呼び出す旨、出頭すべき年月日時及び場所並びに正当な理由がなく出頭しないときは同行状を発することがある旨を記載し、法第十一条第一項の合議体の構成員である裁判官が記名押印しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の呼出状は、対象者に送達しなければならない。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "裁判所は、前項の規定により送達をしたときは、速やかに、その旨を付添人（付添人がない場合にあっては保護者）に通知しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        68
+      ],
+      "label": "第六十八条",
+      "short_label": "68条",
+      "anchor": "a68",
+      "caption": "同行状の記載要件と執行・法第四十五条",
+      "deleted": false,
+      "section": "main",
+      "page": 14,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第二節　入院又は通院"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第四十五条第四項及び第五項の同行状には、対象者の氏名、年齢及び住居、法第四十二条第一項第一号の決定の執行のために同行する旨、同行すべき場所並びに発付の年月日を記載し、法第十一条第一項の合議体の構成員である裁判官が記名押印しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "第三十二条第一項前段及び第二項から第五項までの規定は、前項の同行状について準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        69
+      ],
+      "label": "第六十九条",
+      "short_label": "69条",
+      "anchor": "a69",
+      "caption": "傍聴の申出の際に明らかにすべき事項等・法第四十七条",
+      "deleted": false,
+      "section": "main",
+      "page": 15,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第二節　入院又は通院"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第四十七条第一項の申出は、次に掲げる事項を明らかにしてしなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "申出人の氏名又は名称及び住居",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "当該申出に係る処遇事件を特定するに足りる事項",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "申出人が傍聴を求める処遇事件に係る対象行為の被害者等（被害者又はその法定代理人若しくは被害者が死亡した場合若しくはその心身に重大な故障がある場合におけるその配偶者、直系の親族若しくは兄弟姉妹をいう。）であることの基礎となるべき事実",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "text": "前項の申出については、弁護士でなければ代理人となることができない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        70
+      ],
+      "label": "第七十条",
+      "short_label": "70条",
+      "anchor": "a70",
+      "caption": "通知の申出の際に明らかにすべき事項等・法第四十八条",
+      "deleted": false,
+      "section": "main",
+      "page": 15,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第二節　入院又は通院"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "前条第一項の規定は、法第四十八条第一項の申出について準用する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の申出及び法第四十八条第一項の規定による通知の受領については、弁護士でなければ代理人となることができない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "節",
+      "label": "第三節",
+      "title": "退院又は入院継続",
+      "anchor": "d74",
+      "level": 3,
+      "page": 15,
+      "note": ""
+    },
+    {
+      "number": [
+        71
+      ],
+      "label": "第七十一条",
+      "short_label": "71条",
+      "anchor": "a71",
+      "caption": "申立ての方式・法第四十九条",
+      "deleted": false,
+      "section": "main",
+      "page": 15,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第三節　退院又は入院継続"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第四十九条第一項又は第二項の申立ては、次に掲げる事項を記載した書面でしなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "対象者の氏名、年齢、職業、住居及び本籍",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "対象者に対する他の処遇事件があるときは、その旨及び当該他の処遇事件が係属する裁判所",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "保護者の氏名及び住居（保護者が判明しない場合は、後見人又は保佐人、配偶者、親権を行う者及び扶養義務者の氏名及び住居）",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "対象者について法第四十二条第一項第一号又は第六十一条第一項第一号の決定があった日及び当該決定をした裁判所",
+              "children": []
+            },
+            {
+              "marker": "五",
+              "kind": "go",
+              "text": "対象者について法第五十一条第一項第一号の決定があるときは、当該決定（これが複数あるときは、その最後のものをいう。以下この号において同じ。）があった日及び当該決定をした裁判所",
+              "children": []
+            },
+            {
+              "marker": "六",
+              "kind": "go",
+              "text": "法第四十九条第二項ただし書に規定する期間の進行の停止があったときは、その旨",
+              "children": []
+            },
+            {
+              "marker": "七",
+              "kind": "go",
+              "text": "申立ての趣旨及び理由",
+              "children": []
+            }
+          ]
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        72
+      ],
+      "label": "第七十二条",
+      "short_label": "72条",
+      "anchor": "a72",
+      "caption": "申立ての通知・法第四十九条",
+      "deleted": false,
+      "section": "main",
+      "page": 15,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第三節　退院又は入院継続"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第四十九条第一項又は第二項の申立てがあったときは、これを受けた地方裁判所の裁判官は、速やかに、その旨を対象者及び付添人（付添人がない場合にあっては保護者）に通知しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        73
+      ],
+      "label": "第七十三条",
+      "short_label": "73条",
+      "anchor": "a73",
+      "caption": "申立ての方式・法第五十条",
+      "deleted": false,
+      "section": "main",
+      "page": 15,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第三節　退院又は入院継続"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第五十条の申立ては、次に掲げる事項を記載した書面でしなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "第七十一条第一号から第五号までに掲げる事項",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "対象者が入院している指定入院医療機関の名称",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "申立ての趣旨及び理由",
+              "children": []
+            }
+          ]
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        74
+      ],
+      "label": "第七十四条",
+      "short_label": "74条",
+      "anchor": "a74",
+      "caption": "申立ての通知・法第五十条",
+      "deleted": false,
+      "section": "main",
+      "page": 16,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第三節　退院又は入院継続"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第五十条の申立てがあったときは、これを受けた地方裁判所の裁判官は、速やかに、その旨を指定入院医療機関の管理者に通知しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        75
+      ],
+      "label": "第七十五条",
+      "short_label": "75条",
+      "anchor": "a75",
+      "caption": "決定の告知方法等・法第五十一条",
+      "deleted": false,
+      "section": "main",
+      "page": 16,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第三節　退院又は入院継続"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "第六十三条第二項から第四項まで及び第六十四条第三項の規定は法第五十一条第一項第二号の決定について、第六十四条第一項及び第二項の規定は法第五十一条第一項各号の決定について、それぞれ準用する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "第六十五条の規定は、法第五十一条第三項において準用する法第四十三条第三項の規定により指定通院医療機関を定める場合について準用する。この場合において、第六十五条第一項中「法第三十七条第一項」とあるのは、「法第五十二条」と読み替えるものとする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        76
+      ],
+      "label": "第七十六条",
+      "short_label": "76条",
+      "anchor": "a76",
+      "caption": "保護観察所による生活環境の調査・法第五十三条",
+      "deleted": false,
+      "section": "main",
+      "page": 16,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第三節　退院又は入院継続"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "第五十八条の規定は、法第五十三条において準用する法第三十八条の規定による調査及び報告について準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "節",
+      "label": "第四節",
+      "title": "処遇の終了又は通院期間の延長",
+      "anchor": "d81",
+      "level": 3,
+      "page": 16,
+      "note": ""
+    },
+    {
+      "number": [
+        77
+      ],
+      "label": "第七十七条",
+      "short_label": "77条",
+      "anchor": "a77",
+      "caption": "申立ての方式・法第五十四条",
+      "deleted": false,
+      "section": "main",
+      "page": 16,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第四節　処遇の終了又は通院期間の延長"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第五十四条第一項又は第二項の申立ては、次に掲げる事項を記載した書面でしなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "対象者の氏名、年齢、職業、住居及び本籍",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "対象者が通院している指定通院医療機関の名称、所在地及び管理者の氏名",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "対象者に対する他の処遇事件があるときは、その旨及び当該他の処遇事件が係属する裁判所",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "保護者の氏名及び住居（保護者が判明しない場合は、後見人又は保佐人、配偶者、親権を行う者及び扶養義務者の氏名及び住居）",
+              "children": []
+            },
+            {
+              "marker": "五",
+              "kind": "go",
+              "text": "対象者について法第四十二条第一項第二号又は第五十一条第一項第二号の決定があった日及び当該決定をした裁判所",
+              "children": []
+            },
+            {
+              "marker": "六",
+              "kind": "go",
+              "text": "対象者について法第五十六条第一項第一号又は第六十一条第三項の決定があるときは、当該決定（これらが複数あるときは、その最後のものをいう。以下この号において同じ。）があった日及び当該決定をした裁判所",
+              "children": []
+            },
+            {
+              "marker": "七",
+              "kind": "go",
+              "text": "申立ての趣旨及び理由",
+              "children": []
+            }
+          ]
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        78
+      ],
+      "label": "第七十八条",
+      "short_label": "78条",
+      "anchor": "a78",
+      "caption": "申立ての通知・法第五十四条",
+      "deleted": false,
+      "section": "main",
+      "page": 16,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第四節　処遇の終了又は通院期間の延長"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第五十四条第一項又は第二項の申立てがあったときは、これを受けた地方裁判所の裁判官は、速やかに、その旨を対象者及び付添人（付添人がない場合にあっては保護者）に通知しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        79
+      ],
+      "label": "第七十九条",
+      "short_label": "79条",
+      "anchor": "a79",
+      "caption": "申立ての方式・法第五十五条",
+      "deleted": false,
+      "section": "main",
+      "page": 16,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第四節　処遇の終了又は通院期間の延長"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第五十五条の申立ては、次に掲げる事項を記載した書面でしなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "第七十七条第一号及び第三号から第六号までに掲げる事項",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "対象者が通院している指定通院医療機関の名称",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "対象者に対して精神保健観察を実施している保護観察所",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "申立ての趣旨及び理由",
+              "children": []
+            }
+          ]
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        80
+      ],
+      "label": "第八十条",
+      "short_label": "80条",
+      "anchor": "a80",
+      "caption": "保護観察所の長への通知・法第五十五条",
+      "deleted": false,
+      "section": "main",
+      "page": 17,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第四節　処遇の終了又は通院期間の延長"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第五十五条の申立てがあったときは、これを受けた地方裁判所の裁判官は、速やかに、その旨を保護観察所の長に通知しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        81
+      ],
+      "label": "第八十一条",
+      "short_label": "81条",
+      "anchor": "a81",
+      "caption": "厚生労働大臣への通知・法第五十六条",
+      "deleted": false,
+      "section": "main",
+      "page": 17,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第四節　処遇の終了又は通院期間の延長"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "第六十四条第一項の規定は、法第五十六条第一項の決定について準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        82
+      ],
+      "label": "第八十二条",
+      "short_label": "82条",
+      "anchor": "a82",
+      "caption": "保護観察所による生活環境の調査・法第五十八条",
+      "deleted": false,
+      "section": "main",
+      "page": 17,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第四節　処遇の終了又は通院期間の延長"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "第五十八条の規定は、法第五十八条において準用する法第三十八条の規定による調査及び報告について準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "節",
+      "label": "第五節",
+      "title": "再入院等",
+      "anchor": "d88",
+      "level": 3,
+      "page": 17,
+      "note": ""
+    },
+    {
+      "number": [
+        83
+      ],
+      "label": "第八十三条",
+      "short_label": "83条",
+      "anchor": "a83",
+      "caption": "申立ての方式・法第五十九条",
+      "deleted": false,
+      "section": "main",
+      "page": 17,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第五節　再入院等"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第五十九条第一項又は第二項の申立ては、次に掲げる事項を記載した書面でしなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "対象者の氏名、年齢、職業、住居及び本籍",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "対象者が通院している指定通院医療機関の名称、所在地及び管理者の氏名",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "対象者に対する他の処遇事件があるときは、その旨及び当該他の処遇事件が係属する裁判所",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "保護者の氏名及び住居（保護者が判明しない場合は、後見人又は保佐人、配偶者、親権を行う者及び扶養義務者の氏名及び住居）",
+              "children": []
+            },
+            {
+              "marker": "五",
+              "kind": "go",
+              "text": "対象者について法第四十二条第一項第二号又は第五十一条第一項第二号の決定があった日及び当該決定をした裁判所",
+              "children": []
+            },
+            {
+              "marker": "六",
+              "kind": "go",
+              "text": "対象者について法第五十六条第一項第一号又は第六十一条第三項の決定があるときは、当該決定（これらが複数あるときは、その最後のものをいう。以下この号において同じ。）があった日及び当該決定をした裁判所",
+              "children": []
+            },
+            {
+              "marker": "七",
+              "kind": "go",
+              "text": "法第五十九条第二項ただし書の規定により同条第一項の協議を行わず、又は同項の意見を付さないときは、緊急を要する理由",
+              "children": []
+            },
+            {
+              "marker": "八",
+              "kind": "go",
+              "text": "申立ての趣旨及び理由",
+              "children": []
+            }
+          ]
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        84
+      ],
+      "label": "第八十四条",
+      "short_label": "84条",
+      "anchor": "a84",
+      "caption": "申立ての通知・法第五十九条",
+      "deleted": false,
+      "section": "main",
+      "page": 17,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第五節　再入院等"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第五十九条第一項又は第二項の申立てがあったときは、これを受けた地方裁判所の裁判官は、速やかに、その旨を対象者及び付添人（付添人がない場合にあっては保護者）に通知しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        85
+      ],
+      "label": "第八十五条",
+      "short_label": "85条",
+      "anchor": "a85",
+      "caption": "鑑定入院命令・法第六十条",
+      "deleted": false,
+      "section": "main",
+      "page": 17,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第五節　再入院等"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "第五十一条第一項から第三項まで、第五十二条、第五十三条及び第五十五条の規定は、法第六十条第一項前段の命令について準用する。この場合において、第五十一条第二項中「法第三十三条第一項」とあるのは「法第五十九条第一項又は第二項」と、第五十二条第一項中「法第三十四条第一項前段の命令、同条第三項ただし書の決定、前条第二項の命令及び同条第三項の決定」とあるのは「法第六十条第一項前段の命令、同条第三項ただし書の決定、第八十五条第一項において準用する前条第二項の命令及び第八十五条第一項において準用する前条第三項の決定」と、同条第二項及び第三項中「法第三十四条第三項ただし書」とあるのは「法第六十条第三項ただし書」と、同項中「法第三十四条第一項前段」とあるのは「法第六十条第一項前段」と、第五十三条第一項中「法第三十四条第二項本文」とあるのは「法第六十条第二項本文」と読み替えるものとする。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "法第三十四条第四項及び第五項の規定は、前項において準用する第五十一条第二項の命令及び前項において準用する第五十一条第三項（第八十七条第一項において準用する場合を含む。）の決定について準用する。この場合において、法第三十四条第四項中「検察官」とあるのは「保護観察所の職員」と、「執行を嘱託するものとする」とあるのは「執行をさせるものとする」と読み替えるものとする。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "法第六十条第一項前段の命令、第一項において準用する第五十一条第二項の命令又は第一項において準用する第五十一条第三項の決定は、裁判書若しくは裁判を記載した調書の謄本若しくは抄本又は対象者の氏名及び年齢、裁判の主文及び年月日、裁判所並びに裁判官及び精神保健審判員（精神保健審判員にあっては、法第十一条第一項の合議体が裁判をした場合に限る。）の氏名を記載した書面を保護観察所の長に送付してその執行をさせなければならない。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "前項に規定する命令又は決定を執行したときは執行の場所及び年月日時を記載した書面を、執行することができなかったときはその事由を記載した書面を、当該命令又は決定をした裁判官又は裁判所に提出しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        86
+      ],
+      "label": "第八十六条",
+      "short_label": "86条",
+      "anchor": "a86",
+      "caption": "入院等の決定・法第六十一条",
+      "deleted": false,
+      "section": "main",
+      "page": 18,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第五節　再入院等"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "第六十条の規定は、法第六十条第一項前段の命令又は法第六十二条第二項前段の決定により入院している対象者に対し、法第六十一条第一項及び第二項の決定をした場合について準用する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "第六十三条第一項、第三項及び第四項並びに第六十六条の規定は法第六十一条第一項第一号の決定について、第六十三条第二項から第四項までの規定は法第六十一条第一項第二号及び第三項の決定について、第六十四条第一項の規定は法第六十一条第一項各号及び第三項の決定について、第六十四条第二項の規定は法第六十一条第一項各号の決定について、それぞれ準用する。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "第六十五条の規定は、法第六十一条第四項において準用する法第四十三条第三項の規定により指定入院医療機関を定める場合について準用する。この場合において、第六十五条第一項中「法第三十七条第一項」とあるのは、「法第六十二条第一項」と読み替えるものとする。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "第六十七条の規定は法第六十一条第五項において準用する法第四十五条第三項の呼出状について、第三十二条第一項後段、第二項、第三項、第四項前段及び第五項並びに第六十八条第一項の規定は法第六十一条第五項において準用する法第四十五条第四項及び第五項の同行状について、それぞれ準用する。この場合において、第六十七条第一項及び第六十八条第一項中「法第四十二条第一項第一号」とあるのは、「法第六十一条第一項第一号」と読み替えるものとする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        87
+      ],
+      "label": "第八十七条",
+      "short_label": "87条",
+      "anchor": "a87",
+      "caption": "鑑定入院決定・法第六十二条",
+      "deleted": false,
+      "section": "main",
+      "page": 18,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第五節　再入院等"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "第五十一条第一項及び第三項、第五十二条、第五十三条並びに第五十五条の規定は、法第六十二条第二項前段の決定について準用する。この場合において、第五十二条第一項中「法第三十四条第一項前段の命令、同条第三項ただし書の決定、前条第二項の命令及び同条第三項の決定」とあるのは「法第六十二条第二項前段の決定、同項後段において準用する法第六十条第三項ただし書の決定及び第八十七条第一項において準用する前条第三項の決定」と、同条第二項及び第三項中「法第三十四条第三項ただし書」とあるのは「法第六十二条第二項後段において準用する法第六十条第三項ただし書」と、同項中「法第三十四条第一項前段の命令」とあるのは「法第六十二条第二項前段の決定」と、第五十三条第一項中「法第三十四条第二項本文」とあるのは「法第六十二条第二項後段において準用する法第六十条第二項本文」と、同条第三項から第六項までの規定中「裁判官」とあるのは「法第十一条第一項の合議体の構成員である裁判官」と読み替えるものとする。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "第八十五条第三項及び第四項の規定は、法第六十二条第二項前段の決定及び前項において準用する第五十一条第三項の決定の執行について準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        88
+      ],
+      "label": "第八十八条",
+      "short_label": "88条",
+      "anchor": "a88",
+      "caption": "保護観察所による生活環境の調査・法第六十三条",
+      "deleted": false,
+      "section": "main",
+      "page": 19,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第五節　再入院等"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "第五十八条の規定は、法第六十三条において準用する法第三十八条の規定による調査及び報告について準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "節",
+      "label": "第六節",
+      "title": "抗告",
+      "anchor": "d95",
+      "level": 3,
+      "page": 19,
+      "note": ""
+    },
+    {
+      "number": [
+        89
+      ],
+      "label": "第八十九条",
+      "short_label": "89条",
+      "anchor": "a89",
+      "caption": "抗告申立ての方式・法第六十四条",
+      "deleted": false,
+      "section": "main",
+      "page": 19,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第六節　抗告"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "抗告をするには、申立書（以下「抗告申立書」という。）を原裁判所に提出しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "抗告申立書には、抗告の趣意を簡潔に明示しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        90
+      ],
+      "label": "第九十条",
+      "short_label": "90条",
+      "anchor": "a90",
+      "caption": "入院している対象者の抗告申立て等・法第六十四条",
+      "deleted": false,
+      "section": "main",
+      "page": 19,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第六節　抗告"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第四十二条第一項第一号又は第六十一条第一項第一号の決定により入院している対象者は、指定入院医療機関の管理者又はその代理者を経由して抗告申立書を提出することができる。この場合において、抗告の提起期間内に抗告申立書を指定入院医療機関の管理者又はその代理者に提出したときは、抗告の提起期間内に抗告をしたものとみなす。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "指定入院医療機関の管理者又はその代理者は、前項に規定する対象者から抗告申立書が提出されたときは、これを受領しなければならない。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "抗告申立書を受領した指定入院医療機関の管理者又はその代理者は、速やかに、原裁判所に対し、当該抗告申立書を送付し、かつ、これを受領した年月日を通知しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        91
+      ],
+      "label": "第九十一条",
+      "short_label": "91条",
+      "anchor": "a91",
+      "caption": "抗告申立書の送付・法第六十四条",
+      "deleted": false,
+      "section": "main",
+      "page": 19,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第六節　抗告"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "原裁判所は、抗告申立書を受け取ったときは、速やかに、当該抗告申立書を記録と共に抗告裁判所に送付しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の場合において、原裁判所は、抗告申立書に対する意見を付することができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        92
+      ],
+      "label": "第九十二条",
+      "short_label": "92条",
+      "anchor": "a92",
+      "caption": "証拠物の送付・法第六十四条",
+      "deleted": false,
+      "section": "main",
+      "page": 19,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第六節　抗告"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "原裁判所は、必要があると認めるときは、証拠物を抗告裁判所に送付しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "抗告裁判所は、原裁判所に証拠物の送付を求めることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        93
+      ],
+      "label": "第九十三条",
+      "short_label": "93条",
+      "anchor": "a93",
+      "caption": "抗告の通知・法第六十四条",
+      "deleted": false,
+      "section": "main",
+      "page": 19,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第六節　抗告"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判所は、検察官、指定入院医療機関の管理者又は保護観察所の長から抗告があったときは対象者及び付添人（付添人がない場合にあっては保護者）に対し、対象者、保護者又は付添人から抗告があったときは検察官、指定入院医療機関の管理者又は保護観察所の長に対し、速やかに、その旨を通知しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        94
+      ],
+      "label": "第九十四条",
+      "short_label": "94条",
+      "anchor": "a94",
+      "caption": "抗告取下げの方式・法第六十五条",
+      "deleted": false,
+      "section": "main",
+      "page": 19,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第六節　抗告"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "抗告の取下げは、書面を抗告裁判所に提出してしなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "記録を抗告裁判所に送付する前に抗告の取下げをする場合には、前項の書面を原裁判所に提出することができる。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "第九十条第一項前段、第二項及び第三項並びに前条の規定は、抗告の取下げについて準用する。この場合において、第九十条第一項前段、第二項及び第三項中「抗告申立書」とあるのは、「第九十四条第一項の書面」と読み替えるものとする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        95
+      ],
+      "label": "第九十五条",
+      "short_label": "95条",
+      "anchor": "a95",
+      "caption": "必要的付添人・法第六十七条",
+      "deleted": false,
+      "section": "main",
+      "page": 20,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第六節　抗告"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "第五十六条第一項及び第二項の規定は、法第六十七条の規定により抗告裁判所が付添人を付さなければならない場合について準用する。この場合において、第五十六条第二項中「法第十一条第一項の合議体の構成員である裁判官」とあるのは、「裁判長」と読み替えるものとする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        96
+      ],
+      "label": "第九十六条",
+      "short_label": "96条",
+      "anchor": "a96",
+      "caption": "抗告審の裁判の通知",
+      "deleted": false,
+      "section": "main",
+      "page": 20,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第六節　抗告"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判所は、次の各号のいずれかに該当する場合には、速やかに、その旨を指定入院医療機関の管理者に通知しなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "対象者が法第四十二条第一項第一号又は第六十一条第一項第一号の決定（以下この条及び第百条において「入院決定」という。）により入院している場合において、次のイ又はロのいずれかに該当するとき。",
+              "children": [
+                {
+                  "marker": "イ",
+                  "kind": "iroha",
+                  "text": "法第六十八条第二項の規定により入院決定を取り消したとき。",
+                  "children": []
+                },
+                {
+                  "marker": "ロ",
+                  "kind": "iroha",
+                  "text": "法第六十九条ただし書の規定により入院決定の執行を停止したとき。",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "入院決定により入院していた対象者が法第六十九条ただし書の規定により当該入院決定の執行を停止されている場合において、次のイ又はロのいずれかに該当するとき。",
+              "children": [
+                {
+                  "marker": "イ",
+                  "kind": "iroha",
+                  "text": "法第六十八条の決定があったとき。",
+                  "children": []
+                },
+                {
+                  "marker": "ロ",
+                  "kind": "iroha",
+                  "text": "イに掲げる場合を除き、入院決定が確定したとき。",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        97
+      ],
+      "label": "第九十七条",
+      "short_label": "97条",
+      "anchor": "a97",
+      "caption": "差戻し又は移送後の審判・法第六十八条",
+      "deleted": false,
+      "section": "main",
+      "page": 20,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第六節　抗告"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "抗告裁判所から法第六十八条第二項本文の規定による差戻し又は移送を受けた事件については、更に審判をしなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        98
+      ],
+      "label": "第九十八条",
+      "short_label": "98条",
+      "anchor": "a98",
+      "caption": "執行停止の決定をする裁判所・法第六十九条",
+      "deleted": false,
+      "section": "main",
+      "page": 20,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第六節　抗告"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "抗告中の事件について原決定の執行を停止する決定は、記録が抗告裁判所に到達する前は原裁判所が、到達した後は抗告裁判所がするものとする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        99
+      ],
+      "label": "第九十九条",
+      "short_label": "99条",
+      "anchor": "a99",
+      "caption": "再抗告に関する手続・法第七十条",
+      "deleted": false,
+      "section": "main",
+      "page": 20,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第六節　抗告"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "第八十九条から第九十三条までの規定は、法第七十条第一項の抗告について準用する。この場合において、第八十九条から第九十一条までの規定中「抗告申立書」とあるのは、「再抗告申立書」と読み替えるものとする。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "第九十条第一項前段、第二項及び第三項、第九十三条並びに第九十四条第一項及び第二項の規定は、法第七十条第一項の抗告の取下げについて準用する。この場合において、第九十条第一項前段、第二項及び第三項中「抗告申立書」とあるのは、「第九十九条第二項において準用する第九十四条第一項の書面」と読み替えるものとする。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "第五十六条第一項及び第二項の規定は、法第七十条第二項において準用する法第六十七条の規定により最高裁判所が付添人を付さなければならない場合について準用する。この場合において、第五十六条第二項中「法第十一条第一項の合議体の構成員である裁判官」とあるのは、「裁判長」と読み替えるものとする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        100
+      ],
+      "label": "第百条",
+      "short_label": "100条",
+      "anchor": "a100",
+      "caption": "再抗告審の裁判の通知等",
+      "deleted": false,
+      "section": "main",
+      "page": 21,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第六節　抗告"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判所は、次の各号のいずれかに該当する場合には、速やかに、その旨を指定入院医療機関の管理者に通知しなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "対象者が入院決定により入院している場合（次号に規定する場合を除く。）において、当該入院決定を法第七十一条第二項の規定により取り消したとき。",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "入院決定（執行されたものに限る。）を法第六十八条第二項の規定により取り消す決定（以下この号において「入院取消決定」という。）があった場合において、次のイからニまでのいずれかに該当するとき。",
+              "children": [
+                {
+                  "marker": "イ",
+                  "kind": "iroha",
+                  "text": "法第七十一条第二項の規定により入院取消決定を取り消したとき。",
+                  "children": []
+                },
+                {
+                  "marker": "ロ",
+                  "kind": "iroha",
+                  "text": "法第七十条第二項において準用する法第六十九条ただし書の規定により入院取消決定の執行を停止したとき。",
+                  "children": []
+                },
+                {
+                  "marker": "ハ",
+                  "kind": "iroha",
+                  "text": "法第七十条第二項において準用する法第六十九条ただし書の規定により入院取消決定の執行が停止されている場合において、法第七十一条第一項の決定があったとき。",
+                  "children": []
+                },
+                {
+                  "marker": "ニ",
+                  "kind": "iroha",
+                  "text": "ハに掲げる場合を除き、法第七十条第二項において準用する法第六十九条ただし書の規定により入院取消決定の執行が停止されている場合において、当該入院取消決定が確定したとき。",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        101
+      ],
+      "label": "第百一条",
+      "short_label": "101条",
+      "anchor": "a101",
+      "caption": "差戻し又は移送後の審判・法第七十一条",
+      "deleted": false,
+      "section": "main",
+      "page": 21,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第六節　抗告"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "第九十七条の規定は、法第七十一条第二項の規定により地方裁判所に差し戻し、又は他の地方裁判所に移送した事件について準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "節",
+      "label": "第七節",
+      "title": "雑則",
+      "anchor": "d109",
+      "level": 3,
+      "page": 21,
+      "note": ""
+    },
+    {
+      "number": [
+        102
+      ],
+      "label": "第百二条",
+      "short_label": "102条",
+      "anchor": "a102",
+      "caption": "申立ての取下げの方式等・法第七十四条",
+      "deleted": false,
+      "section": "main",
+      "page": 21,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第七節　雑則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第七十四条の規定による申立ての取下げは、書面を提出してしなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "裁判所は、法第三十三条第一項又は第五十九条第一項若しくは第二項の申立ての取下げがあったときは対象者及び付添人（付添人がない場合にあっては保護者）に対し、法第五十条の申立ての取下げがあったときは指定入院医療機関の管理者に対し、法第五十五条の申立ての取下げがあったときは保護観察所の長に対し、速やかに、その旨を通知しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        103
+      ],
+      "label": "第百三条",
+      "short_label": "103条",
+      "anchor": "a103",
+      "caption": "競合する処分の調整の手続・法第七十六条",
+      "deleted": false,
+      "section": "main",
+      "page": 21,
+      "division_path": [
+        "",
+        "第二章　審判",
+        "第七節　雑則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第七十六条の規定による決定に関する手続は、その性質に反しない限り、処遇事件の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "章",
+      "label": "第三章",
+      "title": "連戻状",
+      "anchor": "d112",
+      "level": 2,
+      "page": 21,
+      "note": ""
+    },
+    {
+      "number": [
+        104
+      ],
+      "label": "第百四条",
+      "short_label": "104条",
+      "anchor": "a104",
+      "caption": "連戻状の請求等・法第九十九条",
+      "deleted": false,
+      "section": "main",
+      "page": 21,
+      "division_path": [
+        "",
+        "第三章　連戻状"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第九十九条第六項の規定による連戻状の請求は、書面でしなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の書面には、次に掲げる事項を記載しなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "退去者の氏名、年齢及び住居又は現在地（住居及び現在地が明らかでないときは、その旨）",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "連れ戻すべき事由",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "連れ戻すべき指定入院医療機関の名称及び所在地",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "請求者の氏名",
+              "children": []
+            },
+            {
+              "marker": "五",
+              "kind": "go",
+              "text": "三十日を超える有効期間を必要とするときは、その旨及びその理由",
+              "children": []
+            },
+            {
+              "marker": "六",
+              "kind": "go",
+              "text": "連戻状を数通必要とするときは、その旨及びその理由",
+              "children": []
+            },
+            {
+              "marker": "七",
+              "kind": "go",
+              "text": "同一事由により退去者に対し前に連戻状の請求又はその発付があったときは、その旨",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "text": "第一項の請求をするには、連れ戻すべき事由があることを認めるに足りる資料を提供しなければならない。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "第一項の請求を受けた裁判官は、必要があると認めるときは、当該請求をした指定入院医療機関の管理者若しくはその指定入院医療機関の職員の出頭を求めてその陳述を聴き、又はこれらの者に対し書類その他の物の提示を求めることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        105
+      ],
+      "label": "第百五条",
+      "short_label": "105条",
+      "anchor": "a105",
+      "caption": "連戻状の記載要件等・法第九十九条",
+      "deleted": false,
+      "section": "main",
+      "page": 22,
+      "division_path": [
+        "",
+        "第三章　連戻状"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第九十九条第五項の連戻状には、次に掲げる事項を記載し、裁判官が記名押印する。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "退去者の氏名、年齢及び住居又は現在地（住居及び現在地が明らかでないときは、その旨）",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "連れ戻すべき事由",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "連れ戻すべき指定入院医療機関の名称及び所在地",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "請求者の氏名",
+              "children": []
+            },
+            {
+              "marker": "五",
+              "kind": "go",
+              "text": "有効期間",
+              "children": []
+            },
+            {
+              "marker": "六",
+              "kind": "go",
+              "text": "有効期間経過後は、連戻しに着手することができず、連戻状は返還しなければならない旨",
+              "children": []
+            },
+            {
+              "marker": "七",
+              "kind": "go",
+              "text": "発付の年月日",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "text": "前項の連戻状の有効期間は、発付の日から三十日とする。ただし、当該連戻状の請求を受けた裁判官は、相当と認めるときは、三十日を超える期間を定めることができる。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "第三十二条第二項の規定は第一項の連戻状について、同条第三項の規定は第一項の連戻状による連戻しについて、それぞれ準用する。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "裁判官は、前条第一項の請求を却下する場合には、同項の書面にその旨を記載し、記名押印した上、これを請求者に交付しなければならない。",
+          "items": []
+        },
+        {
+          "number": 5,
+          "text": "裁判官は、第一項の連戻状を発したときは、速やかに、前条第一項の書面を請求者に返還しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        106
+      ],
+      "label": "第百六条",
+      "short_label": "106条",
+      "anchor": "a106",
+      "caption": "準用・法第九十九条",
+      "deleted": false,
+      "section": "main",
+      "page": 22,
+      "division_path": [
+        "",
+        "第三章　連戻状"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "刑事訴訟規則第五十八条から第六十一条まで、第二百九十六条及び第二百九十八条第一項の規定は、法第九十九条第五項の連戻状に関する手続について準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "",
+      "anchor": "sup1",
+      "level": 1,
+      "page": 22,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "sup1-a1",
+      "caption": "施行期日",
+      "deleted": false,
+      "section": "supplementary",
+      "page": 22,
+      "division_path": [],
+      "sup_index": 1,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、法の施行の日から施行する。ただし、第二条、第三条、第五条、第十一条、第十二条及び第十四条の規定は、法第六条、第七条及び第十五条の規定の施行の日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        2
+      ],
+      "label": "第二条",
+      "short_label": "2条",
+      "anchor": "sup1-a2",
+      "caption": "裁判所の非常勤職員の政治的行為制限の特例に関する規則の一部改正",
+      "deleted": false,
+      "section": "supplementary",
+      "page": 23,
+      "division_path": [],
+      "sup_index": 1,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判所の非常勤職員の政治的行為制限の特例に関する規則（昭和二十七年最高裁判所規則第二十五号）の一部を次のように改正する。本則中第八号を第十号とし、第七号を第九号とし、第六号の次に次の二号を加える。七 精神保健審判員八 精神保健参与員",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        3
+      ],
+      "label": "第三条",
+      "short_label": "3条",
+      "anchor": "sup1-a3",
+      "caption": "政治資金規正法第二十二条の九第一項第二号の非常勤職員の範囲を定める規則の一部改正",
+      "deleted": false,
+      "section": "supplementary",
+      "page": 23,
+      "division_path": [],
+      "sup_index": 1,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "政治資金規正法第二十二条の九第一項第二号の非常勤職員の範囲を定める規則（平成四年最高裁判所規則第十三号）の一部を次のように改正する。本則中第七号を第九号とし、第六号を第八号とし、第五号の次に次の二号を加える。六 精神保健審判員七 精神保健参与員",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成二六年一月六日最高裁判所規則第一号）",
+      "anchor": "sup2",
+      "level": 1,
+      "page": 23,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-1",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 23,
+      "division_path": [],
+      "sup_index": 2,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、精神保健及び精神障害者福祉に関する法律の一部を改正する法律（平成二十五年法律第四十七号）の施行の日（平成二十六年四月一日）から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（令和七年二月十二日最高裁判所規則第三号）抄",
+      "anchor": "sup3",
+      "level": 1,
+      "page": 23,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "sup3-a1",
+      "caption": "施行期日",
+      "deleted": false,
+      "section": "supplementary",
+      "page": 23,
+      "division_path": [],
+      "sup_index": 3,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、刑法等の一部を改正する法律（令和四年法律第六十七号。次条において「刑法等一部改正法」という。）の施行の日（令和七年六月一日）から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（令和七年三月三日最高裁判所規則第五号）",
+      "anchor": "sup4",
+      "level": 1,
+      "page": 23,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-2",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 23,
+      "division_path": [],
+      "sup_index": 4,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、国家公務員等の旅費に関する法律の一部を改正する法律（令和六年法律第二十二号）の施行の日（令和七年四月一日）から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行前に支給原因となる事実が生じた旅費、日当及び宿泊料の額については、なお従前の例による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（令和七年十二月二十六日最高裁判所規則第十七号）",
+      "anchor": "sup5",
+      "level": 1,
+      "page": 23,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-3",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 23,
+      "division_path": [],
+      "sup_index": 5,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、情報通信技術の進展等に対応するための刑事訴訟法等の一部を改正する法律（令和七年法律第三十九号）附則第一条第三号に掲げる規定の施行の日（令和八年五月二十一日）から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    }
+  ]
+}

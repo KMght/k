@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>執行官規則</title>
+<style>
+:root{
+  --paper:#ffffff;
+  --ink:#16181d;
+  --sub:#5f6875;
+  --rule:#dde2e9;
+  --chrome:#f4f6f9;
+  --accent:#14538a;
+  --accent-weak:#e7eff7;
+  --mark:#ffe08a;
+  --mark-live:#ff9d3d;
+  --gothic:"Yu Gothic UI","Yu Gothic","YuGothic","Hiragino Sans","Noto Sans JP","Meiryo",system-ui,sans-serif;
+  --mincho:"Yu Mincho","YuMincho","Hiragino Mincho ProN","Noto Serif JP","MS Mincho",serif;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:5.5rem}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--mincho);font-size:17px;line-height:1.9;
+  text-rendering:optimizeLegibility;
+}
+
+/* ---------------------------------------------------------------- ヘッダ */
+.top{
+  position:sticky;top:0;z-index:30;background:var(--chrome);
+  border-bottom:1px solid var(--rule);font-family:var(--gothic);
+}
+.top-inner{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;padding:.7rem 1.2rem}
+.law-title{font-size:1.12rem;font-weight:700;letter-spacing:.02em;margin:0}
+.law-number{font-size:.8rem;color:var(--sub);margin-left:.2rem}
+.top-tools{margin-left:auto;display:flex;align-items:center;gap:.5rem}
+.search-box{display:flex;align-items:center;gap:.35rem;background:var(--paper);
+  border:1px solid var(--rule);border-radius:2px;padding:.25rem .5rem}
+.search-box input{border:0;outline:0;font:inherit;font-size:.85rem;width:14rem;background:transparent;color:inherit}
+.hit-count{font-size:.78rem;color:var(--sub);min-width:4.2rem;text-align:right;font-variant-numeric:tabular-nums}
+button{font:inherit;font-family:var(--gothic);cursor:pointer}
+.btn{background:var(--paper);border:1px solid var(--rule);border-radius:2px;
+  color:var(--ink);font-size:.78rem;padding:.28rem .6rem;line-height:1.4}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.crumb{padding:.3rem 1.2rem;border-top:1px solid var(--rule);background:var(--paper);
+  font-family:var(--gothic);font-size:.78rem;color:var(--sub);min-height:1.7rem}
+
+/* ------------------------------------------------------------------ 骨格 */
+.wrap{display:grid;grid-template-columns:19rem minmax(0,1fr);align-items:start}
+.toc{
+  position:sticky;top:5.6rem;max-height:calc(100vh - 5.6rem);overflow-y:auto;
+  border-right:1px solid var(--rule);padding:1rem .6rem 4rem 1.2rem;
+  font-family:var(--gothic);font-size:.83rem;line-height:1.65;
+}
+.toc h2{font-size:.75rem;color:var(--sub);font-weight:700;margin:0 0 .6rem}
+.toc ul{list-style:none;margin:0;padding:0}
+.toc a{display:block;color:var(--ink);text-decoration:none;padding:.16rem .4rem;border-radius:2px}
+.toc a:hover{background:var(--accent-weak);color:var(--accent)}
+.toc a.current{background:var(--accent-weak);color:var(--accent);font-weight:700}
+.toc .div-1>a,.toc .div-2>a{font-weight:700}
+.toc .div-2{margin-top:.5rem}
+.toc .div-3,.toc .div-4,.toc .div-5{margin-top:.25rem}
+.toc .lv-art{padding-left:.9rem}
+.toc .lv-art.hidden,.toc .lv-div.hidden{display:none}
+.toc-toggle{background:none;border:0;color:var(--sub);padding:0 .3rem;font-size:.75rem}
+
+.doc{padding:2.2rem 2rem 8rem;max-width:44em}
+.doc-head{border-bottom:2px solid var(--ink);padding-bottom:.8rem;margin-bottom:2rem}
+.doc-head h1{font-size:1.5rem;margin:0 0 .3rem;letter-spacing:.04em}
+.doc-head .meta{font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+
+/* ------------------------------------------------------------------ 条文 */
+.div-head{font-family:var(--gothic);margin:2.6rem 0 1rem;scroll-margin-top:6rem}
+.div-head .lbl{color:var(--accent);font-weight:700}
+h2.div-head{font-size:1.12rem;border-bottom:1px solid var(--rule);padding-bottom:.35rem}
+h3.div-head{font-size:1.02rem}
+h4.div-head,h5.div-head,h6.div-head{font-size:.95rem}
+
+.art{position:relative;padding-left:2.6rem;margin:1.5rem 0 1.9rem;scroll-margin-top:6rem}
+.art:target{background:var(--accent-weak);box-shadow:-.4rem 0 0 var(--accent);border-radius:2px}
+.art-tools{position:absolute;left:0;top:.25rem;display:flex;flex-direction:column;gap:.2rem;
+  visibility:hidden}
+.art:hover .art-tools,.art:focus-within .art-tools,.art:target .art-tools{visibility:visible}
+.art-tools button,.art-tools a{background:none;border:0;color:var(--sub);font-size:.72rem;
+  font-family:var(--gothic);padding:.1rem .2rem;border-radius:2px;text-decoration:none;
+  white-space:nowrap;display:block}
+.art-tools button:hover,.art-tools a:hover{color:var(--accent);background:var(--accent-weak)}
+.raw h3 .src{font-size:.75rem;font-weight:400;color:var(--sub);margin-left:.5rem}
+.doc-head .src{color:var(--accent);text-decoration:none}
+.doc-head .src:hover{text-decoration:underline}
+.caption{font-family:var(--gothic);font-size:.88rem;font-weight:700;color:var(--sub);margin:0 0 .1rem}
+.amend-note{font-family:var(--gothic);font-size:.78rem;font-weight:400;color:var(--sub);margin:.1rem 0 0;text-align:right}
+h2 .amend-note,h3 .amend-note,h4 .amend-note,h5 .amend-note,h6 .amend-note{display:inline;text-align:left}
+.art-no{font-family:var(--gothic);font-weight:700;color:var(--accent);text-decoration:none;margin-right:.55em}
+.art-no:hover{text-decoration:underline}
+.para{margin:.35rem 0;text-indent:0}
+.para+.para{margin-top:.55rem}
+.pno{font-family:var(--gothic);color:var(--sub);font-size:.9em;margin-right:.5em;font-variant-numeric:tabular-nums}
+.deleted .body-text{color:var(--sub)}
+.art.noarticle .para{margin-top:0}
+
+ol.items{list-style:none;margin:.35rem 0 .35rem 1.1em;padding:0}
+ol.items>li{display:grid;grid-template-columns:2.4em minmax(0,1fr);margin:.2rem 0}
+ol.items .mk{font-family:var(--gothic);font-size:.9em;color:var(--sub);margin-right:.4em}
+ol.items ol.items{grid-column:1/-1;margin-left:1.2em}
+ol.items ol.items>li{grid-template-columns:2em minmax(0,1fr)}
+
+.raw{margin:1.6rem 0;scroll-margin-top:6rem}
+.raw h3{font-family:var(--gothic);font-size:1rem;margin:0 0 .4rem}
+.raw pre{font-family:var(--mincho);white-space:pre-wrap;margin:0;padding:.7rem .9rem;
+  background:var(--chrome);border:1px solid var(--rule);font-size:.92rem;line-height:1.75}
+
+.notes{margin:2.5rem 0 0;padding:.8rem 1rem;background:var(--chrome);
+  border-left:3px solid var(--accent);font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+.notes p{margin:0 0 .3rem;font-weight:700;color:var(--ink)}
+.notes ul{margin:0;padding-left:1.2rem}
+.foot{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);
+  font-family:var(--gothic);font-size:.75rem;color:var(--sub)}
+
+a.ref{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule)}
+a.ref:hover{color:var(--accent);border-bottom-color:var(--accent)}
+a.ref-egov{border-bottom-style:dotted}
+a.ref-rule{border-bottom-color:var(--accent)}
+mark{background:var(--mark);color:inherit;padding:0 .05em}
+mark.live{background:var(--mark-live)}
+.toast{position:fixed;left:50%;bottom:2rem;transform:translateX(-50%);
+  background:var(--ink);color:#fff;font-family:var(--gothic);font-size:.8rem;
+  padding:.5rem .9rem;border-radius:3px;pointer-events:none;z-index:60;display:none}
+.toast.show{display:block}
+
+.toc-open{display:none}
+@media (max-width:900px){
+  body{font-size:16px}
+  .wrap{grid-template-columns:minmax(0,1fr)}
+  .toc{position:fixed;inset:5.6rem auto 0 0;width:82vw;max-width:20rem;background:var(--paper);
+    z-index:25;box-shadow:0 0 0 100vmax rgba(0,0,0,.25);max-height:none;height:calc(100vh - 5.6rem);
+    display:none}
+  .toc.open{display:block}
+  .toc-open{display:inline-block}
+  .doc{padding:1.4rem 1.1rem 6rem}
+  .search-box input{width:8rem}
+  .art-tools{opacity:1;position:static;flex-direction:row;justify-content:flex-end;margin-bottom:.15rem}
+  .art-tools button,.art-tools a{border:1px solid var(--rule);border-radius:2px;
+    padding:.1rem .45rem;display:inline-block}
+  .art{padding-left:0}
+}
+
+@media print{
+  .top,.toc,.art-tools,.crumb,.toast{display:none!important}
+  a.ref{border-bottom:0}
+  .wrap{display:block}
+  .doc{max-width:none;padding:0}
+  body{font-size:10.5pt;line-height:1.7}
+  .art{page-break-inside:avoid}
+}
+
+.anchor-alias{position:absolute;scroll-margin-top:6rem}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <button type="button" class="btn toc-open" id="toc-open">目次</button>
+    <h1 class="law-title">執行官規則</h1>
+    <span class="law-number">昭和41年11月8日最高裁判所規則第10号　／　平成19年4月1日施行</span>
+    <div class="top-tools">
+      <div class="search-box">
+        <input type="search" id="q" placeholder="条文を検索（/ キー）" aria-label="条文を検索">
+        <span class="hit-count" id="hits"></span>
+      </div>
+      <button type="button" class="btn" id="prev" title="前の該当箇所">前</button>
+      <button type="button" class="btn" id="next" title="次の該当箇所">次</button>
+      <button type="button" class="btn" id="numeral" aria-pressed="false"
+        title="条番号の表記を切り替える">123</button>
+    </div>
+  </div>
+  <div class="crumb" id="crumb"></div>
+</header>
+<div class="wrap">
+  <nav class="toc" id="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ul><li class="lv-art" data-text="改正 昭和55 年5 月6 日最高裁判所規則第３号昭和60 年12 月21 日最高裁判所規則第６号平成2 年5 月16 日最高裁判所規則第３号平成6 年9 月1 日最高裁判所規則第８号平成8 年12 月17 日最高裁判所規則第６号平成11 年9 月16 日最高裁判所規則第６号平成13 年12 月28 日最高裁判所規則第１０号平成19 年3 月31 日最高裁判所規則第４号執行官規則を次のように定める。執行官規則"><a href="#body-1">本文</a></li><li class="lv-art" data-text="第一条1条任命任命執行官は、多年法律に関する実務を経験したものとして最高裁判所が定める基準に該当する者のうちから、筆記及び面接の試験により、執行官として必要な法律知識及び資質を有する者を選考して、任命するものとする。裁判所書記官であつた者又は裁判に関する事務を行うために必要とされる国家試験に合格した者については、前項の筆記の試験の全部又は一部を免除することができる。"><a href="#a1">第一条　任命</a></li><li class="lv-art" data-text="第二条2条試験試験前条第一項の試験は、最高裁判所の定めるところにより、地方裁判所が行う。"><a href="#a2">第二条　試験</a></li><li class="lv-art" data-text="第三条3条研修研修地方裁判所は、執行官を任命したときは、最高裁判所の定めるところにより、研修を受けさせるものとする。"><a href="#a3">第三条　研修</a></li><li class="lv-art" data-text="第四条4条監督官、監督補佐官監督官、監督補佐官地方裁判所は、その裁判所の裁判官会議を組織する裁判官のうちから、執行官の監督に関する事務を行なう裁判官（以下「監督官」という。）を指名しなければならない。地方裁判所は、所属の裁判所職員のうちから、監督官を補佐する者（以下「監督補佐官」という。）を指名することができる。"><a href="#a4">第四条　監督官、監督補佐官</a></li><li class="lv-art" data-text="第五条5条監督に関する事務監督に関する事務監督官は、地方裁判所の定めるところにより、執行官の監督に関する事務を掌り、監督補佐官は、監督官の事務を補助する。監督官は、次の各号に掲げる事項を、自ら行ない、又は監督補佐官に命じて行なわせることができる。一執行官の記録、帳簿著しくはその保管にかかる金品について調査し、又はその調査のためこれらの物件を提出させること。二執行官が職務を執行する現場に臨み、その職務の執行を監察すること。三執行官に対し、一定の事項を指定して報告をさせること。四執行官に対し、事務の取扱い又は行状について注意を与えること。"><a href="#a5">第五条　監督に関する事務</a></li><li class="lv-art" data-text="第五条の二5条の2総括執行官総括執行官地方裁判所に総括執行官一人を置く。総括執行官は、当該地方裁判所の執行官で最高裁判所の定める基準に該当するものの中から、当該地方裁判所が命ずる。総括執行官は、当該地方裁判所の執行官の一般執務について指導監督する。"><a href="#a5-2">第五条の二　総括執行官</a></li><li class="lv-art" data-text="第六条6条執行官の職務を行なう裁判所書記官執行官の職務を行なう裁判所書記官地方裁判所は、あらかじめ、事務の種類を限定し又は限定しないで、執行官の職務を行なう裁判所書記官を指定することができる。地方裁判所は、緊急の必要があるときは、一定の事務について、裁判所書記官に執行官の職務を行なわせることができる。"><a href="#a6">第六条　執行官の職務を行なう裁判所書記官</a></li><li class="lv-div div-2"><a href="#d8">第二章　事務処理の準則（昭五五最裁規三・追加）</a><ul><li class="lv-art" data-text="第七条7条申立ての方式申立ての方式執行官に対する申立ては、申立人及び代理人の表示並びに申し立てる事項の内客を記載した書面でしなければならない。代理人によつて申立てをする場合には、申立書に代理権を証する書面を添付しなければならない。"><a href="#a7">第七条　申立ての方式</a></li><li class="lv-art" data-text="第八条8条申立ての却下申立ての却下執行官は、申立てを却下するときは、申立人に対し、その旨及びその理由を通知しなければならない。"><a href="#a8">第八条　申立ての却下</a></li><li class="lv-art" data-text="第九条9条事務処理の順序事務処理の順序執行官は、特別の事情がある場合を除き、受理の順序に従つて事務を処理しなければならない。"><a href="#a9">第九条　事務処理の順序</a></li><li class="lv-art" data-text="第十条10条執務時間外の職務執行執務時間外の職務執行執行官は、事件が急を要するものであるときその他特に必要があるときは、執務時間外であつても、職務を執行しなければならない。"><a href="#a10">第十条　執務時間外の職務執行</a></li><li class="lv-art" data-text="第十一条11条身分証明書の携帯身分証明書の携帯執行官は、職務を執行する場合には、その身分を証する文書を携帯し、利害関係を有する者の請求があつたときは、これを提示しなければならない。"><a href="#a11">第十一条　身分証明書の携帯</a></li><li class="lv-art" data-text="第十二条12条技術者又は労務者の使用技術者又は労務者の使用執行官は、民事執行法（昭利五十四年法律第四号）、民事保全法（平成元年法律第九十一号）その他の法令において執行官が取り扱うべきものとされている事務を行うについて必要があるときは、技術者又は労務者を使用することができる。"><a href="#a12">第十二条　技術者又は労務者の使用</a></li><li class="lv-art" data-text="第十三条13条援助の許可の申出援助の許可の申出執行官は、執行官法（昭和四十一年法律第百十一号）第十九条第一項の許可の申出をするときは、援助を求める事務の内容及び援助を必要とする理由を明らかにしなければならない。事件が急を要するため、あらかじめ前項の許可の申出をすることができないときは、執行官は、援助を求めた後、速やかに、同項の許可の申出をしなければならない。"><a href="#a13">第十三条　援助の許可の申出</a></li><li class="lv-art" data-text="第十四条14条受取証の交付等受取証の交付等執行官は、職務上当事者その他の者から金銭その他の物品を受け取つたときは、受取証を交付し、かつ、受け取つた金銭の額又は物品の種類及び数量並びに年月日を記録上明らかにしなければならない。"><a href="#a14">第十四条　受取証の交付等</a></li><li class="lv-art" data-text="第十五条15条金銭の保管金銭の保管債権者に配当の協議をさせるとき、職務の執行を一時停止すべきときその他執行官が職務の執行として差し押さえ、又は交付を受けた金銭を直ちに引き渡すことのできない事由があるときは、執行官は、その保管のため、これを所属の地方裁判所に提出しなければならない。"><a href="#a15">第十五条　金銭の保管</a></li><li class="lv-art" data-text="第十六条16条援助調書援助調書執行官は、執行官以外の者の求めにより援助をしたときは、援助調書を作成しなければならない。"><a href="#a16">第十六条　援助調書</a></li><li class="lv-art" data-text="第十七条17条調書の記載事項調書の記載事項執行官が作成すべき調書には、事件の表示、職務を執行した日時及び場所、執行した職務の内容並びに調書の作成の年月日を記載し、執行官が記名押印しなければならない。"><a href="#a17">第十七条　調書の記載事項</a></li><li class="lv-art" data-text="第十八条18条予納等予納等執行官法第十五条第一項の規定による手数料及び職務の執行に要する費用の概算額の予納は、申立てを受けた後、速やかにさせなければならない。事務を開始した後予納金が不足するときは、執行官は、更に予納させることができる。執行官は、予納がされるまでは、申立てに係る事務を行わないことができる。"><a href="#a18">第十八条　予納等</a></li><li class="lv-art" data-text="第十九条19条予納金の精算予納金の精算申立てに係る事務が終了したときは、執行官は、速やかに、予納金の精算をしなければならない。この場合において、予納者の請求があるときは、精算の内容を明らかにした書面を交付しなければならない。"><a href="#a19">第十九条　予納金の精算</a></li><li class="lv-art" data-text="第二十条20条記録及び帳簿記録及び帳簿執行官の事務に関する記録及び帳簿の作成及び保管については、最高裁判所が別に定める。"><a href="#a20">第二十条　記録及び帳簿</a></li><li class="lv-art" data-text="第二十一条21条謄本等の記載事項謄本等の記載事項執行官が職務上作成する書類の謄本著しくは抄本又は執行官が取り扱つた事務に関する証明書には、作成の年月日を記載し、執行官が記名押印しなければならない。"><a href="#a21">第二十一条　謄本等の記載事項</a></li></ul></li><li class="lv-div div-1"><a href="#sup1">附則</a><ul><li class="lv-art" data-text="第一条1条昭五五最裁規三・追加昭五五最裁規三・追加この規則は、執行官法（昭和四十一年法律第百十一号）の施行の日から施行する。（施行の日＝昭和四一年一二月三一日）"><a href="#sup1-a1">第一条　昭五五最裁規三・追加</a></li><li class="lv-art" data-text="第二条2条執行吏任命規則（昭和二十三年最高裁判所規則第八号）及び執行吏事務処理規則（昭和二十八年最高裁判所規則第二十三号）は、廃止する。"><a href="#sup1-a2">第二条</a></li><li class="lv-art" data-text="第三条3条旧執行吏任命規則第五条の規定により執行吏の職務の修習の許可を受けた者は、第一条及び第二条の規定にかかわらず、旧執行吏任命規則の例によつて執行官に任命することができる。"><a href="#sup1-a3">第三条</a></li><li class="lv-art" data-text="第四条4条執行官法附則第九条第一項の規定による告知書又は催告書の送付は、これを受領すべき者に交付して行う。２執行官は、告知書又は催告書の送付をしたときは、送付に関する事項を記載した書面を作成し、これを申立人に交付しなければならない。３民事訴訟法（平成八年法律第百九号）第百三条、第百五条及び第百六条並びに民事訴訟規則（平成八年最高裁判所規則第五号）第四十三条の規定は、第一項に規定する交付について準用する。"><a href="#sup1-a4">第四条</a></li></ul></li><li class="lv-div div-1"><a href="#sup2">附則　（昭和五五年五月六日最高裁判所規則第三号）抄</a></li><li class="lv-div div-1"><a href="#sup3">附則　（昭和六〇年一二月二一日最高裁判所規則第六号）抄</a></li><li class="lv-div div-1"><a href="#sup4">附則　（平成二年五月一六日最高裁判所規則第三号）抄</a><ul><li class="lv-art" data-text="第一条1条施行期日施行期日この規則は、法の施行の日から施行する。"><a href="#sup4-a1">第一条　施行期日</a></li></ul></li><li class="lv-div div-1"><a href="#sup5">附則　（平成六年九月一日最高裁判所規則第八号）</a></li><li class="lv-div div-1"><a href="#sup6">附則　（平成八年一二月一七日最高裁判所規則第六号）抄</a><ul><li class="lv-art" data-text="第一条1条施行期日施行期日この規則は、民事訴訟法（平成八年法律第百九号。以下「新法」という。）の施行の日から施行する。"><a href="#sup6-a1">第一条　施行期日</a></li></ul></li><li class="lv-div div-1"><a href="#sup7">附則　（平成一一年九月一六日最高裁判所規則第六号）</a></li><li class="lv-div div-1"><a href="#sup8">附則　（平成一三年一二月二八日最高裁判所規則第十号）</a></li><li class="lv-div div-1"><a href="#sup9">附則　（平成一九年三月三一日最高裁判所規則第四号）</a></li></ul>
+  </nav>
+  <main class="doc" id="doc-outer">
+    <div class="doc-head">
+      <h1>執行官規則</h1>
+      <div class="meta">昭和41年11月8日最高裁判所規則第10号　／　平成19年4月1日施行　／　<a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本PDF p.1</a></div>
+    </div>
+    <div id="doc">
+<article class="art noarticle" id="body-1" data-path=""><div class="art-tools"><button type="button" data-anchor="body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="body-1-p1"><span class="body-text">改正 昭和55 年5 月6 日最高裁判所規則第３号昭和60 年12 月21 日最高裁判所規則第６号平成2 年5 月16 日最高裁判所規則第３号平成6 年9 月1 日最高裁判所規則第８号平成8 年12 月17 日最高裁判所規則第６号平成11 年9 月16 日最高裁判所規則第６号平成13 年12 月28 日最高裁判所規則第１０号平成19 年3 月31 日最高裁判所規則第４号執行官規則を次のように定める。執行官規則</span></p></article>
+<article class="art" id="a1" data-path=""><span class="anchor-alias" id="Mp-At_1"></span><div class="art-tools"><button type="button" data-anchor="a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（任命）</p><p class="para" id="a1-p1"><a class="art-no" href="#a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">執行官は、多年法律に関する実務を経験したものとして最高裁判所が定める基準に該当する者のうちから、筆記及び面接の試験により、執行官として必要な法律知識及び資質を有する者を選考して、任命するものとする。</span></p><p class="para" id="a1-p2"><span class="pno">2</span><span class="body-text">裁判所書記官であつた者又は裁判に関する事務を行うために必要とされる国家試験に合格した者については、前項の筆記の試験の全部又は一部を免除することができる。</span></p></article>
+<article class="art" id="a2" data-path=""><span class="anchor-alias" id="Mp-At_2"></span><div class="art-tools"><button type="button" data-anchor="a2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（試験）</p><p class="para" id="a2-p1"><a class="art-no" href="#a2" data-kan="第二条" data-num="第2条">第二条</a><span class="body-text">前条第一項の試験は、最高裁判所の定めるところにより、地方裁判所が行う。</span></p></article>
+<article class="art" id="a3" data-path=""><span class="anchor-alias" id="Mp-At_3"></span><div class="art-tools"><button type="button" data-anchor="a3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（研修）</p><p class="para" id="a3-p1"><a class="art-no" href="#a3" data-kan="第三条" data-num="第3条">第三条</a><span class="body-text">地方裁判所は、執行官を任命したときは、最高裁判所の定めるところにより、研修を受けさせるものとする。</span></p></article>
+<article class="art" id="a4" data-path=""><span class="anchor-alias" id="Mp-At_4"></span><div class="art-tools"><button type="button" data-anchor="a4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（監督官、監督補佐官）</p><p class="para" id="a4-p1"><a class="art-no" href="#a4" data-kan="第四条" data-num="第4条">第四条</a><span class="body-text">地方裁判所は、その裁判所の裁判官会議を組織する裁判官のうちから、執行官の監督に関する事務を行なう裁判官（以下「監督官」という。）を指名しなければならない。</span></p><p class="para" id="a4-p2"><span class="pno">2</span><span class="body-text">地方裁判所は、所属の裁判所職員のうちから、監督官を補佐する者（以下「監督補佐官」という。）を指名することができる。</span></p></article>
+<article class="art" id="a5" data-path=""><span class="anchor-alias" id="Mp-At_5"></span><div class="art-tools"><button type="button" data-anchor="a5" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（監督に関する事務）</p><p class="para" id="a5-p1"><a class="art-no" href="#a5" data-kan="第五条" data-num="第5条">第五条</a><span class="body-text">監督官は、地方裁判所の定めるところにより、執行官の監督に関する事務を掌り、監督補佐官は、監督官の事務を補助する。</span></p><p class="para" id="a5-p2"><span class="pno">2</span><span class="body-text">監督官は、次の各号に掲げる事項を、自ら行ない、又は監督補佐官に命じて行なわせることができる。</span></p><ol class="items"><li id="a5-p2-1"><span class="mk">一</span><span class="tx">執行官の記録、帳簿著しくはその保管にかかる金品について調査し、又はその調査のためこれらの物件を提出させること。</span></li><li id="a5-p2-2"><span class="mk">二</span><span class="tx">執行官が職務を執行する現場に臨み、その職務の執行を監察すること。</span></li><li id="a5-p2-3"><span class="mk">三</span><span class="tx">執行官に対し、一定の事項を指定して報告をさせること。</span></li><li id="a5-p2-4"><span class="mk">四</span><span class="tx">執行官に対し、事務の取扱い又は行状について注意を与えること。</span></li></ol></article>
+<article class="art" id="a5-2" data-path=""><span class="anchor-alias" id="Mp-At_5_2"></span><div class="art-tools"><button type="button" data-anchor="a5-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（総括執行官）</p><p class="para" id="a5-2-p1"><a class="art-no" href="#a5-2" data-kan="第五条の二" data-num="第5条の2">第五条の二</a><span class="body-text">地方裁判所に総括執行官一人を置く。</span></p><p class="para" id="a5-2-p2"><span class="pno">2</span><span class="body-text">総括執行官は、当該地方裁判所の執行官で最高裁判所の定める基準に該当するものの中から、当該地方裁判所が命ずる。</span></p><p class="para" id="a5-2-p3"><span class="pno">3</span><span class="body-text">総括執行官は、当該地方裁判所の執行官の一般執務について指導監督する。</span></p></article>
+<article class="art" id="a6" data-path=""><span class="anchor-alias" id="Mp-At_6"></span><div class="art-tools"><button type="button" data-anchor="a6" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（執行官の職務を行なう裁判所書記官）</p><p class="para" id="a6-p1"><a class="art-no" href="#a6" data-kan="第六条" data-num="第6条">第六条</a><span class="body-text">地方裁判所は、あらかじめ、事務の種類を限定し又は限定しないで、執行官の職務を行なう裁判所書記官を指定することができる。</span></p><p class="para" id="a6-p2"><span class="pno">2</span><span class="body-text">地方裁判所は、緊急の必要があるときは、一定の事務について、裁判所書記官に執行官の職務を行なわせることができる。</span></p></article>
+<h3 class="div-head" id="d8" data-path="第二章　事務処理の準則（昭五五最裁規三・追加）"><span class="lbl">第二章</span>　事務処理の準則（昭五五最裁規三・追加）</h3>
+<article class="art" id="a7" data-path="第二章　事務処理の準則（昭五五最裁規三・追加）"><span class="anchor-alias" id="Mp-At_7"></span><div class="art-tools"><button type="button" data-anchor="a7" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（申立ての方式）</p><p class="para" id="a7-p1"><a class="art-no" href="#a7" data-kan="第七条" data-num="第7条">第七条</a><span class="body-text">執行官に対する申立ては、申立人及び代理人の表示並びに申し立てる事項の内客を記載した書面でしなければならない。</span></p><p class="para" id="a7-p2"><span class="pno">2</span><span class="body-text">代理人によつて申立てをする場合には、申立書に代理権を証する書面を添付しなければならない。</span></p></article>
+<article class="art" id="a8" data-path="第二章　事務処理の準則（昭五五最裁規三・追加）"><span class="anchor-alias" id="Mp-At_8"></span><div class="art-tools"><button type="button" data-anchor="a8" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（申立ての却下）</p><p class="para" id="a8-p1"><a class="art-no" href="#a8" data-kan="第八条" data-num="第8条">第八条</a><span class="body-text">執行官は、申立てを却下するときは、申立人に対し、その旨及びその理由を通知しなければならない。</span></p></article>
+<article class="art" id="a9" data-path="第二章　事務処理の準則（昭五五最裁規三・追加）"><span class="anchor-alias" id="Mp-At_9"></span><div class="art-tools"><button type="button" data-anchor="a9" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（事務処理の順序）</p><p class="para" id="a9-p1"><a class="art-no" href="#a9" data-kan="第九条" data-num="第9条">第九条</a><span class="body-text">執行官は、特別の事情がある場合を除き、受理の順序に従つて事務を処理しなければならない。</span></p></article>
+<article class="art" id="a10" data-path="第二章　事務処理の準則（昭五五最裁規三・追加）"><span class="anchor-alias" id="Mp-At_10"></span><div class="art-tools"><button type="button" data-anchor="a10" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（執務時間外の職務執行）</p><p class="para" id="a10-p1"><a class="art-no" href="#a10" data-kan="第十条" data-num="第10条">第十条</a><span class="body-text">執行官は、事件が急を要するものであるときその他特に必要があるときは、執務時間外であつても、職務を執行しなければならない。</span></p></article>
+<article class="art" id="a11" data-path="第二章　事務処理の準則（昭五五最裁規三・追加）"><span class="anchor-alias" id="Mp-At_11"></span><div class="art-tools"><button type="button" data-anchor="a11" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（身分証明書の携帯）</p><p class="para" id="a11-p1"><a class="art-no" href="#a11" data-kan="第十一条" data-num="第11条">第十一条</a><span class="body-text">執行官は、職務を執行する場合には、その身分を証する文書を携帯し、利害関係を有する者の請求があつたときは、これを提示しなければならない。</span></p></article>
+<article class="art" id="a12" data-path="第二章　事務処理の準則（昭五五最裁規三・追加）"><span class="anchor-alias" id="Mp-At_12"></span><div class="art-tools"><button type="button" data-anchor="a12" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（技術者又は労務者の使用）</p><p class="para" id="a12-p1"><a class="art-no" href="#a12" data-kan="第十二条" data-num="第12条">第十二条</a><span class="body-text">執行官は、民事執行法（昭利五十四年法律第四号）、民事保全法（平成元年法律第九十一号）その他の法令において執行官が取り扱うべきものとされている事務を行うについて必要があるときは、技術者又は労務者を使用することができる。</span></p></article>
+<article class="art" id="a13" data-path="第二章　事務処理の準則（昭五五最裁規三・追加）"><span class="anchor-alias" id="Mp-At_13"></span><div class="art-tools"><button type="button" data-anchor="a13" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（援助の許可の申出）</p><p class="para" id="a13-p1"><a class="art-no" href="#a13" data-kan="第十三条" data-num="第13条">第十三条</a><span class="body-text">執行官は、執行官法（昭和四十一年法律第百十一号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/341AC0000000111#Mp-At_19" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第十九条</a>第一項の許可の申出をするときは、援助を求める事務の内容及び援助を必要とする理由を明らかにしなければならない。</span></p><p class="para" id="a13-p2"><span class="pno">2</span><span class="body-text">事件が急を要するため、あらかじめ前項の許可の申出をすることができないときは、執行官は、援助を求めた後、速やかに、同項の許可の申出をしなければならない。</span></p></article>
+<article class="art" id="a14" data-path="第二章　事務処理の準則（昭五五最裁規三・追加）"><span class="anchor-alias" id="Mp-At_14"></span><div class="art-tools"><button type="button" data-anchor="a14" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（受取証の交付等）</p><p class="para" id="a14-p1"><a class="art-no" href="#a14" data-kan="第十四条" data-num="第14条">第十四条</a><span class="body-text">執行官は、職務上当事者その他の者から金銭その他の物品を受け取つたときは、受取証を交付し、かつ、受け取つた金銭の額又は物品の種類及び数量並びに年月日を記録上明らかにしなければならない。</span></p></article>
+<article class="art" id="a15" data-path="第二章　事務処理の準則（昭五五最裁規三・追加）"><span class="anchor-alias" id="Mp-At_15"></span><div class="art-tools"><button type="button" data-anchor="a15" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（金銭の保管）</p><p class="para" id="a15-p1"><a class="art-no" href="#a15" data-kan="第十五条" data-num="第15条">第十五条</a><span class="body-text">債権者に配当の協議をさせるとき、職務の執行を一時停止すべきときその他執行官が職務の執行として差し押さえ、又は交付を受けた金銭を直ちに引き渡すことのできない事由があるときは、執行官は、その保管のため、これを所属の地方裁判所に提出しなければならない。</span></p></article>
+<article class="art" id="a16" data-path="第二章　事務処理の準則（昭五五最裁規三・追加）"><span class="anchor-alias" id="Mp-At_16"></span><div class="art-tools"><button type="button" data-anchor="a16" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（援助調書）</p><p class="para" id="a16-p1"><a class="art-no" href="#a16" data-kan="第十六条" data-num="第16条">第十六条</a><span class="body-text">執行官は、執行官以外の者の求めにより援助をしたときは、援助調書を作成しなければならない。</span></p></article>
+<article class="art" id="a17" data-path="第二章　事務処理の準則（昭五五最裁規三・追加）"><span class="anchor-alias" id="Mp-At_17"></span><div class="art-tools"><button type="button" data-anchor="a17" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（調書の記載事項）</p><p class="para" id="a17-p1"><a class="art-no" href="#a17" data-kan="第十七条" data-num="第17条">第十七条</a><span class="body-text">執行官が作成すべき調書には、事件の表示、職務を執行した日時及び場所、執行した職務の内容並びに調書の作成の年月日を記載し、執行官が記名押印しなければならない。</span></p></article>
+<article class="art" id="a18" data-path="第二章　事務処理の準則（昭五五最裁規三・追加）"><span class="anchor-alias" id="Mp-At_18"></span><div class="art-tools"><button type="button" data-anchor="a18" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（予納等）</p><p class="para" id="a18-p1"><a class="art-no" href="#a18" data-kan="第十八条" data-num="第18条">第十八条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/341AC0000000111#Mp-At_15" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">執行官法第十五条</a>第一項の規定による手数料及び職務の執行に要する費用の概算額の予納は、申立てを受けた後、速やかにさせなければならない。</span></p><p class="para" id="a18-p2"><span class="pno">2</span><span class="body-text">事務を開始した後予納金が不足するときは、執行官は、更に予納させることができる。</span></p><p class="para" id="a18-p3"><span class="pno">3</span><span class="body-text">執行官は、予納がされるまでは、申立てに係る事務を行わないことができる。</span></p></article>
+<article class="art" id="a19" data-path="第二章　事務処理の準則（昭五五最裁規三・追加）"><span class="anchor-alias" id="Mp-At_19"></span><div class="art-tools"><button type="button" data-anchor="a19" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（予納金の精算）</p><p class="para" id="a19-p1"><a class="art-no" href="#a19" data-kan="第十九条" data-num="第19条">第十九条</a><span class="body-text">申立てに係る事務が終了したときは、執行官は、速やかに、予納金の精算をしなければならない。この場合において、予納者の請求があるときは、精算の内容を明らかにした書面を交付しなければならない。</span></p></article>
+<article class="art" id="a20" data-path="第二章　事務処理の準則（昭五五最裁規三・追加）"><span class="anchor-alias" id="Mp-At_20"></span><div class="art-tools"><button type="button" data-anchor="a20" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（記録及び帳簿）</p><p class="para" id="a20-p1"><a class="art-no" href="#a20" data-kan="第二十条" data-num="第20条">第二十条</a><span class="body-text">執行官の事務に関する記録及び帳簿の作成及び保管については、最高裁判所が別に定める。</span></p></article>
+<article class="art" id="a21" data-path="第二章　事務処理の準則（昭五五最裁規三・追加）"><span class="anchor-alias" id="Mp-At_21"></span><div class="art-tools"><button type="button" data-anchor="a21" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（謄本等の記載事項）</p><p class="para" id="a21-p1"><a class="art-no" href="#a21" data-kan="第二十一条" data-num="第21条">第二十一条</a><span class="body-text">執行官が職務上作成する書類の謄本著しくは抄本又は執行官が取り扱つた事務に関する証明書には、作成の年月日を記載し、執行官が記名押印しなければならない。</span></p></article>
+<h2 class="div-head" id="sup1" data-path="附則　"><span class="lbl">附則</span></h2>
+<article class="art" id="sup1-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup1-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（昭五五最裁規三・追加）</p><p class="para" id="sup1-a1-p1"><a class="art-no" href="#sup1-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、執行官法（昭和四十一年法律第百十一号）の施行の日から施行する。（施行の日＝昭和四一年一二月三一日）</span></p></article>
+<article class="art" id="sup1-a2" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup1-a2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="para" id="sup1-a2-p1"><a class="art-no" href="#sup1-a2" data-kan="第二条" data-num="第2条">第二条</a><span class="body-text">執行吏任命規則（昭和二十三年最高裁判所規則第八号）及び執行吏事務処理規則（昭和二十八年最高裁判所規則第二十三号）は、廃止する。</span></p></article>
+<article class="art" id="sup1-a3" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup1-a3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="para" id="sup1-a3-p1"><a class="art-no" href="#sup1-a3" data-kan="第三条" data-num="第3条">第三条</a><span class="body-text">旧執行吏任命規則第五条の規定により執行吏の職務の修習の許可を受けた者は、<a class="ref ref-self" href="#a1">第一条</a>及び<a class="ref ref-self" href="#a2">第二条</a>の規定にかかわらず、旧執行吏任命規則の例によつて執行官に任命することができる。</span></p><p class="amend-note">（昭五五最裁規三・旧第四条繰上）</p></article>
+<article class="art" id="sup1-a4" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup1-a4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="para" id="sup1-a4-p1"><a class="art-no" href="#sup1-a4" data-kan="第四条" data-num="第4条">第四条</a><span class="body-text">執行官法附則<a class="ref ref-self" href="#a9">第九条</a>第一項の規定による告知書又は催告書の送付は、これを受領すべき者に交付して行う。２執行官は、告知書又は催告書の送付をしたときは、送付に関する事項を記載した書面を作成し、これを申立人に交付しなければならない。３民事訴訟法（平成八年法律第百九号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000109#Mp-At_103" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第百三条</a>、第百五条及び第百六条並びに民事訴訟規則（平成八年最高裁判所規則第五号）<a class="ref ref-rule" href="100.html#a43" title="この規則集の中を開きます">第四十三条</a>の規定は、第一項に規定する交付について準用する。</span></p></article>
+<h2 class="div-head" id="sup2" data-path="附則　（昭和五五年五月六日最高裁判所規則第三号）抄"><span class="lbl">附則</span>　（昭和五五年五月六日最高裁判所規則第三号）抄</h2>
+<article class="art noarticle" id="sup-body-1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="para" id="sup-body-1-p1"><span class="body-text">この規則は、民事執行法（昭和五十四年法律第四号）の施行の日（昭和五十五年十月一日）から施行する。</span></p></article>
+<h2 class="div-head" id="sup3" data-path="附則　（昭和六〇年一二月二一日最高裁判所規則第六号）抄"><span class="lbl">附則</span>　（昭和六〇年一二月二一日最高裁判所規則第六号）抄</h2>
+<article class="art noarticle" id="sup-body-2" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="para" id="sup-body-2-p1"><span class="body-text">この規則は、公布の日から施行する。ただし、<a class="ref ref-self" href="#a6">第六条</a>の規定は、昭和六十一年一月一日から施行する。</span></p></article>
+<h2 class="div-head" id="sup4" data-path="附則　（平成二年五月一六日最高裁判所規則第三号）抄"><span class="lbl">附則</span>　（平成二年五月一六日最高裁判所規則第三号）抄</h2>
+<article class="art" id="sup4-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup4-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（施行期日）</p><p class="para" id="sup4-a1-p1"><a class="art-no" href="#sup4-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、法の施行の日から施行する。</span></p></article>
+<h2 class="div-head" id="sup5" data-path="附則　（平成六年九月一日最高裁判所規則第八号）"><span class="lbl">附則</span>　（平成六年九月一日最高裁判所規則第八号）</h2>
+<article class="art noarticle" id="sup-body-3" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="para" id="sup-body-3-p1"><span class="body-text">この規則は、公布の日から施行する。</span></p></article>
+<h2 class="div-head" id="sup6" data-path="附則　（平成八年一二月一七日最高裁判所規則第六号）抄"><span class="lbl">附則</span>　（平成八年一二月一七日最高裁判所規則第六号）抄</h2>
+<article class="art" id="sup6-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup6-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（施行期日）</p><p class="para" id="sup6-a1-p1"><a class="art-no" href="#sup6-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、民事訴訟法（平成八年法律第百九号。以下「新法」という。）の施行の日から施行する。</span></p></article>
+<h2 class="div-head" id="sup7" data-path="附則　（平成一一年九月一六日最高裁判所規則第六号）"><span class="lbl">附則</span>　（平成一一年九月一六日最高裁判所規則第六号）</h2>
+<article class="art noarticle" id="sup-body-4" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="para" id="sup-body-4-p1"><span class="body-text">この規則は、平成十一年十月一日から施行する。</span></p></article>
+<h2 class="div-head" id="sup8" data-path="附則　（平成一三年一二月二八日最高裁判所規則第十号）"><span class="lbl">附則</span>　（平成一三年一二月二八日最高裁判所規則第十号）</h2>
+<article class="art noarticle" id="sup-body-5" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-5" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="para" id="sup-body-5-p1"><span class="body-text">この規則は、平成一四年四月一日から施行する。</span></p></article>
+<h2 class="div-head" id="sup9" data-path="附則　（平成一九年三月三一日最高裁判所規則第四号）"><span class="lbl">附則</span>　（平成一九年三月三一日最高裁判所規則第四号）</h2>
+<article class="art noarticle" id="sup-body-6" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-6" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="para" id="sup-body-6-p1"><span class="body-text">この規則は、執行官法の一部を改正する法律（平成十九年法律第十八号）の施行の日（平成十九年四月一日）から施行する。</span></p></article>
+    </div>
+    <aside class="notes"><p>読み取りに関する注意</p><ul><li>PDF中の目次は読み飛ばし、条見出しから目次を再構成しました。</li><li>各条の「原本」は https://www.courts.go.jp/vc-files/courts/2022/sikkoukankisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。</li></ul></aside>
+    <div class="foot">出典：sikkoukankisoku.pdf　／　最高裁規則ビューア 1.9.0 で 2026年09月02日 に変換　
+    条文の正確な内容は原本で確認してください。</div>
+  </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  "use strict";
+  var doc = document.getElementById("doc");
+  var input = document.getElementById("q");
+  var hitLabel = document.getElementById("hits");
+  var crumb = document.getElementById("crumb");
+  var toc = document.getElementById("toc");
+  var toast = document.getElementById("toast");
+  var pristine = doc.innerHTML;
+  var hits = [];
+  var cursor = -1;
+
+  function say(msg){
+    toast.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(say._t);
+    say._t = setTimeout(function(){ toast.classList.remove("show"); }, 1600);
+  }
+
+  /* ---------------------------------------------------------- 条番号の表記 */
+  var numeralBtn = document.getElementById("numeral");
+  function applyNumeral(useArabic){
+    var nodes = doc.querySelectorAll(".art-no");
+    for (var i = 0; i < nodes.length; i++){
+      var el = nodes[i];
+      var v = useArabic ? el.getAttribute("data-num") : el.getAttribute("data-kan");
+      if (v) el.textContent = v;
+    }
+    numeralBtn.setAttribute("aria-pressed", useArabic ? "true" : "false");
+  }
+  numeralBtn.addEventListener("click", function(){
+    var next = numeralBtn.getAttribute("aria-pressed") !== "true";
+    applyNumeral(next);
+    try { localStorage.setItem("rule-numeral", next ? "1" : "0"); } catch(e){}
+    pristine = doc.innerHTML;
+  });
+  try {
+    /* 既定の表記は原本に合わせてある。前回の切り替えが残っていればそれに従う */
+    var saved = localStorage.getItem("rule-numeral");
+    if (saved === "1" || saved === "0"){ applyNumeral(saved === "1"); pristine = doc.innerHTML; }
+  } catch(e){}
+
+  /* -------------------------------------------------------------- 検索処理 */
+  var SKIP = {SCRIPT:1, STYLE:1, MARK:1, BUTTON:1, A:1};   /* 原本リンク等の道具立ては検索対象にしない */
+  function highlight(term){
+    doc.innerHTML = pristine;
+    hits = [];
+    cursor = -1;
+    if (!term){ hitLabel.textContent = ""; refreshToc(""); return; }
+    var walker = document.createTreeWalker(doc, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        if (!n.nodeValue || n.nodeValue.indexOf(term) < 0) return NodeFilter.FILTER_REJECT;
+        if (n.parentNode && SKIP[n.parentNode.nodeName]) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var targets = [];
+    var node;
+    while ((node = walker.nextNode())) targets.push(node);
+    for (var i = 0; i < targets.length; i++){
+      var t = targets[i], text = t.nodeValue, pos = 0, frag = document.createDocumentFragment();
+      var idx;
+      while ((idx = text.indexOf(term, pos)) >= 0){
+        if (idx > pos) frag.appendChild(document.createTextNode(text.slice(pos, idx)));
+        var m = document.createElement("mark");
+        m.textContent = text.substr(idx, term.length);
+        frag.appendChild(m);
+        hits.push(m);
+        pos = idx + term.length;
+      }
+      if (pos < text.length) frag.appendChild(document.createTextNode(text.slice(pos)));
+      t.parentNode.replaceChild(frag, t);
+    }
+    hitLabel.textContent = hits.length ? "1 / " + hits.length : "該当なし";
+    refreshToc(term);
+    if (hits.length){ cursor = 0; focusHit(0, false); }
+  }
+  function focusHit(i, scroll){
+    if (!hits.length) return;
+    for (var k = 0; k < hits.length; k++) hits[k].classList.remove("live");
+    cursor = (i + hits.length) % hits.length;
+    hits[cursor].classList.add("live");
+    hitLabel.textContent = (cursor + 1) + " / " + hits.length;
+    if (scroll !== false) hits[cursor].scrollIntoView({block:"center", behavior:"instant"});
+  }
+  function refreshToc(term){
+    var links = toc.querySelectorAll("li.lv-art");
+    for (var i = 0; i < links.length; i++){
+      var li = links[i];
+      var body = (li.getAttribute("data-text") || "");
+      li.classList.toggle("hidden", !!term && body.indexOf(term) < 0);
+    }
+    var divs = toc.querySelectorAll("li.lv-div");
+    for (var j = divs.length - 1; j >= 0; j--){
+      var d = divs[j];
+      var kids = d.querySelectorAll("li:not(.hidden)");
+      d.classList.toggle("hidden", !!term && kids.length === 0);
+    }
+  }
+  var timer = null;
+  input.addEventListener("input", function(){
+    clearTimeout(timer);
+    var v = input.value.trim();
+    timer = setTimeout(function(){ highlight(v); }, 180);
+  });
+  input.addEventListener("keydown", function(e){
+    if (e.key === "Enter"){ e.preventDefault(); focusHit(cursor + (e.shiftKey ? -1 : 1)); }
+    if (e.key === "Escape"){ input.value = ""; highlight(""); input.blur(); }
+  });
+  document.getElementById("prev").addEventListener("click", function(){ focusHit(cursor - 1); });
+  document.getElementById("next").addEventListener("click", function(){ focusHit(cursor + 1); });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "/" && e.target === document.body){ e.preventDefault(); input.focus(); }
+  });
+
+  /* -------------------------------------------------- リンクのコピー・共有 */
+  doc.addEventListener("click", function(e){
+    var btn = e.target.closest ? e.target.closest("button[data-anchor]") : null;
+    if (!btn) return;
+    var anchor = btn.getAttribute("data-anchor");
+    var url = location.href.split("#")[0] + "#" + anchor;
+    history.replaceState(null, "", "#" + anchor);
+    var done = function(){ say("リンクをコピーしました"); };
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(done, function(){ legacyCopy(url, done); });
+    } else {
+      legacyCopy(url, done);
+    }
+  });
+  function legacyCopy(text, done){
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); done(); }
+    catch(err){ say("コピーできませんでした。アドレス欄からURLを控えてください"); }
+    document.body.removeChild(ta);
+  }
+
+  /* ------------------------------------------------ 現在位置の表示と目次連動 */
+  var watched = doc.querySelectorAll(".art[id], .div-head[id]");
+  var tocLinks = {};
+  var links = toc.querySelectorAll("a[href^='#']");
+  for (var i = 0; i < links.length; i++) tocLinks[links[i].getAttribute("href").slice(1)] = links[i];
+  var currentLink = null;
+  if ("IntersectionObserver" in window){
+    var visible = [];
+    var io = new IntersectionObserver(function(entries){
+      for (var i = 0; i < entries.length; i++){
+        var id = entries[i].target.id;
+        var at = visible.indexOf(id);
+        if (entries[i].isIntersecting){ if (at < 0) visible.push(id); }
+        else if (at >= 0){ visible.splice(at, 1); }
+      }
+      if (!visible.length) return;
+      var first = null;
+      for (var k = 0; k < watched.length; k++){
+        if (visible.indexOf(watched[k].id) >= 0){ first = watched[k]; break; }
+      }
+      if (!first) return;
+      crumb.textContent = first.getAttribute("data-path") || "";
+      var link = tocLinks[first.id];
+      if (link && link !== currentLink){
+        if (currentLink) currentLink.classList.remove("current");
+        link.classList.add("current");
+        currentLink = link;
+      }
+    }, {rootMargin:"-20% 0px -70% 0px"});
+    for (var w = 0; w < watched.length; w++) io.observe(watched[w]);
+  }
+
+  /* -------------------------------------------------------- 目次の開閉（狭幅） */
+  var opener = document.getElementById("toc-open");
+  if (opener){
+    opener.addEventListener("click", function(){ toc.classList.toggle("open"); });
+    toc.addEventListener("click", function(e){
+      if (e.target.tagName === "A") toc.classList.remove("open");
+    });
+  }
+})();
+</script>
+</body>
+</html>

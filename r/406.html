@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>配偶者暴力等に関する保護命令手続規則</title>
+<style>
+:root{
+  --paper:#ffffff;
+  --ink:#16181d;
+  --sub:#5f6875;
+  --rule:#dde2e9;
+  --chrome:#f4f6f9;
+  --accent:#14538a;
+  --accent-weak:#e7eff7;
+  --mark:#ffe08a;
+  --mark-live:#ff9d3d;
+  --gothic:"Yu Gothic UI","Yu Gothic","YuGothic","Hiragino Sans","Noto Sans JP","Meiryo",system-ui,sans-serif;
+  --mincho:"Yu Mincho","YuMincho","Hiragino Mincho ProN","Noto Serif JP","MS Mincho",serif;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:5.5rem}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--mincho);font-size:17px;line-height:1.9;
+  text-rendering:optimizeLegibility;
+}
+
+/* ---------------------------------------------------------------- ヘッダ */
+.top{
+  position:sticky;top:0;z-index:30;background:var(--chrome);
+  border-bottom:1px solid var(--rule);font-family:var(--gothic);
+}
+.top-inner{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;padding:.7rem 1.2rem}
+.law-title{font-size:1.12rem;font-weight:700;letter-spacing:.02em;margin:0}
+.law-number{font-size:.8rem;color:var(--sub);margin-left:.2rem}
+.top-tools{margin-left:auto;display:flex;align-items:center;gap:.5rem}
+.search-box{display:flex;align-items:center;gap:.35rem;background:var(--paper);
+  border:1px solid var(--rule);border-radius:2px;padding:.25rem .5rem}
+.search-box input{border:0;outline:0;font:inherit;font-size:.85rem;width:14rem;background:transparent;color:inherit}
+.hit-count{font-size:.78rem;color:var(--sub);min-width:4.2rem;text-align:right;font-variant-numeric:tabular-nums}
+button{font:inherit;font-family:var(--gothic);cursor:pointer}
+.btn{background:var(--paper);border:1px solid var(--rule);border-radius:2px;
+  color:var(--ink);font-size:.78rem;padding:.28rem .6rem;line-height:1.4}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.crumb{padding:.3rem 1.2rem;border-top:1px solid var(--rule);background:var(--paper);
+  font-family:var(--gothic);font-size:.78rem;color:var(--sub);min-height:1.7rem}
+
+/* ------------------------------------------------------------------ 骨格 */
+.wrap{display:grid;grid-template-columns:19rem minmax(0,1fr);align-items:start}
+.toc{
+  position:sticky;top:5.6rem;max-height:calc(100vh - 5.6rem);overflow-y:auto;
+  border-right:1px solid var(--rule);padding:1rem .6rem 4rem 1.2rem;
+  font-family:var(--gothic);font-size:.83rem;line-height:1.65;
+}
+.toc h2{font-size:.75rem;color:var(--sub);font-weight:700;margin:0 0 .6rem}
+.toc ul{list-style:none;margin:0;padding:0}
+.toc a{display:block;color:var(--ink);text-decoration:none;padding:.16rem .4rem;border-radius:2px}
+.toc a:hover{background:var(--accent-weak);color:var(--accent)}
+.toc a.current{background:var(--accent-weak);color:var(--accent);font-weight:700}
+.toc .div-1>a,.toc .div-2>a{font-weight:700}
+.toc .div-2{margin-top:.5rem}
+.toc .div-3,.toc .div-4,.toc .div-5{margin-top:.25rem}
+.toc .lv-art{padding-left:.9rem}
+.toc .lv-art.hidden,.toc .lv-div.hidden{display:none}
+.toc-toggle{background:none;border:0;color:var(--sub);padding:0 .3rem;font-size:.75rem}
+
+.doc{padding:2.2rem 2rem 8rem;max-width:44em}
+.doc-head{border-bottom:2px solid var(--ink);padding-bottom:.8rem;margin-bottom:2rem}
+.doc-head h1{font-size:1.5rem;margin:0 0 .3rem;letter-spacing:.04em}
+.doc-head .meta{font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+
+/* ------------------------------------------------------------------ 条文 */
+.div-head{font-family:var(--gothic);margin:2.6rem 0 1rem;scroll-margin-top:6rem}
+.div-head .lbl{color:var(--accent);font-weight:700}
+h2.div-head{font-size:1.12rem;border-bottom:1px solid var(--rule);padding-bottom:.35rem}
+h3.div-head{font-size:1.02rem}
+h4.div-head,h5.div-head,h6.div-head{font-size:.95rem}
+
+.art{position:relative;padding-left:2.6rem;margin:1.5rem 0 1.9rem;scroll-margin-top:6rem}
+.art:target{background:var(--accent-weak);box-shadow:-.4rem 0 0 var(--accent);border-radius:2px}
+.art-tools{position:absolute;left:0;top:.25rem;display:flex;flex-direction:column;gap:.2rem;
+  visibility:hidden}
+.art:hover .art-tools,.art:focus-within .art-tools,.art:target .art-tools{visibility:visible}
+.art-tools button,.art-tools a{background:none;border:0;color:var(--sub);font-size:.72rem;
+  font-family:var(--gothic);padding:.1rem .2rem;border-radius:2px;text-decoration:none;
+  white-space:nowrap;display:block}
+.art-tools button:hover,.art-tools a:hover{color:var(--accent);background:var(--accent-weak)}
+.raw h3 .src{font-size:.75rem;font-weight:400;color:var(--sub);margin-left:.5rem}
+.doc-head .src{color:var(--accent);text-decoration:none}
+.doc-head .src:hover{text-decoration:underline}
+.caption{font-family:var(--gothic);font-size:.88rem;font-weight:700;color:var(--sub);margin:0 0 .1rem}
+.amend-note{font-family:var(--gothic);font-size:.78rem;font-weight:400;color:var(--sub);margin:.1rem 0 0;text-align:right}
+h2 .amend-note,h3 .amend-note,h4 .amend-note,h5 .amend-note,h6 .amend-note{display:inline;text-align:left}
+.art-no{font-family:var(--gothic);font-weight:700;color:var(--accent);text-decoration:none;margin-right:.55em}
+.art-no:hover{text-decoration:underline}
+.para{margin:.35rem 0;text-indent:0}
+.para+.para{margin-top:.55rem}
+.pno{font-family:var(--gothic);color:var(--sub);font-size:.9em;margin-right:.5em;font-variant-numeric:tabular-nums}
+.deleted .body-text{color:var(--sub)}
+.art.noarticle .para{margin-top:0}
+
+ol.items{list-style:none;margin:.35rem 0 .35rem 1.1em;padding:0}
+ol.items>li{display:grid;grid-template-columns:2.4em minmax(0,1fr);margin:.2rem 0}
+ol.items .mk{font-family:var(--gothic);font-size:.9em;color:var(--sub);margin-right:.4em}
+ol.items ol.items{grid-column:1/-1;margin-left:1.2em}
+ol.items ol.items>li{grid-template-columns:2em minmax(0,1fr)}
+
+.raw{margin:1.6rem 0;scroll-margin-top:6rem}
+.raw h3{font-family:var(--gothic);font-size:1rem;margin:0 0 .4rem}
+.raw pre{font-family:var(--mincho);white-space:pre-wrap;margin:0;padding:.7rem .9rem;
+  background:var(--chrome);border:1px solid var(--rule);font-size:.92rem;line-height:1.75}
+
+.notes{margin:2.5rem 0 0;padding:.8rem 1rem;background:var(--chrome);
+  border-left:3px solid var(--accent);font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+.notes p{margin:0 0 .3rem;font-weight:700;color:var(--ink)}
+.notes ul{margin:0;padding-left:1.2rem}
+.foot{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);
+  font-family:var(--gothic);font-size:.75rem;color:var(--sub)}
+
+a.ref{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule)}
+a.ref:hover{color:var(--accent);border-bottom-color:var(--accent)}
+a.ref-egov{border-bottom-style:dotted}
+a.ref-rule{border-bottom-color:var(--accent)}
+mark{background:var(--mark);color:inherit;padding:0 .05em}
+mark.live{background:var(--mark-live)}
+.toast{position:fixed;left:50%;bottom:2rem;transform:translateX(-50%);
+  background:var(--ink);color:#fff;font-family:var(--gothic);font-size:.8rem;
+  padding:.5rem .9rem;border-radius:3px;pointer-events:none;z-index:60;display:none}
+.toast.show{display:block}
+
+.toc-open{display:none}
+@media (max-width:900px){
+  body{font-size:16px}
+  .wrap{grid-template-columns:minmax(0,1fr)}
+  .toc{position:fixed;inset:5.6rem auto 0 0;width:82vw;max-width:20rem;background:var(--paper);
+    z-index:25;box-shadow:0 0 0 100vmax rgba(0,0,0,.25);max-height:none;height:calc(100vh - 5.6rem);
+    display:none}
+  .toc.open{display:block}
+  .toc-open{display:inline-block}
+  .doc{padding:1.4rem 1.1rem 6rem}
+  .search-box input{width:8rem}
+  .art-tools{opacity:1;position:static;flex-direction:row;justify-content:flex-end;margin-bottom:.15rem}
+  .art-tools button,.art-tools a{border:1px solid var(--rule);border-radius:2px;
+    padding:.1rem .45rem;display:inline-block}
+  .art{padding-left:0}
+}
+
+@media print{
+  .top,.toc,.art-tools,.crumb,.toast{display:none!important}
+  a.ref{border-bottom:0}
+  .wrap{display:block}
+  .doc{max-width:none;padding:0}
+  body{font-size:10.5pt;line-height:1.7}
+  .art{page-break-inside:avoid}
+}
+
+.anchor-alias{position:absolute;scroll-margin-top:6rem}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <button type="button" class="btn toc-open" id="toc-open">目次</button>
+    <h1 class="law-title">配偶者暴力等に関する保護命令手続規則</h1>
+    <span class="law-number">平成一三年七月二七日最高裁判所規則第七号　／　令和6年4月1日施行</span>
+    <div class="top-tools">
+      <div class="search-box">
+        <input type="search" id="q" placeholder="条文を検索（/ キー）" aria-label="条文を検索">
+        <span class="hit-count" id="hits"></span>
+      </div>
+      <button type="button" class="btn" id="prev" title="前の該当箇所">前</button>
+      <button type="button" class="btn" id="next" title="次の該当箇所">次</button>
+      <button type="button" class="btn" id="numeral" aria-pressed="false"
+        title="条番号の表記を切り替える">123</button>
+    </div>
+  </div>
+  <div class="crumb" id="crumb"></div>
+</header>
+<div class="wrap">
+  <nav class="toc" id="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ul><li class="lv-art" data-text="配偶者暴力等に関する保護命令手続規則（原文は縦書き配偶者暴力等に関する保護命令手続規則（原文は縦書き改正 平成一六年一〇月二〇日同第一七号同一九年一一月二八日同第一三号同二五年一一月一三日同第七号令和六年二月一日同第一号令和六年九月一七日同第一四号配偶者暴力に関する保護命令手続規則を次のように定める。"><a href="#body-1">本文　配偶者暴力等に関する保護命令手続規則（原文は縦書き</a></li><li class="lv-art" data-text="第一条1条保護命令の申立書の記載事項等・法第十二条保護命令の申立書の記載事項等・法第十二条配偶者からの暴力の防止及び被害者の保護等に関する法律（平成十三年法律第三十一号。以下「法」という。）第十条第一項の規定による命令（以下「接近禁止命令」という。）、同条第二項から第四項までの規定による命令及び法第十条の二の規定による命令（以下「保護命令」という。）の申立書（法第十二条第一項又は第二項の書面をいう。）には、法第十二条第一項各号又は第二項各号（法第十八条第二項の規定により読み替えて適用する場合を含む。）に掲げる事項のほか、次に掲げる事項を記載しなければならない。一当事者の氏名及び住所二代理人の氏名及び住所三申立ての趣旨及び理由四法第十条第三項に規定する子の氏名及び出生の年月日（同項の規定による命令（以下「三項命令」という。）の申立てをする場合に限る。）五法第十条第四項に規定する親族等の氏名及び被害者との関係並びに当該親族等が被害者の子である場合には出生の年月日（同項の規定による命令の申立てをする場合に限る。）六保護命令の申立てに係る事件（以下「保護命令事件」という。）のうち、既に係属するもの（接近禁止命令の申立てをした後に法第十条第二項から第四項までの規定による命令の申立てをする場合に限る。）又は既に保護命令が発せられたもの（当該保護命令の申立ての理由となった配偶者からの身体に対する暴力若しくは生命、身体、自由、名誉若しくは財産に対し害を加える旨を告知してする脅迫と同一の事実を理由として再度の申立てをする場合又は接近禁止命令が発せられた後に法第十条第二項から第四項までの規定による命令の申立てをする場合に限る。）の表示法第十条第三項ただし書に規定する子の同意及び同条第五項に規定する親族等の同意は、書面でしなければならない。次に掲げる書面は、第一項の申立書に添付しなければならない。一前項の書面二法第十条第五項の規定により法定代理人が同意をするときは、代理権を証する書面"><a href="#a1">第一条　保護命令の申立書の記載事項等・法第十二条</a></li><li class="lv-art" data-text="第二条2条保護命令事件における期日の呼出し保護命令事件における期日の呼出し裁判所書記官は、保護命令事件において口頭弁論又は審尋の期日の呼出しがされたときは、その旨及び呼出しの方法を記録上明らかにしなければならない。"><a href="#a2">第二条　保護命令事件における期日の呼出し</a></li><li class="lv-art" data-text="第三条3条保護命令事件における調書の省略等保護命令事件における調書の省略等第十一条の十二において読み替えて準用する民事訴訟規則（平成八年最高裁判所規則第五号）第六十七条第一項の規定にかかわらず、保護命令事件における口頭弁論の調書については、裁判長の許可を得て、証人、鑑定人若しくは当事者本人の陳述又は検証の結果の記載を省略することができる。前項の規定により調書の記載を省略する場合において、裁判長の命令又は当事者の申出があるときは、裁判所書記官は、録音装置を使用して同項の陳述を録取しなければならない。この場合において、当事者の申出があるときは、裁判所書記官は、録音体の複製を許さなければならない。前項の録音体又はその複製物は、当事者の裁判上の利用にのみ供するものとする。民事訴訟法（平成八年法律第百九号）第百六十条第一項（第十一条の十二において準用する民事訴訟規則第七十八条において準用する場合に限る。）の規定にかかわらず、保護命令事件における審尋の調書は、作成することを要しない。ただし、当該審尋の期日において、保護命令の言渡し若しくは保護命令の申立ての取下げがされたとき又は裁判長が作成を命じたときは、この限りでない。"><a href="#a3">第三条　保護命令事件における調書の省略等</a></li><li class="lv-art" data-text="第四条4条保護命令事件における主張書面の提出及び書証の申出の方法等保護命令事件における主張書面の提出及び書証の申出の方法等保護命令事件において当事者の主張を記載した書面（以下「主張書面」という。）の提出をするには、これと同時に、当該主張書面の写し一通を提出しなければならない。ただし、やむを得ない事由があるときは、裁判所の定める期間内に提出すれば足りる。保護命令事件において文書を提出して書証の申出をするには、これと同時に、当該文書の写し二通を提出しなければならない。この場合においては、前項ただし書の規定を準用する。裁判所書記官は、第一項の主張書面の写し及び前項の文書の写し二通のうち一通を他方の当事者に送付しなければならない。前項の規定にかかわらず、裁判所書記官は、口頭弁論又は相手方が立ち会うことができる審尋の期日が指定されるまでの間は、同項の規定による送付をしてはならない。この場合において、裁判所書記官は、当該期日が指定されたときは、遅滞なく、同項の規定による送付をしなければならない。"><a href="#a4">第四条　保護命令事件における主張書面の提出及び書証の申出の方法等</a></li><li class="lv-art" data-text="第五条5条保護命令の申立てについての決定・法第十五条保護命令の申立てについての決定・法第十五条保護命令の申立てについての決定は、決定書を作成してしなければならない。前項の決定書には、次に掲げる事項を記載し、裁判官が記名押印しなければならない。一事件の表示二当事者及び代理人の氏名三保護命令を発する場合にあっては、当事者の住所四主文五理由又は理由の要旨六決定の年月日七裁判所の表示第一項の決定書に理由を記載する場合には、主要な争点及びこれに対する判断を示さなければならない。第一項の決定書には、口頭弁論又は相手方が立ち会うことができる審尋の期日を経ないで保護命令を発する場合を除き、主張書面を引用することができる。"><a href="#a5">第五条　保護命令の申立てについての決定・法第十五条</a></li><li class="lv-art" data-text="第六条6条保護命令の申立ての取下げの方式等保護命令の申立ての取下げの方式等保護命令事件における保護命令の申立ての取下げは、口頭弁論又は審尋の期日においてする場合を除き、書面でしなければならない。保護命令事件において保護命令の申立てが取り下げられたときは、裁判所書記官は、口頭弁論又は審尋の期日の呼出しを受けた相手方に対し、その旨を通知しなければならない。"><a href="#a6">第六条　保護命令の申立ての取下げの方式等</a></li><li class="lv-art" data-text="第七条7条即時抗告・法第十六条即時抗告・法第十六条保護命令の申立てについての裁判に対する即時抗告の抗告状には、次に掲げる事項を記載しなければならない。一原決定の表示二当事者の氏名及び住所三代理人の氏名及び住所四抗告の趣旨及び理由五接近禁止命令に対する即時抗告をする場合において、法第十条第二項から第四項までの規定による命令が発せられているときは、その旨前項の即時抗告の手続において主張書面（抗告状を含む。以下この項及び第四項において同じ。）の提出をするには、これと同時に、当該主張書面の写し一通を提出しなければならない。ただし、やむを得ない事由があるときは、裁判所の定める期間内に提出すれば足りる。第一項の即時抗告の手続において文書を提出して書証の申出をするには、これと同時に、当該文書の写し二通を提出しなければならない。この場合においては、前項ただし書の規定を準用する。裁判所書記官は、第二項の主張書面の写し及び前項の文書の写し二通のうち一通を他方の当事者に送付しなければならない。前項の規定にかかわらず、口頭弁論又は相手方が立ち会うことができる審尋の期日を経ないで保護命令の申立てを却下した決定に対する即時抗告があった場合においては、裁判所書記官は、当該期日が指定されるまでの間は、同項の規定による送付をしてはならない。この場合においては、第四条第四項後段の規定を準用する。前二項の規定は、第四条第一項の主張書面の写し及び同条第二項の文書の写し（同条第三項又は第四項後段の規定により他方の当事者に送付されたものを除く。）について準用する。第二条、第三条、第五条及び第六条の規定は、第一項の即時抗告の手続について準用する。第六条の規定は、第一項の即時抗告の取下げについて準用する。この場合において、同条第二項中「口頭弁論又は審尋の期日の呼出しを受けた相手方」とあるのは、「第七条第四項の規定により抗告状の写しの送付を受けた他方の当事者」と読み替えるものとする。"><a href="#a7">第七条　即時抗告・法第十六条</a></li><li class="lv-art" data-text="第八条8条保護命令の効力の停止・法第十六条保護命令の効力の停止・法第十六条保護命令の効力の停止の申立ては、書面でしなければならない。第二条、第三条、第五条及び第六条第一項の規定は、前項の申立てに係る手続について準用する。"><a href="#a8">第八条　保護命令の効力の停止・法第十六条</a></li><li class="lv-art" data-text="第九条9条保護命令の取消し・法第十七条保護命令の取消し・法第十七条保護命令の取消しの申立ては、書面でしなければならない。前項の書面には、次に掲げる事項を記載しなければならない。一取消しを求める保護命令の表示二当事者の氏名及び住所三代理人の氏名及び住所四申立ての趣旨五法第十七条第一項後段の規定により保護命令の取消しの申立てをする場合にあっては、当該保護命令が効力を生じた日（法第十条第二項から第四項までの規定による命令の取消しの申立てをする場合にあっては、接近禁止命令が効力を生じた日）六接近禁止命令の取消しの申立てをする場合において、法第十条第二項から第四項までの規定による命令が発せられているときは、その旨七法第十七条第三項の規定により三項命令の取消しの申立てをする場合にあっては、申立ての理由、接近禁止命令が効力を生じた日及び当該三項命令が効力を生じた日第二条、第三条及び第五条の規定は第一項の申立てに係る手続について、第四条第一項から第三項までの規定は前項第七号の申立てに係る手続について準用する。第一項の申立ての取下げは、口頭弁論又は審尋の期日においてする場合を除き、書面でしなければならない。第二項第七号の申立てが取り下げられたときは、裁判所書記官は、第三項において準用する第四条第三項の規定により主張書面の写しの送付を受けた他方の当事者に対し、その旨を通知しなければならない。"><a href="#a9">第九条　保護命令の取消し・法第十七条</a></li><li class="lv-art" data-text="第十条10条即時抗告・法第十七条即時抗告・法第十七条第二条、第三条、第五条、第七条第一項（第五号に係る部分を除く。）、第二項から第四項まで並びに前条第四項及び第五項の規定は、同条第二項第七号の申立てについての裁判に対する即時抗告の手続について準用する。第六条の規定は、前項の即時抗告の取下げについて準用する。この場合において、同条第二項中「口頭弁論又は審尋の期日の呼出しを受けた相手方」とあるのは、「第十条第一項において準用する第七条第四項の規定により抗告状の写しの送付を受けた他方の当事者」と読み替えるものとする。"><a href="#a10">第十条　即時抗告・法第十七条</a></li><li class="lv-art" data-text="第十一条11条催告催告催告は、これを受けるべき者の所在が明らかでないとき、又はその者が外国に在るときは、催告すべき事項を公告してすれば足りる。この場合において、その公告は、催告すべき事項を記載した書面を裁判所の掲示場その他裁判所内の公衆の見やすい場所に掲示して行う。前項の規定による催告は、公告をした日から一週間を経過した時にその効力を生ずる。"><a href="#a11">第十一条　催告</a></li><li class="lv-art" data-text="第十一条の二11条の2送達すべき書類の提出に代えて調書を作成した場合に送達すべき書類送達すべき書類の提出に代えて調書を作成した場合に送達すべき書類送達すべき書類の提出に代えて調書を作成したときは、その調書の謄本又は抄本を交付して送達をする。"><a href="#a11-2">第十一条の二　送達すべき書類の提出に代えて調書を作成した場合に送達すべき書類</a></li><li class="lv-art" data-text="第十一条の三11条の3呼出状の公示送達呼出状の公示送達呼出状の公示送達は、呼出状を掲示場に掲示してする。"><a href="#a11-3">第十一条の三　呼出状の公示送達</a></li><li class="lv-art" data-text="第十一条の四11条の4決定及び命令の方式決定及び命令の方式決定書及び命令書には、決定又は命令をした裁判官が記名押印しなければならない。"><a href="#a11-4">第十一条の四　決定及び命令の方式</a></li><li class="lv-art" data-text="第十一条の五11条の5事件の記録の閲覧等事件の記録の閲覧等第十一条の十二において準用する民事訴訟規則第五十二条の二十第三項、第五項本文又は第六項の規定により文書その他の物件から秘匿事項記載部分を除いたものが提出された場合には、当該文書その他の物件の閲覧、謄写又は複製は、その提出されたものによってさせることができる。第十一条の十二において準用する民事訴訟規則第五十二条の二十二第一項の規定により、法第二十一条において準用する民事訴訟法第百三十三条第二項の規定による届出に係る書面（以下この項において「秘匿事項届出書面」という。）から法第二十一条において準用する民事訴訟法第百三十三条の四第一項の取消し又は同条第二項の許可の裁判に係る部分以外の部分（秘匿事項又は秘匿事項を推知することができる事項が記載された部分に限る。）を除いたものが提出された場合には、秘匿事項届出書面の閲覧又は謄写は、その提出されたものによってさせることができる。"><a href="#a11-5">第十一条の五　事件の記録の閲覧等</a></li><li class="lv-art" data-text="第十一条の六11条の6申立書の却下の命令に対する即時抗告等申立書の却下の命令に対する即時抗告等申立書の却下の命令に対し即時抗告をするときは、抗告状には、却下された申立書を添付しなければならない。前項の規定は、抗告状却下の命令に対し即時抗告をする場合について準用する。"><a href="#a11-6">第十一条の六　申立書の却下の命令に対する即時抗告等</a></li><li class="lv-art" data-text="第十一条の七11条の7証人の宣誓証人の宣誓裁判長は、証人に宣誓書を朗読させ、かつ、これに署名させなければならない。証人が宣誓書を朗読することができないときは、裁判長は、裁判所書記官にこれを朗読させなければならない。裁判長は、相当と認めるときは、前項前段の規定にかかわらず、同項前段に規定する署名に代えて、宣誓書に宣誓の趣旨を理解した旨の記載をさせることができる。前二項の宣誓書には、良心に従って真実を述べ、何事も隠さず、また、何事も付け加えないことを誓う旨を記載しなければならない。"><a href="#a11-7">第十一条の七　証人の宣誓</a></li><li class="lv-art" data-text="第十一条の八11条の8鑑定人の宣誓鑑定人の宣誓鑑定人の宣誓書には、良心に従って誠実に鑑定をすることを誓う旨を記載しなければならない。鑑定人の宣誓は、宣誓書を裁判所に提出する方式によってもさせることができる。この場合における裁判長による宣誓の趣旨の説明及び虚偽鑑定の罰の告知は、これらの事項を記載した書面を鑑定人に送付する方法によって行う。"><a href="#a11-8">第十一条の八　鑑定人の宣誓</a></li><li class="lv-art" data-text="第十一条の九11条の9受命裁判官等の証拠調べの調書受命裁判官等の証拠調べの調書受命裁判官又は受託裁判官の所属する裁判所の裁判所書記官は、第十一条の十二において読み替えて準用する民事訴訟規則第百四十二条の調書に同条の文書の写しを添付することができる。"><a href="#a11-9">第十一条の九　受命裁判官等の証拠調べの調書</a></li><li class="lv-art" data-text="第十一条の十11条の10更正決定の方式更正決定の方式更正決定は、裁判書の原本及び正本に付記しなければならない。ただし、裁判所は、相当と認めるときは、裁判書の原本及び正本への付記に代えて、決定書を作成し、その正本を当事者に送達することができる。"><a href="#a11-10">第十一条の十　更正決定の方式</a></li><li class="lv-art" data-text="第十一条の十一11条の11特別抗告等を提起する場合における費用の予納特別抗告等を提起する場合における費用の予納法第二十一条において準用する民事訴訟法第三百三十六条第一項の抗告を提起するときは、抗告状の送達に必要な費用のほか、抗告提起通知書及び抗告理由書の送達、裁判の告知並びに抗告裁判所が記録の送付を受けた旨の通知に必要な費用の概算額を予納しなければならない。前項の規定は、法第二十一条において準用する民事訴訟法第三百三十七条第二項の申立てをする場合について準用する。この場合において、前項中「抗告提起通知書」とあるのは、「抗告許可申立て通知書」と読み替えるものとする。"><a href="#a11-11">第十一条の十一　特別抗告等を提起する場合における費用の予納</a></li><li class="lv-art" data-text="第十一条の十二11条の12民事訴訟規則の準用民事訴訟規則の準用この規則に特別の定めがある場合を除き、保護命令に関する手続に関しては、その性質に反しない限り、民事訴訟規則第一編から第四編までの規定（同規則第一条第三項、第一条の二、第四条第三項及び第四項、第十五条第二項及び第三項、第二十三条第三項、第二十四条第三項から第五項まで、第二十五条第二項、第二十六条後段、第三十三条の三、第三十三条の四第二項から第四項まで、第三十三条の五、第一編第五章第四節第三款、第四十六条第一項、第四十七条第三項及び第四項、第五十一条第三項から第七項まで、第一編第七章、第五十二条の二十第七項から第九項まで、第五十二条の二十二第二項及び第三項、第五十二条の二十三、第五十三条第四項第二号、第五十五条第三項から第六項まで、第五十五条の二、第六十三条の二、第七十六条の二第一項後段、第八十一条第二項、第八十二条第三項及び第四項、第百五条の二、第百五条の三、第百八条第二項、第百十二条第三項及び第四項、第百二十四条第四項、第百三十一条、第百三十二条第三項、第百三十五条の二、第百三十七条第三項及び第四項、第百四十三条第三項、第百四十九条の二第三項、第百四十九条の三、第百五十一条の二、第百八十九条第四項並びに第二百十一条第二項及び第三項の規定を除く。）を準用する。この場合において、別表の上欄に掲げる同規則の規定中同表の中欄に掲げる字句は、それぞれ同表の下欄に掲げる字句に読み替えるものとする。"><a href="#a11-12">第十一条の十二　民事訴訟規則の準用</a></li><li class="lv-art" data-text="第十二条12条この規則の準用・法第二十八条の二この規則の準用・法第二十八条の二前各条の規定は、法第二十八条の二に規定する関係にある相手からの暴力（同条に規定する暴力をいう。）及び当該暴力を受けた者について準用する。この場合において、第一条第一項第五号中「被害者との」とあるのは「被害者（法第二十八条の二に規定する関係にある相手（次号において「特定関係者」という。）からの暴力を受けた者をいう。以下この号において同じ。）との」と、同項第六号中「配偶者」とあるのは「特定関係者」と読み替えるものとする。"><a href="#a12">第十二条　この規則の準用・法第二十八条の二</a></li><li class="lv-div div-1"><a href="#sup1">附則</a></li><li class="lv-div div-1"><a href="#sup2">附則　（平成一六年一〇月二○日最高裁判所規則第一七号）</a></li><li class="lv-div div-1"><a href="#sup3">附則　（平成一九年一一月二八日最高裁判所規則第一三号）</a></li><li class="lv-div div-1"><a href="#sup4">附則　（平成二五年一一月一三日最高裁判所規則第七号）</a></li><li class="lv-div div-1"><a href="#sup5">附則　（令和六年二月一日最高裁判所規則第一号）</a></li><li class="lv-div div-1"><a href="#sup6">附則　（令和六年九月一七日最高裁判所規則第一四号）抄</a><ul><li class="lv-art" data-text="第一条1条施行期日施行期日この規則は、民事訴訟法等の一部を改正する法律（令和四年法律第四十八号。以下「改正法」という。）の施行の日（以下「施行日」という。）から施行する。"><a href="#sup6-a1">第一条　施行期日</a></li></ul></li><li class="lv-div"><a href="#table-36">別表（第十一条の十二関係）（令六最裁規一四・追加）</a></li></ul>
+  </nav>
+  <main class="doc" id="doc-outer">
+    <div class="doc-head">
+      <h1>配偶者暴力等に関する保護命令手続規則</h1>
+      <div class="meta">平成一三年七月二七日最高裁判所規則第七号　／　令和6年4月1日施行　／　<a class="src" href="https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本PDF p.1</a></div>
+    </div>
+    <div id="doc">
+<article class="art noarticle" id="body-1" data-path=""><div class="art-tools"><button type="button" data-anchor="body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（配偶者暴力等に関する保護命令手続規則（原文は縦書き）</p><p class="para" id="body-1-p1"><span class="body-text">改正 平成一六年一〇月二〇日同第一七号同一九年一一月二八日同第一三号同二五年一一月一三日同第七号令和六年二月一日同第一号令和六年九月一七日同第一四号配偶者暴力に関する保護命令手続規則を次のように定める。</span></p></article>
+<article class="art" id="a1" data-path=""><span class="anchor-alias" id="Mp-At_1"></span><div class="art-tools"><button type="button" data-anchor="a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（保護命令の申立書の記載事項等・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/413AC0100000031#Mp-At_12" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十二条</a>）</p><p class="para" id="a1-p1"><a class="art-no" href="#a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">配偶者からの暴力の防止及び被害者の保護等に関する法律（平成十三年法律第三十一号。以下「法」という。）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/413AC0100000031#Mp-At_10" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第十条</a>第一項の規定による命令（以下「接近禁止命令」という。）、同条第二項から第四項までの規定による命令及び<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/413AC0100000031#Mp-At_10_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十条の二</a>の規定による命令（以下「保護命令」という。）の申立書（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/413AC0100000031#Mp-At_12" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十二条</a>第一項又は第二項の書面をいう。）には、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/413AC0100000031#Mp-At_12" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十二条</a>第一項各号又は第二項各号（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/413AC0100000031#Mp-At_18" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十八条</a>第二項の規定により読み替えて適用する場合を含む。）に掲げる事項のほか、次に掲げる事項を記載しなければならない。</span></p><ol class="items"><li id="a1-p1-1"><span class="mk">一</span><span class="tx">当事者の氏名及び住所</span></li><li id="a1-p1-2"><span class="mk">二</span><span class="tx">代理人の氏名及び住所</span></li><li id="a1-p1-3"><span class="mk">三</span><span class="tx">申立ての趣旨及び理由</span></li><li id="a1-p1-4"><span class="mk">四</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/413AC0100000031#Mp-At_10" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十条</a>第三項に規定する子の氏名及び出生の年月日（同項の規定による命令（以下「三項命令」という。）の申立てをする場合に限る。）</span></li><li id="a1-p1-5"><span class="mk">五</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/413AC0100000031#Mp-At_10" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十条</a>第四項に規定する親族等の氏名及び被害者との関係並びに当該親族等が被害者の子である場合には出生の年月日（同項の規定による命令の申立てをする場合に限る。）</span></li><li id="a1-p1-6"><span class="mk">六</span><span class="tx">保護命令の申立てに係る事件（以下「保護命令事件」という。）のうち、既に係属するもの（接近禁止命令の申立てをした後に<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/413AC0100000031#Mp-At_10" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十条</a>第二項から第四項までの規定による命令の申立てをする場合に限る。）又は既に保護命令が発せられたもの（当該保護命令の申立ての理由となった配偶者からの身体に対する暴力若しくは生命、身体、自由、名誉若しくは財産に対し害を加える旨を告知してする脅迫と同一の事実を理由として再度の申立てをする場合又は接近禁止命令が発せられた後に<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/413AC0100000031#Mp-At_10" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十条</a>第二項から第四項までの規定による命令の申立てをする場合に限る。）の表示</span></li></ol><p class="para" id="a1-p2"><span class="pno">2</span><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/413AC0100000031#Mp-At_10" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十条</a>第三項ただし書に規定する子の同意及び同条第五項に規定する親族等の同意は、書面でしなければならない。</span></p><p class="para" id="a1-p3"><span class="pno">3</span><span class="body-text">次に掲げる書面は、第一項の申立書に添付しなければならない。</span></p><ol class="items"><li id="a1-p3-1"><span class="mk">一</span><span class="tx">前項の書面</span></li><li id="a1-p3-2"><span class="mk">二</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/413AC0100000031#Mp-At_10" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十条</a>第五項の規定により法定代理人が同意をするときは、代理権を証する書面</span></li></ol></article>
+<article class="art" id="a2" data-path=""><span class="anchor-alias" id="Mp-At_2"></span><div class="art-tools"><button type="button" data-anchor="a2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（保護命令事件における期日の呼出し）</p><p class="para" id="a2-p1"><a class="art-no" href="#a2" data-kan="第二条" data-num="第2条">第二条</a><span class="body-text">裁判所書記官は、保護命令事件において口頭弁論又は審尋の期日の呼出しがされたときは、その旨及び呼出しの方法を記録上明らかにしなければならない。</span></p></article>
+<article class="art" id="a3" data-path=""><span class="anchor-alias" id="Mp-At_3"></span><div class="art-tools"><button type="button" data-anchor="a3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（保護命令事件における調書の省略等）</p><p class="para" id="a3-p1"><a class="art-no" href="#a3" data-kan="第三条" data-num="第3条">第三条</a><span class="body-text">第十一条の十二において読み替えて準用する民事訴訟規則（平成八年最高裁判所規則第五号）<a class="ref ref-rule" href="100.html#a67" title="この規則集の中を開きます">第六十七条</a>第一項の規定にかかわらず、保護命令事件における口頭弁論の調書については、裁判長の許可を得て、証人、鑑定人若しくは当事者本人の陳述又は検証の結果の記載を省略することができる。</span></p><p class="para" id="a3-p2"><span class="pno">2</span><span class="body-text">前項の規定により調書の記載を省略する場合において、裁判長の命令又は当事者の申出があるときは、裁判所書記官は、録音装置を使用して同項の陳述を録取しなければならない。この場合において、当事者の申出があるときは、裁判所書記官は、録音体の複製を許さなければならない。</span></p><p class="para" id="a3-p3"><span class="pno">3</span><span class="body-text">前項の録音体又はその複製物は、当事者の裁判上の利用にのみ供するものとする。</span></p><p class="para" id="a3-p4"><span class="pno">4</span><span class="body-text">民事訴訟法（平成八年法律第百九号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000109#Mp-At_160" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第百六十条</a>第一項（第十一条の十二において準用する<a class="ref ref-rule" href="100.html#a78" title="この規則集の中を開きます">民事訴訟規則第七十八条</a>において準用する場合に限る。）の規定にかかわらず、保護命令事件における審尋の調書は、作成することを要しない。ただし、当該審尋の期日において、保護命令の言渡し若しくは保護命令の申立ての取下げがされたとき又は裁判長が作成を命じたときは、この限りでない。</span></p></article>
+<article class="art" id="a4" data-path=""><span class="anchor-alias" id="Mp-At_4"></span><div class="art-tools"><button type="button" data-anchor="a4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（保護命令事件における主張書面の提出及び書証の申出の方法等）</p><p class="para" id="a4-p1"><a class="art-no" href="#a4" data-kan="第四条" data-num="第4条">第四条</a><span class="body-text">保護命令事件において当事者の主張を記載した書面（以下「主張書面」という。）の提出をするには、これと同時に、当該主張書面の写し一通を提出しなければならない。ただし、やむを得ない事由があるときは、裁判所の定める期間内に提出すれば足りる。</span></p><p class="para" id="a4-p2"><span class="pno">2</span><span class="body-text">保護命令事件において文書を提出して書証の申出をするには、これと同時に、当該文書の写し二通を提出しなければならない。この場合においては、前項ただし書の規定を準用する。</span></p><p class="para" id="a4-p3"><span class="pno">3</span><span class="body-text">裁判所書記官は、第一項の主張書面の写し及び前項の文書の写し二通のうち一通を他方の当事者に送付しなければならない。</span></p><p class="para" id="a4-p4"><span class="pno">4</span><span class="body-text">前項の規定にかかわらず、裁判所書記官は、口頭弁論又は相手方が立ち会うことができる審尋の期日が指定されるまでの間は、同項の規定による送付をしてはならない。この場合において、裁判所書記官は、当該期日が指定されたときは、遅滞なく、同項の規定による送付をしなければならない。</span></p></article>
+<article class="art" id="a5" data-path=""><span class="anchor-alias" id="Mp-At_5"></span><div class="art-tools"><button type="button" data-anchor="a5" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（保護命令の申立てについての決定・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/413AC0100000031#Mp-At_15" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十五条</a>）</p><p class="para" id="a5-p1"><a class="art-no" href="#a5" data-kan="第五条" data-num="第5条">第五条</a><span class="body-text">保護命令の申立てについての決定は、決定書を作成してしなければならない。</span></p><p class="para" id="a5-p2"><span class="pno">2</span><span class="body-text">前項の決定書には、次に掲げる事項を記載し、裁判官が記名押印しなければならない。</span></p><ol class="items"><li id="a5-p2-1"><span class="mk">一</span><span class="tx">事件の表示</span></li><li id="a5-p2-2"><span class="mk">二</span><span class="tx">当事者及び代理人の氏名</span></li><li id="a5-p2-3"><span class="mk">三</span><span class="tx">保護命令を発する場合にあっては、当事者の住所</span></li><li id="a5-p2-4"><span class="mk">四</span><span class="tx">主文</span></li><li id="a5-p2-5"><span class="mk">五</span><span class="tx">理由又は理由の要旨</span></li><li id="a5-p2-6"><span class="mk">六</span><span class="tx">決定の年月日</span></li><li id="a5-p2-7"><span class="mk">七</span><span class="tx">裁判所の表示</span></li></ol><p class="para" id="a5-p3"><span class="pno">3</span><span class="body-text">第一項の決定書に理由を記載する場合には、主要な争点及びこれに対する判断を示さなければならない。</span></p><p class="para" id="a5-p4"><span class="pno">4</span><span class="body-text">第一項の決定書には、口頭弁論又は相手方が立ち会うことができる審尋の期日を経ないで保護命令を発する場合を除き、主張書面を引用することができる。</span></p></article>
+<article class="art" id="a6" data-path=""><span class="anchor-alias" id="Mp-At_6"></span><div class="art-tools"><button type="button" data-anchor="a6" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（保護命令の申立ての取下げの方式等）</p><p class="para" id="a6-p1"><a class="art-no" href="#a6" data-kan="第六条" data-num="第6条">第六条</a><span class="body-text">保護命令事件における保護命令の申立ての取下げは、口頭弁論又は審尋の期日においてする場合を除き、書面でしなければならない。</span></p><p class="para" id="a6-p2"><span class="pno">2</span><span class="body-text">保護命令事件において保護命令の申立てが取り下げられたときは、裁判所書記官は、口頭弁論又は審尋の期日の呼出しを受けた相手方に対し、その旨を通知しなければならない。</span></p></article>
+<article class="art" id="a7" data-path=""><span class="anchor-alias" id="Mp-At_7"></span><div class="art-tools"><button type="button" data-anchor="a7" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（即時抗告・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/413AC0100000031#Mp-At_16" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十六条</a>）</p><p class="para" id="a7-p1"><a class="art-no" href="#a7" data-kan="第七条" data-num="第7条">第七条</a><span class="body-text">保護命令の申立てについての裁判に対する即時抗告の抗告状には、次に掲げる事項を記載しなければならない。</span></p><ol class="items"><li id="a7-p1-1"><span class="mk">一</span><span class="tx">原決定の表示</span></li><li id="a7-p1-2"><span class="mk">二</span><span class="tx">当事者の氏名及び住所</span></li><li id="a7-p1-3"><span class="mk">三</span><span class="tx">代理人の氏名及び住所</span></li><li id="a7-p1-4"><span class="mk">四</span><span class="tx">抗告の趣旨及び理由</span></li><li id="a7-p1-5"><span class="mk">五</span><span class="tx">接近禁止命令に対する即時抗告をする場合において、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/413AC0100000031#Mp-At_10" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十条</a>第二項から第四項までの規定による命令が発せられているときは、その旨</span></li></ol><p class="para" id="a7-p2"><span class="pno">2</span><span class="body-text">前項の即時抗告の手続において主張書面（抗告状を含む。以下この項及び第四項において同じ。）の提出をするには、これと同時に、当該主張書面の写し一通を提出しなければならない。ただし、やむを得ない事由があるときは、裁判所の定める期間内に提出すれば足りる。</span></p><p class="para" id="a7-p3"><span class="pno">3</span><span class="body-text">第一項の即時抗告の手続において文書を提出して書証の申出をするには、これと同時に、当該文書の写し二通を提出しなければならない。この場合においては、前項ただし書の規定を準用する。</span></p><p class="para" id="a7-p4"><span class="pno">4</span><span class="body-text">裁判所書記官は、第二項の主張書面の写し及び前項の文書の写し二通のうち一通を他方の当事者に送付しなければならない。</span></p><p class="para" id="a7-p5"><span class="pno">5</span><span class="body-text">前項の規定にかかわらず、口頭弁論又は相手方が立ち会うことができる審尋の期日を経ないで保護命令の申立てを却下した決定に対する即時抗告があった場合においては、裁判所書記官は、当該期日が指定されるまでの間は、同項の規定による送付をしてはならない。この場合においては、<a class="ref ref-self" href="#a4">第四条</a>第四項後段の規定を準用する。</span></p><p class="para" id="a7-p6"><span class="pno">6</span><span class="body-text">前二項の規定は、<a class="ref ref-self" href="#a4">第四条</a>第一項の主張書面の写し及び同条第二項の文書の写し（同条第三項又は第四項後段の規定により他方の当事者に送付されたものを除く。）について準用する。</span></p><p class="para" id="a7-p7"><span class="pno">7</span><span class="body-text"><a class="ref ref-self" href="#a2">第二条</a>、<a class="ref ref-self" href="#a3">第三条</a>、<a class="ref ref-self" href="#a5">第五条</a>及び<a class="ref ref-self" href="#a6">第六条</a>の規定は、第一項の即時抗告の手続について準用する。</span></p><p class="para" id="a7-p8"><span class="pno">8</span><span class="body-text"><a class="ref ref-self" href="#a6">第六条</a>の規定は、第一項の即時抗告の取下げについて準用する。この場合において、同条第二項中「口頭弁論又は審尋の期日の呼出しを受けた相手方」とあるのは、「<a class="ref ref-self" href="#a7">第七条</a>第四項の規定により抗告状の写しの送付を受けた他方の当事者」と読み替えるものとする。</span></p></article>
+<article class="art" id="a8" data-path=""><span class="anchor-alias" id="Mp-At_8"></span><div class="art-tools"><button type="button" data-anchor="a8" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（保護命令の効力の停止・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/413AC0100000031#Mp-At_16" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十六条</a>）</p><p class="para" id="a8-p1"><a class="art-no" href="#a8" data-kan="第八条" data-num="第8条">第八条</a><span class="body-text">保護命令の効力の停止の申立ては、書面でしなければならない。</span></p><p class="para" id="a8-p2"><span class="pno">2</span><span class="body-text"><a class="ref ref-self" href="#a2">第二条</a>、<a class="ref ref-self" href="#a3">第三条</a>、<a class="ref ref-self" href="#a5">第五条</a>及び<a class="ref ref-self" href="#a6">第六条</a>第一項の規定は、前項の申立てに係る手続について準用する。</span></p></article>
+<article class="art" id="a9" data-path=""><span class="anchor-alias" id="Mp-At_9"></span><div class="art-tools"><button type="button" data-anchor="a9" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（保護命令の取消し・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/413AC0100000031#Mp-At_17" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十七条</a>）</p><p class="para" id="a9-p1"><a class="art-no" href="#a9" data-kan="第九条" data-num="第9条">第九条</a><span class="body-text">保護命令の取消しの申立ては、書面でしなければならない。</span></p><p class="para" id="a9-p2"><span class="pno">2</span><span class="body-text">前項の書面には、次に掲げる事項を記載しなければならない。</span></p><ol class="items"><li id="a9-p2-1"><span class="mk">一</span><span class="tx">取消しを求める保護命令の表示</span></li><li id="a9-p2-2"><span class="mk">二</span><span class="tx">当事者の氏名及び住所</span></li><li id="a9-p2-3"><span class="mk">三</span><span class="tx">代理人の氏名及び住所</span></li><li id="a9-p2-4"><span class="mk">四</span><span class="tx">申立ての趣旨</span></li><li id="a9-p2-5"><span class="mk">五</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/413AC0100000031#Mp-At_17" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十七条</a>第一項後段の規定により保護命令の取消しの申立てをする場合にあっては、当該保護命令が効力を生じた日（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/413AC0100000031#Mp-At_10" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十条</a>第二項から第四項までの規定による命令の取消しの申立てをする場合にあっては、接近禁止命令が効力を生じた日）</span></li><li id="a9-p2-6"><span class="mk">六</span><span class="tx">接近禁止命令の取消しの申立てをする場合において、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/413AC0100000031#Mp-At_10" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十条</a>第二項から第四項までの規定による命令が発せられているときは、その旨</span></li><li id="a9-p2-7"><span class="mk">七</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/413AC0100000031#Mp-At_17" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十七条</a>第三項の規定により三項命令の取消しの申立てをする場合にあっては、申立ての理由、接近禁止命令が効力を生じた日及び当該三項命令が効力を生じた日</span></li></ol><p class="para" id="a9-p3"><span class="pno">3</span><span class="body-text"><a class="ref ref-self" href="#a2">第二条</a>、<a class="ref ref-self" href="#a3">第三条</a>及び<a class="ref ref-self" href="#a5">第五条</a>の規定は第一項の申立てに係る手続について、<a class="ref ref-self" href="#a4">第四条</a>第一項から第三項までの規定は前項第七号の申立てに係る手続について準用する。</span></p><p class="para" id="a9-p4"><span class="pno">4</span><span class="body-text">第一項の申立ての取下げは、口頭弁論又は審尋の期日においてする場合を除き、書面でしなければならない。</span></p><p class="para" id="a9-p5"><span class="pno">5</span><span class="body-text">第二項第七号の申立てが取り下げられたときは、裁判所書記官は、第三項において準用する<a class="ref ref-self" href="#a4">第四条</a>第三項の規定により主張書面の写しの送付を受けた他方の当事者に対し、その旨を通知しなければならない。</span></p></article>
+<article class="art" id="a10" data-path=""><span class="anchor-alias" id="Mp-At_10"></span><div class="art-tools"><button type="button" data-anchor="a10" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（即時抗告・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/413AC0100000031#Mp-At_17" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十七条</a>）</p><p class="para" id="a10-p1"><a class="art-no" href="#a10" data-kan="第十条" data-num="第10条">第十条</a><span class="body-text"><a class="ref ref-self" href="#a2">第二条</a>、<a class="ref ref-self" href="#a3">第三条</a>、<a class="ref ref-self" href="#a5">第五条</a>、<a class="ref ref-self" href="#a7">第七条</a>第一項（第五号に係る部分を除く。）、第二項から第四項まで並びに前条第四項及び第五項の規定は、同条第二項第七号の申立てについての裁判に対する即時抗告の手続について準用する。</span></p><p class="para" id="a10-p2"><span class="pno">2</span><span class="body-text"><a class="ref ref-self" href="#a6">第六条</a>の規定は、前項の即時抗告の取下げについて準用する。この場合において、同条第二項中「口頭弁論又は審尋の期日の呼出しを受けた相手方」とあるのは、「<a class="ref ref-self" href="#a10">第十条</a>第一項において準用する<a class="ref ref-self" href="#a7">第七条</a>第四項の規定により抗告状の写しの送付を受けた他方の当事者」と読み替えるものとする。</span></p></article>
+<article class="art" id="a11" data-path=""><span class="anchor-alias" id="Mp-At_11"></span><div class="art-tools"><button type="button" data-anchor="a11" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（催告）</p><p class="para" id="a11-p1"><a class="art-no" href="#a11" data-kan="第十一条" data-num="第11条">第十一条</a><span class="body-text">催告は、これを受けるべき者の所在が明らかでないとき、又はその者が外国に在るときは、催告すべき事項を公告してすれば足りる。この場合において、その公告は、催告すべき事項を記載した書面を裁判所の掲示場その他裁判所内の公衆の見やすい場所に掲示して行う。</span></p><p class="para" id="a11-p2"><span class="pno">2</span><span class="body-text">前項の規定による催告は、公告をした日から一週間を経過した時にその効力を生ずる。</span></p></article>
+<article class="art" id="a11-2" data-path=""><span class="anchor-alias" id="Mp-At_11_2"></span><div class="art-tools"><button type="button" data-anchor="a11-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（送達すべき書類の提出に代えて調書を作成した場合に送達すべき書類）</p><p class="para" id="a11-2-p1"><a class="art-no" href="#a11-2" data-kan="第十一条の二" data-num="第11条の2">第十一条の二</a><span class="body-text">送達すべき書類の提出に代えて調書を作成したときは、その調書の謄本又は抄本を交付して送達をする。</span></p></article>
+<article class="art" id="a11-3" data-path=""><span class="anchor-alias" id="Mp-At_11_3"></span><div class="art-tools"><button type="button" data-anchor="a11-3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（呼出状の公示送達）</p><p class="para" id="a11-3-p1"><a class="art-no" href="#a11-3" data-kan="第十一条の三" data-num="第11条の3">第十一条の三</a><span class="body-text">呼出状の公示送達は、呼出状を掲示場に掲示してする。</span></p></article>
+<article class="art" id="a11-4" data-path=""><span class="anchor-alias" id="Mp-At_11_4"></span><div class="art-tools"><button type="button" data-anchor="a11-4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（決定及び命令の方式）</p><p class="para" id="a11-4-p1"><a class="art-no" href="#a11-4" data-kan="第十一条の四" data-num="第11条の4">第十一条の四</a><span class="body-text">決定書及び命令書には、決定又は命令をした裁判官が記名押印しなければならない。</span></p></article>
+<article class="art" id="a11-5" data-path=""><span class="anchor-alias" id="Mp-At_11_5"></span><div class="art-tools"><button type="button" data-anchor="a11-5" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（事件の記録の閲覧等）</p><p class="para" id="a11-5-p1"><a class="art-no" href="#a11-5" data-kan="第十一条の五" data-num="第11条の5">第十一条の五</a><span class="body-text">第十一条の十二において準用する<a class="ref ref-rule" href="100.html#a52-20" title="この規則集の中を開きます">民事訴訟規則第五十二条の二十</a>第三項、第五項本文又は第六項の規定により文書その他の物件から秘匿事項記載部分を除いたものが提出された場合には、当該文書その他の物件の閲覧、謄写又は複製は、その提出されたものによってさせることができる。</span></p><p class="para" id="a11-5-p2"><span class="pno">2</span><span class="body-text">第十一条の十二において準用する<a class="ref ref-rule" href="100.html#a52-22" title="この規則集の中を開きます">民事訴訟規則第五十二条の二十二</a>第一項の規定により、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/413AC0100000031#Mp-At_21" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十一条</a><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000109#Mp-At_133" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">において準用する民事訴訟法第百三十三条</a>第二項の規定による届出に係る書面（以下この項において「秘匿事項届出書面」という。）から<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/413AC0100000031#Mp-At_21" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十一条</a><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000109#Mp-At_133_4" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">において準用する民事訴訟法第百三十三条の四</a>第一項の取消し又は同条第二項の許可の裁判に係る部分以外の部分（秘匿事項又は秘匿事項を推知することができる事項が記載された部分に限る。）を除いたものが提出された場合には、秘匿事項届出書面の閲覧又は謄写は、その提出されたものによってさせることができる。</span></p></article>
+<article class="art" id="a11-6" data-path=""><span class="anchor-alias" id="Mp-At_11_6"></span><div class="art-tools"><button type="button" data-anchor="a11-6" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（申立書の却下の命令に対する即時抗告等）</p><p class="para" id="a11-6-p1"><a class="art-no" href="#a11-6" data-kan="第十一条の六" data-num="第11条の6">第十一条の六</a><span class="body-text">申立書の却下の命令に対し即時抗告をするときは、抗告状には、却下された申立書を添付しなければならない。</span></p><p class="para" id="a11-6-p2"><span class="pno">2</span><span class="body-text">前項の規定は、抗告状却下の命令に対し即時抗告をする場合について準用する。</span></p></article>
+<article class="art" id="a11-7" data-path=""><span class="anchor-alias" id="Mp-At_11_7"></span><div class="art-tools"><button type="button" data-anchor="a11-7" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（証人の宣誓）</p><p class="para" id="a11-7-p1"><a class="art-no" href="#a11-7" data-kan="第十一条の七" data-num="第11条の7">第十一条の七</a><span class="body-text">裁判長は、証人に宣誓書を朗読させ、かつ、これに署名させなければならない。証人が宣誓書を朗読することができないときは、裁判長は、裁判所書記官にこれを朗読させなければならない。</span></p><p class="para" id="a11-7-p2"><span class="pno">2</span><span class="body-text">裁判長は、相当と認めるときは、前項前段の規定にかかわらず、同項前段に規定する署名に代えて、宣誓書に宣誓の趣旨を理解した旨の記載をさせることができる。</span></p><p class="para" id="a11-7-p3"><span class="pno">3</span><span class="body-text">前二項の宣誓書には、良心に従って真実を述べ、何事も隠さず、また、何事も付け加えないことを誓う旨を記載しなければならない。</span></p></article>
+<article class="art" id="a11-8" data-path=""><span class="anchor-alias" id="Mp-At_11_8"></span><div class="art-tools"><button type="button" data-anchor="a11-8" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="caption">（鑑定人の宣誓）</p><p class="para" id="a11-8-p1"><a class="art-no" href="#a11-8" data-kan="第十一条の八" data-num="第11条の8">第十一条の八</a><span class="body-text">鑑定人の宣誓書には、良心に従って誠実に鑑定をすることを誓う旨を記載しなければならない。</span></p><p class="para" id="a11-8-p2"><span class="pno">2</span><span class="body-text">鑑定人の宣誓は、宣誓書を裁判所に提出する方式によってもさせることができる。この場合における裁判長による宣誓の趣旨の説明及び虚偽鑑定の罰の告知は、これらの事項を記載した書面を鑑定人に送付する方法によって行う。</span></p></article>
+<article class="art" id="a11-9" data-path=""><span class="anchor-alias" id="Mp-At_11_9"></span><div class="art-tools"><button type="button" data-anchor="a11-9" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="caption">（受命裁判官等の証拠調べの調書）</p><p class="para" id="a11-9-p1"><a class="art-no" href="#a11-9" data-kan="第十一条の九" data-num="第11条の9">第十一条の九</a><span class="body-text">受命裁判官又は受託裁判官の所属する裁判所の裁判所書記官は、第十一条の十二において読み替えて準用する<a class="ref ref-rule" href="100.html#a142" title="この規則集の中を開きます">民事訴訟規則第百四十二条</a>の調書に同条の文書の写しを添付することができる。</span></p></article>
+<article class="art" id="a11-10" data-path=""><span class="anchor-alias" id="Mp-At_11_10"></span><div class="art-tools"><button type="button" data-anchor="a11-10" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="caption">（更正決定の方式）</p><p class="para" id="a11-10-p1"><a class="art-no" href="#a11-10" data-kan="第十一条の十" data-num="第11条の10">第十一条の十</a><span class="body-text">更正決定は、裁判書の原本及び正本に付記しなければならない。ただし、裁判所は、相当と認めるときは、裁判書の原本及び正本への付記に代えて、決定書を作成し、その正本を当事者に送達することができる。</span></p></article>
+<article class="art" id="a11-11" data-path=""><span class="anchor-alias" id="Mp-At_11_11"></span><div class="art-tools"><button type="button" data-anchor="a11-11" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="caption">（特別抗告等を提起する場合における費用の予納）</p><p class="para" id="a11-11-p1"><a class="art-no" href="#a11-11" data-kan="第十一条の十一" data-num="第11条の11">第十一条の十一</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/413AC0100000031#Mp-At_21" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十一条</a><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000109#Mp-At_336" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">において準用する民事訴訟法第三百三十六条</a>第一項の抗告を提起するときは、抗告状の送達に必要な費用のほか、抗告提起通知書及び抗告理由書の送達、裁判の告知並びに抗告裁判所が記録の送付を受けた旨の通知に必要な費用の概算額を予納しなければならない。</span></p><p class="para" id="a11-11-p2"><span class="pno">2</span><span class="body-text">前項の規定は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/413AC0100000031#Mp-At_21" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十一条</a><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000109#Mp-At_337" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">において準用する民事訴訟法第三百三十七条</a>第二項の申立てをする場合について準用する。この場合において、前項中「抗告提起通知書」とあるのは、「抗告許可申立て通知書」と読み替えるものとする。</span></p></article>
+<article class="art" id="a11-12" data-path=""><span class="anchor-alias" id="Mp-At_11_12"></span><div class="art-tools"><button type="button" data-anchor="a11-12" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="caption">（民事訴訟規則の準用）</p><p class="para" id="a11-12-p1"><a class="art-no" href="#a11-12" data-kan="第十一条の十二" data-num="第11条の12">第十一条の十二</a><span class="body-text">この規則に特別の定めがある場合を除き、保護命令に関する手続に関しては、その性質に反しない限り、民事訴訟規則第一編から第四編までの規定（同規則第一条第三項、第一条の二、<a class="ref ref-self" href="#a4">第四条</a>第三項及び第四項、第十五条第二項及び第三項、第二十三条第三項、第二十四条第三項から第五項まで、第二十五条第二項、第二十六条後段、第三十三条の三、第三十三条の四第二項から第四項まで、第三十三条の五、第一編第五章第四節第三款、第四十六条第一項、第四十七条第三項及び第四項、第五十一条第三項から第七項まで、第一編第七章、第五十二条の二十第七項から第九項まで、第五十二条の二十二第二項及び第三項、第五十二条の二十三、第五十三条第四項第二号、第五十五条第三項から第六項まで、第五十五条の二、第六十三条の二、第七十六条の二第一項後段、第八十一条第二項、第八十二条第三項及び第四項、第百五条の二、第百五条の三、第百八条第二項、第百十二条第三項及び第四項、第百二十四条第四項、第百三十一条、第百三十二条第三項、第百三十五条の二、第百三十七条第三項及び第四項、第百四十三条第三項、第百四十九条の二第三項、第百四十九条の三、第百五十一条の二、第百八十九条第四項並びに第二百十一条第二項及び第三項の規定を除く。）を準用する。この場合において、別表の上欄に掲げる同規則の規定中同表の中欄に掲げる字句は、それぞれ同表の下欄に掲げる字句に読み替えるものとする。</span></p></article>
+<article class="art" id="a12" data-path=""><span class="anchor-alias" id="Mp-At_12"></span><div class="art-tools"><button type="button" data-anchor="a12" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf#page=7" target="_blank" rel="noopener" title="原本PDFの7ページを開きます">原本 p.7</a></div><p class="caption">（この規則の準用・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/413AC0100000031#Mp-At_28_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十八条の二</a>）</p><p class="para" id="a12-p1"><a class="art-no" href="#a12" data-kan="第十二条" data-num="第12条">第十二条</a><span class="body-text">前各条の規定は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/413AC0100000031#Mp-At_28_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十八条の二</a>に規定する関係にある相手からの暴力（同条に規定する暴力をいう。）及び当該暴力を受けた者について準用する。この場合において、<a class="ref ref-self" href="#a1">第一条</a>第一項第五号中「被害者との」とあるのは「被害者（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/413AC0100000031#Mp-At_28_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十八条の二</a>に規定する関係にある相手（次号において「特定関係者」という。）からの暴力を受けた者をいう。以下この号において同じ。）との」と、同項第六号中「配偶者」とあるのは「特定関係者」と読み替えるものとする。</span></p></article>
+<h2 class="div-head" id="sup1" data-path="附則　"><span class="lbl">附則</span></h2>
+<article class="art noarticle" id="sup-body-1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf#page=7" target="_blank" rel="noopener" title="原本PDFの7ページを開きます">原本 p.7</a></div><p class="para" id="sup-body-1-p1"><span class="body-text">この規則は、平成十三年十月十三日から施行する。</span></p></article>
+<h2 class="div-head" id="sup2" data-path="附則　（平成一六年一〇月二○日最高裁判所規則第一七号）"><span class="lbl">附則</span>　（平成一六年一〇月二○日最高裁判所規則第一七号）</h2>
+<article class="art noarticle" id="sup-body-2" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf#page=7" target="_blank" rel="noopener" title="原本PDFの7ページを開きます">原本 p.7</a></div><p class="para" id="sup-body-2-p1"><span class="body-text">この規則は、配偶者からの暴力の防止及び被害者の保護に関する法律の一部を改正する法律（平成十六年法律第六十四号）の施行の日（平成十六年十二月二日）から施行する。</span></p></article>
+<h2 class="div-head" id="sup3" data-path="附則　（平成一九年一一月二八日最高裁判所規則第一三号）"><span class="lbl">附則</span>　（平成一九年一一月二八日最高裁判所規則第一三号）</h2>
+<article class="art noarticle" id="sup-body-3" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf#page=7" target="_blank" rel="noopener" title="原本PDFの7ページを開きます">原本 p.7</a></div><p class="para" id="sup-body-3-p1"><span class="body-text">この規則は、配偶者からの暴力の防止及び被害者の保護に関する法律の一部を改正する法律（平成十九年法律第百十三号）の施行の日（平成二十年一月十一日）から施行する。</span></p></article>
+<h2 class="div-head" id="sup4" data-path="附則　（平成二五年一一月一三日最高裁判所規則第七号）"><span class="lbl">附則</span>　（平成二五年一一月一三日最高裁判所規則第七号）</h2>
+<article class="art noarticle" id="sup-body-4" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf#page=7" target="_blank" rel="noopener" title="原本PDFの7ページを開きます">原本 p.7</a></div><p class="para" id="sup-body-4-p1"><span class="body-text">この規則は、配偶者からの暴力の防止及び被害者の保護に関する法律の一部を改正する法律（平成二十五年法律第七十二号）の施行の日（平成二十六年一月三日）から施行する。</span></p></article>
+<h2 class="div-head" id="sup5" data-path="附則　（令和六年二月一日最高裁判所規則第一号）"><span class="lbl">附則</span>　（令和六年二月一日最高裁判所規則第一号）</h2>
+<article class="art noarticle" id="sup-body-5" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-5" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf#page=7" target="_blank" rel="noopener" title="原本PDFの7ページを開きます">原本 p.7</a></div><p class="para" id="sup-body-5-p1"><span class="body-text">この規則は、令和六年四月一日から施行する。ただし、<a class="ref ref-self" href="#a10">第十条</a>の改正規定は、民事訴訟法等の一部を改正する法律（令和四年法律第四十八号）附則<a class="ref ref-self" href="#a1">第一条</a>第四号に掲げる規定の施行の日（令和六年三月一日）から施行する。</span></p></article>
+<h2 class="div-head" id="sup6" data-path="附則　（令和六年九月一七日最高裁判所規則第一四号）抄"><span class="lbl">附則</span>　（令和六年九月一七日最高裁判所規則第一四号）抄</h2>
+<article class="art" id="sup6-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup6-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf#page=7" target="_blank" rel="noopener" title="原本PDFの7ページを開きます">原本 p.7</a></div><p class="caption">（施行期日）</p><p class="para" id="sup6-a1-p1"><a class="art-no" href="#sup6-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、民事訴訟法等の一部を改正する法律（令和四年法律第四十八号。以下「改正法」という。）の施行の日（以下「施行日」という。）から施行する。</span></p></article>
+<section class="raw" id="table-36" data-path="別表（第十一条の十二関係）（令六最裁規一四・追加）"><h3>別表（第十一条の十二関係）（令六最裁規一四・追加） <a class="src" href="https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf#page=7" target="_blank" rel="noopener" title="原本PDFの7ページを開きます">原本 p.7</a></h3><pre>第一条第二項
+陳述の内容を電子調書に記録し、
+調書を作成し、記名押印しなけれ
+ば
+これを裁判所の使用に係る電子計
+算機（入出力装置を含む。以下同
+じ。）に備えられたファイル（第
+三十三条の三（電磁的訴訟記録の
+閲覧等の方法等）第二項第一号を
+除き、以下単に「ファイル」とい
+う。）に記録しなければ
+第三条の二第一項 電子判決書
+判決書
+書面又は電磁的記録により
+書面で
+第十五条第一項及び
+第二十三条第一項
+前三項
+第一項
+第十五条第四項及び
+第二百十一条第四項
+第二十三条第二項 又は電磁的記録が私人により作成
+が私文書
+されたもの
+資料
+書面
+第二十四条第二項、
+第二十五条第一項及
+び第三項並びに第二
+十七条
+第二十五条第一項 記載し、又は記録した書面又は電
+記載した書面
+磁的記録
+第二十六条前段
+記録した電磁的記録を作成し、こ
+記載した書面を作成し、当該書面に
+れをファイルに記録しなければ
+記名押印しなければ
+に係る電子調書
+の調書
+第三十条の二第二
+項、第六十六条第一
+項、第六十七条第一
+項及び第三項、第六
+十九条並びに第七十
+六条の二第一項前段
+記録しなければ
+記載しなければ
+第三十条の二第二
+項、第三十四条の七
+第二項、第六十六条
+第一項、第百二十二
+条の二第二項及び第
+百二十二条の三第二
+項
+第三十三条第一項 訴訟記録の閲覧等の請求又は法第
+事件の記録の閲覧若しくは謄写、そ
+九十一条の三（訴訟に関する事項
+の正本、謄本若しくは抄本の交付、
+の証明）に規定する訴訟に関する
+その複製又は事件に関する事項の証
+明書の交付
+事項を証明した書面の交付若しく
+は当該事項を証明した電磁的記録
+の提供
+第三十三条第二項 訴訟記録の閲覧等の請求は、訴訟
+請求（事件に関する事項の証明書の
+記録
+交付の請求を除く。）は、事件の記
+録
+電子調書
+調書
+第三十四条の七第二
+項、第七十二条、第
+七十六条、第百十六
+条第三項、第百十八
+条第二項、第百二十
+二条の二第二項、第
+百二十二条の三第二
+項、第百四十二条及
+び第百四十六条第一
+項
+第四十七条第一項 書類又は電磁的記録
+書類
+交付又は電磁的記録の提供
+交付
+第四十八条第一項及
+び第二項
+第五十条の二
+決定書
+電子決定書（法第百二十二条（判
+決に関する規定の準用）において
+準用する法第二百五十二条（電子
+判決書）第一項の規定により作成
+される電磁的記録であって、決定
+に係るものをいう。第六十七条
+（口頭弁論に係る電子調書の実質
+的記録事項等）第一項第七号及び
+第百六十条（判決の更正決定等の
+方式）第一項において同じ。）
+電子調書に記録させる
+調書に記載させる
+第六十六条第二項 裁判長は、前項の電子調書の内容
+前項の調書には、裁判所書記官が記
+を確認するとともに、これを確認
+名押印し、裁判長が認印しなけれ
+ば
+したことを当該電子調書上明らか
+にする措置を講じなければ
+第六十六条第三項 当該電子調書に記録するととも
+付記して認印しなければ
+に、当該電子調書の内容を確認
+し、かつ、これを確認したことを
+当該電子調書上明らかにする措置
+を講じなければ
+記録すれば
+記載すれば
+第六十七条第一項 記録し
+記載し
+記録
+記載
+第六十七条第一項第
+六号及び第百八十四
+条
+書面
+第六十七条第一項第
+電子決定書又は電子命令書（法第
+七号
+百二十二条（判決に関する規定の
+準用）において準用する法第二百
+五十二条（電子判決書）第一項の
+規定により作成される電磁的記録
+であって、命令に係るものをい
+う。）
+第六十七条第三項 記録する
+記載する
+第六十七条第四項 記録した電磁的記録を作成し、こ
+調書に記載しなければ
+れをファイルに記録しなければ
+第六十八条第一項 の録音又は録画により作成された
+を録音テープ又はビデオテープ（こ
+電磁的記録をファイル
+れらに準ずる方法により一定の事項
+を記録することができる物を含
+む。）
+電子調書の記録
+調書の記載
+第六十八条第二項 前条第一項（第三号に係る部分に
+証人等の陳述を記載した書面を作成
+しなければ
+限る。）の規定により電子調書に
+記録すべき事項を記録した電磁的
+記録を作成し、ファイルに記録し
+なければ
+第六十九条
+他の電磁的記録
+書面、写真、録音テープ、ビデオテ
+ープその他裁判所において適当と認
+めるもの
+事件の記録に添付して調書
+これをファイルに記録して電子調
+書
+第七十一条
+速記録
+速記に係る電磁的記録（以下「電
+子速記録」という。）
+電子速記録を
+速記録を
+第七十二条
+電子速記録
+速記録
+ファイルに記録して
+事件の記録に添付して
+第七十六条
+録音テープ
+当該陳述の録音により作成された
+電磁的記録
+第七十六条の二第一
+記録した電磁的記録を作成し、こ
+記載した調書を作成し、記名押印し
+項前段
+れをファイルに記録しなければ
+なければ
+電磁的記録
+調書
+第七十六条の二第二
+項
+第八十条第三項
+第四項の規定は答弁書について、
+第四項（第一号に係る部分に限
+る。）の規定は、答弁書
+第五十五条（訴状の添付書類等）
+第三項及び第四項の規定は前項の
+書証の写しの添付
+第百八条第一項
+電子呼出状
+呼出状
+記録しなければ
+記載し、尋問事項書を添付しなけれ
+ば
+第百十六条第三項 の作成に用いる場合
+への添付
+第百十八条第二項 記録させなければ
+記載させなければ
+第百二十七条
+前節（証人尋問）
+前節及び配偶者暴力等に関する保護
+命令手続規則第十一条の七
+第百三十四条
+第百八条（電子呼出状の記録事項
+配偶者暴力等に関する保護命令手続
+等）
+規則第十一条の十二において読み替
+えて準用する第百八条第一項
+の電子呼出状
+の呼出状
+第二項、第四項及び第五項
+第二項及び第五項並びに同規則第十
+一条の七第一項及び第二項
+第百四十二条
+記録すべき
+記載すべき
+第百四十六条第一項 裁判所書記官は、法
+法
+画像情報を
+原本、謄本又は抄本は、
+第百四十六条第二項
+第百四十二条（受命裁判官等の証
+配偶者暴力等に関する保護命令手続
+及び第百五十一条
+拠調べの電子調書）
+規則第十一条の十二において読み替
+えて準用する第百四十二条及び同規
+則第十一条の九
+電子調書について
+調書について
+第百四十七条
+第一項から第三項まで及び第百三
+から前条まで（第百三十七条第三項
+十七条の二から前条まで
+及び第四項並びに第百四十三条第三
+項を除く。）
+の規定
+及び配偶者暴力等に関する保護命令
+手続規則第十一条の九の規定
+当該電磁的記録
+第百四十九条の二第
+最高裁判所の細則で定めるところ
+一項
+により、当該申出に係る電磁的記
+録の複製を第五十二条の十（電子
+情報処理組織）第一項の電子情報
+処理組織を使用する方法によりフ
+ァイルに記録し、又は電磁的記録
+の複製
+電磁的記録をいう
+書面をいう
+電子証拠説明書
+証拠説明書
+第百四十九条の二第
+一項及び第二項
+電磁的記録の複製
+電磁的記録を記録した記録媒体
+第百四十九条の二第
+二項及び第百四十九
+条の四
+第百四十九条の四 提出等）
+提出等）並びに配偶者暴力等に関す
+る保護命令手続規則第十一条の九
+読み替える
+、配偶者暴力等に関する保護命令手
+続規則第十一条の九中「同条の文書
+の写し」とあるのは「第十一条の十
+二において読み替えて準用する同規
+則第百四十九条の二第一項の電磁的
+記録を記録した記録媒体」と読み替
+える
+第百五十九条第一項 電子判決書又は電子判決書に代わ
+判決書の送達は、裁判所書記官が判
+決書の交付を受けた日又は
+る電子調書の送達（法第二百五十
+五条（電子判決書等の送達）第二
+項第二号に掲げる方法による電子
+判決書の送達を除く。）は、
+判決書
+第百八十四条及び第
+電子判決書又は電子判決書に代わ
+百八十九条第三項
+る電子調書
+第百八十九条第一項 電子上告提起通知書（上告の提起
+上告提起通知書
+があった旨を通知するために裁判
+所書記官が作成する電磁的記録を
+いう。以下同じ。）
+電子上告提起通知書
+上告提起通知書
+第百八十九条第二項
+及び第三項
+第百九十四条
+による電子上告提起通知書
+による上告提起通知書
+第百九十五条
+被上告人（当該書面の送達につい
+被上告人の数に六を加えた数の副
+本
+て法第百九条の二（電子情報処理
+組織による送達）第一項ただし書
+の届出をしている者を除く。）の
+数の副本（法第百三十二条の十
+（電子情報処理組織による申立て
+等）第一項の規定により当該書面
+に記載すべき事項をファイルに記
+録した場合にあっては、当該事項
+を出力することにより作成した書
+面）
+第百九十九条第二項 電子上告提起通知書」とあるのは
+上告提起通知書」とあるのは「上告
+「電子上告受理申立て通知書
+受理申立て通知書
+第二百九条
+電子上告提起通知書」とあるのは
+上告提起通知書」とあるのは「抗告
+「電子抗告許可申立て通知書
+許可申立て通知書
+第二百十条第一項 電子抗告提起通知書（法第三百三
+抗告提起通知書
+十条の抗告又は法第三百三十六条
+第一項の抗告があった旨を通知す
+るために裁判所書記官が作成する
+電磁的記録をいう。）
+第二百十条第二項
+電子抗告提起通知書
+抗告提起通知書
+電子抗告許可申立て通知書
+抗告許可申立て通知書</pre></section>
+    </div>
+    <aside class="notes"><p>読み取りに関する注意</p><ul><li>各条の「原本」は https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。</li></ul></aside>
+    <div class="foot">出典：20260521hogomeireitetsuzukikisoku.pdf　／　最高裁規則ビューア 1.9.0 で 2026年09月02日 に変換　
+    条文の正確な内容は原本で確認してください。</div>
+  </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  "use strict";
+  var doc = document.getElementById("doc");
+  var input = document.getElementById("q");
+  var hitLabel = document.getElementById("hits");
+  var crumb = document.getElementById("crumb");
+  var toc = document.getElementById("toc");
+  var toast = document.getElementById("toast");
+  var pristine = doc.innerHTML;
+  var hits = [];
+  var cursor = -1;
+
+  function say(msg){
+    toast.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(say._t);
+    say._t = setTimeout(function(){ toast.classList.remove("show"); }, 1600);
+  }
+
+  /* ---------------------------------------------------------- 条番号の表記 */
+  var numeralBtn = document.getElementById("numeral");
+  function applyNumeral(useArabic){
+    var nodes = doc.querySelectorAll(".art-no");
+    for (var i = 0; i < nodes.length; i++){
+      var el = nodes[i];
+      var v = useArabic ? el.getAttribute("data-num") : el.getAttribute("data-kan");
+      if (v) el.textContent = v;
+    }
+    numeralBtn.setAttribute("aria-pressed", useArabic ? "true" : "false");
+  }
+  numeralBtn.addEventListener("click", function(){
+    var next = numeralBtn.getAttribute("aria-pressed") !== "true";
+    applyNumeral(next);
+    try { localStorage.setItem("rule-numeral", next ? "1" : "0"); } catch(e){}
+    pristine = doc.innerHTML;
+  });
+  try {
+    /* 既定の表記は原本に合わせてある。前回の切り替えが残っていればそれに従う */
+    var saved = localStorage.getItem("rule-numeral");
+    if (saved === "1" || saved === "0"){ applyNumeral(saved === "1"); pristine = doc.innerHTML; }
+  } catch(e){}
+
+  /* -------------------------------------------------------------- 検索処理 */
+  var SKIP = {SCRIPT:1, STYLE:1, MARK:1, BUTTON:1, A:1};   /* 原本リンク等の道具立ては検索対象にしない */
+  function highlight(term){
+    doc.innerHTML = pristine;
+    hits = [];
+    cursor = -1;
+    if (!term){ hitLabel.textContent = ""; refreshToc(""); return; }
+    var walker = document.createTreeWalker(doc, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        if (!n.nodeValue || n.nodeValue.indexOf(term) < 0) return NodeFilter.FILTER_REJECT;
+        if (n.parentNode && SKIP[n.parentNode.nodeName]) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var targets = [];
+    var node;
+    while ((node = walker.nextNode())) targets.push(node);
+    for (var i = 0; i < targets.length; i++){
+      var t = targets[i], text = t.nodeValue, pos = 0, frag = document.createDocumentFragment();
+      var idx;
+      while ((idx = text.indexOf(term, pos)) >= 0){
+        if (idx > pos) frag.appendChild(document.createTextNode(text.slice(pos, idx)));
+        var m = document.createElement("mark");
+        m.textContent = text.substr(idx, term.length);
+        frag.appendChild(m);
+        hits.push(m);
+        pos = idx + term.length;
+      }
+      if (pos < text.length) frag.appendChild(document.createTextNode(text.slice(pos)));
+      t.parentNode.replaceChild(frag, t);
+    }
+    hitLabel.textContent = hits.length ? "1 / " + hits.length : "該当なし";
+    refreshToc(term);
+    if (hits.length){ cursor = 0; focusHit(0, false); }
+  }
+  function focusHit(i, scroll){
+    if (!hits.length) return;
+    for (var k = 0; k < hits.length; k++) hits[k].classList.remove("live");
+    cursor = (i + hits.length) % hits.length;
+    hits[cursor].classList.add("live");
+    hitLabel.textContent = (cursor + 1) + " / " + hits.length;
+    if (scroll !== false) hits[cursor].scrollIntoView({block:"center", behavior:"instant"});
+  }
+  function refreshToc(term){
+    var links = toc.querySelectorAll("li.lv-art");
+    for (var i = 0; i < links.length; i++){
+      var li = links[i];
+      var body = (li.getAttribute("data-text") || "");
+      li.classList.toggle("hidden", !!term && body.indexOf(term) < 0);
+    }
+    var divs = toc.querySelectorAll("li.lv-div");
+    for (var j = divs.length - 1; j >= 0; j--){
+      var d = divs[j];
+      var kids = d.querySelectorAll("li:not(.hidden)");
+      d.classList.toggle("hidden", !!term && kids.length === 0);
+    }
+  }
+  var timer = null;
+  input.addEventListener("input", function(){
+    clearTimeout(timer);
+    var v = input.value.trim();
+    timer = setTimeout(function(){ highlight(v); }, 180);
+  });
+  input.addEventListener("keydown", function(e){
+    if (e.key === "Enter"){ e.preventDefault(); focusHit(cursor + (e.shiftKey ? -1 : 1)); }
+    if (e.key === "Escape"){ input.value = ""; highlight(""); input.blur(); }
+  });
+  document.getElementById("prev").addEventListener("click", function(){ focusHit(cursor - 1); });
+  document.getElementById("next").addEventListener("click", function(){ focusHit(cursor + 1); });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "/" && e.target === document.body){ e.preventDefault(); input.focus(); }
+  });
+
+  /* -------------------------------------------------- リンクのコピー・共有 */
+  doc.addEventListener("click", function(e){
+    var btn = e.target.closest ? e.target.closest("button[data-anchor]") : null;
+    if (!btn) return;
+    var anchor = btn.getAttribute("data-anchor");
+    var url = location.href.split("#")[0] + "#" + anchor;
+    history.replaceState(null, "", "#" + anchor);
+    var done = function(){ say("リンクをコピーしました"); };
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(done, function(){ legacyCopy(url, done); });
+    } else {
+      legacyCopy(url, done);
+    }
+  });
+  function legacyCopy(text, done){
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); done(); }
+    catch(err){ say("コピーできませんでした。アドレス欄からURLを控えてください"); }
+    document.body.removeChild(ta);
+  }
+
+  /* ------------------------------------------------ 現在位置の表示と目次連動 */
+  var watched = doc.querySelectorAll(".art[id], .div-head[id]");
+  var tocLinks = {};
+  var links = toc.querySelectorAll("a[href^='#']");
+  for (var i = 0; i < links.length; i++) tocLinks[links[i].getAttribute("href").slice(1)] = links[i];
+  var currentLink = null;
+  if ("IntersectionObserver" in window){
+    var visible = [];
+    var io = new IntersectionObserver(function(entries){
+      for (var i = 0; i < entries.length; i++){
+        var id = entries[i].target.id;
+        var at = visible.indexOf(id);
+        if (entries[i].isIntersecting){ if (at < 0) visible.push(id); }
+        else if (at >= 0){ visible.splice(at, 1); }
+      }
+      if (!visible.length) return;
+      var first = null;
+      for (var k = 0; k < watched.length; k++){
+        if (visible.indexOf(watched[k].id) >= 0){ first = watched[k]; break; }
+      }
+      if (!first) return;
+      crumb.textContent = first.getAttribute("data-path") || "";
+      var link = tocLinks[first.id];
+      if (link && link !== currentLink){
+        if (currentLink) currentLink.classList.remove("current");
+        link.classList.add("current");
+        currentLink = link;
+      }
+    }, {rootMargin:"-20% 0px -70% 0px"});
+    for (var w = 0; w < watched.length; w++) io.observe(watched[w]);
+  }
+
+  /* -------------------------------------------------------- 目次の開閉（狭幅） */
+  var opener = document.getElementById("toc-open");
+  if (opener){
+    opener.addEventListener("click", function(){ toc.classList.toggle("open"); });
+    toc.addEventListener("click", function(e){
+      if (e.target.tagName === "A") toc.classList.remove("open");
+    });
+  }
+})();
+</script>
+</body>
+</html>

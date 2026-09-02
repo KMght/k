@@ -1,0 +1,676 @@
+{
+  "title": "一般社団法人等非訟事件手続規則",
+  "law_number": "",
+  "enforcement_date": "令和8年5月21日",
+  "enforcement_iso": "2026-05-21",
+  "pdf_link": "https://www.courts.go.jp/assets/080521ippannsyadannhoujinnkisoku.pdf",
+  "source": "080521ippannsyadannhoujinnkisoku.pdf",
+  "numeral": "kansuji",
+  "notes": [
+    "PDF中の目次は読み飛ばし、条見出しから目次を再構成しました。",
+    "各条の「原本」は https://www.courts.go.jp/assets/080521ippannsyadannhoujinnkisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+  ],
+  "nodes": [
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "body-1",
+      "caption": "一般社団法人等非訟事件手続規則（原文は縦書き",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "平成二○年一○月一日最高裁判所規則第九号改正 同二四年七月一七日最高裁判所規則第九号令和六年九月一七日同第一四号一般社団法人等非訟事件手続規則を次のように定める。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "章",
+      "label": "第一章",
+      "title": "総則",
+      "anchor": "d1",
+      "level": 2,
+      "page": 1,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "a1",
+      "caption": "申立て等の方式",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [
+        "",
+        "第一章　総則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "一般社団法人及び一般財団法人に関する法律（平成十八年法律第四十八号。以下「法」という。）の規定による非訟事件の手続（以下「一般社団法人等非訟事件手続」という。）に関する申立て、届出及び裁判所に対する報告は、特別の定めがある場合を除き、書面でしなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        2
+      ],
+      "label": "第二条",
+      "short_label": "2条",
+      "anchor": "a2",
+      "caption": "申立書の記載事項",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [
+        "",
+        "第一章　総則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "一般社団法人等非訟事件手続に関する申立書には、申立ての趣旨及び原因並びに申立てを理由づける事実を記載するほか、次に掲げる事項を記載し、申立人又は代理人が記名（当該申立書がその提出により一般社団法人等非訟事件手続の開始、続行、停止又は完結をさせるものである場合にあっては、記名押印）をしなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "当事者の氏名又は名称及び住所並びに法定代理人の氏名及び住所",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "申立てに係る一般社団法人等の名称及び主たる事務所の所在地並びに代表者の氏名",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "text": "前項の申立書には、同項に規定する事項のほか、次に掲げる事項を記載するものとする。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "代理人（前項第一号の法定代理人を除く。）の氏名及び住所",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "申立てを理由づける具体的な事実ごとの証拠",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "事件の表示",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "附属書類の表示",
+              "children": []
+            },
+            {
+              "marker": "五",
+              "kind": "go",
+              "text": "年月日",
+              "children": []
+            },
+            {
+              "marker": "六",
+              "kind": "go",
+              "text": "裁判所の表示",
+              "children": []
+            },
+            {
+              "marker": "七",
+              "kind": "go",
+              "text": "申立人又は代理人の郵便番号及び電話番号（ファクシミリの番号を含む。）",
+              "children": []
+            },
+            {
+              "marker": "八",
+              "kind": "go",
+              "text": "法第二百七十五条第四項の申立てについては、同条第一項に規定する判決（電子判決書（民事訴訟法（平成八年法律第百九号）第二百五十二条第一項に規定する電子判決書（同法第二百五十三条第二項の規定により裁判所の使用に係る電子計算機（入出力装置を含む。）に備えられたファイル（第十三条において単に「ファイル」という。）に記録されたものに限る。）をいう。次条第一項第二号及び第十三条において同じ。）が作成されているものに限る。）をした裁判所の名称、事件番号及び当該判決を識別するために裁判所が付した符号",
+              "children": []
+            },
+            {
+              "marker": "九",
+              "kind": "go",
+              "text": "その他裁判所が定める事項",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "text": "検査役の選任の申立てをするときは、申立ての趣旨において、検査の目的を記載しなければならない。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "第一項及び第二項の規定にかかわらず、一般社団法人等非訟事件手続に関し、申立人又は代理人から第一項第二号又は第二項第七号に掲げる事項を記載した申立書が提出されているときは、以後裁判所に提出する当該手続を基本とする手続の申立書については、これらの事項を記載することを要しない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        3
+      ],
+      "label": "第三条",
+      "short_label": "3条",
+      "anchor": "a3",
+      "caption": "申立書の添付書類",
+      "deleted": false,
+      "section": "main",
+      "page": 3,
+      "division_path": [
+        "",
+        "第一章　総則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "前条第一項の申立書には、次に掲げる書類を添付しなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "申立てに係る一般社団法人等の登記事項証明書",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "法第二百七十五条第四項の申立てについては、同条第一項に規定する判決（電子判決書が作成されているものを除く。）の判決書の写し及び当該判決の確定についての証明書",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "text": "前項第一号の規定にかかわらず、一般社団法人等非訟事件手続に関し、申立人又は代理人から同号に掲げる書面が提出されているときは、以後裁判所に提出する当該手続を基本とする手続の申立書には、これを添付することを要しない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        4
+      ],
+      "label": "第四条",
+      "short_label": "4条",
+      "anchor": "a4",
+      "caption": "申立人に対する資料の提出の求め",
+      "deleted": false,
+      "section": "main",
+      "page": 3,
+      "division_path": [
+        "",
+        "第一章　総則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判所は、一般社団法人等非訟事件手続に関する申立てをした者又はしようとする者に対し、第二条第一項の申立書及び当該申立書に添付すべき書類のほか、申立てを理由づける事実に関する資料、申立てに係る一般社団法人等に関する資料その他一般社団法人等非訟事件手続の円滑な進行を図るために必要な資料の提出を求めることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        5
+      ],
+      "label": "第五条",
+      "short_label": "5条",
+      "anchor": "a5",
+      "caption": "裁判所書記官の事実調査",
+      "deleted": false,
+      "section": "main",
+      "page": 3,
+      "division_path": [
+        "",
+        "第一章　総則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判所は、相当と認めるときは、一般社団法人等非訟事件手続に関する申立てを理由づける事実の調査を裁判所書記官に命じて行わせることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "章",
+      "label": "第二章",
+      "title": "検査役の選任の手続に関する特則",
+      "anchor": "d7",
+      "level": 2,
+      "page": 4,
+      "note": ""
+    },
+    {
+      "number": [
+        6
+      ],
+      "label": "第六条",
+      "short_label": "6条",
+      "anchor": "a6",
+      "caption": "報告書の提出期限の定め",
+      "deleted": false,
+      "section": "main",
+      "page": 4,
+      "division_path": [
+        "",
+        "第二章　検査役の選任の手続に関する特則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判所は、検査役が調査の結果を報告すべき期限を定めることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        7
+      ],
+      "label": "第七条",
+      "short_label": "7条",
+      "anchor": "a7",
+      "caption": "即時抗告に係る事件記録の送付",
+      "deleted": false,
+      "section": "main",
+      "page": 4,
+      "division_path": [
+        "",
+        "第二章　検査役の選任の手続に関する特則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "検査役の報酬の額の決定に対する即時抗告があった場合において、原裁判所が原審の記録を送付する必要がないと認めたときは、非訟事件手続規則（平成二十四年最高裁判所規則第七号）第五十三条第二項及び第六十三条第二項の規定にかかわらず、原裁判所の裁判所書記官は、抗告事件の記録のみを抗告裁判所の裁判所書記官に送付すれば足りる。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の規定により抗告事件の記録が送付された場合において、抗告裁判所が原審の記録が必要であると認めたときは、抗告裁判所の裁判所書記官は、速やかに、その送付を原裁判所の裁判所書記官に求めなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "章",
+      "label": "第三章",
+      "title": "解散命令の手続に関する特則",
+      "anchor": "d10",
+      "level": 2,
+      "page": 4,
+      "note": ""
+    },
+    {
+      "number": [
+        8
+      ],
+      "label": "第八条",
+      "short_label": "8条",
+      "anchor": "a8",
+      "caption": "管理人の選任等",
+      "deleted": false,
+      "section": "main",
+      "page": 4,
+      "division_path": [
+        "",
+        "第三章　解散命令の手続に関する特則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判所は、管理人を選任するに当たっては、その職務を行うに適した者を選任するものとする。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "法人が管理人に選任された場合には、当該法人は、役員又は職員のうちから管理人の職務を行うべき者を指名し、指名された者の氏名を裁判所に届け出るとともに、一般社団法人等に通知しなければならない。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "裁判所書記官は、管理人に対し、その選任を証する書面を交付しなければならない。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "管理人は、正当な理由があるときは、裁判所の許可を得て辞任することができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        9
+      ],
+      "label": "第九条",
+      "short_label": "9条",
+      "anchor": "a9",
+      "caption": "管理人に対する監督",
+      "deleted": false,
+      "section": "main",
+      "page": 5,
+      "division_path": [
+        "",
+        "第三章　解散命令の手続に関する特則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判所は、報告書の提出を促すことその他の管理人に対する監督に関する事務を裁判所書記官に命じて行わせることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        10
+      ],
+      "label": "第十条",
+      "short_label": "10条",
+      "anchor": "a10",
+      "caption": "管理人の報酬の額",
+      "deleted": false,
+      "section": "main",
+      "page": 5,
+      "division_path": [
+        "",
+        "第三章　解散命令の手続に関する特則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判所が定める管理人の報酬の額は、その職務と責任にふさわしいものでなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        11
+      ],
+      "label": "第十一条",
+      "short_label": "11条",
+      "anchor": "a11",
+      "caption": "即時抗告に係る事件記録の送付",
+      "deleted": false,
+      "section": "main",
+      "page": 5,
+      "division_path": [
+        "",
+        "第三章　解散命令の手続に関する特則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "第七条の規定は、管理人の報酬の額の決定に対する即時抗告があった場合について準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        12
+      ],
+      "label": "第十二条",
+      "short_label": "12条",
+      "anchor": "a12",
+      "caption": "報告又は計算に関する資料の閲覧等",
+      "deleted": false,
+      "section": "main",
+      "page": 5,
+      "division_path": [
+        "",
+        "第三章　解散命令の手続に関する特則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第二百九十八条第一項の資料の閲覧若しくは謄写、その正本、謄本若しくは抄本の交付又はその複製の請求は、当該請求に係る資料を特定するに足りる事項を明らかにしてしなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "裁判所は、利害関係人の閲覧に供するため必要があると認めるときは、管理人に対し、法第二百九十八条第一項の資料の写しを提出することを求めることができる。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "前項の規定により資料の写しが提出された場合には、当該資料の閲覧又は謄写は、提出された写しによってさせることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "章",
+      "label": "第四章",
+      "title": "雑則",
+      "anchor": "d16",
+      "level": 2,
+      "page": 6,
+      "note": ""
+    },
+    {
+      "number": [
+        13
+      ],
+      "label": "第十三条",
+      "short_label": "13条",
+      "anchor": "a13",
+      "caption": "裁判による登記の嘱託",
+      "deleted": false,
+      "section": "main",
+      "page": 6,
+      "division_path": [
+        "",
+        "第四章　雑則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第三百十五条の規定による登記の嘱託は、嘱託書に裁判書の謄本又は電子判決書に記録されている事項を記載した書面であって裁判所書記官が当該書面の内容がファイルに記録されている事項と同一であることを証明したものを添付してしなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "",
+      "anchor": "sup1",
+      "level": 1,
+      "page": 6,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-1",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 6,
+      "division_path": [],
+      "sup_index": 1,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、法の施行の日（平成二十年十二月一日）から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成二四年七月一七日最高裁判所規則第九号）抄",
+      "anchor": "sup2",
+      "level": 1,
+      "page": 6,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "sup2-a1",
+      "caption": "施行期日",
+      "deleted": false,
+      "section": "supplementary",
+      "page": 6,
+      "division_path": [],
+      "sup_index": 2,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、非訟事件手続法（平成二十三年法律第五十一号）の施行の日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（令和六年九月一七日最高裁判所規則第一四号）抄",
+      "anchor": "sup3",
+      "level": 1,
+      "page": 6,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "sup3-a1",
+      "caption": "施行期日",
+      "deleted": false,
+      "section": "supplementary",
+      "page": 6,
+      "division_path": [],
+      "sup_index": 3,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、民事訴訟法等の一部を改正する法律（令和四年法律第四十八号）の施行の日（令和八年五月二一日）から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    }
+  ]
+}

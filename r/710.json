@@ -1,0 +1,1042 @@
+{
+  "title": "簡易裁判所判事選考規則",
+  "law_number": "昭和22年9月19日最高裁判所規則第2号",
+  "enforcement_date": "昭和24年1月1日",
+  "enforcement_iso": "1949-01-01",
+  "pdf_link": "https://www.courts.go.jp/assets/kansaihanjisenkou.pdf",
+  "source": "kansaihanjisenkou.pdf",
+  "numeral": "kansuji",
+  "notes": [
+    "各条の「原本」は https://www.courts.go.jp/assets/kansaihanjisenkou.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+  ],
+  "nodes": [
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "body-1",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "改正 昭和23年12月28日最高裁判所規則第３８号平成15年2月19日最高裁判所規則第５号簡易裁判所判事選考規則を次のように定める。簡易裁判所判事選考規則",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "章",
+      "label": "第一章",
+      "title": "簡易裁判所判事選考委員会",
+      "anchor": "d1",
+      "level": 2,
+      "page": 1,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "a1",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [
+        "",
+        "第一章　簡易裁判所判事選考委員会"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "簡易裁判所判事選考委員会は、最高裁判所の監督に属し、簡易裁判所判事の任命に関する裁判所法第四十五条第一項の選考を行う。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        2
+      ],
+      "label": "第二条",
+      "short_label": "2条",
+      "anchor": "a2",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [
+        "",
+        "第一章　簡易裁判所判事選考委員会"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "委員会は、委員九人でこれを組織し、そのうち一人を委員長とする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        3
+      ],
+      "label": "第三条",
+      "short_label": "3条",
+      "anchor": "a3",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [
+        "",
+        "第一章　簡易裁判所判事選考委員会"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "平一五最裁規五・一部改正",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "委員は、次に掲げる者をもってこれに充てることとし、最高裁判所長官が、これを委嘱する。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "裁判官 三人",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "検察官 一人",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "弁護士 二人",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "学識経験のある者 三人",
+              "children": []
+            }
+          ]
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        4
+      ],
+      "label": "第四条",
+      "short_label": "4条",
+      "anchor": "a4",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [
+        "",
+        "第一章　簡易裁判所判事選考委員会"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "委員会の委員長は、最高裁判所長官が、これを委嘱する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "委員長は、会務を総理する。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "委員長に事故のあるときは、委員長の指名する委員が、その職務を代理する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        5
+      ],
+      "label": "第五条",
+      "short_label": "5条",
+      "anchor": "a5",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [
+        "",
+        "第一章　簡易裁判所判事選考委員会"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "最高裁判所が委員会に対し第一条の選考を行うべきことを命じたときは、委員会は、簡易裁判所判事推薦委員会が推薦した者の中から、簡易裁判所判事の候補者を選考しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "委員会は、前項の場合において、必要があると認めるときは、同項の規定にかかわらず、簡易裁判所判事推薦委員会が推薦した者以外の者の中から、簡易裁判所判事の候補者を選考することができる。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "委員会は、前二項の規定により、簡易裁判所判事の候補者を選考したときは、速やかに、その氏名、選考の理由及び選考の日を最高裁判所に報告しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        6
+      ],
+      "label": "第六条",
+      "short_label": "6条",
+      "anchor": "a6",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [
+        "",
+        "第一章　簡易裁判所判事選考委員会"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "委員会は、委員長が、これを招集する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "委員長は、会議の議長となり、議事を整理する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        7
+      ],
+      "label": "第七条",
+      "short_label": "7条",
+      "anchor": "a7",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [
+        "",
+        "第一章　簡易裁判所判事選考委員会"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "委員会の会議は、秘密とする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        8
+      ],
+      "label": "第八条",
+      "short_label": "8条",
+      "anchor": "a8",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [
+        "",
+        "第一章　簡易裁判所判事選考委員会"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "委員会は、五人以上の委員が出席しなければ、会議を開くことができない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "委員会の議事は、出席した委員長及びその他の委員の過半数によりこれを決する。可否同数のときは、委員長が、これを決する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        9
+      ],
+      "label": "第九条",
+      "short_label": "9条",
+      "anchor": "a9",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [
+        "",
+        "第一章　簡易裁判所判事選考委員会"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "委員会は、適当と認めるときは、委員でない者の出席を求めてその説明又は意見を聴くことができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        10
+      ],
+      "label": "第十条",
+      "short_label": "10条",
+      "anchor": "a10",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [
+        "",
+        "第一章　簡易裁判所判事選考委員会"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "委員会の選考は、選考の日から一年を経過したときは、その効力を失う。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        11
+      ],
+      "label": "第十一条",
+      "short_label": "11条",
+      "anchor": "a11",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [
+        "",
+        "第一章　簡易裁判所判事選考委員会"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "平一五最裁規五・一部改正",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "委員の任期は、三年とする。ただし、再任を妨げない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        12
+      ],
+      "label": "第十二条",
+      "short_label": "12条",
+      "anchor": "a12",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [
+        "",
+        "第一章　簡易裁判所判事選考委員会"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "委員会に幹事一人を置く。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "幹事は、最高裁判所の裁判所事務官の中から、委員長が、これを委嘱する。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "幹事は、委員長の命を受けて、庶務を掌る。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        13
+      ],
+      "label": "第十三条",
+      "short_label": "13条",
+      "anchor": "a13",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [
+        "",
+        "第一章　簡易裁判所判事選考委員会"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "委員会に書記を置く。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "書記は、委員長及び幹事の命を受けて、庶務に従事する。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "前条第二項の規定は、書記にこれを準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        14
+      ],
+      "label": "第十四条",
+      "short_label": "14条",
+      "anchor": "a14",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [
+        "",
+        "第一章　簡易裁判所判事選考委員会"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則に定めるものの外、委員会に関し必要な事項は、委員会がこれを定める。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "章",
+      "label": "第二章",
+      "title": "簡易裁判所判事推薦委員会",
+      "anchor": "d16",
+      "level": 2,
+      "page": 1,
+      "note": ""
+    },
+    {
+      "number": [
+        15
+      ],
+      "label": "第十五条",
+      "short_label": "15条",
+      "anchor": "a15",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [
+        "",
+        "第二章　簡易裁判所判事推薦委員会"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "各地方裁判所に、簡易裁判所判事推薦委員会を置く。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        16
+      ],
+      "label": "第十六条",
+      "short_label": "16条",
+      "anchor": "a16",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [
+        "",
+        "第二章　簡易裁判所判事推薦委員会"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "委員会は、当該地方裁判所の所長の監督に属し、簡易裁判所判事として適当と認める者を簡易裁判所判事選考委員会に推薦する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        17
+      ],
+      "label": "第十七条",
+      "short_label": "17条",
+      "anchor": "a17",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [
+        "",
+        "第二章　簡易裁判所判事推薦委員会"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "昭二三最裁規三八・一部改正",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "委員会は、委員八人でこれを組織する。但し、東京地方裁判所の委員会については、委員の数を十二人とする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        18
+      ],
+      "label": "第十八条",
+      "short_label": "18条",
+      "anchor": "a18",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第二章　簡易裁判所判事推薦委員会"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "昭二三最裁規三八・一部改正",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "委員は、左に掲げる者を以てこれに充てる。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "当該地方裁判所の所長",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "当該地方裁判所の判事で前号に該当しない者 二人二の二 当該地方裁判所の所在地を管轄する家庭裁判所の所長",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "当該地方裁判所に対応する地方検察庁の検事正",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "当該地方裁判所の管轄区域内の弁護士会の会長",
+              "children": []
+            },
+            {
+              "marker": "五",
+              "kind": "go",
+              "text": "学識経験のある者 二人",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "text": "前条但書の委員会については、前項第二号及び第五号の委員は、これらの各号の規定にかかわらず、その員数を各々三人とする。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "第一項第二号及び第五号の委員は、当該地方裁判所の所長が、これを委嘱する。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "地方裁判所長は、前項の規定により委員を委嘱したときは、速やかに、当該地方裁判所の所在地を管轄する高等裁判所の長官を経て、最高裁判所にこれを報告しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        19
+      ],
+      "label": "第十九条",
+      "short_label": "19条",
+      "anchor": "a19",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第二章　簡易裁判所判事推薦委員会"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "委員会に委員長一人を置き、地方裁判所長たる委員を以てこれに充てる。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "第四条第二項及び第三項の規定は、前項の委員長にこれを準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        20
+      ],
+      "label": "第二十条",
+      "short_label": "20条",
+      "anchor": "a20",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第二章　簡易裁判所判事推薦委員会"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "委員会は何時でも、簡易裁判所判事として適当と認める者を、当該地方裁判所の所在地を管轄する高等裁判所の長官を経て、簡易裁判所判事選考委員会に推薦することができる。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の高等裁判所長官は、委員会の推薦に意見を附することができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        21
+      ],
+      "label": "第二十一条",
+      "short_label": "21条",
+      "anchor": "a21",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第二章　簡易裁判所判事推薦委員会"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "第十七条但書の委員会は、七人以上、その他の委員会は、五人以上の委員が出席しなければ、会議を開くことができない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        22
+      ],
+      "label": "第二十二条",
+      "short_label": "22条",
+      "anchor": "a22",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第二章　簡易裁判所判事推薦委員会"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "高等裁判所長官又はその指名する高等裁判所判事は、何時でも、当該高等裁判所の管轄区域内の地方裁判所の委員会に出席して意見を述べることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        23
+      ],
+      "label": "第二十三条",
+      "short_label": "23条",
+      "anchor": "a23",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第二章　簡易裁判所判事推薦委員会"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "第十八条第一項第二号及び第五号の委員の任期は、三年とする。但し、再任を妨げない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        24
+      ],
+      "label": "第二十四条",
+      "short_label": "24条",
+      "anchor": "a24",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第二章　簡易裁判所判事推薦委員会"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "委員会に幹事一人を置く。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "幹事は、当該地方裁判所の裁判官又は裁判所事務官の中から、委員長が、これを委嘱する。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "幹事は、委員長の命を受けて、庶務を掌る。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        25
+      ],
+      "label": "第二十五条",
+      "short_label": "25条",
+      "anchor": "a25",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第二章　簡易裁判所判事推薦委員会"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "委員会に書記を置く。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "書記は、当該地方裁判所の裁判所事務官の中から、委員長が、これを委嘱する。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "書記は、委員長及び幹事の命を受けて、庶務に従事する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        26
+      ],
+      "label": "第二十六条",
+      "short_label": "26条",
+      "anchor": "a26",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第二章　簡易裁判所判事推薦委員会"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "第六条、第七条、第八条第二項、第九条及び第十四条の規定は、この章の委員会にこれを準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "",
+      "anchor": "sup1",
+      "level": 1,
+      "page": 2,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-1",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 1,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、公布の日から、これを施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和二三年一二月二八日最高裁判所規則第三八号）抄",
+      "anchor": "sup2",
+      "level": 1,
+      "page": 2,
+      "note": ""
+    },
+    {
+      "number": [
+        8
+      ],
+      "label": "第八条",
+      "short_label": "8条",
+      "anchor": "sup2-a8",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 2,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、昭和二十四年一月一日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成一五年二月一九日最高裁判所規則第五号）",
+      "anchor": "sup3",
+      "level": 1,
+      "page": 2,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-2",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 3,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、公布の日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則の施行の際現に改正前の簡易裁判所判事選考規則第三条第一項第四号又は第５号の委員に委嘱されている者は、改正後の簡易裁判所判事選考規則第三条の規程により同条第三号又は第四号の委員に委嘱されたものとみなす。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    }
+  ]
+}

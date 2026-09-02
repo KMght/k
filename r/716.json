@@ -1,0 +1,189 @@
+{
+  "title": "裁判所傍聴規則",
+  "law_number": "昭和27年9月1日最高裁判所規則第21号",
+  "enforcement_date": "",
+  "enforcement_iso": "",
+  "pdf_link": "https://www.courts.go.jp/assets/saibansyoboutyoukisoku.pdf",
+  "source": "saibansyoboutyoukisoku.pdf",
+  "numeral": "kansuji",
+  "notes": [
+    "各条の「原本」は https://www.courts.go.jp/assets/saibansyoboutyoukisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+  ],
+  "nodes": [
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "body-1",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判所傍聴規則を次のように定める。裁判所傍聴規則",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "a1",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判長又は一人の裁判官（以下「裁判長」という。）は、法廷における秩序を維持するため必要があると認めるときは、傍聴につき次に掲げる処置をとることができる。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "傍聴席に相応する数の傍聴券を発行し、その所持者に限り傍聴を許すこと。",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "裁判所職員に傍聴人の被服又は所持品を検査させ、危険物その他法廷において所持するのを相当でないと思料する物の持込みを禁じさせること。",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "前号の処置に従わない者、児童、相当な衣服を着用しない者及び法廷において裁判所又は裁判官の職務の執行を妨げ又は不当の行状をすることを疑うに足りる顕著な事情が認められる者の入廷を禁ずること。",
+              "children": []
+            }
+          ]
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        2
+      ],
+      "label": "第二条",
+      "short_label": "2条",
+      "anchor": "a2",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "傍聴人は、入廷又は退廷に際し、裁判長の命令及び裁判長の命を受けた裁判所職員の指示に従わなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        3
+      ],
+      "label": "第三条",
+      "short_label": "3条",
+      "anchor": "a3",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "傍聴人は、法廷において、次に掲げる事項を守らなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "静粛を旨とし、けん騒にわたる行為をしないこと。",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "不体裁な行状をしないこと。",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "みだりに自席を離れないこと。",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "裁判長の命ずること及び裁判長の命を受けた裁判所職員の指示することに従うこと。",
+              "children": []
+            }
+          ]
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "",
+      "anchor": "sup1",
+      "level": 1,
+      "page": 1,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-1",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 1,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、公布の日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    }
+  ]
+}

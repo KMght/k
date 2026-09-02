@@ -1,0 +1,98 @@
+{
+  "title": "刑事事件における第三者所有物の没収手続に関する規則",
+  "law_number": "",
+  "enforcement_date": "",
+  "enforcement_iso": "",
+  "pdf_link": "https://www.courts.go.jp/assets/daisanshabosyukisoku.pdf",
+  "source": "daisanshabosyukisoku.pdf",
+  "numeral": "kansuji",
+  "notes": [
+    "題名・制定文とみられる行を本文の前に検出しました：昭和38年7月23日最高裁判所規則第８号／刑事事件における第三者所有物の没収手続に関する規則を次のように定める。／刑事事件における第三者所有物の没収手続に関する規則",
+    "各条の「原本」は https://www.courts.go.jp/assets/daisanshabosyukisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+  ],
+  "nodes": [
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "a1",
+      "caption": "手続の基準",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "刑事事件における第三者所有物の没収手続に関する応急措置法（昭和三十八年法律第百三十八号。以下法という。）による手続については、法及びこの規則に定めるもののほか、その性質に反しない限り、刑事訴訟規則（昭和二十三年最高裁判所規則第三十二号）の定めるところによる。この場合において、法第三条の規定により被告事件の手続への参加を許された者及び法第十三条の規定により没収の裁判の取消しを請求した者については被告人に関する規定を、法第十条（法第十三条第七項において準用する場合を含む。）の規定により選任される代理人については弁護人に関する規定を準用するものとする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        2
+      ],
+      "label": "第二条",
+      "short_label": "2条",
+      "anchor": "a2",
+      "caption": "検察官への通知・法第十三条",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第十三条の規定による請求又はその取下げがあつたときは、裁判所書記官は、すみやかにこれを検察官に通知しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "",
+      "anchor": "sup1",
+      "level": 1,
+      "page": 1,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-1",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 1,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、法施行の日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    }
+  ]
+}

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>民事調停規則</title>
+<style>
+:root{
+  --paper:#ffffff;
+  --ink:#16181d;
+  --sub:#5f6875;
+  --rule:#dde2e9;
+  --chrome:#f4f6f9;
+  --accent:#14538a;
+  --accent-weak:#e7eff7;
+  --mark:#ffe08a;
+  --mark-live:#ff9d3d;
+  --gothic:"Yu Gothic UI","Yu Gothic","YuGothic","Hiragino Sans","Noto Sans JP","Meiryo",system-ui,sans-serif;
+  --mincho:"Yu Mincho","YuMincho","Hiragino Mincho ProN","Noto Serif JP","MS Mincho",serif;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:5.5rem}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--mincho);font-size:17px;line-height:1.9;
+  text-rendering:optimizeLegibility;
+}
+
+/* ---------------------------------------------------------------- ヘッダ */
+.top{
+  position:sticky;top:0;z-index:30;background:var(--chrome);
+  border-bottom:1px solid var(--rule);font-family:var(--gothic);
+}
+.top-inner{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;padding:.7rem 1.2rem}
+.law-title{font-size:1.12rem;font-weight:700;letter-spacing:.02em;margin:0}
+.law-number{font-size:.8rem;color:var(--sub);margin-left:.2rem}
+.top-tools{margin-left:auto;display:flex;align-items:center;gap:.5rem}
+.search-box{display:flex;align-items:center;gap:.35rem;background:var(--paper);
+  border:1px solid var(--rule);border-radius:2px;padding:.25rem .5rem}
+.search-box input{border:0;outline:0;font:inherit;font-size:.85rem;width:14rem;background:transparent;color:inherit}
+.hit-count{font-size:.78rem;color:var(--sub);min-width:4.2rem;text-align:right;font-variant-numeric:tabular-nums}
+button{font:inherit;font-family:var(--gothic);cursor:pointer}
+.btn{background:var(--paper);border:1px solid var(--rule);border-radius:2px;
+  color:var(--ink);font-size:.78rem;padding:.28rem .6rem;line-height:1.4}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.crumb{padding:.3rem 1.2rem;border-top:1px solid var(--rule);background:var(--paper);
+  font-family:var(--gothic);font-size:.78rem;color:var(--sub);min-height:1.7rem}
+
+/* ------------------------------------------------------------------ 骨格 */
+.wrap{display:grid;grid-template-columns:19rem minmax(0,1fr);align-items:start}
+.toc{
+  position:sticky;top:5.6rem;max-height:calc(100vh - 5.6rem);overflow-y:auto;
+  border-right:1px solid var(--rule);padding:1rem .6rem 4rem 1.2rem;
+  font-family:var(--gothic);font-size:.83rem;line-height:1.65;
+}
+.toc h2{font-size:.75rem;color:var(--sub);font-weight:700;margin:0 0 .6rem}
+.toc ul{list-style:none;margin:0;padding:0}
+.toc a{display:block;color:var(--ink);text-decoration:none;padding:.16rem .4rem;border-radius:2px}
+.toc a:hover{background:var(--accent-weak);color:var(--accent)}
+.toc a.current{background:var(--accent-weak);color:var(--accent);font-weight:700}
+.toc .div-1>a,.toc .div-2>a{font-weight:700}
+.toc .div-2{margin-top:.5rem}
+.toc .div-3,.toc .div-4,.toc .div-5{margin-top:.25rem}
+.toc .lv-art{padding-left:.9rem}
+.toc .lv-art.hidden,.toc .lv-div.hidden{display:none}
+.toc-toggle{background:none;border:0;color:var(--sub);padding:0 .3rem;font-size:.75rem}
+
+.doc{padding:2.2rem 2rem 8rem;max-width:44em}
+.doc-head{border-bottom:2px solid var(--ink);padding-bottom:.8rem;margin-bottom:2rem}
+.doc-head h1{font-size:1.5rem;margin:0 0 .3rem;letter-spacing:.04em}
+.doc-head .meta{font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+
+/* ------------------------------------------------------------------ 条文 */
+.div-head{font-family:var(--gothic);margin:2.6rem 0 1rem;scroll-margin-top:6rem}
+.div-head .lbl{color:var(--accent);font-weight:700}
+h2.div-head{font-size:1.12rem;border-bottom:1px solid var(--rule);padding-bottom:.35rem}
+h3.div-head{font-size:1.02rem}
+h4.div-head,h5.div-head,h6.div-head{font-size:.95rem}
+
+.art{position:relative;padding-left:2.6rem;margin:1.5rem 0 1.9rem;scroll-margin-top:6rem}
+.art:target{background:var(--accent-weak);box-shadow:-.4rem 0 0 var(--accent);border-radius:2px}
+.art-tools{position:absolute;left:0;top:.25rem;display:flex;flex-direction:column;gap:.2rem;
+  visibility:hidden}
+.art:hover .art-tools,.art:focus-within .art-tools,.art:target .art-tools{visibility:visible}
+.art-tools button,.art-tools a{background:none;border:0;color:var(--sub);font-size:.72rem;
+  font-family:var(--gothic);padding:.1rem .2rem;border-radius:2px;text-decoration:none;
+  white-space:nowrap;display:block}
+.art-tools button:hover,.art-tools a:hover{color:var(--accent);background:var(--accent-weak)}
+.raw h3 .src{font-size:.75rem;font-weight:400;color:var(--sub);margin-left:.5rem}
+.doc-head .src{color:var(--accent);text-decoration:none}
+.doc-head .src:hover{text-decoration:underline}
+.caption{font-family:var(--gothic);font-size:.88rem;font-weight:700;color:var(--sub);margin:0 0 .1rem}
+.amend-note{font-family:var(--gothic);font-size:.78rem;font-weight:400;color:var(--sub);margin:.1rem 0 0;text-align:right}
+h2 .amend-note,h3 .amend-note,h4 .amend-note,h5 .amend-note,h6 .amend-note{display:inline;text-align:left}
+.art-no{font-family:var(--gothic);font-weight:700;color:var(--accent);text-decoration:none;margin-right:.55em}
+.art-no:hover{text-decoration:underline}
+.para{margin:.35rem 0;text-indent:0}
+.para+.para{margin-top:.55rem}
+.pno{font-family:var(--gothic);color:var(--sub);font-size:.9em;margin-right:.5em;font-variant-numeric:tabular-nums}
+.deleted .body-text{color:var(--sub)}
+.art.noarticle .para{margin-top:0}
+
+ol.items{list-style:none;margin:.35rem 0 .35rem 1.1em;padding:0}
+ol.items>li{display:grid;grid-template-columns:2.4em minmax(0,1fr);margin:.2rem 0}
+ol.items .mk{font-family:var(--gothic);font-size:.9em;color:var(--sub);margin-right:.4em}
+ol.items ol.items{grid-column:1/-1;margin-left:1.2em}
+ol.items ol.items>li{grid-template-columns:2em minmax(0,1fr)}
+
+.raw{margin:1.6rem 0;scroll-margin-top:6rem}
+.raw h3{font-family:var(--gothic);font-size:1rem;margin:0 0 .4rem}
+.raw pre{font-family:var(--mincho);white-space:pre-wrap;margin:0;padding:.7rem .9rem;
+  background:var(--chrome);border:1px solid var(--rule);font-size:.92rem;line-height:1.75}
+
+.notes{margin:2.5rem 0 0;padding:.8rem 1rem;background:var(--chrome);
+  border-left:3px solid var(--accent);font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+.notes p{margin:0 0 .3rem;font-weight:700;color:var(--ink)}
+.notes ul{margin:0;padding-left:1.2rem}
+.foot{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);
+  font-family:var(--gothic);font-size:.75rem;color:var(--sub)}
+
+a.ref{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule)}
+a.ref:hover{color:var(--accent);border-bottom-color:var(--accent)}
+a.ref-egov{border-bottom-style:dotted}
+a.ref-rule{border-bottom-color:var(--accent)}
+mark{background:var(--mark);color:inherit;padding:0 .05em}
+mark.live{background:var(--mark-live)}
+.toast{position:fixed;left:50%;bottom:2rem;transform:translateX(-50%);
+  background:var(--ink);color:#fff;font-family:var(--gothic);font-size:.8rem;
+  padding:.5rem .9rem;border-radius:3px;pointer-events:none;z-index:60;display:none}
+.toast.show{display:block}
+
+.toc-open{display:none}
+@media (max-width:900px){
+  body{font-size:16px}
+  .wrap{grid-template-columns:minmax(0,1fr)}
+  .toc{position:fixed;inset:5.6rem auto 0 0;width:82vw;max-width:20rem;background:var(--paper);
+    z-index:25;box-shadow:0 0 0 100vmax rgba(0,0,0,.25);max-height:none;height:calc(100vh - 5.6rem);
+    display:none}
+  .toc.open{display:block}
+  .toc-open{display:inline-block}
+  .doc{padding:1.4rem 1.1rem 6rem}
+  .search-box input{width:8rem}
+  .art-tools{opacity:1;position:static;flex-direction:row;justify-content:flex-end;margin-bottom:.15rem}
+  .art-tools button,.art-tools a{border:1px solid var(--rule);border-radius:2px;
+    padding:.1rem .45rem;display:inline-block}
+  .art{padding-left:0}
+}
+
+@media print{
+  .top,.toc,.art-tools,.crumb,.toast{display:none!important}
+  a.ref{border-bottom:0}
+  .wrap{display:block}
+  .doc{max-width:none;padding:0}
+  body{font-size:10.5pt;line-height:1.7}
+  .art{page-break-inside:avoid}
+}
+
+.anchor-alias{position:absolute;scroll-margin-top:6rem}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <button type="button" class="btn toc-open" id="toc-open">目次</button>
+    <h1 class="law-title">民事調停規則</h1>
+    <span class="law-number">昭和二六年九月一五日最高裁判所規則第八号　／　令和5年2月20日施行</span>
+    <div class="top-tools">
+      <div class="search-box">
+        <input type="search" id="q" placeholder="条文を検索（/ キー）" aria-label="条文を検索">
+        <span class="hit-count" id="hits"></span>
+      </div>
+      <button type="button" class="btn" id="prev" title="前の該当箇所">前</button>
+      <button type="button" class="btn" id="next" title="次の該当箇所">次</button>
+      <button type="button" class="btn" id="numeral" aria-pressed="false"
+        title="条番号の表記を切り替える">123</button>
+    </div>
+  </div>
+  <div class="crumb" id="crumb"></div>
+</header>
+<div class="wrap">
+  <nav class="toc" id="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ul><li class="lv-art" data-text="民事調停規則（原文は縦書き民事調停規則（原文は縦書き改正 同三三年七月一日最高裁判所規則第六号同四六年六月一四日同第六号同四九年九月一四日同第六号同五年五月六日同第三号平成四年二月二一日同第四号同八年一二月一七日同第六号同一二年一二月一五日同第一五号同一五年一○月一日同第一四号同二四年七月一七日同第九号令和四年一一月七日同第一七号同六年九月一七日同第一四号民事調停規則を次のように定める。民事調停規則"><a href="#body-1">本文　民事調停規則（原文は縦書き</a></li><li class="lv-art" data-text="第一条1条規則の趣旨規則の趣旨民事調停法（昭和二十六年法律第二百二十二号。以下「法」という。）による調停に関しては、法に定めるもののほか、この規則の定めるところによる。"><a href="#a1">第一条　規則の趣旨</a></li><li class="lv-art" data-text="第二条2条移送等における取扱い移送等における取扱い裁判所は、法第四条第一項ただし書、第二項ただし書又は第三項の規定による裁判をするときは、当事者の意見を聴くことができる。"><a href="#a2">第二条　移送等における取扱い</a></li><li class="lv-art" data-text="第三条3条調停の申立て調停の申立て法第四条の二第一項の申立書には、申立ての趣旨及び紛争の要点並びに第二十四条において準用する非訟事件手続規則（平成二十四年最高裁判所規則第七号）第一条第一項各号に掲げる事項を記載するほか、紛争の要点に関する証拠書類があるときは、その写しを添付しなければならない。"><a href="#a3">第三条　調停の申立て</a></li><li class="lv-art" data-text="第四条4条民事調停委員の除斥及び回避民事調停委員の除斥及び回避民事調停委員の除斥及び回避については、非訟事件手続規則第八条から第十条までの規定（忌避に関する部分を除く。）を準用する。この場合において、簡易裁判所の民事調停委員の回避の許可は、その民事調停委員の所属する裁判所の裁判所法（昭和二十二年法律第五十九号）第三十七条に規定する裁判官がする。"><a href="#a4">第四条　民事調停委員の除斥及び回避</a></li><li class="lv-art" data-text="第五条5条民事執行の手続の停止民事執行の手続の停止調停事件の係属する裁判所は、紛争の実情により事件を調停によって解決することが相当である場合において、調停の成立を不能にし又は著しく困難にするおそれがあるときは、申立てにより、担保を立てさせて、調停が終了するまで調停の目的となった権利に関する民事執行の手続を停止することを命ずることができる。ただし、裁判並びに調書その他裁判所において作成する書面の記載及び電子調書（期日又は期日外における手続の方式、内容及び経過等の記録及び公証をするために民事訴訟法（平成八年法律第百九号）第百六十条第一項（他の法令において準用する場合を含む。）その他の法令の規定により裁判所書記官が作成する電磁的記録（電子的方式、磁気的方式その他人の知覚によっては認識することができない方式で作られる記録であって、電子計算機による情報処理の用に供されるものをいう。以下この項において同じ。）をいう。）その他裁判所において作成する電磁的記録の記録に基づく民事執行の手続については、この限りでない。調停の係属する裁判所は、民事執行の手続を停止することを命じた場合において、必要があるときは、申立てにより、担保を立てさせ又は立てさせないで、これを続行することを命ずることができる。前二項の申立てをするには、その理由を疎明しなければならない。民事訴訟法第七十六条、第七十七条、第七十九条及び第八十条の規定は、第一項及び第二項の担保について準用する。５第一項及び第二項の規定による決定に対しては、当事者は、即時抗告をすることができる。"><a href="#a5">第五条　民事執行の手続の停止</a></li><li class="lv-art" data-text="第六条6条調停前の措置をする場合の制裁の告知調停前の措置をする場合の制裁の告知調停委員会は、法第十二条第一項の措置をする場合には、同時にその違反に対する法律上の制裁を告知しなければならない。"><a href="#a6">第六条　調停前の措置をする場合の制裁の告知</a></li><li class="lv-art" data-text="第七条7条期日の呼出状期日の呼出状調停手続の期日の呼出状には､不出頭に対する法律上の制裁を記載しなければならない｡"><a href="#a7">第七条　期日の呼出状</a></li><li class="lv-art" data-text="第八条8条本人の出頭義務本人の出頭義務調停委員会の呼出しを受けた当事者は、自ら出頭しなければならない。ただし、やむを得ない事由があるときは、代理人を出頭させることができる。次に掲げる者以外の者を前項の代理人とするには、調停委員会の許可を受けなければならない。一弁護士二司法書士法（昭和二十五年法律第百九十七号）第三条第二項に規定する司法書士（同条第一項第六号ニに掲げる手続に係る事件に限る。）調停委員会は、いつでも、前項の許可を取り消すことができる。"><a href="#a8">第八条　本人の出頭義務</a></li><li class="lv-art" data-text="第九条9条期日外の準備期日外の準備調停に関与する者は、調停が適正かつ迅速に行われるように、調停手続の期日外において十分な準備をしなければならない。"><a href="#a9">第九条　期日外の準備</a></li><li class="lv-art" data-text="第十条10条申立書の補正等の促し申立書の補正等の促し調停主任は、法第四条の二第一項の申立書の補正又は調停手続に必要な書類の提出を促す場合には、裁判所書記官に命じて行わせることができる。"><a href="#a10">第十条　申立書の補正等の促し</a></li><li class="lv-art" data-text="第十一条11条期日調書の形式的記載事項期日調書の形式的記載事項法第十二条の五の調書（次項及び次条において「期日調書」という。）には、次に掲げる事項を記載しなければならない。一事件の表示二調停主任又は民事調停官、民事調停委員及び裁判所書記官の氏名三出頭した当事者、参加人、代理人、補佐人、通訳人及びその他の関係人の氏名四期日の日時及び場所期日調書には、裁判所書記官が記名押印し、調停主任が認印しなければならない。前項の場合において、調停主任に支障があるときは、裁判所書記官がその旨を記載すれば足りる。"><a href="#a11">第十一条　期日調書の形式的記載事項</a></li><li class="lv-art" data-text="第十二条12条期日調書の実質的記載事項期日調書の実質的記載事項期日調書には、手続の要領を記載し、特に、次に掲げる事項を明確にしなければならない。一申立ての趣旨又は紛争の要点の変更、申立ての取下げ及び法第十六条の合意二法第十三条又は第十四条の規定による事件の終了三証拠調べの概要四調停主任が記載を命じた事項及び当事者の請求により記載を許した事項五書面を作成しないでした裁判"><a href="#a12">第十二条　期日調書の実質的記載事項</a></li><li class="lv-art" data-text="第十三条13条事実の調査事実の調査調停委員会は、相当であると認めるときは、当該調停委員会を組織する民事調停委員に事実の調査をさせることができる。調停主任は、調停委員会の決議により、裁判所書記官に事実の調査をさせることができる。"><a href="#a13">第十三条　事実の調査</a></li><li class="lv-art" data-text="第十四条14条意見の聴取の嘱託意見の聴取の嘱託調停委員会は、地方裁判所又は簡易裁判所に紛争の解決に関する事件の関係人の意見の聴取を嘱託することができる。"><a href="#a14">第十四条　意見の聴取の嘱託</a></li><li class="lv-art" data-text="第十五条15条嘱託に係る事実の調査等の民事調停委員等による実施嘱託に係る事実の調査等の民事調停委員等による実施法第二十二条において準用する非訟事件手続法（平成二十三年法律第五十一号）第五十一条第一項又は第二項の規定による嘱託を受けた裁判所は、相当であると認めるときは、民事調停委員又は裁判所書記官に当該嘱託に係る事実の調査をさせることができる。前条の規定による嘱託を受けた裁判所は、相当であると認めるときは、民事調停委員に当該嘱託に係る意見の聴取をさせることができる。"><a href="#a15">第十五条　嘱託に係る事実の調査等の民事調停委員等による実施</a></li><li class="lv-art" data-text="第十六条16条調査の嘱託調査の嘱託調停委員会は、必要な調査を官庁、公署その他適当であると認める者に嘱託することができる。"><a href="#a16">第十六条　調査の嘱託</a></li><li class="lv-art" data-text="第十七条17条調停委員会の嘱託の手続調停委員会の嘱託の手続調停委員会がする嘱託の手続は、裁判所書記官がする。"><a href="#a17">第十七条　調停委員会の嘱託の手続</a></li><li class="lv-art" data-text="第十八条18条専門的な知識経験に基づく意見の聴取専門的な知識経験に基づく意見の聴取調停委員会は、必要があると認めるときは、当該調停委員会を組織していない民事調停委員の専門的な知識経験に基づく意見を聴取することができる。調停委員会が前項の規定により意見を聴取することとしたときは、裁判所は、意見を述べるべき民事調停委員を指定する。前項の規定による指定を受けた民事調停委員は、調停委員会に出席して意見を述べるものとする。"><a href="#a18">第十八条　専門的な知識経験に基づく意見の聴取</a></li><li class="lv-art" data-text="第十九条19条調停委員会の決議調停委員会の決議調停委員会の決議は、過半数の意見による。可否同数のときは、調停主任の決するところによる。"><a href="#a19">第十九条　調停委員会の決議</a></li><li class="lv-art" data-text="第二十条20条評議の秘密評議の秘密調停委員会の評議は、秘密とする。"><a href="#a20">第二十条　評議の秘密</a></li><li class="lv-art" data-text="第二十一条21条裁判官の調停裁判官の調停第六条、第八条及び第十条から第十八条まで（第十三条第一項を除く。）の規定は、裁判官だけで調停を行う場合に準用する。この場合において、第十条から第十二条までの規定中「調停主任」とあるのは、「裁判官」と読み替えるものとする。"><a href="#a21">第二十一条　裁判官の調停</a></li><li class="lv-art" data-text="第二十二条22条当事者に対する通知当事者に対する通知法第十三条若しくは第十四条（これらの規定を法第十五条において準用する場合を含む。）の規定により事件が終了したとき、又は法第十八条第四項の規定により決定が効力を失ったときは、裁判所書記官は、当事者に対し、遅滞なく、その旨を通知しなければならない。調停の申立ての取下げがあったときは、裁判所書記官は、その旨を相手方に通知しなければならない。法第十七条の決定がされた後に調停の申立ての取下げがあった場合において、相手方が申立ての取下げに同意したときは、裁判所書記官は、その旨を申立人に通知しなければならない。"><a href="#a22">第二十二条　当事者に対する通知</a></li><li class="lv-art" data-text="第二十三条23条受訴裁判所等に対する通知受訴裁判所等に対する通知法第二十条第二項の規定により訴えの取下げがあったものとみなされるときは、調停事件の係属した裁判所の裁判所書記官は、受訴裁判所に対し、遅滞なく、その旨を通知しなければならない。前項の規定は、法第二十条第四項において準用する同条第二項の規定により非訟事件の申立ての取下げがあったものとみなされる場合について準用する。"><a href="#a23">第二十三条　受訴裁判所等に対する通知</a></li><li class="lv-art" data-text="第二十三条の二23条の2当事者に対する住所、氏名等の秘匿当事者に対する住所、氏名等の秘匿調停手続における申立てその他の申述については、民事訴訟規則（平成八年最高裁判所規則第五号）第一編第八章の規定（同規則第五十二条の二十第七項から第九項まで、第五十二条の二十二第二項及び第三項並びに第五十二条の二十三の規定を除く。）を準用する。この場合において、同規則第五十二条の二十一第一項中「この規則の規定（第五十二条の十九（秘匿事項届出書面の記載事項等）第一項を除く。次項において同じ。）」とあるのは「民事調停規則（昭和二十六年最高裁判所規則第八号）第二十四条において準用する非訟事件手続規則（平成二十四年最高裁判所規則第七号）の規定」と、同条第二項中「この規則」とあるのは「民事調停規則第二十四条において準用する非訟事件手続規則」と読み替えるものとする。前項において準用する民事訴訟規則第五十二条の二十第三項、第五項本文又は第六項の規定により文書その他の物件から秘匿事項記載部分を除いたものが提出された場合には、当該文書その他の物件の閲覧、謄写又は複製は、その提出されたものによってさせることができる。第一項において準用する民事訴訟規則第五十二条の二十二第一項の規定により、法第二十一条の二において準用する民事訴訟法第百三十三条第二項の規定による届出に係る書面（以下この項において「秘匿事項届出書面」という。）から法第二十一条の二において読み替えて準用する民事訴訟法第百三十三条の四第一項の取消し又は同条第二項の許可の裁判に係る部分以外の部分（秘匿事項又は秘匿事項を推知することができる事項が記載された部分に限る。）を除いたものが提出された場合には、秘匿事項届出書面の閲覧又は謄写は、その提出されたものによってさせることができる。"><a href="#a23-2">第二十三条の二　当事者に対する住所、氏名等の秘匿</a></li><li class="lv-art" data-text="第二十四条24条非訟事件手続規則の準用非訟事件手続規則の準用特別の定めがある場合を除いて、調停に関しては、その性質に反しない限り、非訟事件手続規則の規定（同規則第二章第八節、第四十四条及び第四十九条第二項を除く。）を準用する。この場合において、同規則第二条第一項第二号中「非訟事件手続法（平成二十三年法律第五十一号。以下「法」という。）第四十二条の二」とあるのは、「民事調停法（昭和二十六年法律第二百二十二号）第二十一条の二」と読み替えるものとする。（平二四最裁規九・追加、令四最裁規一七・一部改正））"><a href="#a24">第二十四条　非訟事件手続規則の準用</a></li><li class="lv-div div-3"><a href="#d26">第二節　民事調停官（平一五最裁規一四・追加）</a><ul><li class="lv-art" data-text="第二十五条25条民事調停官の権限民事調停官の権限民事調停官は、その取り扱う調停事件の処理について、この規則の規定（前条において準用する非訟事件手続規則の規定を含む。）及び特定調停手続規則（平成十二年最高裁判所規則第二号）の規定において裁判官が行うものとして規定されている民事調停及び特定調停に関する権限（調停主任に係るものを含む。）のほか、次に掲げる権限を行うことができる。一第五条第一項及び第二項並びに第十八条第二項の規定において裁判所が行うものとして規定されている民事調停に関する権限二第五条第四項において準用する民事訴訟法第七十六条、第七十九条第一項、第二項及び第八十条の規定並びに民事訴訟規則第二十九条第二項において準用する同条第一項の規定において裁判所が行うものとして規定されている権限であって民事調停に関するもの三前条において準用する非訟事件手続規則の規定において裁判所が行うものとして規定されている権限であって民事調停に関するもの四特定調停手続規則の規定において裁判所が行うものとして規定されている特定調停に関する権限"><a href="#a25">第二十五条　民事調停官の権限</a></li><li class="lv-art" data-text="第二十六条26条民事調停官の除斥等民事調停官の除斥等民事調停官の除斥、忌避及び回避については、非訟事件手続規則第八条から第十条までの規定を準用する。"><a href="#a26">第二十六条　民事調停官の除斥等</a></li></ul></li><li class="lv-div div-2"><a href="#d29">第二章　特則</a><ul><li class="lv-div div-3"><a href="#d30">第一節　宅地建物調停（平四最裁規四・追加）</a><ul><li class="lv-art" data-text="第二十七条27条当事者の審尋当事者の審尋調停委員会は、法第二十四条の三第一項の規定により調停条項を定めようとするときは、当事者を審尋しなければならない。"><a href="#a27">第二十七条　当事者の審尋</a></li></ul></li><li class="lv-div div-3"><a href="#d32">第一節の二　農事調停（平四最裁規四・旧第一節繰下）</a><ul><li class="lv-art" data-text="第二十八条28条小作官等に対する事件受理等の通知小作官等に対する事件受理等の通知裁判所が調停の申立てを受けたときは、裁判所書記官は、小作官又は小作主事に対し、遅滞なく、その旨を通知しなければならない。ただし、法第四条第一項本文又は第二項の規定により事件を移送する場合は、この限りでない。前項本文の規定は、裁判所が事件の移送を受け若しくは法第二十条第一項（同条第四項において準用する場合を含む。）の規定により事件を受理したとき、又は受訴裁判所が同条第一項の規定により若しくは非訟事件が係属している裁判所が同条第四項において準用する同条第一項の規定により事件を調停に付した上自ら処理することとしたときに準用する。"><a href="#a28">第二十八条　小作官等に対する事件受理等の通知</a></li><li class="lv-art" data-text="第二十八条の二28条の2音声の送受信による通話の方法による小作官等の関与・法第二十七条音声の送受信による通話の方法による小作官等の関与・法第二十七条法第二十七条第一項の期日において、同条第二項に規定する方法によって小作官又は小作主事に意見を述べさせるときは、調停委員会は、次に掲げる事項を確認しなければならない。一通話者二通話者の所在する場所の状況が当該方法によって手続を実施するために適切なものであること。小作官又は小作主事に前項の意見を述べさせたときは、その旨及び同項第二号に掲げる事項を調停事件の記録上明らかにしなければならない。"><a href="#a28-2">第二十八条の二　音声の送受信による通話の方法による小作官等の関与・法第二十七条</a></li><li class="lv-art" data-text="第二十九条29条和解の仲介和解の仲介調停委員会は、紛争の実情により適当であると認めるときは、いつでも、農業委員会に和解の仲介をさせることができる。第二十八条第一項本文の規定は、前項の規定により和解の仲介をさせるときに準用する。"><a href="#a29">第二十九条　和解の仲介</a></li><li class="lv-art" data-text="第三十条30条農業委員会の紛争経過陳述農業委員会の紛争経過陳述農業委員会は、調停委員会に対し、紛争の経過について陳述することができる。"><a href="#a30">第三十条　農業委員会の紛争経過陳述</a></li><li class="lv-art" data-text="第三十一条31条農業委員会等の意見聴取農業委員会等の意見聴取調停委員会は、必要があると認めるときは、農業委員会その他適当であると認める者に対し、意見を求めることができる。"><a href="#a31">第三十一条　農業委員会等の意見聴取</a></li><li class="lv-art" data-text="第三十二条32条裁判官の調停への準用裁判官の調停への準用前三条の規定は、裁判官だけで調停を行う場合に準用する。"><a href="#a32">第三十二条　裁判官の調停への準用</a></li><li class="lv-art" data-text="第三十三条33条小作官等に対する事件終了等の通知小作官等に対する事件終了等の通知事件が終了したとき、又は法第十八条第四項の規定により決定が効力を失ったときは、裁判所書記官は、小作官又は小作主事に対し、遅滞なく、その旨を通知しなければならない。"><a href="#a33">第三十三条　小作官等に対する事件終了等の通知</a></li></ul></li><li class="lv-div div-3"><a href="#d40">第二節　商事調停</a><ul><li class="lv-art" data-text="第三十四条34条宅地建物調停に関する規定の準用宅地建物調停に関する規定の準用第二十七条の規定は、商事調停事件に準用する。"><a href="#a34">第三十四条　宅地建物調停に関する規定の準用</a></li></ul></li><li class="lv-div div-3"><a href="#d42">第三節　鉱害調停</a><ul><li class="lv-art" data-text="第三十五条35条農事調停等に関する規定の準用農事調停等に関する規定の準用第一節及び第一節の二の規定は、鉱害調停事件に準用する。この場合において、「小作官又は小作主事」とあり、及び「農業委員会」とあるのは、「経済産業局長」と読み替えるものとする。"><a href="#a35">第三十五条　農事調停等に関する規定の準用</a></li><li class="lv-art" data-text="第三十六条36条小作官等の意見陳述小作官等の意見陳述小作官又は小作主事は、調停の目的となった紛争が農地その他の農業用資産の利用関係に関連する場合においては、調停委員会に対し、意見を述べることができる。前項の規定は、裁判官だけで調停を行う場合に準用する。"><a href="#a36">第三十六条　小作官等の意見陳述</a></li></ul></li><li class="lv-div div-3"><a href="#d45">第四節　公害等調停（昭四九最裁規六・追加）</a><ul><li class="lv-art" data-text="第三十七条37条代表当事者の選任等代表当事者の選任等共同の利益を有する多数の当事者は、その中から、一人又は数人の代表当事者を選任することができる。代表当事者は、これを選任した当事者のために、調停条項案の受諾、調停の申立ての取下げ、法第十七条の決定に係る行為及び代理人の選任を除き、各自調停手続に関する一切の行為をすることができる。代表当事者の選任は、書面で証明しなければならない。代表当事者が選任されたときは、調停手続の期日の呼出しは、代表当事者に対してすれば足りる。調停委員会は、必要があると認めるときは、当事者に対し、代表当事者の選任を勧告することができる。"><a href="#a37">第三十七条　代表当事者の選任等</a></li><li class="lv-art" data-text="第三十八条38条合意による暫定的措置の勧告合意による暫定的措置の勧告調停委員会は、必要があると認めるときは、当事者に対し、調停の成立を著しく困難にし、又はその円滑な進行を妨げる行為を合意により一時停止すべきことを勧告することができる。"><a href="#a38">第三十八条　合意による暫定的措置の勧告</a></li><li class="lv-art" data-text="第三十九条39条裁判官の調停への準用裁判官の調停への準用第三十七条第五項及び前条の規定は、裁判官だけで調停を行う場合に準用する。"><a href="#a39">第三十九条　裁判官の調停への準用</a></li></ul></li></ul></li><li class="lv-div div-1"><a href="#sup1">附則</a></li><li class="lv-div div-1"><a href="#sup2">附則　（昭和三三年七月一日最高裁判所規則第六号）</a></li><li class="lv-div div-1"><a href="#sup3">附則　（昭和四六年六月一四日最高裁判所規則第六号）</a></li><li class="lv-div div-1"><a href="#sup4">附則　（昭和四九年九月一四日最高裁判所規則第六号）</a></li><li class="lv-div div-1"><a href="#sup5">附則　（昭和五年五月六日最高裁判所規則第三号）抄</a></li><li class="lv-div div-1"><a href="#sup6">附則　（平成四年二月二一日最高裁判所規則第四号）</a></li><li class="lv-div div-1"><a href="#sup7">附則　（平成八年一二月一七日最高裁判所規則第六号）抄</a><ul><li class="lv-art" data-text="第一条1条施行期日施行期日この規則は、民事訴訟法（平成八年法律第百九号。以下「新法」という。）の施行の日から施行する。（施行の日＝平成一〇年一月一日）"><a href="#sup7-a1">第一条　施行期日</a></li><li class="lv-art" data-text="第二条2条第六条の規定の施行前に供託された金銭又は有価証券についての相手方の権利については、同条の規定による改正後の民事調停規則第六条第四項において準用する新法第七十七条の規定にかかわらず、なお従前の例による。"><a href="#sup7-a2">第二条</a></li></ul></li><li class="lv-div div-1"><a href="#sup8">附則　（平成一二年一二月一五日最高裁判所規則第一五号）</a></li><li class="lv-div div-1"><a href="#sup9">附則　（平成一五年一〇月一日最高裁判所規則第一四号）</a></li><li class="lv-div div-1"><a href="#sup10">附則　（平成二四年七月一七日最高裁判所規則第九号）抄</a><ul><li class="lv-art" data-text="第一条1条施行期日施行期日この規則は、非訟事件手続法（平成二十三年法律第五十一号）の施行の日から施行する。"><a href="#sup10-a1">第一条　施行期日</a></li></ul></li><li class="lv-div div-1"><a href="#sup11">附則　（令和四年一一月七日最高裁判所規則第一七号）抄</a><ul><li class="lv-art" data-text="第一条1条施行期日施行期日この規則は、民事訴訟法等の一部を改正する法律（令和四年法律第四十八号。以下この条において「改正法」という。）附則第一条第二号に掲げる規定の施行の日（令和五年二月二〇日）から施行する。ただし、次の各号に掲げる規定は、当該各号に定める日から施行する。一第一条中民事訴訟規則第三十二条、第七十七条、第七十八条、第九十六条及び第百六十三条第一項の改正規定、第十四条の規定、第十八条中労働審判規則第三十七条の改正規定（「第七十七条」を「第七十七条前段」に改める部分に限る。）、第二十条中非訟事件手続規則第二十一条及び第五十条の改正規定、第二十一条中家事事件手続規則第三十三条及び第百二十六条第二項の改正規定並びに第二十二条中国際的な子の奪取の民事上の側面に関する条約の実施に関する法律による子の返還に関する事件の手続等に関する規則第二十三条及び第五十三条第一項の改正規定 改正法附則第一条第三号に掲げる規定の施行の日（令和五年三月一日）二第一条中民事訴訟規則目次の改正規定（「第三十一条」を「第三十条の二」に改める部分に限る。）及び同規則第一編第五章第一節中第三十一条の前に二条を加える改正規定、第三条の規定、第六条の規定、第七条中民事執行規則第十五条の二の改正規定、第八条中民事保全規則第六条の改正規定、第十条中民事再生規則第十一条の改正規定、第十二条中外国倒産処理手続の承認援助に関する規則第十二条の改正規定、第十三条中会社更生規則第十条の改正規定、第十六条の規定、第十七条中破産規則第十二条の改正規定並びに第二十三条の規定 改正法附則第一条第四号に掲げる規定の施行の日三第十五条の規定 改正法附則第一条第五号に掲げる規定の施行の日"><a href="#sup11-a1">第一条　施行期日</a></li><li class="lv-art" data-text="第二条2条調書の記載等に関する経過措置調書の記載等に関する経過措置３ この規則の施行前に行われた非訟事件手続法（平成二十三年法律第五十一号）第四十七条第一項の規定（他の法律において準用する場合を含む。）による非訟事件の手続の期日における手続（証拠調べを除く。）の記録については、第二十条の規定による改正後の非訟事件手続規則第四十二条第二項（他の最高裁判所規則において準用する場合を含む。）の規定にかかわらず、なお従前の例による。"><a href="#sup11-a2">第二条　調書の記載等に関する経過措置</a></li></ul></li><li class="lv-div div-1"><a href="#sup12">附則　（令和六年九月一七日最高裁判所規則第一四号）抄</a><ul><li class="lv-art" data-text="第一条1条施行期日施行期日この規則は、民事訴訟法等の一部を改正する法律（令和四年法律第四十八号。以下「改正法」という。）の施行の日（以下「施行日」という。）から施行する。"><a href="#sup12-a1">第一条　施行期日</a></li></ul></li></ul>
+  </nav>
+  <main class="doc" id="doc-outer">
+    <div class="doc-head">
+      <h1>民事調停規則</h1>
+      <div class="meta">昭和二六年九月一五日最高裁判所規則第八号　／　令和5年2月20日施行　／　<a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本PDF p.1</a></div>
+    </div>
+    <div id="doc">
+<article class="art noarticle" id="body-1" data-path=""><div class="art-tools"><button type="button" data-anchor="body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（民事調停規則（原文は縦書き）</p><p class="para" id="body-1-p1"><span class="body-text">改正 同三三年七月一日最高裁判所規則第六号同四六年六月一四日同第六号同四九年九月一四日同第六号同五年五月六日同第三号平成四年二月二一日同第四号同八年一二月一七日同第六号同一二年一二月一五日同第一五号同一五年一○月一日同第一四号同二四年七月一七日同第九号令和四年一一月七日同第一七号同六年九月一七日同第一四号民事調停規則を次のように定める。民事調停規則</span></p></article>
+<article class="art" id="a1" data-path=""><span class="anchor-alias" id="Mp-At_1"></span><div class="art-tools"><button type="button" data-anchor="a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（規則の趣旨）</p><p class="para" id="a1-p1"><a class="art-no" href="#a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">民事調停法（昭和二十六年法律第二百二十二号。以下「法」という。）による調停に関しては、法に定めるもののほか、この規則の定めるところによる。</span></p></article>
+<article class="art" id="a2" data-path=""><span class="anchor-alias" id="Mp-At_2"></span><div class="art-tools"><button type="button" data-anchor="a2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（移送等における取扱い）</p><p class="para" id="a2-p1"><a class="art-no" href="#a2" data-kan="第二条" data-num="第2条">第二条</a><span class="body-text">裁判所は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/326AC1000000222#Mp-At_4" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四条</a>第一項ただし書、第二項ただし書又は第三項の規定による裁判をするときは、当事者の意見を聴くことができる。</span></p></article>
+<article class="art" id="a3" data-path=""><span class="anchor-alias" id="Mp-At_3"></span><div class="art-tools"><button type="button" data-anchor="a3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（調停の申立て）</p><p class="para" id="a3-p1"><a class="art-no" href="#a3" data-kan="第三条" data-num="第3条">第三条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/326AC1000000222#Mp-At_4_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四条の二</a>第一項の申立書には、申立ての趣旨及び紛争の要点並びに第二十四条において準用する非訟事件手続規則（平成二十四年最高裁判所規則第七号）<a class="ref ref-rule" href="500.html#a1" title="この規則集の中を開きます">第一条</a>第一項各号に掲げる事項を記載するほか、紛争の要点に関する証拠書類があるときは、その写しを添付しなければならない。</span></p></article>
+<article class="art" id="a4" data-path=""><span class="anchor-alias" id="Mp-At_4"></span><div class="art-tools"><button type="button" data-anchor="a4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（民事調停委員の除斥及び回避）</p><p class="para" id="a4-p1"><a class="art-no" href="#a4" data-kan="第四条" data-num="第4条">第四条</a><span class="body-text">民事調停委員の除斥及び回避については、<a class="ref ref-rule" href="500.html#a8" title="この規則集の中を開きます">非訟事件手続規則第八条</a>から<a class="ref ref-self" href="#a10">第十条</a>までの規定（忌避に関する部分を除く。）を準用する。この場合において、簡易裁判所の民事調停委員の回避の許可は、その民事調停委員の所属する裁判所の裁判所法（昭和二十二年法律第五十九号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/322AC0000000059#Mp-At_37" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第三十七条</a>に規定する裁判官がする。</span></p></article>
+<article class="art" id="a5" data-path=""><span class="anchor-alias" id="Mp-At_5"></span><div class="art-tools"><button type="button" data-anchor="a5" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（民事執行の手続の停止）</p><p class="para" id="a5-p1"><a class="art-no" href="#a5" data-kan="第五条" data-num="第5条">第五条</a><span class="body-text">調停事件の係属する裁判所は、紛争の実情により事件を調停によって解決することが相当である場合において、調停の成立を不能にし又は著しく困難にするおそれがあるときは、申立てにより、担保を立てさせて、調停が終了するまで調停の目的となった権利に関する民事執行の手続を停止することを命ずることができる。ただし、裁判並びに調書その他裁判所において作成する書面の記載及び電子調書（期日又は期日外における手続の方式、内容及び経過等の記録及び公証をするために民事訴訟法（平成八年法律第百九号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000109#Mp-At_160" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第百六十条</a>第一項（他の法令において準用する場合を含む。）その他の法令の規定により裁判所書記官が作成する電磁的記録（電子的方式、磁気的方式その他人の知覚によっては認識することができない方式で作られる記録であって、電子計算機による情報処理の用に供されるものをいう。以下この項において同じ。）をいう。）その他裁判所において作成する電磁的記録の記録に基づく民事執行の手続については、この限りでない。</span></p><p class="para" id="a5-p2"><span class="pno">2</span><span class="body-text">調停の係属する裁判所は、民事執行の手続を停止することを命じた場合において、必要があるときは、申立てにより、担保を立てさせ又は立てさせないで、これを続行することを命ずることができる。</span></p><p class="para" id="a5-p3"><span class="pno">3</span><span class="body-text">前二項の申立てをするには、その理由を疎明しなければならない。</span></p><p class="para" id="a5-p4"><span class="pno">4</span><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000109#Mp-At_76" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">民事訴訟法第七十六条</a>、第七十七条、第七十九条及び第八十条の規定は、第一項及び第二項の担保について準用する。５第一項及び第二項の規定による決定に対しては、当事者は、即時抗告をすることができる。</span></p></article>
+<article class="art" id="a6" data-path=""><span class="anchor-alias" id="Mp-At_6"></span><div class="art-tools"><button type="button" data-anchor="a6" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（調停前の措置をする場合の制裁の告知）</p><p class="para" id="a6-p1"><a class="art-no" href="#a6" data-kan="第六条" data-num="第6条">第六条</a><span class="body-text">調停委員会は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/326AC1000000222#Mp-At_12" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十二条</a>第一項の措置をする場合には、同時にその違反に対する法律上の制裁を告知しなければならない。</span></p></article>
+<article class="art" id="a7" data-path=""><span class="anchor-alias" id="Mp-At_7"></span><div class="art-tools"><button type="button" data-anchor="a7" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（期日の呼出状）</p><p class="para" id="a7-p1"><a class="art-no" href="#a7" data-kan="第七条" data-num="第7条">第七条</a><span class="body-text">調停手続の期日の呼出状には､不出頭に対する法律上の制裁を記載しなければならない｡</span></p></article>
+<article class="art" id="a8" data-path=""><span class="anchor-alias" id="Mp-At_8"></span><div class="art-tools"><button type="button" data-anchor="a8" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（本人の出頭義務）</p><p class="para" id="a8-p1"><a class="art-no" href="#a8" data-kan="第八条" data-num="第8条">第八条</a><span class="body-text">調停委員会の呼出しを受けた当事者は、自ら出頭しなければならない。ただし、やむを得ない事由があるときは、代理人を出頭させることができる。</span></p><p class="para" id="a8-p2"><span class="pno">2</span><span class="body-text">次に掲げる者以外の者を前項の代理人とするには、調停委員会の許可を受けなければならない。</span></p><ol class="items"><li id="a8-p2-1"><span class="mk">一</span><span class="tx">弁護士</span></li><li id="a8-p2-2"><span class="mk">二</span><span class="tx">司法書士法（昭和二十五年法律第百九十七号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/325AC1000000197#Mp-At_3" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第三条</a>第二項に規定する司法書士（同条第一項第六号ニに掲げる手続に係る事件に限る。）</span></li></ol><p class="para" id="a8-p3"><span class="pno">3</span><span class="body-text">調停委員会は、いつでも、前項の許可を取り消すことができる。</span></p></article>
+<article class="art" id="a9" data-path=""><span class="anchor-alias" id="Mp-At_9"></span><div class="art-tools"><button type="button" data-anchor="a9" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（期日外の準備）</p><p class="para" id="a9-p1"><a class="art-no" href="#a9" data-kan="第九条" data-num="第9条">第九条</a><span class="body-text">調停に関与する者は、調停が適正かつ迅速に行われるように、調停手続の期日外において十分な準備をしなければならない。</span></p></article>
+<article class="art" id="a10" data-path=""><span class="anchor-alias" id="Mp-At_10"></span><div class="art-tools"><button type="button" data-anchor="a10" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（申立書の補正等の促し）</p><p class="para" id="a10-p1"><a class="art-no" href="#a10" data-kan="第十条" data-num="第10条">第十条</a><span class="body-text">調停主任は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/326AC1000000222#Mp-At_4_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四条の二</a>第一項の申立書の補正又は調停手続に必要な書類の提出を促す場合には、裁判所書記官に命じて行わせることができる。</span></p></article>
+<article class="art" id="a11" data-path=""><span class="anchor-alias" id="Mp-At_11"></span><div class="art-tools"><button type="button" data-anchor="a11" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（期日調書の形式的記載事項）</p><p class="para" id="a11-p1"><a class="art-no" href="#a11" data-kan="第十一条" data-num="第11条">第十一条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/326AC1000000222#Mp-At_12_5" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十二条の五</a>の調書（次項及び次条において「期日調書」という。）には、次に掲げる事項を記載しなければならない。</span></p><ol class="items"><li id="a11-p1-1"><span class="mk">一</span><span class="tx">事件の表示</span></li><li id="a11-p1-2"><span class="mk">二</span><span class="tx">調停主任又は民事調停官、民事調停委員及び裁判所書記官の氏名</span></li><li id="a11-p1-3"><span class="mk">三</span><span class="tx">出頭した当事者、参加人、代理人、補佐人、通訳人及びその他の関係人の氏名</span></li><li id="a11-p1-4"><span class="mk">四</span><span class="tx">期日の日時及び場所</span></li></ol><p class="para" id="a11-p2"><span class="pno">2</span><span class="body-text">期日調書には、裁判所書記官が記名押印し、調停主任が認印しなければならない。</span></p><p class="para" id="a11-p3"><span class="pno">3</span><span class="body-text">前項の場合において、調停主任に支障があるときは、裁判所書記官がその旨を記載すれば足りる。</span></p></article>
+<article class="art" id="a12" data-path=""><span class="anchor-alias" id="Mp-At_12"></span><div class="art-tools"><button type="button" data-anchor="a12" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（期日調書の実質的記載事項）</p><p class="para" id="a12-p1"><a class="art-no" href="#a12" data-kan="第十二条" data-num="第12条">第十二条</a><span class="body-text">期日調書には、手続の要領を記載し、特に、次に掲げる事項を明確にしなければならない。</span></p><ol class="items"><li id="a12-p1-1"><span class="mk">一</span><span class="tx">申立ての趣旨又は紛争の要点の変更、申立ての取下げ及び<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/326AC1000000222#Mp-At_16" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十六条</a>の合意</span></li><li id="a12-p1-2"><span class="mk">二</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/326AC1000000222#Mp-At_13" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十三条</a>又は<a class="ref ref-self" href="#a14">第十四条</a>の規定による事件の終了</span></li><li id="a12-p1-3"><span class="mk">三</span><span class="tx">証拠調べの概要</span></li><li id="a12-p1-4"><span class="mk">四</span><span class="tx">調停主任が記載を命じた事項及び当事者の請求により記載を許した事項</span></li><li id="a12-p1-5"><span class="mk">五</span><span class="tx">書面を作成しないでした裁判</span></li></ol></article>
+<article class="art" id="a13" data-path=""><span class="anchor-alias" id="Mp-At_13"></span><div class="art-tools"><button type="button" data-anchor="a13" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（事実の調査）</p><p class="para" id="a13-p1"><a class="art-no" href="#a13" data-kan="第十三条" data-num="第13条">第十三条</a><span class="body-text">調停委員会は、相当であると認めるときは、当該調停委員会を組織する民事調停委員に事実の調査をさせることができる。</span></p><p class="para" id="a13-p2"><span class="pno">2</span><span class="body-text">調停主任は、調停委員会の決議により、裁判所書記官に事実の調査をさせることができる。</span></p></article>
+<article class="art" id="a14" data-path=""><span class="anchor-alias" id="Mp-At_14"></span><div class="art-tools"><button type="button" data-anchor="a14" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（意見の聴取の嘱託）</p><p class="para" id="a14-p1"><a class="art-no" href="#a14" data-kan="第十四条" data-num="第14条">第十四条</a><span class="body-text">調停委員会は、地方裁判所又は簡易裁判所に紛争の解決に関する事件の関係人の意見の聴取を嘱託することができる。</span></p></article>
+<article class="art" id="a15" data-path=""><span class="anchor-alias" id="Mp-At_15"></span><div class="art-tools"><button type="button" data-anchor="a15" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（嘱託に係る事実の調査等の民事調停委員等による実施）</p><p class="para" id="a15-p1"><a class="art-no" href="#a15" data-kan="第十五条" data-num="第15条">第十五条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/326AC1000000222#Mp-At_22" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十二条</a>において準用する非訟事件手続法（平成二十三年法律第五十一号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/423AC0000000051#Mp-At_51" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第五十一条</a>第一項又は第二項の規定による嘱託を受けた裁判所は、相当であると認めるときは、民事調停委員又は裁判所書記官に当該嘱託に係る事実の調査をさせることができる。</span></p><p class="para" id="a15-p2"><span class="pno">2</span><span class="body-text">前条の規定による嘱託を受けた裁判所は、相当であると認めるときは、民事調停委員に当該嘱託に係る意見の聴取をさせることができる。</span></p></article>
+<article class="art" id="a16" data-path=""><span class="anchor-alias" id="Mp-At_16"></span><div class="art-tools"><button type="button" data-anchor="a16" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（調査の嘱託）</p><p class="para" id="a16-p1"><a class="art-no" href="#a16" data-kan="第十六条" data-num="第16条">第十六条</a><span class="body-text">調停委員会は、必要な調査を官庁、公署その他適当であると認める者に嘱託することができる。</span></p></article>
+<article class="art" id="a17" data-path=""><span class="anchor-alias" id="Mp-At_17"></span><div class="art-tools"><button type="button" data-anchor="a17" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（調停委員会の嘱託の手続）</p><p class="para" id="a17-p1"><a class="art-no" href="#a17" data-kan="第十七条" data-num="第17条">第十七条</a><span class="body-text">調停委員会がする嘱託の手続は、裁判所書記官がする。</span></p></article>
+<article class="art" id="a18" data-path=""><span class="anchor-alias" id="Mp-At_18"></span><div class="art-tools"><button type="button" data-anchor="a18" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（専門的な知識経験に基づく意見の聴取）</p><p class="para" id="a18-p1"><a class="art-no" href="#a18" data-kan="第十八条" data-num="第18条">第十八条</a><span class="body-text">調停委員会は、必要があると認めるときは、当該調停委員会を組織していない民事調停委員の専門的な知識経験に基づく意見を聴取することができる。</span></p><p class="para" id="a18-p2"><span class="pno">2</span><span class="body-text">調停委員会が前項の規定により意見を聴取することとしたときは、裁判所は、意見を述べるべき民事調停委員を指定する。</span></p><p class="para" id="a18-p3"><span class="pno">3</span><span class="body-text">前項の規定による指定を受けた民事調停委員は、調停委員会に出席して意見を述べるものとする。</span></p></article>
+<article class="art" id="a19" data-path=""><span class="anchor-alias" id="Mp-At_19"></span><div class="art-tools"><button type="button" data-anchor="a19" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（調停委員会の決議）</p><p class="para" id="a19-p1"><a class="art-no" href="#a19" data-kan="第十九条" data-num="第19条">第十九条</a><span class="body-text">調停委員会の決議は、過半数の意見による。可否同数のときは、調停主任の決するところによる。</span></p></article>
+<article class="art" id="a20" data-path=""><span class="anchor-alias" id="Mp-At_20"></span><div class="art-tools"><button type="button" data-anchor="a20" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（評議の秘密）</p><p class="para" id="a20-p1"><a class="art-no" href="#a20" data-kan="第二十条" data-num="第20条">第二十条</a><span class="body-text">調停委員会の評議は、秘密とする。</span></p></article>
+<article class="art" id="a21" data-path=""><span class="anchor-alias" id="Mp-At_21"></span><div class="art-tools"><button type="button" data-anchor="a21" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（裁判官の調停）</p><p class="para" id="a21-p1"><a class="art-no" href="#a21" data-kan="第二十一条" data-num="第21条">第二十一条</a><span class="body-text"><a class="ref ref-self" href="#a6">第六条</a>、<a class="ref ref-self" href="#a8">第八条</a>及び<a class="ref ref-self" href="#a10">第十条</a>から<a class="ref ref-self" href="#a18">第十八条</a>まで（<a class="ref ref-self" href="#a13">第十三条</a>第一項を除く。）の規定は、裁判官だけで調停を行う場合に準用する。この場合において、<a class="ref ref-self" href="#a10">第十条</a>から<a class="ref ref-self" href="#a12">第十二条</a>までの規定中「調停主任」とあるのは、「裁判官」と読み替えるものとする。</span></p></article>
+<article class="art" id="a22" data-path=""><span class="anchor-alias" id="Mp-At_22"></span><div class="art-tools"><button type="button" data-anchor="a22" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（当事者に対する通知）</p><p class="para" id="a22-p1"><a class="art-no" href="#a22" data-kan="第二十二条" data-num="第22条">第二十二条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/326AC1000000222#Mp-At_13" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十三条</a>若しくは<a class="ref ref-self" href="#a14">第十四条</a>（これらの規定を<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/326AC1000000222#Mp-At_15" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十五条</a>において準用する場合を含む。）の規定により事件が終了したとき、又は<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/326AC1000000222#Mp-At_18" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十八条</a>第四項の規定により決定が効力を失ったときは、裁判所書記官は、当事者に対し、遅滞なく、その旨を通知しなければならない。</span></p><p class="para" id="a22-p2"><span class="pno">2</span><span class="body-text">調停の申立ての取下げがあったときは、裁判所書記官は、その旨を相手方に通知しなければならない。</span></p><p class="para" id="a22-p3"><span class="pno">3</span><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/326AC1000000222#Mp-At_17" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十七条</a>の決定がされた後に調停の申立ての取下げがあった場合において、相手方が申立ての取下げに同意したときは、裁判所書記官は、その旨を申立人に通知しなければならない。</span></p></article>
+<article class="art" id="a23" data-path=""><span class="anchor-alias" id="Mp-At_23"></span><div class="art-tools"><button type="button" data-anchor="a23" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（受訴裁判所等に対する通知）</p><p class="para" id="a23-p1"><a class="art-no" href="#a23" data-kan="第二十三条" data-num="第23条">第二十三条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/326AC1000000222#Mp-At_20" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十条</a>第二項の規定により訴えの取下げがあったものとみなされるときは、調停事件の係属した裁判所の裁判所書記官は、受訴裁判所に対し、遅滞なく、その旨を通知しなければならない。</span></p><p class="para" id="a23-p2"><span class="pno">2</span><span class="body-text">前項の規定は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/326AC1000000222#Mp-At_20" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十条</a>第四項において準用する同条第二項の規定により非訟事件の申立ての取下げがあったものとみなされる場合について準用する。</span></p></article>
+<article class="art" id="a23-2" data-path=""><span class="anchor-alias" id="Mp-At_23_2"></span><div class="art-tools"><button type="button" data-anchor="a23-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="caption">（当事者に対する住所、氏名等の秘匿）</p><p class="para" id="a23-2-p1"><a class="art-no" href="#a23-2" data-kan="第二十三条の二" data-num="第23条の2">第二十三条の二</a><span class="body-text">調停手続における申立てその他の申述については、民事訴訟規則（平成八年最高裁判所規則第五号）第一編第八章の規定（同規則第五十二条の二十第七項から第九項まで、第五十二条の二十二第二項及び第三項並びに第五十二条の二十三の規定を除く。）を準用する。この場合において、同規則第五十二条の二十一第一項中「この規則の規定（第五十二条の十九（秘匿事項届出書面の記載事項等）第一項を除く。次項において同じ。）」とあるのは「民事調停規則（昭和二十六年最高裁判所規則第八号）<a class="ref ref-self" href="#a24">第二十四条</a>において準用する非訟事件手続規則（平成二十四年最高裁判所規則第七号）の規定」と、同条第二項中「この規則」とあるのは「<a class="ref ref-self" href="#a24">民事調停規則第二十四条</a>において準用する非訟事件手続規則」と読み替えるものとする。</span></p><p class="para" id="a23-2-p2"><span class="pno">2</span><span class="body-text">前項において準用する<a class="ref ref-rule" href="100.html#a52-20" title="この規則集の中を開きます">民事訴訟規則第五十二条の二十</a>第三項、第五項本文又は第六項の規定により文書その他の物件から秘匿事項記載部分を除いたものが提出された場合には、当該文書その他の物件の閲覧、謄写又は複製は、その提出されたものによってさせることができる。</span></p><p class="para" id="a23-2-p3"><span class="pno">3</span><span class="body-text">第一項において準用する<a class="ref ref-rule" href="100.html#a52-22" title="この規則集の中を開きます">民事訴訟規則第五十二条の二十二</a>第一項の規定により、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/326AC1000000222#Mp-At_21_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十一条の二</a><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000109#Mp-At_133" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">において準用する民事訴訟法第百三十三条</a>第二項の規定による届出に係る書面（以下この項において「秘匿事項届出書面」という。）から<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/326AC1000000222#Mp-At_21_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十一条の二</a><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000109#Mp-At_133_4" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">において読み替えて準用する民事訴訟法第百三十三条の四</a>第一項の取消し又は同条第二項の許可の裁判に係る部分以外の部分（秘匿事項又は秘匿事項を推知することができる事項が記載された部分に限る。）を除いたものが提出された場合には、秘匿事項届出書面の閲覧又は謄写は、その提出されたものによってさせることができる。</span></p></article>
+<article class="art" id="a24" data-path=""><span class="anchor-alias" id="Mp-At_24"></span><div class="art-tools"><button type="button" data-anchor="a24" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="caption">（非訟事件手続規則の準用）</p><p class="para" id="a24-p1"><a class="art-no" href="#a24" data-kan="第二十四条" data-num="第24条">第二十四条</a><span class="body-text">特別の定めがある場合を除いて、調停に関しては、その性質に反しない限り、非訟事件手続規則の規定（同規則第二章第八節、第四十四条及び第四十九条第二項を除く。）を準用する。この場合において、同規則第二条第一項第二号中「非訟事件手続法（平成二十三年法律第五十一号。以下「法」という。）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/423AC0000000051#Mp-At_42_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第四十二条の二</a>」とあるのは、「民事調停法（昭和二十六年法律第二百二十二号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/326AC1000000222#Mp-At_21_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第二十一条の二</a>」と読み替えるものとする。（平二四最裁規九・追加、令四最裁規一七・一部改正））</span></p></article>
+<h4 class="div-head" id="d26" data-path="第二節　民事調停官（平一五最裁規一四・追加）"><span class="lbl">第二節</span>　民事調停官（平一五最裁規一四・追加）</h4>
+<article class="art" id="a25" data-path="第二節　民事調停官（平一五最裁規一四・追加）"><span class="anchor-alias" id="Mp-At_25"></span><div class="art-tools"><button type="button" data-anchor="a25" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="caption">（民事調停官の権限）</p><p class="para" id="a25-p1"><a class="art-no" href="#a25" data-kan="第二十五条" data-num="第25条">第二十五条</a><span class="body-text">民事調停官は、その取り扱う調停事件の処理について、この規則の規定（前条において準用する非訟事件手続規則の規定を含む。）及び特定調停手続規則（平成十二年最高裁判所規則第二号）の規定において裁判官が行うものとして規定されている民事調停及び特定調停に関する権限（調停主任に係るものを含む。）のほか、次に掲げる権限を行うことができる。</span></p><ol class="items"><li id="a25-p1-1"><span class="mk">一</span><span class="tx"><a class="ref ref-self" href="#a5">第五条</a>第一項及び第二項並びに<a class="ref ref-self" href="#a18">第十八条</a>第二項の規定において裁判所が行うものとして規定されている民事調停に関する権限</span></li><li id="a25-p1-2"><span class="mk">二</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000109#Mp-At_76" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第五条第四項において準用する民事訴訟法第七十六条</a>、第七十九条第一項、第二項及び第八十条の規定並びに<a class="ref ref-rule" href="100.html#a29" title="この規則集の中を開きます">民事訴訟規則第二十九条</a>第二項において準用する同条第一項の規定において裁判所が行うものとして規定されている権限であって民事調停に関するもの</span></li><li id="a25-p1-3"><span class="mk">三</span><span class="tx">前条において準用する非訟事件手続規則の規定において裁判所が行うものとして規定されている権限であって民事調停に関するもの</span></li><li id="a25-p1-4"><span class="mk">四</span><span class="tx">特定調停手続規則の規定において裁判所が行うものとして規定されている特定調停に関する権限</span></li></ol></article>
+<article class="art" id="a26" data-path="第二節　民事調停官（平一五最裁規一四・追加）"><span class="anchor-alias" id="Mp-At_26"></span><div class="art-tools"><button type="button" data-anchor="a26" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=7" target="_blank" rel="noopener" title="原本PDFの7ページを開きます">原本 p.7</a></div><p class="caption">（民事調停官の除斥等）</p><p class="para" id="a26-p1"><a class="art-no" href="#a26" data-kan="第二十六条" data-num="第26条">第二十六条</a><span class="body-text">民事調停官の除斥、忌避及び回避については、<a class="ref ref-rule" href="500.html#a8" title="この規則集の中を開きます">非訟事件手続規則第八条</a>から<a class="ref ref-self" href="#a10">第十条</a>までの規定を準用する。</span></p></article>
+<h3 class="div-head" id="d29" data-path="第二章　特則"><span class="lbl">第二章</span>　特則</h3>
+<h4 class="div-head" id="d30" data-path="第一節　宅地建物調停（平四最裁規四・追加）"><span class="lbl">第一節</span>　宅地建物調停（平四最裁規四・追加）</h4>
+<article class="art" id="a27" data-path="第二章　特則　＞　第一節　宅地建物調停（平四最裁規四・追加）"><span class="anchor-alias" id="Mp-At_27"></span><div class="art-tools"><button type="button" data-anchor="a27" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=7" target="_blank" rel="noopener" title="原本PDFの7ページを開きます">原本 p.7</a></div><p class="caption">（当事者の審尋）</p><p class="para" id="a27-p1"><a class="art-no" href="#a27" data-kan="第二十七条" data-num="第27条">第二十七条</a><span class="body-text">調停委員会は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/326AC1000000222#Mp-At_24_3" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十四条の三</a>第一項の規定により調停条項を定めようとするときは、当事者を審尋しなければならない。</span></p></article>
+<h4 class="div-head" id="d32" data-path="第一節の二　農事調停（平四最裁規四・旧第一節繰下）"><span class="lbl">第一節の二</span>　農事調停（平四最裁規四・旧第一節繰下）</h4>
+<article class="art" id="a28" data-path="第二章　特則　＞　第一節の二　農事調停（平四最裁規四・旧第一節繰下）"><span class="anchor-alias" id="Mp-At_28"></span><div class="art-tools"><button type="button" data-anchor="a28" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=7" target="_blank" rel="noopener" title="原本PDFの7ページを開きます">原本 p.7</a></div><p class="caption">（小作官等に対する事件受理等の通知）</p><p class="para" id="a28-p1"><a class="art-no" href="#a28" data-kan="第二十八条" data-num="第28条">第二十八条</a><span class="body-text">裁判所が調停の申立てを受けたときは、裁判所書記官は、小作官又は小作主事に対し、遅滞なく、その旨を通知しなければならない。ただし、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/326AC1000000222#Mp-At_4" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四条</a>第一項本文又は第二項の規定により事件を移送する場合は、この限りでない。</span></p><p class="para" id="a28-p2"><span class="pno">2</span><span class="body-text">前項本文の規定は、裁判所が事件の移送を受け若しくは<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/326AC1000000222#Mp-At_20" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十条</a>第一項（同条第四項において準用する場合を含む。）の規定により事件を受理したとき、又は受訴裁判所が同条第一項の規定により若しくは非訟事件が係属している裁判所が同条第四項において準用する同条第一項の規定により事件を調停に付した上自ら処理することとしたときに準用する。</span></p></article>
+<article class="art" id="a28-2" data-path="第二章　特則　＞　第一節の二　農事調停（平四最裁規四・旧第一節繰下）"><span class="anchor-alias" id="Mp-At_28_2"></span><div class="art-tools"><button type="button" data-anchor="a28-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=7" target="_blank" rel="noopener" title="原本PDFの7ページを開きます">原本 p.7</a></div><p class="caption">（音声の送受信による通話の方法による小作官等の関与・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/326AC1000000222#Mp-At_27" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十七条</a>）</p><p class="para" id="a28-2-p1"><a class="art-no" href="#a28-2" data-kan="第二十八条の二" data-num="第28条の2">第二十八条の二</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/326AC1000000222#Mp-At_27" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十七条</a>第一項の期日において、同条第二項に規定する方法によって小作官又は小作主事に意見を述べさせるときは、調停委員会は、次に掲げる事項を確認しなければならない。</span></p><ol class="items"><li id="a28-2-p1-1"><span class="mk">一</span><span class="tx">通話者</span></li><li id="a28-2-p1-2"><span class="mk">二</span><span class="tx">通話者の所在する場所の状況が当該方法によって手続を実施するために適切なものであること。</span></li></ol><p class="para" id="a28-2-p2"><span class="pno">2</span><span class="body-text">小作官又は小作主事に前項の意見を述べさせたときは、その旨及び同項第二号に掲げる事項を調停事件の記録上明らかにしなければならない。</span></p></article>
+<article class="art" id="a29" data-path="第二章　特則　＞　第一節の二　農事調停（平四最裁規四・旧第一節繰下）"><span class="anchor-alias" id="Mp-At_29"></span><div class="art-tools"><button type="button" data-anchor="a29" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=8" target="_blank" rel="noopener" title="原本PDFの8ページを開きます">原本 p.8</a></div><p class="caption">（和解の仲介）</p><p class="para" id="a29-p1"><a class="art-no" href="#a29" data-kan="第二十九条" data-num="第29条">第二十九条</a><span class="body-text">調停委員会は、紛争の実情により適当であると認めるときは、いつでも、農業委員会に和解の仲介をさせることができる。</span></p><p class="para" id="a29-p2"><span class="pno">2</span><span class="body-text"><a class="ref ref-self" href="#a28">第二十八条</a>第一項本文の規定は、前項の規定により和解の仲介をさせるときに準用する。</span></p></article>
+<article class="art" id="a30" data-path="第二章　特則　＞　第一節の二　農事調停（平四最裁規四・旧第一節繰下）"><span class="anchor-alias" id="Mp-At_30"></span><div class="art-tools"><button type="button" data-anchor="a30" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=8" target="_blank" rel="noopener" title="原本PDFの8ページを開きます">原本 p.8</a></div><p class="caption">（農業委員会の紛争経過陳述）</p><p class="para" id="a30-p1"><a class="art-no" href="#a30" data-kan="第三十条" data-num="第30条">第三十条</a><span class="body-text">農業委員会は、調停委員会に対し、紛争の経過について陳述することができる。</span></p></article>
+<article class="art" id="a31" data-path="第二章　特則　＞　第一節の二　農事調停（平四最裁規四・旧第一節繰下）"><span class="anchor-alias" id="Mp-At_31"></span><div class="art-tools"><button type="button" data-anchor="a31" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=8" target="_blank" rel="noopener" title="原本PDFの8ページを開きます">原本 p.8</a></div><p class="caption">（農業委員会等の意見聴取）</p><p class="para" id="a31-p1"><a class="art-no" href="#a31" data-kan="第三十一条" data-num="第31条">第三十一条</a><span class="body-text">調停委員会は、必要があると認めるときは、農業委員会その他適当であると認める者に対し、意見を求めることができる。</span></p></article>
+<article class="art" id="a32" data-path="第二章　特則　＞　第一節の二　農事調停（平四最裁規四・旧第一節繰下）"><span class="anchor-alias" id="Mp-At_32"></span><div class="art-tools"><button type="button" data-anchor="a32" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=8" target="_blank" rel="noopener" title="原本PDFの8ページを開きます">原本 p.8</a></div><p class="caption">（裁判官の調停への準用）</p><p class="para" id="a32-p1"><a class="art-no" href="#a32" data-kan="第三十二条" data-num="第32条">第三十二条</a><span class="body-text">前三条の規定は、裁判官だけで調停を行う場合に準用する。</span></p></article>
+<article class="art" id="a33" data-path="第二章　特則　＞　第一節の二　農事調停（平四最裁規四・旧第一節繰下）"><span class="anchor-alias" id="Mp-At_33"></span><div class="art-tools"><button type="button" data-anchor="a33" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=8" target="_blank" rel="noopener" title="原本PDFの8ページを開きます">原本 p.8</a></div><p class="caption">（小作官等に対する事件終了等の通知）</p><p class="para" id="a33-p1"><a class="art-no" href="#a33" data-kan="第三十三条" data-num="第33条">第三十三条</a><span class="body-text">事件が終了したとき、又は<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/326AC1000000222#Mp-At_18" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十八条</a>第四項の規定により決定が効力を失ったときは、裁判所書記官は、小作官又は小作主事に対し、遅滞なく、その旨を通知しなければならない。</span></p></article>
+<h4 class="div-head" id="d40" data-path="第二節　商事調停"><span class="lbl">第二節</span>　商事調停</h4>
+<article class="art" id="a34" data-path="第二章　特則　＞　第二節　商事調停"><span class="anchor-alias" id="Mp-At_34"></span><div class="art-tools"><button type="button" data-anchor="a34" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=8" target="_blank" rel="noopener" title="原本PDFの8ページを開きます">原本 p.8</a></div><p class="caption">（宅地建物調停に関する規定の準用）</p><p class="para" id="a34-p1"><a class="art-no" href="#a34" data-kan="第三十四条" data-num="第34条">第三十四条</a><span class="body-text"><a class="ref ref-self" href="#a27">第二十七条</a>の規定は、商事調停事件に準用する。</span></p></article>
+<h4 class="div-head" id="d42" data-path="第三節　鉱害調停"><span class="lbl">第三節</span>　鉱害調停</h4>
+<article class="art" id="a35" data-path="第二章　特則　＞　第三節　鉱害調停"><span class="anchor-alias" id="Mp-At_35"></span><div class="art-tools"><button type="button" data-anchor="a35" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=8" target="_blank" rel="noopener" title="原本PDFの8ページを開きます">原本 p.8</a></div><p class="caption">（農事調停等に関する規定の準用）</p><p class="para" id="a35-p1"><a class="art-no" href="#a35" data-kan="第三十五条" data-num="第35条">第三十五条</a><span class="body-text">第一節及び第一節の二の規定は、鉱害調停事件に準用する。この場合において、「小作官又は小作主事」とあり、及び「農業委員会」とあるのは、「経済産業局長」と読み替えるものとする。</span></p></article>
+<article class="art" id="a36" data-path="第二章　特則　＞　第三節　鉱害調停"><span class="anchor-alias" id="Mp-At_36"></span><div class="art-tools"><button type="button" data-anchor="a36" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=9" target="_blank" rel="noopener" title="原本PDFの9ページを開きます">原本 p.9</a></div><p class="caption">（小作官等の意見陳述）</p><p class="para" id="a36-p1"><a class="art-no" href="#a36" data-kan="第三十六条" data-num="第36条">第三十六条</a><span class="body-text">小作官又は小作主事は、調停の目的となった紛争が農地その他の農業用資産の利用関係に関連する場合においては、調停委員会に対し、意見を述べることができる。</span></p><p class="para" id="a36-p2"><span class="pno">2</span><span class="body-text">前項の規定は、裁判官だけで調停を行う場合に準用する。</span></p></article>
+<h4 class="div-head" id="d45" data-path="第四節　公害等調停（昭四九最裁規六・追加）"><span class="lbl">第四節</span>　公害等調停（昭四九最裁規六・追加）</h4>
+<article class="art" id="a37" data-path="第二章　特則　＞　第四節　公害等調停（昭四九最裁規六・追加）"><span class="anchor-alias" id="Mp-At_37"></span><div class="art-tools"><button type="button" data-anchor="a37" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=9" target="_blank" rel="noopener" title="原本PDFの9ページを開きます">原本 p.9</a></div><p class="caption">（代表当事者の選任等）</p><p class="para" id="a37-p1"><a class="art-no" href="#a37" data-kan="第三十七条" data-num="第37条">第三十七条</a><span class="body-text">共同の利益を有する多数の当事者は、その中から、一人又は数人の代表当事者を選任することができる。</span></p><p class="para" id="a37-p2"><span class="pno">2</span><span class="body-text">代表当事者は、これを選任した当事者のために、調停条項案の受諾、調停の申立ての取下げ、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/326AC1000000222#Mp-At_17" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十七条</a>の決定に係る行為及び代理人の選任を除き、各自調停手続に関する一切の行為をすることができる。</span></p><p class="para" id="a37-p3"><span class="pno">3</span><span class="body-text">代表当事者の選任は、書面で証明しなければならない。</span></p><p class="para" id="a37-p4"><span class="pno">4</span><span class="body-text">代表当事者が選任されたときは、調停手続の期日の呼出しは、代表当事者に対してすれば足りる。</span></p><p class="para" id="a37-p5"><span class="pno">5</span><span class="body-text">調停委員会は、必要があると認めるときは、当事者に対し、代表当事者の選任を勧告することができる。</span></p></article>
+<article class="art" id="a38" data-path="第二章　特則　＞　第四節　公害等調停（昭四九最裁規六・追加）"><span class="anchor-alias" id="Mp-At_38"></span><div class="art-tools"><button type="button" data-anchor="a38" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=9" target="_blank" rel="noopener" title="原本PDFの9ページを開きます">原本 p.9</a></div><p class="caption">（合意による暫定的措置の勧告）</p><p class="para" id="a38-p1"><a class="art-no" href="#a38" data-kan="第三十八条" data-num="第38条">第三十八条</a><span class="body-text">調停委員会は、必要があると認めるときは、当事者に対し、調停の成立を著しく困難にし、又はその円滑な進行を妨げる行為を合意により一時停止すべきことを勧告することができる。</span></p></article>
+<article class="art" id="a39" data-path="第二章　特則　＞　第四節　公害等調停（昭四九最裁規六・追加）"><span class="anchor-alias" id="Mp-At_39"></span><div class="art-tools"><button type="button" data-anchor="a39" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=9" target="_blank" rel="noopener" title="原本PDFの9ページを開きます">原本 p.9</a></div><p class="caption">（裁判官の調停への準用）</p><p class="para" id="a39-p1"><a class="art-no" href="#a39" data-kan="第三十九条" data-num="第39条">第三十九条</a><span class="body-text"><a class="ref ref-self" href="#a37">第三十七条</a>第五項及び前条の規定は、裁判官だけで調停を行う場合に準用する。</span></p></article>
+<h2 class="div-head" id="sup1" data-path="附則　"><span class="lbl">附則</span></h2>
+<article class="art noarticle" id="sup-body-1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=9" target="_blank" rel="noopener" title="原本PDFの9ページを開きます">原本 p.9</a></div><p class="para" id="sup-body-1-p1"><span class="body-text">この規則は、昭和二十六年十月一日から施行する。</span></p></article>
+<h2 class="div-head" id="sup2" data-path="附則　（昭和三三年七月一日最高裁判所規則第六号）"><span class="lbl">附則</span>　（昭和三三年七月一日最高裁判所規則第六号）</h2>
+<article class="art noarticle" id="sup-body-2" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=9" target="_blank" rel="noopener" title="原本PDFの9ページを開きます">原本 p.9</a></div><p class="para" id="sup-body-2-p1"><span class="body-text">この規則は、昭和三十三年八月一日から施行する。</span></p><p class="para" id="sup-body-2-p2"><span class="pno">2</span><span class="body-text">この規則施行前にした改正前の<a class="ref ref-self" href="#a6">第六条</a>第四項の規定による即時抗告の効力については、なお、従前の例による。</span></p></article>
+<h2 class="div-head" id="sup3" data-path="附則　（昭和四六年六月一四日最高裁判所規則第六号）"><span class="lbl">附則</span>　（昭和四六年六月一四日最高裁判所規則第六号）</h2>
+<article class="art noarticle" id="sup-body-3" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=10" target="_blank" rel="noopener" title="原本PDFの10ページを開きます">原本 p.10</a></div><p class="para" id="sup-body-3-p1"><span class="body-text">この規則は、昭和四十六年七月一日から施行し、第六条の規定による改正後の<a class="ref ref-rule" href="112.html#a7" title="この規則集の中を開きます">参与員規則第七条</a>第二項の規定、第八条の規定による改正後の<a class="ref ref-rule" href="111.html#a6" title="この規則集の中を開きます">司法委員規則第六条</a>第二項の規定、第九条の規定による改正後の調停委員規則第十条第二項の規定及び第十条の規定による改正後の<a class="ref ref-rule" href="110.html#a7" title="この規則集の中を開きます">鑑定委員規則第七条</a>第二項の規定は、昭和四十七年一月一日から適用する。</span></p></article>
+<article class="art noarticle" id="sup-body-4" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=10" target="_blank" rel="noopener" title="原本PDFの10ページを開きます">原本 p.10</a></div><p class="para" id="sup-body-4-p1"><span class="body-text">２ この規則の施行前に要した参与員、人身保護法による国選代理人、司法委員、調停委員等及び鑑定委員の費用並びにこの規則の施行後昭和四十六年十二月三十一日までの間に支給原因の生じた参与員、司法委員、調停委員等及び鑑定委員の日当の額については、なお従前の例による。</span></p></article>
+<h2 class="div-head" id="sup4" data-path="附則　（昭和四九年九月一四日最高裁判所規則第六号）"><span class="lbl">附則</span>　（昭和四九年九月一四日最高裁判所規則第六号）</h2>
+<article class="art noarticle" id="sup-body-5" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-5" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=10" target="_blank" rel="noopener" title="原本PDFの10ページを開きます">原本 p.10</a></div><p class="para" id="sup-body-5-p1"><span class="body-text">この規則は、昭和四十九年十月一日から施行する。</span></p></article>
+<h2 class="div-head" id="sup5" data-path="附則　（昭和五年五月六日最高裁判所規則第三号）抄"><span class="lbl">附則</span>　（昭和五年五月六日最高裁判所規則第三号）抄</h2>
+<article class="art noarticle" id="sup-body-6" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-6" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=10" target="_blank" rel="noopener" title="原本PDFの10ページを開きます">原本 p.10</a></div><p class="para" id="sup-body-6-p1"><span class="body-text">から施行する。</span></p></article>
+<h2 class="div-head" id="sup6" data-path="附則　（平成四年二月二一日最高裁判所規則第四号）"><span class="lbl">附則</span>　（平成四年二月二一日最高裁判所規則第四号）</h2>
+<article class="art noarticle" id="sup-body-7" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-7" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=10" target="_blank" rel="noopener" title="原本PDFの10ページを開きます">原本 p.10</a></div><p class="para" id="sup-body-7-p1"><span class="body-text">この規則は、民事調停法の一部を改正する法律（平成三年法律第九十一号）の施行の日（平成四年八月一日）から施行する。</span></p></article>
+<h2 class="div-head" id="sup7" data-path="附則　（平成八年一二月一七日最高裁判所規則第六号）抄"><span class="lbl">附則</span>　（平成八年一二月一七日最高裁判所規則第六号）抄</h2>
+<article class="art" id="sup7-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup7-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=10" target="_blank" rel="noopener" title="原本PDFの10ページを開きます">原本 p.10</a></div><p class="caption">（施行期日）</p><p class="para" id="sup7-a1-p1"><a class="art-no" href="#sup7-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、民事訴訟法（平成八年法律第百九号。以下「新法」という。）の施行の日から施行する。（施行の日＝平成一〇年一月一日）</span></p></article>
+<article class="art" id="sup7-a2" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup7-a2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=10" target="_blank" rel="noopener" title="原本PDFの10ページを開きます">原本 p.10</a></div><p class="para" id="sup7-a2-p1"><a class="art-no" href="#sup7-a2" data-kan="第二条" data-num="第2条">第二条</a><span class="body-text"><a class="ref ref-self" href="#a6">第六条</a>の規定の施行前に供託された金銭又は有価証券についての相手方の権利については、<a class="ref ref-self" href="#a6">同条の規定による改正後の民事調停規則第六条</a>第四項において準用する<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000109#Mp-At_77" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">新法第七十七条</a>の規定にかかわらず、なお従前の例による。</span></p></article>
+<h2 class="div-head" id="sup8" data-path="附則　（平成一二年一二月一五日最高裁判所規則第一五号）"><span class="lbl">附則</span>　（平成一二年一二月一五日最高裁判所規則第一五号）</h2>
+<article class="art noarticle" id="sup-body-8" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-8" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=10" target="_blank" rel="noopener" title="原本PDFの10ページを開きます">原本 p.10</a></div><p class="para" id="sup-body-8-p1"><span class="body-text">この規則は、平成十三年一月六日から施行する。</span></p></article>
+<h2 class="div-head" id="sup9" data-path="附則　（平成一五年一〇月一日最高裁判所規則第一四号）"><span class="lbl">附則</span>　（平成一五年一〇月一日最高裁判所規則第一四号）</h2>
+<article class="art noarticle" id="sup-body-9" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-9" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=10" target="_blank" rel="noopener" title="原本PDFの10ページを開きます">原本 p.10</a></div><p class="para" id="sup-body-9-p1"><span class="body-text">この規則は、平成十六年一月一日から施行する。ただし、<a class="ref ref-self" href="#a8">第一条中民事調停規則第八条</a>の改正規定は、公布の日から施行する。</span></p></article>
+<h2 class="div-head" id="sup10" data-path="附則　（平成二四年七月一七日最高裁判所規則第九号）抄"><span class="lbl">附則</span>　（平成二四年七月一七日最高裁判所規則第九号）抄</h2>
+<article class="art" id="sup10-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup10-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=11" target="_blank" rel="noopener" title="原本PDFの11ページを開きます">原本 p.11</a></div><p class="caption">（施行期日）</p><p class="para" id="sup10-a1-p1"><a class="art-no" href="#sup10-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、非訟事件手続法（平成二十三年法律第五十一号）の施行の日から施行する。</span></p></article>
+<h2 class="div-head" id="sup11" data-path="附則　（令和四年一一月七日最高裁判所規則第一七号）抄"><span class="lbl">附則</span>　（令和四年一一月七日最高裁判所規則第一七号）抄</h2>
+<article class="art" id="sup11-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup11-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=11" target="_blank" rel="noopener" title="原本PDFの11ページを開きます">原本 p.11</a></div><p class="caption">（施行期日）</p><p class="para" id="sup11-a1-p1"><a class="art-no" href="#sup11-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、民事訴訟法等の一部を改正する法律（令和四年法律第四十八号。以下この条において「改正法」という。）附則<a class="ref ref-self" href="#a1">第一条</a>第二号に掲げる規定の施行の日（令和五年二月二〇日）から施行する。ただし、次の各号に掲げる規定は、当該各号に定める日から施行する。</span></p><ol class="items"><li id="sup11-a1-p1-1"><span class="mk">一</span><span class="tx">第一条中<a class="ref ref-rule" href="100.html#a32" title="この規則集の中を開きます">民事訴訟規則第三十二条</a>、第七十七条、第七十八条、第九十六条及び第百六十三条第一項の改正規定、<a class="ref ref-self" href="#a14">第十四条</a>の規定、第十八条中<a class="ref ref-rule" href="107.html#a37" title="この規則集の中を開きます">労働審判規則第三十七条</a>の改正規定（「第七十七条」を「第七十七条前段」に改める部分に限る。）、第二十条中<a class="ref ref-rule" href="500.html#a21" title="この規則集の中を開きます">非訟事件手続規則第二十一条</a>及び第五十条の改正規定、第二十一条中<a class="ref ref-rule" href="400.html#a33" title="この規則集の中を開きます">家事事件手続規則第三十三条</a>及び第百二十六条第二項の改正規定並びに<a class="ref ref-self" href="#a22">第二十二条</a>中国際的な子の奪取の民事上の側面に関する条約の実施に関する法律による子の返還に関する事件の手続等に関する規則第二十三条及び第五十三条第一項の改正規定 改正法附則<a class="ref ref-self" href="#a1">第一条</a>第三号に掲げる規定の施行の日（令和五年三月一日）</span></li><li id="sup11-a1-p1-2"><span class="mk">二</span><span class="tx"><a class="ref ref-self" href="#a1">第一条</a>中民事訴訟規則目次の改正規定（「<a class="ref ref-self" href="#a31">第三十一条</a>」を「第三十条の二」に改める部分に限る。）及び同規則第一編第五章第一節中<a class="ref ref-self" href="#a31">第三十一条</a>の前に二条を加える改正規定、<a class="ref ref-self" href="#a3">第三条</a>の規定、<a class="ref ref-self" href="#a6">第六条</a>の規定、第七条中<a class="ref ref-rule" href="200.html#a15-2" title="この規則集の中を開きます">民事執行規則第十五条の二</a>の改正規定、第八条中<a class="ref ref-rule" href="201.html#a6" title="この規則集の中を開きます">民事保全規則第六条</a>の改正規定、第十条中<a class="ref ref-rule" href="301.html#a11" title="この規則集の中を開きます">民事再生規則第十一条</a>の改正規定、第十二条中<a class="ref ref-rule" href="304.html#a12" title="この規則集の中を開きます">外国倒産処理手続の承認援助に関する規則第十二条</a>の改正規定、第十三条中<a class="ref ref-rule" href="302.html#a10" title="この規則集の中を開きます">会社更生規則第十条</a>の改正規定、<a class="ref ref-self" href="#a16">第十六条</a>の規定、第十七条中<a class="ref ref-rule" href="300.html#a12" title="この規則集の中を開きます">破産規則第十二条</a>の改正規定並びに<a class="ref ref-self" href="#a23">第二十三条</a>の規定 改正法附則<a class="ref ref-self" href="#a1">第一条</a>第四号に掲げる規定の施行の日</span></li><li id="sup11-a1-p1-3"><span class="mk">三</span><span class="tx"><a class="ref ref-self" href="#a15">第十五条</a>の規定 改正法附則<a class="ref ref-self" href="#a1">第一条</a>第五号に掲げる規定の施行の日</span></li></ol></article>
+<article class="art" id="sup11-a2" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup11-a2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=11" target="_blank" rel="noopener" title="原本PDFの11ページを開きます">原本 p.11</a></div><p class="caption">（調書の記載等に関する経過措置）</p><p class="para" id="sup11-a2-p1"><a class="art-no" href="#sup11-a2" data-kan="第二条" data-num="第2条">第二条</a><span class="body-text">３ この規則の施行前に行われた非訟事件手続法（平成二十三年法律第五十一号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/423AC0000000051#Mp-At_47" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第四十七条</a>第一項の規定（他の法律において準用する場合を含む。）による非訟事件の手続の期日における手続（証拠調べを除く。）の記録については、第二十条の規定による改正後の<a class="ref ref-rule" href="500.html#a42" title="この規則集の中を開きます">非訟事件手続規則第四十二条</a>第二項（他の最高裁判所規則において準用する場合を含む。）の規定にかかわらず、なお従前の例による。</span></p></article>
+<h2 class="div-head" id="sup12" data-path="附則　（令和六年九月一七日最高裁判所規則第一四号）抄"><span class="lbl">附則</span>　（令和六年九月一七日最高裁判所規則第一四号）抄</h2>
+<article class="art" id="sup12-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup12-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf#page=11" target="_blank" rel="noopener" title="原本PDFの11ページを開きます">原本 p.11</a></div><p class="caption">（施行期日）</p><p class="para" id="sup12-a1-p1"><a class="art-no" href="#sup12-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、民事訴訟法等の一部を改正する法律（令和四年法律第四十八号。以下「改正法」という。）の施行の日（以下「施行日」という。）から施行する。</span></p></article>
+    </div>
+    <aside class="notes"><p>読み取りに関する注意</p><ul><li>PDF中の目次は読み飛ばし、条見出しから目次を再構成しました。</li><li>各条の「原本」は https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。</li></ul></aside>
+    <div class="foot">出典：20260521minjityouteikisoku.pdf　／　最高裁規則ビューア 1.9.0 で 2026年09月02日 に変換　
+    条文の正確な内容は原本で確認してください。</div>
+  </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  "use strict";
+  var doc = document.getElementById("doc");
+  var input = document.getElementById("q");
+  var hitLabel = document.getElementById("hits");
+  var crumb = document.getElementById("crumb");
+  var toc = document.getElementById("toc");
+  var toast = document.getElementById("toast");
+  var pristine = doc.innerHTML;
+  var hits = [];
+  var cursor = -1;
+
+  function say(msg){
+    toast.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(say._t);
+    say._t = setTimeout(function(){ toast.classList.remove("show"); }, 1600);
+  }
+
+  /* ---------------------------------------------------------- 条番号の表記 */
+  var numeralBtn = document.getElementById("numeral");
+  function applyNumeral(useArabic){
+    var nodes = doc.querySelectorAll(".art-no");
+    for (var i = 0; i < nodes.length; i++){
+      var el = nodes[i];
+      var v = useArabic ? el.getAttribute("data-num") : el.getAttribute("data-kan");
+      if (v) el.textContent = v;
+    }
+    numeralBtn.setAttribute("aria-pressed", useArabic ? "true" : "false");
+  }
+  numeralBtn.addEventListener("click", function(){
+    var next = numeralBtn.getAttribute("aria-pressed") !== "true";
+    applyNumeral(next);
+    try { localStorage.setItem("rule-numeral", next ? "1" : "0"); } catch(e){}
+    pristine = doc.innerHTML;
+  });
+  try {
+    /* 既定の表記は原本に合わせてある。前回の切り替えが残っていればそれに従う */
+    var saved = localStorage.getItem("rule-numeral");
+    if (saved === "1" || saved === "0"){ applyNumeral(saved === "1"); pristine = doc.innerHTML; }
+  } catch(e){}
+
+  /* -------------------------------------------------------------- 検索処理 */
+  var SKIP = {SCRIPT:1, STYLE:1, MARK:1, BUTTON:1, A:1};   /* 原本リンク等の道具立ては検索対象にしない */
+  function highlight(term){
+    doc.innerHTML = pristine;
+    hits = [];
+    cursor = -1;
+    if (!term){ hitLabel.textContent = ""; refreshToc(""); return; }
+    var walker = document.createTreeWalker(doc, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        if (!n.nodeValue || n.nodeValue.indexOf(term) < 0) return NodeFilter.FILTER_REJECT;
+        if (n.parentNode && SKIP[n.parentNode.nodeName]) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var targets = [];
+    var node;
+    while ((node = walker.nextNode())) targets.push(node);
+    for (var i = 0; i < targets.length; i++){
+      var t = targets[i], text = t.nodeValue, pos = 0, frag = document.createDocumentFragment();
+      var idx;
+      while ((idx = text.indexOf(term, pos)) >= 0){
+        if (idx > pos) frag.appendChild(document.createTextNode(text.slice(pos, idx)));
+        var m = document.createElement("mark");
+        m.textContent = text.substr(idx, term.length);
+        frag.appendChild(m);
+        hits.push(m);
+        pos = idx + term.length;
+      }
+      if (pos < text.length) frag.appendChild(document.createTextNode(text.slice(pos)));
+      t.parentNode.replaceChild(frag, t);
+    }
+    hitLabel.textContent = hits.length ? "1 / " + hits.length : "該当なし";
+    refreshToc(term);
+    if (hits.length){ cursor = 0; focusHit(0, false); }
+  }
+  function focusHit(i, scroll){
+    if (!hits.length) return;
+    for (var k = 0; k < hits.length; k++) hits[k].classList.remove("live");
+    cursor = (i + hits.length) % hits.length;
+    hits[cursor].classList.add("live");
+    hitLabel.textContent = (cursor + 1) + " / " + hits.length;
+    if (scroll !== false) hits[cursor].scrollIntoView({block:"center", behavior:"instant"});
+  }
+  function refreshToc(term){
+    var links = toc.querySelectorAll("li.lv-art");
+    for (var i = 0; i < links.length; i++){
+      var li = links[i];
+      var body = (li.getAttribute("data-text") || "");
+      li.classList.toggle("hidden", !!term && body.indexOf(term) < 0);
+    }
+    var divs = toc.querySelectorAll("li.lv-div");
+    for (var j = divs.length - 1; j >= 0; j--){
+      var d = divs[j];
+      var kids = d.querySelectorAll("li:not(.hidden)");
+      d.classList.toggle("hidden", !!term && kids.length === 0);
+    }
+  }
+  var timer = null;
+  input.addEventListener("input", function(){
+    clearTimeout(timer);
+    var v = input.value.trim();
+    timer = setTimeout(function(){ highlight(v); }, 180);
+  });
+  input.addEventListener("keydown", function(e){
+    if (e.key === "Enter"){ e.preventDefault(); focusHit(cursor + (e.shiftKey ? -1 : 1)); }
+    if (e.key === "Escape"){ input.value = ""; highlight(""); input.blur(); }
+  });
+  document.getElementById("prev").addEventListener("click", function(){ focusHit(cursor - 1); });
+  document.getElementById("next").addEventListener("click", function(){ focusHit(cursor + 1); });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "/" && e.target === document.body){ e.preventDefault(); input.focus(); }
+  });
+
+  /* -------------------------------------------------- リンクのコピー・共有 */
+  doc.addEventListener("click", function(e){
+    var btn = e.target.closest ? e.target.closest("button[data-anchor]") : null;
+    if (!btn) return;
+    var anchor = btn.getAttribute("data-anchor");
+    var url = location.href.split("#")[0] + "#" + anchor;
+    history.replaceState(null, "", "#" + anchor);
+    var done = function(){ say("リンクをコピーしました"); };
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(done, function(){ legacyCopy(url, done); });
+    } else {
+      legacyCopy(url, done);
+    }
+  });
+  function legacyCopy(text, done){
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); done(); }
+    catch(err){ say("コピーできませんでした。アドレス欄からURLを控えてください"); }
+    document.body.removeChild(ta);
+  }
+
+  /* ------------------------------------------------ 現在位置の表示と目次連動 */
+  var watched = doc.querySelectorAll(".art[id], .div-head[id]");
+  var tocLinks = {};
+  var links = toc.querySelectorAll("a[href^='#']");
+  for (var i = 0; i < links.length; i++) tocLinks[links[i].getAttribute("href").slice(1)] = links[i];
+  var currentLink = null;
+  if ("IntersectionObserver" in window){
+    var visible = [];
+    var io = new IntersectionObserver(function(entries){
+      for (var i = 0; i < entries.length; i++){
+        var id = entries[i].target.id;
+        var at = visible.indexOf(id);
+        if (entries[i].isIntersecting){ if (at < 0) visible.push(id); }
+        else if (at >= 0){ visible.splice(at, 1); }
+      }
+      if (!visible.length) return;
+      var first = null;
+      for (var k = 0; k < watched.length; k++){
+        if (visible.indexOf(watched[k].id) >= 0){ first = watched[k]; break; }
+      }
+      if (!first) return;
+      crumb.textContent = first.getAttribute("data-path") || "";
+      var link = tocLinks[first.id];
+      if (link && link !== currentLink){
+        if (currentLink) currentLink.classList.remove("current");
+        link.classList.add("current");
+        currentLink = link;
+      }
+    }, {rootMargin:"-20% 0px -70% 0px"});
+    for (var w = 0; w < watched.length; w++) io.observe(watched[w]);
+  }
+
+  /* -------------------------------------------------------- 目次の開閉（狭幅） */
+  var opener = document.getElementById("toc-open");
+  if (opener){
+    opener.addEventListener("click", function(){ toc.classList.toggle("open"); });
+    toc.addEventListener("click", function(e){
+      if (e.target.tagName === "A") toc.classList.remove("open");
+    });
+  }
+})();
+</script>
+</body>
+</html>

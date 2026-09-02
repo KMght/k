@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>労働審判員規則</title>
+<style>
+:root{
+  --paper:#ffffff;
+  --ink:#16181d;
+  --sub:#5f6875;
+  --rule:#dde2e9;
+  --chrome:#f4f6f9;
+  --accent:#14538a;
+  --accent-weak:#e7eff7;
+  --mark:#ffe08a;
+  --mark-live:#ff9d3d;
+  --gothic:"Yu Gothic UI","Yu Gothic","YuGothic","Hiragino Sans","Noto Sans JP","Meiryo",system-ui,sans-serif;
+  --mincho:"Yu Mincho","YuMincho","Hiragino Mincho ProN","Noto Serif JP","MS Mincho",serif;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:5.5rem}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--mincho);font-size:17px;line-height:1.9;
+  text-rendering:optimizeLegibility;
+}
+
+/* ---------------------------------------------------------------- ヘッダ */
+.top{
+  position:sticky;top:0;z-index:30;background:var(--chrome);
+  border-bottom:1px solid var(--rule);font-family:var(--gothic);
+}
+.top-inner{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;padding:.7rem 1.2rem}
+.law-title{font-size:1.12rem;font-weight:700;letter-spacing:.02em;margin:0}
+.law-number{font-size:.8rem;color:var(--sub);margin-left:.2rem}
+.top-tools{margin-left:auto;display:flex;align-items:center;gap:.5rem}
+.search-box{display:flex;align-items:center;gap:.35rem;background:var(--paper);
+  border:1px solid var(--rule);border-radius:2px;padding:.25rem .5rem}
+.search-box input{border:0;outline:0;font:inherit;font-size:.85rem;width:14rem;background:transparent;color:inherit}
+.hit-count{font-size:.78rem;color:var(--sub);min-width:4.2rem;text-align:right;font-variant-numeric:tabular-nums}
+button{font:inherit;font-family:var(--gothic);cursor:pointer}
+.btn{background:var(--paper);border:1px solid var(--rule);border-radius:2px;
+  color:var(--ink);font-size:.78rem;padding:.28rem .6rem;line-height:1.4}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.crumb{padding:.3rem 1.2rem;border-top:1px solid var(--rule);background:var(--paper);
+  font-family:var(--gothic);font-size:.78rem;color:var(--sub);min-height:1.7rem}
+
+/* ------------------------------------------------------------------ 骨格 */
+.wrap{display:grid;grid-template-columns:19rem minmax(0,1fr);align-items:start}
+.toc{
+  position:sticky;top:5.6rem;max-height:calc(100vh - 5.6rem);overflow-y:auto;
+  border-right:1px solid var(--rule);padding:1rem .6rem 4rem 1.2rem;
+  font-family:var(--gothic);font-size:.83rem;line-height:1.65;
+}
+.toc h2{font-size:.75rem;color:var(--sub);font-weight:700;margin:0 0 .6rem}
+.toc ul{list-style:none;margin:0;padding:0}
+.toc a{display:block;color:var(--ink);text-decoration:none;padding:.16rem .4rem;border-radius:2px}
+.toc a:hover{background:var(--accent-weak);color:var(--accent)}
+.toc a.current{background:var(--accent-weak);color:var(--accent);font-weight:700}
+.toc .div-1>a,.toc .div-2>a{font-weight:700}
+.toc .div-2{margin-top:.5rem}
+.toc .div-3,.toc .div-4,.toc .div-5{margin-top:.25rem}
+.toc .lv-art{padding-left:.9rem}
+.toc .lv-art.hidden,.toc .lv-div.hidden{display:none}
+.toc-toggle{background:none;border:0;color:var(--sub);padding:0 .3rem;font-size:.75rem}
+
+.doc{padding:2.2rem 2rem 8rem;max-width:44em}
+.doc-head{border-bottom:2px solid var(--ink);padding-bottom:.8rem;margin-bottom:2rem}
+.doc-head h1{font-size:1.5rem;margin:0 0 .3rem;letter-spacing:.04em}
+.doc-head .meta{font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+
+/* ------------------------------------------------------------------ 条文 */
+.div-head{font-family:var(--gothic);margin:2.6rem 0 1rem;scroll-margin-top:6rem}
+.div-head .lbl{color:var(--accent);font-weight:700}
+h2.div-head{font-size:1.12rem;border-bottom:1px solid var(--rule);padding-bottom:.35rem}
+h3.div-head{font-size:1.02rem}
+h4.div-head,h5.div-head,h6.div-head{font-size:.95rem}
+
+.art{position:relative;padding-left:2.6rem;margin:1.5rem 0 1.9rem;scroll-margin-top:6rem}
+.art:target{background:var(--accent-weak);box-shadow:-.4rem 0 0 var(--accent);border-radius:2px}
+.art-tools{position:absolute;left:0;top:.25rem;display:flex;flex-direction:column;gap:.2rem;
+  visibility:hidden}
+.art:hover .art-tools,.art:focus-within .art-tools,.art:target .art-tools{visibility:visible}
+.art-tools button,.art-tools a{background:none;border:0;color:var(--sub);font-size:.72rem;
+  font-family:var(--gothic);padding:.1rem .2rem;border-radius:2px;text-decoration:none;
+  white-space:nowrap;display:block}
+.art-tools button:hover,.art-tools a:hover{color:var(--accent);background:var(--accent-weak)}
+.raw h3 .src{font-size:.75rem;font-weight:400;color:var(--sub);margin-left:.5rem}
+.doc-head .src{color:var(--accent);text-decoration:none}
+.doc-head .src:hover{text-decoration:underline}
+.caption{font-family:var(--gothic);font-size:.88rem;font-weight:700;color:var(--sub);margin:0 0 .1rem}
+.amend-note{font-family:var(--gothic);font-size:.78rem;font-weight:400;color:var(--sub);margin:.1rem 0 0;text-align:right}
+h2 .amend-note,h3 .amend-note,h4 .amend-note,h5 .amend-note,h6 .amend-note{display:inline;text-align:left}
+.art-no{font-family:var(--gothic);font-weight:700;color:var(--accent);text-decoration:none;margin-right:.55em}
+.art-no:hover{text-decoration:underline}
+.para{margin:.35rem 0;text-indent:0}
+.para+.para{margin-top:.55rem}
+.pno{font-family:var(--gothic);color:var(--sub);font-size:.9em;margin-right:.5em;font-variant-numeric:tabular-nums}
+.deleted .body-text{color:var(--sub)}
+.art.noarticle .para{margin-top:0}
+
+ol.items{list-style:none;margin:.35rem 0 .35rem 1.1em;padding:0}
+ol.items>li{display:grid;grid-template-columns:2.4em minmax(0,1fr);margin:.2rem 0}
+ol.items .mk{font-family:var(--gothic);font-size:.9em;color:var(--sub);margin-right:.4em}
+ol.items ol.items{grid-column:1/-1;margin-left:1.2em}
+ol.items ol.items>li{grid-template-columns:2em minmax(0,1fr)}
+
+.raw{margin:1.6rem 0;scroll-margin-top:6rem}
+.raw h3{font-family:var(--gothic);font-size:1rem;margin:0 0 .4rem}
+.raw pre{font-family:var(--mincho);white-space:pre-wrap;margin:0;padding:.7rem .9rem;
+  background:var(--chrome);border:1px solid var(--rule);font-size:.92rem;line-height:1.75}
+
+.notes{margin:2.5rem 0 0;padding:.8rem 1rem;background:var(--chrome);
+  border-left:3px solid var(--accent);font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+.notes p{margin:0 0 .3rem;font-weight:700;color:var(--ink)}
+.notes ul{margin:0;padding-left:1.2rem}
+.foot{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);
+  font-family:var(--gothic);font-size:.75rem;color:var(--sub)}
+
+a.ref{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule)}
+a.ref:hover{color:var(--accent);border-bottom-color:var(--accent)}
+a.ref-egov{border-bottom-style:dotted}
+a.ref-rule{border-bottom-color:var(--accent)}
+mark{background:var(--mark);color:inherit;padding:0 .05em}
+mark.live{background:var(--mark-live)}
+.toast{position:fixed;left:50%;bottom:2rem;transform:translateX(-50%);
+  background:var(--ink);color:#fff;font-family:var(--gothic);font-size:.8rem;
+  padding:.5rem .9rem;border-radius:3px;pointer-events:none;z-index:60;display:none}
+.toast.show{display:block}
+
+.toc-open{display:none}
+@media (max-width:900px){
+  body{font-size:16px}
+  .wrap{grid-template-columns:minmax(0,1fr)}
+  .toc{position:fixed;inset:5.6rem auto 0 0;width:82vw;max-width:20rem;background:var(--paper);
+    z-index:25;box-shadow:0 0 0 100vmax rgba(0,0,0,.25);max-height:none;height:calc(100vh - 5.6rem);
+    display:none}
+  .toc.open{display:block}
+  .toc-open{display:inline-block}
+  .doc{padding:1.4rem 1.1rem 6rem}
+  .search-box input{width:8rem}
+  .art-tools{opacity:1;position:static;flex-direction:row;justify-content:flex-end;margin-bottom:.15rem}
+  .art-tools button,.art-tools a{border:1px solid var(--rule);border-radius:2px;
+    padding:.1rem .45rem;display:inline-block}
+  .art{padding-left:0}
+}
+
+@media print{
+  .top,.toc,.art-tools,.crumb,.toast{display:none!important}
+  a.ref{border-bottom:0}
+  .wrap{display:block}
+  .doc{max-width:none;padding:0}
+  body{font-size:10.5pt;line-height:1.7}
+  .art{page-break-inside:avoid}
+}
+
+.anchor-alias{position:absolute;scroll-margin-top:6rem}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <button type="button" class="btn toc-open" id="toc-open">目次</button>
+    <h1 class="law-title">労働審判員規則</h1>
+    <span class="law-number">平成十七年一月十一日最高裁判所規則第三号　／　令和7年6月1日施行</span>
+    <div class="top-tools">
+      <div class="search-box">
+        <input type="search" id="q" placeholder="条文を検索（/ キー）" aria-label="条文を検索">
+        <span class="hit-count" id="hits"></span>
+      </div>
+      <button type="button" class="btn" id="prev" title="前の該当箇所">前</button>
+      <button type="button" class="btn" id="next" title="次の該当箇所">次</button>
+      <button type="button" class="btn" id="numeral" aria-pressed="false"
+        title="条番号の表記を切り替える">123</button>
+    </div>
+  </div>
+  <div class="crumb" id="crumb"></div>
+</header>
+<div class="wrap">
+  <nav class="toc" id="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ul><li class="lv-art" data-text="労働審判員規則（原文は縦書き労働審判員規則（原文は縦書き改正 令和七年二月十二日最高裁判所規則第三号令和七年三月三日最高裁判所規則第五号労働審判員規則を次のように定める。"><a href="#body-1">本文　労働審判員規則（原文は縦書き</a></li><li class="lv-art" data-text="第一条1条任命任命労働審判員は、労働関係に関する専門的な知識経験を有する者で六十八歳未満のものの中から、最高裁判所が任命する。ただし、特に必要がある場合においては、六十八歳未満の者であることを要しない。"><a href="#a1">第一条　任命</a></li><li class="lv-art" data-text="第二条2条欠格事由欠格事由次の各号のいずれかに該当する者は、労働審判員に任命することができない。一拘禁刑以上の刑に処せられた者二労働関係に関する法令の規定に違反し、罰金の刑に処せられた者三公務員として免職の懲戒処分を受け、当該処分の日から二年を経過しない者四第六条第二項第二号又は第三号の規定により労働審判員を解任された者"><a href="#a2">第二条　欠格事由</a></li><li class="lv-art" data-text="第三条3条任期任期労働審判員の任期は、二年とする。"><a href="#a3">第三条　任期</a></li><li class="lv-art" data-text="第四条4条所属等所属等労働審判員の所属する地方裁判所（以下「所属地方裁判所」という。）は、最高裁判所が定める。"><a href="#a4">第四条　所属等</a></li><li class="lv-art" data-text="第五条5条所属地方裁判所以外の他の地方裁判所における労働審判事件の処理のために特に必要がある場合においては、当該他の地方裁判所と所属地方裁判所に共通する直近上級の裁判所が、所属地方裁判所の労働審判員に当該他の地方裁判所の労働審判員の職務を行わせることができる。"><a href="#a5">第五条</a></li><li class="lv-art" data-text="第六条6条解任解任最高裁判所は、労働審判員が第二条第一号から第三号までのいずれかに該当するに至ったときは、これを解任しなければならない。最高裁判所は、労働審判員が次の各号のいずれかに該当するときは、これを解任することができる。一心身の故障のため職務の執行ができないと認められるとき。二職務上の義務違反があると認められるとき。三中立かつ公正な立場において職務を行うことができないと認めるに足りる行為、労働審判手続に対する信頼を損なうおそれのある行為その他の労働審判員たるに適しない行為があると認められるとき。"><a href="#a6">第六条　解任</a></li><li class="lv-art" data-text="第七条7条旅費、日当及び宿泊料旅費、日当及び宿泊料労働審判員が所属地方裁判所で職務を行う場合には、次項の規定により算定される旅費を支給する。旅費は、鉄道賃、船賃及びその他の交通費（鉄道、船舶及び航空機以外を利用する移動に要する費用をいう。次項において同じ。）の三種とし、その金額は、国家公務員等の旅費に関する法律（昭和二十五年法律第百十四号。同項において「旅費法」という。）及び国家公務員等の旅費に関する法律施行令（令和六年政令第三百六号。同項において「旅費法施行令」という。）の規定に基づいて受ける旅費の金額と同一とする。第一項に規定する場合を除き、労働審判員には、旅費、日当及び宿泊料を支給するものとし、その金額は、旅費法及び旅費法施行令の規定に基づいて受ける鉄道賃、船賃、航空賃及びその他の交通費、宿泊手当並びに宿泊費の金額と同一とする。前三項に定めるもののほか、労働審判員に支給する旅費、日当及び宿泊料については、別に最高裁判所の定めるところによる。"><a href="#a7">第七条　旅費、日当及び宿泊料</a></li><li class="lv-div div-1"><a href="#sup1">附則</a><ul><li class="lv-art" data-text="第一条1条施行期日施行期日この規則は、労働審判法（平成十六年法律第四十五号。以下「法」という。）第九条の規定の施行の日から施行する。"><a href="#sup1-a1">第一条　施行期日</a></li><li class="lv-art" data-text="第二条2条労働審判員の任期の特例労働審判員の任期の特例この規則の施行後、法の施行の日までに任命される労働審判員の任期は、第三条の規定にかかわらず、同日から起算して二年を経過した日の前日までとする。"><a href="#sup1-a2">第二条　労働審判員の任期の特例</a></li><li class="lv-art" data-text="第三条3条裁判所の非常勤職員の政治的行為制限の特例に関する規則の一部改正裁判所の非常勤職員の政治的行為制限の特例に関する規則の一部改正裁判所の非常勤職員の政治的行為制限の特例に関する規則（昭和二十七年最高裁判所規則第二十五号）の一部を次のように改正する。本則中第十号を第十一号とし、第三号から第九号までを一号ずつ繰り下げ、第二号の次に次の一号を加える。三 労働審判員"><a href="#sup1-a3">第三条　裁判所の非常勤職員の政治的行為制限の特例に関する規則の一部改正</a></li><li class="lv-art" data-text="第四条4条政治資金規正法第二十二条の九第一項第二号の非常勤職員の範囲を定める規則の一部改正政治資金規正法第二十二条の九第一項第二号の非常勤職員の範囲を定める規則の一部改正政治資金規正法第二十二条の九第一項第二号の非常勤職員の範囲を定める規則（平成四年最高裁判所規則第十三号）の一部を次のように改正する。本則中第九号を第十号とし、第二号から第八号までを一号ずつ繰り下げ、第一号の次に次の一号を加える。二 労働審判員"><a href="#sup1-a4">第四条　政治資金規正法第二十二条の九第一項第二号の非常勤職員の範囲を定める規則の一部改正</a></li></ul></li><li class="lv-div div-1"><a href="#sup2">附則　（令和七年二月十二日最高裁判所規則第三号）抄</a><ul><li class="lv-art" data-text="第一条1条施行期日施行期日この規則は、刑法等の一部を改正する法律（令和四年法律第六十七号。次条において「刑法等一部改正法」という。）の施行の日（令和七年六月一日）から施行する。"><a href="#sup2-a1">第一条　施行期日</a></li></ul></li><li class="lv-div div-1"><a href="#sup3">附則　（令和七年三月三日最高裁判所規則第五号）</a></li></ul>
+  </nav>
+  <main class="doc" id="doc-outer">
+    <div class="doc-head">
+      <h1>労働審判員規則</h1>
+      <div class="meta">平成十七年一月十一日最高裁判所規則第三号　／　令和7年6月1日施行　／　<a class="src" href="https://www.courts.go.jp/vc-files/courts/roudou_kisokutou/20250212roudoushinpaninkisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本PDF p.1</a></div>
+    </div>
+    <div id="doc">
+<article class="art noarticle" id="body-1" data-path=""><div class="art-tools"><button type="button" data-anchor="body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/roudou_kisokutou/20250212roudoushinpaninkisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（労働審判員規則（原文は縦書き）</p><p class="para" id="body-1-p1"><span class="body-text">改正 令和七年二月十二日最高裁判所規則第三号令和七年三月三日最高裁判所規則第五号労働審判員規則を次のように定める。</span></p></article>
+<article class="art" id="a1" data-path=""><span class="anchor-alias" id="Mp-At_1"></span><div class="art-tools"><button type="button" data-anchor="a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/roudou_kisokutou/20250212roudoushinpaninkisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（任命）</p><p class="para" id="a1-p1"><a class="art-no" href="#a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">労働審判員は、労働関係に関する専門的な知識経験を有する者で六十八歳未満のものの中から、最高裁判所が任命する。ただし、特に必要がある場合においては、六十八歳未満の者であることを要しない。</span></p></article>
+<article class="art" id="a2" data-path=""><span class="anchor-alias" id="Mp-At_2"></span><div class="art-tools"><button type="button" data-anchor="a2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/roudou_kisokutou/20250212roudoushinpaninkisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（欠格事由）</p><p class="para" id="a2-p1"><a class="art-no" href="#a2" data-kan="第二条" data-num="第2条">第二条</a><span class="body-text">次の各号のいずれかに該当する者は、労働審判員に任命することができない。</span></p><ol class="items"><li id="a2-p1-1"><span class="mk">一</span><span class="tx">拘禁刑以上の刑に処せられた者</span></li><li id="a2-p1-2"><span class="mk">二</span><span class="tx">労働関係に関する法令の規定に違反し、罰金の刑に処せられた者</span></li><li id="a2-p1-3"><span class="mk">三</span><span class="tx">公務員として免職の懲戒処分を受け、当該処分の日から二年を経過しない者</span></li><li id="a2-p1-4"><span class="mk">四</span><span class="tx"><a class="ref ref-self" href="#a6">第六条</a>第二項第二号又は第三号の規定により労働審判員を解任された者</span></li></ol></article>
+<article class="art" id="a3" data-path=""><span class="anchor-alias" id="Mp-At_3"></span><div class="art-tools"><button type="button" data-anchor="a3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/roudou_kisokutou/20250212roudoushinpaninkisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（任期）</p><p class="para" id="a3-p1"><a class="art-no" href="#a3" data-kan="第三条" data-num="第3条">第三条</a><span class="body-text">労働審判員の任期は、二年とする。</span></p></article>
+<article class="art" id="a4" data-path=""><span class="anchor-alias" id="Mp-At_4"></span><div class="art-tools"><button type="button" data-anchor="a4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/roudou_kisokutou/20250212roudoushinpaninkisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（所属等）</p><p class="para" id="a4-p1"><a class="art-no" href="#a4" data-kan="第四条" data-num="第4条">第四条</a><span class="body-text">労働審判員の所属する地方裁判所（以下「所属地方裁判所」という。）は、最高裁判所が定める。</span></p></article>
+<article class="art" id="a5" data-path=""><span class="anchor-alias" id="Mp-At_5"></span><div class="art-tools"><button type="button" data-anchor="a5" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/roudou_kisokutou/20250212roudoushinpaninkisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="a5-p1"><a class="art-no" href="#a5" data-kan="第五条" data-num="第5条">第五条</a><span class="body-text">所属地方裁判所以外の他の地方裁判所における労働審判事件の処理のために特に必要がある場合においては、当該他の地方裁判所と所属地方裁判所に共通する直近上級の裁判所が、所属地方裁判所の労働審判員に当該他の地方裁判所の労働審判員の職務を行わせることができる。</span></p></article>
+<article class="art" id="a6" data-path=""><span class="anchor-alias" id="Mp-At_6"></span><div class="art-tools"><button type="button" data-anchor="a6" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/roudou_kisokutou/20250212roudoushinpaninkisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（解任）</p><p class="para" id="a6-p1"><a class="art-no" href="#a6" data-kan="第六条" data-num="第6条">第六条</a><span class="body-text">最高裁判所は、労働審判員が<a class="ref ref-self" href="#a2">第二条</a>第一号から第三号までのいずれかに該当するに至ったときは、これを解任しなければならない。</span></p><p class="para" id="a6-p2"><span class="pno">2</span><span class="body-text">最高裁判所は、労働審判員が次の各号のいずれかに該当するときは、これを解任することができる。</span></p><ol class="items"><li id="a6-p2-1"><span class="mk">一</span><span class="tx">心身の故障のため職務の執行ができないと認められるとき。</span></li><li id="a6-p2-2"><span class="mk">二</span><span class="tx">職務上の義務違反があると認められるとき。</span></li><li id="a6-p2-3"><span class="mk">三</span><span class="tx">中立かつ公正な立場において職務を行うことができないと認めるに足りる行為、労働審判手続に対する信頼を損なうおそれのある行為その他の労働審判員たるに適しない行為があると認められるとき。</span></li></ol></article>
+<article class="art" id="a7" data-path=""><span class="anchor-alias" id="Mp-At_7"></span><div class="art-tools"><button type="button" data-anchor="a7" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/roudou_kisokutou/20250212roudoushinpaninkisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（旅費、日当及び宿泊料）</p><p class="para" id="a7-p1"><a class="art-no" href="#a7" data-kan="第七条" data-num="第7条">第七条</a><span class="body-text">労働審判員が所属地方裁判所で職務を行う場合には、次項の規定により算定される旅費を支給する。</span></p><p class="para" id="a7-p2"><span class="pno">2</span><span class="body-text">旅費は、鉄道賃、船賃及びその他の交通費（鉄道、船舶及び航空機以外を利用する移動に要する費用をいう。次項において同じ。）の三種とし、その金額は、国家公務員等の旅費に関する法律（昭和二十五年法律第百十四号。同項において「旅費法」という。）及び国家公務員等の旅費に関する法律施行令（令和六年政令第三百六号。同項において「旅費法施行令」という。）の規定に基づいて受ける旅費の金額と同一とする。</span></p><p class="para" id="a7-p3"><span class="pno">3</span><span class="body-text">第一項に規定する場合を除き、労働審判員には、旅費、日当及び宿泊料を支給するものとし、その金額は、旅費法及び旅費法施行令の規定に基づいて受ける鉄道賃、船賃、航空賃及びその他の交通費、宿泊手当並びに宿泊費の金額と同一とする。</span></p><p class="para" id="a7-p4"><span class="pno">4</span><span class="body-text">前三項に定めるもののほか、労働審判員に支給する旅費、日当及び宿泊料については、別に最高裁判所の定めるところによる。</span></p></article>
+<h2 class="div-head" id="sup1" data-path="附則　"><span class="lbl">附則</span></h2>
+<article class="art" id="sup1-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup1-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/roudou_kisokutou/20250212roudoushinpaninkisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（施行期日）</p><p class="para" id="sup1-a1-p1"><a class="art-no" href="#sup1-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、労働審判法（平成十六年法律第四十五号。以下「法」という。）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/416AC0000000045#Mp-At_9" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第九条</a>の規定の施行の日から施行する。</span></p></article>
+<article class="art" id="sup1-a2" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup1-a2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/roudou_kisokutou/20250212roudoushinpaninkisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（労働審判員の任期の特例）</p><p class="para" id="sup1-a2-p1"><a class="art-no" href="#sup1-a2" data-kan="第二条" data-num="第2条">第二条</a><span class="body-text">この規則の施行後、法の施行の日までに任命される労働審判員の任期は、<a class="ref ref-self" href="#a3">第三条</a>の規定にかかわらず、同日から起算して二年を経過した日の前日までとする。</span></p></article>
+<article class="art" id="sup1-a3" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup1-a3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/roudou_kisokutou/20250212roudoushinpaninkisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（裁判所の非常勤職員の政治的行為制限の特例に関する規則の一部改正）</p><p class="para" id="sup1-a3-p1"><a class="art-no" href="#sup1-a3" data-kan="第三条" data-num="第3条">第三条</a><span class="body-text">裁判所の非常勤職員の政治的行為制限の特例に関する規則（昭和二十七年最高裁判所規則第二十五号）の一部を次のように改正する。本則中第十号を第十一号とし、第三号から第九号までを一号ずつ繰り下げ、第二号の次に次の一号を加える。三 労働審判員</span></p></article>
+<article class="art" id="sup1-a4" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup1-a4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/roudou_kisokutou/20250212roudoushinpaninkisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/323AC1000000194#Mp-At_22_9" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">政治資金規正法第二十二条の九</a>第一項第二号の非常勤職員の範囲を定める規則の一部改正）</p><p class="para" id="sup1-a4-p1"><a class="art-no" href="#sup1-a4" data-kan="第四条" data-num="第4条">第四条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/323AC1000000194#Mp-At_22_9" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">政治資金規正法第二十二条の九</a>第一項第二号の非常勤職員の範囲を定める規則（平成四年最高裁判所規則第十三号）の一部を次のように改正する。本則中第九号を第十号とし、第二号から第八号までを一号ずつ繰り下げ、第一号の次に次の一号を加える。二 労働審判員</span></p></article>
+<h2 class="div-head" id="sup2" data-path="附則　（令和七年二月十二日最高裁判所規則第三号）抄"><span class="lbl">附則</span>　（令和七年二月十二日最高裁判所規則第三号）抄</h2>
+<article class="art" id="sup2-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup2-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/roudou_kisokutou/20250212roudoushinpaninkisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（施行期日）</p><p class="para" id="sup2-a1-p1"><a class="art-no" href="#sup2-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、刑法等の一部を改正する法律（令和四年法律第六十七号。次条において「刑法等一部改正法」という。）の施行の日（令和七年六月一日）から施行する。</span></p></article>
+<h2 class="div-head" id="sup3" data-path="附則　（令和七年三月三日最高裁判所規則第五号）"><span class="lbl">附則</span>　（令和七年三月三日最高裁判所規則第五号）</h2>
+<article class="art noarticle" id="sup-body-1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/roudou_kisokutou/20250212roudoushinpaninkisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="para" id="sup-body-1-p1"><span class="body-text">この規則は、国家公務員等の旅費に関する法律の一部を改正する法律（令和六年法律第二十二号）の施行の日（令和七年四月一日）から施行する。</span></p><p class="para" id="sup-body-1-p2"><span class="pno">2</span><span class="body-text">この規則の施行前に支給原因となる事実が生じた旅費、日当及び宿泊料の額については、なお従前の例による。</span></p></article>
+    </div>
+    <aside class="notes"><p>読み取りに関する注意</p><ul><li>各条の「原本」は https://www.courts.go.jp/vc-files/courts/roudou_kisokutou/20250212roudoushinpaninkisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。</li></ul></aside>
+    <div class="foot">出典：20250212roudoushinpaninkisoku.pdf　／　最高裁規則ビューア 1.9.0 で 2026年09月02日 に変換　
+    条文の正確な内容は原本で確認してください。</div>
+  </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  "use strict";
+  var doc = document.getElementById("doc");
+  var input = document.getElementById("q");
+  var hitLabel = document.getElementById("hits");
+  var crumb = document.getElementById("crumb");
+  var toc = document.getElementById("toc");
+  var toast = document.getElementById("toast");
+  var pristine = doc.innerHTML;
+  var hits = [];
+  var cursor = -1;
+
+  function say(msg){
+    toast.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(say._t);
+    say._t = setTimeout(function(){ toast.classList.remove("show"); }, 1600);
+  }
+
+  /* ---------------------------------------------------------- 条番号の表記 */
+  var numeralBtn = document.getElementById("numeral");
+  function applyNumeral(useArabic){
+    var nodes = doc.querySelectorAll(".art-no");
+    for (var i = 0; i < nodes.length; i++){
+      var el = nodes[i];
+      var v = useArabic ? el.getAttribute("data-num") : el.getAttribute("data-kan");
+      if (v) el.textContent = v;
+    }
+    numeralBtn.setAttribute("aria-pressed", useArabic ? "true" : "false");
+  }
+  numeralBtn.addEventListener("click", function(){
+    var next = numeralBtn.getAttribute("aria-pressed") !== "true";
+    applyNumeral(next);
+    try { localStorage.setItem("rule-numeral", next ? "1" : "0"); } catch(e){}
+    pristine = doc.innerHTML;
+  });
+  try {
+    /* 既定の表記は原本に合わせてある。前回の切り替えが残っていればそれに従う */
+    var saved = localStorage.getItem("rule-numeral");
+    if (saved === "1" || saved === "0"){ applyNumeral(saved === "1"); pristine = doc.innerHTML; }
+  } catch(e){}
+
+  /* -------------------------------------------------------------- 検索処理 */
+  var SKIP = {SCRIPT:1, STYLE:1, MARK:1, BUTTON:1, A:1};   /* 原本リンク等の道具立ては検索対象にしない */
+  function highlight(term){
+    doc.innerHTML = pristine;
+    hits = [];
+    cursor = -1;
+    if (!term){ hitLabel.textContent = ""; refreshToc(""); return; }
+    var walker = document.createTreeWalker(doc, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        if (!n.nodeValue || n.nodeValue.indexOf(term) < 0) return NodeFilter.FILTER_REJECT;
+        if (n.parentNode && SKIP[n.parentNode.nodeName]) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var targets = [];
+    var node;
+    while ((node = walker.nextNode())) targets.push(node);
+    for (var i = 0; i < targets.length; i++){
+      var t = targets[i], text = t.nodeValue, pos = 0, frag = document.createDocumentFragment();
+      var idx;
+      while ((idx = text.indexOf(term, pos)) >= 0){
+        if (idx > pos) frag.appendChild(document.createTextNode(text.slice(pos, idx)));
+        var m = document.createElement("mark");
+        m.textContent = text.substr(idx, term.length);
+        frag.appendChild(m);
+        hits.push(m);
+        pos = idx + term.length;
+      }
+      if (pos < text.length) frag.appendChild(document.createTextNode(text.slice(pos)));
+      t.parentNode.replaceChild(frag, t);
+    }
+    hitLabel.textContent = hits.length ? "1 / " + hits.length : "該当なし";
+    refreshToc(term);
+    if (hits.length){ cursor = 0; focusHit(0, false); }
+  }
+  function focusHit(i, scroll){
+    if (!hits.length) return;
+    for (var k = 0; k < hits.length; k++) hits[k].classList.remove("live");
+    cursor = (i + hits.length) % hits.length;
+    hits[cursor].classList.add("live");
+    hitLabel.textContent = (cursor + 1) + " / " + hits.length;
+    if (scroll !== false) hits[cursor].scrollIntoView({block:"center", behavior:"instant"});
+  }
+  function refreshToc(term){
+    var links = toc.querySelectorAll("li.lv-art");
+    for (var i = 0; i < links.length; i++){
+      var li = links[i];
+      var body = (li.getAttribute("data-text") || "");
+      li.classList.toggle("hidden", !!term && body.indexOf(term) < 0);
+    }
+    var divs = toc.querySelectorAll("li.lv-div");
+    for (var j = divs.length - 1; j >= 0; j--){
+      var d = divs[j];
+      var kids = d.querySelectorAll("li:not(.hidden)");
+      d.classList.toggle("hidden", !!term && kids.length === 0);
+    }
+  }
+  var timer = null;
+  input.addEventListener("input", function(){
+    clearTimeout(timer);
+    var v = input.value.trim();
+    timer = setTimeout(function(){ highlight(v); }, 180);
+  });
+  input.addEventListener("keydown", function(e){
+    if (e.key === "Enter"){ e.preventDefault(); focusHit(cursor + (e.shiftKey ? -1 : 1)); }
+    if (e.key === "Escape"){ input.value = ""; highlight(""); input.blur(); }
+  });
+  document.getElementById("prev").addEventListener("click", function(){ focusHit(cursor - 1); });
+  document.getElementById("next").addEventListener("click", function(){ focusHit(cursor + 1); });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "/" && e.target === document.body){ e.preventDefault(); input.focus(); }
+  });
+
+  /* -------------------------------------------------- リンクのコピー・共有 */
+  doc.addEventListener("click", function(e){
+    var btn = e.target.closest ? e.target.closest("button[data-anchor]") : null;
+    if (!btn) return;
+    var anchor = btn.getAttribute("data-anchor");
+    var url = location.href.split("#")[0] + "#" + anchor;
+    history.replaceState(null, "", "#" + anchor);
+    var done = function(){ say("リンクをコピーしました"); };
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(done, function(){ legacyCopy(url, done); });
+    } else {
+      legacyCopy(url, done);
+    }
+  });
+  function legacyCopy(text, done){
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); done(); }
+    catch(err){ say("コピーできませんでした。アドレス欄からURLを控えてください"); }
+    document.body.removeChild(ta);
+  }
+
+  /* ------------------------------------------------ 現在位置の表示と目次連動 */
+  var watched = doc.querySelectorAll(".art[id], .div-head[id]");
+  var tocLinks = {};
+  var links = toc.querySelectorAll("a[href^='#']");
+  for (var i = 0; i < links.length; i++) tocLinks[links[i].getAttribute("href").slice(1)] = links[i];
+  var currentLink = null;
+  if ("IntersectionObserver" in window){
+    var visible = [];
+    var io = new IntersectionObserver(function(entries){
+      for (var i = 0; i < entries.length; i++){
+        var id = entries[i].target.id;
+        var at = visible.indexOf(id);
+        if (entries[i].isIntersecting){ if (at < 0) visible.push(id); }
+        else if (at >= 0){ visible.splice(at, 1); }
+      }
+      if (!visible.length) return;
+      var first = null;
+      for (var k = 0; k < watched.length; k++){
+        if (visible.indexOf(watched[k].id) >= 0){ first = watched[k]; break; }
+      }
+      if (!first) return;
+      crumb.textContent = first.getAttribute("data-path") || "";
+      var link = tocLinks[first.id];
+      if (link && link !== currentLink){
+        if (currentLink) currentLink.classList.remove("current");
+        link.classList.add("current");
+        currentLink = link;
+      }
+    }, {rootMargin:"-20% 0px -70% 0px"});
+    for (var w = 0; w < watched.length; w++) io.observe(watched[w]);
+  }
+
+  /* -------------------------------------------------------- 目次の開閉（狭幅） */
+  var opener = document.getElementById("toc-open");
+  if (opener){
+    opener.addEventListener("click", function(){ toc.classList.toggle("open"); });
+    toc.addEventListener("click", function(e){
+      if (e.target.tagName === "A") toc.classList.remove("open");
+    });
+  }
+})();
+</script>
+</body>
+</html>

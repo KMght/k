@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>性的な姿態を撮影する行為等の処罰及び押収物に記録された性的な姿態の影像に係る電磁的記録の消去等に関する法律による消去等の手続等に関する規則</title>
+<style>
+:root{
+  --paper:#ffffff;
+  --ink:#16181d;
+  --sub:#5f6875;
+  --rule:#dde2e9;
+  --chrome:#f4f6f9;
+  --accent:#14538a;
+  --accent-weak:#e7eff7;
+  --mark:#ffe08a;
+  --mark-live:#ff9d3d;
+  --gothic:"Yu Gothic UI","Yu Gothic","YuGothic","Hiragino Sans","Noto Sans JP","Meiryo",system-ui,sans-serif;
+  --mincho:"Yu Mincho","YuMincho","Hiragino Mincho ProN","Noto Serif JP","MS Mincho",serif;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:5.5rem}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--mincho);font-size:17px;line-height:1.9;
+  text-rendering:optimizeLegibility;
+}
+
+/* ---------------------------------------------------------------- ヘッダ */
+.top{
+  position:sticky;top:0;z-index:30;background:var(--chrome);
+  border-bottom:1px solid var(--rule);font-family:var(--gothic);
+}
+.top-inner{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;padding:.7rem 1.2rem}
+.law-title{font-size:1.12rem;font-weight:700;letter-spacing:.02em;margin:0}
+.law-number{font-size:.8rem;color:var(--sub);margin-left:.2rem}
+.top-tools{margin-left:auto;display:flex;align-items:center;gap:.5rem}
+.search-box{display:flex;align-items:center;gap:.35rem;background:var(--paper);
+  border:1px solid var(--rule);border-radius:2px;padding:.25rem .5rem}
+.search-box input{border:0;outline:0;font:inherit;font-size:.85rem;width:14rem;background:transparent;color:inherit}
+.hit-count{font-size:.78rem;color:var(--sub);min-width:4.2rem;text-align:right;font-variant-numeric:tabular-nums}
+button{font:inherit;font-family:var(--gothic);cursor:pointer}
+.btn{background:var(--paper);border:1px solid var(--rule);border-radius:2px;
+  color:var(--ink);font-size:.78rem;padding:.28rem .6rem;line-height:1.4}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.crumb{padding:.3rem 1.2rem;border-top:1px solid var(--rule);background:var(--paper);
+  font-family:var(--gothic);font-size:.78rem;color:var(--sub);min-height:1.7rem}
+
+/* ------------------------------------------------------------------ 骨格 */
+.wrap{display:grid;grid-template-columns:19rem minmax(0,1fr);align-items:start}
+.toc{
+  position:sticky;top:5.6rem;max-height:calc(100vh - 5.6rem);overflow-y:auto;
+  border-right:1px solid var(--rule);padding:1rem .6rem 4rem 1.2rem;
+  font-family:var(--gothic);font-size:.83rem;line-height:1.65;
+}
+.toc h2{font-size:.75rem;color:var(--sub);font-weight:700;margin:0 0 .6rem}
+.toc ul{list-style:none;margin:0;padding:0}
+.toc a{display:block;color:var(--ink);text-decoration:none;padding:.16rem .4rem;border-radius:2px}
+.toc a:hover{background:var(--accent-weak);color:var(--accent)}
+.toc a.current{background:var(--accent-weak);color:var(--accent);font-weight:700}
+.toc .div-1>a,.toc .div-2>a{font-weight:700}
+.toc .div-2{margin-top:.5rem}
+.toc .div-3,.toc .div-4,.toc .div-5{margin-top:.25rem}
+.toc .lv-art{padding-left:.9rem}
+.toc .lv-art.hidden,.toc .lv-div.hidden{display:none}
+.toc-toggle{background:none;border:0;color:var(--sub);padding:0 .3rem;font-size:.75rem}
+
+.doc{padding:2.2rem 2rem 8rem;max-width:44em}
+.doc-head{border-bottom:2px solid var(--ink);padding-bottom:.8rem;margin-bottom:2rem}
+.doc-head h1{font-size:1.5rem;margin:0 0 .3rem;letter-spacing:.04em}
+.doc-head .meta{font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+
+/* ------------------------------------------------------------------ 条文 */
+.div-head{font-family:var(--gothic);margin:2.6rem 0 1rem;scroll-margin-top:6rem}
+.div-head .lbl{color:var(--accent);font-weight:700}
+h2.div-head{font-size:1.12rem;border-bottom:1px solid var(--rule);padding-bottom:.35rem}
+h3.div-head{font-size:1.02rem}
+h4.div-head,h5.div-head,h6.div-head{font-size:.95rem}
+
+.art{position:relative;padding-left:2.6rem;margin:1.5rem 0 1.9rem;scroll-margin-top:6rem}
+.art:target{background:var(--accent-weak);box-shadow:-.4rem 0 0 var(--accent);border-radius:2px}
+.art-tools{position:absolute;left:0;top:.25rem;display:flex;flex-direction:column;gap:.2rem;
+  visibility:hidden}
+.art:hover .art-tools,.art:focus-within .art-tools,.art:target .art-tools{visibility:visible}
+.art-tools button,.art-tools a{background:none;border:0;color:var(--sub);font-size:.72rem;
+  font-family:var(--gothic);padding:.1rem .2rem;border-radius:2px;text-decoration:none;
+  white-space:nowrap;display:block}
+.art-tools button:hover,.art-tools a:hover{color:var(--accent);background:var(--accent-weak)}
+.raw h3 .src{font-size:.75rem;font-weight:400;color:var(--sub);margin-left:.5rem}
+.doc-head .src{color:var(--accent);text-decoration:none}
+.doc-head .src:hover{text-decoration:underline}
+.caption{font-family:var(--gothic);font-size:.88rem;font-weight:700;color:var(--sub);margin:0 0 .1rem}
+.amend-note{font-family:var(--gothic);font-size:.78rem;font-weight:400;color:var(--sub);margin:.1rem 0 0;text-align:right}
+h2 .amend-note,h3 .amend-note,h4 .amend-note,h5 .amend-note,h6 .amend-note{display:inline;text-align:left}
+.art-no{font-family:var(--gothic);font-weight:700;color:var(--accent);text-decoration:none;margin-right:.55em}
+.art-no:hover{text-decoration:underline}
+.para{margin:.35rem 0;text-indent:0}
+.para+.para{margin-top:.55rem}
+.pno{font-family:var(--gothic);color:var(--sub);font-size:.9em;margin-right:.5em;font-variant-numeric:tabular-nums}
+.deleted .body-text{color:var(--sub)}
+.art.noarticle .para{margin-top:0}
+
+ol.items{list-style:none;margin:.35rem 0 .35rem 1.1em;padding:0}
+ol.items>li{display:grid;grid-template-columns:2.4em minmax(0,1fr);margin:.2rem 0}
+ol.items .mk{font-family:var(--gothic);font-size:.9em;color:var(--sub);margin-right:.4em}
+ol.items ol.items{grid-column:1/-1;margin-left:1.2em}
+ol.items ol.items>li{grid-template-columns:2em minmax(0,1fr)}
+
+.raw{margin:1.6rem 0;scroll-margin-top:6rem}
+.raw h3{font-family:var(--gothic);font-size:1rem;margin:0 0 .4rem}
+.raw pre{font-family:var(--mincho);white-space:pre-wrap;margin:0;padding:.7rem .9rem;
+  background:var(--chrome);border:1px solid var(--rule);font-size:.92rem;line-height:1.75}
+
+.notes{margin:2.5rem 0 0;padding:.8rem 1rem;background:var(--chrome);
+  border-left:3px solid var(--accent);font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+.notes p{margin:0 0 .3rem;font-weight:700;color:var(--ink)}
+.notes ul{margin:0;padding-left:1.2rem}
+.foot{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);
+  font-family:var(--gothic);font-size:.75rem;color:var(--sub)}
+
+a.ref{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule)}
+a.ref:hover{color:var(--accent);border-bottom-color:var(--accent)}
+a.ref-egov{border-bottom-style:dotted}
+a.ref-rule{border-bottom-color:var(--accent)}
+mark{background:var(--mark);color:inherit;padding:0 .05em}
+mark.live{background:var(--mark-live)}
+.toast{position:fixed;left:50%;bottom:2rem;transform:translateX(-50%);
+  background:var(--ink);color:#fff;font-family:var(--gothic);font-size:.8rem;
+  padding:.5rem .9rem;border-radius:3px;pointer-events:none;z-index:60;display:none}
+.toast.show{display:block}
+
+.toc-open{display:none}
+@media (max-width:900px){
+  body{font-size:16px}
+  .wrap{grid-template-columns:minmax(0,1fr)}
+  .toc{position:fixed;inset:5.6rem auto 0 0;width:82vw;max-width:20rem;background:var(--paper);
+    z-index:25;box-shadow:0 0 0 100vmax rgba(0,0,0,.25);max-height:none;height:calc(100vh - 5.6rem);
+    display:none}
+  .toc.open{display:block}
+  .toc-open{display:inline-block}
+  .doc{padding:1.4rem 1.1rem 6rem}
+  .search-box input{width:8rem}
+  .art-tools{opacity:1;position:static;flex-direction:row;justify-content:flex-end;margin-bottom:.15rem}
+  .art-tools button,.art-tools a{border:1px solid var(--rule);border-radius:2px;
+    padding:.1rem .45rem;display:inline-block}
+  .art{padding-left:0}
+}
+
+@media print{
+  .top,.toc,.art-tools,.crumb,.toast{display:none!important}
+  a.ref{border-bottom:0}
+  .wrap{display:block}
+  .doc{max-width:none;padding:0}
+  body{font-size:10.5pt;line-height:1.7}
+  .art{page-break-inside:avoid}
+}
+
+.anchor-alias{position:absolute;scroll-margin-top:6rem}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <button type="button" class="btn toc-open" id="toc-open">目次</button>
+    <h1 class="law-title">性的な姿態を撮影する行為等の処罰及び押収物に記録された性的な姿態の影像に係る電磁的記録の消去等に関する法律による消去等の手続等に関する規則</h1>
+    <span class="law-number"></span>
+    <div class="top-tools">
+      <div class="search-box">
+        <input type="search" id="q" placeholder="条文を検索（/ キー）" aria-label="条文を検索">
+        <span class="hit-count" id="hits"></span>
+      </div>
+      <button type="button" class="btn" id="prev" title="前の該当箇所">前</button>
+      <button type="button" class="btn" id="next" title="次の該当箇所">次</button>
+      <button type="button" class="btn" id="numeral" aria-pressed="false"
+        title="条番号の表記を切り替える">123</button>
+    </div>
+  </div>
+  <div class="crumb" id="crumb"></div>
+</header>
+<div class="wrap">
+  <nav class="toc" id="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ul><li class="lv-art" data-text="第一条1条趣旨趣旨性的な姿態を撮影する行為等の処罰及び押収物に記録された性的な姿態の影像に係る電磁的記録の消去等に関する法律（令和五年法律第六十七号。以下「法」という。）による押収物に記録された性的な姿態の影像に係る電磁的記録の消去等の手続等については、法及び他の最高裁判所規則に定めるもののほか、この規則の定めるところによる。"><a href="#a1">第一条　趣旨</a></li><li class="lv-art" data-text="第二条2条検察官が保管する物の提出又は送付の際の通知・法第十三条検察官が保管する物の提出又は送付の際の通知・法第十三条検察官は、その保管している物が法第十条第一項第一号に掲げる物に該当すると思料する場合において、当該物を刑事被告事件の係属する裁判所が刑事訴訟法（昭和二十三年法律第百三十一号）第九十九条第一項の規定により差し押さえたとき又は家庭裁判所が少年法（昭和二十三年法律第百六十八号）第十五条第二項において準用する刑事訴訟法第九十九条第一項の規定により差し押さえたときは、その差押え後速やかに、当該物が法第十条第一項第一号に掲げる物に該当すると思料する旨を当該裁判所に通知するものとする。検察官は、その保管している物が法第十条第一項第一号に掲げる物に該当すると思料する場合において、当該物について刑事被告事件の係属する裁判所が刑事訴訟法第九十九条第三項の規定により提出を受けるとき又は家庭裁判所が少年法第十五条第二項において準用する刑事訴訟法第九十九条第三項の規定により提出を受けるときは、その提出の際に、当該物が法第十条第一項第一号に掲げる物に該当すると思料する旨を当該裁判所に通知するものとする。検察官は、その保管している物が法第十条第一項第一号に掲げる物に該当すると思料する場合において、当該物を刑事訴訟法第三百十条の規定により刑事被告事件の係属する裁判所に提出するとき又は少年の保護事件の処理に関する法令の規定により家庭裁判所に送付するときは、当該物が法第十条第一項第一号に掲げる物に該当すると思料する旨を当該裁判所に通知するものとする。"><a href="#a2">第二条　検察官が保管する物の提出又は送付の際の通知・法第十三条</a></li><li class="lv-art" data-text="第三条3条通知に係る押収物を領置するかどうかの通知・法第十三条通知に係る押収物を領置するかどうかの通知・法第十三条検察官は、法第十三条第一項前段又は第二項前段の規定による通知を受けたときは、速やかに、その通知に係る押収物を領置する旨又は領置しない旨のいずれかを、その通知をした裁判所に通知しなければならない。"><a href="#a3">第三条　通知に係る押収物を領置するかどうかの通知・法第十三条</a></li><li class="lv-art" data-text="第四条4条検察官による少年の保護事件の記録又は証拠物の閲覧・法第十三条検察官による少年の保護事件の記録又は証拠物の閲覧・法第十三条検察官は、少年審判規則（昭和二十三年最高裁判所規則第三十三号）第七条第一項の規定にかかわらず、法第十三条第二項各号に掲げる押収物について、法第二十六条第一項各号に掲げる処分等又は当該処分等に係る法第二十九条第一項各号に定める裁決をするため必要な限度で、当該押収物に係る少年の保護事件の記録又は証拠物を閲覧することができる。"><a href="#a4">第四条　検察官による少年の保護事件の記録又は証拠物の閲覧・法第十三条</a></li><li class="lv-art" data-text="第五条5条撮影対象者等の住所、氏名等の秘匿等の申立ての方式・法第三十五条撮影対象者等の住所、氏名等の秘匿等の申立ての方式・法第三十五条次に掲げる申立ては、書面でしなければならない。一法第三十五条第一項の申立て二法第三十五条第二項において読み替えて準用する民事訴訟法（平成八年法律第百九号）第百三十三条の二第二項の申立て三法第三十五条第二項において読み替えて準用する民事訴訟法第百三十三条の四第一項の取消しの申立て四法第三十五条第二項において読み替えて準用する民事訴訟法第百三十三条の四第二項の許可の申立て"><a href="#a5">第五条　撮影対象者等の住所、氏名等の秘匿等の申立ての方式・法第三十五条</a></li><li class="lv-art" data-text="第六条6条秘匿事項届出書面の記載事項等・法第三十五条秘匿事項届出書面の記載事項等・法第三十五条法第三十五条第二項において読み替えて準用する民事訴訟法第百三十三条第二項の規定による届出に係る書面（以下この条において「秘匿事項届出書面」という。）には、秘匿事項を記載するほか、秘匿事項届出書面である旨を表示しなければならない。民事訴訟規則（平成八年最高裁判所規則第五号）第三条第一項（第二号に係る部分に限る。）の規定は、前項の秘匿事項届出書面について準用する。"><a href="#a6">第六条　秘匿事項届出書面の記載事項等・法第三十五条</a></li><li class="lv-art" data-text="第七条7条秘匿決定があった場合における秘匿事項記載部分の閲覧等の制限の申立ての方式等・法第三十五条秘匿決定があった場合における秘匿事項記載部分の閲覧等の制限の申立ての方式等・法第三十五条民事訴訟規則第五十二条の二十、第五十二条の二十一第一項及び第五十二条の二十二の規定は、法第三十五条第一項の決定があった場合について準用する。この場合において、次の表の上欄に掲げる同規則の規定中同表の中欄に掲げる字句は、それぞれ同表の下欄に掲げる字句に読み替えるものとする。読み替える民事訴訟規則読み替えられる字句読み替える字句の規定第五十二条の二十第一項申立て被告の申立て第五十二条の二十第二項秘匿対象者被告第五十二条の二十一第一この規則の規定（第五十二この規則の規定による押項条の十九（秘匿事項届出書印（当該秘匿決定に係る撮面の記載事項等）第一項を影対象者等（性的な姿態を除く。次項において同じ。）撮影する行為等の処罰及による押印（当該秘匿決定び押収物に記録された性に係る秘匿対象者的な姿態の影像に係る電磁的記録の消去等に関する法律第九条第二項に規定する撮影対象者等をいう。）第五十二条の二十二第一法第百三十三条（申立人の被告項住所、氏名等の秘匿）第一項の申立てをした者"><a href="#a7">第七条　秘匿決定があった場合における秘匿事項記載部分の閲覧等の制限の申立ての方式等・法第三十五条</a></li><li class="lv-art" data-text="第八条8条対象領置物件及び対象電磁的記録等の閲覧等の制限の申立ての方式等・法第三十六条対象領置物件及び対象電磁的記録等の閲覧等の制限の申立ての方式等・法第三十六条法第三十六条第一項の申立ては、書面でしなければならない。前項の申立ては、対象姿態等該当部分を特定してしなければならない。第一項の申立ては、法第三十六条第一項に規定する証拠の申出の際にしなければならない。ただし、やむを得ない事由があるときは、当該申出があった後速やかに申立てをすれば足りる。第一項の申立てをするときは、法第三十六条第一項に規定する証拠の申出に係る対象領置物件若しくは対象領置物件を複写した記録媒体又は対象電磁的記録若しくは対象電磁的記録を複写し若しくは印刷した記録媒体（以下この条において「記録媒体等」という。）から対象姿態等該当部分を除いたもの（以下この条において「申立時除外媒体」という。）を作成し、裁判所に提出しなければならない。ただし、同項の申立てに係る対象姿態等該当部分が当該証拠の申出に係る記録媒体等の全部であるときは、この限りでない。第一項の申立てをする被告は、申立時除外媒体の複製物について直送をしなければならない。第一項の申立てを認容する決定においては、対象姿態等該当部分を特定しなければならない。前項の決定があったときは、被告は、遅滞なく、法第三十六条第一項に規定する証拠の申出に係る記録媒体等から当該決定において特定された対象姿態等該当部分を除いたもの（以下この条において「決定後除外媒体」という。）を作成し、裁判所に提出しなければならない。ただし、第一項の申立てにおいて特定された対象姿態等該当部分と当該決定において特定された対象姿態等該当部分とが同一である場合は、この限りでない。第六項の決定があったときは、被告は、前項ただし書の場合を除き、決定後除外媒体の複製物について直送をしなければならない。第一項の申立てをする被告は、申立時除外媒体又は決定後除外媒体の提出に代えて、最高裁判所の細則で定めるところにより、これらに係る画像情報を電子情報処理組織（民事訴訟規則第五十二条の十第一項に規定する電子情報処理組織をいう。）を使用して裁判所の使用に係る電子計算機（入出力装置を含む。）に備えられたファイルに記録する方法により提出することができる。民事訴訟法第百三十二条の十一第一項（第三号に係る部分を除く。）及び第三項の規定は、申立時除外媒体及び決定後除外媒体（同法第二百三十一条に規定する物件を除く。）の提出について準用する。この場合において、同法第百三十二条の十一第一項中「前条第一項」とあるのは、「性的な姿態を撮影する行為等の処罰及び押収物に記録された性的な姿態の影像に係る電磁的記録の消去等に関する法律による消去等の手続等に関する規則第八条第九項」と読み替えるものとする。被告は、第一項の申立てをした場合において、申立時除外媒体の複製物又は決定後除外媒体の複製物の直送をしたときは、民事訴訟規則第百三十七条第二項の規定による同条第一項の写しの直送をすることを要しない。ただし、第一項の申立てを却下する裁判が確定したときは、この限りでない。第一項の申立てがされた場合における被告及び対象領置物件又は対象電磁的記録に係る撮影対象者等以外の者による対象姿態等該当部分に係る民事訴訟法第九十一条の二第一項の規定による電磁的訴訟記録の閲覧は、民事訴訟規則第三十三条の三第一項の規定にかかわらず、同項第一号に掲げる方法に限るものとする。ただし、第一項の申立てを却下する裁判が確定したときは、この限りでない。"><a href="#a8">第八条　対象領置物件及び対象電磁的記録等の閲覧等の制限の申立ての方式等・法第三十六条</a></li><li class="lv-art" data-text="第九条9条取消訴訟以外の国を被告とする訴訟についての準用・法第三十七条取消訴訟以外の国を被告とする訴訟についての準用・法第三十七条第五条から前条までの規定は、法第二十六条第一項各号に掲げる処分等又は当該処分等に係る法第二十九条第一項各号に定める裁決に関する国を被告とする訴訟（行政事件訴訟法（昭和三十七年法律第百三十九号）第九条第一項に規定する取消訴訟を除く。）について準用する。"><a href="#a9">第九条　取消訴訟以外の国を被告とする訴訟についての準用・法第三十七条</a></li><li class="lv-div div-1"><a href="#sup1">附則</a></li><li class="lv-div div-1"><a href="#sup2">附則　（令和６年９月１７日最高裁判所規則第１４号抄）</a><ul><li class="lv-art" data-text="第一条1条この規則は、法附則第一条ただし書に掲げる規定の施行の日（令和六年六月二〇日この規則は、法附則第一条ただし書に掲げる規定の施行の日（令和六年六月二〇日この規則は、民事訴訟法等の一部を改正する法律（令和四年法律第四十八号）の施行の日から施行する。"><a href="#sup2-a1">第一条　この規則は、法附則第一条ただし書に掲げる規定の施行の日（令和六年六月二〇日</a></li></ul></li></ul>
+  </nav>
+  <main class="doc" id="doc-outer">
+    <div class="doc-head">
+      <h1>性的な姿態を撮影する行為等の処罰及び押収物に記録された性的な姿態の影像に係る電磁的記録の消去等に関する法律による消去等の手続等に関する規則</h1>
+      <div class="meta">　／　<a class="src" href="https://www.courts.go.jp/assets/seitekishitaisatueikisoku20260521.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本PDF p.1</a></div>
+    </div>
+    <div id="doc">
+<article class="art" id="a1" data-path=""><span class="anchor-alias" id="Mp-At_1"></span><div class="art-tools"><button type="button" data-anchor="a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/seitekishitaisatueikisoku20260521.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（趣旨）</p><p class="para" id="a1-p1"><a class="art-no" href="#a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">性的な姿態を撮影する行為等の処罰及び押収物に記録された性的な姿態の影像に係る電磁的記録の消去等に関する法律（令和五年法律第六十七号。以下「法」という。）による押収物に記録された性的な姿態の影像に係る電磁的記録の消去等の手続等については、法及び他の最高裁判所規則に定めるもののほか、この規則の定めるところによる。</span></p></article>
+<article class="art" id="a2" data-path=""><span class="anchor-alias" id="Mp-At_2"></span><div class="art-tools"><button type="button" data-anchor="a2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/seitekishitaisatueikisoku20260521.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（検察官が保管する物の提出又は送付の際の通知・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/505AC0000000067#Mp-At_13" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十三条</a>）</p><p class="para" id="a2-p1"><a class="art-no" href="#a2" data-kan="第二条" data-num="第2条">第二条</a><span class="body-text">検察官は、その保管している物が<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/505AC0000000067#Mp-At_10" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十条</a>第一項第一号に掲げる物に該当すると思料する場合において、当該物を刑事被告事件の係属する裁判所が刑事訴訟法（昭和二十三年法律第百三十一号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/323AC0000000131#Mp-At_99" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第九十九条</a>第一項の規定により差し押さえたとき又は家庭裁判所が少年法（昭和二十三年法律第百六十八号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/323AC0000000168#Mp-At_15" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第十五条</a><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/323AC0000000131#Mp-At_99" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第二項において準用する刑事訴訟法第九十九条</a>第一項の規定により差し押さえたときは、その差押え後速やかに、当該物が<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/505AC0000000067#Mp-At_10" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十条</a>第一項第一号に掲げる物に該当すると思料する旨を当該裁判所に通知するものとする。</span></p><p class="para" id="a2-p2"><span class="pno">2</span><span class="body-text">検察官は、その保管している物が<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/505AC0000000067#Mp-At_10" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十条</a>第一項第一号に掲げる物に該当すると思料する場合において、当該<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/323AC0000000131#Mp-At_99" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">物について刑事被告事件の係属する裁判所が刑事訴訟法第九十九条</a>第三項<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/323AC0000000168#Mp-At_15" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">の規定により提出を受けるとき又は家庭裁判所が少年法第十五条</a><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/323AC0000000131#Mp-At_99" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第二項において準用する刑事訴訟法第九十九条</a>第三項の規定により提出を受けるときは、その提出の際に、当該物が<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/505AC0000000067#Mp-At_10" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十条</a>第一項第一号に掲げる物に該当すると思料する旨を当該裁判所に通知するものとする。</span></p><p class="para" id="a2-p3"><span class="pno">3</span><span class="body-text">検察官は、その保管している物が<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/505AC0000000067#Mp-At_10" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十条</a>第一項第一号に掲げる物に該当すると思料する場合において、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/323AC0000000131#Mp-At_310" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">当該物を刑事訴訟法第三百十条</a>の規定により刑事被告事件の係属する裁判所に提出するとき又は少年の保護事件の処理に関する法令の規定により家庭裁判所に送付するときは、当該物が<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/505AC0000000067#Mp-At_10" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十条</a>第一項第一号に掲げる物に該当すると思料する旨を当該裁判所に通知するものとする。</span></p></article>
+<article class="art" id="a3" data-path=""><span class="anchor-alias" id="Mp-At_3"></span><div class="art-tools"><button type="button" data-anchor="a3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/seitekishitaisatueikisoku20260521.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（通知に係る押収物を領置するかどうかの通知・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/505AC0000000067#Mp-At_13" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十三条</a>）</p><p class="para" id="a3-p1"><a class="art-no" href="#a3" data-kan="第三条" data-num="第3条">第三条</a><span class="body-text">検察官は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/505AC0000000067#Mp-At_13" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十三条</a>第一項前段又は第二項前段の規定による通知を受けたときは、速やかに、その通知に係る押収物を領置する旨又は領置しない旨のいずれかを、その通知をした裁判所に通知しなければならない。</span></p></article>
+<article class="art" id="a4" data-path=""><span class="anchor-alias" id="Mp-At_4"></span><div class="art-tools"><button type="button" data-anchor="a4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/seitekishitaisatueikisoku20260521.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（検察官による少年の保護事件の記録又は証拠物の閲覧・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/505AC0000000067#Mp-At_13" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十三条</a>）</p><p class="para" id="a4-p1"><a class="art-no" href="#a4" data-kan="第四条" data-num="第4条">第四条</a><span class="body-text">検察官は、少年審判規則（昭和二十三年最高裁判所規則第三十三号）<a class="ref ref-rule" href="408.html#a7" title="この規則集の中を開きます">第七条</a>第一項の規定にかかわらず、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/505AC0000000067#Mp-At_13" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十三条</a>第二項各号に掲げる押収物について、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/505AC0000000067#Mp-At_26" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十六条</a>第一項各号に掲げる処分等又は当該処分等に係る<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/505AC0000000067#Mp-At_29" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十九条</a>第一項各号に定める裁決をするため必要な限度で、当該押収物に係る少年の保護事件の記録又は証拠物を閲覧することができる。</span></p></article>
+<article class="art" id="a5" data-path=""><span class="anchor-alias" id="Mp-At_5"></span><div class="art-tools"><button type="button" data-anchor="a5" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/seitekishitaisatueikisoku20260521.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（撮影対象者等の住所、氏名等の秘匿等の申立ての方式・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/505AC0000000067#Mp-At_35" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十五条</a>）</p><p class="para" id="a5-p1"><a class="art-no" href="#a5" data-kan="第五条" data-num="第5条">第五条</a><span class="body-text">次に掲げる申立ては、書面でしなければならない。</span></p><ol class="items"><li id="a5-p1-1"><span class="mk">一</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/505AC0000000067#Mp-At_35" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十五条</a>第一項の申立て</span></li><li id="a5-p1-2"><span class="mk">二</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/505AC0000000067#Mp-At_35" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十五条</a>第二項において読み替えて準用する民事訴訟法（平成八年法律第百九号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000109#Mp-At_133_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第百三十三条の二</a>第二項の申立て</span></li><li id="a5-p1-3"><span class="mk">三</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/505AC0000000067#Mp-At_35" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十五条</a><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000109#Mp-At_133_4" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第二項において読み替えて準用する民事訴訟法第百三十三条の四</a>第一項の取消しの申立て</span></li><li id="a5-p1-4"><span class="mk">四</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/505AC0000000067#Mp-At_35" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十五条</a><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000109#Mp-At_133_4" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第二項において読み替えて準用する民事訴訟法第百三十三条の四</a>第二項の許可の申立て</span></li></ol></article>
+<article class="art" id="a6" data-path=""><span class="anchor-alias" id="Mp-At_6"></span><div class="art-tools"><button type="button" data-anchor="a6" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/seitekishitaisatueikisoku20260521.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（秘匿事項届出書面の記載事項等・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/505AC0000000067#Mp-At_35" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十五条</a>）</p><p class="para" id="a6-p1"><a class="art-no" href="#a6" data-kan="第六条" data-num="第6条">第六条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/505AC0000000067#Mp-At_35" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十五条</a><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000109#Mp-At_133" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第二項において読み替えて準用する民事訴訟法第百三十三条</a>第二項の規定による届出に係る書面（以下この条において「秘匿事項届出書面」という。）には、秘匿事項を記載するほか、秘匿事項届出書面である旨を表示しなければならない。</span></p><p class="para" id="a6-p2"><span class="pno">2</span><span class="body-text">民事訴訟規則（平成八年最高裁判所規則第五号）<a class="ref ref-rule" href="100.html#a3" title="この規則集の中を開きます">第三条</a>第一項（第二号に係る部分に限る。）の規定は、前項の秘匿事項届出書面について準用する。</span></p></article>
+<article class="art" id="a7" data-path=""><span class="anchor-alias" id="Mp-At_7"></span><div class="art-tools"><button type="button" data-anchor="a7" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/seitekishitaisatueikisoku20260521.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（秘匿決定があった場合における秘匿事項記載部分の閲覧等の制限の申立ての方式等・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/505AC0000000067#Mp-At_35" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十五条</a>）</p><p class="para" id="a7-p1"><a class="art-no" href="#a7" data-kan="第七条" data-num="第7条">第七条</a><span class="body-text"><a class="ref ref-rule" href="100.html#a52-20" title="この規則集の中を開きます">民事訴訟規則第五十二条の二十</a>、第五十二条の二十一第一項及び第五十二条の二十二の規定は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/505AC0000000067#Mp-At_35" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十五条</a>第一項の決定があった場合について準用する。この場合において、次の表の上欄に掲げる同規則の規定中同表の中欄に掲げる字句は、それぞれ同表の下欄に掲げる字句に読み替えるものとする。読み替える民事訴訟規則読み替えられる字句読み替える字句の規定第五十二条の二十第一項申立て被告の申立て第五十二条の二十第二項秘匿対象者被告第五十二条の二十一第一この規則の規定（第五十二この規則の規定による押項条の十九（秘匿事項届出書印（当該秘匿決定に係る撮面の記載事項等）第一項を影対象者等（性的な姿態を除く。次項において同じ。）撮影する行為等の処罰及による押印（当該秘匿決定び押収物に記録された性に係る秘匿対象<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/505AC0000000067#Mp-At_9" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">者的な姿態の影像に係る電磁的記録の消去等に関する法律第九条</a>第二項に規定する撮影対象者等をいう。）第五十二条の二十二第一法第百三十三条（申立人の被告項住所、氏名等の秘匿）第一項の申立てをした者</span></p></article>
+<article class="art" id="a8" data-path=""><span class="anchor-alias" id="Mp-At_8"></span><div class="art-tools"><button type="button" data-anchor="a8" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/seitekishitaisatueikisoku20260521.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（対象領置物件及び対象電磁的記録等の閲覧等の制限の申立ての方式等・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/505AC0000000067#Mp-At_36" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十六条</a>）</p><p class="para" id="a8-p1"><a class="art-no" href="#a8" data-kan="第八条" data-num="第8条">第八条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/505AC0000000067#Mp-At_36" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十六条</a>第一項の申立ては、書面でしなければならない。</span></p><p class="para" id="a8-p2"><span class="pno">2</span><span class="body-text">前項の申立ては、対象姿態等該当部分を特定してしなければならない。</span></p><p class="para" id="a8-p3"><span class="pno">3</span><span class="body-text">第一項の申立ては、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/505AC0000000067#Mp-At_36" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十六条</a>第一項に規定する証拠の申出の際にしなければならない。ただし、やむを得ない事由があるときは、当該申出があった後速やかに申立てをすれば足りる。</span></p><p class="para" id="a8-p4"><span class="pno">4</span><span class="body-text">第一項の申立てをするときは、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/505AC0000000067#Mp-At_36" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十六条</a>第一項に規定する証拠の申出に係る対象領置物件若しくは対象領置物件を複写した記録媒体又は対象電磁的記録若しくは対象電磁的記録を複写し若しくは印刷した記録媒体（以下この条において「記録媒体等」という。）から対象姿態等該当部分を除いたもの（以下この条において「申立時除外媒体」という。）を作成し、裁判所に提出しなければならない。ただし、同項の申立てに係る対象姿態等該当部分が当該証拠の申出に係る記録媒体等の全部であるときは、この限りでない。</span></p><p class="para" id="a8-p5"><span class="pno">5</span><span class="body-text">第一項の申立てをする被告は、申立時除外媒体の複製物について直送をしなければならない。</span></p><p class="para" id="a8-p6"><span class="pno">6</span><span class="body-text">第一項の申立てを認容する決定においては、対象姿態等該当部分を特定しなければならない。</span></p><p class="para" id="a8-p7"><span class="pno">7</span><span class="body-text">前項の決定があったときは、被告は、遅滞なく、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/505AC0000000067#Mp-At_36" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十六条</a>第一項に規定する証拠の申出に係る記録媒体等から当該決定において特定された対象姿態等該当部分を除いたもの（以下この条において「決定後除外媒体」という。）を作成し、裁判所に提出しなければならない。ただし、第一項の申立てにおいて特定された対象姿態等該当部分と当該決定において特定された対象姿態等該当部分とが同一である場合は、この限りでない。</span></p><p class="para" id="a8-p8"><span class="pno">8</span><span class="body-text">第六項の決定があったときは、被告は、前項ただし書の場合を除き、決定後除外媒体の複製物について直送をしなければならない。</span></p><p class="para" id="a8-p9"><span class="pno">9</span><span class="body-text">第一項の申立てをする被告は、申立時除外媒体又は決定後除外媒体の提出に代えて、最高裁判所の細則で定めるところにより、これらに係る画像情報を電子情報処理組織（<a class="ref ref-rule" href="100.html#a52-10" title="この規則集の中を開きます">民事訴訟規則第五十二条の十</a>第一項に規定する電子情報処理組織をいう。）を使用して裁判所の使用に係る電子計算機（入出力装置を含む。）に備えられたファイルに記録する方法により提出することができる。</span></p><p class="para" id="a8-p10"><span class="pno">10</span><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000109#Mp-At_132_11" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">民事訴訟法第百三十二条の十一</a>第一項（第三号に係る部分を除く。）及び第三項の規定は、申立時除外媒体及び決定後除外媒体（同法第二百三十一条に規定する物件を除く。）の提出について準用する。この場合において、同法第百三十二条の十一第一項中「前条第一項」とあるのは、「性的な姿態を撮影する行為等の処罰及び押収物に記録された性的な姿態の影像に係る電磁的記録の消去等に関する法律による消去等の手続等に関する規則第八条第九項」と読み替えるものとする。</span></p><p class="para" id="a8-p11"><span class="pno">11</span><span class="body-text">被告は、第一項の申立てをした場合において、申立時除外媒体の複製物又は決定後除外媒体の複製物の直送をしたときは、<a class="ref ref-rule" href="100.html#a137" title="この規則集の中を開きます">民事訴訟規則第百三十七条</a>第二項の規定による同条第一項の写しの直送をすることを要しない。ただし、第一項の申立てを却下する裁判が確定したときは、この限りでない。</span></p><p class="para" id="a8-p12"><span class="pno">12</span><span class="body-text">第一項の申立てがされた場合における被告及び対象領置物件又は対象電磁的記録に係る撮影対象者<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000109#Mp-At_91_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">等以外の者による対象姿態等該当部分に係る民事訴訟法第九十一条の二</a>第一項の規定による電磁的訴訟記録の閲覧は、<a class="ref ref-rule" href="100.html#a33-3" title="この規則集の中を開きます">民事訴訟規則第三十三条の三</a>第一項の規定にかかわらず、同項第一号に掲げる方法に限るものとする。ただし、第一項の申立てを却下する裁判が確定したときは、この限りでない。</span></p></article>
+<article class="art" id="a9" data-path=""><span class="anchor-alias" id="Mp-At_9"></span><div class="art-tools"><button type="button" data-anchor="a9" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/seitekishitaisatueikisoku20260521.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="caption">（取消訴訟以外の国を被告とする訴訟についての準用・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/505AC0000000067#Mp-At_37" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十七条</a>）</p><p class="para" id="a9-p1"><a class="art-no" href="#a9" data-kan="第九条" data-num="第9条">第九条</a><span class="body-text"><a class="ref ref-self" href="#a5">第五条</a>から前条までの規定は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/505AC0000000067#Mp-At_26" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十六条</a>第一項各号に掲げる処分等又は当該処分等に係る<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/505AC0000000067#Mp-At_29" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十九条</a>第一項各号に定める裁決に関する国を被告とする訴訟（行政事件訴訟法（昭和三十七年法律第百三十九号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/337AC0000000139#Mp-At_9" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第九条</a>第一項に規定する取消訴訟を除く。）について準用する。</span></p></article>
+<h2 class="div-head" id="sup1" data-path="附則　"><span class="lbl">附則</span></h2>
+<article class="art noarticle" id="sup-body-1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/seitekishitaisatueikisoku20260521.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="para" id="sup-body-1-p1"><span class="body-text">から施行する。</span></p></article>
+<h2 class="div-head" id="sup2" data-path="附則　（令和６年９月１７日最高裁判所規則第１４号抄）"><span class="lbl">附則</span>　（令和６年９月１７日最高裁判所規則第１４号抄）</h2>
+<article class="art" id="sup2-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup2-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/seitekishitaisatueikisoku20260521.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="caption">（この規則は、法附則<a class="ref ref-self" href="#a1">第一条</a>ただし書に掲げる規定の施行の日（令和六年六月二〇日）</p><p class="para" id="sup2-a1-p1"><a class="art-no" href="#sup2-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、民事訴訟法等の一部を改正する法律（令和四年法律第四十八号）の施行の日から施行する。</span></p></article>
+    </div>
+    <aside class="notes"><p>読み取りに関する注意</p><ul><li>7ページのOCRに失敗しました（No tessdata specified and Tesseract is not installed）。Tesseract OCRと日本語辞書の導入状況を確認してください。</li><li>題名・制定文とみられる行を本文の前に検出しました：性的な姿態を撮影する行為等の処罰及び押収物に記録された性的な姿態の影像に係る／令和６年４月17 日最高裁判所規則第10 号／改正 令和６年９月17 日最高裁判所規則第14 号</li><li>各条の「原本」は https://www.courts.go.jp/assets/seitekishitaisatueikisoku20260521.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。</li><li>本文から他の法令へのリンクを5件作りました。うち1件は法令番号から e-Gov の法令IDを組み立てたものです。公開前に「法令リンク一覧」で確認してください。</li></ul></aside>
+    <div class="foot">出典：seitekishitaisatueikisoku20260521.pdf　／　最高裁規則ビューア 1.9.0 で 2026年09月02日 に変換　
+    条文の正確な内容は原本で確認してください。</div>
+  </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  "use strict";
+  var doc = document.getElementById("doc");
+  var input = document.getElementById("q");
+  var hitLabel = document.getElementById("hits");
+  var crumb = document.getElementById("crumb");
+  var toc = document.getElementById("toc");
+  var toast = document.getElementById("toast");
+  var pristine = doc.innerHTML;
+  var hits = [];
+  var cursor = -1;
+
+  function say(msg){
+    toast.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(say._t);
+    say._t = setTimeout(function(){ toast.classList.remove("show"); }, 1600);
+  }
+
+  /* ---------------------------------------------------------- 条番号の表記 */
+  var numeralBtn = document.getElementById("numeral");
+  function applyNumeral(useArabic){
+    var nodes = doc.querySelectorAll(".art-no");
+    for (var i = 0; i < nodes.length; i++){
+      var el = nodes[i];
+      var v = useArabic ? el.getAttribute("data-num") : el.getAttribute("data-kan");
+      if (v) el.textContent = v;
+    }
+    numeralBtn.setAttribute("aria-pressed", useArabic ? "true" : "false");
+  }
+  numeralBtn.addEventListener("click", function(){
+    var next = numeralBtn.getAttribute("aria-pressed") !== "true";
+    applyNumeral(next);
+    try { localStorage.setItem("rule-numeral", next ? "1" : "0"); } catch(e){}
+    pristine = doc.innerHTML;
+  });
+  try {
+    /* 既定の表記は原本に合わせてある。前回の切り替えが残っていればそれに従う */
+    var saved = localStorage.getItem("rule-numeral");
+    if (saved === "1" || saved === "0"){ applyNumeral(saved === "1"); pristine = doc.innerHTML; }
+  } catch(e){}
+
+  /* -------------------------------------------------------------- 検索処理 */
+  var SKIP = {SCRIPT:1, STYLE:1, MARK:1, BUTTON:1, A:1};   /* 原本リンク等の道具立ては検索対象にしない */
+  function highlight(term){
+    doc.innerHTML = pristine;
+    hits = [];
+    cursor = -1;
+    if (!term){ hitLabel.textContent = ""; refreshToc(""); return; }
+    var walker = document.createTreeWalker(doc, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        if (!n.nodeValue || n.nodeValue.indexOf(term) < 0) return NodeFilter.FILTER_REJECT;
+        if (n.parentNode && SKIP[n.parentNode.nodeName]) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var targets = [];
+    var node;
+    while ((node = walker.nextNode())) targets.push(node);
+    for (var i = 0; i < targets.length; i++){
+      var t = targets[i], text = t.nodeValue, pos = 0, frag = document.createDocumentFragment();
+      var idx;
+      while ((idx = text.indexOf(term, pos)) >= 0){
+        if (idx > pos) frag.appendChild(document.createTextNode(text.slice(pos, idx)));
+        var m = document.createElement("mark");
+        m.textContent = text.substr(idx, term.length);
+        frag.appendChild(m);
+        hits.push(m);
+        pos = idx + term.length;
+      }
+      if (pos < text.length) frag.appendChild(document.createTextNode(text.slice(pos)));
+      t.parentNode.replaceChild(frag, t);
+    }
+    hitLabel.textContent = hits.length ? "1 / " + hits.length : "該当なし";
+    refreshToc(term);
+    if (hits.length){ cursor = 0; focusHit(0, false); }
+  }
+  function focusHit(i, scroll){
+    if (!hits.length) return;
+    for (var k = 0; k < hits.length; k++) hits[k].classList.remove("live");
+    cursor = (i + hits.length) % hits.length;
+    hits[cursor].classList.add("live");
+    hitLabel.textContent = (cursor + 1) + " / " + hits.length;
+    if (scroll !== false) hits[cursor].scrollIntoView({block:"center", behavior:"instant"});
+  }
+  function refreshToc(term){
+    var links = toc.querySelectorAll("li.lv-art");
+    for (var i = 0; i < links.length; i++){
+      var li = links[i];
+      var body = (li.getAttribute("data-text") || "");
+      li.classList.toggle("hidden", !!term && body.indexOf(term) < 0);
+    }
+    var divs = toc.querySelectorAll("li.lv-div");
+    for (var j = divs.length - 1; j >= 0; j--){
+      var d = divs[j];
+      var kids = d.querySelectorAll("li:not(.hidden)");
+      d.classList.toggle("hidden", !!term && kids.length === 0);
+    }
+  }
+  var timer = null;
+  input.addEventListener("input", function(){
+    clearTimeout(timer);
+    var v = input.value.trim();
+    timer = setTimeout(function(){ highlight(v); }, 180);
+  });
+  input.addEventListener("keydown", function(e){
+    if (e.key === "Enter"){ e.preventDefault(); focusHit(cursor + (e.shiftKey ? -1 : 1)); }
+    if (e.key === "Escape"){ input.value = ""; highlight(""); input.blur(); }
+  });
+  document.getElementById("prev").addEventListener("click", function(){ focusHit(cursor - 1); });
+  document.getElementById("next").addEventListener("click", function(){ focusHit(cursor + 1); });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "/" && e.target === document.body){ e.preventDefault(); input.focus(); }
+  });
+
+  /* -------------------------------------------------- リンクのコピー・共有 */
+  doc.addEventListener("click", function(e){
+    var btn = e.target.closest ? e.target.closest("button[data-anchor]") : null;
+    if (!btn) return;
+    var anchor = btn.getAttribute("data-anchor");
+    var url = location.href.split("#")[0] + "#" + anchor;
+    history.replaceState(null, "", "#" + anchor);
+    var done = function(){ say("リンクをコピーしました"); };
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(done, function(){ legacyCopy(url, done); });
+    } else {
+      legacyCopy(url, done);
+    }
+  });
+  function legacyCopy(text, done){
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); done(); }
+    catch(err){ say("コピーできませんでした。アドレス欄からURLを控えてください"); }
+    document.body.removeChild(ta);
+  }
+
+  /* ------------------------------------------------ 現在位置の表示と目次連動 */
+  var watched = doc.querySelectorAll(".art[id], .div-head[id]");
+  var tocLinks = {};
+  var links = toc.querySelectorAll("a[href^='#']");
+  for (var i = 0; i < links.length; i++) tocLinks[links[i].getAttribute("href").slice(1)] = links[i];
+  var currentLink = null;
+  if ("IntersectionObserver" in window){
+    var visible = [];
+    var io = new IntersectionObserver(function(entries){
+      for (var i = 0; i < entries.length; i++){
+        var id = entries[i].target.id;
+        var at = visible.indexOf(id);
+        if (entries[i].isIntersecting){ if (at < 0) visible.push(id); }
+        else if (at >= 0){ visible.splice(at, 1); }
+      }
+      if (!visible.length) return;
+      var first = null;
+      for (var k = 0; k < watched.length; k++){
+        if (visible.indexOf(watched[k].id) >= 0){ first = watched[k]; break; }
+      }
+      if (!first) return;
+      crumb.textContent = first.getAttribute("data-path") || "";
+      var link = tocLinks[first.id];
+      if (link && link !== currentLink){
+        if (currentLink) currentLink.classList.remove("current");
+        link.classList.add("current");
+        currentLink = link;
+      }
+    }, {rootMargin:"-20% 0px -70% 0px"});
+    for (var w = 0; w < watched.length; w++) io.observe(watched[w]);
+  }
+
+  /* -------------------------------------------------------- 目次の開閉（狭幅） */
+  var opener = document.getElementById("toc-open");
+  if (opener){
+    opener.addEventListener("click", function(){ toc.classList.toggle("open"); });
+    toc.addEventListener("click", function(e){
+      if (e.target.tagName === "A") toc.classList.remove("open");
+    });
+  }
+})();
+</script>
+</body>
+</html>

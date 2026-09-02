@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>人事訴訟規則</title>
+<style>
+:root{
+  --paper:#ffffff;
+  --ink:#16181d;
+  --sub:#5f6875;
+  --rule:#dde2e9;
+  --chrome:#f4f6f9;
+  --accent:#14538a;
+  --accent-weak:#e7eff7;
+  --mark:#ffe08a;
+  --mark-live:#ff9d3d;
+  --gothic:"Yu Gothic UI","Yu Gothic","YuGothic","Hiragino Sans","Noto Sans JP","Meiryo",system-ui,sans-serif;
+  --mincho:"Yu Mincho","YuMincho","Hiragino Mincho ProN","Noto Serif JP","MS Mincho",serif;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:5.5rem}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--mincho);font-size:17px;line-height:1.9;
+  text-rendering:optimizeLegibility;
+}
+
+/* ---------------------------------------------------------------- ヘッダ */
+.top{
+  position:sticky;top:0;z-index:30;background:var(--chrome);
+  border-bottom:1px solid var(--rule);font-family:var(--gothic);
+}
+.top-inner{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;padding:.7rem 1.2rem}
+.law-title{font-size:1.12rem;font-weight:700;letter-spacing:.02em;margin:0}
+.law-number{font-size:.8rem;color:var(--sub);margin-left:.2rem}
+.top-tools{margin-left:auto;display:flex;align-items:center;gap:.5rem}
+.search-box{display:flex;align-items:center;gap:.35rem;background:var(--paper);
+  border:1px solid var(--rule);border-radius:2px;padding:.25rem .5rem}
+.search-box input{border:0;outline:0;font:inherit;font-size:.85rem;width:14rem;background:transparent;color:inherit}
+.hit-count{font-size:.78rem;color:var(--sub);min-width:4.2rem;text-align:right;font-variant-numeric:tabular-nums}
+button{font:inherit;font-family:var(--gothic);cursor:pointer}
+.btn{background:var(--paper);border:1px solid var(--rule);border-radius:2px;
+  color:var(--ink);font-size:.78rem;padding:.28rem .6rem;line-height:1.4}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.crumb{padding:.3rem 1.2rem;border-top:1px solid var(--rule);background:var(--paper);
+  font-family:var(--gothic);font-size:.78rem;color:var(--sub);min-height:1.7rem}
+
+/* ------------------------------------------------------------------ 骨格 */
+.wrap{display:grid;grid-template-columns:19rem minmax(0,1fr);align-items:start}
+.toc{
+  position:sticky;top:5.6rem;max-height:calc(100vh - 5.6rem);overflow-y:auto;
+  border-right:1px solid var(--rule);padding:1rem .6rem 4rem 1.2rem;
+  font-family:var(--gothic);font-size:.83rem;line-height:1.65;
+}
+.toc h2{font-size:.75rem;color:var(--sub);font-weight:700;margin:0 0 .6rem}
+.toc ul{list-style:none;margin:0;padding:0}
+.toc a{display:block;color:var(--ink);text-decoration:none;padding:.16rem .4rem;border-radius:2px}
+.toc a:hover{background:var(--accent-weak);color:var(--accent)}
+.toc a.current{background:var(--accent-weak);color:var(--accent);font-weight:700}
+.toc .div-1>a,.toc .div-2>a{font-weight:700}
+.toc .div-2{margin-top:.5rem}
+.toc .div-3,.toc .div-4,.toc .div-5{margin-top:.25rem}
+.toc .lv-art{padding-left:.9rem}
+.toc .lv-art.hidden,.toc .lv-div.hidden{display:none}
+.toc-toggle{background:none;border:0;color:var(--sub);padding:0 .3rem;font-size:.75rem}
+
+.doc{padding:2.2rem 2rem 8rem;max-width:44em}
+.doc-head{border-bottom:2px solid var(--ink);padding-bottom:.8rem;margin-bottom:2rem}
+.doc-head h1{font-size:1.5rem;margin:0 0 .3rem;letter-spacing:.04em}
+.doc-head .meta{font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+
+/* ------------------------------------------------------------------ 条文 */
+.div-head{font-family:var(--gothic);margin:2.6rem 0 1rem;scroll-margin-top:6rem}
+.div-head .lbl{color:var(--accent);font-weight:700}
+h2.div-head{font-size:1.12rem;border-bottom:1px solid var(--rule);padding-bottom:.35rem}
+h3.div-head{font-size:1.02rem}
+h4.div-head,h5.div-head,h6.div-head{font-size:.95rem}
+
+.art{position:relative;padding-left:2.6rem;margin:1.5rem 0 1.9rem;scroll-margin-top:6rem}
+.art:target{background:var(--accent-weak);box-shadow:-.4rem 0 0 var(--accent);border-radius:2px}
+.art-tools{position:absolute;left:0;top:.25rem;display:flex;flex-direction:column;gap:.2rem;
+  visibility:hidden}
+.art:hover .art-tools,.art:focus-within .art-tools,.art:target .art-tools{visibility:visible}
+.art-tools button,.art-tools a{background:none;border:0;color:var(--sub);font-size:.72rem;
+  font-family:var(--gothic);padding:.1rem .2rem;border-radius:2px;text-decoration:none;
+  white-space:nowrap;display:block}
+.art-tools button:hover,.art-tools a:hover{color:var(--accent);background:var(--accent-weak)}
+.raw h3 .src{font-size:.75rem;font-weight:400;color:var(--sub);margin-left:.5rem}
+.doc-head .src{color:var(--accent);text-decoration:none}
+.doc-head .src:hover{text-decoration:underline}
+.caption{font-family:var(--gothic);font-size:.88rem;font-weight:700;color:var(--sub);margin:0 0 .1rem}
+.amend-note{font-family:var(--gothic);font-size:.78rem;font-weight:400;color:var(--sub);margin:.1rem 0 0;text-align:right}
+h2 .amend-note,h3 .amend-note,h4 .amend-note,h5 .amend-note,h6 .amend-note{display:inline;text-align:left}
+.art-no{font-family:var(--gothic);font-weight:700;color:var(--accent);text-decoration:none;margin-right:.55em}
+.art-no:hover{text-decoration:underline}
+.para{margin:.35rem 0;text-indent:0}
+.para+.para{margin-top:.55rem}
+.pno{font-family:var(--gothic);color:var(--sub);font-size:.9em;margin-right:.5em;font-variant-numeric:tabular-nums}
+.deleted .body-text{color:var(--sub)}
+.art.noarticle .para{margin-top:0}
+
+ol.items{list-style:none;margin:.35rem 0 .35rem 1.1em;padding:0}
+ol.items>li{display:grid;grid-template-columns:2.4em minmax(0,1fr);margin:.2rem 0}
+ol.items .mk{font-family:var(--gothic);font-size:.9em;color:var(--sub);margin-right:.4em}
+ol.items ol.items{grid-column:1/-1;margin-left:1.2em}
+ol.items ol.items>li{grid-template-columns:2em minmax(0,1fr)}
+
+.raw{margin:1.6rem 0;scroll-margin-top:6rem}
+.raw h3{font-family:var(--gothic);font-size:1rem;margin:0 0 .4rem}
+.raw pre{font-family:var(--mincho);white-space:pre-wrap;margin:0;padding:.7rem .9rem;
+  background:var(--chrome);border:1px solid var(--rule);font-size:.92rem;line-height:1.75}
+
+.notes{margin:2.5rem 0 0;padding:.8rem 1rem;background:var(--chrome);
+  border-left:3px solid var(--accent);font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+.notes p{margin:0 0 .3rem;font-weight:700;color:var(--ink)}
+.notes ul{margin:0;padding-left:1.2rem}
+.foot{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);
+  font-family:var(--gothic);font-size:.75rem;color:var(--sub)}
+
+a.ref{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule)}
+a.ref:hover{color:var(--accent);border-bottom-color:var(--accent)}
+a.ref-egov{border-bottom-style:dotted}
+a.ref-rule{border-bottom-color:var(--accent)}
+mark{background:var(--mark);color:inherit;padding:0 .05em}
+mark.live{background:var(--mark-live)}
+.toast{position:fixed;left:50%;bottom:2rem;transform:translateX(-50%);
+  background:var(--ink);color:#fff;font-family:var(--gothic);font-size:.8rem;
+  padding:.5rem .9rem;border-radius:3px;pointer-events:none;z-index:60;display:none}
+.toast.show{display:block}
+
+.toc-open{display:none}
+@media (max-width:900px){
+  body{font-size:16px}
+  .wrap{grid-template-columns:minmax(0,1fr)}
+  .toc{position:fixed;inset:5.6rem auto 0 0;width:82vw;max-width:20rem;background:var(--paper);
+    z-index:25;box-shadow:0 0 0 100vmax rgba(0,0,0,.25);max-height:none;height:calc(100vh - 5.6rem);
+    display:none}
+  .toc.open{display:block}
+  .toc-open{display:inline-block}
+  .doc{padding:1.4rem 1.1rem 6rem}
+  .search-box input{width:8rem}
+  .art-tools{opacity:1;position:static;flex-direction:row;justify-content:flex-end;margin-bottom:.15rem}
+  .art-tools button,.art-tools a{border:1px solid var(--rule);border-radius:2px;
+    padding:.1rem .45rem;display:inline-block}
+  .art{padding-left:0}
+}
+
+@media print{
+  .top,.toc,.art-tools,.crumb,.toast{display:none!important}
+  a.ref{border-bottom:0}
+  .wrap{display:block}
+  .doc{max-width:none;padding:0}
+  body{font-size:10.5pt;line-height:1.7}
+  .art{page-break-inside:avoid}
+}
+
+.anchor-alias{position:absolute;scroll-margin-top:6rem}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <button type="button" class="btn toc-open" id="toc-open">目次</button>
+    <h1 class="law-title">人事訴訟規則</h1>
+    <span class="law-number">令和8年5月21日施行</span>
+    <div class="top-tools">
+      <div class="search-box">
+        <input type="search" id="q" placeholder="条文を検索（/ キー）" aria-label="条文を検索">
+        <span class="hit-count" id="hits"></span>
+      </div>
+      <button type="button" class="btn" id="prev" title="前の該当箇所">前</button>
+      <button type="button" class="btn" id="next" title="次の該当箇所">次</button>
+      <button type="button" class="btn" id="numeral" aria-pressed="false"
+        title="条番号の表記を切り替える">123</button>
+    </div>
+  </div>
+  <div class="crumb" id="crumb"></div>
+</header>
+<div class="wrap">
+  <nav class="toc" id="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ul><li class="lv-div div-2"><a href="#d0">第一章　総則</a><ul><li class="lv-div div-3"><a href="#d1">第一節　通則</a><ul><li class="lv-art" data-text="第一条1条趣旨趣旨この規則は、人事訴訟に関する手続について、民事訴訟規則（平成八年最高裁判所規則第五号）の特例等を定めるものとする。"><a href="#a1">第一条　趣旨</a></li><li class="lv-art" data-text="第一条の二1条の2催告催告催告は、これを受けるべき者の所在が明らかでないとき、又はその者が外国に在るときは、催告すべき事項を公告してすれば足りる。この場合において、その公告は、催告すべき事項を記載した書面を裁判所の掲示場その他裁判所内の公衆の見やすい場所に掲示して行う。前項の規定による催告は、公告をした日から一週間を経過した時にその効力を生ずる。"><a href="#a1-2">第一条の二　催告</a></li></ul></li><li class="lv-div div-3"><a href="#d4">第二節　裁判所</a><ul><li class="lv-div div-4"><a href="#d5">第一款　管轄</a><ul><li class="lv-art" data-text="第二条2条法第四条第二項の地の指定・法第四条法第四条第二項の地の指定・法第四条人事訴訟法（平成十五年法律第百九号。以下「法」という。）第四条（人事に関する訴えの管轄）第二項の最高裁判所規則で定める地は、東京都千代田区とする。"><a href="#a2">第二条　法第四条第二項の地の指定・法第四条</a></li><li class="lv-art" data-text="第三条3条自庁処理の申立ての方式・法第六条自庁処理の申立ての方式・法第六条法第六条（調停事件が係属していた家庭裁判所の自庁処理）の申立ては、期日においてする場合を除き、書面でしなければならない。前項の申立てをするときは、申立ての理由を明らかにしなければならない。"><a href="#a3">第三条　自庁処理の申立ての方式・法第六条</a></li><li class="lv-art" data-text="第四条4条自庁処理における取扱い・法第六条自庁処理における取扱い・法第六条法第六条（調停事件が係属していた家庭裁判所の自庁処理）の申立てがあったときは、家庭裁判所は、相手方の意見を聴いて決定をするものとする。家庭裁判所は、職権により法第六条の規定による決定をするときは、当事者の意見を聴かなければならない。"><a href="#a4">第四条　自庁処理における取扱い・法第六条</a></li><li class="lv-art" data-text="第五条5条裁量移送における取扱い・法第七条等裁量移送における取扱い・法第七条等法第七条（遅滞を避ける等のための移送）又は第八条（関連請求に係る訴訟の移送）第一項の申立てがあったときは、裁判所は、相手方の意見を聴いて決定をするものとする。家庭裁判所は、職権により法第七条の規定による移送の決定をするときは、当事者の意見を聴くことができる。"><a href="#a5">第五条　裁量移送における取扱い・法第七条等</a></li></ul></li><li class="lv-div div-4"><a href="#d10">第二款　参与員</a><ul><li class="lv-art" data-text="第六条6条参与員の指定・法第九条参与員の指定・法第九条家庭裁判所は、人事訴訟に係る事件について参与員を指定するに当たっては、当該事件について家事事件手続法（平成二十三年法律第五十二号）第二百五十七条（調停前置主義）第一項の規定により申し立てられた調停に係る事件に家事調停委員として関与していない者を指定するように意を用いなければならない。"><a href="#a6">第六条　参与員の指定・法第九条</a></li><li class="lv-art" data-text="第六条の二6条の2音声の送受信による通話の方法による参与員の関与・法第九条音声の送受信による通話の方法による参与員の関与・法第九条法第九条（参与員）第六項に規定する方法によって参与員に審理又は和解の試みに立ち会わせ、当該期日における行為をさせるときは、家庭裁判所は、次に掲げる事項を確認しなければならない。一通話者二通話者の所在する場所の状況が当該方法によって手続を実施するために適切なものであること。前項の方法によって参与員に審理又は和解の試みに立ち会わせ、当該期日における行為をさせたとき（和解の期日又は進行協議期日にあっては、家庭裁判所がその結果について裁判所書記官に調書を作成させるときに限る。）は、その旨及び同項第二号に掲げる事項を記録上明らかにしなければならない。受命裁判官又は受託裁判官が第一項の手続を行う場合には、同項の規定による家庭裁判所の職務は、その裁判官が行う。"><a href="#a6-2">第六条の二　音声の送受信による通話の方法による参与員の関与・法第九条</a></li><li class="lv-art" data-text="第七条7条参与員の除斥、忌避及び回避・法第十条参与員の除斥、忌避及び回避・法第十条民事訴訟規則第十条から第十二条まで（除斥又は忌避の申立ての方式等、除斥又は忌避についての裁判官の意見陳述及び裁判官の回避）の規定は、参与員について準用する。"><a href="#a7">第七条　参与員の除斥、忌避及び回避・法第十条</a></li><li class="lv-art" data-text="第八条8条参与員の発問参与員の発問裁判長は、必要があると認めるときは、参与員が証人、当事者本人又は鑑定人に対し直接に問いを発することを許すことができる。"><a href="#a8">第八条　参与員の発問</a></li></ul></li></ul></li><li class="lv-div div-3"><a href="#d15">第三節　当事者</a><ul><li class="lv-art" data-text="第九条9条訴訟代理人の選任の裁判の告知・法第十三条訴訟代理人の選任の裁判の告知・法第十三条法第十三条（人事訴訟における訴訟能力等）第二項の規定による訴訟代理人の選任の裁判は、当該訴訟代理人にも告知しなければならない。同条第三項の規定による訴訟代理人の選任の裁判についても、同様とする。"><a href="#a9">第九条　訴訟代理人の選任の裁判の告知・法第十三条</a></li><li class="lv-art" data-text="第十条10条利害関係人の訴訟参加の決定等の通知・法第十五条利害関係人の訴訟参加の決定等の通知・法第十五条法第十五条（利害関係人の訴訟参加）第一項の決定又は同条第五項の規定によるその取消しの決定は、当該人事訴訟の当事者双方に通知しなければならない。"><a href="#a10">第十条　利害関係人の訴訟参加の決定等の通知・法第十五条</a></li></ul></li><li class="lv-div div-3"><a href="#d18">第四節　訴訟手続</a><ul><li class="lv-art" data-text="第十一条11条訴状の記載事項訴状の記載事項人事に関する訴えを提起するに当たり、当該訴えに係る人事訴訟の目的と同一の身分関係の形成又は存否の確認を目的とする請求に係る人事訴訟が既に係属しているときは、訴状には、民事訴訟規則第五十三条（訴状の記載事項）第一項及び第四項（第一号に係る部分に限る。）に規定する事項のほか、当該人事訴訟が既に係属する裁判所及び当該人事訴訟に係る事件の表示を記載しなければならない。"><a href="#a11">第十一条　訴状の記載事項</a></li><li class="lv-art" data-text="第十二条12条関連請求の訴えの訴状の記載事項・法第十七条関連請求の訴えの訴状の記載事項・法第十七条法第十七条（関連請求の併合等）第二項の規定により人事訴訟に係る請求の原因である事実によって生じた損害の賠償に関する請求を目的とする訴えを家庭裁判所に提起するときは、訴状には、民事訴訟規則第五十三条（訴状の記載事項）第一項及び第四項（第一号に係る部分に限る。）に規定する事項のほか、当該人事訴訟が当該家庭裁判所に既に係属する旨及び当該人事訴訟に係る事件の表示を記載しなければならない。"><a href="#a12">第十二条　関連請求の訴えの訴状の記載事項・法第十七条</a></li><li class="lv-art" data-text="第十三条13条訴状の添付書類訴状の添付書類人事に関する訴えの訴状には、当該訴えに係る身分関係の当事者の戸籍の謄本のほか、法第十五条（利害関係人の訴訟参加）第一項に規定する利害関係人の有無並びにその氏名及び住所又は居所を明らかにするために必要な他の戸籍の謄本その他の書類を添付しなければならない。"><a href="#a13">第十三条　訴状の添付書類</a></li><li class="lv-art" data-text="第十四条14条進行協議期日における請求の放棄及び認諾・法第十九条進行協議期日における請求の放棄及び認諾・法第十九条人事訴訟における訴訟の目的については、民事訴訟規則第九十五条（進行協議期日）第二項（請求の放棄及び認諾に係る部分に限る。）の規定は、適用しない。"><a href="#a14">第十四条　進行協議期日における請求の放棄及び認諾・法第十九条</a></li><li class="lv-art" data-text="第十五条15条当事者本人の勾引・法第二十一条当事者本人の勾引・法第二十一条法第二十一条（当事者本人の出頭命令等）第一項の規定により当事者本人の尋問の期日への出頭を命じられた当事者が正当な理由なく出頭しない場合には、民事訴訟規則第百十一条（勾引）の規定は、同規則第百二十七条（証人尋問の規定の準用）ただし書の規定にかかわらず、当該当事者の勾引について準用する。"><a href="#a15">第十五条　当事者本人の勾引・法第二十一条</a></li></ul></li><li class="lv-div div-3"><a href="#d24">第五節　補則</a><ul><li class="lv-art" data-text="第十六条16条利害関係人に対する訴訟係属の通知・法第二十八条利害関係人に対する訴訟係属の通知・法第二十八条法第二十八条（利害関係人に対する訴訟係属の通知）の規定による通知は、別表第一の上欄に掲げる訴えの区分に応じ、それぞれ同表の下欄に定める者で訴訟記録上氏名及び住所又は居所が判明しているものにするものとする。"><a href="#a16">第十六条　利害関係人に対する訴訟係属の通知・法第二十八条</a></li><li class="lv-art" data-text="第十七条17条戸籍事務管掌者に対する判決確定の通知戸籍事務管掌者に対する判決確定の通知戸籍の届出又は訂正を必要とする事項について人事訴訟の判決が確定したときは、裁判所書記官は、遅滞なく、当該人事訴訟に係る身分関係の当事者の本籍地の戸籍事務を管掌する者に対し、その旨を通知しなければならない。"><a href="#a17">第十七条　戸籍事務管掌者に対する判決確定の通知</a></li><li class="lv-art" data-text="第十八条18条民事訴訟規則の適用関係・法第二十九条民事訴訟規則の適用関係・法第二十九条人事訴訟に関する手続においては、民事訴訟規則第一条（申立て等の方式等）第三項、第一条の二（電子調書のファイルへの記録の方式）、第四条（催告及び通知）第三項及び第四項、第十四条（法人でない社団等の当事者能力の判断資料の提出）第二項から第四項まで、第十五条（法定代理権等の証明）第二項及び第三項、第十八条（法人の代表者等への準用等）第二項及び第三項、第二十三条（訴訟代理権の証明等）第三項、第二十四条（訴訟費用額の確定等を求める申立ての方式等）第三項から第五項まで、第二十五条（相手方への催告等）第二項、第二十六条（費用額の確定処分の方式）後段、第三十三条の三（電磁的訴訟記録の閲覧等の方法等）、第三十三条の四（訴訟に関する事項の証明の方法等）第二項から第四項まで、第三十三条の五（電磁的訴訟記録からの消去等）、第三十四条（閲覧等の制限の申立ての方式等）第八項から第十一項まで、第一編（総則）第五章（訴訟手続）第四節（送達等）第三款（電磁的記録の送達）、第四十六条（公示送達の方法）第一項、第四十七条（書類又は電磁的記録の送付）第三項及び第四項、第四十七条の二（書類又は電磁的記録の直送）第四項及び第五項、第四十九条（法第百十七条第一項の訴えの訴状の添付書類等）第二項及び第三項、第五十一条（訴訟手続の受継の申立ての方式等）第三項から第七項まで、第五十二条の六（証拠収集の処分の申立書の添付書類等）第四項から第七項まで、第五十二条の七（証拠収集の処分の手続等）第七項、第一編第七章（電子情報処理組織による申立て等）、第五十二条の二十（法第百三十三条の二第二項の申立ての方式等）第七項から第九項まで、第五十二条の二十二（秘匿決定の一部が取り消された場合等の取扱い）第二項及び第三項、第五十二条の二十三（安全管理のために必要な措置）、第五十三条（訴状の記載事項）第四項第二号、第五十五条（訴状の添付書類等）第三項から第六項まで、第五十五条の二（訴えの提起前に法律事務を行っていた者に関する情報の届出）、第六十三条の二（電磁的記録の提出方法）、第七十六条の二（更正処分の方式）第一項後段、第八十一条（答弁に対する反論）第二項、第八十二条（準備書面に引用した文書の取扱い）第三項及び第四項、第百五条の二（映像等の送受信による通話の方法による裁判所外における証拠調べ）、第百五条の三（電子情報処理組織による調査結果の報告）、第百八条（電子呼出状の記録事項等）第二項、第百十二条（宣誓）第三項及び第四項、第百二十四条（書面尋問）第四項、第百三十一条（宣誓の方式）、第百三十二条（鑑定人の陳述の方式）第三項、第百三十五条の二（電子情報処理組織による鑑定結果の報告）、第百三十七条（書証の申出等）第三項及び第四項、第百四十三条（文書の提出等の方法）第三項、第百四十九条の二（電磁的記録に記録された情報の内容に係る証拠調べの申出の方式等）第三項、第百四十九条の三（電磁的記録提出命令等に係る電磁的記録の提出等の方法）、第百五十一条の二（映像等の送受信による方法による検証）、第百五十七条（言渡しの方式等）第三項、第百五十九条（電子判決書等の送達）、第百六十条（判決の更正決定等の方式）、第百八十九条（電子上告提起通知書の送達等）第四項、第二百十一条（再審の訴訟手続）第二項及び第三項並びに第七編（法定審理期間訴訟手続に関する特則）の規定は、適用しない。人事訴訟に関する手続についての民事訴訟規則の規定の適用については、別表第二の上欄に掲げる同規則の規定中同表の中欄に掲げる字句は、それぞれ同表の下欄に掲げる字句とする。"><a href="#a18">第十八条　民事訴訟規則の適用関係・法第二十九条</a></li><li class="lv-art" data-text="第十八条の二18条の2訴訟記録の閲覧等訴訟記録の閲覧等民事訴訟規則第三十四条（閲覧等の制限の申立ての方式等）第三項本文、第五項本文若しくは第七項又は第五十二条の二十（法第百三十三条の二第二項の申立ての方式等）第三項、第五項本文若しくは第六項の規定により文書その他の物件から秘密記載部分又は秘匿事項記載部分を除いたものが提出された場合には、当該文書その他の物件の閲覧、謄写又は複製は、その提出されたものによってさせることができる。民事訴訟規則第五十二条の二十二（秘匿決定の一部が取り消された場合等の取扱い）第一項の規定により、民事訴訟法（平成八年法律第百九号）第百三十三条（申立人の住所、氏名等の秘匿）第二項の規定による届出に係る書面（以下この項において「秘匿事項届出書面」という。）から同法第百三十三条の四（秘匿決定の取消し等）第一項の取消し又は同条第二項の許可の裁判に係る部分以外の部分（秘匿事項又は秘匿事項を推知することができる事項が記載された部分に限る。）を除いたものが提出された場合には、秘匿事項届出書面の閲覧又は謄写は、その提出されたものによってさせることができる。"><a href="#a18-2">第十八条の二　訴訟記録の閲覧等</a></li><li class="lv-art" data-text="第十八条の三18条の3送達すべき書類の提出に代えて調書を作成した場合に送達すべき書類送達すべき書類の提出に代えて調書を作成した場合に送達すべき書類送達すべき書類の提出に代えて調書を作成したときは、その調書の謄本又は抄本を交付して送達をする。"><a href="#a18-3">第十八条の三　送達すべき書類の提出に代えて調書を作成した場合に送達すべき書類</a></li><li class="lv-art" data-text="第十八条の四18条の4呼出状の公示送達呼出状の公示送達呼出状の公示送達は、呼出状を掲示場に掲示してする。"><a href="#a18-4">第十八条の四　呼出状の公示送達</a></li><li class="lv-art" data-text="第十八条の五18条の5決定及び命令の方式決定及び命令の方式決定書及び命令書には、決定又は命令をした裁判官が記名押印しなければならない。"><a href="#a18-5">第十八条の五　決定及び命令の方式</a></li><li class="lv-art" data-text="第十八条の六18条の6訴状却下命令に対する即時抗告訴状却下命令に対する即時抗告訴状却下の命令に対し即時抗告をするときは、抗告状には、却下された訴状を添付しなければならない。"><a href="#a18-6">第十八条の六　訴状却下命令に対する即時抗告</a></li><li class="lv-art" data-text="第十八条の七18条の7証人の宣誓証人の宣誓裁判長は、証人に宣誓書を朗読させ、かつ、これに署名させなければならない。証人が宣誓書を朗読することができないときは、裁判長は、裁判所書記官にこれを朗読させなければならない。裁判長は、相当と認めるときは、前項前段の規定にかかわらず、同項前段に規定する署名に代えて、宣誓書に宣誓の趣旨を理解した旨の記載をさせることができる。前二項の宣誓書には、良心に従って真実を述べ、何事も隠さず、また、何事も付け加えないことを誓う旨を記載しなければならない。"><a href="#a18-7">第十八条の七　証人の宣誓</a></li><li class="lv-art" data-text="第十八条の八18条の8鑑定人の宣誓鑑定人の宣誓鑑定人の宣誓書には、良心に従って誠実に鑑定をすることを誓う旨を記載しなければならない。鑑定人の宣誓は、宣誓書を裁判所に提出する方式によってもさせることができる。この場合における裁判長による宣誓の趣旨の説明及び虚偽鑑定の罰の告知は、これらの事項を記載した書面を鑑定人に送付する方法によって行う。"><a href="#a18-8">第十八条の八　鑑定人の宣誓</a></li><li class="lv-art" data-text="第十八条の九18条の9受命裁判官等の証拠調べの調書受命裁判官等の証拠調べの調書受命裁判官又は受託裁判官の所属する裁判所の裁判所書記官は、第十八条（民事訴訟規則の適用関係）第二項において読み替えて適用する民事訴訟規則第百四十二条（受命裁判官等の証拠調べの電子調書）の調書に同条の文書の写しを添付することができる。"><a href="#a18-9">第十八条の九　受命裁判官等の証拠調べの調書</a></li><li class="lv-art" data-text="第十八条の十18条の10裁判所書記官への判決書の交付等裁判所書記官への判決書の交付等判決書は、言渡し後遅滞なく、裁判所書記官に交付し、裁判所書記官は、これに言渡し及び交付の日を付記して押印しなければならない。"><a href="#a18-10">第十八条の十　裁判所書記官への判決書の交付等</a></li><li class="lv-art" data-text="第十八条の十一18条の11判決書等の送達判決書等の送達判決書又は法第二十九条（民事訴訟法の適用関係）第三項において読み替えて適用する民事訴訟法第二百五十四条（言渡しの方式の特則）第二項の調書の送達は、裁判所書記官が判決書の交付を受けた日又は判決言渡しの日から二週間以内にしなければならない。前項の調書の送達は、その正本によってすることができる。"><a href="#a18-11">第十八条の十一　判決書等の送達</a></li><li class="lv-art" data-text="第十八条の十二18条の12更正決定等の方式更正決定等の方式更正決定は、判決書の原本及び正本に付記しなければならない。ただし、裁判所は、相当と認めるときは、判決書の原本及び正本への付記に代えて、決定書を作成し、その正本を当事者に送達することができる。前項の規定は、民事訴訟法第二百五十九条（仮執行の宣言）第五項の規定による補充の決定について準用する。"><a href="#a18-12">第十八条の十二　更正決定等の方式</a></li><li class="lv-art" data-text="第十八条の十三18条の13上告提起の場合における費用の予納上告提起の場合における費用の予納上告を提起するときは、上告状の送達に必要な費用のほか、上告提起通知書、上告理由書及び裁判書の送達並びに上告裁判所が訴訟記録の送付を受けた旨の通知に必要な費用の概算額を予納しなければならない。"><a href="#a18-13">第十八条の十三　上告提起の場合における費用の予納</a></li></ul></li></ul></li><li class="lv-div div-2"><a href="#d40">第二章　婚姻関係訴訟の特例</a><ul><li class="lv-div div-3"><a href="#d41">第一節　附帯処分等</a><ul><li class="lv-art" data-text="第十九条19条附帯処分の申立ての方式等・法第三十二条附帯処分の申立ての方式等・法第三十二条法第三十二条（附帯処分についての裁判等）第一項の申立ては、書面でしなければならない。前項の書面には、申立ての趣旨及び理由を記載し、証拠となるべき文書の写しで重要なものを添付しなければならない。厚生年金保険法（昭和二十九年法律第百十五号）第七十八条の二第二項の規定による処分の申立てをする場合における第一項の書面には、同法第七十八条の四第一項の情報の内容が記載された文書であって、同項の規定により提供されたものを添付しなければならない。第一項の書面は、相手方に送達しなければならない。"><a href="#a19">第十九条　附帯処分の申立ての方式等・法第三十二条</a></li><li class="lv-art" data-text="第二十条20条事実の調査・法第三十三条等事実の調査・法第三十三条等婚姻の取消し又は離婚の訴えに係る訴訟において、事実の調査は、審理の経過、証拠調べの結果その他の事情を考慮して必要があると認められるときは、医学、心理学、社会学、経済学その他の専門的知識を活用して行うように努めなければならない。裁判所は、前項の場合において、家庭裁判所調査官に同項の専門的知識を活用した事実の調査をさせるときは、その事実の調査を要する事項を特定するものとする。"><a href="#a20">第二十条　事実の調査・法第三十三条等</a></li><li class="lv-art" data-text="第二十一条21条事実の調査における調査の嘱託等・法第三十三条事実の調査における調査の嘱託等・法第三十三条事実の調査においては、裁判所は、必要な調査を官庁、公署その他適当であると認める者に嘱託し、又は銀行、信託会社、関係人の雇主その他の者に対し関係人の預金、信託財産、収入その他の事項に関して必要な報告を求めることができる。裁判所がする前項の嘱託の手続は、裁判所書記官がする。"><a href="#a21">第二十一条　事実の調査における調査の嘱託等・法第三十三条</a></li><li class="lv-art" data-text="第二十二条22条審問期日の通知・法第三十三条審問期日の通知・法第三十三条法第三十三条（事実の調査）第四項の審問期日は、当事者に通知しなければならない。ただし、その通知をすることにより事実の調査に支障を生ずるおそれがあると認められるときは、この限りでない。"><a href="#a22">第二十二条　審問期日の通知・法第三十三条</a></li><li class="lv-art" data-text="第二十二条の二22条の2音声の送受信による通話の方法による手続・法第三十三条音声の送受信による通話の方法による手続・法第三十三条裁判所又は受命裁判官若しくは受託裁判官（以下この項において「裁判所等」という。）及び当事者双方が音声の送受信により同時に通話をすることができる方法によって法第三十三条（事実の調査）第四項の審問期日における手続を行うときは、裁判所等は、次に掲げる事項を確認しなければならない。一通話者二通話者の所在する場所の状況が当該方法によって手続を実施するために適切なものであること。前項の手続を行ったときは、その旨及び同項第二号に掲げる事項を記録上明らかにしなければならない。"><a href="#a22-2">第二十二条の二　音声の送受信による通話の方法による手続・法第三十三条</a></li><li class="lv-art" data-text="第二十三条23条事実の調査の要旨の記録化・法第三十三条等事実の調査の要旨の記録化・法第三十三条等事実の調査については、裁判所書記官は、その要旨を記録上明らかにしておかなければならない。"><a href="#a23">第二十三条　事実の調査の要旨の記録化・法第三十三条等</a></li><li class="lv-art" data-text="第二十四条24条事実の調査の通知・法第三十三条等事実の調査の通知・法第三十三条等裁判所は、事実の調査をしたときは、特に必要がないと認める場合を除き、その旨を当事者に通知しなければならない。"><a href="#a24">第二十四条　事実の調査の通知・法第三十三条等</a></li><li class="lv-art" data-text="第二十四条の二24条の2家庭裁判所調査官の除斥及び回避・法第三十四条の二家庭裁判所調査官の除斥及び回避・法第三十四条の二民事訴訟規則第十条から第十二条まで（除斥又は忌避の申立ての方式等、除斥又は忌避についての裁判官の意見陳述及び裁判官の回避）の規定（忌避に関する部分を除く。）は、家庭裁判所調査官について準用する。"><a href="#a24-2">第二十四条の二　家庭裁判所調査官の除斥及び回避・法第三十四条の二</a></li><li class="lv-art" data-text="第二十五条25条事実調査部分の閲覧等の許可・法第三十五条事実調査部分の閲覧等の許可・法第三十五条法第三十五条（事実調査部分の閲覧等）第二項又は第三項の規定により事実調査部分の閲覧等を許可する決定においては、当該事実調査部分中閲覧等を許可する部分を特定しなければならない。"><a href="#a25">第二十五条　事実調査部分の閲覧等の許可・法第三十五条</a></li><li class="lv-art" data-text="第二十六条26条法第三十五条第四項又は第六項の即時抗告に係る抗告状の記載事項等・法第三十五条法第三十五条第四項又は第六項の即時抗告に係る抗告状の記載事項等・法第三十五条法第三十五条（事実調査部分の閲覧等）第四項又は第六項の即時抗告をするときは、抗告状には、原裁判の取消し又は変更を求める事由を具体的に記載しなければならない。法第三十五条第四項又は第六項の即時抗告については、民事訴訟規則第二百七条（原裁判の取消し事由等を記載した書面）の規定は、適用しない。"><a href="#a26">第二十六条　法第三十五条第四項又は第六項の即時抗告に係る抗告状の記載事項等・法第三十五条</a></li><li class="lv-art" data-text="第二十七条27条法第三十五条第四項の即時抗告に係る記録の送付・法第三十五条法第三十五条第四項の即時抗告に係る記録の送付・法第三十五条法第三十五条（事実調査部分の閲覧等）第四項の即時抗告があった場合において、原裁判所が人事訴訟に係る事件の記録を送付する必要がないと認めたときは、民事訴訟規則第二百五条（控訴又は上告の規定の準用）において準用する同規則第百七十四条（控訴提起による事件送付）第二項の規定にかかわらず、原裁判所の裁判所書記官は、抗告事件の記録のみを抗告裁判所の裁判所書記官に送付すれば足りる。前項の規定により抗告事件の記録が送付された場合において、抗告裁判所が同項の人事訴訟に係る事件の記録が必要であると認めたときは、抗告裁判所の裁判所書記官は、速やかに、その送付を原裁判所の裁判所書記官に求めなければならない。"><a href="#a27">第二十七条　法第三十五条第四項の即時抗告に係る記録の送付・法第三十五条</a></li><li class="lv-art" data-text="第二十八条28条法第三十五条第六項の即時抗告に係る記録の送付・法第三十五条法第三十五条第六項の即時抗告に係る記録の送付・法第三十五条法第三十五条（事実調査部分の閲覧等）第六項の即時抗告があったときは、前条（法第三十五条第四項の即時抗告に係る記録の送付）の規定にかかわらず、原裁判所の裁判所書記官は、抗告事件の記録のみを抗告裁判所の裁判所書記官に送付するものとする。前項の場合には、同項の記録に、抗告事件についての原裁判所の意見を記載した書面及び抗告事件の審理に参考となる資料を添付しなければならない。"><a href="#a28">第二十八条　法第三十五条第六項の即時抗告に係る記録の送付・法第三十五条</a></li><li class="lv-art" data-text="第二十九条29条協議上の離婚による婚姻の終了の場合の提出書類等・法第三十六条協議上の離婚による婚姻の終了の場合の提出書類等・法第三十六条婚姻の取消し又は離婚の訴えに係る訴訟の係属中に当該訴えに係る婚姻の当事者が協議上の離婚をした場合において、当該訴えの取下げをしようとする者は、既に附帯処分の申立てがされており、かつ、当該申立ての取下げがされないときは、当該訴えの取下げの書面とともに、当該訴えに係る婚姻の当事者が協議上の離婚をしたことを証する戸籍の謄本その他の書類を受訴裁判所に提出しなければならない。前項の場合には、受訴裁判所は、当事者双方から、同項の附帯処分に係る事項がその協議上の離婚に際して定められているかどうかを聴かなければならない。"><a href="#a29">第二十九条　協議上の離婚による婚姻の終了の場合の提出書類等・法第三十六条</a></li></ul></li><li class="lv-div div-3"><a href="#d55">第二節　和解並びに請求の放棄及び認諾</a><ul><li class="lv-art" data-text="第三十条30条進行協議期日における請求の放棄及び認諾・法第三十七条進行協議期日における請求の放棄及び認諾・法第三十七条離婚の訴えに係る訴訟における請求の放棄及び認諾については、第十四条（進行協議期日における請求の放棄及び認諾）の規定にかかわらず、民事訴訟規則第九十五条（進行協議期日）第二項の規定を適用する。ただし、請求の認諾については、法第三十七条（和解並びに請求の放棄及び認諾）第一項ただし書に規定する場合に限る。進行協議期日に出頭しないで民事訴訟規則第九十六条（音声の送受信による通話の方法による進行協議期日）第一項の手続に関与した当事者は、前項の規定にかかわらず、請求の認諾をすることができない。ただし、当該期日における手続が映像と音声の送受信により相手の状態を相互に認識しながら通話をすることができる方法によって行われた場合には、この限りでない。"><a href="#a30">第三十条　進行協議期日における請求の放棄及び認諾・法第三十七条</a></li><li class="lv-art" data-text="第三十条の二30条の2和解等に係る調書の更正決定・法第三十七条和解等に係る調書の更正決定・法第三十七条第十八条の十二（更正決定等の方式）第一項の規定は、法第三十七条第二項において読み替えて適用する民事訴訟法第二百六十七条の二（和解等に係る電子調書の更正決定）第一項の規定による離婚の訴えに係る訴訟における和解（これにより離婚がされるものに限る。）並びに請求の放棄及び認諾に係る調書の更正決定について準用する。"><a href="#a30-2">第三十条の二　和解等に係る調書の更正決定・法第三十七条</a></li><li class="lv-art" data-text="第三十一条31条戸籍事務管掌者に対する和解及び請求の認諾の通知・法第三十七条戸籍事務管掌者に対する和解及び請求の認諾の通知・法第三十七条第十七条（戸籍事務管掌者に対する判決確定の通知）の規定は、離婚の訴えに係る訴訟における和解（これにより離婚がされるものに限る。）又は請求の認諾が調書に記載された場合について準用する。"><a href="#a31">第三十一条　戸籍事務管掌者に対する和解及び請求の認諾の通知・法第三十七条</a></li></ul></li><li class="lv-div div-3"><a href="#d59">第三節　履行の確保</a><ul><li class="lv-art" data-text="第三十二条32条履行の確保の手続・法第三十九条履行の確保の手続・法第三十九条家庭裁判所は、法第三十九条（履行命令）第一項（同条第三項において準用する場合を含む。）の規定により義務の履行を命ずる場合には、同時に、義務者に対しその違反に対する法律上の制裁を告知しなければならない。"><a href="#a32">第三十二条　履行の確保の手続・法第三十九条</a></li></ul></li></ul></li><li class="lv-div div-2"><a href="#d61">第三章　実親子関係訴訟の特例</a><ul><li class="lv-art" data-text="第三十三条33条訴訟手続の受継の申立書の添付書類・法第四十一条等訴訟手続の受継の申立書の添付書類・法第四十一条等法第四十一条（嫡出否認の訴えの当事者等）第二項（法第四十三条（認知の無効の訴えの当事者等）第一項において読み替えて準用する場合を含む。以下この条において同じ。）、第四十三条第三項又は第四十四条（認知の訴えの当事者等）第三項の規定による訴訟手続の受継の申立てをするときは、申立書には、訴訟手続を受け継ぐ者が法第四十一条第二項、第四十三条第三項又は第四十四条第三項の規定により訴訟手続を受け継ぐことができる者であることを明らかにするために必要な戸籍の謄本その他の書類を添付しなければならない。"><a href="#a33">第三十三条　訴訟手続の受継の申立書の添付書類・法第四十一条等</a></li><li class="lv-art" data-text="第三十四条34条嫡出否認の訴えの訴状の添付書類嫡出否認の訴えの訴状の添付書類民法（明治二十九年法律第八十九号）第七百七十二条（嫡出の推定）第三項の規定により父が定められる子について嫡出否認の訴えを提起するときは、訴状には、同法第七百七十四条（嫡出の否認）第四項に規定する前夫の氏名及び住所又は居所を明らかにするために必要な戸籍の謄本その他の書類を添付しなければならない。"><a href="#a34">第三十四条　嫡出否認の訴えの訴状の添付書類</a></li><li class="lv-art" data-text="第三十五条35条通知する判決の内容等・法第四十二条通知する判決の内容等・法第四十二条法第四十二条（嫡出否認の判決の通知）の規定による通知をする判決の内容は、次に掲げるものとする。一主文二子が嫡出であることが否認された父の氏名三子の氏名及び生年月日前項に規定する通知をする場合において、裁判所書記官は、同項の判決が確定した日を通知するものとする。"><a href="#a35">第三十五条　通知する判決の内容等・法第四十二条</a></li></ul></li><li class="lv-div div-2"><a href="#d65">第四章　養子縁組関係訴訟の特例</a><ul><li class="lv-art" data-text="第三十六条36条進行協議期日における請求の放棄及び認諾・法第四十六条進行協議期日における請求の放棄及び認諾・法第四十六条第三十条（進行協議期日における請求の放棄及び認諾）第一項本文及び第二項の規定は、離縁の訴えに係る訴訟における請求の放棄及び認諾について準用する。"><a href="#a36">第三十六条　進行協議期日における請求の放棄及び認諾・法第四十六条</a></li><li class="lv-art" data-text="第三十六条の二36条の2和解等に係る調書の更正決定・法第四十六条和解等に係る調書の更正決定・法第四十六条第三十条の二（和解等に係る調書の更正決定）の規定は、離縁の訴えに係る訴訟における和解（これにより離縁がされるものに限る。）並びに請求の放棄及び認諾について準用する。"><a href="#a36-2">第三十六条の二　和解等に係る調書の更正決定・法第四十六条</a></li><li class="lv-art" data-text="第三十七条37条戸籍事務管掌者に対する和解及び請求の認諾の通知・法第四十六条戸籍事務管掌者に対する和解及び請求の認諾の通知・法第四十六条第十七条（戸籍事務管掌者に対する判決確定の通知）の規定は、離縁の訴えに係る訴訟における和解（これにより離縁がされるものに限る。）又は請求の認諾が調書に記載された場合について準用する。"><a href="#a37">第三十七条　戸籍事務管掌者に対する和解及び請求の認諾の通知・法第四十六条</a></li></ul></li><li class="lv-div div-1"><a href="#sup1">附則　抄</a><ul><li class="lv-art" data-text="第一条1条施行期日施行期日この規則は、法の施行の日から施行する。"><a href="#sup1-a1">第一条　施行期日</a></li><li class="lv-art" data-text="第二条2条経過措置経過措置この規則の規定は、法の附則に特別の定めがある場合を除き、この規則の施行前に生じた事項にも適用する。ただし、この規則の施行前に民事訴訟規則により生じた効力を妨げない。"><a href="#sup1-a2">第二条　経過措置</a></li></ul></li><li class="lv-div div-1"><a href="#sup2">附則　（平成一七年二月七日最高裁判所規則第四号）</a></li><li class="lv-div div-1"><a href="#sup3">附則　（平成一八年一二月六日最高裁判所規則第一三号）</a></li><li class="lv-div div-1"><a href="#sup4">附則　（平成二四年七月一七日最高裁判所規則第九号） 抄</a><ul><li class="lv-art" data-text="第一条1条施行期日施行期日この規則は、非訟事件手続法（平成二十三年法律第五十一号）の施行の日（平成二五年一月一日）から施行する。"><a href="#sup4-a1">第一条　施行期日</a></li><li class="lv-art" data-text="第四条4条人事訴訟規則の一部改正に伴う経過措置人事訴訟規則の一部改正に伴う経過措置整備法の施行前に旧家事審判法第十八条第一項の規定により申し立てられた調停に係る事件については、家事事件手続法（平成二十三年法律第五十二号）第二百五十七条第一項の規定により申し立てられた調停に係る事件とみなして、第十六条の規定による改正後の人事訴訟規則第六条の規定を準用する。"><a href="#sup4-a4">第四条　人事訴訟規則の一部改正に伴う経過措置</a></li></ul></li><li class="lv-div div-1"><a href="#sup5">附則　（平成二七年六月二九日最高裁判所規則第六号） 抄</a><ul><li class="lv-art" data-text="第一条1条施行期日施行期日この規則は、平成二八年一月一日から施行する。"><a href="#sup5-a1">第一条　施行期日</a></li></ul></li><li class="lv-div div-1"><a href="#sup6">附則　（平成二七年八月三日最高裁判所規則第八号）</a></li><li class="lv-div div-1"><a href="#sup7">附則　（令和四年一一月七日最高裁判所規則第一七号） 抄</a><ul><li class="lv-art" data-text="第一条1条施行期日施行期日この規則は、民事訴訟法等の一部を改正する法律（令和四年法律第四十八号。以下この条において「改正法」という。）附則第一条第二号に掲げる規定の施行の日（令和五年二月二〇日）から施行する。ただし、次の各号に掲げる規定は、当該各号に定める日から施行する。一第一条中民事訴訟規則第三十二条、第七十七条、第七十八条、第九十六条及び第百六十三条第一項の改正規定、第十四条の規定、第十八条中労働審判規則第三十七条の改正規定（「第七十七条」を「第七十七条前段」に改める部分に限る。）、第二十条中非訟事件手続規則第二十一条及び第五十条の改正規定、第二十一条中家事事件手続規則第三十三条及び第百二十六条第二項の改正規定並びに第二十二条中国際的な子の奪取の民事上の側面に関する条約の実施に関する法律による子の返還に関する事件の手続等に関する規則第二十三条及び第五十三条第一項の改正規定 改正法附則第一条第三号に掲げる規定の施行の日（令和五年三月一日）二第一条中民事訴訟規則目次の改正規定（「第三十一条」を「第三十条の二」に改める部分に限る。）及び同規則第一編第五章第一節中第三十一条の前に二条を加える改正規定、第三条の規定、第六条の規定、第七条中民事執行規則第十五条の二の改正規定、第八条中民事保全規則第六条の改正規定、第十条中民事再生規則第十一条の改正規定、第十二条中外国倒産処理手続の承認援助に関する規則第十二条の改正規定、第十三条中会社更生規則第十条の改正規定、第十六条の規定、第十七条中破産規則第十二条の改正規定並びに第二十三条の規定 改正法附則第一条第四号に掲げる規定の施行の日三第十五条の規定 改正法附則第一条第五号に掲げる規定の施行の日"><a href="#sup7-a1">第一条　施行期日</a></li><li class="lv-art" data-text="第二条2条調書の記載等に関する経過措置調書の記載等に関する経過措置この規則の施行前に行われた弁論準備手続の期日の調書については、第一条の規定による改正後の民事訴訟規則第八十八条第三項の規定にかかわらず、なお従前の例による。この規則の施行前に行われた書面による準備手続における協議の結果の記録については、第一条の規定による改正後の民事訴訟規則第九十一条第三項の規定にかかわらず、なお従前の例による。"><a href="#sup7-a2">第二条　調書の記載等に関する経過措置</a></li></ul></li><li class="lv-div div-1"><a href="#sup8">附則　（令和五年一一月二二日最高裁判所規則第七号）</a><ul><li class="lv-art" data-text="第一条1条施行期日施行期日この規則は、民事訴訟法等の一部を改正する法律（令和四年法律第百二号）の施行の日（令和六年四月一日）から施行する。"><a href="#sup8-a1">第一条　施行期日</a></li></ul></li><li class="lv-div div-1"><a href="#sup9">附則　（令和六年九月一七日最高裁判所規則第一四号）抄</a><ul><li class="lv-art" data-text="第一条1条施行期日施行期日この規則は、民事訴訟法等の一部を改正する法律（令和四年法律第四十八号。以下「改正法」という。）の施行の日（令和八年五月二一日）（以下「施行日」という。）から施行する。ただし、第二条中民事訴訟費用等に関する規則第二条の三から第二条の五までの改正規定は、公布の日から施行する。"><a href="#sup9-a1">第一条　施行期日</a></li></ul></li><li class="lv-div"><a href="#table-90">別表第一（第十六条関係）</a></li><li class="lv-div"><a href="#table-91">別表第二（第十八条関係）</a></li></ul>
+  </nav>
+  <main class="doc" id="doc-outer">
+    <div class="doc-head">
+      <h1>人事訴訟規則</h1>
+      <div class="meta">令和8年5月21日施行　／　<a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本PDF p.1</a></div>
+    </div>
+    <div id="doc">
+<h3 class="div-head" id="d0" data-path="第一章　総則"><span class="lbl">第一章</span>　総則</h3>
+<h4 class="div-head" id="d1" data-path="第一節　通則"><span class="lbl">第一節</span>　通則</h4>
+<article class="art" id="a1" data-path="第一章　総則　＞　第一節　通則"><span class="anchor-alias" id="Mp-At_1"></span><div class="art-tools"><button type="button" data-anchor="a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（趣旨）</p><p class="para" id="a1-p1"><a class="art-no" href="#a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、人事訴訟に関する手続について、民事訴訟規則（平成八年最高裁判所規則第五号）の特例等を定めるものとする。</span></p></article>
+<article class="art" id="a1-2" data-path="第一章　総則　＞　第一節　通則"><span class="anchor-alias" id="Mp-At_1_2"></span><div class="art-tools"><button type="button" data-anchor="a1-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（催告）</p><p class="para" id="a1-2-p1"><a class="art-no" href="#a1-2" data-kan="第一条の二" data-num="第1条の2">第一条の二</a><span class="body-text">催告は、これを受けるべき者の所在が明らかでないとき、又はその者が外国に在るときは、催告すべき事項を公告してすれば足りる。この場合において、その公告は、催告すべき事項を記載した書面を裁判所の掲示場その他裁判所内の公衆の見やすい場所に掲示して行う。</span></p><p class="para" id="a1-2-p2"><span class="pno">2</span><span class="body-text">前項の規定による催告は、公告をした日から一週間を経過した時にその効力を生ずる。</span></p></article>
+<h4 class="div-head" id="d4" data-path="第二節　裁判所"><span class="lbl">第二節</span>　裁判所</h4>
+<h5 class="div-head" id="d5" data-path="第一款　管轄"><span class="lbl">第一款</span>　管轄</h5>
+<article class="art" id="a2" data-path="第一章　総則　＞　第二節　裁判所　＞　第一款　管轄"><span class="anchor-alias" id="Mp-At_2"></span><div class="art-tools"><button type="button" data-anchor="a2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_4" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四条</a>第二項の地の指定・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_4" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四条</a>）</p><p class="para" id="a2-p1"><a class="art-no" href="#a2" data-kan="第二条" data-num="第2条">第二条</a><span class="body-text">人事訴訟法（平成十五年法律第百九号。以下「法」という。）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_4" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第四条</a>（人事に関する訴えの管轄）第二項の最高裁判所規則で定める地は、東京都千代田区とする。</span></p></article>
+<article class="art" id="a3" data-path="第一章　総則　＞　第二節　裁判所　＞　第一款　管轄"><span class="anchor-alias" id="Mp-At_3"></span><div class="art-tools"><button type="button" data-anchor="a3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（自庁処理の申立ての方式・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_6" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第六条</a>）</p><p class="para" id="a3-p1"><a class="art-no" href="#a3" data-kan="第三条" data-num="第3条">第三条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_6" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第六条</a>（調停事件が係属していた家庭裁判所の自庁処理）の申立ては、期日においてする場合を除き、書面でしなければならない。</span></p><p class="para" id="a3-p2"><span class="pno">2</span><span class="body-text">前項の申立てをするときは、申立ての理由を明らかにしなければならない。</span></p></article>
+<article class="art" id="a4" data-path="第一章　総則　＞　第二節　裁判所　＞　第一款　管轄"><span class="anchor-alias" id="Mp-At_4"></span><div class="art-tools"><button type="button" data-anchor="a4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（自庁処理における取扱い・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_6" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第六条</a>）</p><p class="para" id="a4-p1"><a class="art-no" href="#a4" data-kan="第四条" data-num="第4条">第四条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_6" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第六条</a>（調停事件が係属していた家庭裁判所の自庁処理）の申立てがあったときは、家庭裁判所は、相手方の意見を聴いて決定をするものとする。</span></p><p class="para" id="a4-p2"><span class="pno">2</span><span class="body-text">家庭裁判所は、職権により<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_6" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第六条</a>の規定による決定をするときは、当事者の意見を聴かなければならない。</span></p></article>
+<article class="art" id="a5" data-path="第一章　総則　＞　第二節　裁判所　＞　第一款　管轄"><span class="anchor-alias" id="Mp-At_5"></span><div class="art-tools"><button type="button" data-anchor="a5" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（裁量移送における取扱い・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_7" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第七条</a>等）</p><p class="para" id="a5-p1"><a class="art-no" href="#a5" data-kan="第五条" data-num="第5条">第五条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_7" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第七条</a>（遅滞を避ける等のための移送）又は<a class="ref ref-self" href="#a8">第八条</a>（関連請求に係る訴訟の移送）第一項の申立てがあったときは、裁判所は、相手方の意見を聴いて決定をするものとする。</span></p><p class="para" id="a5-p2"><span class="pno">2</span><span class="body-text">家庭裁判所は、職権により<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_7" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第七条</a>の規定による移送の決定をするときは、当事者の意見を聴くことができる。</span></p></article>
+<h5 class="div-head" id="d10" data-path="第二款　参与員"><span class="lbl">第二款</span>　参与員</h5>
+<article class="art" id="a6" data-path="第一章　総則　＞　第二節　裁判所　＞　第二款　参与員"><span class="anchor-alias" id="Mp-At_6"></span><div class="art-tools"><button type="button" data-anchor="a6" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（参与員の指定・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_9" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第九条</a>）</p><p class="para" id="a6-p1"><a class="art-no" href="#a6" data-kan="第六条" data-num="第6条">第六条</a><span class="body-text">家庭裁判所は、人事訴訟に係る事件について参与員を指定するに当たっては、当該事件について家事事件手続法（平成二十三年法律第五十二号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/423AC0000000052#Mp-At_257" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第二百五十七条</a>（調停前置主義）第一項の規定により申し立てられた調停に係る事件に家事調停委員として関与していない者を指定するように意を用いなければならない。</span></p></article>
+<article class="art" id="a6-2" data-path="第一章　総則　＞　第二節　裁判所　＞　第二款　参与員"><span class="anchor-alias" id="Mp-At_6_2"></span><div class="art-tools"><button type="button" data-anchor="a6-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（音声の送受信による通話の方法による参与員の関与・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_9" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第九条</a>）</p><p class="para" id="a6-2-p1"><a class="art-no" href="#a6-2" data-kan="第六条の二" data-num="第6条の2">第六条の二</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_9" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第九条</a>（参与員）第六項に規定する方法によって参与員に審理又は和解の試みに立ち会わせ、当該期日における行為をさせるときは、家庭裁判所は、次に掲げる事項を確認しなければならない。</span></p><ol class="items"><li id="a6-2-p1-1"><span class="mk">一</span><span class="tx">通話者</span></li><li id="a6-2-p1-2"><span class="mk">二</span><span class="tx">通話者の所在する場所の状況が当該方法によって手続を実施するために適切なものであること。</span></li></ol><p class="para" id="a6-2-p2"><span class="pno">2</span><span class="body-text">前項の方法によって参与員に審理又は和解の試みに立ち会わせ、当該期日における行為をさせたとき（和解の期日又は進行協議期日にあっては、家庭裁判所がその結果について裁判所書記官に調書を作成させるときに限る。）は、その旨及び同項第二号に掲げる事項を記録上明らかにしなければならない。</span></p><p class="para" id="a6-2-p3"><span class="pno">3</span><span class="body-text">受命裁判官又は受託裁判官が第一項の手続を行う場合には、同項の規定による家庭裁判所の職務は、その裁判官が行う。</span></p></article>
+<article class="art" id="a7" data-path="第一章　総則　＞　第二節　裁判所　＞　第二款　参与員"><span class="anchor-alias" id="Mp-At_7"></span><div class="art-tools"><button type="button" data-anchor="a7" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（参与員の除斥、忌避及び回避・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_10" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十条</a>）</p><p class="para" id="a7-p1"><a class="art-no" href="#a7" data-kan="第七条" data-num="第7条">第七条</a><span class="body-text"><a class="ref ref-rule" href="100.html#a10" title="この規則集の中を開きます">民事訴訟規則第十条</a>から<a class="ref ref-self" href="#a12">第十二条</a>まで（除斥又は忌避の申立ての方式等、除斥又は忌避についての裁判官の意見陳述及び裁判官の回避）の規定は、参与員について準用する。</span></p></article>
+<article class="art" id="a8" data-path="第一章　総則　＞　第二節　裁判所　＞　第二款　参与員"><span class="anchor-alias" id="Mp-At_8"></span><div class="art-tools"><button type="button" data-anchor="a8" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（参与員の発問）</p><p class="para" id="a8-p1"><a class="art-no" href="#a8" data-kan="第八条" data-num="第8条">第八条</a><span class="body-text">裁判長は、必要があると認めるときは、参与員が証人、当事者本人又は鑑定人に対し直接に問いを発することを許すことができる。</span></p></article>
+<h4 class="div-head" id="d15" data-path="第三節　当事者"><span class="lbl">第三節</span>　当事者</h4>
+<article class="art" id="a9" data-path="第一章　総則　＞　第三節　当事者"><span class="anchor-alias" id="Mp-At_9"></span><div class="art-tools"><button type="button" data-anchor="a9" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（訴訟代理人の選任の裁判の告知・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_13" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十三条</a>）</p><p class="para" id="a9-p1"><a class="art-no" href="#a9" data-kan="第九条" data-num="第9条">第九条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_13" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十三条</a>（人事訴訟における訴訟能力等）第二項の規定による訴訟代理人の選任の裁判は、当該訴訟代理人にも告知しなければならない。同条第三項の規定による訴訟代理人の選任の裁判についても、同様とする。</span></p></article>
+<article class="art" id="a10" data-path="第一章　総則　＞　第三節　当事者"><span class="anchor-alias" id="Mp-At_10"></span><div class="art-tools"><button type="button" data-anchor="a10" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（利害関係人の訴訟参加の決定等の通知・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_15" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十五条</a>）</p><p class="para" id="a10-p1"><a class="art-no" href="#a10" data-kan="第十条" data-num="第10条">第十条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_15" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十五条</a>（利害関係人の訴訟参加）第一項の決定又は同条第五項の規定によるその取消しの決定は、当該人事訴訟の当事者双方に通知しなければならない。</span></p></article>
+<h4 class="div-head" id="d18" data-path="第四節　訴訟手続"><span class="lbl">第四節</span>　訴訟手続</h4>
+<article class="art" id="a11" data-path="第一章　総則　＞　第四節　訴訟手続"><span class="anchor-alias" id="Mp-At_11"></span><div class="art-tools"><button type="button" data-anchor="a11" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（訴状の記載事項）</p><p class="para" id="a11-p1"><a class="art-no" href="#a11" data-kan="第十一条" data-num="第11条">第十一条</a><span class="body-text">人事に関する訴えを提起するに当たり、当該訴えに係る人事訴訟の目的と同一の身分関係の形成又は存否の確認を目的とする請求に係る人事訴訟が既に係属しているときは、訴状には、<a class="ref ref-rule" href="100.html#a53" title="この規則集の中を開きます">民事訴訟規則第五十三条</a>（訴状の記載事項）第一項及び第四項（第一号に係る部分に限る。）に規定する事項のほか、当該人事訴訟が既に係属する裁判所及び当該人事訴訟に係る事件の表示を記載しなければならない。</span></p></article>
+<article class="art" id="a12" data-path="第一章　総則　＞　第四節　訴訟手続"><span class="anchor-alias" id="Mp-At_12"></span><div class="art-tools"><button type="button" data-anchor="a12" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（関連請求の訴えの訴状の記載事項・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_17" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十七条</a>）</p><p class="para" id="a12-p1"><a class="art-no" href="#a12" data-kan="第十二条" data-num="第12条">第十二条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_17" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十七条</a>（関連請求の併合等）第二項の規定により人事訴訟に係る請求の原因である事実によって生じた損害の賠償に関する請求を目的とする訴えを家庭裁判所に提起するときは、訴状には、<a class="ref ref-rule" href="100.html#a53" title="この規則集の中を開きます">民事訴訟規則第五十三条</a>（訴状の記載事項）第一項及び第四項（第一号に係る部分に限る。）に規定する事項のほか、当該人事訴訟が当該家庭裁判所に既に係属する旨及び当該人事訴訟に係る事件の表示を記載しなければならない。</span></p></article>
+<article class="art" id="a13" data-path="第一章　総則　＞　第四節　訴訟手続"><span class="anchor-alias" id="Mp-At_13"></span><div class="art-tools"><button type="button" data-anchor="a13" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（訴状の添付書類）</p><p class="para" id="a13-p1"><a class="art-no" href="#a13" data-kan="第十三条" data-num="第13条">第十三条</a><span class="body-text">人事に関する訴えの訴状には、当該訴えに係る身分関係の当事者の戸籍の謄本のほか、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_15" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十五条</a>（利害関係人の訴訟参加）第一項に規定する利害関係人の有無並びにその氏名及び住所又は居所を明らかにするために必要な他の戸籍の謄本その他の書類を添付しなければならない。</span></p></article>
+<article class="art" id="a14" data-path="第一章　総則　＞　第四節　訴訟手続"><span class="anchor-alias" id="Mp-At_14"></span><div class="art-tools"><button type="button" data-anchor="a14" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（進行協議期日における請求の放棄及び認諾・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_19" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十九条</a>）</p><p class="para" id="a14-p1"><a class="art-no" href="#a14" data-kan="第十四条" data-num="第14条">第十四条</a><span class="body-text">人事訴訟における訴訟の目的については、<a class="ref ref-rule" href="100.html#a95" title="この規則集の中を開きます">民事訴訟規則第九十五条</a>（進行協議期日）第二項（請求の放棄及び認諾に係る部分に限る。）の規定は、適用しない。</span></p></article>
+<article class="art" id="a15" data-path="第一章　総則　＞　第四節　訴訟手続"><span class="anchor-alias" id="Mp-At_15"></span><div class="art-tools"><button type="button" data-anchor="a15" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（当事者本人の勾引・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_21" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十一条</a>）</p><p class="para" id="a15-p1"><a class="art-no" href="#a15" data-kan="第十五条" data-num="第15条">第十五条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_21" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十一条</a>（当事者本人の出頭命令等）第一項の規定により当事者本人の尋問の期日への出頭を命じられた当事者が正当な理由なく出頭しない場合には、<a class="ref ref-rule" href="100.html#a111" title="この規則集の中を開きます">民事訴訟規則第百十一条</a>（勾引）の規定は、同規則第百二十七条（証人尋問の規定の準用）ただし書の規定にかかわらず、当該当事者の勾引について準用する。</span></p></article>
+<h4 class="div-head" id="d24" data-path="第五節　補則"><span class="lbl">第五節</span>　補則</h4>
+<article class="art" id="a16" data-path="第一章　総則　＞　第五節　補則"><span class="anchor-alias" id="Mp-At_16"></span><div class="art-tools"><button type="button" data-anchor="a16" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（利害関係人に対する訴訟係属の通知・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_28" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十八条</a>）</p><p class="para" id="a16-p1"><a class="art-no" href="#a16" data-kan="第十六条" data-num="第16条">第十六条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_28" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十八条</a>（利害関係人に対する訴訟係属の通知）の規定による通知は、別表第一の上欄に掲げる訴えの区分に応じ、それぞれ同表の下欄に定める者で訴訟記録上氏名及び住所又は居所が判明しているものにするものとする。</span></p></article>
+<article class="art" id="a17" data-path="第一章　総則　＞　第五節　補則"><span class="anchor-alias" id="Mp-At_17"></span><div class="art-tools"><button type="button" data-anchor="a17" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（戸籍事務管掌者に対する判決確定の通知）</p><p class="para" id="a17-p1"><a class="art-no" href="#a17" data-kan="第十七条" data-num="第17条">第十七条</a><span class="body-text">戸籍の届出又は訂正を必要とする事項について人事訴訟の判決が確定したときは、裁判所書記官は、遅滞なく、当該人事訴訟に係る身分関係の当事者の本籍地の戸籍事務を管掌する者に対し、その旨を通知しなければならない。</span></p></article>
+<article class="art" id="a18" data-path="第一章　総則　＞　第五節　補則"><span class="anchor-alias" id="Mp-At_18"></span><div class="art-tools"><button type="button" data-anchor="a18" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（民事訴訟規則の適用関係・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_29" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十九条</a>）</p><p class="para" id="a18-p1"><a class="art-no" href="#a18" data-kan="第十八条" data-num="第18条">第十八条</a><span class="body-text">人事訴訟に関する手続においては、<a class="ref ref-rule" href="100.html#a1" title="この規則集の中を開きます">民事訴訟規則第一条</a>（申立て等の方式等）第三項、<a class="ref ref-self" href="#a1-2">第一条の二</a>（電子調書のファイルへの記録の方式）、<a class="ref ref-self" href="#a4">第四条</a>（催告及び通知）第三項及び第四項、<a class="ref ref-self" href="#a14">第十四条</a>（法人でない社団等の当事者能力の判断資料の提出）第二項から第四項まで、<a class="ref ref-self" href="#a15">第十五条</a>（法定代理権等の証明）第二項及び第三項、<a class="ref ref-self" href="#a18">第十八条</a>（法人の代表者等への準用等）第二項及び第三項、<a class="ref ref-self" href="#a23">第二十三条</a>（訴訟代理権の証明等）第三項、<a class="ref ref-self" href="#a24">第二十四条</a>（訴訟費用額の確定等を求める申立ての方式等）第三項から第五項まで、<a class="ref ref-self" href="#a25">第二十五条</a>（相手方への催告等）第二項、<a class="ref ref-self" href="#a26">第二十六条</a>（費用額の確定処分の方式）後段、第三十三条の三（電磁的訴訟記録の閲覧等の方法等）、第三十三条の四（訴訟に関する事項の証明の方法等）第二項から第四項まで、第三十三条の五（電磁的訴訟記録からの消去等）、<a class="ref ref-self" href="#a34">第三十四条</a>（閲覧等の制限の申立ての方式等）第八項から第十一項まで、第一編（総則）第五章（訴訟手続）第四節（送達等）第三款（電磁的記録の送達）、第四十六条（公示送達の方法）第一項、第四十七条（書類又は電磁的記録の送付）第三項及び第四項、第四十七条の二（書類又は電磁的記録の直送）第四項及び第五項、第四十九条（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_117" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第百十七条</a>第一項の訴えの訴状の添付書類等）第二項及び第三項、第五十一条（訴訟手続の受継の申立ての方式等）第三項から第七項まで、第五十二条の六（証拠収集の処分の申立書の添付書類等）第四項から第七項まで、第五十二条の七（証拠収集の処分の手続等）第七項、第一編第七章（電子情報処理組織による申立て等）、第五十二条の二十（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_133_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第百三十三条の二</a>第二項の申立ての方式等）第七項から第九項まで、第五十二条の二十二（秘匿決定の一部が取り消された場合等の取扱い）第二項及び第三項、第五十二条の二十三（安全管理のために必要な措置）、第五十三条（訴状の記載事項）第四項第二号、第五十五条（訴状の添付書類等）第三項から第六項まで、第五十五条の二（訴えの提起前に法律事務を行っていた者に関する情報の届出）、第六十三条の二（電磁的記録の提出方法）、第七十六条の二（更正処分の方式）第一項後段、第八十一条（答弁に対する反論）第二項、第八十二条（準備書面に引用した文書の取扱い）第三項及び第四項、第百五条の二（映像等の送受信による通話の方法による裁判所外における証拠調べ）、第百五条の三（電子情報処理組織による調査結果の報告）、第百八条（電子呼出状の記録事項等）第二項、第百十二条（宣誓）第三項及び第四項、第百二十四条（書面尋問）第四項、第百三十一条（宣誓の方式）、第百三十二条（鑑定人の陳述の方式）第三項、第百三十五条の二（電子情報処理組織による鑑定結果の報告）、第百三十七条（書証の申出等）第三項及び第四項、第百四十三条（文書の提出等の方法）第三項、第百四十九条の二（電磁的記録に記録された情報の内容に係る証拠調べの申出の方式等）第三項、第百四十九条の三（電磁的記録提出命令等に係る電磁的記録の提出等の方法）、第百五十一条の二（映像等の送受信による方法による検証）、第百五十七条（言渡しの方式等）第三項、第百五十九条（電子判決書等の送達）、第百六十条（判決の更正決定等の方式）、第百八十九条（電子上告提起通知書の送達等）第四項、第二百十一条（再審の訴訟手続）第二項及び第三項並びに第七編（法定審理期間訴訟手続に関する特則）の規定は、適用しない。</span></p><p class="para" id="a18-p2"><span class="pno">2</span><span class="body-text">人事訴訟に関する手続についての民事訴訟規則の規定の適用については、別表第二の上欄に掲げる同規則の規定中同表の中欄に掲げる字句は、それぞれ同表の下欄に掲げる字句とする。</span></p></article>
+<article class="art" id="a18-2" data-path="第一章　総則　＞　第五節　補則"><span class="anchor-alias" id="Mp-At_18_2"></span><div class="art-tools"><button type="button" data-anchor="a18-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（訴訟記録の閲覧等）</p><p class="para" id="a18-2-p1"><a class="art-no" href="#a18-2" data-kan="第十八条の二" data-num="第18条の2">第十八条の二</a><span class="body-text"><a class="ref ref-rule" href="100.html#a34" title="この規則集の中を開きます">民事訴訟規則第三十四条</a>（閲覧等の制限の申立ての方式等）第三項本文、第五項本文若しくは第七項又は第五十二条の二十（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_133_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第百三十三条の二</a>第二項の申立ての方式等）第三項、第五項本文若しくは第六項の規定により文書その他の物件から秘密記載部分又は秘匿事項記載部分を除いたものが提出された場合には、当該文書その他の物件の閲覧、謄写又は複製は、その提出されたものによってさせることができる。</span></p><p class="para" id="a18-2-p2"><span class="pno">2</span><span class="body-text"><a class="ref ref-rule" href="100.html#a52-22" title="この規則集の中を開きます">民事訴訟規則第五十二条の二十二</a>（秘匿決定の一部が取り消された場合等の取扱い）第一項の規定により、民事訴訟法（平成八年法律第百九号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000109#Mp-At_133" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第百三十三条</a>（申立人の住所、氏名等の秘匿）第二項の規定による届出に係る書面（以下この項において「秘匿事項届出書面」という。）から同法第百三十三条の四（秘匿決定の取消し等）第一項の取消し又は同条第二項の許可の裁判に係る部分以外の部分（秘匿事項又は秘匿事項を推知することができる事項が記載された部分に限る。）を除いたものが提出された場合には、秘匿事項届出書面の閲覧又は謄写は、その提出されたものによってさせることができる。</span></p></article>
+<article class="art" id="a18-3" data-path="第一章　総則　＞　第五節　補則"><span class="anchor-alias" id="Mp-At_18_3"></span><div class="art-tools"><button type="button" data-anchor="a18-3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（送達すべき書類の提出に代えて調書を作成した場合に送達すべき書類）</p><p class="para" id="a18-3-p1"><a class="art-no" href="#a18-3" data-kan="第十八条の三" data-num="第18条の3">第十八条の三</a><span class="body-text">送達すべき書類の提出に代えて調書を作成したときは、その調書の謄本又は抄本を交付して送達をする。</span></p></article>
+<article class="art" id="a18-4" data-path="第一章　総則　＞　第五節　補則"><span class="anchor-alias" id="Mp-At_18_4"></span><div class="art-tools"><button type="button" data-anchor="a18-4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（呼出状の公示送達）</p><p class="para" id="a18-4-p1"><a class="art-no" href="#a18-4" data-kan="第十八条の四" data-num="第18条の4">第十八条の四</a><span class="body-text">呼出状の公示送達は、呼出状を掲示場に掲示してする。</span></p></article>
+<article class="art" id="a18-5" data-path="第一章　総則　＞　第五節　補則"><span class="anchor-alias" id="Mp-At_18_5"></span><div class="art-tools"><button type="button" data-anchor="a18-5" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="caption">（決定及び命令の方式）</p><p class="para" id="a18-5-p1"><a class="art-no" href="#a18-5" data-kan="第十八条の五" data-num="第18条の5">第十八条の五</a><span class="body-text">決定書及び命令書には、決定又は命令をした裁判官が記名押印しなければならない。</span></p></article>
+<article class="art" id="a18-6" data-path="第一章　総則　＞　第五節　補則"><span class="anchor-alias" id="Mp-At_18_6"></span><div class="art-tools"><button type="button" data-anchor="a18-6" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="caption">（訴状却下命令に対する即時抗告）</p><p class="para" id="a18-6-p1"><a class="art-no" href="#a18-6" data-kan="第十八条の六" data-num="第18条の6">第十八条の六</a><span class="body-text">訴状却下の命令に対し即時抗告をするときは、抗告状には、却下された訴状を添付しなければならない。</span></p></article>
+<article class="art" id="a18-7" data-path="第一章　総則　＞　第五節　補則"><span class="anchor-alias" id="Mp-At_18_7"></span><div class="art-tools"><button type="button" data-anchor="a18-7" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="caption">（証人の宣誓）</p><p class="para" id="a18-7-p1"><a class="art-no" href="#a18-7" data-kan="第十八条の七" data-num="第18条の7">第十八条の七</a><span class="body-text">裁判長は、証人に宣誓書を朗読させ、かつ、これに署名させなければならない。証人が宣誓書を朗読することができないときは、裁判長は、裁判所書記官にこれを朗読させなければならない。</span></p><p class="para" id="a18-7-p2"><span class="pno">2</span><span class="body-text">裁判長は、相当と認めるときは、前項前段の規定にかかわらず、同項前段に規定する署名に代えて、宣誓書に宣誓の趣旨を理解した旨の記載をさせることができる。</span></p><p class="para" id="a18-7-p3"><span class="pno">3</span><span class="body-text">前二項の宣誓書には、良心に従って真実を述べ、何事も隠さず、また、何事も付け加えないことを誓う旨を記載しなければならない。</span></p></article>
+<article class="art" id="a18-8" data-path="第一章　総則　＞　第五節　補則"><span class="anchor-alias" id="Mp-At_18_8"></span><div class="art-tools"><button type="button" data-anchor="a18-8" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="caption">（鑑定人の宣誓）</p><p class="para" id="a18-8-p1"><a class="art-no" href="#a18-8" data-kan="第十八条の八" data-num="第18条の8">第十八条の八</a><span class="body-text">鑑定人の宣誓書には、良心に従って誠実に鑑定をすることを誓う旨を記載しなければならない。</span></p><p class="para" id="a18-8-p2"><span class="pno">2</span><span class="body-text">鑑定人の宣誓は、宣誓書を裁判所に提出する方式によってもさせることができる。この場合における裁判長による宣誓の趣旨の説明及び虚偽鑑定の罰の告知は、これらの事項を記載した書面を鑑定人に送付する方法によって行う。</span></p></article>
+<article class="art" id="a18-9" data-path="第一章　総則　＞　第五節　補則"><span class="anchor-alias" id="Mp-At_18_9"></span><div class="art-tools"><button type="button" data-anchor="a18-9" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="caption">（受命裁判官等の証拠調べの調書）</p><p class="para" id="a18-9-p1"><a class="art-no" href="#a18-9" data-kan="第十八条の九" data-num="第18条の9">第十八条の九</a><span class="body-text">受命裁判官又は受託裁判官の所属する裁判所の裁判所書記官は、<a class="ref ref-self" href="#a18">第十八条</a>（民事訴訟規則の適用関係）第二項において読み替えて適用する<a class="ref ref-rule" href="100.html#a142" title="この規則集の中を開きます">民事訴訟規則第百四十二条</a>（受命裁判官等の証拠調べの電子調書）の調書に同条の文書の写しを添付することができる。</span></p></article>
+<article class="art" id="a18-10" data-path="第一章　総則　＞　第五節　補則"><span class="anchor-alias" id="Mp-At_18_10"></span><div class="art-tools"><button type="button" data-anchor="a18-10" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="caption">（裁判所書記官への判決書の交付等）</p><p class="para" id="a18-10-p1"><a class="art-no" href="#a18-10" data-kan="第十八条の十" data-num="第18条の10">第十八条の十</a><span class="body-text">判決書は、言渡し後遅滞なく、裁判所書記官に交付し、裁判所書記官は、これに言渡し及び交付の日を付記して押印しなければならない。</span></p></article>
+<article class="art" id="a18-11" data-path="第一章　総則　＞　第五節　補則"><span class="anchor-alias" id="Mp-At_18_11"></span><div class="art-tools"><button type="button" data-anchor="a18-11" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="caption">（判決書等の送達）</p><p class="para" id="a18-11-p1"><a class="art-no" href="#a18-11" data-kan="第十八条の十一" data-num="第18条の11">第十八条の十一</a><span class="body-text">判決書又は<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_29" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十九条</a>（民事訴訟法の適用関係）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000109#Mp-At_254" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第三項において読み替えて適用する民事訴訟法第二百五十四条</a>（言渡しの方式の特則）第二項の調書の送達は、裁判所書記官が判決書の交付を受けた日又は判決言渡しの日から二週間以内にしなければならない。</span></p><p class="para" id="a18-11-p2"><span class="pno">2</span><span class="body-text">前項の調書の送達は、その正本によってすることができる。</span></p></article>
+<article class="art" id="a18-12" data-path="第一章　総則　＞　第五節　補則"><span class="anchor-alias" id="Mp-At_18_12"></span><div class="art-tools"><button type="button" data-anchor="a18-12" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=7" target="_blank" rel="noopener" title="原本PDFの7ページを開きます">原本 p.7</a></div><p class="caption">（更正決定等の方式）</p><p class="para" id="a18-12-p1"><a class="art-no" href="#a18-12" data-kan="第十八条の十二" data-num="第18条の12">第十八条の十二</a><span class="body-text">更正決定は、判決書の原本及び正本に付記しなければならない。ただし、裁判所は、相当と認めるときは、判決書の原本及び正本への付記に代えて、決定書を作成し、その正本を当事者に送達することができる。</span></p><p class="para" id="a18-12-p2"><span class="pno">2</span><span class="body-text">前項の規定は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000109#Mp-At_259" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">民事訴訟法第二百五十九条</a>（仮執行の宣言）第五項の規定による補充の決定について準用する。</span></p></article>
+<article class="art" id="a18-13" data-path="第一章　総則　＞　第五節　補則"><span class="anchor-alias" id="Mp-At_18_13"></span><div class="art-tools"><button type="button" data-anchor="a18-13" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=7" target="_blank" rel="noopener" title="原本PDFの7ページを開きます">原本 p.7</a></div><p class="caption">（上告提起の場合における費用の予納）</p><p class="para" id="a18-13-p1"><a class="art-no" href="#a18-13" data-kan="第十八条の十三" data-num="第18条の13">第十八条の十三</a><span class="body-text">上告を提起するときは、上告状の送達に必要な費用のほか、上告提起通知書、上告理由書及び裁判書の送達並びに上告裁判所が訴訟記録の送付を受けた旨の通知に必要な費用の概算額を予納しなければならない。</span></p></article>
+<h3 class="div-head" id="d40" data-path="第二章　婚姻関係訴訟の特例"><span class="lbl">第二章</span>　婚姻関係訴訟の特例</h3>
+<h4 class="div-head" id="d41" data-path="第一節　附帯処分等"><span class="lbl">第一節</span>　附帯処分等</h4>
+<article class="art" id="a19" data-path="第二章　婚姻関係訴訟の特例　＞　第一節　附帯処分等"><span class="anchor-alias" id="Mp-At_19"></span><div class="art-tools"><button type="button" data-anchor="a19" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=7" target="_blank" rel="noopener" title="原本PDFの7ページを開きます">原本 p.7</a></div><p class="caption">（附帯処分の申立ての方式等・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_32" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十二条</a>）</p><p class="para" id="a19-p1"><a class="art-no" href="#a19" data-kan="第十九条" data-num="第19条">第十九条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_32" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十二条</a>（附帯処分についての裁判等）第一項の申立ては、書面でしなければならない。</span></p><p class="para" id="a19-p2"><span class="pno">2</span><span class="body-text">前項の書面には、申立ての趣旨及び理由を記載し、証拠となるべき文書の写しで重要なものを添付しなければならない。</span></p><p class="para" id="a19-p3"><span class="pno">3</span><span class="body-text">厚生年金保険法（昭和二十九年法律第百十五号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/329AC0000000115#Mp-At_78_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第七十八条の二</a>第二項の規定による処分の申立てをする場合における第一項の書面には、同法第七十八条の四第一項の情報の内容が記載された文書であって、同項の規定により提供されたものを添付しなければならない。</span></p><p class="para" id="a19-p4"><span class="pno">4</span><span class="body-text">第一項の書面は、相手方に送達しなければならない。</span></p></article>
+<article class="art" id="a20" data-path="第二章　婚姻関係訴訟の特例　＞　第一節　附帯処分等"><span class="anchor-alias" id="Mp-At_20"></span><div class="art-tools"><button type="button" data-anchor="a20" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=7" target="_blank" rel="noopener" title="原本PDFの7ページを開きます">原本 p.7</a></div><p class="caption">（事実の調査・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_33" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十三条</a>等）</p><p class="para" id="a20-p1"><a class="art-no" href="#a20" data-kan="第二十条" data-num="第20条">第二十条</a><span class="body-text">婚姻の取消し又は離婚の訴えに係る訴訟において、事実の調査は、審理の経過、証拠調べの結果その他の事情を考慮して必要があると認められるときは、医学、心理学、社会学、経済学その他の専門的知識を活用して行うように努めなければならない。</span></p><p class="para" id="a20-p2"><span class="pno">2</span><span class="body-text">裁判所は、前項の場合において、家庭裁判所調査官に同項の専門的知識を活用した事実の調査をさせるときは、その事実の調査を要する事項を特定するものとする。</span></p></article>
+<article class="art" id="a21" data-path="第二章　婚姻関係訴訟の特例　＞　第一節　附帯処分等"><span class="anchor-alias" id="Mp-At_21"></span><div class="art-tools"><button type="button" data-anchor="a21" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=7" target="_blank" rel="noopener" title="原本PDFの7ページを開きます">原本 p.7</a></div><p class="caption">（事実の調査における調査の嘱託等・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_33" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十三条</a>）</p><p class="para" id="a21-p1"><a class="art-no" href="#a21" data-kan="第二十一条" data-num="第21条">第二十一条</a><span class="body-text">事実の調査においては、裁判所は、必要な調査を官庁、公署その他適当であると認める者に嘱託し、又は銀行、信託会社、関係人の雇主その他の者に対し関係人の預金、信託財産、収入その他の事項に関して必要な報告を求めることができる。</span></p><p class="para" id="a21-p2"><span class="pno">2</span><span class="body-text">裁判所がする前項の嘱託の手続は、裁判所書記官がする。</span></p></article>
+<article class="art" id="a22" data-path="第二章　婚姻関係訴訟の特例　＞　第一節　附帯処分等"><span class="anchor-alias" id="Mp-At_22"></span><div class="art-tools"><button type="button" data-anchor="a22" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=7" target="_blank" rel="noopener" title="原本PDFの7ページを開きます">原本 p.7</a></div><p class="caption">（審問期日の通知・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_33" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十三条</a>）</p><p class="para" id="a22-p1"><a class="art-no" href="#a22" data-kan="第二十二条" data-num="第22条">第二十二条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_33" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十三条</a>（事実の調査）第四項の審問期日は、当事者に通知しなければならない。ただし、その通知をすることにより事実の調査に支障を生ずるおそれがあると認められるときは、この限りでない。</span></p></article>
+<article class="art" id="a22-2" data-path="第二章　婚姻関係訴訟の特例　＞　第一節　附帯処分等"><span class="anchor-alias" id="Mp-At_22_2"></span><div class="art-tools"><button type="button" data-anchor="a22-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=8" target="_blank" rel="noopener" title="原本PDFの8ページを開きます">原本 p.8</a></div><p class="caption">（音声の送受信による通話の方法による手続・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_33" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十三条</a>）</p><p class="para" id="a22-2-p1"><a class="art-no" href="#a22-2" data-kan="第二十二条の二" data-num="第22条の2">第二十二条の二</a><span class="body-text">裁判所又は受命裁判官若しくは受託裁判官（以下この項において「裁判所等」という。）及び当事者双方が音声の送受信により同時に通話をすることができる方法によって<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_33" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十三条</a>（事実の調査）第四項の審問期日における手続を行うときは、裁判所等は、次に掲げる事項を確認しなければならない。</span></p><ol class="items"><li id="a22-2-p1-1"><span class="mk">一</span><span class="tx">通話者</span></li><li id="a22-2-p1-2"><span class="mk">二</span><span class="tx">通話者の所在する場所の状況が当該方法によって手続を実施するために適切なものであること。</span></li></ol><p class="para" id="a22-2-p2"><span class="pno">2</span><span class="body-text">前項の手続を行ったときは、その旨及び同項第二号に掲げる事項を記録上明らかにしなければならない。</span></p></article>
+<article class="art" id="a23" data-path="第二章　婚姻関係訴訟の特例　＞　第一節　附帯処分等"><span class="anchor-alias" id="Mp-At_23"></span><div class="art-tools"><button type="button" data-anchor="a23" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=8" target="_blank" rel="noopener" title="原本PDFの8ページを開きます">原本 p.8</a></div><p class="caption">（事実の調査の要旨の記録化・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_33" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十三条</a>等）</p><p class="para" id="a23-p1"><a class="art-no" href="#a23" data-kan="第二十三条" data-num="第23条">第二十三条</a><span class="body-text">事実の調査については、裁判所書記官は、その要旨を記録上明らかにしておかなければならない。</span></p></article>
+<article class="art" id="a24" data-path="第二章　婚姻関係訴訟の特例　＞　第一節　附帯処分等"><span class="anchor-alias" id="Mp-At_24"></span><div class="art-tools"><button type="button" data-anchor="a24" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=8" target="_blank" rel="noopener" title="原本PDFの8ページを開きます">原本 p.8</a></div><p class="caption">（事実の調査の通知・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_33" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十三条</a>等）</p><p class="para" id="a24-p1"><a class="art-no" href="#a24" data-kan="第二十四条" data-num="第24条">第二十四条</a><span class="body-text">裁判所は、事実の調査をしたときは、特に必要がないと認める場合を除き、その旨を当事者に通知しなければならない。</span></p></article>
+<article class="art" id="a24-2" data-path="第二章　婚姻関係訴訟の特例　＞　第一節　附帯処分等"><span class="anchor-alias" id="Mp-At_24_2"></span><div class="art-tools"><button type="button" data-anchor="a24-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=8" target="_blank" rel="noopener" title="原本PDFの8ページを開きます">原本 p.8</a></div><p class="caption">（家庭裁判所調査官の除斥及び回避・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_34_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十四条の二</a>）</p><p class="para" id="a24-2-p1"><a class="art-no" href="#a24-2" data-kan="第二十四条の二" data-num="第24条の2">第二十四条の二</a><span class="body-text"><a class="ref ref-rule" href="100.html#a10" title="この規則集の中を開きます">民事訴訟規則第十条</a>から<a class="ref ref-self" href="#a12">第十二条</a>まで（除斥又は忌避の申立ての方式等、除斥又は忌避についての裁判官の意見陳述及び裁判官の回避）の規定（忌避に関する部分を除く。）は、家庭裁判所調査官について準用する。</span></p></article>
+<article class="art" id="a25" data-path="第二章　婚姻関係訴訟の特例　＞　第一節　附帯処分等"><span class="anchor-alias" id="Mp-At_25"></span><div class="art-tools"><button type="button" data-anchor="a25" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=8" target="_blank" rel="noopener" title="原本PDFの8ページを開きます">原本 p.8</a></div><p class="caption">（事実調査部分の閲覧等の許可・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_35" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十五条</a>）</p><p class="para" id="a25-p1"><a class="art-no" href="#a25" data-kan="第二十五条" data-num="第25条">第二十五条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_35" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十五条</a>（事実調査部分の閲覧等）第二項又は第三項の規定により事実調査部分の閲覧等を許可する決定においては、当該事実調査部分中閲覧等を許可する部分を特定しなければならない。</span></p></article>
+<article class="art" id="a26" data-path="第二章　婚姻関係訴訟の特例　＞　第一節　附帯処分等"><span class="anchor-alias" id="Mp-At_26"></span><div class="art-tools"><button type="button" data-anchor="a26" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=8" target="_blank" rel="noopener" title="原本PDFの8ページを開きます">原本 p.8</a></div><p class="caption">（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_35" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十五条</a>第四項又は第六項の即時抗告に係る抗告状の記載事項等・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_35" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十五条</a>）</p><p class="para" id="a26-p1"><a class="art-no" href="#a26" data-kan="第二十六条" data-num="第26条">第二十六条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_35" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十五条</a>（事実調査部分の閲覧等）第四項又は第六項の即時抗告をするときは、抗告状には、原裁判の取消し又は変更を求める事由を具体的に記載しなければならない。</span></p><p class="para" id="a26-p2"><span class="pno">2</span><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_35" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十五条</a>第四項又は第六項の即時抗告については、<a class="ref ref-rule" href="100.html#a207" title="この規則集の中を開きます">民事訴訟規則第二百七条</a>（原裁判の取消し事由等を記載した書面）の規定は、適用しない。</span></p></article>
+<article class="art" id="a27" data-path="第二章　婚姻関係訴訟の特例　＞　第一節　附帯処分等"><span class="anchor-alias" id="Mp-At_27"></span><div class="art-tools"><button type="button" data-anchor="a27" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=8" target="_blank" rel="noopener" title="原本PDFの8ページを開きます">原本 p.8</a></div><p class="caption">（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_35" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十五条</a>第四項の即時抗告に係る記録の送付・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_35" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十五条</a>）</p><p class="para" id="a27-p1"><a class="art-no" href="#a27" data-kan="第二十七条" data-num="第27条">第二十七条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_35" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十五条</a>（事実調査部分の閲覧等）第四項の即時抗告があった場合において、原裁判所が人事訴訟に係る事件の記録を送付する必要がないと認めたときは、<a class="ref ref-rule" href="100.html#a205" title="この規則集の中を開きます">民事訴訟規則第二百五条</a>（控訴又は上告の規定の準用）において準用する同規則第百七十四条（控訴提起による事件送付）第二項の規定にかかわらず、原裁判所の裁判所書記官は、抗告事件の記録のみを抗告裁判所の裁判所書記官に送付すれば足りる。</span></p><p class="para" id="a27-p2"><span class="pno">2</span><span class="body-text">前項の規定により抗告事件の記録が送付された場合において、抗告裁判所が同項の人事訴訟に係る事件の記録が必要であると認めたときは、抗告裁判所の裁判所書記官は、速やかに、その送付を原裁判所の裁判所書記官に求めなければならない。</span></p></article>
+<article class="art" id="a28" data-path="第二章　婚姻関係訴訟の特例　＞　第一節　附帯処分等"><span class="anchor-alias" id="Mp-At_28"></span><div class="art-tools"><button type="button" data-anchor="a28" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=9" target="_blank" rel="noopener" title="原本PDFの9ページを開きます">原本 p.9</a></div><p class="caption">（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_35" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十五条</a>第六項の即時抗告に係る記録の送付・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_35" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十五条</a>）</p><p class="para" id="a28-p1"><a class="art-no" href="#a28" data-kan="第二十八条" data-num="第28条">第二十八条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_35" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十五条</a>（事実調査部分の閲覧等）第六項の即時抗告があったときは、前条（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_35" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十五条</a>第四項の即時抗告に係る記録の送付）の規定にかかわらず、原裁判所の裁判所書記官は、抗告事件の記録のみを抗告裁判所の裁判所書記官に送付するものとする。</span></p><p class="para" id="a28-p2"><span class="pno">2</span><span class="body-text">前項の場合には、同項の記録に、抗告事件についての原裁判所の意見を記載した書面及び抗告事件の審理に参考となる資料を添付しなければならない。</span></p></article>
+<article class="art" id="a29" data-path="第二章　婚姻関係訴訟の特例　＞　第一節　附帯処分等"><span class="anchor-alias" id="Mp-At_29"></span><div class="art-tools"><button type="button" data-anchor="a29" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=9" target="_blank" rel="noopener" title="原本PDFの9ページを開きます">原本 p.9</a></div><p class="caption">（協議上の離婚による婚姻の終了の場合の提出書類等・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_36" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十六条</a>）</p><p class="para" id="a29-p1"><a class="art-no" href="#a29" data-kan="第二十九条" data-num="第29条">第二十九条</a><span class="body-text">婚姻の取消し又は離婚の訴えに係る訴訟の係属中に当該訴えに係る婚姻の当事者が協議上の離婚をした場合において、当該訴えの取下げをしようとする者は、既に附帯処分の申立てがされており、かつ、当該申立ての取下げがされないときは、当該訴えの取下げの書面とともに、当該訴えに係る婚姻の当事者が協議上の離婚をしたことを証する戸籍の謄本その他の書類を受訴裁判所に提出しなければならない。</span></p><p class="para" id="a29-p2"><span class="pno">2</span><span class="body-text">前項の場合には、受訴裁判所は、当事者双方から、同項の附帯処分に係る事項がその協議上の離婚に際して定められているかどうかを聴かなければならない。</span></p></article>
+<h4 class="div-head" id="d55" data-path="第二節　和解並びに請求の放棄及び認諾"><span class="lbl">第二節</span>　和解並びに請求の放棄及び認諾</h4>
+<article class="art" id="a30" data-path="第二章　婚姻関係訴訟の特例　＞　第二節　和解並びに請求の放棄及び認諾"><span class="anchor-alias" id="Mp-At_30"></span><div class="art-tools"><button type="button" data-anchor="a30" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=9" target="_blank" rel="noopener" title="原本PDFの9ページを開きます">原本 p.9</a></div><p class="caption">（進行協議期日における請求の放棄及び認諾・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_37" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十七条</a>）</p><p class="para" id="a30-p1"><a class="art-no" href="#a30" data-kan="第三十条" data-num="第30条">第三十条</a><span class="body-text">離婚の訴えに係る訴訟における請求の放棄及び認諾については、<a class="ref ref-self" href="#a14">第十四条</a>（進行協議期日における請求の放棄及び認諾）の規定にかかわらず、<a class="ref ref-rule" href="100.html#a95" title="この規則集の中を開きます">民事訴訟規則第九十五条</a>（進行協議期日）第二項の規定を適用する。ただし、請求の認諾については、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_37" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十七条</a>（和解並びに請求の放棄及び認諾）第一項ただし書に規定する場合に限る。</span></p><p class="para" id="a30-p2"><span class="pno">2</span><span class="body-text">進行協議期日に出頭しないで<a class="ref ref-rule" href="100.html#a96" title="この規則集の中を開きます">民事訴訟規則第九十六条</a>（音声の送受信による通話の方法による進行協議期日）第一項の手続に関与した当事者は、前項の規定にかかわらず、請求の認諾をすることができない。ただし、当該期日における手続が映像と音声の送受信により相手の状態を相互に認識しながら通話をすることができる方法によって行われた場合には、この限りでない。</span></p></article>
+<article class="art" id="a30-2" data-path="第二章　婚姻関係訴訟の特例　＞　第二節　和解並びに請求の放棄及び認諾"><span class="anchor-alias" id="Mp-At_30_2"></span><div class="art-tools"><button type="button" data-anchor="a30-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=9" target="_blank" rel="noopener" title="原本PDFの9ページを開きます">原本 p.9</a></div><p class="caption">（和解等に係る調書の更正決定・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_37" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十七条</a>）</p><p class="para" id="a30-2-p1"><a class="art-no" href="#a30-2" data-kan="第三十条の二" data-num="第30条の2">第三十条の二</a><span class="body-text"><a class="ref ref-self" href="#a18-12">第十八条の十二</a>（更正決定等の方式）第一項の規定は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_37" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十七条</a><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000109#Mp-At_267_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第二項において読み替えて適用する民事訴訟法第二百六十七条の二</a>（和解等に係る電子調書の更正決定）第一項の規定による離婚の訴えに係る訴訟における和解（これにより離婚がされるものに限る。）並びに請求の放棄及び認諾に係る調書の更正決定について準用する。</span></p></article>
+<article class="art" id="a31" data-path="第二章　婚姻関係訴訟の特例　＞　第二節　和解並びに請求の放棄及び認諾"><span class="anchor-alias" id="Mp-At_31"></span><div class="art-tools"><button type="button" data-anchor="a31" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=10" target="_blank" rel="noopener" title="原本PDFの10ページを開きます">原本 p.10</a></div><p class="caption">（戸籍事務管掌者に対する和解及び請求の認諾の通知・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_37" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十七条</a>）</p><p class="para" id="a31-p1"><a class="art-no" href="#a31" data-kan="第三十一条" data-num="第31条">第三十一条</a><span class="body-text"><a class="ref ref-self" href="#a17">第十七条</a>（戸籍事務管掌者に対する判決確定の通知）の規定は、離婚の訴えに係る訴訟における和解（これにより離婚がされるものに限る。）又は請求の認諾が調書に記載された場合について準用する。</span></p></article>
+<h4 class="div-head" id="d59" data-path="第三節　履行の確保"><span class="lbl">第三節</span>　履行の確保</h4>
+<article class="art" id="a32" data-path="第二章　婚姻関係訴訟の特例　＞　第三節　履行の確保"><span class="anchor-alias" id="Mp-At_32"></span><div class="art-tools"><button type="button" data-anchor="a32" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=10" target="_blank" rel="noopener" title="原本PDFの10ページを開きます">原本 p.10</a></div><p class="caption">（履行の確保の手続・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_39" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十九条</a>）</p><p class="para" id="a32-p1"><a class="art-no" href="#a32" data-kan="第三十二条" data-num="第32条">第三十二条</a><span class="body-text">家庭裁判所は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_39" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第三十九条</a>（履行命令）第一項（同条第三項において準用する場合を含む。）の規定により義務の履行を命ずる場合には、同時に、義務者に対しその違反に対する法律上の制裁を告知しなければならない。</span></p></article>
+<h3 class="div-head" id="d61" data-path="第三章　実親子関係訴訟の特例"><span class="lbl">第三章</span>　実親子関係訴訟の特例</h3>
+<article class="art" id="a33" data-path="第三章　実親子関係訴訟の特例"><span class="anchor-alias" id="Mp-At_33"></span><div class="art-tools"><button type="button" data-anchor="a33" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=10" target="_blank" rel="noopener" title="原本PDFの10ページを開きます">原本 p.10</a></div><p class="caption">（訴訟手続の受継の申立書の添付書類・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_41" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四十一条</a>等）</p><p class="para" id="a33-p1"><a class="art-no" href="#a33" data-kan="第三十三条" data-num="第33条">第三十三条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_41" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四十一条</a>（嫡出否認の訴えの当事者等）第二項（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_43" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四十三条</a>（認知の無効の訴えの当事者等）第一項において読み替えて準用する場合を含む。以下この条において同じ。）、第四十三条第三項又は第四十四条（認知の訴えの当事者等）第三項の規定による訴訟手続の受継の申立てをするときは、申立書には、訴訟手続を受け継ぐ者が<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_41" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四十一条</a>第二項、第四十三条第三項又は第四十四条第三項の規定により訴訟手続を受け継ぐことができる者であることを明らかにするために必要な戸籍の謄本その他の書類を添付しなければならない。</span></p></article>
+<article class="art" id="a34" data-path="第三章　実親子関係訴訟の特例"><span class="anchor-alias" id="Mp-At_34"></span><div class="art-tools"><button type="button" data-anchor="a34" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=10" target="_blank" rel="noopener" title="原本PDFの10ページを開きます">原本 p.10</a></div><p class="caption">（嫡出否認の訴えの訴状の添付書類）</p><p class="para" id="a34-p1"><a class="art-no" href="#a34" data-kan="第三十四条" data-num="第34条">第三十四条</a><span class="body-text">民法（明治二十九年法律第八十九号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/129AC0000000089#Mp-At_772" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第七百七十二条</a>（嫡出の推定）第三項の規定により父が定められる子について嫡出否認の訴えを提起するときは、訴状には、同法第七百七十四条（嫡出の否認）第四項に規定する前夫の氏名及び住所又は居所を明らかにするために必要な戸籍の謄本その他の書類を添付しなければならない。</span></p></article>
+<article class="art" id="a35" data-path="第三章　実親子関係訴訟の特例"><span class="anchor-alias" id="Mp-At_35"></span><div class="art-tools"><button type="button" data-anchor="a35" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=10" target="_blank" rel="noopener" title="原本PDFの10ページを開きます">原本 p.10</a></div><p class="caption">（通知する判決の内容等・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_42" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四十二条</a>）</p><p class="para" id="a35-p1"><a class="art-no" href="#a35" data-kan="第三十五条" data-num="第35条">第三十五条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_42" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四十二条</a>（嫡出否認の判決の通知）の規定による通知をする判決の内容は、次に掲げるものとする。</span></p><ol class="items"><li id="a35-p1-1"><span class="mk">一</span><span class="tx">主文</span></li><li id="a35-p1-2"><span class="mk">二</span><span class="tx">子が嫡出であることが否認された父の氏名</span></li><li id="a35-p1-3"><span class="mk">三</span><span class="tx">子の氏名及び生年月日</span></li></ol><p class="para" id="a35-p2"><span class="pno">2</span><span class="body-text">前項に規定する通知をする場合において、裁判所書記官は、同項の判決が確定した日を通知するものとする。</span></p></article>
+<h3 class="div-head" id="d65" data-path="第四章　養子縁組関係訴訟の特例"><span class="lbl">第四章</span>　養子縁組関係訴訟の特例</h3>
+<article class="art" id="a36" data-path="第四章　養子縁組関係訴訟の特例"><span class="anchor-alias" id="Mp-At_36"></span><div class="art-tools"><button type="button" data-anchor="a36" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=10" target="_blank" rel="noopener" title="原本PDFの10ページを開きます">原本 p.10</a></div><p class="caption">（進行協議期日における請求の放棄及び認諾・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_46" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四十六条</a>）</p><p class="para" id="a36-p1"><a class="art-no" href="#a36" data-kan="第三十六条" data-num="第36条">第三十六条</a><span class="body-text"><a class="ref ref-self" href="#a30">第三十条</a>（進行協議期日における請求の放棄及び認諾）第一項本文及び第二項の規定は、離縁の訴えに係る訴訟における請求の放棄及び認諾について準用する。</span></p></article>
+<article class="art" id="a36-2" data-path="第四章　養子縁組関係訴訟の特例"><span class="anchor-alias" id="Mp-At_36_2"></span><div class="art-tools"><button type="button" data-anchor="a36-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=11" target="_blank" rel="noopener" title="原本PDFの11ページを開きます">原本 p.11</a></div><p class="caption">（和解等に係る調書の更正決定・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_46" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四十六条</a>）</p><p class="para" id="a36-2-p1"><a class="art-no" href="#a36-2" data-kan="第三十六条の二" data-num="第36条の2">第三十六条の二</a><span class="body-text"><a class="ref ref-self" href="#a30-2">第三十条の二</a>（和解等に係る調書の更正決定）の規定は、離縁の訴えに係る訴訟における和解（これにより離縁がされるものに限る。）並びに請求の放棄及び認諾について準用する。</span></p></article>
+<article class="art" id="a37" data-path="第四章　養子縁組関係訴訟の特例"><span class="anchor-alias" id="Mp-At_37"></span><div class="art-tools"><button type="button" data-anchor="a37" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=11" target="_blank" rel="noopener" title="原本PDFの11ページを開きます">原本 p.11</a></div><p class="caption">（戸籍事務管掌者に対する和解及び請求の認諾の通知・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/415AC0000000109#Mp-At_46" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第四十六条</a>）</p><p class="para" id="a37-p1"><a class="art-no" href="#a37" data-kan="第三十七条" data-num="第37条">第三十七条</a><span class="body-text"><a class="ref ref-self" href="#a17">第十七条</a>（戸籍事務管掌者に対する判決確定の通知）の規定は、離縁の訴えに係る訴訟における和解（これにより離縁がされるものに限る。）又は請求の認諾が調書に記載された場合について準用する。</span></p></article>
+<h2 class="div-head" id="sup1" data-path="附則　抄"><span class="lbl">附則</span>　抄</h2>
+<article class="art" id="sup1-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup1-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=11" target="_blank" rel="noopener" title="原本PDFの11ページを開きます">原本 p.11</a></div><p class="caption">（施行期日）</p><p class="para" id="sup1-a1-p1"><a class="art-no" href="#sup1-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、法の施行の日から施行する。</span></p></article>
+<article class="art" id="sup1-a2" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup1-a2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=11" target="_blank" rel="noopener" title="原本PDFの11ページを開きます">原本 p.11</a></div><p class="caption">（経過措置）</p><p class="para" id="sup1-a2-p1"><a class="art-no" href="#sup1-a2" data-kan="第二条" data-num="第2条">第二条</a><span class="body-text">この規則の規定は、法の附則に特別の定めがある場合を除き、この規則の施行前に生じた事項にも適用する。ただし、この規則の施行前に民事訴訟規則により生じた効力を妨げない。</span></p></article>
+<h2 class="div-head" id="sup2" data-path="附則　（平成一七年二月七日最高裁判所規則第四号）"><span class="lbl">附則</span>　（平成一七年二月七日最高裁判所規則第四号）</h2>
+<article class="art noarticle" id="sup-body-1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=11" target="_blank" rel="noopener" title="原本PDFの11ページを開きます">原本 p.11</a></div><p class="para" id="sup-body-1-p1"><span class="body-text">この規則は、民法の一部を改正する法律（平成一六年法律第百四十七号）の施行の日（平成一七年四月一日）から施行する。</span></p></article>
+<h2 class="div-head" id="sup3" data-path="附則　（平成一八年一二月六日最高裁判所規則第一三号）"><span class="lbl">附則</span>　（平成一八年一二月六日最高裁判所規則第一三号）</h2>
+<article class="art noarticle" id="sup-body-2" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=11" target="_blank" rel="noopener" title="原本PDFの11ページを開きます">原本 p.11</a></div><p class="para" id="sup-body-2-p1"><span class="body-text">この規則は、平成十九年四月一日から施行する。</span></p></article>
+<h2 class="div-head" id="sup4" data-path="附則　（平成二四年七月一七日最高裁判所規則第九号） 抄"><span class="lbl">附則</span>　（平成二四年七月一七日最高裁判所規則第九号） 抄</h2>
+<article class="art" id="sup4-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup4-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=11" target="_blank" rel="noopener" title="原本PDFの11ページを開きます">原本 p.11</a></div><p class="caption">（施行期日）</p><p class="para" id="sup4-a1-p1"><a class="art-no" href="#sup4-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、非訟事件手続法（平成二十三年法律第五十一号）の施行の日（平成二五年一月一日）から施行する。</span></p></article>
+<article class="art" id="sup4-a4" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup4-a4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=11" target="_blank" rel="noopener" title="原本PDFの11ページを開きます">原本 p.11</a></div><p class="caption">（人事訴訟規則の一部改正に伴う経過措置）</p><p class="para" id="sup4-a4-p1"><a class="art-no" href="#sup4-a4" data-kan="第四条" data-num="第4条">第四条</a><span class="body-text">整備法の施行前に旧家事審判法第十八条第一項の規定により申し立てられた調停に係る事件については、家事事件手続法（平成二十三年法律第五十二号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/423AC0000000052#Mp-At_257" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第二百五十七条</a>第一項の規定により申し立てられた調停に係る事件とみなして、<a class="ref ref-self" href="#a6">第十六条の規定による改正後の人事訴訟規則第六条</a>の規定を準用する。</span></p></article>
+<h2 class="div-head" id="sup5" data-path="附則　（平成二七年六月二九日最高裁判所規則第六号） 抄"><span class="lbl">附則</span>　（平成二七年六月二九日最高裁判所規則第六号） 抄</h2>
+<article class="art" id="sup5-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup5-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=11" target="_blank" rel="noopener" title="原本PDFの11ページを開きます">原本 p.11</a></div><p class="caption">（施行期日）</p><p class="para" id="sup5-a1-p1"><a class="art-no" href="#sup5-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、平成二八年一月一日から施行する。</span></p></article>
+<h2 class="div-head" id="sup6" data-path="附則　（平成二七年八月三日最高裁判所規則第八号）"><span class="lbl">附則</span>　（平成二七年八月三日最高裁判所規則第八号）</h2>
+<article class="art noarticle" id="sup-body-3" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=11" target="_blank" rel="noopener" title="原本PDFの11ページを開きます">原本 p.11</a></div><p class="para" id="sup-body-3-p1"><span class="body-text">この規則は、平成二七年十月一日から施行する。</span></p></article>
+<h2 class="div-head" id="sup7" data-path="附則　（令和四年一一月七日最高裁判所規則第一七号） 抄"><span class="lbl">附則</span>　（令和四年一一月七日最高裁判所規則第一七号） 抄</h2>
+<article class="art" id="sup7-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup7-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=11" target="_blank" rel="noopener" title="原本PDFの11ページを開きます">原本 p.11</a></div><p class="caption">（施行期日）</p><p class="para" id="sup7-a1-p1"><a class="art-no" href="#sup7-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、民事訴訟法等の一部を改正する法律（令和四年法律第四十八号。以下この条において「改正法」という。）附則<a class="ref ref-self" href="#a1">第一条</a>第二号に掲げる規定の施行の日（令和五年二月二〇日）から施行する。ただし、次の各号に掲げる規定は、当該各号に定める日から施行する。</span></p><ol class="items"><li id="sup7-a1-p1-1"><span class="mk">一</span><span class="tx">第一条中<a class="ref ref-rule" href="100.html#a32" title="この規則集の中を開きます">民事訴訟規則第三十二条</a>、第七十七条、第七十八条、第九十六条及び第百六十三条第一項の改正規定、<a class="ref ref-self" href="#a14">第十四条</a>の規定、第十八条中<a class="ref ref-rule" href="107.html#a37" title="この規則集の中を開きます">労働審判規則第三十七条</a>の改正規定（「第七十七条」を「第七十七条前段」に改める部分に限る。）、第二十条中<a class="ref ref-rule" href="500.html#a21" title="この規則集の中を開きます">非訟事件手続規則第二十一条</a>及び第五十条の改正規定、第二十一条中<a class="ref ref-rule" href="400.html#a33" title="この規則集の中を開きます">家事事件手続規則第三十三条</a>及び第百二十六条第二項の改正規定並びに<a class="ref ref-self" href="#a22">第二十二条</a>中国際的な子の奪取の民事上の側面に関する条約の実施に関する法律による子の返還に関する事件の手続等に関する規則第二十三条及び第五十三条第一項の改正規定 改正法附則<a class="ref ref-self" href="#a1">第一条</a>第三号に掲げる規定の施行の日（令和五年三月一日）</span></li><li id="sup7-a1-p1-2"><span class="mk">二</span><span class="tx"><a class="ref ref-self" href="#a1">第一条</a>中民事訴訟規則目次の改正規定（「<a class="ref ref-self" href="#a31">第三十一条</a>」を「<a class="ref ref-self" href="#a30-2">第三十条の二</a>」に改める部分に限る。）及び同規則第一編第五章第一節中<a class="ref ref-self" href="#a31">第三十一条</a>の前に二条を加える改正規定、<a class="ref ref-self" href="#a3">第三条</a>の規定、<a class="ref ref-self" href="#a6">第六条</a>の規定、第七条中<a class="ref ref-rule" href="200.html#a15-2" title="この規則集の中を開きます">民事執行規則第十五条の二</a>の改正規定、第八条中<a class="ref ref-rule" href="201.html#a6" title="この規則集の中を開きます">民事保全規則第六条</a>の改正規定、第十条中<a class="ref ref-rule" href="301.html#a11" title="この規則集の中を開きます">民事再生規則第十一条</a>の改正規定、第十二条中<a class="ref ref-rule" href="304.html#a12" title="この規則集の中を開きます">外国倒産処理手続の承認援助に関する規則第十二条</a>の改正規定、第十三条中<a class="ref ref-rule" href="302.html#a10" title="この規則集の中を開きます">会社更生規則第十条</a>の改正規定、<a class="ref ref-self" href="#a16">第十六条</a>の規定、第十七条中<a class="ref ref-rule" href="300.html#a12" title="この規則集の中を開きます">破産規則第十二条</a>の改正規定並びに<a class="ref ref-self" href="#a23">第二十三条</a>の規定 改正法附則<a class="ref ref-self" href="#a1">第一条</a>第四号に掲げる規定の施行の日</span></li><li id="sup7-a1-p1-3"><span class="mk">三</span><span class="tx"><a class="ref ref-self" href="#a15">第十五条</a>の規定 改正法附則<a class="ref ref-self" href="#a1">第一条</a>第五号に掲げる規定の施行の日</span></li></ol></article>
+<article class="art" id="sup7-a2" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup7-a2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=12" target="_blank" rel="noopener" title="原本PDFの12ページを開きます">原本 p.12</a></div><p class="caption">（調書の記載等に関する経過措置）</p><p class="para" id="sup7-a2-p1"><a class="art-no" href="#sup7-a2" data-kan="第二条" data-num="第2条">第二条</a><span class="body-text">この規則の施行前に行われた弁論準備手続の期日の調書については、第一条の規定による改正後の<a class="ref ref-rule" href="100.html#a88" title="この規則集の中を開きます">民事訴訟規則第八十八条</a>第三項の規定にかかわらず、なお従前の例による。</span></p><p class="para" id="sup7-a2-p2"><span class="pno">2</span><span class="body-text">この規則の施行前に行われた書面による準備手続における協議の結果の記録については、第一条の規定による改正後の<a class="ref ref-rule" href="100.html#a91" title="この規則集の中を開きます">民事訴訟規則第九十一条</a>第三項の規定にかかわらず、なお従前の例による。</span></p></article>
+<h2 class="div-head" id="sup8" data-path="附則　（令和五年一一月二二日最高裁判所規則第七号）"><span class="lbl">附則</span>　（令和五年一一月二二日最高裁判所規則第七号）</h2>
+<article class="art" id="sup8-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup8-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=12" target="_blank" rel="noopener" title="原本PDFの12ページを開きます">原本 p.12</a></div><p class="caption">（施行期日）</p><p class="para" id="sup8-a1-p1"><a class="art-no" href="#sup8-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、民事訴訟法等の一部を改正する法律（令和四年法律第百二号）の施行の日（令和六年四月一日）から施行する。</span></p></article>
+<h2 class="div-head" id="sup9" data-path="附則　（令和六年九月一七日最高裁判所規則第一四号）抄"><span class="lbl">附則</span>　（令和六年九月一七日最高裁判所規則第一四号）抄</h2>
+<article class="art" id="sup9-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup9-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=12" target="_blank" rel="noopener" title="原本PDFの12ページを開きます">原本 p.12</a></div><p class="caption">（施行期日）</p><p class="para" id="sup9-a1-p1"><a class="art-no" href="#sup9-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、民事訴訟法等の一部を改正する法律（令和四年法律第四十八号。以下「改正法」という。）の施行の日（令和八年五月二一日）（以下「施行日」という。）から施行する。ただし、第二条中<a class="ref ref-rule" href="101.html#a2-3" title="この規則集の中を開きます">民事訴訟費用等に関する規則第二条の三</a>から第二条の五までの改正規定は、公布の日から施行する。</span></p></article>
+<section class="raw" id="table-90" data-path="別表第一（第十六条関係）"><h3>別表第一（第十六条関係） <a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=13" target="_blank" rel="noopener" title="原本PDFの13ページを開きます">原本 p.13</a></h3><pre>項
+上欄
+下欄
+一 婚姻の無効の訴え
+夫婦の双方又は一方が死亡した後に訴えの提起があ
+った場合における婚姻の無効により嫡出でない子と
+なる者又はその代襲者。ただし、当該夫又は妻に嫡
+出子又はその代襲者がある場合に限る。
+二 協議上の離婚の無効の
+夫婦の双方又は一方が死亡した後に訴えの提起があ
+訴え
+った場合におけるその相続人。ただし、その相続人
+が、再婚をした当該夫又は妻の配偶者とともに相続
+した者であるときは、この限りでない。
+三 協議上の離婚の取消し
+夫又は妻が死亡した後に訴えの提起があった場合に
+の訴え
+おけるその相続人。ただし、その相続人が、再婚を
+した当該夫又は妻の配偶者とともに相続した者であ
+るときは、この限りでない。
+四 婚姻関係の存在の確認
+二の項に定める者
+の訴え
+五 婚姻関係の不存在の確
+夫婦の双方又は一方が死亡した後に訴えの提起があ
+認の訴え
+った場合における婚姻関係の不存在により嫡出でな
+い子となる者又はその代襲者。ただし、当該夫又は
+妻に嫡出子又はその代襲者がある場合に限る。
+六 認知の訴え
+父が死亡した後に訴えの提起があった場合における
+その相続人（父の妻で子又はその代襲者とともに相
+続したものを除く。）
+七 認知の無効の訴え
+子が死亡した後に訴えの提起があった場合における
+その代襲者で認知をした者の相続人であるもの又は
+相続人となるべきもの
+八 認知の取消しの訴え
+七の項に定める者
+九 父を定めることを目的
+前婚の配偶者又はその後婚の配偶者が死亡した後に
+とする訴え
+訴えの提起があった場合におけるその相続人（当該
+前婚の配偶者又はその後婚の配偶者の妻で子又はそ
+の代襲者とともに相続したものを除く。）
+十 実親子関係の存在の確
+子が死亡した後に訴えの提起があった場合における
+認の訴え
+その相続人（子の直系卑属及び子の配偶者で直系卑
+属又は直系尊属とともに相続したものを除く。）又
+は父若しくは母が死亡した後に訴えの提起があった
+場合におけるその相続人（当該父又は母の配偶者で
+直系卑属とともに相続したものを除く。）
+十一 実親子関係の不存在の
+子が死亡した後に訴えの提起があった場合における
+確認の訴え
+その代襲者で父又は母の相続人であるもの又は相続
+人となるべきもの
+十二 養子縁組の無効の訴え
+養子が死亡した後に訴えの提起があった場合におけ
+るその代襲者で養親の相続人であるもの又は相続人
+となるべきもの
+十三 養子縁組の取消しの訴
+養子が死亡した後に訴えの提起があった場合におけ
+え
+るその代襲者で養親の相続人となるべきもの
+十四 協議上の離縁の無効の
+養子が死亡した後に訴えの提起があった場合におけ
+訴え
+るその相続人（養子の直系卑属及び養子の配偶者で
+直系卑属又は直系尊属とともに相続したものを除
+く。）又は養親が死亡した後に訴えの提起があった
+場合におけるその相続人（当該養親の配偶者で直系
+卑属とともに相続したものを除く。）
+十五 協議上の離縁の取消し
+十四の項に定める者
+の訴え
+十六 養親子関係の存在の確
+十四の項に定める者
+認の訴え
+十七 養親子関係の不存在の
+十二の項に定める者
+確認の訴え
+（令五最裁規七・一部改正、令和六最裁規一四・一部改正）</pre></section>
+<section class="raw" id="table-91" data-path="別表第二（第十八条関係）"><h3>別表第二（第十八条関係） <a class="src" href="https://www.courts.go.jp/assets/20260521jinsokisoku.pdf#page=14" target="_blank" rel="noopener" title="原本PDFの14ページを開きます">原本 p.14</a></h3><pre>第一条第二項
+陳述の内容を電子調書に記録し、
+調書を作成し、記名押印し
+これを裁判所の使用に係る電子計
+なければ
+算機（入出力装置を含む。以下同
+じ。）に備えられたファイル（第
+三十三条の三（電磁的訴訟記録の
+閲覧等の方法等）第二項第一号を
+除き、以下単に「ファイル」とい
+う。）に記録しなければ
+第三条の二第一項
+電子判決書
+判決書
+第十五条第一項及び第
+書面又は電磁的記録により
+書面で
+二十三条第一項
+第十五条第四項及び第
+前三項
+第一項
+二百十一条第四項
+第二十三条第二項
+又は電磁的記録が私人により作成
+が私文書
+されたもの
+第二十四条第二項、第
+資料
+書面
+二十五条第一項及び第
+三項並びに第二十七条
+第二十五条第一項
+記載し、又は記録した書面又は電
+記載した書面
+磁的記録
+第二十六条前段
+記録した電磁的記録を作成し、こ
+記載した書面を作成し、当
+れをファイルに記録しなければ
+該書面に記名押印しなけれ
+ば
+第三十条の二第二項、
+に係る電子調書
+の調書
+第六十六条第一項、第
+六十七条第一項及び第
+三項、第六十九条、第
+七十六条の二第一項前
+段、第八十六条第一
+項、第八十八条第一項
+及び第三項並びに第九
+十三条
+第三十条の二第二項、
+記録しなければ
+記載しなければ
+第三十四条の七第二
+項、第六十六条第一
+項、第八十八条第三
+項、第九十三条、第百
+二十二条の二第二項、
+第百二十二条の三第二
+項
+第三十二条第四項、第
+電子調書
+調書
+三十四条の七第二項、
+第七十二条、第七十六
+条、第九十一条第二
+項、第百十六条第三
+項、第百十八条第二
+項、第百二十二条の二
+第二項、第百二十二条
+の三第二項、第百四十
+二条及び第百四十六条
+第一項
+第三十二条第四項、第
+記録させなければ
+記載させなければ
+八十六条第一項、第九
+十一条第三項、第九十
+六条第三項及び第百十
+八条第二項
+第三十三条第一項
+閲覧等の請求又は法第九十一条の
+閲覧若しくは謄写、その正
+三（訴訟に関する事項の証明）に
+本、謄本若しくは抄本の交
+規定する訴訟に関する事項を証明
+付、その複製又は訴訟に関
+した書面の交付若しくは当該事項
+する事項の証明書の交付
+を証明した電磁的記録の提供
+第三十三条第二項
+訴訟記録の閲覧等の請求
+請求（訴訟に関する事項の
+証明書の交付の請求を除
+く。）
+第三十九条及び第百四
+地方裁判所
+家庭裁判所
+条
+第四十七条第一項及び
+書類又は電磁的記録
+書類
+第四十七条の二第二項
+第四十七条の二第一項 書類又は電磁的記録の相手方
+書類の相手方
+書類又は電磁的記録について直送
+書類について直送（当事者
+（当事者が前条（書類又は電磁的
+の相手方に対する直接の送
+記録の送付）第二項又は第三項の
+付
+方法により相手方に対して直接送
+付すること
+第四十八条第一項及び
+交付又は電磁的記録の提供
+交付
+第二項
+第五十条の二
+電子決定書（法第百二十二条（判
+決定書
+決に関する規定の準用）において
+準用する法第二百五十二条（電子
+判決書）第一項の規定により作成
+される電磁的記録であって、決定
+に係るものをいう。第六十七条
+（口頭弁論に係る電子調書の実質
+的記録事項等）第一項第七号及び
+第百六十条（判決の更正決定等の
+方式）第一項において同じ。）
+電子調書に記録させる
+調書に記載させる
+第五十二条の七第八項 閲覧等若しくは電磁的証拠収集処
+閲覧等
+分記録の閲覧等
+交付若しくは当該事項を証明した
+交付
+電磁的記録の提供
+閲覧等又は電磁的証拠収集処分記
+閲覧等
+録の閲覧等
+交付又は当該事項を証明した電磁
+交付
+的記録の提供
+第五十四条
+同条第四項各号
+同条第四項第一号
+第六十六条第二項
+裁判長は、前項の電子調書の内容
+前項の調書には、裁判所書
+を確認するとともに、これを確認
+記官が記名押印し、裁判長
+したことを当該電子調書上明らか
+が認印しなければ
+にする措置を講じなければ
+第六十六条第三項
+当該電子調書に記録するととも
+付記して認印しなければ
+に、当該電子調書の内容を確認
+し、かつ、これを確認したことを
+当該電子調書上明らかにする措置
+を講じなければ
+記録すれば
+記載すれば
+第六十七条第一項及び
+記録し
+記載し
+第八十八条第一項
+第六十七条第一項第六
+記録
+記載
+号及び同条第二項並び
+に第百八十四条
+第六十七条第一項第七
+電子決定書又は電子命令書（法第
+書面
+号
+百二十二条（判決に関する規定の
+準用）において準用する法第二百
+五十二条（電子判決書）第一項の
+規定により作成される電磁的記録
+であって、命令に係るものをい
+う。）
+第六十七条第三項
+記録する
+記載する
+第六十七条第四項
+記録した電磁的記録を作成し、こ
+調書に記載しなければ
+れをファイルに記録しなければ
+第六十八条第一項
+の録音又は録画により作成された
+を録音テープ又はビデオテ
+電磁的記録をファイル
+ープ（これらに準ずる方法
+により一定の事項を記録す
+ることができる物を含
+む。）
+電子調書の記録
+調書の記載
+第六十八条第二項
+前条第一項（第三号に係る部分に
+証人等の陳述を記載した書
+限る。）の規定により電子調書に
+面を作成しなければ
+記録すべき事項を記録した電磁的
+記録を作成し、ファイルに記録し
+なければ
+第六十九条
+他の電磁的記録
+書面、写真、録音テープ、
+ビデオテープその他裁判所
+において適当と認めるもの
+これをファイルに記録して電子調
+訴訟記録に添付して調書
+書
+第七十一条
+速記に係る電磁的記録（以下「電
+速記録
+子速記録」という。）
+電子速記録を
+速記録を
+第七十二条
+電子速記録
+速記録
+ファイルに記録して
+訴訟記録に添付して
+第七十六条
+当該陳述の録音により作成された
+録音テープ
+電磁的記録
+第七十六条の二第一項
+記録した電磁的記録を作成し、こ
+記載した調書を作成し、記
+前段
+れをファイルに記録しなければ
+名押印しなければ
+第七十六条の二第二項 電磁的記録
+調書
+第八十条第三項
+の規定は答弁書について、第五十
+（第一号に係る部分に限
+五条（訴状の添付書類等）第三項
+る。）の規定は、答弁書
+及び第四項の規定は前項の書証の
+写しの添付
+第八十七条第一項及び
+書面又は電磁的方法により
+書面で
+第九十四条第一項
+第八十七条第二項
+につき、これを記載した書面の交
+を記載した書面を交付する
+付又はこれを記録した電磁的記録
+よう
+の提供をするよう
+第八十八条第四項
+弁論準備手続に係る電子調書
+弁論準備手続の調書
+口頭弁論に係る電子調書に
+口頭弁論の調書に
+第九十一条第二項
+記録させる
+記載させる
+第九十六条第三項
+電子調書を
+調書を
+電子調書に
+調書に
+第百八条第一項
+電子呼出状
+呼出状
+記録しなければ
+記載し、尋問事項書を添付
+しなければ
+第百十六条第三項
+の作成に用いる場合
+への添付
+第百二十七条
+前節（証人尋問）
+前節（証人尋問）及び人事
+訴訟規則（平成十五年最高
+裁判所規則第二十四号）第
+十八条の七（証人の宣誓）
+第百三十四条
+第百八条（電子呼出状の記録事項
+人事訴訟規則第十八条（民
+等）
+事訴訟規則の適用関係）第
+二項において読み替えて適
+用する第百八条（電子呼出
+状の記録事項等）第一項
+の電子呼出状
+の呼出状
+第二項、第四項及び第五項
+第二項及び第五項並びに同
+規則第十八条の七（証人の
+宣誓）第一項及び第二項
+第百四十二条
+記録すべき
+記載すべき
+第百四十六条第一項
+裁判所書記官は、法
+法
+画像情報を
+原本、謄本又は抄本は、
+第百四十六条第二項及
+第百四十二条（受命裁判官等の証
+人事訴訟規則第十八条（民
+び第百五十一条
+拠調べの電子調書）
+事訴訟規則の適用関係）第
+二項において読み替えて適
+用する第百四十二条（受命
+裁判官等の証拠調べの電子
+調書）及び同規則第十八条
+の九（受命裁判官等の証拠
+調べの調書）
+電子調書について
+調書について
+第百四十七条
+（書証の申出等）第一項から第三
+から前条まで（第百三十七
+項まで及び第百三十七条の二から
+条第三項及び第四項並びに
+前条まで（
+第百四十三条第三項を除
+く。）（書証の申出等、
+の規定
+及び人事訴訟規則第十八条
+の九（受命裁判官等の証拠
+調べの調書）の規定
+第百四十九条の二第一
+最高裁判所の細則で定めるところ
+当該電磁的記録
+項
+により、当該申出に係る電磁的記
+録の複製を第五十二条の十（電子
+情報処理組織）第一項の電子情報
+処理組織を使用する方法によりフ
+ァイルに記録し、又は電磁的記録
+の複製
+電磁的記録をいう
+書面をいう
+第百四十九条の二第一
+電子証拠説明書
+証拠説明書
+項及び第二項
+第百四十九条の二第二
+電磁的記録の複製
+電磁的記録を記録した記録
+項及び第百四十九条の
+媒体
+四
+第百四十九条の四
+提出等
+提出等）並びに人事訴訟規
+則第十八条の九（受命裁判
+官等の証拠調べの調書
+読み替える
+、人事訴訟規則第十八条の
+九中「同条の文書の写し」
+とあるのは「同項において
+読み替えて適用する同規則
+第百四十九条の二（電磁的
+記録に記録された情報の内
+容に係る証拠調べの申出の
+方式等）第一項の電磁的記
+録を記録した記録媒体」と
+読み替える
+第百五十五条第一項
+電子判決書が当該裁判官の作成に
+判決書に署名押印しなけれ
+係るものであることを示すととも
+ば
+に当該電子判決書の改変を防止す
+るために必要な措置を講じなけれ
+ば
+第百五十五条第二項
+電子判決書に前項の措置を講ずる
+判決書に署名押印すること
+ことに
+に
+、同項の措置を講ずるに先立っ
+判決書にその事由を付記し
+て、当該電子判決書にその事由を
+て署名押印しなければ
+記録しなければ
+第百八十四条
+控訴審の電子判決書又は電子判決
+控訴審の判決書又は人事訴
+書に代わる電子調書
+訟法（平成十五年法律第百
+九号）第二十九条（民事訴
+訟法の適用関係）第三項に
+おいて読み替えて適用する
+法第二百五十四条（言渡し
+の方式の特則）第二項の調
+書（以下「判決書に代わる
+調書」という。）
+第一審の電子判決書又は電子判決
+第一審の判決書又は判決書
+書に代わる電子調書
+に代わる調書
+第百八十九条第一項
+電子上告提起通知書（上告の提起
+上告提起通知書
+があった旨を通知するために裁判
+所書記官が作成する電磁的記録を
+いう。以下同じ。）
+第百八十九条第二項及
+電子上告提起通知書
+上告提起通知書
+び第三項
+第百八十九条第三項
+電子判決書又は電子判決書に代わ
+判決書又は判決書に代わる
+る電子調書
+調書
+第百九十四条
+による電子上告提起通知書
+による上告提起通知書
+第百九十五条
+被上告人（当該書面の送達につい
+被上告人の数に六を加えた
+て法第百九条の二（電子情報処理
+数の副本
+組織による送達）第一項ただし書
+の届出をしている者を除く。）の
+数の副本（法第百三十二条の十
+（電子情報処理組織による申立て
+等）第一項の規定により当該書面
+に記載すべき事項をファイルに記
+録した場合にあっては、当該事項
+を出力することにより作成した書
+面）
+第百九十九条第二項
+の規定は
+並びに人事訴訟規則第十八
+条の十三（上告提起の場合
+における費用の予納）の規
+定は
+第百九十四条中
+第百九十四条並びに同規則
+第十八条の十三中
+電子上告提起通知書」とあるのは
+上告提起通知書」とあるの
+「電子上告受理申立て通知書
+は「上告受理申立て通知書
+第二百九条
+第一項の
+第一項並びに人事訴訟規則
+第十八条の十三（上告提起
+の場合における費用の予
+納）の
+第百八十九条中
+第百八十九条及び同規則第
+十八条の十三中
+電子上告提起通知書」とあるのは
+上告提起通知書」とあるの
+「電子抗告許可申立て通知書
+は「抗告許可申立て通知書
+同条第一項
+第百八十九条第一項
+第二百十条第一項
+電子抗告提起通知書（法第三百三
+抗告提起通知書
+十条の抗告又は法第三百三十六条
+第一項の抗告があった旨を通知す
+るために裁判所書記官が作成する
+電磁的記録をいう。）
+第二百十条第二項
+電子抗告提起通知書
+抗告提起通知書
+電子抗告許可申立て通知書
+抗告許可申立て通知書
+（令六最裁規一四・追加）</pre></section>
+    </div>
+    <aside class="notes"><p>読み取りに関する注意</p><ul><li>PDF中の目次は読み飛ばし、条見出しから目次を再構成しました。</li><li>題名・制定文とみられる行を本文の前に検出しました：平成15年11月12日最高裁判所規則第２４号／改正 平成17年2月7日最高裁判所規則第４号／平成18年12月6日最高裁判所規則第１３号</li><li>各条の「原本」は https://www.courts.go.jp/assets/20260521jinsokisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。</li></ul></aside>
+    <div class="foot">出典：20260521jinsokisoku.pdf　／　最高裁規則ビューア 1.9.0 で 2026年09月02日 に変換　
+    条文の正確な内容は原本で確認してください。</div>
+  </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  "use strict";
+  var doc = document.getElementById("doc");
+  var input = document.getElementById("q");
+  var hitLabel = document.getElementById("hits");
+  var crumb = document.getElementById("crumb");
+  var toc = document.getElementById("toc");
+  var toast = document.getElementById("toast");
+  var pristine = doc.innerHTML;
+  var hits = [];
+  var cursor = -1;
+
+  function say(msg){
+    toast.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(say._t);
+    say._t = setTimeout(function(){ toast.classList.remove("show"); }, 1600);
+  }
+
+  /* ---------------------------------------------------------- 条番号の表記 */
+  var numeralBtn = document.getElementById("numeral");
+  function applyNumeral(useArabic){
+    var nodes = doc.querySelectorAll(".art-no");
+    for (var i = 0; i < nodes.length; i++){
+      var el = nodes[i];
+      var v = useArabic ? el.getAttribute("data-num") : el.getAttribute("data-kan");
+      if (v) el.textContent = v;
+    }
+    numeralBtn.setAttribute("aria-pressed", useArabic ? "true" : "false");
+  }
+  numeralBtn.addEventListener("click", function(){
+    var next = numeralBtn.getAttribute("aria-pressed") !== "true";
+    applyNumeral(next);
+    try { localStorage.setItem("rule-numeral", next ? "1" : "0"); } catch(e){}
+    pristine = doc.innerHTML;
+  });
+  try {
+    /* 既定の表記は原本に合わせてある。前回の切り替えが残っていればそれに従う */
+    var saved = localStorage.getItem("rule-numeral");
+    if (saved === "1" || saved === "0"){ applyNumeral(saved === "1"); pristine = doc.innerHTML; }
+  } catch(e){}
+
+  /* -------------------------------------------------------------- 検索処理 */
+  var SKIP = {SCRIPT:1, STYLE:1, MARK:1, BUTTON:1, A:1};   /* 原本リンク等の道具立ては検索対象にしない */
+  function highlight(term){
+    doc.innerHTML = pristine;
+    hits = [];
+    cursor = -1;
+    if (!term){ hitLabel.textContent = ""; refreshToc(""); return; }
+    var walker = document.createTreeWalker(doc, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        if (!n.nodeValue || n.nodeValue.indexOf(term) < 0) return NodeFilter.FILTER_REJECT;
+        if (n.parentNode && SKIP[n.parentNode.nodeName]) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var targets = [];
+    var node;
+    while ((node = walker.nextNode())) targets.push(node);
+    for (var i = 0; i < targets.length; i++){
+      var t = targets[i], text = t.nodeValue, pos = 0, frag = document.createDocumentFragment();
+      var idx;
+      while ((idx = text.indexOf(term, pos)) >= 0){
+        if (idx > pos) frag.appendChild(document.createTextNode(text.slice(pos, idx)));
+        var m = document.createElement("mark");
+        m.textContent = text.substr(idx, term.length);
+        frag.appendChild(m);
+        hits.push(m);
+        pos = idx + term.length;
+      }
+      if (pos < text.length) frag.appendChild(document.createTextNode(text.slice(pos)));
+      t.parentNode.replaceChild(frag, t);
+    }
+    hitLabel.textContent = hits.length ? "1 / " + hits.length : "該当なし";
+    refreshToc(term);
+    if (hits.length){ cursor = 0; focusHit(0, false); }
+  }
+  function focusHit(i, scroll){
+    if (!hits.length) return;
+    for (var k = 0; k < hits.length; k++) hits[k].classList.remove("live");
+    cursor = (i + hits.length) % hits.length;
+    hits[cursor].classList.add("live");
+    hitLabel.textContent = (cursor + 1) + " / " + hits.length;
+    if (scroll !== false) hits[cursor].scrollIntoView({block:"center", behavior:"instant"});
+  }
+  function refreshToc(term){
+    var links = toc.querySelectorAll("li.lv-art");
+    for (var i = 0; i < links.length; i++){
+      var li = links[i];
+      var body = (li.getAttribute("data-text") || "");
+      li.classList.toggle("hidden", !!term && body.indexOf(term) < 0);
+    }
+    var divs = toc.querySelectorAll("li.lv-div");
+    for (var j = divs.length - 1; j >= 0; j--){
+      var d = divs[j];
+      var kids = d.querySelectorAll("li:not(.hidden)");
+      d.classList.toggle("hidden", !!term && kids.length === 0);
+    }
+  }
+  var timer = null;
+  input.addEventListener("input", function(){
+    clearTimeout(timer);
+    var v = input.value.trim();
+    timer = setTimeout(function(){ highlight(v); }, 180);
+  });
+  input.addEventListener("keydown", function(e){
+    if (e.key === "Enter"){ e.preventDefault(); focusHit(cursor + (e.shiftKey ? -1 : 1)); }
+    if (e.key === "Escape"){ input.value = ""; highlight(""); input.blur(); }
+  });
+  document.getElementById("prev").addEventListener("click", function(){ focusHit(cursor - 1); });
+  document.getElementById("next").addEventListener("click", function(){ focusHit(cursor + 1); });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "/" && e.target === document.body){ e.preventDefault(); input.focus(); }
+  });
+
+  /* -------------------------------------------------- リンクのコピー・共有 */
+  doc.addEventListener("click", function(e){
+    var btn = e.target.closest ? e.target.closest("button[data-anchor]") : null;
+    if (!btn) return;
+    var anchor = btn.getAttribute("data-anchor");
+    var url = location.href.split("#")[0] + "#" + anchor;
+    history.replaceState(null, "", "#" + anchor);
+    var done = function(){ say("リンクをコピーしました"); };
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(done, function(){ legacyCopy(url, done); });
+    } else {
+      legacyCopy(url, done);
+    }
+  });
+  function legacyCopy(text, done){
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); done(); }
+    catch(err){ say("コピーできませんでした。アドレス欄からURLを控えてください"); }
+    document.body.removeChild(ta);
+  }
+
+  /* ------------------------------------------------ 現在位置の表示と目次連動 */
+  var watched = doc.querySelectorAll(".art[id], .div-head[id]");
+  var tocLinks = {};
+  var links = toc.querySelectorAll("a[href^='#']");
+  for (var i = 0; i < links.length; i++) tocLinks[links[i].getAttribute("href").slice(1)] = links[i];
+  var currentLink = null;
+  if ("IntersectionObserver" in window){
+    var visible = [];
+    var io = new IntersectionObserver(function(entries){
+      for (var i = 0; i < entries.length; i++){
+        var id = entries[i].target.id;
+        var at = visible.indexOf(id);
+        if (entries[i].isIntersecting){ if (at < 0) visible.push(id); }
+        else if (at >= 0){ visible.splice(at, 1); }
+      }
+      if (!visible.length) return;
+      var first = null;
+      for (var k = 0; k < watched.length; k++){
+        if (visible.indexOf(watched[k].id) >= 0){ first = watched[k]; break; }
+      }
+      if (!first) return;
+      crumb.textContent = first.getAttribute("data-path") || "";
+      var link = tocLinks[first.id];
+      if (link && link !== currentLink){
+        if (currentLink) currentLink.classList.remove("current");
+        link.classList.add("current");
+        currentLink = link;
+      }
+    }, {rootMargin:"-20% 0px -70% 0px"});
+    for (var w = 0; w < watched.length; w++) io.observe(watched[w]);
+  }
+
+  /* -------------------------------------------------------- 目次の開閉（狭幅） */
+  var opener = document.getElementById("toc-open");
+  if (opener){
+    opener.addEventListener("click", function(){ toc.classList.toggle("open"); });
+    toc.addEventListener("click", function(e){
+      if (e.target.tagName === "A") toc.classList.remove("open");
+    });
+  }
+})();
+</script>
+</body>
+</html>

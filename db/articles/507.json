@@ -1,0 +1,186 @@
+{
+ "rule_id": "507",
+ "title": "特定和解関係事件手続規則",
+ "enforcement_iso": "2024-04-01",
+ "url": "https://kmght.github.io/ksk/r/507.html",
+ "articles": [
+  {
+   "key": "1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "民事訴訟規則の準用",
+   "anchor": "a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "1_2",
+   "label": "第一条の二",
+   "short": "1条の2",
+   "caption": "催告",
+   "anchor": "a1-2",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "1_3",
+   "label": "第一条の三",
+   "short": "1条の3",
+   "caption": "事件の記録の閲覧等",
+   "anchor": "a1-3",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "1_4",
+   "label": "第一条の四",
+   "short": "1条の4",
+   "caption": "送達すべき書類の提出に代えて調書を作成した場合に送達すべき書類",
+   "anchor": "a1-4",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "1_5",
+   "label": "第一条の五",
+   "short": "1条の5",
+   "caption": "呼出状の公示送達",
+   "anchor": "a1-5",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "1_6",
+   "label": "第一条の六",
+   "short": "1条の6",
+   "caption": "決定及び命令の方式",
+   "anchor": "a1-6",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "1_7",
+   "label": "第一条の七",
+   "short": "1条の7",
+   "caption": "申立書の却下の命令に対する即時抗告等",
+   "anchor": "a1-7",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "1_8",
+   "label": "第一条の八",
+   "short": "1条の8",
+   "caption": "証人の宣誓",
+   "anchor": "a1-8",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "1_9",
+   "label": "第一条の九",
+   "short": "1条の9",
+   "caption": "鑑定人の宣誓",
+   "anchor": "a1-9",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "1_10",
+   "label": "第一条の十",
+   "short": "1条の10",
+   "caption": "受命裁判官等の証拠調べの調書",
+   "anchor": "a1-10",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "1_11",
+   "label": "第一条の十一",
+   "short": "1条の11",
+   "caption": "更正決定の方式",
+   "anchor": "a1-11",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "1_12",
+   "label": "第一条の十二",
+   "short": "1条の12",
+   "caption": "特別抗告等を提起する場合における費用の予納",
+   "anchor": "a1-12",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "2",
+   "label": "第二条",
+   "short": "2条",
+   "caption": "申立ての方式等",
+   "anchor": "a2",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "s2:1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "施行期日",
+   "anchor": "sup2-a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  }
+ ]
+}

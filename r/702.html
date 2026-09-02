@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>最高裁判所事務総局規則</title>
+<style>
+:root{
+  --paper:#ffffff;
+  --ink:#16181d;
+  --sub:#5f6875;
+  --rule:#dde2e9;
+  --chrome:#f4f6f9;
+  --accent:#14538a;
+  --accent-weak:#e7eff7;
+  --mark:#ffe08a;
+  --mark-live:#ff9d3d;
+  --gothic:"Yu Gothic UI","Yu Gothic","YuGothic","Hiragino Sans","Noto Sans JP","Meiryo",system-ui,sans-serif;
+  --mincho:"Yu Mincho","YuMincho","Hiragino Mincho ProN","Noto Serif JP","MS Mincho",serif;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:5.5rem}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--mincho);font-size:17px;line-height:1.9;
+  text-rendering:optimizeLegibility;
+}
+
+/* ---------------------------------------------------------------- ヘッダ */
+.top{
+  position:sticky;top:0;z-index:30;background:var(--chrome);
+  border-bottom:1px solid var(--rule);font-family:var(--gothic);
+}
+.top-inner{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;padding:.7rem 1.2rem}
+.law-title{font-size:1.12rem;font-weight:700;letter-spacing:.02em;margin:0}
+.law-number{font-size:.8rem;color:var(--sub);margin-left:.2rem}
+.top-tools{margin-left:auto;display:flex;align-items:center;gap:.5rem}
+.search-box{display:flex;align-items:center;gap:.35rem;background:var(--paper);
+  border:1px solid var(--rule);border-radius:2px;padding:.25rem .5rem}
+.search-box input{border:0;outline:0;font:inherit;font-size:.85rem;width:14rem;background:transparent;color:inherit}
+.hit-count{font-size:.78rem;color:var(--sub);min-width:4.2rem;text-align:right;font-variant-numeric:tabular-nums}
+button{font:inherit;font-family:var(--gothic);cursor:pointer}
+.btn{background:var(--paper);border:1px solid var(--rule);border-radius:2px;
+  color:var(--ink);font-size:.78rem;padding:.28rem .6rem;line-height:1.4}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.crumb{padding:.3rem 1.2rem;border-top:1px solid var(--rule);background:var(--paper);
+  font-family:var(--gothic);font-size:.78rem;color:var(--sub);min-height:1.7rem}
+
+/* ------------------------------------------------------------------ 骨格 */
+.wrap{display:grid;grid-template-columns:19rem minmax(0,1fr);align-items:start}
+.toc{
+  position:sticky;top:5.6rem;max-height:calc(100vh - 5.6rem);overflow-y:auto;
+  border-right:1px solid var(--rule);padding:1rem .6rem 4rem 1.2rem;
+  font-family:var(--gothic);font-size:.83rem;line-height:1.65;
+}
+.toc h2{font-size:.75rem;color:var(--sub);font-weight:700;margin:0 0 .6rem}
+.toc ul{list-style:none;margin:0;padding:0}
+.toc a{display:block;color:var(--ink);text-decoration:none;padding:.16rem .4rem;border-radius:2px}
+.toc a:hover{background:var(--accent-weak);color:var(--accent)}
+.toc a.current{background:var(--accent-weak);color:var(--accent);font-weight:700}
+.toc .div-1>a,.toc .div-2>a{font-weight:700}
+.toc .div-2{margin-top:.5rem}
+.toc .div-3,.toc .div-4,.toc .div-5{margin-top:.25rem}
+.toc .lv-art{padding-left:.9rem}
+.toc .lv-art.hidden,.toc .lv-div.hidden{display:none}
+.toc-toggle{background:none;border:0;color:var(--sub);padding:0 .3rem;font-size:.75rem}
+
+.doc{padding:2.2rem 2rem 8rem;max-width:44em}
+.doc-head{border-bottom:2px solid var(--ink);padding-bottom:.8rem;margin-bottom:2rem}
+.doc-head h1{font-size:1.5rem;margin:0 0 .3rem;letter-spacing:.04em}
+.doc-head .meta{font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+
+/* ------------------------------------------------------------------ 条文 */
+.div-head{font-family:var(--gothic);margin:2.6rem 0 1rem;scroll-margin-top:6rem}
+.div-head .lbl{color:var(--accent);font-weight:700}
+h2.div-head{font-size:1.12rem;border-bottom:1px solid var(--rule);padding-bottom:.35rem}
+h3.div-head{font-size:1.02rem}
+h4.div-head,h5.div-head,h6.div-head{font-size:.95rem}
+
+.art{position:relative;padding-left:2.6rem;margin:1.5rem 0 1.9rem;scroll-margin-top:6rem}
+.art:target{background:var(--accent-weak);box-shadow:-.4rem 0 0 var(--accent);border-radius:2px}
+.art-tools{position:absolute;left:0;top:.25rem;display:flex;flex-direction:column;gap:.2rem;
+  visibility:hidden}
+.art:hover .art-tools,.art:focus-within .art-tools,.art:target .art-tools{visibility:visible}
+.art-tools button,.art-tools a{background:none;border:0;color:var(--sub);font-size:.72rem;
+  font-family:var(--gothic);padding:.1rem .2rem;border-radius:2px;text-decoration:none;
+  white-space:nowrap;display:block}
+.art-tools button:hover,.art-tools a:hover{color:var(--accent);background:var(--accent-weak)}
+.raw h3 .src{font-size:.75rem;font-weight:400;color:var(--sub);margin-left:.5rem}
+.doc-head .src{color:var(--accent);text-decoration:none}
+.doc-head .src:hover{text-decoration:underline}
+.caption{font-family:var(--gothic);font-size:.88rem;font-weight:700;color:var(--sub);margin:0 0 .1rem}
+.amend-note{font-family:var(--gothic);font-size:.78rem;font-weight:400;color:var(--sub);margin:.1rem 0 0;text-align:right}
+h2 .amend-note,h3 .amend-note,h4 .amend-note,h5 .amend-note,h6 .amend-note{display:inline;text-align:left}
+.art-no{font-family:var(--gothic);font-weight:700;color:var(--accent);text-decoration:none;margin-right:.55em}
+.art-no:hover{text-decoration:underline}
+.para{margin:.35rem 0;text-indent:0}
+.para+.para{margin-top:.55rem}
+.pno{font-family:var(--gothic);color:var(--sub);font-size:.9em;margin-right:.5em;font-variant-numeric:tabular-nums}
+.deleted .body-text{color:var(--sub)}
+.art.noarticle .para{margin-top:0}
+
+ol.items{list-style:none;margin:.35rem 0 .35rem 1.1em;padding:0}
+ol.items>li{display:grid;grid-template-columns:2.4em minmax(0,1fr);margin:.2rem 0}
+ol.items .mk{font-family:var(--gothic);font-size:.9em;color:var(--sub);margin-right:.4em}
+ol.items ol.items{grid-column:1/-1;margin-left:1.2em}
+ol.items ol.items>li{grid-template-columns:2em minmax(0,1fr)}
+
+.raw{margin:1.6rem 0;scroll-margin-top:6rem}
+.raw h3{font-family:var(--gothic);font-size:1rem;margin:0 0 .4rem}
+.raw pre{font-family:var(--mincho);white-space:pre-wrap;margin:0;padding:.7rem .9rem;
+  background:var(--chrome);border:1px solid var(--rule);font-size:.92rem;line-height:1.75}
+
+.notes{margin:2.5rem 0 0;padding:.8rem 1rem;background:var(--chrome);
+  border-left:3px solid var(--accent);font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+.notes p{margin:0 0 .3rem;font-weight:700;color:var(--ink)}
+.notes ul{margin:0;padding-left:1.2rem}
+.foot{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);
+  font-family:var(--gothic);font-size:.75rem;color:var(--sub)}
+
+a.ref{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule)}
+a.ref:hover{color:var(--accent);border-bottom-color:var(--accent)}
+a.ref-egov{border-bottom-style:dotted}
+a.ref-rule{border-bottom-color:var(--accent)}
+mark{background:var(--mark);color:inherit;padding:0 .05em}
+mark.live{background:var(--mark-live)}
+.toast{position:fixed;left:50%;bottom:2rem;transform:translateX(-50%);
+  background:var(--ink);color:#fff;font-family:var(--gothic);font-size:.8rem;
+  padding:.5rem .9rem;border-radius:3px;pointer-events:none;z-index:60;display:none}
+.toast.show{display:block}
+
+.toc-open{display:none}
+@media (max-width:900px){
+  body{font-size:16px}
+  .wrap{grid-template-columns:minmax(0,1fr)}
+  .toc{position:fixed;inset:5.6rem auto 0 0;width:82vw;max-width:20rem;background:var(--paper);
+    z-index:25;box-shadow:0 0 0 100vmax rgba(0,0,0,.25);max-height:none;height:calc(100vh - 5.6rem);
+    display:none}
+  .toc.open{display:block}
+  .toc-open{display:inline-block}
+  .doc{padding:1.4rem 1.1rem 6rem}
+  .search-box input{width:8rem}
+  .art-tools{opacity:1;position:static;flex-direction:row;justify-content:flex-end;margin-bottom:.15rem}
+  .art-tools button,.art-tools a{border:1px solid var(--rule);border-radius:2px;
+    padding:.1rem .45rem;display:inline-block}
+  .art{padding-left:0}
+}
+
+@media print{
+  .top,.toc,.art-tools,.crumb,.toast{display:none!important}
+  a.ref{border-bottom:0}
+  .wrap{display:block}
+  .doc{max-width:none;padding:0}
+  body{font-size:10.5pt;line-height:1.7}
+  .art{page-break-inside:avoid}
+}
+
+.anchor-alias{position:absolute;scroll-margin-top:6rem}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <button type="button" class="btn toc-open" id="toc-open">目次</button>
+    <h1 class="law-title">最高裁判所事務総局規則</h1>
+    <span class="law-number">昭和22年12月1日最高裁判所規則第10号　／　令和6年5月1日施行</span>
+    <div class="top-tools">
+      <div class="search-box">
+        <input type="search" id="q" placeholder="条文を検索（/ キー）" aria-label="条文を検索">
+        <span class="hit-count" id="hits"></span>
+      </div>
+      <button type="button" class="btn" id="prev" title="前の該当箇所">前</button>
+      <button type="button" class="btn" id="next" title="次の該当箇所">次</button>
+      <button type="button" class="btn" id="numeral" aria-pressed="false"
+        title="条番号の表記を切り替える">123</button>
+    </div>
+  </div>
+  <div class="crumb" id="crumb"></div>
+</header>
+<div class="wrap">
+  <nav class="toc" id="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ul><li class="lv-art" data-text="改正 昭和２３年１０月１３日最高裁判所規則第２４号昭和２３年１２月２８日最高裁判所規則第４０号昭和２４年７月１日最高裁判所規則第１７号昭和２５年１月１７日最高裁判所規則第２号昭和２５年５月１日最高裁判所規則第１３号昭和２６年３月３１日最高裁判所規則第２号昭和２７年４月２３日最高裁判所規則第９号昭和２８年３月３０日最高裁判所規則第６号昭和３８年４月２２日最高裁判所規則第４号昭和４３年４月２０日最高裁判所規則第２号昭和５０年４月７日最高裁判所規則第２号昭和５６年３月１８日最高裁判所規則第１号令和６年３月１日最高裁判所規則第６号令和６年４月１８日最高裁判所規則第１１号最高裁判所事務局規則を次のように定める。最高裁判所事務総局規則（昭二三最裁規四〇・改称）"><a href="#body-1">本文</a></li><li class="lv-art" data-text="第一条1条最高裁判所事務総局に最高裁判所が定める員数の職員を置く。"><a href="#a1">第一条</a></li><li class="lv-art" data-text="第二条2条最高裁判所事務総局にその事務を分掌させるため、局及び課を置く。局にその事務を分掌させるため、課（以下「局の課」という。）及び室を置くことができる。"><a href="#a2">第二条</a></li><li class="lv-art" data-text="第三条3条最高裁判所事務総局に事務次長一人を置き、裁判所事務官を以てこれに充てる。事務次長は、事務総長を助け、事務総局の事務を整理し、各局課の事務を監督する。"><a href="#a3">第三条</a></li><li class="lv-art" data-text="第三条の二3条の2最高裁判所事務総局に審議官を置き、裁判所事務官をもつて充てる。審議官は、上司の命を受けて、事務総局の事務のうち重要な事項の企画及び立案に参画し、関係事務を総括整理する。"><a href="#a3-2">第三条の二</a></li><li class="lv-art" data-text="第三条の二の二3条の2の2最高裁判所事務総局にデジタル審議官を置き、裁判所事務官をもつて充てる。デジタル審議官は、上司の命を受けて、事務総局の事務のうちデジタル化の推進、情報セキュリティの確保、情報システムの整備及び管理並びに統計情報に関する重要な事項の企画及び立案に参画し、関係事務を総括整理する。"><a href="#a3-2-2">第三条の二の二</a></li><li class="lv-art" data-text="第三条の三3条の3最高裁判所事務総局に家庭審議官を置き、裁判所技官をもつて充てる。家庭審議官は、上司の命を受けて、事務総局の事務のうち家庭裁判所制度に関する重要な事項の企画及び立案に参画し、関係事務を総括整理する。"><a href="#a3-3">第三条の三</a></li><li class="lv-art" data-text="第三条の四3条の4最高裁判所事務総局に参事官（次項及び第三項において「事務総局参事官」という。）を置くことができる。事務総局参事官は、裁判所事務官をもつて充てる。事務総局参事官は、上司の命を受けて、事務総局の事務のうち重要な事項の企画及び立案に参画し、関係事務に関し必要な調整を行う。"><a href="#a3-4">第三条の四</a></li><li class="lv-art" data-text="第四条4条局及び課に局長又は課長を置き、裁判所事務官を以てこれに充てる。局長及び課長は、上司の命を受けて、その局又は課の事務を掌理する。"><a href="#a4">第四条</a></li><li class="lv-art" data-text="第四条の二4条の2最高裁判所事務総局に局又は課の所掌に属しない事務を所掌する職で課長に準ずるものを置くことができる。前項の職は、裁判所事務官をもつて充てる。"><a href="#a4-2">第四条の二</a></li><li class="lv-art" data-text="第五条5条局の課及び室に課長（以下「局の課長」という。）又は室長を置き、裁判所事務官又は裁判所技官を以てこれに充てる。局の課長及び室長は、上司の命を受けて、その課又は室の事務を掌理する。"><a href="#a5">第五条</a></li><li class="lv-art" data-text="第六条6条局に局の課又は室の所掌に属しない事務を所掌する職で局の課長に準ずるものを置くことができる。前項の職は、裁判所事務官又は裁判所技官を以てこれに充てる。"><a href="#a6">第六条</a></li><li class="lv-art" data-text="第六条の二6条の2局及び課に参事官を置くことができる。デジタル審議官の下に、参事官（第五項において「デジタル審議官付参事官」という。）を置くことができる。参事官は、裁判所事務官又は裁判所技官をもつて充てる。局又は課に置かれた参事官は、上司の命を受けて、その局又は課の事務のうち重要な事項の企画及び立案に参画する。デジタル審議官付参事官は、上司の命を受けて、デジタル審議官の職務のうち重要な事項の企画及び立案に参画する。"><a href="#a6-2">第六条の二</a></li><li class="lv-art" data-text="第七条7条局及び課に局付又は課付を置くことができる。デジタル審議官の下に、デジタル審議官付を置くことができる。局付、課付及びデジタル審議官付は、裁判所事務官をもつて充てる。局付及び課付は、上司の命を受けて、その局又は課の事務をつかさどる。デジタル審議官付は、上司の命を受けて、デジタル審議官の職務を助ける。"><a href="#a7">第七条</a></li><li class="lv-div div-1"><a href="#sup1">附則</a></li><li class="lv-div div-1"><a href="#sup2">附則　（昭和二三年一〇月一三日最高裁判所規則第二四号）</a></li><li class="lv-div div-1"><a href="#sup3">附則　（昭和二三年一二月二八日最高裁判所規則第四〇号）</a></li><li class="lv-div div-1"><a href="#sup4">附則　（昭和二四年七月一日最高裁判所規則第一七号）</a></li><li class="lv-div div-1"><a href="#sup5">附則　（昭和二五年一月一七日最高裁判所規則第二号）</a></li><li class="lv-div div-1"><a href="#sup6">附則　（昭和二五年五月一日最高裁判所規則第一三号）</a></li><li class="lv-div div-1"><a href="#sup7">附則　（昭和二六年三月三一日最高裁判所規則第二号）</a></li><li class="lv-div div-1"><a href="#sup8">附則　（昭和二七年四月二三日最高裁判所規則第九号）</a></li><li class="lv-div div-1"><a href="#sup9">附則　（昭和二八年三月三〇日最高裁判所規則第六号）</a></li><li class="lv-div div-1"><a href="#sup10">附則　（昭和三八年四月二二日最高裁判所規則第四号）</a></li><li class="lv-div div-1"><a href="#sup11">附則　（昭和四三年四月二〇日最高裁判所規則第二号）</a></li><li class="lv-div div-1"><a href="#sup12">附則　（昭和五〇年四月七日最高裁判所規則第二号）</a></li><li class="lv-div div-1"><a href="#sup13">附則　（昭和五六年三月一八日最高裁判所規則第一号）</a></li><li class="lv-div div-1"><a href="#sup14">附則　（令和六年三月一日最高裁判所規則第六号）</a></li><li class="lv-div div-1"><a href="#sup15">附則　（令和六年四月一八日最高裁判所規則第一一号）</a></li></ul>
+  </nav>
+  <main class="doc" id="doc-outer">
+    <div class="doc-head">
+      <h1>最高裁判所事務総局規則</h1>
+      <div class="meta">昭和22年12月1日最高裁判所規則第10号　／　令和6年5月1日施行　／　<a class="src" href="https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本PDF p.1</a></div>
+    </div>
+    <div id="doc">
+<article class="art noarticle" id="body-1" data-path=""><div class="art-tools"><button type="button" data-anchor="body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="body-1-p1"><span class="body-text">改正 昭和２３年１０月１３日最高裁判所規則第２４号昭和２３年１２月２８日最高裁判所規則第４０号昭和２４年７月１日最高裁判所規則第１７号昭和２５年１月１７日最高裁判所規則第２号昭和２５年５月１日最高裁判所規則第１３号昭和２６年３月３１日最高裁判所規則第２号昭和２７年４月２３日最高裁判所規則第９号昭和２８年３月３０日最高裁判所規則第６号昭和３８年４月２２日最高裁判所規則第４号昭和４３年４月２０日最高裁判所規則第２号昭和５０年４月７日最高裁判所規則第２号昭和５６年３月１８日最高裁判所規則第１号令和６年３月１日最高裁判所規則第６号令和６年４月１８日最高裁判所規則第１１号最高裁判所事務局規則を次のように定める。最高裁判所事務総局規則（昭二三最裁規四〇・改称）</span></p></article>
+<article class="art" id="a1" data-path=""><span class="anchor-alias" id="Mp-At_1"></span><div class="art-tools"><button type="button" data-anchor="a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="a1-p1"><a class="art-no" href="#a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">最高裁判所事務総局に最高裁判所が定める員数の職員を置く。</span></p><p class="amend-note">（昭二七最裁規九・全改、昭五六最裁規一・一部改正）</p></article>
+<article class="art" id="a2" data-path=""><span class="anchor-alias" id="Mp-At_2"></span><div class="art-tools"><button type="button" data-anchor="a2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="a2-p1"><a class="art-no" href="#a2" data-kan="第二条" data-num="第2条">第二条</a><span class="body-text">最高裁判所事務総局にその事務を分掌させるため、局及び課を置く。</span></p><p class="para" id="a2-p2"><span class="pno">2</span><span class="body-text">局にその事務を分掌させるため、課（以下「局の課」という。）及び室を置くことができる。</span></p><p class="amend-note">（昭二三最裁規四〇・昭二八最裁規六・昭三八最裁規四・昭四三最裁規二・一部改正）</p></article>
+<article class="art" id="a3" data-path=""><span class="anchor-alias" id="Mp-At_3"></span><div class="art-tools"><button type="button" data-anchor="a3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="a3-p1"><a class="art-no" href="#a3" data-kan="第三条" data-num="第3条">第三条</a><span class="body-text">最高裁判所事務総局に事務次長一人を置き、裁判所事務官を以てこれに充てる。</span></p><p class="para" id="a3-p2"><span class="pno">2</span><span class="body-text">事務次長は、事務総長を助け、事務総局の事務を整理し、各局課の事務を監督する。</span></p><p class="amend-note">（昭二三最裁規四〇・昭二六最裁規二・一部改正）</p></article>
+<article class="art" id="a3-2" data-path=""><span class="anchor-alias" id="Mp-At_3_2"></span><div class="art-tools"><button type="button" data-anchor="a3-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="a3-2-p1"><a class="art-no" href="#a3-2" data-kan="第三条の二" data-num="第3条の2">第三条の二</a><span class="body-text">最高裁判所事務総局に審議官を置き、裁判所事務官をもつて充てる。</span></p><p class="para" id="a3-2-p2"><span class="pno">2</span><span class="body-text">審議官は、上司の命を受けて、事務総局の事務のうち重要な事項の企画及び立案に参画し、関係事務を総括整理する。</span></p><p class="amend-note">（昭五〇最裁規二・追加）</p></article>
+<article class="art" id="a3-2-2" data-path=""><span class="anchor-alias" id="Mp-At_3_2_2"></span><div class="art-tools"><button type="button" data-anchor="a3-2-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="a3-2-2-p1"><a class="art-no" href="#a3-2-2" data-kan="第三条の二の二" data-num="第3条の2の2">第三条の二の二</a><span class="body-text">最高裁判所事務総局にデジタル審議官を置き、裁判所事務官をもつて充てる。</span></p><p class="para" id="a3-2-2-p2"><span class="pno">2</span><span class="body-text">デジタル審議官は、上司の命を受けて、事務総局の事務のうちデジタル化の推進、情報セキュリティの確保、情報システムの整備及び管理並びに統計情報に関する重要な事項の企画及び立案に参画し、関係事務を総括整理する。</span></p><p class="amend-note">（令六最裁規六・追加）</p></article>
+<article class="art" id="a3-3" data-path=""><span class="anchor-alias" id="Mp-At_3_3"></span><div class="art-tools"><button type="button" data-anchor="a3-3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="a3-3-p1"><a class="art-no" href="#a3-3" data-kan="第三条の三" data-num="第3条の3">第三条の三</a><span class="body-text">最高裁判所事務総局に家庭審議官を置き、裁判所技官をもつて充てる。</span></p><p class="para" id="a3-3-p2"><span class="pno">2</span><span class="body-text">家庭審議官は、上司の命を受けて、事務総局の事務のうち家庭裁判所制度に関する重要な事項の企画及び立案に参画し、関係事務を総括整理する。</span></p><p class="amend-note">（昭五六最裁規一・追加）</p></article>
+<article class="art" id="a3-4" data-path=""><span class="anchor-alias" id="Mp-At_3_4"></span><div class="art-tools"><button type="button" data-anchor="a3-4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="a3-4-p1"><a class="art-no" href="#a3-4" data-kan="第三条の四" data-num="第3条の4">第三条の四</a><span class="body-text">最高裁判所事務総局に参事官（次項及び第三項において「事務総局参事官」という。）を置くことができる。</span></p><p class="para" id="a3-4-p2"><span class="pno">2</span><span class="body-text">事務総局参事官は、裁判所事務官をもつて充てる。</span></p><p class="para" id="a3-4-p3"><span class="pno">3</span><span class="body-text">事務総局参事官は、上司の命を受けて、事務総局の事務のうち重要な事項の企画及び立案に参画し、関係事務に関し必要な調整を行う。</span></p><p class="amend-note">（令六最裁規一一・追加）</p></article>
+<article class="art" id="a4" data-path=""><span class="anchor-alias" id="Mp-At_4"></span><div class="art-tools"><button type="button" data-anchor="a4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="para" id="a4-p1"><a class="art-no" href="#a4" data-kan="第四条" data-num="第4条">第四条</a><span class="body-text">局及び課に局長又は課長を置き、裁判所事務官を以てこれに充てる。</span></p><p class="para" id="a4-p2"><span class="pno">2</span><span class="body-text">局長及び課長は、上司の命を受けて、その局又は課の事務を掌理する。</span></p><p class="amend-note">（昭二三最裁規四〇・昭二六最裁規二・昭四三最裁規二・一部改正）</p></article>
+<article class="art" id="a4-2" data-path=""><span class="anchor-alias" id="Mp-At_4_2"></span><div class="art-tools"><button type="button" data-anchor="a4-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="para" id="a4-2-p1"><a class="art-no" href="#a4-2" data-kan="第四条の二" data-num="第4条の2">第四条の二</a><span class="body-text">最高裁判所事務総局に局又は課の所掌に属しない事務を所掌する職で課長に準ずるものを置くことができる。</span></p><p class="para" id="a4-2-p2"><span class="pno">2</span><span class="body-text">前項の職は、裁判所事務官をもつて充てる。</span></p><p class="amend-note">（令六最裁規六・追加）</p></article>
+<article class="art" id="a5" data-path=""><span class="anchor-alias" id="Mp-At_5"></span><div class="art-tools"><button type="button" data-anchor="a5" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="para" id="a5-p1"><a class="art-no" href="#a5" data-kan="第五条" data-num="第5条">第五条</a><span class="body-text">局の課及び室に課長（以下「局の課長」という。）又は室長を置き、裁判所事務官又は裁判所技官を以てこれに充てる。</span></p><p class="para" id="a5-p2"><span class="pno">2</span><span class="body-text">局の課長及び室長は、上司の命を受けて、その課又は室の事務を掌理する。</span></p><p class="amend-note">（昭四三最裁規二・全改）</p></article>
+<article class="art" id="a6" data-path=""><span class="anchor-alias" id="Mp-At_6"></span><div class="art-tools"><button type="button" data-anchor="a6" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="para" id="a6-p1"><a class="art-no" href="#a6" data-kan="第六条" data-num="第6条">第六条</a><span class="body-text">局に局の課又は室の所掌に属しない事務を所掌する職で局の課長に準ずるものを置くことができる。</span></p><p class="para" id="a6-p2"><span class="pno">2</span><span class="body-text">前項の職は、裁判所事務官又は裁判所技官を以てこれに充てる。</span></p><p class="amend-note">（昭四三最裁規二・追加）</p></article>
+<article class="art" id="a6-2" data-path=""><span class="anchor-alias" id="Mp-At_6_2"></span><div class="art-tools"><button type="button" data-anchor="a6-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="para" id="a6-2-p1"><a class="art-no" href="#a6-2" data-kan="第六条の二" data-num="第6条の2">第六条の二</a><span class="body-text">局及び課に参事官を置くことができる。</span></p><p class="para" id="a6-2-p2"><span class="pno">2</span><span class="body-text">デジタル審議官の下に、参事官（第五項において「デジタル審議官付参事官」という。）を置くことができる。</span></p><p class="para" id="a6-2-p3"><span class="pno">3</span><span class="body-text">参事官は、裁判所事務官又は裁判所技官をもつて充てる。</span></p><p class="para" id="a6-2-p4"><span class="pno">4</span><span class="body-text">局又は課に置かれた参事官は、上司の命を受けて、その局又は課の事務のうち重要な事項の企画及び立案に参画する。</span></p><p class="para" id="a6-2-p5"><span class="pno">5</span><span class="body-text">デジタル審議官付参事官は、上司の命を受けて、デジタル審議官の職務のうち重要な事項の企画及び立案に参画する。</span></p><p class="amend-note">（昭五〇最裁規二・追加、令六最裁規六・一部改正）</p></article>
+<article class="art" id="a7" data-path=""><span class="anchor-alias" id="Mp-At_7"></span><div class="art-tools"><button type="button" data-anchor="a7" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="para" id="a7-p1"><a class="art-no" href="#a7" data-kan="第七条" data-num="第7条">第七条</a><span class="body-text">局及び課に局付又は課付を置くことができる。</span></p><p class="para" id="a7-p2"><span class="pno">2</span><span class="body-text">デジタル審議官の下に、デジタル審議官付を置くことができる。</span></p><p class="para" id="a7-p3"><span class="pno">3</span><span class="body-text">局付、課付及びデジタル審議官付は、裁判所事務官をもつて充てる。</span></p><p class="para" id="a7-p4"><span class="pno">4</span><span class="body-text">局付及び課付は、上司の命を受けて、その局又は課の事務をつかさどる。</span></p><p class="para" id="a7-p5"><span class="pno">5</span><span class="body-text">デジタル審議官付は、上司の命を受けて、デジタル審議官の職務を助ける。</span></p></article>
+<h2 class="div-head" id="sup1" data-path="附則　"><span class="lbl">附則</span></h2>
+<article class="art noarticle" id="sup-body-1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="para" id="sup-body-1-p1"><span class="body-text">この規則は、公布の日から、これを施行する。</span></p></article>
+<h2 class="div-head" id="sup2" data-path="附則　（昭和二三年一〇月一三日最高裁判所規則第二四号）"><span class="lbl">附則</span>　（昭和二三年一〇月一三日最高裁判所規則第二四号）</h2>
+<article class="art noarticle" id="sup-body-2" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="para" id="sup-body-2-p1"><span class="body-text">この規則は、公布の日から、これを施行する。</span></p></article>
+<h2 class="div-head" id="sup3" data-path="附則　（昭和二三年一二月二八日最高裁判所規則第四〇号）"><span class="lbl">附則</span>　（昭和二三年一二月二八日最高裁判所規則第四〇号）</h2>
+<article class="art noarticle" id="sup-body-3" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="para" id="sup-body-3-p1"><span class="body-text">この規則は、昭和二十四年一月一日から施行する。</span></p></article>
+<h2 class="div-head" id="sup4" data-path="附則　（昭和二四年七月一日最高裁判所規則第一七号）"><span class="lbl">附則</span>　（昭和二四年七月一日最高裁判所規則第一七号）</h2>
+<article class="art noarticle" id="sup-body-4" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="para" id="sup-body-4-p1"><span class="body-text">この規則は、公布の日から、施行する。</span></p></article>
+<h2 class="div-head" id="sup5" data-path="附則　（昭和二五年一月一七日最高裁判所規則第二号）"><span class="lbl">附則</span>　（昭和二五年一月一七日最高裁判所規則第二号）</h2>
+<article class="art noarticle" id="sup-body-5" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-5" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="para" id="sup-body-5-p1"><span class="body-text">この規則は、公布の日から施行し、昭和二十五年一月一日から適用する。</span></p></article>
+<h2 class="div-head" id="sup6" data-path="附則　（昭和二五年五月一日最高裁判所規則第一三号）"><span class="lbl">附則</span>　（昭和二五年五月一日最高裁判所規則第一三号）</h2>
+<article class="art noarticle" id="sup-body-6" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-6" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="para" id="sup-body-6-p1"><span class="body-text">この規則は、公布の日から施行する。</span></p></article>
+<h2 class="div-head" id="sup7" data-path="附則　（昭和二六年三月三一日最高裁判所規則第二号）"><span class="lbl">附則</span>　（昭和二六年三月三一日最高裁判所規則第二号）</h2>
+<article class="art noarticle" id="sup-body-7" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-7" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="para" id="sup-body-7-p1"><span class="body-text">この規則は、昭和二十六年四月一日から施行する。</span></p></article>
+<h2 class="div-head" id="sup8" data-path="附則　（昭和二七年四月二三日最高裁判所規則第九号）"><span class="lbl">附則</span>　（昭和二七年四月二三日最高裁判所規則第九号）</h2>
+<article class="art noarticle" id="sup-body-8" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-8" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="para" id="sup-body-8-p1"><span class="body-text">この規則は、公布の日から施行する。</span></p></article>
+<h2 class="div-head" id="sup9" data-path="附則　（昭和二八年三月三〇日最高裁判所規則第六号）"><span class="lbl">附則</span>　（昭和二八年三月三〇日最高裁判所規則第六号）</h2>
+<article class="art noarticle" id="sup-body-9" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-9" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="para" id="sup-body-9-p1"><span class="body-text">この規則は、昭和二十八年四月一日から施行する。</span></p></article>
+<h2 class="div-head" id="sup10" data-path="附則　（昭和三八年四月二二日最高裁判所規則第四号）"><span class="lbl">附則</span>　（昭和三八年四月二二日最高裁判所規則第四号）</h2>
+<article class="art noarticle" id="sup-body-10" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-10" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="para" id="sup-body-10-p1"><span class="body-text">この規則は、昭和三十八年五月一日から施行する。</span></p></article>
+<h2 class="div-head" id="sup11" data-path="附則　（昭和四三年四月二〇日最高裁判所規則第二号）"><span class="lbl">附則</span>　（昭和四三年四月二〇日最高裁判所規則第二号）</h2>
+<article class="art noarticle" id="sup-body-11" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-11" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="para" id="sup-body-11-p1"><span class="body-text">この規則は、昭和四十三年五月一日から施行する。</span></p></article>
+<h2 class="div-head" id="sup12" data-path="附則　（昭和五〇年四月七日最高裁判所規則第二号）"><span class="lbl">附則</span>　（昭和五〇年四月七日最高裁判所規則第二号）</h2>
+<article class="art noarticle" id="sup-body-12" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-12" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="para" id="sup-body-12-p1"><span class="body-text">この規則は、昭和五十年四月十日から施行する。</span></p></article>
+<h2 class="div-head" id="sup13" data-path="附則　（昭和五六年三月一八日最高裁判所規則第一号）"><span class="lbl">附則</span>　（昭和五六年三月一八日最高裁判所規則第一号）</h2>
+<article class="art noarticle" id="sup-body-13" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-13" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="para" id="sup-body-13-p1"><span class="body-text">この規則は、昭和五十六年四月一日から施行する。</span></p></article>
+<h2 class="div-head" id="sup14" data-path="附則　（令和六年三月一日最高裁判所規則第六号）"><span class="lbl">附則</span>　（令和六年三月一日最高裁判所規則第六号）</h2>
+<article class="art noarticle" id="sup-body-14" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-14" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="para" id="sup-body-14-p1"><span class="body-text">この規則は、令和六年四月一日から施行する。</span></p></article>
+<h2 class="div-head" id="sup15" data-path="附則　（令和六年四月一八日最高裁判所規則第一一号）"><span class="lbl">附則</span>　（令和六年四月一八日最高裁判所規則第一一号）</h2>
+<article class="art noarticle" id="sup-body-15" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-15" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="para" id="sup-body-15-p1"><span class="body-text">この規則は、令和六年五月一日から施行する。</span></p></article>
+    </div>
+    <aside class="notes"><p>読み取りに関する注意</p><ul><li>各条の「原本」は https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。</li></ul></aside>
+    <div class="foot">出典：saikousaibansyojimusoukyokukisoku.pdf　／　最高裁規則ビューア 1.9.0 で 2026年09月02日 に変換　
+    条文の正確な内容は原本で確認してください。</div>
+  </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  "use strict";
+  var doc = document.getElementById("doc");
+  var input = document.getElementById("q");
+  var hitLabel = document.getElementById("hits");
+  var crumb = document.getElementById("crumb");
+  var toc = document.getElementById("toc");
+  var toast = document.getElementById("toast");
+  var pristine = doc.innerHTML;
+  var hits = [];
+  var cursor = -1;
+
+  function say(msg){
+    toast.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(say._t);
+    say._t = setTimeout(function(){ toast.classList.remove("show"); }, 1600);
+  }
+
+  /* ---------------------------------------------------------- 条番号の表記 */
+  var numeralBtn = document.getElementById("numeral");
+  function applyNumeral(useArabic){
+    var nodes = doc.querySelectorAll(".art-no");
+    for (var i = 0; i < nodes.length; i++){
+      var el = nodes[i];
+      var v = useArabic ? el.getAttribute("data-num") : el.getAttribute("data-kan");
+      if (v) el.textContent = v;
+    }
+    numeralBtn.setAttribute("aria-pressed", useArabic ? "true" : "false");
+  }
+  numeralBtn.addEventListener("click", function(){
+    var next = numeralBtn.getAttribute("aria-pressed") !== "true";
+    applyNumeral(next);
+    try { localStorage.setItem("rule-numeral", next ? "1" : "0"); } catch(e){}
+    pristine = doc.innerHTML;
+  });
+  try {
+    /* 既定の表記は原本に合わせてある。前回の切り替えが残っていればそれに従う */
+    var saved = localStorage.getItem("rule-numeral");
+    if (saved === "1" || saved === "0"){ applyNumeral(saved === "1"); pristine = doc.innerHTML; }
+  } catch(e){}
+
+  /* -------------------------------------------------------------- 検索処理 */
+  var SKIP = {SCRIPT:1, STYLE:1, MARK:1, BUTTON:1, A:1};   /* 原本リンク等の道具立ては検索対象にしない */
+  function highlight(term){
+    doc.innerHTML = pristine;
+    hits = [];
+    cursor = -1;
+    if (!term){ hitLabel.textContent = ""; refreshToc(""); return; }
+    var walker = document.createTreeWalker(doc, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        if (!n.nodeValue || n.nodeValue.indexOf(term) < 0) return NodeFilter.FILTER_REJECT;
+        if (n.parentNode && SKIP[n.parentNode.nodeName]) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var targets = [];
+    var node;
+    while ((node = walker.nextNode())) targets.push(node);
+    for (var i = 0; i < targets.length; i++){
+      var t = targets[i], text = t.nodeValue, pos = 0, frag = document.createDocumentFragment();
+      var idx;
+      while ((idx = text.indexOf(term, pos)) >= 0){
+        if (idx > pos) frag.appendChild(document.createTextNode(text.slice(pos, idx)));
+        var m = document.createElement("mark");
+        m.textContent = text.substr(idx, term.length);
+        frag.appendChild(m);
+        hits.push(m);
+        pos = idx + term.length;
+      }
+      if (pos < text.length) frag.appendChild(document.createTextNode(text.slice(pos)));
+      t.parentNode.replaceChild(frag, t);
+    }
+    hitLabel.textContent = hits.length ? "1 / " + hits.length : "該当なし";
+    refreshToc(term);
+    if (hits.length){ cursor = 0; focusHit(0, false); }
+  }
+  function focusHit(i, scroll){
+    if (!hits.length) return;
+    for (var k = 0; k < hits.length; k++) hits[k].classList.remove("live");
+    cursor = (i + hits.length) % hits.length;
+    hits[cursor].classList.add("live");
+    hitLabel.textContent = (cursor + 1) + " / " + hits.length;
+    if (scroll !== false) hits[cursor].scrollIntoView({block:"center", behavior:"instant"});
+  }
+  function refreshToc(term){
+    var links = toc.querySelectorAll("li.lv-art");
+    for (var i = 0; i < links.length; i++){
+      var li = links[i];
+      var body = (li.getAttribute("data-text") || "");
+      li.classList.toggle("hidden", !!term && body.indexOf(term) < 0);
+    }
+    var divs = toc.querySelectorAll("li.lv-div");
+    for (var j = divs.length - 1; j >= 0; j--){
+      var d = divs[j];
+      var kids = d.querySelectorAll("li:not(.hidden)");
+      d.classList.toggle("hidden", !!term && kids.length === 0);
+    }
+  }
+  var timer = null;
+  input.addEventListener("input", function(){
+    clearTimeout(timer);
+    var v = input.value.trim();
+    timer = setTimeout(function(){ highlight(v); }, 180);
+  });
+  input.addEventListener("keydown", function(e){
+    if (e.key === "Enter"){ e.preventDefault(); focusHit(cursor + (e.shiftKey ? -1 : 1)); }
+    if (e.key === "Escape"){ input.value = ""; highlight(""); input.blur(); }
+  });
+  document.getElementById("prev").addEventListener("click", function(){ focusHit(cursor - 1); });
+  document.getElementById("next").addEventListener("click", function(){ focusHit(cursor + 1); });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "/" && e.target === document.body){ e.preventDefault(); input.focus(); }
+  });
+
+  /* -------------------------------------------------- リンクのコピー・共有 */
+  doc.addEventListener("click", function(e){
+    var btn = e.target.closest ? e.target.closest("button[data-anchor]") : null;
+    if (!btn) return;
+    var anchor = btn.getAttribute("data-anchor");
+    var url = location.href.split("#")[0] + "#" + anchor;
+    history.replaceState(null, "", "#" + anchor);
+    var done = function(){ say("リンクをコピーしました"); };
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(done, function(){ legacyCopy(url, done); });
+    } else {
+      legacyCopy(url, done);
+    }
+  });
+  function legacyCopy(text, done){
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); done(); }
+    catch(err){ say("コピーできませんでした。アドレス欄からURLを控えてください"); }
+    document.body.removeChild(ta);
+  }
+
+  /* ------------------------------------------------ 現在位置の表示と目次連動 */
+  var watched = doc.querySelectorAll(".art[id], .div-head[id]");
+  var tocLinks = {};
+  var links = toc.querySelectorAll("a[href^='#']");
+  for (var i = 0; i < links.length; i++) tocLinks[links[i].getAttribute("href").slice(1)] = links[i];
+  var currentLink = null;
+  if ("IntersectionObserver" in window){
+    var visible = [];
+    var io = new IntersectionObserver(function(entries){
+      for (var i = 0; i < entries.length; i++){
+        var id = entries[i].target.id;
+        var at = visible.indexOf(id);
+        if (entries[i].isIntersecting){ if (at < 0) visible.push(id); }
+        else if (at >= 0){ visible.splice(at, 1); }
+      }
+      if (!visible.length) return;
+      var first = null;
+      for (var k = 0; k < watched.length; k++){
+        if (visible.indexOf(watched[k].id) >= 0){ first = watched[k]; break; }
+      }
+      if (!first) return;
+      crumb.textContent = first.getAttribute("data-path") || "";
+      var link = tocLinks[first.id];
+      if (link && link !== currentLink){
+        if (currentLink) currentLink.classList.remove("current");
+        link.classList.add("current");
+        currentLink = link;
+      }
+    }, {rootMargin:"-20% 0px -70% 0px"});
+    for (var w = 0; w < watched.length; w++) io.observe(watched[w]);
+  }
+
+  /* -------------------------------------------------------- 目次の開閉（狭幅） */
+  var opener = document.getElementById("toc-open");
+  if (opener){
+    opener.addEventListener("click", function(){ toc.classList.toggle("open"); });
+    toc.addEventListener("click", function(e){
+      if (e.target.tagName === "A") toc.classList.remove("open");
+    });
+  }
+})();
+</script>
+</body>
+</html>

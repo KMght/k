@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>不正競争防止法第二十三条第一項に規定する事件に係る刑事訴訟手続の特例に関する規則</title>
+<style>
+:root{
+  --paper:#ffffff;
+  --ink:#16181d;
+  --sub:#5f6875;
+  --rule:#dde2e9;
+  --chrome:#f4f6f9;
+  --accent:#14538a;
+  --accent-weak:#e7eff7;
+  --mark:#ffe08a;
+  --mark-live:#ff9d3d;
+  --gothic:"Yu Gothic UI","Yu Gothic","YuGothic","Hiragino Sans","Noto Sans JP","Meiryo",system-ui,sans-serif;
+  --mincho:"Yu Mincho","YuMincho","Hiragino Mincho ProN","Noto Serif JP","MS Mincho",serif;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:5.5rem}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--mincho);font-size:17px;line-height:1.9;
+  text-rendering:optimizeLegibility;
+}
+
+/* ---------------------------------------------------------------- ヘッダ */
+.top{
+  position:sticky;top:0;z-index:30;background:var(--chrome);
+  border-bottom:1px solid var(--rule);font-family:var(--gothic);
+}
+.top-inner{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;padding:.7rem 1.2rem}
+.law-title{font-size:1.12rem;font-weight:700;letter-spacing:.02em;margin:0}
+.law-number{font-size:.8rem;color:var(--sub);margin-left:.2rem}
+.top-tools{margin-left:auto;display:flex;align-items:center;gap:.5rem}
+.search-box{display:flex;align-items:center;gap:.35rem;background:var(--paper);
+  border:1px solid var(--rule);border-radius:2px;padding:.25rem .5rem}
+.search-box input{border:0;outline:0;font:inherit;font-size:.85rem;width:14rem;background:transparent;color:inherit}
+.hit-count{font-size:.78rem;color:var(--sub);min-width:4.2rem;text-align:right;font-variant-numeric:tabular-nums}
+button{font:inherit;font-family:var(--gothic);cursor:pointer}
+.btn{background:var(--paper);border:1px solid var(--rule);border-radius:2px;
+  color:var(--ink);font-size:.78rem;padding:.28rem .6rem;line-height:1.4}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.crumb{padding:.3rem 1.2rem;border-top:1px solid var(--rule);background:var(--paper);
+  font-family:var(--gothic);font-size:.78rem;color:var(--sub);min-height:1.7rem}
+
+/* ------------------------------------------------------------------ 骨格 */
+.wrap{display:grid;grid-template-columns:19rem minmax(0,1fr);align-items:start}
+.toc{
+  position:sticky;top:5.6rem;max-height:calc(100vh - 5.6rem);overflow-y:auto;
+  border-right:1px solid var(--rule);padding:1rem .6rem 4rem 1.2rem;
+  font-family:var(--gothic);font-size:.83rem;line-height:1.65;
+}
+.toc h2{font-size:.75rem;color:var(--sub);font-weight:700;margin:0 0 .6rem}
+.toc ul{list-style:none;margin:0;padding:0}
+.toc a{display:block;color:var(--ink);text-decoration:none;padding:.16rem .4rem;border-radius:2px}
+.toc a:hover{background:var(--accent-weak);color:var(--accent)}
+.toc a.current{background:var(--accent-weak);color:var(--accent);font-weight:700}
+.toc .div-1>a,.toc .div-2>a{font-weight:700}
+.toc .div-2{margin-top:.5rem}
+.toc .div-3,.toc .div-4,.toc .div-5{margin-top:.25rem}
+.toc .lv-art{padding-left:.9rem}
+.toc .lv-art.hidden,.toc .lv-div.hidden{display:none}
+.toc-toggle{background:none;border:0;color:var(--sub);padding:0 .3rem;font-size:.75rem}
+
+.doc{padding:2.2rem 2rem 8rem;max-width:44em}
+.doc-head{border-bottom:2px solid var(--ink);padding-bottom:.8rem;margin-bottom:2rem}
+.doc-head h1{font-size:1.5rem;margin:0 0 .3rem;letter-spacing:.04em}
+.doc-head .meta{font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+
+/* ------------------------------------------------------------------ 条文 */
+.div-head{font-family:var(--gothic);margin:2.6rem 0 1rem;scroll-margin-top:6rem}
+.div-head .lbl{color:var(--accent);font-weight:700}
+h2.div-head{font-size:1.12rem;border-bottom:1px solid var(--rule);padding-bottom:.35rem}
+h3.div-head{font-size:1.02rem}
+h4.div-head,h5.div-head,h6.div-head{font-size:.95rem}
+
+.art{position:relative;padding-left:2.6rem;margin:1.5rem 0 1.9rem;scroll-margin-top:6rem}
+.art:target{background:var(--accent-weak);box-shadow:-.4rem 0 0 var(--accent);border-radius:2px}
+.art-tools{position:absolute;left:0;top:.25rem;display:flex;flex-direction:column;gap:.2rem;
+  visibility:hidden}
+.art:hover .art-tools,.art:focus-within .art-tools,.art:target .art-tools{visibility:visible}
+.art-tools button,.art-tools a{background:none;border:0;color:var(--sub);font-size:.72rem;
+  font-family:var(--gothic);padding:.1rem .2rem;border-radius:2px;text-decoration:none;
+  white-space:nowrap;display:block}
+.art-tools button:hover,.art-tools a:hover{color:var(--accent);background:var(--accent-weak)}
+.raw h3 .src{font-size:.75rem;font-weight:400;color:var(--sub);margin-left:.5rem}
+.doc-head .src{color:var(--accent);text-decoration:none}
+.doc-head .src:hover{text-decoration:underline}
+.caption{font-family:var(--gothic);font-size:.88rem;font-weight:700;color:var(--sub);margin:0 0 .1rem}
+.amend-note{font-family:var(--gothic);font-size:.78rem;font-weight:400;color:var(--sub);margin:.1rem 0 0;text-align:right}
+h2 .amend-note,h3 .amend-note,h4 .amend-note,h5 .amend-note,h6 .amend-note{display:inline;text-align:left}
+.art-no{font-family:var(--gothic);font-weight:700;color:var(--accent);text-decoration:none;margin-right:.55em}
+.art-no:hover{text-decoration:underline}
+.para{margin:.35rem 0;text-indent:0}
+.para+.para{margin-top:.55rem}
+.pno{font-family:var(--gothic);color:var(--sub);font-size:.9em;margin-right:.5em;font-variant-numeric:tabular-nums}
+.deleted .body-text{color:var(--sub)}
+.art.noarticle .para{margin-top:0}
+
+ol.items{list-style:none;margin:.35rem 0 .35rem 1.1em;padding:0}
+ol.items>li{display:grid;grid-template-columns:2.4em minmax(0,1fr);margin:.2rem 0}
+ol.items .mk{font-family:var(--gothic);font-size:.9em;color:var(--sub);margin-right:.4em}
+ol.items ol.items{grid-column:1/-1;margin-left:1.2em}
+ol.items ol.items>li{grid-template-columns:2em minmax(0,1fr)}
+
+.raw{margin:1.6rem 0;scroll-margin-top:6rem}
+.raw h3{font-family:var(--gothic);font-size:1rem;margin:0 0 .4rem}
+.raw pre{font-family:var(--mincho);white-space:pre-wrap;margin:0;padding:.7rem .9rem;
+  background:var(--chrome);border:1px solid var(--rule);font-size:.92rem;line-height:1.75}
+
+.notes{margin:2.5rem 0 0;padding:.8rem 1rem;background:var(--chrome);
+  border-left:3px solid var(--accent);font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+.notes p{margin:0 0 .3rem;font-weight:700;color:var(--ink)}
+.notes ul{margin:0;padding-left:1.2rem}
+.foot{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);
+  font-family:var(--gothic);font-size:.75rem;color:var(--sub)}
+
+a.ref{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule)}
+a.ref:hover{color:var(--accent);border-bottom-color:var(--accent)}
+a.ref-egov{border-bottom-style:dotted}
+a.ref-rule{border-bottom-color:var(--accent)}
+mark{background:var(--mark);color:inherit;padding:0 .05em}
+mark.live{background:var(--mark-live)}
+.toast{position:fixed;left:50%;bottom:2rem;transform:translateX(-50%);
+  background:var(--ink);color:#fff;font-family:var(--gothic);font-size:.8rem;
+  padding:.5rem .9rem;border-radius:3px;pointer-events:none;z-index:60;display:none}
+.toast.show{display:block}
+
+.toc-open{display:none}
+@media (max-width:900px){
+  body{font-size:16px}
+  .wrap{grid-template-columns:minmax(0,1fr)}
+  .toc{position:fixed;inset:5.6rem auto 0 0;width:82vw;max-width:20rem;background:var(--paper);
+    z-index:25;box-shadow:0 0 0 100vmax rgba(0,0,0,.25);max-height:none;height:calc(100vh - 5.6rem);
+    display:none}
+  .toc.open{display:block}
+  .toc-open{display:inline-block}
+  .doc{padding:1.4rem 1.1rem 6rem}
+  .search-box input{width:8rem}
+  .art-tools{opacity:1;position:static;flex-direction:row;justify-content:flex-end;margin-bottom:.15rem}
+  .art-tools button,.art-tools a{border:1px solid var(--rule);border-radius:2px;
+    padding:.1rem .45rem;display:inline-block}
+  .art{padding-left:0}
+}
+
+@media print{
+  .top,.toc,.art-tools,.crumb,.toast{display:none!important}
+  a.ref{border-bottom:0}
+  .wrap{display:block}
+  .doc{max-width:none;padding:0}
+  body{font-size:10.5pt;line-height:1.7}
+  .art{page-break-inside:avoid}
+}
+
+.anchor-alias{position:absolute;scroll-margin-top:6rem}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <button type="button" class="btn toc-open" id="toc-open">目次</button>
+    <h1 class="law-title">不正競争防止法第二十三条第一項に規定する事件に係る刑事訴訟手続の特例に関する規則</h1>
+    <span class="law-number">平成二十三年十月十一日最高裁判所規則第四号　／　令和6年2月15日施行</span>
+    <div class="top-tools">
+      <div class="search-box">
+        <input type="search" id="q" placeholder="条文を検索（/ キー）" aria-label="条文を検索">
+        <span class="hit-count" id="hits"></span>
+      </div>
+      <button type="button" class="btn" id="prev" title="前の該当箇所">前</button>
+      <button type="button" class="btn" id="next" title="次の該当箇所">次</button>
+      <button type="button" class="btn" id="numeral" aria-pressed="false"
+        title="条番号の表記を切り替える">123</button>
+    </div>
+  </div>
+  <div class="crumb" id="crumb"></div>
+</header>
+<div class="wrap">
+  <nav class="toc" id="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ul><li class="lv-art" data-text="第一条1条趣旨趣旨この規則は、不正競争防止法（平成五年法律第四十七号。以下「法」という。）第二十三条第一項に規定する事件に係る刑事訴訟手続に関し、刑事訴訟規則（昭和二十三年最高裁判所規則第三十二号）の特則その他の必要な事項を定めるものとする。"><a href="#a1">第一条　趣旨</a></li><li class="lv-art" data-text="第二条2条法第二十三条第一項の申出の方式等法第二十三条第一項の申出の方式等法第二十三条第一項の申出は、次に掲げる事項を明らかにしてこれをしなければならない。一申出人の氏名又は名称及び住所二当該申出に係る事件を特定するに足りる事項三申出人が法第二十三条第一項の申出をすることができる者であることの基礎となるべき事実四第二号の事件に係る営業秘密を構成する情報のうち、法第二十三条第一項の決定の対象とすべき事項に係るもの五法第二十三条第一項の決定を必要とする事情前項の申出は、書面でしなければならない。ただし、やむを得ない事情があるときは、口頭でこれをすることができる。法第二十三条第二項後段の通知は、第一項各号に掲げる事項を明らかにしてこれをしなければならない。前項の通知は、書面でしなければならない。ただし、やむを得ない事情があるときは、口頭でこれをすることができる。検察官は、第三項の通知をする場合において、第二項の規定により提出を受けた書面があるときは、当該書面を裁判所に提出しなければならない。"><a href="#a2">第二条　法第二十三条第一項の申出の方式等</a></li><li class="lv-art" data-text="第三条3条法第二十三条第三項の申出の方式法第二十三条第三項の申出の方式法第二十三条第三項の申出は、次に掲げる事項を明らかにしてこれをしなければならない。一当該申出に係る営業秘密及びこれが営業秘密であることの基礎となるべき事実二当該申出に係る営業秘密を保有する者を特定するに足りる事項三当該申出に係る営業秘密を構成する情報のうち、法第二十三条第三項の決定の対象とすべき事項に係るもの四法第二十三条第三項の決定を必要とする事情前項の申出は、書面でしなければならない。ただし、やむを得ない事情があるときは、口頭でこれをすることができる。"><a href="#a3">第三条　法第二十三条第三項の申出の方式</a></li><li class="lv-art" data-text="第四条4条公開の法廷で明らかにされる可能性があると思料する営業秘密構成情報特定事項の告知・法第二十三条公開の法廷で明らかにされる可能性があると思料する営業秘密構成情報特定事項の告知・法第二十三条検察官は、法第二十三条第一項の決定があった場合において、事件の性質、審理の状況その他の事情を考慮して、営業秘密構成情報特定事項のうち公開の法廷で明らかにされる可能性があると思料するものがあるときは、裁判所及び被告人又は弁護人に対し、これを通知するものとする。前項の規定は、法第二十三条第三項の決定があった場合において同項の申出をした者について準用する。この場合において、前項中「被告人又は弁護人」とあるのは、「相手方又はその弁護人」と読み替えるものとする。前二項の通知は、書面でしなければならない。ただし、やむを得ない事情があるときは、口頭でこれをすることができる。"><a href="#a4">第四条　公開の法廷で明らかにされる可能性があると思料する営業秘密構成情報特定事項の告知・法第二十三条</a></li><li class="lv-art" data-text="第五条5条呼称等の決定についての書面の提出の求め・法第二十三条呼称等の決定についての書面の提出の求め・法第二十三条裁判所は、法第二十三条第一項の決定をした事件に関し、呼称等の決定をするに当たり、検察官に対し、次に掲げる事項を記載した書面の提出を求めることができる。一呼称等の決定の対象とすべき営業秘密構成情報特定事項に係る名称その他の表現二前号の名称その他の表現に代わるべき呼称その他の表現三その他呼称等の決定をするに当たり参考となるべき事項前項の規定は、法第二十三条第三項の決定をした事件について準用する。この場合において、前項中「検察官」とあるのは、「法第二十三条第三項の申出をした者」と読み替えるものとする。"><a href="#a5">第五条　呼称等の決定についての書面の提出の求め・法第二十三条</a></li><li class="lv-art" data-text="第六条6条決定の告知・法第二十三条決定の告知・法第二十三条裁判所は、秘匿決定若しくは呼称等の決定又はこれらの決定の全部若しくは一部を取り消す決定をしたときは、公判期日においてこれをした場合を除き、速やかに、その旨を訴訟関係人に通知しなければならない。秘匿決定をしないこととしたときも、同様とする。裁判所は、法第二十三条第一項の決定又は当該決定の全部若しくは一部を取り消す決定をしたときは、速やかに、その旨を同項の申出をした者に通知しなければならない。同項の決定をしないこととしたときも、同様とする。"><a href="#a6">第六条　決定の告知・法第二十三条</a></li><li class="lv-art" data-text="第七条7条営業秘密構成情報特定事項を明らかにしない方法で行う手続営業秘密構成情報特定事項を明らかにしない方法で行う手続秘匿決定があったときは、次に掲げる手続は、営業秘密構成情報特定事項を明らかにしない方法でこれを行うものとする。一刑事訴訟規則第二百十七条の三十一第一項又は第二項の規定による公判前整理手続調書、期日間整理手続調書又は刑事訴訟法（昭和二十三年法律第百三十一号）第三百十六条の二第三項（同法第三百十六条の二十八第二項において準用する場合を含む。）に規定する書面の朗読又は要旨の告知二刑事訴訟規則第二百九条第一項の規定による訴因変更等請求書面の朗読三刑事訴訟規則第三十五条第二項の規定による判決の宣告前項第二号の手続を行う場合には、検察官は、被告人に対し、同号に規定する書面を示さなければならない。"><a href="#a7">第七条　営業秘密構成情報特定事項を明らかにしない方法で行う手続</a></li><li class="lv-art" data-text="第八条8条公判期日外の被告人の供述を求める手続・法第二十六条公判期日外の被告人の供述を求める手続・法第二十六条刑事訴訟規則第三十八条（第二項第二号及び第四号から第十号まで並びに第七項を除く。）、第四十条、第四十二条第一項本文、第五十二条の二、第五十二条の四、第五十二条の五第一項、第五十二条の六、第五十二条の十四、第五十二条の十五第一項、第五十二条の十六、第百六条（第一項ただし書、第二項及び第四項を除く。）、第百八条、第百九条、第百十四条、第百二十六条及び第百七十八条の十二（第三項を除く。）の規定は、法第二十六条第一項の規定による公判期日外において被告人の供述を求める手続について準用する。この場合において、次の表の上欄に掲げる同規則の規定中同表の中欄に掲げる字句は、それぞれ同表の下欄に掲げる字句に読み替えるものとする。第三十八条第五項被疑者又は弁護人弁護人、共同被告人又はその弁護人裁判長又は尋問をした裁判官裁判長第四十二条第一項本文その取調又は処分をした者裁判長第五十二条の二第一項裁判所、受命裁判官又は受託裁判裁判所官被告人又は弁護人弁護人及び共同被告人又はその弁護人第五十二条の二第三項及又は弁護人、弁護人、共同被告び第四項人又はその弁護人裁判長、受命裁判官又は受託裁判裁判長官第五十二条の二第五項又は弁護人、弁護人、共同被告人又はその弁護人第五十二条の四ただし書裁判所又は裁判官裁判所、被疑者又は弁護人又は弁護人並びに共同被告人又はその弁護人第五十二条の六第一項前条前条第一項及び不正競争防止法第二十三条第一項に規定する事件に係る刑事訴訟手続の特例に関する規則（平成二十三年最高裁判所規則第四号。第四項において「特例規則」という。）第八条第二項において準用する前条第二項第一号及び第二号その尋問に立ち会い又は立ち会う検察官、被告人、弁ことのできた検察官、被告人、被護人、共同被告人又疑者又は弁護人はその弁護人第五十二条の六第二項又は弁護人、弁護人、共同被告人又はその弁護人第五十二条の六第三項裁判長、受命裁判官又は受託裁判裁判長官第五十二条の六第四項前条前条第一項及び特例規則第八条第二項において準用する前条第二項第一号及び第二号又は弁護人、弁護人、共同被告人又はその弁護人"><a href="#a8">第八条　公判期日外の被告人の供述を求める手続・法第二十六条</a></li><li class="lv-art" data-text="第五十二条の十四52条の14裁判所又は裁判官裁判所第五十二条の十六第一項その尋問に立ち会い又は立ち会う検察官、被告人、弁ことのできた検察官、被告人、被護人、共同被告人又疑者又は弁護人はその弁護人第五十二条の十六第二項又は弁護人、弁護人、共同被告人又はその弁護人第五十二条の十六第三項裁判長、受命裁判官又は受託裁判裁判長官第五十二条の十六第四項前条第四項前条第一項又は弁護人、弁護人、共同被告人又はその弁護人第百六条第一項本文証人の尋問を請求した者公判期日外において被告人の供述を求める検察官、弁護人、共同被告人又はその弁護人第百六条第五項相手方及びその弁護人検察官、弁護人、共同被告人及びその弁護人（これらの者のうち第一項の書面を差し出す者を除く。）第百八条第一項被告人又は弁護人弁護人、共同被告人又はその弁護人相手方及びその弁護人検察官、弁護人、共同被告人及びその弁護人（これらの者のうち同項の書面を差し出した者を除く。）第百八条第二項相手方又はその弁護人前項の規定による告知を受けた者第百九条第一項職権で裁判長又は陪席の裁判官が被告人及び弁護人弁護人、共同被告人及びその弁護人第百九条第二項被告人又は弁護人弁護人、共同被告人又はその弁護人第百二十六条第一項被告人又は弁護人弁護人、共同被告人又はその弁護人整理されたとき、又はその送付を整理された受けた第百二十六条第二項及び被告人共同被告人第三項第百七十八条の十二第一被告人共同被告人項及び第二項弁護人その弁護人刑事訴訟規則第五十二条の五第二項第一号及び第二号の規定は、前項において読み替えて準用する同規則第五十二条の四本文の規定により公判期日外における被告人に対する質問及びその供述を速記した速記録を調書の一部とする場合において、被告人が速記原本の訳読を請求したときについて準用する。刑事訴訟規則第五十二条の十五第二項第一号及び第二号の規定は、第一項において読み替えて準用する同規則第五十二条の十四の規定により公判期日外における被告人に対する質問及びその供述を録音した録音体を反訳した調書を作成する場合において、被告人が録音体の再生を請求したときについて準用する。"><a href="#a52-14">第五十二条の十四</a></li><li class="lv-div div-1"><a href="#sup1">附則</a></li><li class="lv-div div-1"><a href="#sup2">附則　（平成二八年一〇月一八日最高裁判所規則第六号）抄</a><ul><li class="lv-art" data-text="第一条1条施行期日施行期日この規則は、刑事訴訟法等の一部を改正する法律（平成二十八年法律第五十四号）附則第一条第三号に掲げる規定の施行の日（平成二十八年十二月一日）から施行する。"><a href="#sup2-a1">第一条　施行期日</a></li></ul></li><li class="lv-div div-1"><a href="#sup3">附則　（平成三〇年一月一五日最高裁判所規則第一号）抄</a><ul><li class="lv-art" data-text="第一条1条施行期日施行期日この規則は、刑事訴訟法等の一部を改正する法律（平成二十八年法律第五十四号）附則第一条第四号に掲げる規定の施行の日から施行する。ただし、第三条の規定は、同法の施行の日から施行する。"><a href="#sup3-a1">第一条　施行期日</a></li></ul></li><li class="lv-div div-1"><a href="#sup4">附則　（令和五年一二月二五日最高裁判所規則第一〇号）抄</a><ul><li class="lv-art" data-text="第一条1条施行期日施行期日この規則は、刑事訴訟法等の一部を改正する法律（令和五年法律第二十八号）附則第一条第四号に掲げる規定の施行の日（令和六年二月一五日）から施行する。"><a href="#sup4-a1">第一条　施行期日</a></li></ul></li></ul>
+  </nav>
+  <main class="doc" id="doc-outer">
+    <div class="doc-head">
+      <h1>不正競争防止法第二十三条第一項に規定する事件に係る刑事訴訟手続の特例に関する規則</h1>
+      <div class="meta">平成二十三年十月十一日最高裁判所規則第四号　／　令和6年2月15日施行　／　<a class="src" href="https://www.courts.go.jp/vc-files/courts/2023/huseikyousouboushitokureikisoku.20240215.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本PDF p.1</a></div>
+    </div>
+    <div id="doc">
+<article class="art" id="a1" data-path=""><span class="anchor-alias" id="Mp-At_1"></span><div class="art-tools"><button type="button" data-anchor="a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2023/huseikyousouboushitokureikisoku.20240215.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（趣旨）</p><p class="para" id="a1-p1"><a class="art-no" href="#a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、不正競争防止法（平成五年法律第四十七号。以下「法」という。）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/405AC0000000047#Mp-At_23" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第二十三条</a>第一項に規定する事件に係る刑事訴訟手続に関し、刑事訴訟規則（昭和二十三年最高裁判所規則第三十二号）の特則その他の必要な事項を定めるものとする。</span></p></article>
+<article class="art" id="a2" data-path=""><span class="anchor-alias" id="Mp-At_2"></span><div class="art-tools"><button type="button" data-anchor="a2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2023/huseikyousouboushitokureikisoku.20240215.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/405AC0000000047#Mp-At_23" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十三条</a>第一項の申出の方式等）</p><p class="para" id="a2-p1"><a class="art-no" href="#a2" data-kan="第二条" data-num="第2条">第二条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/405AC0000000047#Mp-At_23" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十三条</a>第一項の申出は、次に掲げる事項を明らかにしてこれをしなければならない。</span></p><ol class="items"><li id="a2-p1-1"><span class="mk">一</span><span class="tx">申出人の氏名又は名称及び住所</span></li><li id="a2-p1-2"><span class="mk">二</span><span class="tx">当該申出に係る事件を特定するに足りる事項</span></li><li id="a2-p1-3"><span class="mk">三</span><span class="tx">申出人が<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/405AC0000000047#Mp-At_23" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十三条</a>第一項の申出をすることができる者であることの基礎となるべき事実</span></li><li id="a2-p1-4"><span class="mk">四</span><span class="tx">第二号の事件に係る営業秘密を構成する情報のうち、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/405AC0000000047#Mp-At_23" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十三条</a>第一項の決定の対象とすべき事項に係るもの</span></li><li id="a2-p1-5"><span class="mk">五</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/405AC0000000047#Mp-At_23" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十三条</a>第一項の決定を必要とする事情</span></li></ol><p class="para" id="a2-p2"><span class="pno">2</span><span class="body-text">前項の申出は、書面でしなければならない。ただし、やむを得ない事情があるときは、口頭でこれをすることができる。</span></p><p class="para" id="a2-p3"><span class="pno">3</span><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/405AC0000000047#Mp-At_23" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十三条</a>第二項後段の通知は、第一項各号に掲げる事項を明らかにしてこれをしなければならない。</span></p><p class="para" id="a2-p4"><span class="pno">4</span><span class="body-text">前項の通知は、書面でしなければならない。ただし、やむを得ない事情があるときは、口頭でこれをすることができる。</span></p><p class="para" id="a2-p5"><span class="pno">5</span><span class="body-text">検察官は、第三項の通知をする場合において、第二項の規定により提出を受けた書面があるときは、当該書面を裁判所に提出しなければならない。</span></p></article>
+<article class="art" id="a3" data-path=""><span class="anchor-alias" id="Mp-At_3"></span><div class="art-tools"><button type="button" data-anchor="a3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2023/huseikyousouboushitokureikisoku.20240215.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/405AC0000000047#Mp-At_23" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十三条</a>第三項の申出の方式）</p><p class="para" id="a3-p1"><a class="art-no" href="#a3" data-kan="第三条" data-num="第3条">第三条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/405AC0000000047#Mp-At_23" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十三条</a>第三項の申出は、次に掲げる事項を明らかにしてこれをしなければならない。</span></p><ol class="items"><li id="a3-p1-1"><span class="mk">一</span><span class="tx">当該申出に係る営業秘密及びこれが営業秘密であることの基礎となるべき事実</span></li><li id="a3-p1-2"><span class="mk">二</span><span class="tx">当該申出に係る営業秘密を保有する者を特定するに足りる事項</span></li><li id="a3-p1-3"><span class="mk">三</span><span class="tx">当該申出に係る営業秘密を構成する情報のうち、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/405AC0000000047#Mp-At_23" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十三条</a>第三項の決定の対象とすべき事項に係るもの</span></li><li id="a3-p1-4"><span class="mk">四</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/405AC0000000047#Mp-At_23" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十三条</a>第三項の決定を必要とする事情</span></li></ol><p class="para" id="a3-p2"><span class="pno">2</span><span class="body-text">前項の申出は、書面でしなければならない。ただし、やむを得ない事情があるときは、口頭でこれをすることができる。</span></p></article>
+<article class="art" id="a4" data-path=""><span class="anchor-alias" id="Mp-At_4"></span><div class="art-tools"><button type="button" data-anchor="a4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2023/huseikyousouboushitokureikisoku.20240215.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（公開の法廷で明らかにされる可能性があると思料する営業秘密構成情報特定事項の告知・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/405AC0000000047#Mp-At_23" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十三条</a>）</p><p class="para" id="a4-p1"><a class="art-no" href="#a4" data-kan="第四条" data-num="第4条">第四条</a><span class="body-text">検察官は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/405AC0000000047#Mp-At_23" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十三条</a>第一項の決定があった場合において、事件の性質、審理の状況その他の事情を考慮して、営業秘密構成情報特定事項のうち公開の法廷で明らかにされる可能性があると思料するものがあるときは、裁判所及び被告人又は弁護人に対し、これを通知するものとする。</span></p><p class="para" id="a4-p2"><span class="pno">2</span><span class="body-text">前項の規定は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/405AC0000000047#Mp-At_23" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十三条</a>第三項の決定があった場合において同項の申出をした者について準用する。この場合において、前項中「被告人又は弁護人」とあるのは、「相手方又はその弁護人」と読み替えるものとする。</span></p><p class="para" id="a4-p3"><span class="pno">3</span><span class="body-text">前二項の通知は、書面でしなければならない。ただし、やむを得ない事情があるときは、口頭でこれをすることができる。</span></p></article>
+<article class="art" id="a5" data-path=""><span class="anchor-alias" id="Mp-At_5"></span><div class="art-tools"><button type="button" data-anchor="a5" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2023/huseikyousouboushitokureikisoku.20240215.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（呼称等の決定についての書面の提出の求め・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/405AC0000000047#Mp-At_23" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十三条</a>）</p><p class="para" id="a5-p1"><a class="art-no" href="#a5" data-kan="第五条" data-num="第5条">第五条</a><span class="body-text">裁判所は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/405AC0000000047#Mp-At_23" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十三条</a>第一項の決定をした事件に関し、呼称等の決定をするに当たり、検察官に対し、次に掲げる事項を記載した書面の提出を求めることができる。</span></p><ol class="items"><li id="a5-p1-1"><span class="mk">一</span><span class="tx">呼称等の決定の対象とすべき営業秘密構成情報特定事項に係る名称その他の表現</span></li><li id="a5-p1-2"><span class="mk">二</span><span class="tx">前号の名称その他の表現に代わるべき呼称その他の表現</span></li><li id="a5-p1-3"><span class="mk">三</span><span class="tx">その他呼称等の決定をするに当たり参考となるべき事項</span></li></ol><p class="para" id="a5-p2"><span class="pno">2</span><span class="body-text">前項の規定は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/405AC0000000047#Mp-At_23" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十三条</a>第三項の決定をした事件について準用する。この場合において、前項中「検察官」とあるのは、「<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/405AC0000000047#Mp-At_23" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十三条</a>第三項の申出をした者」と読み替えるものとする。</span></p></article>
+<article class="art" id="a6" data-path=""><span class="anchor-alias" id="Mp-At_6"></span><div class="art-tools"><button type="button" data-anchor="a6" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2023/huseikyousouboushitokureikisoku.20240215.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（決定の告知・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/405AC0000000047#Mp-At_23" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十三条</a>）</p><p class="para" id="a6-p1"><a class="art-no" href="#a6" data-kan="第六条" data-num="第6条">第六条</a><span class="body-text">裁判所は、秘匿決定若しくは呼称等の決定又はこれらの決定の全部若しくは一部を取り消す決定をしたときは、公判期日においてこれをした場合を除き、速やかに、その旨を訴訟関係人に通知しなければならない。秘匿決定をしないこととしたときも、同様とする。</span></p><p class="para" id="a6-p2"><span class="pno">2</span><span class="body-text">裁判所は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/405AC0000000047#Mp-At_23" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十三条</a>第一項の決定又は当該決定の全部若しくは一部を取り消す決定をしたときは、速やかに、その旨を同項の申出をした者に通知しなければならない。同項の決定をしないこととしたときも、同様とする。</span></p></article>
+<article class="art" id="a7" data-path=""><span class="anchor-alias" id="Mp-At_7"></span><div class="art-tools"><button type="button" data-anchor="a7" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2023/huseikyousouboushitokureikisoku.20240215.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（営業秘密構成情報特定事項を明らかにしない方法で行う手続）</p><p class="para" id="a7-p1"><a class="art-no" href="#a7" data-kan="第七条" data-num="第7条">第七条</a><span class="body-text">秘匿決定があったときは、次に掲げる手続は、営業秘密構成情報特定事項を明らかにしない方法でこれを行うものとする。</span></p><ol class="items"><li id="a7-p1-1"><span class="mk">一</span><span class="tx"><a class="ref ref-rule" href="600.html#a217-31" title="この規則集の中を開きます">刑事訴訟規則第二百十七条の三十一</a>第一項又は第二項の規定による公判前整理手続調書、期日間整理手続調書又は刑事訴訟法（昭和二十三年法律第百三十一号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/323AC0000000131#Mp-At_316_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第三百十六条の二</a>第三項（同法第三百十六条の二十八第二項において準用する場合を含む。）に規定する書面の朗読又は要旨の告知</span></li><li id="a7-p1-2"><span class="mk">二</span><span class="tx"><a class="ref ref-rule" href="600.html#a209" title="この規則集の中を開きます">刑事訴訟規則第二百九条</a>第一項の規定による訴因変更等請求書面の朗読</span></li><li id="a7-p1-3"><span class="mk">三</span><span class="tx"><a class="ref ref-rule" href="600.html#a35" title="この規則集の中を開きます">刑事訴訟規則第三十五条</a>第二項の規定による判決の宣告</span></li></ol><p class="para" id="a7-p2"><span class="pno">2</span><span class="body-text">前項第二号の手続を行う場合には、検察官は、被告人に対し、同号に規定する書面を示さなければならない。</span></p></article>
+<article class="art" id="a8" data-path=""><span class="anchor-alias" id="Mp-At_8"></span><div class="art-tools"><button type="button" data-anchor="a8" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2023/huseikyousouboushitokureikisoku.20240215.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（公判期日外の被告人の供述を求める手続・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/405AC0000000047#Mp-At_26" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十六条</a>）</p><p class="para" id="a8-p1"><a class="art-no" href="#a8" data-kan="第八条" data-num="第8条">第八条</a><span class="body-text"><a class="ref ref-rule" href="600.html#a38" title="この規則集の中を開きます">刑事訴訟規則第三十八条</a>（第二項第二号及び第四号から第十号まで並びに第七項を除く。）、第四十条、第四十二条第一項本文、第五十二条の二、第五十二条の四、第五十二条の五第一項、第五十二条の六、<a class="ref ref-self" href="#a52-14">第五十二条の十四</a>、第五十二条の十五第一項、第五十二条の十六、第百六条（第一項ただし書、第二項及び第四項を除く。）、第百八条、第百九条、第百十四条、第百二十六条及び第百七十八条の十二（第三項を除く。）の規定は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/405AC0000000047#Mp-At_26" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十六条</a>第一項の規定による公判期日外において被告人の供述を求める手続について準用する。この場合において、次の表の上欄に掲げる同規則の規定中同表の中欄に掲げる字句は、それぞれ同表の下欄に掲げる字句に読み替えるものとする。第三十八条第五項被疑者又は弁護人弁護人、共同被告人又はその弁護人裁判長又は尋問をした裁判官裁判長第四十二条第一項本文その取調又は処分をした者裁判長第五十二条の二第一項裁判所、受命裁判官又は受託裁判裁判所官被告人又は弁護人弁護人及び共同被告人又はその弁護人第五十二条の二第三項及又は弁護人、弁護人、共同被告び第四項人又はその弁護人裁判長、受命裁判官又は受託裁判裁判長官第五十二条の二第五項又は弁護人、弁護人、共同被告人又はその弁護人第五十二条の四ただし書裁判所又は裁判官裁判所、被疑者又は弁護人又は弁護人並びに共同被告人又はその弁護人第五十二条の六<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/405AC0000000047#Mp-At_23" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第一項前条前条第一項及び不正競争防止法第二十三条</a>第一項に規定する事件に係る刑事訴訟手続の特例に関する規則（平成二十三年最高裁判所規則第四号。第四項において「特例規則」という。）第八条第二項において準用する前条第二項第一号及び第二号その尋問に立ち会い又は立ち会う検察官、被告人、弁ことのできた検察官、被告人、被護人、共同被告人又疑者又は弁護人はその弁護人第五十二条の六第二項又は弁護人、弁護人、共同被告人又はその弁護人第五十二条の六第三項裁判長、受命裁判官又は受託裁判裁判長官第五十二条の六第四項前条前条第一項及び特例規則第八条第二項において準用する前条第二項第一号及び第二号又は弁護人、弁護人、共同被告人又はその弁護人</span></p></article>
+<article class="art" id="a52-14" data-path=""><span class="anchor-alias" id="Mp-At_52_14"></span><div class="art-tools"><button type="button" data-anchor="a52-14" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2023/huseikyousouboushitokureikisoku.20240215.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="para" id="a52-14-p1"><a class="art-no" href="#a52-14" data-kan="第五十二条の十四" data-num="第52条の14">第五十二条の十四</a><span class="body-text">裁判所又は裁判官裁判所第五十二条の十六第一項その尋問に立ち会い又は立ち会う検察官、被告人、弁ことのできた検察官、被告人、被護人、共同被告人又疑者又は弁護人はその弁護人第五十二条の十六第二項又は弁護人、弁護人、共同被告人又はその弁護人第五十二条の十六第三項裁判長、受命裁判官又は受託裁判裁判長官第五十二条の十六第四項前条第四項前条第一項又は弁護人、弁護人、共同被告人又はその弁護人第百六条第一項本文証人の尋問を請求した者公判期日外において被告人の供述を求める検察官、弁護人、共同被告人又はその弁護人第百六条第五項相手方及びその弁護人検察官、弁護人、共同被告人及びその弁護人（これらの者のうち第一項の書面を差し出す者を除く。）第百八条第一項被告人又は弁護人弁護人、共同被告人又はその弁護人相手方及びその弁護人検察官、弁護人、共同被告人及びその弁護人（これらの者のうち同項の書面を差し出した者を除く。）第百八条第二項相手方又はその弁護人前項の規定による告知を受けた者第百九条第一項職権で裁判長又は陪席の裁判官が被告人及び弁護人弁護人、共同被告人及びその弁護人第百九条第二項被告人又は弁護人弁護人、共同被告人又はその弁護人第百二十六条第一項被告人又は弁護人弁護人、共同被告人又はその弁護人整理されたとき、又はその送付を整理された受けた第百二十六条第二項及び被告人共同被告人第三項第百七十八条の十二第一被告人共同被告人項及び第二項弁護人その弁護人</span></p><p class="para" id="a52-14-p2"><span class="pno">2</span><span class="body-text"><a class="ref ref-rule" href="600.html#a52-5" title="この規則集の中を開きます">刑事訴訟規則第五十二条の五</a>第二項第一号及び第二号の規定は、前項において読み替えて準用する同規則第五十二条の四本文の規定により公判期日外における被告人に対する質問及びその供述を速記した速記録を調書の一部とする場合において、被告人が速記原本の訳読を請求したときについて準用する。</span></p><p class="para" id="a52-14-p3"><span class="pno">3</span><span class="body-text"><a class="ref ref-rule" href="600.html#a52-15" title="この規則集の中を開きます">刑事訴訟規則第五十二条の十五</a>第二項第一号及び第二号の規定は、第一項において読み替えて準用する同規則第五十二条の十四の規定により公判期日外における被告人に対する質問及びその供述を録音した録音体を反訳した調書を作成する場合において、被告人が録音体の再生を請求したときについて準用する。</span></p></article>
+<h2 class="div-head" id="sup1" data-path="附則　"><span class="lbl">附則</span></h2>
+<article class="art noarticle" id="sup-body-1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2023/huseikyousouboushitokureikisoku.20240215.pdf#page=7" target="_blank" rel="noopener" title="原本PDFの7ページを開きます">原本 p.7</a></div><p class="para" id="sup-body-1-p1"><span class="body-text">この規則は、不正競争防止法の一部を改正する法律（平成二十三年法律第六十二号）の施行の日（平成二十三年十二月一日）から施行する。</span></p></article>
+<h2 class="div-head" id="sup2" data-path="附則　（平成二八年一〇月一八日最高裁判所規則第六号）抄"><span class="lbl">附則</span>　（平成二八年一〇月一八日最高裁判所規則第六号）抄</h2>
+<article class="art" id="sup2-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup2-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2023/huseikyousouboushitokureikisoku.20240215.pdf#page=8" target="_blank" rel="noopener" title="原本PDFの8ページを開きます">原本 p.8</a></div><p class="caption">（施行期日）</p><p class="para" id="sup2-a1-p1"><a class="art-no" href="#sup2-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、刑事訴訟法等の一部を改正する法律（平成二十八年法律第五十四号）附則<a class="ref ref-self" href="#a1">第一条</a>第三号に掲げる規定の施行の日（平成二十八年十二月一日）から施行する。</span></p></article>
+<h2 class="div-head" id="sup3" data-path="附則　（平成三〇年一月一五日最高裁判所規則第一号）抄"><span class="lbl">附則</span>　（平成三〇年一月一五日最高裁判所規則第一号）抄</h2>
+<article class="art" id="sup3-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup3-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2023/huseikyousouboushitokureikisoku.20240215.pdf#page=8" target="_blank" rel="noopener" title="原本PDFの8ページを開きます">原本 p.8</a></div><p class="caption">（施行期日）</p><p class="para" id="sup3-a1-p1"><a class="art-no" href="#sup3-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、刑事訴訟法等の一部を改正する法律（平成二十八年法律第五十四号）附則<a class="ref ref-self" href="#a1">第一条</a>第四号に掲げる規定の施行の日から施行する。ただし、<a class="ref ref-self" href="#a3">第三条</a>の規定は、同法の施行の日から施行する。</span></p></article>
+<h2 class="div-head" id="sup4" data-path="附則　（令和五年一二月二五日最高裁判所規則第一〇号）抄"><span class="lbl">附則</span>　（令和五年一二月二五日最高裁判所規則第一〇号）抄</h2>
+<article class="art" id="sup4-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup4-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2023/huseikyousouboushitokureikisoku.20240215.pdf#page=8" target="_blank" rel="noopener" title="原本PDFの8ページを開きます">原本 p.8</a></div><p class="caption">（施行期日）</p><p class="para" id="sup4-a1-p1"><a class="art-no" href="#sup4-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、刑事訴訟法等の一部を改正する法律（令和五年法律第二十八号）附則<a class="ref ref-self" href="#a1">第一条</a>第四号に掲げる規定の施行の日（令和六年二月一五日）から施行する。</span></p></article>
+    </div>
+    <aside class="notes"><p>読み取りに関する注意</p><ul><li>題名・制定文とみられる行を本文の前に検出しました：改正 平成二十八年十月一八日最高裁判所規則第六号／平成三十年一月一五日最高裁判所規則第一号／令和五年一二月二五日最高裁判所規則第一〇号</li><li>各条の「原本」は https://www.courts.go.jp/vc-files/courts/2023/huseikyousouboushitokureikisoku.20240215.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。</li></ul></aside>
+    <div class="foot">出典：huseikyousouboushitokureikisoku.20240215.pdf　／　最高裁規則ビューア 1.9.0 で 2026年09月02日 に変換　
+    条文の正確な内容は原本で確認してください。</div>
+  </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  "use strict";
+  var doc = document.getElementById("doc");
+  var input = document.getElementById("q");
+  var hitLabel = document.getElementById("hits");
+  var crumb = document.getElementById("crumb");
+  var toc = document.getElementById("toc");
+  var toast = document.getElementById("toast");
+  var pristine = doc.innerHTML;
+  var hits = [];
+  var cursor = -1;
+
+  function say(msg){
+    toast.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(say._t);
+    say._t = setTimeout(function(){ toast.classList.remove("show"); }, 1600);
+  }
+
+  /* ---------------------------------------------------------- 条番号の表記 */
+  var numeralBtn = document.getElementById("numeral");
+  function applyNumeral(useArabic){
+    var nodes = doc.querySelectorAll(".art-no");
+    for (var i = 0; i < nodes.length; i++){
+      var el = nodes[i];
+      var v = useArabic ? el.getAttribute("data-num") : el.getAttribute("data-kan");
+      if (v) el.textContent = v;
+    }
+    numeralBtn.setAttribute("aria-pressed", useArabic ? "true" : "false");
+  }
+  numeralBtn.addEventListener("click", function(){
+    var next = numeralBtn.getAttribute("aria-pressed") !== "true";
+    applyNumeral(next);
+    try { localStorage.setItem("rule-numeral", next ? "1" : "0"); } catch(e){}
+    pristine = doc.innerHTML;
+  });
+  try {
+    /* 既定の表記は原本に合わせてある。前回の切り替えが残っていればそれに従う */
+    var saved = localStorage.getItem("rule-numeral");
+    if (saved === "1" || saved === "0"){ applyNumeral(saved === "1"); pristine = doc.innerHTML; }
+  } catch(e){}
+
+  /* -------------------------------------------------------------- 検索処理 */
+  var SKIP = {SCRIPT:1, STYLE:1, MARK:1, BUTTON:1, A:1};   /* 原本リンク等の道具立ては検索対象にしない */
+  function highlight(term){
+    doc.innerHTML = pristine;
+    hits = [];
+    cursor = -1;
+    if (!term){ hitLabel.textContent = ""; refreshToc(""); return; }
+    var walker = document.createTreeWalker(doc, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        if (!n.nodeValue || n.nodeValue.indexOf(term) < 0) return NodeFilter.FILTER_REJECT;
+        if (n.parentNode && SKIP[n.parentNode.nodeName]) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var targets = [];
+    var node;
+    while ((node = walker.nextNode())) targets.push(node);
+    for (var i = 0; i < targets.length; i++){
+      var t = targets[i], text = t.nodeValue, pos = 0, frag = document.createDocumentFragment();
+      var idx;
+      while ((idx = text.indexOf(term, pos)) >= 0){
+        if (idx > pos) frag.appendChild(document.createTextNode(text.slice(pos, idx)));
+        var m = document.createElement("mark");
+        m.textContent = text.substr(idx, term.length);
+        frag.appendChild(m);
+        hits.push(m);
+        pos = idx + term.length;
+      }
+      if (pos < text.length) frag.appendChild(document.createTextNode(text.slice(pos)));
+      t.parentNode.replaceChild(frag, t);
+    }
+    hitLabel.textContent = hits.length ? "1 / " + hits.length : "該当なし";
+    refreshToc(term);
+    if (hits.length){ cursor = 0; focusHit(0, false); }
+  }
+  function focusHit(i, scroll){
+    if (!hits.length) return;
+    for (var k = 0; k < hits.length; k++) hits[k].classList.remove("live");
+    cursor = (i + hits.length) % hits.length;
+    hits[cursor].classList.add("live");
+    hitLabel.textContent = (cursor + 1) + " / " + hits.length;
+    if (scroll !== false) hits[cursor].scrollIntoView({block:"center", behavior:"instant"});
+  }
+  function refreshToc(term){
+    var links = toc.querySelectorAll("li.lv-art");
+    for (var i = 0; i < links.length; i++){
+      var li = links[i];
+      var body = (li.getAttribute("data-text") || "");
+      li.classList.toggle("hidden", !!term && body.indexOf(term) < 0);
+    }
+    var divs = toc.querySelectorAll("li.lv-div");
+    for (var j = divs.length - 1; j >= 0; j--){
+      var d = divs[j];
+      var kids = d.querySelectorAll("li:not(.hidden)");
+      d.classList.toggle("hidden", !!term && kids.length === 0);
+    }
+  }
+  var timer = null;
+  input.addEventListener("input", function(){
+    clearTimeout(timer);
+    var v = input.value.trim();
+    timer = setTimeout(function(){ highlight(v); }, 180);
+  });
+  input.addEventListener("keydown", function(e){
+    if (e.key === "Enter"){ e.preventDefault(); focusHit(cursor + (e.shiftKey ? -1 : 1)); }
+    if (e.key === "Escape"){ input.value = ""; highlight(""); input.blur(); }
+  });
+  document.getElementById("prev").addEventListener("click", function(){ focusHit(cursor - 1); });
+  document.getElementById("next").addEventListener("click", function(){ focusHit(cursor + 1); });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "/" && e.target === document.body){ e.preventDefault(); input.focus(); }
+  });
+
+  /* -------------------------------------------------- リンクのコピー・共有 */
+  doc.addEventListener("click", function(e){
+    var btn = e.target.closest ? e.target.closest("button[data-anchor]") : null;
+    if (!btn) return;
+    var anchor = btn.getAttribute("data-anchor");
+    var url = location.href.split("#")[0] + "#" + anchor;
+    history.replaceState(null, "", "#" + anchor);
+    var done = function(){ say("リンクをコピーしました"); };
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(done, function(){ legacyCopy(url, done); });
+    } else {
+      legacyCopy(url, done);
+    }
+  });
+  function legacyCopy(text, done){
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); done(); }
+    catch(err){ say("コピーできませんでした。アドレス欄からURLを控えてください"); }
+    document.body.removeChild(ta);
+  }
+
+  /* ------------------------------------------------ 現在位置の表示と目次連動 */
+  var watched = doc.querySelectorAll(".art[id], .div-head[id]");
+  var tocLinks = {};
+  var links = toc.querySelectorAll("a[href^='#']");
+  for (var i = 0; i < links.length; i++) tocLinks[links[i].getAttribute("href").slice(1)] = links[i];
+  var currentLink = null;
+  if ("IntersectionObserver" in window){
+    var visible = [];
+    var io = new IntersectionObserver(function(entries){
+      for (var i = 0; i < entries.length; i++){
+        var id = entries[i].target.id;
+        var at = visible.indexOf(id);
+        if (entries[i].isIntersecting){ if (at < 0) visible.push(id); }
+        else if (at >= 0){ visible.splice(at, 1); }
+      }
+      if (!visible.length) return;
+      var first = null;
+      for (var k = 0; k < watched.length; k++){
+        if (visible.indexOf(watched[k].id) >= 0){ first = watched[k]; break; }
+      }
+      if (!first) return;
+      crumb.textContent = first.getAttribute("data-path") || "";
+      var link = tocLinks[first.id];
+      if (link && link !== currentLink){
+        if (currentLink) currentLink.classList.remove("current");
+        link.classList.add("current");
+        currentLink = link;
+      }
+    }, {rootMargin:"-20% 0px -70% 0px"});
+    for (var w = 0; w < watched.length; w++) io.observe(watched[w]);
+  }
+
+  /* -------------------------------------------------------- 目次の開閉（狭幅） */
+  var opener = document.getElementById("toc-open");
+  if (opener){
+    opener.addEventListener("click", function(){ toc.classList.toggle("open"); });
+    toc.addEventListener("click", function(e){
+      if (e.target.tagName === "A") toc.classList.remove("open");
+    });
+  }
+})();
+</script>
+</body>
+</html>

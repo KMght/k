@@ -1,0 +1,735 @@
+{
+  "title": "最高裁判所裁判事務処理規則",
+  "law_number": "昭和22年11月1日最高裁判所規則第6号",
+  "enforcement_date": "昭和40年4月1日",
+  "enforcement_iso": "1965-04-01",
+  "pdf_link": "https://www.courts.go.jp/assets/R6.9.17saikousaibansyosaibanjimusyorikisoku.pdf",
+  "source": "R6.9.17saikousaibansyosaibanjimusyorikisoku.pdf",
+  "numeral": "kansuji",
+  "notes": [
+    "各条の「原本」は https://www.courts.go.jp/assets/R6.9.17saikousaibansyosaibanjimusyorikisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+  ],
+  "nodes": [
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "body-1",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "改正 昭和22年12月29日最高裁判所規則第１９号昭和23年4月1日最高裁判所規則第３号昭和23年10月19日最高裁判所規則第２６号昭和24年7月1日最高裁判所規則第１２号昭和28年1月19日最高裁判所規則第１号昭和40年3月31日最高裁判所規則第５号令和6年9月17日最高裁判所規則第１４号最高裁判所裁判事務処理規則を次のように定める。最高裁判所裁判事務処理規則",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "a1",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "最高裁判所の小法廷は、第一小法廷、第二小法廷及び第三小法廷とする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        2
+      ],
+      "label": "第二条",
+      "short_label": "2条",
+      "anchor": "a2",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "小法廷の裁判官の員数は、五人とする。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "小法廷では、裁判官三人以上が出席すれば、審理及び裁判をすることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        3
+      ],
+      "label": "第三条",
+      "short_label": "3条",
+      "anchor": "a3",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "小法廷の裁判長は、各小法廷でこれを定める。但し、最高裁判所長官が出席する場合には、最高裁判所長官を裁判長とする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        4
+      ],
+      "label": "第四条",
+      "short_label": "4条",
+      "anchor": "a4",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "各小法廷の裁判官の配置、裁判官に差支あるときの代理順序及び各小法廷に対する事務の分配については、毎年十二月裁判官会議の議により翌年分を定める。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        5
+      ],
+      "label": "第五条",
+      "short_label": "5条",
+      "anchor": "a5",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "前条の規定により裁判官の配置、裁判官の代理順序及び事務の分配が一たび定まつたときは、一小法廷の事務が多過ぎるか、又はその裁判官が退官し、若しくは疾病その他の事由により久しく欠勤する等引続き差支のある場合を除いては、一年間これを変更しない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        6
+      ],
+      "label": "第六条",
+      "short_label": "6条",
+      "anchor": "a6",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "小法廷では、各事件につき、主任裁判官を定める。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        7
+      ],
+      "label": "第七条",
+      "short_label": "7条",
+      "anchor": "a7",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "昭二二最裁規一九・昭二三最裁規二六・一部改正",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "大法廷では、九人以上の裁判官が出席すれば、審理及び裁判をすることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        8
+      ],
+      "label": "第八条",
+      "short_label": "8条",
+      "anchor": "a8",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "大法廷では、最高裁判所長官を裁判長とする。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "最高裁判所長官に差支あるときの代理順序については、第四条の規定を準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        9
+      ],
+      "label": "第九条",
+      "short_label": "9条",
+      "anchor": "a9",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "昭二三最裁規三・昭二八最裁規一・一部改正",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "事件は、まず小法廷で審理する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "左の場合には、小法廷の裁判長は、大法廷の裁判長にその旨を通知しなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "裁判所法〔昭和二二年四月法律第五九号〕第十条第一号乃至第三号に該当する場合",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "その小法廷の裁判官の意見が二説に分れ、その説が各々同数の場合",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "大法廷で裁判することを相当と認めた場合",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "text": "前項の通知があつたときは、大法廷で更に審理し、裁判をしなければならない。この場合において、大法廷では、前項各号にあたる点のみについて審理及び裁判をすることを妨げない。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "前項後段の裁判があつた場合においては、小法廷でその他について審理及び裁判をする。",
+          "items": []
+        },
+        {
+          "number": 5,
+          "text": "裁判所法第十条第一号に該当する場合において、意見が前にその法律、命令、規則又は処分が憲法に適合するとした大法廷の裁判と同じであるときは、第二項及び第三項の規定にかかわらず、小法廷で裁判をすることができる。",
+          "items": []
+        },
+        {
+          "number": 6,
+          "text": "法令の解釈適用について、意見が大審院のした判決に反するときも、また前項と同様とする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        10
+      ],
+      "label": "第十条",
+      "short_label": "10条",
+      "anchor": "a10",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "昭二三最裁規三・追加",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "大法廷で取り扱う事件に関し、勾留の期間の更新、勾留の取消、保釈、保釈の取消、責付、責付の取消、勾留の執行停止、勾留の執行停止の取消又は強制執行の停止をするには、小法廷で裁判をすることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        11
+      ],
+      "label": "第十一条",
+      "short_label": "11条",
+      "anchor": "a11",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "昭二三最裁規三・旧第十条繰下・一部改正",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "第九条第三項の場合においては、小法廷における主任裁判官が、大法廷における主任裁判官となる。但し、大法廷の裁判官過半数の意見により、他の裁判官を主任裁判官と定めることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        12
+      ],
+      "label": "第十二条",
+      "short_label": "12条",
+      "anchor": "a12",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "昭二三最裁規三・旧第十一条繰下",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法律、命令、規則又は処分が憲法に適合しないとの裁判をするには、八人以上の裁判官の意見が一致しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        13
+      ],
+      "label": "第十三条",
+      "short_label": "13条",
+      "anchor": "a13",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "令六最裁規一四・一部改正",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判書又は電子裁判書（裁判所が法律の定めるところにより作成した裁判の内容を記録した電磁的記録（電子的方式、磁気的方式その他人の知覚によつては認識することができない方式で作られる記録であつて、電子計算機による情報処理の用に供されるものをいう。）をいう。次条において同じ。）に各裁判官の意見を表示するには、理由を明らかにして、これをしなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        14
+      ],
+      "label": "第十四条",
+      "short_label": "14条",
+      "anchor": "a14",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "昭二三最裁規三・旧第十三条繰下・一部改正、令六最裁規一四・一部改正",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "第十二条の裁判をしたときは、その要旨を官報に公告し、かつその裁判書の正本又は電子裁判書に記録されている事項を記載した書面であつて裁判所書記官が当該書面の内容が民事訴訟法（平成八年法律第百九号）第二百五十三条第二項（同法第百二十二条において準用する場合を含む。）の規定により裁判所の使用に係る電子計算機に備えられたファイルに記録されている事項と同一であることを証明したもの（以下この条において「電子裁判書記録事項証明書」という。）を内閣に送付する。その裁判が、法律が憲法に適合しないと判断したものであるときは、その裁判書の正本又は電子裁判書記録事項証明書を国会にも送付する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        15
+      ],
+      "label": "第十五条",
+      "short_label": "15条",
+      "anchor": "a15",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "各法廷に裁判所書記官を置く。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "裁判所書記官の配置は、裁判官会議の議によりこれを定める。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "",
+      "anchor": "sup1",
+      "level": 1,
+      "page": 2,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-1",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 1,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、公布の日から、これを施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和二二年一二月二九日最高裁判所規則第一九号）",
+      "anchor": "sup2",
+      "level": 1,
+      "page": 2,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-2",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 2,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、公布の日から、これを施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和二三年四月一日最高裁判所規則第三号）",
+      "anchor": "sup3",
+      "level": 1,
+      "page": 2,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-3",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 3,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、公布の日から、これを施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和二三年一〇月一九日最高裁判所規則第二六号）",
+      "anchor": "sup4",
+      "level": 1,
+      "page": 2,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-4",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 4,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、公布の日から、これを施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和二四年七月一日最高裁判所規則第一二号〕",
+      "anchor": "sup5",
+      "level": 1,
+      "page": 2,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-5",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 5,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、昭和二十四年七月一日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和二八年一月一九日最高裁判所規則第一号）",
+      "anchor": "sup6",
+      "level": 1,
+      "page": 3,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-6",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 6,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、公布の日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和四〇年三月三一日最高裁判所規則第五号）",
+      "anchor": "sup7",
+      "level": 1,
+      "page": 3,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-7",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 7,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、昭和四十年四月一日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（令和六年九月一七日最高裁判所規則第一四号）",
+      "anchor": "sup8",
+      "level": 1,
+      "page": 3,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-8",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 8,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、民事訴訟法等の一部を改正する法律（令和四年法律第四十八号）の施行の日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    }
+  ]
+}

@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>事件記録等の特別保存に関する規則</title>
+<style>
+:root{
+  --paper:#ffffff;
+  --ink:#16181d;
+  --sub:#5f6875;
+  --rule:#dde2e9;
+  --chrome:#f4f6f9;
+  --accent:#14538a;
+  --accent-weak:#e7eff7;
+  --mark:#ffe08a;
+  --mark-live:#ff9d3d;
+  --gothic:"Yu Gothic UI","Yu Gothic","YuGothic","Hiragino Sans","Noto Sans JP","Meiryo",system-ui,sans-serif;
+  --mincho:"Yu Mincho","YuMincho","Hiragino Mincho ProN","Noto Serif JP","MS Mincho",serif;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:5.5rem}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--mincho);font-size:17px;line-height:1.9;
+  text-rendering:optimizeLegibility;
+}
+
+/* ---------------------------------------------------------------- ヘッダ */
+.top{
+  position:sticky;top:0;z-index:30;background:var(--chrome);
+  border-bottom:1px solid var(--rule);font-family:var(--gothic);
+}
+.top-inner{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;padding:.7rem 1.2rem}
+.law-title{font-size:1.12rem;font-weight:700;letter-spacing:.02em;margin:0}
+.law-number{font-size:.8rem;color:var(--sub);margin-left:.2rem}
+.top-tools{margin-left:auto;display:flex;align-items:center;gap:.5rem}
+.search-box{display:flex;align-items:center;gap:.35rem;background:var(--paper);
+  border:1px solid var(--rule);border-radius:2px;padding:.25rem .5rem}
+.search-box input{border:0;outline:0;font:inherit;font-size:.85rem;width:14rem;background:transparent;color:inherit}
+.hit-count{font-size:.78rem;color:var(--sub);min-width:4.2rem;text-align:right;font-variant-numeric:tabular-nums}
+button{font:inherit;font-family:var(--gothic);cursor:pointer}
+.btn{background:var(--paper);border:1px solid var(--rule);border-radius:2px;
+  color:var(--ink);font-size:.78rem;padding:.28rem .6rem;line-height:1.4}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.crumb{padding:.3rem 1.2rem;border-top:1px solid var(--rule);background:var(--paper);
+  font-family:var(--gothic);font-size:.78rem;color:var(--sub);min-height:1.7rem}
+
+/* ------------------------------------------------------------------ 骨格 */
+.wrap{display:grid;grid-template-columns:19rem minmax(0,1fr);align-items:start}
+.toc{
+  position:sticky;top:5.6rem;max-height:calc(100vh - 5.6rem);overflow-y:auto;
+  border-right:1px solid var(--rule);padding:1rem .6rem 4rem 1.2rem;
+  font-family:var(--gothic);font-size:.83rem;line-height:1.65;
+}
+.toc h2{font-size:.75rem;color:var(--sub);font-weight:700;margin:0 0 .6rem}
+.toc ul{list-style:none;margin:0;padding:0}
+.toc a{display:block;color:var(--ink);text-decoration:none;padding:.16rem .4rem;border-radius:2px}
+.toc a:hover{background:var(--accent-weak);color:var(--accent)}
+.toc a.current{background:var(--accent-weak);color:var(--accent);font-weight:700}
+.toc .div-1>a,.toc .div-2>a{font-weight:700}
+.toc .div-2{margin-top:.5rem}
+.toc .div-3,.toc .div-4,.toc .div-5{margin-top:.25rem}
+.toc .lv-art{padding-left:.9rem}
+.toc .lv-art.hidden,.toc .lv-div.hidden{display:none}
+.toc-toggle{background:none;border:0;color:var(--sub);padding:0 .3rem;font-size:.75rem}
+
+.doc{padding:2.2rem 2rem 8rem;max-width:44em}
+.doc-head{border-bottom:2px solid var(--ink);padding-bottom:.8rem;margin-bottom:2rem}
+.doc-head h1{font-size:1.5rem;margin:0 0 .3rem;letter-spacing:.04em}
+.doc-head .meta{font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+
+/* ------------------------------------------------------------------ 条文 */
+.div-head{font-family:var(--gothic);margin:2.6rem 0 1rem;scroll-margin-top:6rem}
+.div-head .lbl{color:var(--accent);font-weight:700}
+h2.div-head{font-size:1.12rem;border-bottom:1px solid var(--rule);padding-bottom:.35rem}
+h3.div-head{font-size:1.02rem}
+h4.div-head,h5.div-head,h6.div-head{font-size:.95rem}
+
+.art{position:relative;padding-left:2.6rem;margin:1.5rem 0 1.9rem;scroll-margin-top:6rem}
+.art:target{background:var(--accent-weak);box-shadow:-.4rem 0 0 var(--accent);border-radius:2px}
+.art-tools{position:absolute;left:0;top:.25rem;display:flex;flex-direction:column;gap:.2rem;
+  visibility:hidden}
+.art:hover .art-tools,.art:focus-within .art-tools,.art:target .art-tools{visibility:visible}
+.art-tools button,.art-tools a{background:none;border:0;color:var(--sub);font-size:.72rem;
+  font-family:var(--gothic);padding:.1rem .2rem;border-radius:2px;text-decoration:none;
+  white-space:nowrap;display:block}
+.art-tools button:hover,.art-tools a:hover{color:var(--accent);background:var(--accent-weak)}
+.raw h3 .src{font-size:.75rem;font-weight:400;color:var(--sub);margin-left:.5rem}
+.doc-head .src{color:var(--accent);text-decoration:none}
+.doc-head .src:hover{text-decoration:underline}
+.caption{font-family:var(--gothic);font-size:.88rem;font-weight:700;color:var(--sub);margin:0 0 .1rem}
+.amend-note{font-family:var(--gothic);font-size:.78rem;font-weight:400;color:var(--sub);margin:.1rem 0 0;text-align:right}
+h2 .amend-note,h3 .amend-note,h4 .amend-note,h5 .amend-note,h6 .amend-note{display:inline;text-align:left}
+.art-no{font-family:var(--gothic);font-weight:700;color:var(--accent);text-decoration:none;margin-right:.55em}
+.art-no:hover{text-decoration:underline}
+.para{margin:.35rem 0;text-indent:0}
+.para+.para{margin-top:.55rem}
+.pno{font-family:var(--gothic);color:var(--sub);font-size:.9em;margin-right:.5em;font-variant-numeric:tabular-nums}
+.deleted .body-text{color:var(--sub)}
+.art.noarticle .para{margin-top:0}
+
+ol.items{list-style:none;margin:.35rem 0 .35rem 1.1em;padding:0}
+ol.items>li{display:grid;grid-template-columns:2.4em minmax(0,1fr);margin:.2rem 0}
+ol.items .mk{font-family:var(--gothic);font-size:.9em;color:var(--sub);margin-right:.4em}
+ol.items ol.items{grid-column:1/-1;margin-left:1.2em}
+ol.items ol.items>li{grid-template-columns:2em minmax(0,1fr)}
+
+.raw{margin:1.6rem 0;scroll-margin-top:6rem}
+.raw h3{font-family:var(--gothic);font-size:1rem;margin:0 0 .4rem}
+.raw pre{font-family:var(--mincho);white-space:pre-wrap;margin:0;padding:.7rem .9rem;
+  background:var(--chrome);border:1px solid var(--rule);font-size:.92rem;line-height:1.75}
+
+.notes{margin:2.5rem 0 0;padding:.8rem 1rem;background:var(--chrome);
+  border-left:3px solid var(--accent);font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+.notes p{margin:0 0 .3rem;font-weight:700;color:var(--ink)}
+.notes ul{margin:0;padding-left:1.2rem}
+.foot{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);
+  font-family:var(--gothic);font-size:.75rem;color:var(--sub)}
+
+a.ref{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule)}
+a.ref:hover{color:var(--accent);border-bottom-color:var(--accent)}
+a.ref-egov{border-bottom-style:dotted}
+a.ref-rule{border-bottom-color:var(--accent)}
+mark{background:var(--mark);color:inherit;padding:0 .05em}
+mark.live{background:var(--mark-live)}
+.toast{position:fixed;left:50%;bottom:2rem;transform:translateX(-50%);
+  background:var(--ink);color:#fff;font-family:var(--gothic);font-size:.8rem;
+  padding:.5rem .9rem;border-radius:3px;pointer-events:none;z-index:60;display:none}
+.toast.show{display:block}
+
+.toc-open{display:none}
+@media (max-width:900px){
+  body{font-size:16px}
+  .wrap{grid-template-columns:minmax(0,1fr)}
+  .toc{position:fixed;inset:5.6rem auto 0 0;width:82vw;max-width:20rem;background:var(--paper);
+    z-index:25;box-shadow:0 0 0 100vmax rgba(0,0,0,.25);max-height:none;height:calc(100vh - 5.6rem);
+    display:none}
+  .toc.open{display:block}
+  .toc-open{display:inline-block}
+  .doc{padding:1.4rem 1.1rem 6rem}
+  .search-box input{width:8rem}
+  .art-tools{opacity:1;position:static;flex-direction:row;justify-content:flex-end;margin-bottom:.15rem}
+  .art-tools button,.art-tools a{border:1px solid var(--rule);border-radius:2px;
+    padding:.1rem .45rem;display:inline-block}
+  .art{padding-left:0}
+}
+
+@media print{
+  .top,.toc,.art-tools,.crumb,.toast{display:none!important}
+  a.ref{border-bottom:0}
+  .wrap{display:block}
+  .doc{max-width:none;padding:0}
+  body{font-size:10.5pt;line-height:1.7}
+  .art{page-break-inside:avoid}
+}
+
+.anchor-alias{position:absolute;scroll-margin-top:6rem}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <button type="button" class="btn toc-open" id="toc-open">目次</button>
+    <h1 class="law-title">事件記録等の特別保存に関する規則</h1>
+    <span class="law-number">令和5年最高裁判所規則第9号　／　令和8年5月25日施行</span>
+    <div class="top-tools">
+      <div class="search-box">
+        <input type="search" id="q" placeholder="条文を検索（/ キー）" aria-label="条文を検索">
+        <span class="hit-count" id="hits"></span>
+      </div>
+      <button type="button" class="btn" id="prev" title="前の該当箇所">前</button>
+      <button type="button" class="btn" id="next" title="次の該当箇所">次</button>
+      <button type="button" class="btn" id="numeral" aria-pressed="true"
+        title="条番号の表記を切り替える">123</button>
+    </div>
+  </div>
+  <div class="crumb" id="crumb"></div>
+</header>
+<div class="wrap">
+  <nav class="toc" id="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ul><li class="lv-art" data-text="改正 令和 ６年 ３月１１日最高裁判所規則第 ９号改正 令和 ７年１０月１６日最高裁判所規則第１２号改正 令和 ８年 ５月１４日最高裁判所規則第 ９号"><a href="#body-1">本文</a></li><li class="lv-div div-2"><a href="#d1">第１章　総則</a><ul><li class="lv-art" data-text="第一条1条目的目的この規則は、事件記録、事件書類又は少年調査記録（以下「記録等」という。）のうち、歴史的、社会的な意義を有し、史料又は参考資料として価値を有するものを適切かつ確実に選別し、国民共有の財産として保存し、後世に引き継いでいくことを目的とする。"><a href="#a1">第一条　目的</a></li><li class="lv-art" data-text="第二条2条定義定義この規則において「事件記録」とは、別表第一に掲げる事件及びその再審事件の記録をいう。この規則において「事件書類」とは、別表第一に掲げる事件及びその再審事件に関する書類で最高裁判所が別に定めるところにより事件記録から分離されたものをいう。この規則において「少年調査記録」とは、少年の処遇に関する意見書及び少年調査票その他少年の処遇上参考となる書類を編てつして作成されたものをいう。この規則において「特別保存」とは、記録等のうち、史料又は参考資料となるべきものについて、永久に保存することをいう。"><a href="#a2">第二条　定義</a></li><li class="lv-art" data-text="第三条3条特別保存に付する認定を行う者特別保存に付する認定を行う者記録等を特別保存に付する認定は、次の各号に掲げる区分に応じ、当該各号に定める裁判所の長が行う。ただし、既に特別保存に付する認定がされた記録等については、重ねて特別保存に付する認定を行わない。一事件記録及び事件書類（次号から第４号までに掲げるものを除く。） 当該事件の第一審裁判所（別表第一の２９の項に掲げる事件にあっては、当該事件を担当する執行官の所属する地方裁判所）二上訴裁判所において調停に付された事件に係る調停事件で当該上訴裁判所が処理したものの事件記録及び事件書類 当該調停に付された事件の事件記録を保存する裁判所三再審事件の事件記録 不服申立ての対象となった裁判がされた事件の事件記録を保存する裁判所四事件書類のうち、別表第一に掲げる事件又はその再審事件の移送の決定の原本、少額訴訟債権執行事件の移行の決定の原本及び別表第二に掲げる裁判書の原本 当該裁判をした裁判所五少年調査記録 特別保存に付する認定を行う原因となるべき事件について終局決定をした家庭裁判所"><a href="#a3">第三条　特別保存に付する認定を行う者</a></li><li class="lv-art" data-text="第四条4条特別保存に付する認定の効果特別保存に付する認定の効果特別保存に付する認定を行った記録等は、第６条の規定により送付する場合を除き、当該認定を行った裁判所の長の所属する裁判所において特別保存をする。"><a href="#a4">第四条　特別保存に付する認定の効果</a></li><li class="lv-art" data-text="第五条5条最高裁判所への移管最高裁判所への移管特別保存をした記録等は、最高裁判所の指示により、最高裁判所に移管することができる。"><a href="#a5">第五条　最高裁判所への移管</a></li><li class="lv-art" data-text="第六条6条内閣総理大臣への移管内閣総理大臣への移管公文書等の管理に関する法律（平成２１年法律第６６号）第１４条第１項の規定に基づく協議による定め（同法附則第３条の規定により同法第１４条第１項の規定に基づく協議による定めとみなされるものを含む。）において同法第２条第６項に規定する歴史公文書等として内閣総理大臣に移管することとされた記録等は、最高裁判所の指示を受けて独立行政法人国立公文書館に送付する。"><a href="#a6">第六条　内閣総理大臣への移管</a></li></ul></li><li class="lv-div div-2"><a href="#d8">第２章　特別保存の要望等</a><ul><li class="lv-art" data-text="第七条7条特別保存の要望特別保存の要望何人も、第３条本文の規定により特別保存に付する認定を行う裁判所の長に対し、最高裁判所が別に定めるところにより、記録等について、史料又は参考資料となるべきものに当たるとして、特別保存を要望することができる。"><a href="#a7">第七条　特別保存の要望</a></li><li class="lv-art" data-text="第八条8条委員会への求意見委員会への求意見前条の要望を受けた裁判所の長は、要望があった事件の記録等について特別保存に付さない認定をしようとする場合には、その適否について、次条の委員会に意見を求めなければならない。ただし、前条の要望があった少年調査記録について、既に他の家庭裁判所の長が特別保存に付する認定をした場合は、この限りでない。"><a href="#a8">第八条　委員会への求意見</a></li></ul></li><li class="lv-div div-2"><a href="#d11">第３章　記録の保存の在り方に関する委員会</a><ul><li class="lv-art" data-text="第九条9条設置設置最高裁判所に、記録の保存の在り方に関する委員会（以下「委員会」という。）を置く。"><a href="#a9">第九条　設置</a></li><li class="lv-art" data-text="第十条10条所掌事務所掌事務委員会は、次に掲げる事項について意見を述べる。一第８条本文の認定の適否二記録等の保存の在り方の見直しや特別保存の運用等に関する事項三一定の重大な社会事象が生じた場合にこれに関連する記録等の保存に関する事項"><a href="#a10">第十条　所掌事務</a></li><li class="lv-art" data-text="第十一条11条組織組織委員会は、委員６人で組織する。委員は、非常勤とする。"><a href="#a11">第十一条　組織</a></li><li class="lv-art" data-text="第十二条12条委員委員委員は、法律又は公文書の管理等に関して優れた識見を有する者の中から、最高裁判所が任命する。委員の任期は、３年とする。ただし、補欠の委員の任期は、前任者の残任期間とする。委員は、再任されることができる。委員の任期が満了したときは、当該委員は、後任者が任命されるまで引き続きその職務を行うものとする。最高裁判所は、委員が心身の故障のために職務の執行ができないと認める場合又は委員に職務上の義務違反その他委員たるに適しない非行があると認める場合には、その委員を罷免することができる。"><a href="#a12">第十二条　委員</a></li><li class="lv-art" data-text="第十三条13条委員長委員長委員会に、委員長を置き、委員の互選により選任する。委員長は、会務を総理し、委員会を代表する。委員長に事故があるときは、あらかじめ委員長の指名する委員が、その職務を代理する。"><a href="#a13">第十三条　委員長</a></li><li class="lv-art" data-text="第十四条14条会議会議委員長は、第８条本文の規定により意見を求められたときその他必要と認められるときは、委員会を招集する。委員会は、過半数の委員が出席しなければ、会議を開き、議決することができない。ただし、委員長が相当と認める場合において、委員が音声の送受信により同時に通話することができる方法により会議に関与したときは、当該委員は会議に出席したものとみなす。第１０条第１号に掲げる事項についての意見に関し議決するときは、出席した委員長及びその他の委員の過半数により決し、可否同数のときは、委員長の決するところによる。"><a href="#a14">第十四条　会議</a></li><li class="lv-art" data-text="第十五条15条庶務庶務委員会の庶務は、最高裁判所事務総局総務局において処理する。"><a href="#a15">第十五条　庶務</a></li><li class="lv-art" data-text="第十六条16条委員会の調査方法委員会の調査方法委員会は、必要があると認めるときは、第８条本文の規定により意見を求めた裁判所の長に対し記録等の提出、説明その他の必要な協力を依頼し、要望を申し出た者に対し意見書の提出を求めることができる。"><a href="#a16">第十六条　委員会の調査方法</a></li><li class="lv-art" data-text="第十七条17条手続の非公開手続の非公開委員会の行う手続は、公開しない。"><a href="#a17">第十七条　手続の非公開</a></li><li class="lv-art" data-text="第十八条18条意見書の送付等意見書の送付等委員会が第１０条の規定により意見を述べる場合には、同条第１号に掲げる事項についての意見は当該意見を求めた裁判所の長宛てに意見書を送付する方法により、その余の事項についての意見は最高裁判所長官宛てに意見書を送付する方法により行う。第８条本文の規定により委員会に意見を求めた裁判所の長は、前項に規定する意見書の送付を受けたときは、当該記録等について特別保存に付する認定又は特別保存に付さない認定を行い、その結果について委員会に報告する。"><a href="#a18">第十八条　意見書の送付等</a></li><li class="lv-art" data-text="第十九条19条委員会の運営委員会の運営この規則に定めるもののほか、委員会の運営に関し必要な事項は、委員会がこれを定める。"><a href="#a19">第十九条　委員会の運営</a></li></ul></li><li class="lv-div div-2"><a href="#d23">第４章　補則</a><ul><li class="lv-art" data-text="第二十条20条補則補則この規則に定めるもののほか、記録等の特別保存に関し必要な事項は、最高裁判所が定める。"><a href="#a20">第二十条　補則</a></li></ul></li><li class="lv-div div-1"><a href="#sup1">附則</a></li><li class="lv-div div-1"><a href="#sup2">附則　（令和６年３月１１日最高裁判所規則第９号）</a></li><li class="lv-div div-1"><a href="#sup3">附則　（令和７年１０月１６日最高裁判所規則第１２号）</a></li><li class="lv-div div-1"><a href="#sup4">附則　（令和８年５月１４日最高裁判所規則第９号）</a></li><li class="lv-div"><a href="#table-33">別表第一（第２条、第３条関係）</a></li><li class="lv-div"><a href="#table-34">別表第二（第３条関係）</a></li></ul>
+  </nav>
+  <main class="doc" id="doc-outer">
+    <div class="doc-head">
+      <h1>事件記録等の特別保存に関する規則</h1>
+      <div class="meta">令和5年最高裁判所規則第9号　／　令和8年5月25日施行　／　<a class="src" href="https://www.courts.go.jp/assets/R8_5tokubetuhozonkisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本PDF p.1</a></div>
+    </div>
+    <div id="doc">
+<article class="art noarticle" id="body-1" data-path=""><div class="art-tools"><button type="button" data-anchor="body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/R8_5tokubetuhozonkisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="body-1-p1"><span class="body-text">改正 令和 ６年 ３月１１日最高裁判所規則第 ９号改正 令和 ７年１０月１６日最高裁判所規則第１２号改正 令和 ８年 ５月１４日最高裁判所規則第 ９号</span></p></article>
+<h3 class="div-head" id="d1" data-path="第１章　総則"><span class="lbl">第１章</span>　総則</h3>
+<article class="art" id="a1" data-path="第１章　総則"><span class="anchor-alias" id="Mp-At_1"></span><div class="art-tools"><button type="button" data-anchor="a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/R8_5tokubetuhozonkisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（目的）</p><p class="para" id="a1-p1"><a class="art-no" href="#a1" data-kan="第一条" data-num="第1条">第1条</a><span class="body-text">この規則は、事件記録、事件書類又は少年調査記録（以下「記録等」という。）のうち、歴史的、社会的な意義を有し、史料又は参考資料として価値を有するものを適切かつ確実に選別し、国民共有の財産として保存し、後世に引き継いでいくことを目的とする。</span></p></article>
+<article class="art" id="a2" data-path="第１章　総則"><span class="anchor-alias" id="Mp-At_2"></span><div class="art-tools"><button type="button" data-anchor="a2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/R8_5tokubetuhozonkisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（定義）</p><p class="para" id="a2-p1"><a class="art-no" href="#a2" data-kan="第二条" data-num="第2条">第2条</a><span class="body-text">この規則において「事件記録」とは、別表第一に掲げる事件及びその再審事件の記録をいう。</span></p><p class="para" id="a2-p2"><span class="pno">2</span><span class="body-text">この規則において「事件書類」とは、別表第一に掲げる事件及びその再審事件に関する書類で最高裁判所が別に定めるところにより事件記録から分離されたものをいう。</span></p><p class="para" id="a2-p3"><span class="pno">3</span><span class="body-text">この規則において「少年調査記録」とは、少年の処遇に関する意見書及び少年調査票その他少年の処遇上参考となる書類を編てつして作成されたものをいう。</span></p><p class="para" id="a2-p4"><span class="pno">4</span><span class="body-text">この規則において「特別保存」とは、記録等のうち、史料又は参考資料となるべきものについて、永久に保存することをいう。</span></p></article>
+<article class="art" id="a3" data-path="第１章　総則"><span class="anchor-alias" id="Mp-At_3"></span><div class="art-tools"><button type="button" data-anchor="a3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/R8_5tokubetuhozonkisoku.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（特別保存に付する認定を行う者）</p><p class="para" id="a3-p1"><a class="art-no" href="#a3" data-kan="第三条" data-num="第3条">第3条</a><span class="body-text">記録等を特別保存に付する認定は、次の各号に掲げる区分に応じ、当該各号に定める裁判所の長が行う。ただし、既に特別保存に付する認定がされた記録等については、重ねて特別保存に付する認定を行わない。</span></p><ol class="items"><li id="a3-p1-1"><span class="mk">一</span><span class="tx">事件記録及び事件書類（次号から第４号までに掲げるものを除く。） 当該事件の第一審裁判所（別表第一の２９の項に掲げる事件にあっては、当該事件を担当する執行官の所属する地方裁判所）</span></li><li id="a3-p1-2"><span class="mk">二</span><span class="tx">上訴裁判所において調停に付された事件に係る調停事件で当該上訴裁判所が処理したものの事件記録及び事件書類 当該調停に付された事件の事件記録を保存する裁判所</span></li><li id="a3-p1-3"><span class="mk">三</span><span class="tx">再審事件の事件記録 不服申立ての対象となった裁判がされた事件の事件記録を保存する裁判所</span></li><li id="a3-p1-4"><span class="mk">四</span><span class="tx">事件書類のうち、別表第一に掲げる事件又はその再審事件の移送の決定の原本、少額訴訟債権執行事件の移行の決定の原本及び別表第二に掲げる裁判書の原本 当該裁判をした裁判所</span></li><li id="a3-p1-5"><span class="mk">五</span><span class="tx">少年調査記録 特別保存に付する認定を行う原因となるべき事件について終局決定をした家庭裁判所</span></li></ol></article>
+<article class="art" id="a4" data-path="第１章　総則"><span class="anchor-alias" id="Mp-At_4"></span><div class="art-tools"><button type="button" data-anchor="a4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/R8_5tokubetuhozonkisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（特別保存に付する認定の効果）</p><p class="para" id="a4-p1"><a class="art-no" href="#a4" data-kan="第四条" data-num="第4条">第4条</a><span class="body-text">特別保存に付する認定を行った記録等は、第６条の規定により送付する場合を除き、当該認定を行った裁判所の長の所属する裁判所において特別保存をする。</span></p></article>
+<article class="art" id="a5" data-path="第１章　総則"><span class="anchor-alias" id="Mp-At_5"></span><div class="art-tools"><button type="button" data-anchor="a5" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/R8_5tokubetuhozonkisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（最高裁判所への移管）</p><p class="para" id="a5-p1"><a class="art-no" href="#a5" data-kan="第五条" data-num="第5条">第5条</a><span class="body-text">特別保存をした記録等は、最高裁判所の指示により、最高裁判所に移管することができる。</span></p></article>
+<article class="art" id="a6" data-path="第１章　総則"><span class="anchor-alias" id="Mp-At_6"></span><div class="art-tools"><button type="button" data-anchor="a6" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/R8_5tokubetuhozonkisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（内閣総理大臣への移管）</p><p class="para" id="a6-p1"><a class="art-no" href="#a6" data-kan="第六条" data-num="第6条">第6条</a><span class="body-text">公文書等の管理に関する法律（平成２１年法律第６６号）第１４条第１項の規定に基づく協議による定め（同法附則第３条の規定により同法第１４条第１項の規定に基づく協議による定めとみなされるものを含む。）において同法第２条第６項に規定する歴史公文書等として内閣総理大臣に移管することとされた記録等は、最高裁判所の指示を受けて独立行政法人国立公文書館に送付する。</span></p></article>
+<h3 class="div-head" id="d8" data-path="第２章　特別保存の要望等"><span class="lbl">第２章</span>　特別保存の要望等</h3>
+<article class="art" id="a7" data-path="第２章　特別保存の要望等"><span class="anchor-alias" id="Mp-At_7"></span><div class="art-tools"><button type="button" data-anchor="a7" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/R8_5tokubetuhozonkisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（特別保存の要望）</p><p class="para" id="a7-p1"><a class="art-no" href="#a7" data-kan="第七条" data-num="第7条">第7条</a><span class="body-text">何人も、第３条本文の規定により特別保存に付する認定を行う裁判所の長に対し、最高裁判所が別に定めるところにより、記録等について、史料又は参考資料となるべきものに当たるとして、特別保存を要望することができる。</span></p></article>
+<article class="art" id="a8" data-path="第２章　特別保存の要望等"><span class="anchor-alias" id="Mp-At_8"></span><div class="art-tools"><button type="button" data-anchor="a8" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/R8_5tokubetuhozonkisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（委員会への求意見）</p><p class="para" id="a8-p1"><a class="art-no" href="#a8" data-kan="第八条" data-num="第8条">第8条</a><span class="body-text">前条の要望を受けた裁判所の長は、要望があった事件の記録等について特別保存に付さない認定をしようとする場合には、その適否について、次条の委員会に意見を求めなければならない。ただし、前条の要望があった少年調査記録について、既に他の家庭裁判所の長が特別保存に付する認定をした場合は、この限りでない。</span></p></article>
+<h3 class="div-head" id="d11" data-path="第３章　記録の保存の在り方に関する委員会"><span class="lbl">第３章</span>　記録の保存の在り方に関する委員会</h3>
+<article class="art" id="a9" data-path="第３章　記録の保存の在り方に関する委員会"><span class="anchor-alias" id="Mp-At_9"></span><div class="art-tools"><button type="button" data-anchor="a9" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/R8_5tokubetuhozonkisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（設置）</p><p class="para" id="a9-p1"><a class="art-no" href="#a9" data-kan="第九条" data-num="第9条">第9条</a><span class="body-text">最高裁判所に、記録の保存の在り方に関する委員会（以下「委員会」という。）を置く。</span></p></article>
+<article class="art" id="a10" data-path="第３章　記録の保存の在り方に関する委員会"><span class="anchor-alias" id="Mp-At_10"></span><div class="art-tools"><button type="button" data-anchor="a10" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/R8_5tokubetuhozonkisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（所掌事務）</p><p class="para" id="a10-p1"><a class="art-no" href="#a10" data-kan="第十条" data-num="第10条">第10条</a><span class="body-text">委員会は、次に掲げる事項について意見を述べる。</span></p><ol class="items"><li id="a10-p1-1"><span class="mk">一</span><span class="tx">第８条本文の認定の適否</span></li><li id="a10-p1-2"><span class="mk">二</span><span class="tx">記録等の保存の在り方の見直しや特別保存の運用等に関する事項</span></li><li id="a10-p1-3"><span class="mk">三</span><span class="tx">一定の重大な社会事象が生じた場合にこれに関連する記録等の保存に関する事項</span></li></ol></article>
+<article class="art" id="a11" data-path="第３章　記録の保存の在り方に関する委員会"><span class="anchor-alias" id="Mp-At_11"></span><div class="art-tools"><button type="button" data-anchor="a11" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/R8_5tokubetuhozonkisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（組織）</p><p class="para" id="a11-p1"><a class="art-no" href="#a11" data-kan="第十一条" data-num="第11条">第11条</a><span class="body-text">委員会は、委員６人で組織する。</span></p><p class="para" id="a11-p2"><span class="pno">2</span><span class="body-text">委員は、非常勤とする。</span></p></article>
+<article class="art" id="a12" data-path="第３章　記録の保存の在り方に関する委員会"><span class="anchor-alias" id="Mp-At_12"></span><div class="art-tools"><button type="button" data-anchor="a12" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/R8_5tokubetuhozonkisoku.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（委員）</p><p class="para" id="a12-p1"><a class="art-no" href="#a12" data-kan="第十二条" data-num="第12条">第12条</a><span class="body-text">委員は、法律又は公文書の管理等に関して優れた識見を有する者の中から、最高裁判所が任命する。</span></p><p class="para" id="a12-p2"><span class="pno">2</span><span class="body-text">委員の任期は、３年とする。ただし、補欠の委員の任期は、前任者の残任期間とする。</span></p><p class="para" id="a12-p3"><span class="pno">3</span><span class="body-text">委員は、再任されることができる。</span></p><p class="para" id="a12-p4"><span class="pno">4</span><span class="body-text">委員の任期が満了したときは、当該委員は、後任者が任命されるまで引き続きその職務を行うものとする。</span></p><p class="para" id="a12-p5"><span class="pno">5</span><span class="body-text">最高裁判所は、委員が心身の故障のために職務の執行ができないと認める場合又は委員に職務上の義務違反その他委員たるに適しない非行があると認める場合には、その委員を罷免することができる。</span></p></article>
+<article class="art" id="a13" data-path="第３章　記録の保存の在り方に関する委員会"><span class="anchor-alias" id="Mp-At_13"></span><div class="art-tools"><button type="button" data-anchor="a13" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/R8_5tokubetuhozonkisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（委員長）</p><p class="para" id="a13-p1"><a class="art-no" href="#a13" data-kan="第十三条" data-num="第13条">第13条</a><span class="body-text">委員会に、委員長を置き、委員の互選により選任する。</span></p><p class="para" id="a13-p2"><span class="pno">2</span><span class="body-text">委員長は、会務を総理し、委員会を代表する。</span></p><p class="para" id="a13-p3"><span class="pno">3</span><span class="body-text">委員長に事故があるときは、あらかじめ委員長の指名する委員が、その職務を代理する。</span></p></article>
+<article class="art" id="a14" data-path="第３章　記録の保存の在り方に関する委員会"><span class="anchor-alias" id="Mp-At_14"></span><div class="art-tools"><button type="button" data-anchor="a14" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/R8_5tokubetuhozonkisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（会議）</p><p class="para" id="a14-p1"><a class="art-no" href="#a14" data-kan="第十四条" data-num="第14条">第14条</a><span class="body-text">委員長は、第８条本文の規定により意見を求められたときその他必要と認められるときは、委員会を招集する。</span></p><p class="para" id="a14-p2"><span class="pno">2</span><span class="body-text">委員会は、過半数の委員が出席しなければ、会議を開き、議決することができない。ただし、委員長が相当と認める場合において、委員が音声の送受信により同時に通話することができる方法により会議に関与したときは、当該委員は会議に出席したものとみなす。</span></p><p class="para" id="a14-p3"><span class="pno">3</span><span class="body-text">第１０条第１号に掲げる事項についての意見に関し議決するときは、出席した委員長及びその他の委員の過半数により決し、可否同数のときは、委員長の決するところによる。</span></p></article>
+<article class="art" id="a15" data-path="第３章　記録の保存の在り方に関する委員会"><span class="anchor-alias" id="Mp-At_15"></span><div class="art-tools"><button type="button" data-anchor="a15" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/R8_5tokubetuhozonkisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（庶務）</p><p class="para" id="a15-p1"><a class="art-no" href="#a15" data-kan="第十五条" data-num="第15条">第15条</a><span class="body-text">委員会の庶務は、最高裁判所事務総局総務局において処理する。</span></p></article>
+<article class="art" id="a16" data-path="第３章　記録の保存の在り方に関する委員会"><span class="anchor-alias" id="Mp-At_16"></span><div class="art-tools"><button type="button" data-anchor="a16" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/R8_5tokubetuhozonkisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（委員会の調査方法）</p><p class="para" id="a16-p1"><a class="art-no" href="#a16" data-kan="第十六条" data-num="第16条">第16条</a><span class="body-text">委員会は、必要があると認めるときは、第８条本文の規定により意見を求めた裁判所の長に対し記録等の提出、説明その他の必要な協力を依頼し、要望を申し出た者に対し意見書の提出を求めることができる。</span></p></article>
+<article class="art" id="a17" data-path="第３章　記録の保存の在り方に関する委員会"><span class="anchor-alias" id="Mp-At_17"></span><div class="art-tools"><button type="button" data-anchor="a17" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/R8_5tokubetuhozonkisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（手続の非公開）</p><p class="para" id="a17-p1"><a class="art-no" href="#a17" data-kan="第十七条" data-num="第17条">第17条</a><span class="body-text">委員会の行う手続は、公開しない。</span></p></article>
+<article class="art" id="a18" data-path="第３章　記録の保存の在り方に関する委員会"><span class="anchor-alias" id="Mp-At_18"></span><div class="art-tools"><button type="button" data-anchor="a18" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/R8_5tokubetuhozonkisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（意見書の送付等）</p><p class="para" id="a18-p1"><a class="art-no" href="#a18" data-kan="第十八条" data-num="第18条">第18条</a><span class="body-text">委員会が第１０条の規定により意見を述べる場合には、同条第１号に掲げる事項についての意見は当該意見を求めた裁判所の長宛てに意見書を送付する方法により、その余の事項についての意見は最高裁判所長官宛てに意見書を送付する方法により行う。</span></p><p class="para" id="a18-p2"><span class="pno">2</span><span class="body-text">第８条本文の規定により委員会に意見を求めた裁判所の長は、前項に規定する意見書の送付を受けたときは、当該記録等について特別保存に付する認定又は特別保存に付さない認定を行い、その結果について委員会に報告する。</span></p></article>
+<article class="art" id="a19" data-path="第３章　記録の保存の在り方に関する委員会"><span class="anchor-alias" id="Mp-At_19"></span><div class="art-tools"><button type="button" data-anchor="a19" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/R8_5tokubetuhozonkisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（委員会の運営）</p><p class="para" id="a19-p1"><a class="art-no" href="#a19" data-kan="第十九条" data-num="第19条">第19条</a><span class="body-text">この規則に定めるもののほか、委員会の運営に関し必要な事項は、委員会がこれを定める。</span></p></article>
+<h3 class="div-head" id="d23" data-path="第４章　補則"><span class="lbl">第４章</span>　補則</h3>
+<article class="art" id="a20" data-path="第４章　補則"><span class="anchor-alias" id="Mp-At_20"></span><div class="art-tools"><button type="button" data-anchor="a20" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/R8_5tokubetuhozonkisoku.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（補則）</p><p class="para" id="a20-p1"><a class="art-no" href="#a20" data-kan="第二十条" data-num="第20条">第20条</a><span class="body-text">この規則に定めるもののほか、記録等の特別保存に関し必要な事項は、最高裁判所が定める。</span></p></article>
+<h2 class="div-head" id="sup1" data-path="附則　"><span class="lbl">附則</span></h2>
+<article class="art noarticle" id="sup-body-1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/R8_5tokubetuhozonkisoku.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="para" id="sup-body-1-p1"><span class="body-text">この規則は、令和６年１月３０日から施行する。ただし、附則第３項の規定は、公布の日から施行する。</span></p><p class="para" id="sup-body-1-p2"><span class="pno">2</span><span class="body-text">この規則の施行の際現に事件記録等保存規程及び少年調査記録規程の一部を改正する規程（令和５年最高裁判所規程第１号。以下この項において「改正規程」という。）第１条の規定による改正前の事件記録等保存規程（昭和３９年最高裁判所規程第８号）第９条第２項又は改正規程第２条の規定による改正前の少年調査記録規程（昭和２９年最高裁判所規程第５号）第８条第２項の規定により保存期間満了の後も保存されている記録等は、第３条本文の規定による特別保存に付する認定がされたものとみなす。</span></p><p class="para" id="sup-body-1-p3"><span class="pno">3</span><span class="body-text">第１２条第１項の規定による委員会の委員の任命に関し必要な行為は、この規則の施行日前においても、同項の規定の例によりすることができる。</span></p></article>
+<h2 class="div-head" id="sup2" data-path="附則　（令和６年３月１１日最高裁判所規則第９号）"><span class="lbl">附則</span>　（令和６年３月１１日最高裁判所規則第９号）</h2>
+<article class="art noarticle" id="sup-body-2" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/R8_5tokubetuhozonkisoku.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="para" id="sup-body-2-p1"><span class="body-text">この規則は、令和６年４月１日から施行する。</span></p></article>
+<h2 class="div-head" id="sup3" data-path="附則　（令和７年１０月１６日最高裁判所規則第１２号）"><span class="lbl">附則</span>　（令和７年１０月１６日最高裁判所規則第１２号）</h2>
+<article class="art noarticle" id="sup-body-3" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/R8_5tokubetuhozonkisoku.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="para" id="sup-body-3-p1"><span class="body-text">この規則は、令和７年１１月４日から施行する。</span></p></article>
+<h2 class="div-head" id="sup4" data-path="附則　（令和８年５月１４日最高裁判所規則第９号）"><span class="lbl">附則</span>　（令和８年５月１４日最高裁判所規則第９号）</h2>
+<article class="art noarticle" id="sup-body-4" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/R8_5tokubetuhozonkisoku.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="para" id="sup-body-4-p1"><span class="body-text">この規則は、事業性融資の推進等に関する法律（令和６年法律第５２号）の施行の日（令和８年５月２５日）から施行する。</span></p></article>
+<section class="raw" id="table-33" data-path="別表第一（第２条、第３条関係）"><h3>別表第一（第２条、第３条関係） <a class="src" href="https://www.courts.go.jp/assets/R8_5tokubetuhozonkisoku.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></h3><pre>（令和６最裁規９・一部改正）
+（令和７最裁規１２・一部改正）
+（令和８最裁規９・一部改正）
+事件の種類
+１
+和解事件
+２
+督促事件
+３
+少額訴訟事件
+少額訴訟判決に対する異議申立て事件
+民事通常訴訟事件
+手形訴訟事件及び小切手訴訟事件
+人事訴訟事件
+行政訴訟事件（選挙に関する訴訟事件を含む。）
+４
+公示催告事件
+５
+保全命令事件
+６
+民事一般調停事件
+宅地建物調停事件
+商事調停事件
+農事調停事件
+鉱害調停事件
+交通調停事件
+公害等調停事件
+特定調停事件
+７
+過料事件
+８
+民事非訟事件
+商事非訟事件
+９
+借地非訟事件
+１０
+罹災都市借地借家臨時処理事件及び接収不動産に関する借地借家臨
+時処理事件
+１１
+発信者情報開示命令事件
+１２
+配偶者暴力等に関する保護命令事件
+１３
+労働審判事件
+１４
+少額訴訟債権執行事件
+事情届に基づいて執行裁判所が実施する配当等手続事件
+不動産、船舶、航空機、自動車、建設機械及び小型船舶に対する強制
+執行事件
+債権及びその他の財産権に対する強制執行事件
+不動産、船舶、航空機、自動車、建設機械及び小型船舶を目的とする
+担保権の実行としての競売等事件
+債権及びその他の財産権を目的とする担保権の実行及び行使事件
+財産開示事件
+第三者からの情報取得事件
+企業担保権実行事件
+１５
+破産事件
+再生事件
+小規模個人再生事件
+給与所得者等再生事件
+会社更生事件
+承認援助事件
+企業価値担保権実行事件
+船舶所有者等責任制限事件
+油濁等損害賠償責任制限事件
+１６
+簡易確定事件
+１７
+仲裁関係事件
+１８
+特定和解の執行決定事件
+１９
+人身保護事件
+２０
+家事審判事件
+２１
+家事調停事件
+２２
+子の返還申立事件
+２３
+少年保護事件（少年法（昭和２３年法律第１６８号）第１８条、第１
+９条第２項、第２０条第１項又は第６２条第１項の決定により終局し
+た事件を除く。）
+２４
+準少年保護事件
+２５
+医療観察処遇事件
+２６
+法廷等の秩序維持に関する法律違反事件
+２７
+裁判官の分限事件
+２８
+民事雑事件
+行政雑事件
+人身保護雑事件
+執行雑事件
+家事雑事件
+少年審判雑事件
+医療観察雑事件
+２９
+執行官法（昭和４１年法律第１１１号）第１７条第１項の執行記録が
+作成された事件
+３０
+刑事損害賠償命令事件
+３１
+その他の事件で、最高裁判所民事判例集、最高裁判所裁判集（民事）
+、最高裁判所刑事判例集又は最高裁判所裁判集（刑事）のいずれかに
+判決等が登載されたもの</pre></section>
+<section class="raw" id="table-34" data-path="別表第二（第３条関係）"><h3>別表第二（第３条関係） <a class="src" href="https://www.courts.go.jp/assets/R8_5tokubetuhozonkisoku.pdf#page=7" target="_blank" rel="noopener" title="原本PDFの7ページを開きます">原本 p.7</a></h3><pre>（令和８最裁規９・一部改正）
+事件の種類
+裁判書の種類
+１ 民事上告提起事件
+上告状却下命令の原本
+民事上告受理申立て事件
+上告受理申立書却下命令の原本
+民事特別上告提起事件
+特別上告状却下命令の原本
+民事抗告提起事件
+再抗告状却下命令の原本
+民事特別抗告提起事件
+特別抗告状却下命令の原本
+民事許可抗告申立て事件
+許可抗告申立書却下命令の原本
+行政上告提起事件
+上告却下決定の原本
+行政上告受理申立て事件
+上告受理申立て却下決定の原本
+行政特別上告提起事件
+特別上告却下決定の原本
+行政抗告提起事件
+抗告却下決定の原本
+行政特別抗告提起事件
+再抗告却下決定の原本
+行政許可抗告申立て事件
+特別抗告却下決定の原本
+抗告不許可決定の原本
+移送の決定の原本
+２ 民事控訴事件
+控訴状却下命令の原本
+行政控訴事件
+控訴却下決定の原本
+移送の決定の原本
+判決の原本
+３ 民事抗告事件
+抗告状却下命令の原本
+民事特別抗告事件
+保全命令の原本
+民事許可抗告事件
+保全命令を取り消し、又は変更する裁
+行政抗告事件
+判の原本
+行政特別抗告事件
+少年保護抗告事件の終局決定の原本
+行政許可抗告事件
+医療観察抗告事件の終局決定の原本
+少年保護抗告事件
+借地非訟事件の終局決定の原本（抗告
+少年保護抗告受理申立て事件
+を却下するものを除く。）
+医療観察抗告事件
+罹災都市借地借家臨時処理事件及び接
+法廷等の秩序維持に関する法律
+収不動産に関する借地借家臨時処理事
+違反抗告事件
+件の裁判上の和解と同一の効力を有す
+法廷等の秩序維持に関する法律
+る決定の原本
+違反異議申立事件
+破産手続開始の決定の原本
+法廷等の秩序維持に関する法律
+破産法（平成１６年法律第７５号）第
+違反特別抗告事件
+２５２条第１項及び第２項の免責許可
+裁判官の分限抗告事件
+の決定の原本
+民事再生法（平成１１年法律第２２５
+号）第２３５条第１項（同法第２４４
+条において準用する場合を含む。）の
+免責の決定の原本
+破産法第２５４条第１項の免責取消し
+の決定の原本
+復権の決定の原本
+簡易確定手続開始の決定の原本
+４ 民事上告事件
+民事上告受理事件
+民事特別上告事件
+行政上告事件
+行政上告受理事件
+行政特別上告事件
+５
+執行認許の決定の原本
+家事審判事件の終局決定の原本（抗告
+を却下するものを除く。）
+子の返還申立事件の終局決定の原本
+（抗告を却下するものを除く。）
+国際的な子の奪取の民事上の側面に関
+する条約の実施に関する法律（平成２
+５年法律第４８号）第１１７条第４項
+の終局決定を変更する決定又は同条第
+５項の決定（同条第１項の規定により
+終局決定を変更する決定をいう。）を
+変更する決定の原本
+訴訟等の費用の額の確定の決定の原本
+訴訟上の救助又は手続上の救助により
+納付を猶予された費用の支払を命ずる
+決定又は取立ての決定の原本
+秘密保持命令又は秘密保持命令の取消
+しの決定の原本
+その他の終局決定の原本
+上告却下決定の原本
+上告棄却決定の原本
+上告不受理決定の原本
+特別上告却下決定の原本
+特別上告棄却決定の原本
+移送の決定の原本
+判決の原本
+国庫において立て替えた費用の取立て
+の決定の原本</pre></section>
+    </div>
+    <aside class="notes"><p>読み取りに関する注意</p><ul><li>PDF中の目次は読み飛ばし、条見出しから目次を再構成しました。</li><li>各条の「原本」は https://www.courts.go.jp/assets/R8_5tokubetuhozonkisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。</li></ul></aside>
+    <div class="foot">出典：R8_5tokubetuhozonkisoku.pdf　／　最高裁規則ビューア 1.9.0 で 2026年09月02日 に変換　
+    条文の正確な内容は原本で確認してください。</div>
+  </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  "use strict";
+  var doc = document.getElementById("doc");
+  var input = document.getElementById("q");
+  var hitLabel = document.getElementById("hits");
+  var crumb = document.getElementById("crumb");
+  var toc = document.getElementById("toc");
+  var toast = document.getElementById("toast");
+  var pristine = doc.innerHTML;
+  var hits = [];
+  var cursor = -1;
+
+  function say(msg){
+    toast.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(say._t);
+    say._t = setTimeout(function(){ toast.classList.remove("show"); }, 1600);
+  }
+
+  /* ---------------------------------------------------------- 条番号の表記 */
+  var numeralBtn = document.getElementById("numeral");
+  function applyNumeral(useArabic){
+    var nodes = doc.querySelectorAll(".art-no");
+    for (var i = 0; i < nodes.length; i++){
+      var el = nodes[i];
+      var v = useArabic ? el.getAttribute("data-num") : el.getAttribute("data-kan");
+      if (v) el.textContent = v;
+    }
+    numeralBtn.setAttribute("aria-pressed", useArabic ? "true" : "false");
+  }
+  numeralBtn.addEventListener("click", function(){
+    var next = numeralBtn.getAttribute("aria-pressed") !== "true";
+    applyNumeral(next);
+    try { localStorage.setItem("rule-numeral", next ? "1" : "0"); } catch(e){}
+    pristine = doc.innerHTML;
+  });
+  try {
+    /* 既定の表記は原本に合わせてある。前回の切り替えが残っていればそれに従う */
+    var saved = localStorage.getItem("rule-numeral");
+    if (saved === "1" || saved === "0"){ applyNumeral(saved === "1"); pristine = doc.innerHTML; }
+  } catch(e){}
+
+  /* -------------------------------------------------------------- 検索処理 */
+  var SKIP = {SCRIPT:1, STYLE:1, MARK:1, BUTTON:1, A:1};   /* 原本リンク等の道具立ては検索対象にしない */
+  function highlight(term){
+    doc.innerHTML = pristine;
+    hits = [];
+    cursor = -1;
+    if (!term){ hitLabel.textContent = ""; refreshToc(""); return; }
+    var walker = document.createTreeWalker(doc, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        if (!n.nodeValue || n.nodeValue.indexOf(term) < 0) return NodeFilter.FILTER_REJECT;
+        if (n.parentNode && SKIP[n.parentNode.nodeName]) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var targets = [];
+    var node;
+    while ((node = walker.nextNode())) targets.push(node);
+    for (var i = 0; i < targets.length; i++){
+      var t = targets[i], text = t.nodeValue, pos = 0, frag = document.createDocumentFragment();
+      var idx;
+      while ((idx = text.indexOf(term, pos)) >= 0){
+        if (idx > pos) frag.appendChild(document.createTextNode(text.slice(pos, idx)));
+        var m = document.createElement("mark");
+        m.textContent = text.substr(idx, term.length);
+        frag.appendChild(m);
+        hits.push(m);
+        pos = idx + term.length;
+      }
+      if (pos < text.length) frag.appendChild(document.createTextNode(text.slice(pos)));
+      t.parentNode.replaceChild(frag, t);
+    }
+    hitLabel.textContent = hits.length ? "1 / " + hits.length : "該当なし";
+    refreshToc(term);
+    if (hits.length){ cursor = 0; focusHit(0, false); }
+  }
+  function focusHit(i, scroll){
+    if (!hits.length) return;
+    for (var k = 0; k < hits.length; k++) hits[k].classList.remove("live");
+    cursor = (i + hits.length) % hits.length;
+    hits[cursor].classList.add("live");
+    hitLabel.textContent = (cursor + 1) + " / " + hits.length;
+    if (scroll !== false) hits[cursor].scrollIntoView({block:"center", behavior:"instant"});
+  }
+  function refreshToc(term){
+    var links = toc.querySelectorAll("li.lv-art");
+    for (var i = 0; i < links.length; i++){
+      var li = links[i];
+      var body = (li.getAttribute("data-text") || "");
+      li.classList.toggle("hidden", !!term && body.indexOf(term) < 0);
+    }
+    var divs = toc.querySelectorAll("li.lv-div");
+    for (var j = divs.length - 1; j >= 0; j--){
+      var d = divs[j];
+      var kids = d.querySelectorAll("li:not(.hidden)");
+      d.classList.toggle("hidden", !!term && kids.length === 0);
+    }
+  }
+  var timer = null;
+  input.addEventListener("input", function(){
+    clearTimeout(timer);
+    var v = input.value.trim();
+    timer = setTimeout(function(){ highlight(v); }, 180);
+  });
+  input.addEventListener("keydown", function(e){
+    if (e.key === "Enter"){ e.preventDefault(); focusHit(cursor + (e.shiftKey ? -1 : 1)); }
+    if (e.key === "Escape"){ input.value = ""; highlight(""); input.blur(); }
+  });
+  document.getElementById("prev").addEventListener("click", function(){ focusHit(cursor - 1); });
+  document.getElementById("next").addEventListener("click", function(){ focusHit(cursor + 1); });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "/" && e.target === document.body){ e.preventDefault(); input.focus(); }
+  });
+
+  /* -------------------------------------------------- リンクのコピー・共有 */
+  doc.addEventListener("click", function(e){
+    var btn = e.target.closest ? e.target.closest("button[data-anchor]") : null;
+    if (!btn) return;
+    var anchor = btn.getAttribute("data-anchor");
+    var url = location.href.split("#")[0] + "#" + anchor;
+    history.replaceState(null, "", "#" + anchor);
+    var done = function(){ say("リンクをコピーしました"); };
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(done, function(){ legacyCopy(url, done); });
+    } else {
+      legacyCopy(url, done);
+    }
+  });
+  function legacyCopy(text, done){
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); done(); }
+    catch(err){ say("コピーできませんでした。アドレス欄からURLを控えてください"); }
+    document.body.removeChild(ta);
+  }
+
+  /* ------------------------------------------------ 現在位置の表示と目次連動 */
+  var watched = doc.querySelectorAll(".art[id], .div-head[id]");
+  var tocLinks = {};
+  var links = toc.querySelectorAll("a[href^='#']");
+  for (var i = 0; i < links.length; i++) tocLinks[links[i].getAttribute("href").slice(1)] = links[i];
+  var currentLink = null;
+  if ("IntersectionObserver" in window){
+    var visible = [];
+    var io = new IntersectionObserver(function(entries){
+      for (var i = 0; i < entries.length; i++){
+        var id = entries[i].target.id;
+        var at = visible.indexOf(id);
+        if (entries[i].isIntersecting){ if (at < 0) visible.push(id); }
+        else if (at >= 0){ visible.splice(at, 1); }
+      }
+      if (!visible.length) return;
+      var first = null;
+      for (var k = 0; k < watched.length; k++){
+        if (visible.indexOf(watched[k].id) >= 0){ first = watched[k]; break; }
+      }
+      if (!first) return;
+      crumb.textContent = first.getAttribute("data-path") || "";
+      var link = tocLinks[first.id];
+      if (link && link !== currentLink){
+        if (currentLink) currentLink.classList.remove("current");
+        link.classList.add("current");
+        currentLink = link;
+      }
+    }, {rootMargin:"-20% 0px -70% 0px"});
+    for (var w = 0; w < watched.length; w++) io.observe(watched[w]);
+  }
+
+  /* -------------------------------------------------------- 目次の開閉（狭幅） */
+  var opener = document.getElementById("toc-open");
+  if (opener){
+    opener.addEventListener("click", function(){ toc.classList.toggle("open"); });
+    toc.addEventListener("click", function(e){
+      if (e.target.tagName === "A") toc.classList.remove("open");
+    });
+  }
+})();
+</script>
+</body>
+</html>

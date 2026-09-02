@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>民事訴訟手続に関する条約等の実施に伴う民事訴訟手続の特例等に関する規則</title>
+<style>
+:root{
+  --paper:#ffffff;
+  --ink:#16181d;
+  --sub:#5f6875;
+  --rule:#dde2e9;
+  --chrome:#f4f6f9;
+  --accent:#14538a;
+  --accent-weak:#e7eff7;
+  --mark:#ffe08a;
+  --mark-live:#ff9d3d;
+  --gothic:"Yu Gothic UI","Yu Gothic","YuGothic","Hiragino Sans","Noto Sans JP","Meiryo",system-ui,sans-serif;
+  --mincho:"Yu Mincho","YuMincho","Hiragino Mincho ProN","Noto Serif JP","MS Mincho",serif;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:5.5rem}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--mincho);font-size:17px;line-height:1.9;
+  text-rendering:optimizeLegibility;
+}
+
+/* ---------------------------------------------------------------- ヘッダ */
+.top{
+  position:sticky;top:0;z-index:30;background:var(--chrome);
+  border-bottom:1px solid var(--rule);font-family:var(--gothic);
+}
+.top-inner{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;padding:.7rem 1.2rem}
+.law-title{font-size:1.12rem;font-weight:700;letter-spacing:.02em;margin:0}
+.law-number{font-size:.8rem;color:var(--sub);margin-left:.2rem}
+.top-tools{margin-left:auto;display:flex;align-items:center;gap:.5rem}
+.search-box{display:flex;align-items:center;gap:.35rem;background:var(--paper);
+  border:1px solid var(--rule);border-radius:2px;padding:.25rem .5rem}
+.search-box input{border:0;outline:0;font:inherit;font-size:.85rem;width:14rem;background:transparent;color:inherit}
+.hit-count{font-size:.78rem;color:var(--sub);min-width:4.2rem;text-align:right;font-variant-numeric:tabular-nums}
+button{font:inherit;font-family:var(--gothic);cursor:pointer}
+.btn{background:var(--paper);border:1px solid var(--rule);border-radius:2px;
+  color:var(--ink);font-size:.78rem;padding:.28rem .6rem;line-height:1.4}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.crumb{padding:.3rem 1.2rem;border-top:1px solid var(--rule);background:var(--paper);
+  font-family:var(--gothic);font-size:.78rem;color:var(--sub);min-height:1.7rem}
+
+/* ------------------------------------------------------------------ 骨格 */
+.wrap{display:grid;grid-template-columns:19rem minmax(0,1fr);align-items:start}
+.toc{
+  position:sticky;top:5.6rem;max-height:calc(100vh - 5.6rem);overflow-y:auto;
+  border-right:1px solid var(--rule);padding:1rem .6rem 4rem 1.2rem;
+  font-family:var(--gothic);font-size:.83rem;line-height:1.65;
+}
+.toc h2{font-size:.75rem;color:var(--sub);font-weight:700;margin:0 0 .6rem}
+.toc ul{list-style:none;margin:0;padding:0}
+.toc a{display:block;color:var(--ink);text-decoration:none;padding:.16rem .4rem;border-radius:2px}
+.toc a:hover{background:var(--accent-weak);color:var(--accent)}
+.toc a.current{background:var(--accent-weak);color:var(--accent);font-weight:700}
+.toc .div-1>a,.toc .div-2>a{font-weight:700}
+.toc .div-2{margin-top:.5rem}
+.toc .div-3,.toc .div-4,.toc .div-5{margin-top:.25rem}
+.toc .lv-art{padding-left:.9rem}
+.toc .lv-art.hidden,.toc .lv-div.hidden{display:none}
+.toc-toggle{background:none;border:0;color:var(--sub);padding:0 .3rem;font-size:.75rem}
+
+.doc{padding:2.2rem 2rem 8rem;max-width:44em}
+.doc-head{border-bottom:2px solid var(--ink);padding-bottom:.8rem;margin-bottom:2rem}
+.doc-head h1{font-size:1.5rem;margin:0 0 .3rem;letter-spacing:.04em}
+.doc-head .meta{font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+
+/* ------------------------------------------------------------------ 条文 */
+.div-head{font-family:var(--gothic);margin:2.6rem 0 1rem;scroll-margin-top:6rem}
+.div-head .lbl{color:var(--accent);font-weight:700}
+h2.div-head{font-size:1.12rem;border-bottom:1px solid var(--rule);padding-bottom:.35rem}
+h3.div-head{font-size:1.02rem}
+h4.div-head,h5.div-head,h6.div-head{font-size:.95rem}
+
+.art{position:relative;padding-left:2.6rem;margin:1.5rem 0 1.9rem;scroll-margin-top:6rem}
+.art:target{background:var(--accent-weak);box-shadow:-.4rem 0 0 var(--accent);border-radius:2px}
+.art-tools{position:absolute;left:0;top:.25rem;display:flex;flex-direction:column;gap:.2rem;
+  visibility:hidden}
+.art:hover .art-tools,.art:focus-within .art-tools,.art:target .art-tools{visibility:visible}
+.art-tools button,.art-tools a{background:none;border:0;color:var(--sub);font-size:.72rem;
+  font-family:var(--gothic);padding:.1rem .2rem;border-radius:2px;text-decoration:none;
+  white-space:nowrap;display:block}
+.art-tools button:hover,.art-tools a:hover{color:var(--accent);background:var(--accent-weak)}
+.raw h3 .src{font-size:.75rem;font-weight:400;color:var(--sub);margin-left:.5rem}
+.doc-head .src{color:var(--accent);text-decoration:none}
+.doc-head .src:hover{text-decoration:underline}
+.caption{font-family:var(--gothic);font-size:.88rem;font-weight:700;color:var(--sub);margin:0 0 .1rem}
+.amend-note{font-family:var(--gothic);font-size:.78rem;font-weight:400;color:var(--sub);margin:.1rem 0 0;text-align:right}
+h2 .amend-note,h3 .amend-note,h4 .amend-note,h5 .amend-note,h6 .amend-note{display:inline;text-align:left}
+.art-no{font-family:var(--gothic);font-weight:700;color:var(--accent);text-decoration:none;margin-right:.55em}
+.art-no:hover{text-decoration:underline}
+.para{margin:.35rem 0;text-indent:0}
+.para+.para{margin-top:.55rem}
+.pno{font-family:var(--gothic);color:var(--sub);font-size:.9em;margin-right:.5em;font-variant-numeric:tabular-nums}
+.deleted .body-text{color:var(--sub)}
+.art.noarticle .para{margin-top:0}
+
+ol.items{list-style:none;margin:.35rem 0 .35rem 1.1em;padding:0}
+ol.items>li{display:grid;grid-template-columns:2.4em minmax(0,1fr);margin:.2rem 0}
+ol.items .mk{font-family:var(--gothic);font-size:.9em;color:var(--sub);margin-right:.4em}
+ol.items ol.items{grid-column:1/-1;margin-left:1.2em}
+ol.items ol.items>li{grid-template-columns:2em minmax(0,1fr)}
+
+.raw{margin:1.6rem 0;scroll-margin-top:6rem}
+.raw h3{font-family:var(--gothic);font-size:1rem;margin:0 0 .4rem}
+.raw pre{font-family:var(--mincho);white-space:pre-wrap;margin:0;padding:.7rem .9rem;
+  background:var(--chrome);border:1px solid var(--rule);font-size:.92rem;line-height:1.75}
+
+.notes{margin:2.5rem 0 0;padding:.8rem 1rem;background:var(--chrome);
+  border-left:3px solid var(--accent);font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+.notes p{margin:0 0 .3rem;font-weight:700;color:var(--ink)}
+.notes ul{margin:0;padding-left:1.2rem}
+.foot{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);
+  font-family:var(--gothic);font-size:.75rem;color:var(--sub)}
+
+a.ref{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule)}
+a.ref:hover{color:var(--accent);border-bottom-color:var(--accent)}
+a.ref-egov{border-bottom-style:dotted}
+a.ref-rule{border-bottom-color:var(--accent)}
+mark{background:var(--mark);color:inherit;padding:0 .05em}
+mark.live{background:var(--mark-live)}
+.toast{position:fixed;left:50%;bottom:2rem;transform:translateX(-50%);
+  background:var(--ink);color:#fff;font-family:var(--gothic);font-size:.8rem;
+  padding:.5rem .9rem;border-radius:3px;pointer-events:none;z-index:60;display:none}
+.toast.show{display:block}
+
+.toc-open{display:none}
+@media (max-width:900px){
+  body{font-size:16px}
+  .wrap{grid-template-columns:minmax(0,1fr)}
+  .toc{position:fixed;inset:5.6rem auto 0 0;width:82vw;max-width:20rem;background:var(--paper);
+    z-index:25;box-shadow:0 0 0 100vmax rgba(0,0,0,.25);max-height:none;height:calc(100vh - 5.6rem);
+    display:none}
+  .toc.open{display:block}
+  .toc-open{display:inline-block}
+  .doc{padding:1.4rem 1.1rem 6rem}
+  .search-box input{width:8rem}
+  .art-tools{opacity:1;position:static;flex-direction:row;justify-content:flex-end;margin-bottom:.15rem}
+  .art-tools button,.art-tools a{border:1px solid var(--rule);border-radius:2px;
+    padding:.1rem .45rem;display:inline-block}
+  .art{padding-left:0}
+}
+
+@media print{
+  .top,.toc,.art-tools,.crumb,.toast{display:none!important}
+  a.ref{border-bottom:0}
+  .wrap{display:block}
+  .doc{max-width:none;padding:0}
+  body{font-size:10.5pt;line-height:1.7}
+  .art{page-break-inside:avoid}
+}
+
+.anchor-alias{position:absolute;scroll-margin-top:6rem}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <button type="button" class="btn toc-open" id="toc-open">目次</button>
+    <h1 class="law-title">民事訴訟手続に関する条約等の実施に伴う民事訴訟手続の特例等に関する規則</h1>
+    <span class="law-number">昭和四五年七月七日最高裁判所規則第六号　／　昭和45年7月27日施行</span>
+    <div class="top-tools">
+      <div class="search-box">
+        <input type="search" id="q" placeholder="条文を検索（/ キー）" aria-label="条文を検索">
+        <span class="hit-count" id="hits"></span>
+      </div>
+      <button type="button" class="btn" id="prev" title="前の該当箇所">前</button>
+      <button type="button" class="btn" id="next" title="次の該当箇所">次</button>
+      <button type="button" class="btn" id="numeral" aria-pressed="false"
+        title="条番号の表記を切り替える">123</button>
+    </div>
+  </div>
+  <div class="crumb" id="crumb"></div>
+</header>
+<div class="wrap">
+  <nav class="toc" id="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ul><li class="lv-art" data-text="民事訴訟手続に関する条約等の実施に伴う民事訴訟手続の特例等に関する規則（原文は縦書き）改正 平成八年一二月一七日最高裁判所規則第六号同一五年一一月一二日同第一九号同二四年七月一七日同第九号令和六年九月一七日同第一四号民事訴訟手続に関する条約等の実施に伴う民事訴訟手続の特例等に関する規則を次のように定める。"><a href="#body-1">本文</a></li><li class="lv-div div-2"><a href="#d1">第一章　総則</a><ul><li class="lv-art" data-text="第一条1条この規則の趣旨この規則の趣旨民事訴訟手続に関する条約及び民事又は商事に関する裁判上及び裁判外の文書の外国における送達及び告知に関する条約の実施のための裁判所の手続に関しては、民事訴訟手続に関する条約等の実施に伴う民事訴訟手続の特例等に関する法律（昭和四十五年法律第百十五号。以下「法」という。）に定めるもののほか、この規則の定めるところによる。"><a href="#a1">第一条　この規則の趣旨</a></li></ul></li><li class="lv-div div-2"><a href="#d3">第二章　民事訴訟手続に関する条約の実施</a><ul><li class="lv-art" data-text="第二条2条送達すべき文書の翻訳文送達すべき文書の翻訳文民事訴訟手続に関する条約（以下「民訴条約」という。）の締約国である外国の当局に対し、同条約第三条第二項に規定する方法による文書の送達を嘱託するときは、送達すべき文書に同項に規定する言語のいずれか一方によつて作成された翻訳文を添附するものとする。民訴条約の締約国に駐在する日本国の大使、公使又は領事に対し、文書の送達を嘱託する場合において必要があるときは、送達すべき文書に送達すべき地における公用語又は送達を受けるべき者が解する言語によつて作成された翻訳文を添附するものとする。当事者が作成し、又は提出した文書に添附すべき翻訳文は、その当事者が提出しなければならない。"><a href="#a2">第二条　送達すべき文書の翻訳文</a></li><li class="lv-art" data-text="第三条3条裁判外の文書の送達嘱託の申請裁判外の文書の送達嘱託の申請民訴条約第一条第一項の文書で裁判外のものを同条約の締約国である外国において送達することを求める者は、次に掲げる事項を記載した申請書を管轄裁判所に提出しなければならない。一送達すべき文書の種類二当事者の氏名及び資格三送達を受けるべき者の氏名及び住所四申請者の氏名及び住所五年月日六裁判所の表示前項第一号から第三号までに掲げる事項については、送達すべき地における公用語による記載をもしなければならない。"><a href="#a3">第三条　裁判外の文書の送達嘱託の申請</a></li><li class="lv-art" data-text="第三条の二3条の2裁判外の文書の送達裁判外の文書の送達法第六条第一項の送達及び外国の当局の嘱託により本邦においてする裁判外の文書の送達に関しては、民事訴訟規則（平成八年最高裁判所規則第五号）第一編第五章第四節の規定（同規則第四十一条、第四十二条、第一編第五章第四節第三款、第四十六条第一項、第四十七条第三項及び第四項並びに第四十七条の二の規定を除く。）を準用する。この場合において、同規則第四十七条第一項中「書類又は電磁的記録」とあるのは「書類」と読み替えるものとする。"><a href="#a3-2">第三条の二　裁判外の文書の送達</a></li><li class="lv-art" data-text="第四条4条民訴条約第二条に規定する方法による文書の送達民訴条約第二条に規定する方法による文書の送達民訴条約第二条に規定する方法により文書の送達をすべきときは、裁判所書記官は、送達を受けるべき者に対し、送達すべき文書を表示してその受領を催告しなければならない。前項の規定による催告を受けた者は、出頭して文書を受領すること又は文書の送付を申し出ることができる。前項の規定による申出を受けたときは、裁判所書記官は、民事訴訟法（平成八年法律第百九号）及び民事訴訟規則に定める郵便による送達の例により、文書を送付する。第一項の規定による催告を発した日から三週間以内に、送達を受けるべき者が出頭せず、又は第二項の規定による申出をしないときは、裁判所書記官は、文書の受領が拒絶されたものとして取り扱うことができる。"><a href="#a4">第四条　民訴条約第二条に規定する方法による文書の送達</a></li><li class="lv-art" data-text="第五条5条司法共助の嘱託書及び添附書類の翻訳司法共助の嘱託書及び添附書類の翻訳民訴条約第八条の当局に対する嘱託書及びその添附書類には、同条約第十条に規定する言語のいずれか一方によつて作成された翻訳文を添附するものとする。第二条第二項の規定は、民訴条約の締約国に駐在する日本国の大使、公使又は領事に対する嘱託書の添附書類について準用する。第二条第三項の規定は、前二項の場合について準用する。"><a href="#a5">第五条　司法共助の嘱託書及び添附書類の翻訳</a></li><li class="lv-art" data-text="第五条の二5条の2受託裁判所のした処分に対する不服申立て受託裁判所のした処分に対する不服申立て外国の当局の嘱託により証拠調べその他の裁判上の行為をするに際し本邦の裁判所がした裁判については、当該裁判所を受訴裁判所とみなして不服申立てに関する民事訴訟規則の規定を適用する。"><a href="#a5-2">第五条の二　受託裁判所のした処分に対する不服申立て</a></li><li class="lv-art" data-text="第六条6条法第十一条の申立て法第十一条の申立て法第十一条の申立てに係る申立書には、第九条の二において準用する非訟事件手続規則（平成二十四年最高裁判所規則第七号）第一条第一項各号に掲げる事項のほか、次に掲げる事項を記載しなければならない。一執行認許の請求をすべき訴訟費用の負担を定める裁判（その裁判において訴訟費用の額を定めていないときは、その裁判のほか訴訟費用の額を定める裁判（訴訟費用の負担の額を定める裁判所書記官の処分を含む。））の表示二執行認許の請求をすべき相手国の表示三訴訟費用債務者が民訴条約第十八条第一項に規定する免除を受けたこと及びその要件となる事実四訴訟費用債務者の氏名及び住所五執行認許の請求について裁判をする権限を有する当局の管轄を定める原因である事実前項第一号、第二号、第四号及び第五号に掲げる事項については、執行認許の請求をすべき相手国の公用語による記載をもしなければならない。第一項の申立書には、同項第一号の裁判の謄本、裁判所書記官がその確定を証明する書類及び法第二十二条の規定により当局の権限を証明する書類並びにこれらの書類について民訴条約第十九条第二項３に規定する言語のいずれか一方によつて作成された翻訳文を添付しなければならない。民訴条約第十八条第一項に規定する免除の要件となる事実について、証拠書類があるときは、その写しを申立書に添付しなければならない。"><a href="#a6">第六条　法第十一条の申立て</a></li><li class="lv-art" data-text="第七条7条当局の権限証明の申請当局の権限証明の申請法第二十二条の規定による当局の権限の証明を求める者は、法第十一条に規定する第一審の受訴裁判所を経由してその申請をしなければならない。"><a href="#a7">第七条　当局の権限証明の申請</a></li><li class="lv-art" data-text="第八条8条費用額確定請求書等の送付費用額確定請求書等の送付法第十一条の申立てに基づき執行認許の請求を外務大臣に嘱託する場合において、申立人が民訴条約第十九条第四項の規定により費用額を定めるべき旨の請求書及び証拠書類を提出しているときは、裁判所は、これらの書類を外務大臣に送付する。前項の請求書は、執行認許の請求をすべき相手国の公用語又は相手国との間の取極により定められた言語で作成しなければならない。第一項の証拠書類が前項に規定する言語で作成されていないときは、同項に規定する言語のいずれか一方によつて作成された翻訳文を添附しなければならない。"><a href="#a8">第八条　費用額確定請求書等の送付</a></li><li class="lv-art" data-text="第九条9条費用計算書等の提出費用計算書等の提出民訴条約第十九条第四項の規定により本邦の裁判所に対し費用額を定めるべき旨の請求をするときは、費用計算書及び費用額に関する証拠書類を提出しなければならない。前項の書類が外国語で作成されているときは、日本語又は関係国間の取極により定められた言語によつて作成された翻訳文を添附しなければならない。"><a href="#a9">第九条　費用計算書等の提出</a></li><li class="lv-art" data-text="第九条の二9条の2非訟事件手続規則の準用非訟事件手続規則の準用法第十一条の申立て及び執行認許の手続に関しては、この規則に特別の定めがある場合を除き、非訟事件手続規則の規定を準用する。"><a href="#a9-2">第九条の二　非訟事件手続規則の準用</a></li><li class="lv-art" data-text="第十条10条救助請求書の用語等救助請求書の用語等法第二十三条第一項の規定により提出する請求書及びその関係書類は、民訴条約第十条に規定する言語のいずれかで作成し、又は同条に規定する言語のいずれか一方によつて作成された翻訳文を添附して作成しなければならない。"><a href="#a10">第十条　救助請求書の用語等</a></li></ul></li><li class="lv-div div-2"><a href="#d16">第三章　民事又は商事に関する裁判上及び裁判外の文書の外国における送達及び告知に</a><ul><li class="lv-art" data-text="関する条約の実施"><a href="#body-2">本文</a></li><li class="lv-art" data-text="第十一条11条送達すべき文書の翻訳文送達すべき文書の翻訳文民事又は商事に関する裁判上及び裁判外の文書の外国における送達及び告知に関する条約（以下「送達条約」という。）の締約国である外国の当局に対し、同条約第五条第一項に規定する方法による文書の送達を嘱託した場合において、送達すべき文書の翻訳を求められたときは、同条第三項に規定する言語又は当該外国との間の取極により定められた言語によつて作成された翻訳文を送付するものとする。第二条第二項の規定は、送達条約の締約国に駐在する日本国の大使、公使又は領事に対して文書の送達を嘱託する場合について準用する。第二条第三項の規定は、前二項の場合について準用する。"><a href="#a11">第十一条　送達すべき文書の翻訳文</a></li><li class="lv-art" data-text="第十二条12条裁判外の文書の送達嘱託の申請裁判外の文書の送達嘱託の申請送達条約第十七条の裁判外の文書を同条約の締約国である外国において送達することを求める者は、第三条第一項各号に掲げる事項のほか、次に掲げる事項を記載した申請書を管轄裁判所に提出しなければならない。一送達について利害関係を有する者があるときは、その氏名及び住所二送達すべき文書に期間又は期限の定めの記載があるときは、その内容第三条第一項第一号から第三号まで及び前項各号に掲げる事項については、送達条約第七条第二項に規定する言語のいずれかによる記載をもしなければならない。"><a href="#a12">第十二条　裁判外の文書の送達嘱託の申請</a></li><li class="lv-art" data-text="第十二条の二12条の2裁判外の文書の送達裁判外の文書の送達第三条の二の規定は、送達条約第十七条の裁判外の文書の送達について準用する。"><a href="#a12-2">第十二条の二　裁判外の文書の送達</a></li><li class="lv-art" data-text="第十三条13条送達条約第五条第二項に規定する方法による文書の送達送達条約第五条第二項に規定する方法による文書の送達送達条約第五条第二項に規定する方法により文書の送達をすべきときは、第四条の規定を準用する。"><a href="#a13">第十三条　送達条約第五条第二項に規定する方法による文書の送達</a></li></ul></li><li class="lv-div div-1"><a href="#sup1">附則</a></li><li class="lv-div div-1"><a href="#sup2">附則　（平成八年一二月一七日最高裁判所規則第六号）抄</a><ul><li class="lv-art" data-text="第一条1条施行期日施行期日この規則は、民事訴訟法（平成八年法律第百九号。以下「新法」という。）の施行の日から施行する。"><a href="#sup2-a1">第一条　施行期日</a></li></ul></li><li class="lv-div div-1"><a href="#sup3">附則　（平成一五年一一月一二日最高裁判所規則第一九号）抄</a></li><li class="lv-div div-1"><a href="#sup4">附則　（平成二四年七月一七日最高裁判所規則第九号）抄</a><ul><li class="lv-art" data-text="第一条1条施行期日施行期日この規則は、非訟事件手続法（平成二十三年法律第五十一号）の施行の日から施行する。"><a href="#sup4-a1">第一条　施行期日</a></li></ul></li><li class="lv-div div-1"><a href="#sup5">附則　（令和六年九月一七日最高裁判所規則第一四号）抄</a><ul><li class="lv-art" data-text="第一条1条施行期日施行期日この規則は、民事訴訟法等の一部を改正する法律（令和四年法律第四十八号。以下「改正法」という。）の施行の日（以下「施行日」という。）から施行する。"><a href="#sup5-a1">第一条　施行期日</a></li></ul></li></ul>
+  </nav>
+  <main class="doc" id="doc-outer">
+    <div class="doc-head">
+      <h1>民事訴訟手続に関する条約等の実施に伴う民事訴訟手続の特例等に関する規則</h1>
+      <div class="meta">昭和四五年七月七日最高裁判所規則第六号　／　昭和45年7月27日施行　／　<a class="src" href="https://www.courts.go.jp/assets/tokureikisoku2.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本PDF p.1</a></div>
+    </div>
+    <div id="doc">
+<article class="art noarticle" id="body-1" data-path=""><div class="art-tools"><button type="button" data-anchor="body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/tokureikisoku2.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="body-1-p1"><span class="body-text">民事訴訟手続に関する条約等の実施に伴う民事訴訟手続の特例等に関する規則（原文は縦書き）改正 平成八年一二月一七日最高裁判所規則第六号同一五年一一月一二日同第一九号同二四年七月一七日同第九号令和六年九月一七日同第一四号民事訴訟手続に関する条約等の実施に伴う民事訴訟手続の特例等に関する規則を次のように定める。</span></p></article>
+<h3 class="div-head" id="d1" data-path="第一章　総則"><span class="lbl">第一章</span>　総則</h3>
+<article class="art" id="a1" data-path="第一章　総則"><span class="anchor-alias" id="Mp-At_1"></span><div class="art-tools"><button type="button" data-anchor="a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/tokureikisoku2.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（この規則の趣旨）</p><p class="para" id="a1-p1"><a class="art-no" href="#a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">民事訴訟手続に関する条約及び民事又は商事に関する裁判上及び裁判外の文書の外国における送達及び告知に関する条約の実施のための裁判所の手続に関しては、民事訴訟手続に関する条約等の実施に伴う民事訴訟手続の特例等に関する法律（昭和四十五年法律第百十五号。以下「法」という。）に定めるもののほか、この規則の定めるところによる。</span></p></article>
+<h3 class="div-head" id="d3" data-path="第二章　民事訴訟手続に関する条約の実施"><span class="lbl">第二章</span>　民事訴訟手続に関する条約の実施</h3>
+<article class="art" id="a2" data-path="第二章　民事訴訟手続に関する条約の実施"><span class="anchor-alias" id="Mp-At_2"></span><div class="art-tools"><button type="button" data-anchor="a2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/tokureikisoku2.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（送達すべき文書の翻訳文）</p><p class="para" id="a2-p1"><a class="art-no" href="#a2" data-kan="第二条" data-num="第2条">第二条</a><span class="body-text">民事訴訟手続に関する条約（以下「民訴条約」という。）の締約国である外国の当局に対し、同条約<a class="ref ref-self" href="#a3">第三条</a>第二項に規定する方法による文書の送達を嘱託するときは、送達すべき文書に同項に規定する言語のいずれか一方によつて作成された翻訳文を添附するものとする。</span></p><p class="para" id="a2-p2"><span class="pno">2</span><span class="body-text">民訴条約の締約国に駐在する日本国の大使、公使又は領事に対し、文書の送達を嘱託する場合において必要があるときは、送達すべき文書に送達すべき地における公用語又は送達を受けるべき者が解する言語によつて作成された翻訳文を添附するものとする。</span></p><p class="para" id="a2-p3"><span class="pno">3</span><span class="body-text">当事者が作成し、又は提出した文書に添附すべき翻訳文は、その当事者が提出しなければならない。</span></p></article>
+<article class="art" id="a3" data-path="第二章　民事訴訟手続に関する条約の実施"><span class="anchor-alias" id="Mp-At_3"></span><div class="art-tools"><button type="button" data-anchor="a3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/tokureikisoku2.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（裁判外の文書の送達嘱託の申請）</p><p class="para" id="a3-p1"><a class="art-no" href="#a3" data-kan="第三条" data-num="第3条">第三条</a><span class="body-text">民訴条約<a class="ref ref-self" href="#a1">第一条</a>第一項の文書で裁判外のものを同条約の締約国である外国において送達することを求める者は、次に掲げる事項を記載した申請書を管轄裁判所に提出しなければならない。</span></p><ol class="items"><li id="a3-p1-1"><span class="mk">一</span><span class="tx">送達すべき文書の種類</span></li><li id="a3-p1-2"><span class="mk">二</span><span class="tx">当事者の氏名及び資格</span></li><li id="a3-p1-3"><span class="mk">三</span><span class="tx">送達を受けるべき者の氏名及び住所</span></li><li id="a3-p1-4"><span class="mk">四</span><span class="tx">申請者の氏名及び住所</span></li><li id="a3-p1-5"><span class="mk">五</span><span class="tx">年月日</span></li><li id="a3-p1-6"><span class="mk">六</span><span class="tx">裁判所の表示</span></li></ol><p class="para" id="a3-p2"><span class="pno">2</span><span class="body-text">前項第一号から第三号までに掲げる事項については、送達すべき地における公用語による記載をもしなければならない。</span></p></article>
+<article class="art" id="a3-2" data-path="第二章　民事訴訟手続に関する条約の実施"><span class="anchor-alias" id="Mp-At_3_2"></span><div class="art-tools"><button type="button" data-anchor="a3-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/tokureikisoku2.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（裁判外の文書の送達）</p><p class="para" id="a3-2-p1"><a class="art-no" href="#a3-2" data-kan="第三条の二" data-num="第3条の2">第三条の二</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/345AC0000000115#Mp-At_6" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第六条</a>第一項の送達及び外国の当局の嘱託により本邦においてする裁判外の文書の送達に関しては、民事訴訟規則（平成八年最高裁判所規則第五号）第一編第五章第四節の規定（同規則第四十一条、第四十二条、第一編第五章第四節第三款、第四十六条第一項、第四十七条第三項及び第四項並びに第四十七条の二の規定を除く。）を準用する。この場合において、同規則第四十七条第一項中「書類又は電磁的記録」とあるのは「書類」と読み替えるものとする。</span></p></article>
+<article class="art" id="a4" data-path="第二章　民事訴訟手続に関する条約の実施"><span class="anchor-alias" id="Mp-At_4"></span><div class="art-tools"><button type="button" data-anchor="a4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/tokureikisoku2.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（民訴条約<a class="ref ref-self" href="#a2">第二条</a>に規定する方法による文書の送達）</p><p class="para" id="a4-p1"><a class="art-no" href="#a4" data-kan="第四条" data-num="第4条">第四条</a><span class="body-text">民訴条約<a class="ref ref-self" href="#a2">第二条</a>に規定する方法により文書の送達をすべきときは、裁判所書記官は、送達を受けるべき者に対し、送達すべき文書を表示してその受領を催告しなければならない。</span></p><p class="para" id="a4-p2"><span class="pno">2</span><span class="body-text">前項の規定による催告を受けた者は、出頭して文書を受領すること又は文書の送付を申し出ることができる。</span></p><p class="para" id="a4-p3"><span class="pno">3</span><span class="body-text">前項の規定による申出を受けたときは、裁判所書記官は、民事訴訟法（平成八年法律第百九号）及び民事訴訟規則に定める郵便による送達の例により、文書を送付する。</span></p><p class="para" id="a4-p4"><span class="pno">4</span><span class="body-text">第一項の規定による催告を発した日から三週間以内に、送達を受けるべき者が出頭せず、又は第二項の規定による申出をしないときは、裁判所書記官は、文書の受領が拒絶されたものとして取り扱うことができる。</span></p></article>
+<article class="art" id="a5" data-path="第二章　民事訴訟手続に関する条約の実施"><span class="anchor-alias" id="Mp-At_5"></span><div class="art-tools"><button type="button" data-anchor="a5" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/tokureikisoku2.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（司法共助の嘱託書及び添附書類の翻訳）</p><p class="para" id="a5-p1"><a class="art-no" href="#a5" data-kan="第五条" data-num="第5条">第五条</a><span class="body-text">民訴条約<a class="ref ref-self" href="#a8">第八条</a>の当局に対する嘱託書及びその添附書類には、同条約<a class="ref ref-self" href="#a10">第十条</a>に規定する言語のいずれか一方によつて作成された翻訳文を添附するものとする。</span></p><p class="para" id="a5-p2"><span class="pno">2</span><span class="body-text"><a class="ref ref-self" href="#a2">第二条</a>第二項の規定は、民訴条約の締約国に駐在する日本国の大使、公使又は領事に対する嘱託書の添附書類について準用する。</span></p><p class="para" id="a5-p3"><span class="pno">3</span><span class="body-text"><a class="ref ref-self" href="#a2">第二条</a>第三項の規定は、前二項の場合について準用する。</span></p></article>
+<article class="art" id="a5-2" data-path="第二章　民事訴訟手続に関する条約の実施"><span class="anchor-alias" id="Mp-At_5_2"></span><div class="art-tools"><button type="button" data-anchor="a5-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/tokureikisoku2.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（受託裁判所のした処分に対する不服申立て）</p><p class="para" id="a5-2-p1"><a class="art-no" href="#a5-2" data-kan="第五条の二" data-num="第5条の2">第五条の二</a><span class="body-text">外国の当局の嘱託により証拠調べその他の裁判上の行為をするに際し本邦の裁判所がした裁判については、当該裁判所を受訴裁判所とみなして不服申立てに関する民事訴訟規則の規定を適用する。</span></p></article>
+<article class="art" id="a6" data-path="第二章　民事訴訟手続に関する条約の実施"><span class="anchor-alias" id="Mp-At_6"></span><div class="art-tools"><button type="button" data-anchor="a6" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/tokureikisoku2.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/345AC0000000115#Mp-At_11" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十一条</a>の申立て）</p><p class="para" id="a6-p1"><a class="art-no" href="#a6" data-kan="第六条" data-num="第6条">第六条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/345AC0000000115#Mp-At_11" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十一条</a>の申立てに係る申立書には、第九条の二において準用する非訟事件手続規則（平成二十四年最高裁判所規則第七号）<a class="ref ref-rule" href="500.html#a1" title="この規則集の中を開きます">第一条</a>第一項各号に掲げる事項のほか、次に掲げる事項を記載しなければならない。</span></p><ol class="items"><li id="a6-p1-1"><span class="mk">一</span><span class="tx">執行認許の請求をすべき訴訟費用の負担を定める裁判（その裁判において訴訟費用の額を定めていないときは、その裁判のほか訴訟費用の額を定める裁判（訴訟費用の負担の額を定める裁判所書記官の処分を含む。））の表示</span></li><li id="a6-p1-2"><span class="mk">二</span><span class="tx">執行認許の請求をすべき相手国の表示</span></li><li id="a6-p1-3"><span class="mk">三</span><span class="tx">訴訟費用債務者が民訴条約第十八条第一項に規定する免除を受けたこと及びその要件となる事実</span></li><li id="a6-p1-4"><span class="mk">四</span><span class="tx">訴訟費用債務者の氏名及び住所</span></li><li id="a6-p1-5"><span class="mk">五</span><span class="tx">執行認許の請求について裁判をする権限を有する当局の管轄を定める原因である事実</span></li></ol><p class="para" id="a6-p2"><span class="pno">2</span><span class="body-text">前項第一号、第二号、第四号及び第五号に掲げる事項については、執行認許の請求をすべき相手国の公用語による記載をもしなければならない。</span></p><p class="para" id="a6-p3"><span class="pno">3</span><span class="body-text">第一項の申立書には、同項第一号の裁判の謄本、裁判所書記官がその確定を証明する書類及び<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/345AC0000000115#Mp-At_22" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十二条</a>の規定により当局の権限を証明する書類並びにこれらの書類について民訴条約第十九条第二項３に規定する言語のいずれか一方によつて作成された翻訳文を添付しなければならない。</span></p><p class="para" id="a6-p4"><span class="pno">4</span><span class="body-text">民訴条約第十八条第一項に規定する免除の要件となる事実について、証拠書類があるときは、その写しを申立書に添付しなければならない。</span></p></article>
+<article class="art" id="a7" data-path="第二章　民事訴訟手続に関する条約の実施"><span class="anchor-alias" id="Mp-At_7"></span><div class="art-tools"><button type="button" data-anchor="a7" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/tokureikisoku2.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（当局の権限証明の申請）</p><p class="para" id="a7-p1"><a class="art-no" href="#a7" data-kan="第七条" data-num="第7条">第七条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/345AC0000000115#Mp-At_22" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十二条</a>の規定による当局の権限の証明を求める者は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/345AC0000000115#Mp-At_11" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十一条</a>に規定する第一審の受訴裁判所を経由してその申請をしなければならない。</span></p></article>
+<article class="art" id="a8" data-path="第二章　民事訴訟手続に関する条約の実施"><span class="anchor-alias" id="Mp-At_8"></span><div class="art-tools"><button type="button" data-anchor="a8" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/tokureikisoku2.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（費用額確定請求書等の送付）</p><p class="para" id="a8-p1"><a class="art-no" href="#a8" data-kan="第八条" data-num="第8条">第八条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/345AC0000000115#Mp-At_11" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十一条</a>の申立てに基づき執行認許の請求を外務大臣に嘱託する場合において、申立人が民訴条約第十九条第四項の規定により費用額を定めるべき旨の請求書及び証拠書類を提出しているときは、裁判所は、これらの書類を外務大臣に送付する。</span></p><p class="para" id="a8-p2"><span class="pno">2</span><span class="body-text">前項の請求書は、執行認許の請求をすべき相手国の公用語又は相手国との間の取極により定められた言語で作成しなければならない。</span></p><p class="para" id="a8-p3"><span class="pno">3</span><span class="body-text">第一項の証拠書類が前項に規定する言語で作成されていないときは、同項に規定する言語のいずれか一方によつて作成された翻訳文を添附しなければならない。</span></p></article>
+<article class="art" id="a9" data-path="第二章　民事訴訟手続に関する条約の実施"><span class="anchor-alias" id="Mp-At_9"></span><div class="art-tools"><button type="button" data-anchor="a9" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/tokureikisoku2.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（費用計算書等の提出）</p><p class="para" id="a9-p1"><a class="art-no" href="#a9" data-kan="第九条" data-num="第9条">第九条</a><span class="body-text">民訴条約第十九条第四項の規定により本邦の裁判所に対し費用額を定めるべき旨の請求をするときは、費用計算書及び費用額に関する証拠書類を提出しなければならない。</span></p><p class="para" id="a9-p2"><span class="pno">2</span><span class="body-text">前項の書類が外国語で作成されているときは、日本語又は関係国間の取極により定められた言語によつて作成された翻訳文を添附しなければならない。</span></p></article>
+<article class="art" id="a9-2" data-path="第二章　民事訴訟手続に関する条約の実施"><span class="anchor-alias" id="Mp-At_9_2"></span><div class="art-tools"><button type="button" data-anchor="a9-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/tokureikisoku2.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（非訟事件手続規則の準用）</p><p class="para" id="a9-2-p1"><a class="art-no" href="#a9-2" data-kan="第九条の二" data-num="第9条の2">第九条の二</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/345AC0000000115#Mp-At_11" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第十一条</a>の申立て及び執行認許の手続に関しては、この規則に特別の定めがある場合を除き、非訟事件手続規則の規定を準用する。</span></p></article>
+<article class="art" id="a10" data-path="第二章　民事訴訟手続に関する条約の実施"><span class="anchor-alias" id="Mp-At_10"></span><div class="art-tools"><button type="button" data-anchor="a10" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/tokureikisoku2.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（救助請求書の用語等）</p><p class="para" id="a10-p1"><a class="art-no" href="#a10" data-kan="第十条" data-num="第10条">第十条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/345AC0000000115#Mp-At_23" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">法第二十三条</a>第一項の規定により提出する請求書及びその関係書類は、民訴条約<a class="ref ref-self" href="#a10">第十条</a>に規定する言語のいずれかで作成し、又は同条に規定する言語のいずれか一方によつて作成された翻訳文を添附して作成しなければならない。</span></p></article>
+<h3 class="div-head" id="d16" data-path="第三章　民事又は商事に関する裁判上及び裁判外の文書の外国における送達及び告知に"><span class="lbl">第三章</span>　民事又は商事に関する裁判上及び裁判外の文書の外国における送達及び告知に</h3>
+<article class="art noarticle" id="body-2" data-path="第三章　民事又は商事に関する裁判上及び裁判外の文書の外国における送達及び告知に"><div class="art-tools"><button type="button" data-anchor="body-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/tokureikisoku2.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="para" id="body-2-p1"><span class="body-text">関する条約の実施</span></p></article>
+<article class="art" id="a11" data-path="第三章　民事又は商事に関する裁判上及び裁判外の文書の外国における送達及び告知に"><span class="anchor-alias" id="Mp-At_11"></span><div class="art-tools"><button type="button" data-anchor="a11" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/tokureikisoku2.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（送達すべき文書の翻訳文）</p><p class="para" id="a11-p1"><a class="art-no" href="#a11" data-kan="第十一条" data-num="第11条">第十一条</a><span class="body-text">民事又は商事に関する裁判上及び裁判外の文書の外国における送達及び告知に関する条約（以下「送達条約」という。）の締約国である外国の当局に対し、同条約<a class="ref ref-self" href="#a5">第五条</a>第一項に規定する方法による文書の送達を嘱託した場合において、送達すべき文書の翻訳を求められたときは、同条第三項に規定する言語又は当該外国との間の取極により定められた言語によつて作成された翻訳文を送付するものとする。</span></p><p class="para" id="a11-p2"><span class="pno">2</span><span class="body-text"><a class="ref ref-self" href="#a2">第二条</a>第二項の規定は、送達条約の締約国に駐在する日本国の大使、公使又は領事に対して文書の送達を嘱託する場合について準用する。</span></p><p class="para" id="a11-p3"><span class="pno">3</span><span class="body-text"><a class="ref ref-self" href="#a2">第二条</a>第三項の規定は、前二項の場合について準用する。</span></p></article>
+<article class="art" id="a12" data-path="第三章　民事又は商事に関する裁判上及び裁判外の文書の外国における送達及び告知に"><span class="anchor-alias" id="Mp-At_12"></span><div class="art-tools"><button type="button" data-anchor="a12" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/tokureikisoku2.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（裁判外の文書の送達嘱託の申請）</p><p class="para" id="a12-p1"><a class="art-no" href="#a12" data-kan="第十二条" data-num="第12条">第十二条</a><span class="body-text">送達条約第十七条の裁判外の文書を同条約の締約国である外国において送達することを求める者は、<a class="ref ref-self" href="#a3">第三条</a>第一項各号に掲げる事項のほか、次に掲げる事項を記載した申請書を管轄裁判所に提出しなければならない。</span></p><ol class="items"><li id="a12-p1-1"><span class="mk">一</span><span class="tx">送達について利害関係を有する者があるときは、その氏名及び住所</span></li><li id="a12-p1-2"><span class="mk">二</span><span class="tx">送達すべき文書に期間又は期限の定めの記載があるときは、その内容</span></li></ol><p class="para" id="a12-p2"><span class="pno">2</span><span class="body-text"><a class="ref ref-self" href="#a3">第三条</a>第一項第一号から第三号まで及び前項各号に掲げる事項については、送達条約<a class="ref ref-self" href="#a7">第七条</a>第二項に規定する言語のいずれかによる記載をもしなければならない。</span></p></article>
+<article class="art" id="a12-2" data-path="第三章　民事又は商事に関する裁判上及び裁判外の文書の外国における送達及び告知に"><span class="anchor-alias" id="Mp-At_12_2"></span><div class="art-tools"><button type="button" data-anchor="a12-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/tokureikisoku2.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（裁判外の文書の送達）</p><p class="para" id="a12-2-p1"><a class="art-no" href="#a12-2" data-kan="第十二条の二" data-num="第12条の2">第十二条の二</a><span class="body-text"><a class="ref ref-self" href="#a3-2">第三条の二</a>の規定は、送達条約第十七条の裁判外の文書の送達について準用する。</span></p></article>
+<article class="art" id="a13" data-path="第三章　民事又は商事に関する裁判上及び裁判外の文書の外国における送達及び告知に"><span class="anchor-alias" id="Mp-At_13"></span><div class="art-tools"><button type="button" data-anchor="a13" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/tokureikisoku2.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（送達条約<a class="ref ref-self" href="#a5">第五条</a>第二項に規定する方法による文書の送達）</p><p class="para" id="a13-p1"><a class="art-no" href="#a13" data-kan="第十三条" data-num="第13条">第十三条</a><span class="body-text">送達条約<a class="ref ref-self" href="#a5">第五条</a>第二項に規定する方法により文書の送達をすべきときは、<a class="ref ref-self" href="#a4">第四条</a>の規定を準用する。</span></p></article>
+<h2 class="div-head" id="sup1" data-path="附則　"><span class="lbl">附則</span></h2>
+<article class="art noarticle" id="sup-body-1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/tokureikisoku2.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="para" id="sup-body-1-p1"><span class="body-text">この規則は、昭和四十五年七月二十七日から施行する。</span></p><p class="para" id="sup-body-1-p2"><span class="pno">2</span><span class="body-text">この規則は、この規則の施行前に生じた事項についても適用する。ただし、この規則の施行前に生じた効力を妨げない。</span></p></article>
+<h2 class="div-head" id="sup2" data-path="附則　（平成八年一二月一七日最高裁判所規則第六号）抄"><span class="lbl">附則</span>　（平成八年一二月一七日最高裁判所規則第六号）抄</h2>
+<article class="art" id="sup2-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup2-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/tokureikisoku2.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（施行期日）</p><p class="para" id="sup2-a1-p1"><a class="art-no" href="#sup2-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、民事訴訟法（平成八年法律第百九号。以下「新法」という。）の施行の日から施行する。</span></p></article>
+<h2 class="div-head" id="sup3" data-path="附則　（平成一五年一一月一二日最高裁判所規則第一九号）抄"><span class="lbl">附則</span>　（平成一五年一一月一二日最高裁判所規則第一九号）抄</h2>
+<article class="art noarticle" id="sup-body-2" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/tokureikisoku2.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="para" id="sup-body-2-p1"><span class="body-text">この規則は、民事訴訟法等の一部を改正する法律（平成一五年法律第百八号。次項において「法」という。）の施行の日から施行する。</span></p></article>
+<h2 class="div-head" id="sup4" data-path="附則　（平成二四年七月一七日最高裁判所規則第九号）抄"><span class="lbl">附則</span>　（平成二四年七月一七日最高裁判所規則第九号）抄</h2>
+<article class="art" id="sup4-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup4-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/tokureikisoku2.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（施行期日）</p><p class="para" id="sup4-a1-p1"><a class="art-no" href="#sup4-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、非訟事件手続法（平成二十三年法律第五十一号）の施行の日から施行する。</span></p></article>
+<h2 class="div-head" id="sup5" data-path="附則　（令和六年九月一七日最高裁判所規則第一四号）抄"><span class="lbl">附則</span>　（令和六年九月一七日最高裁判所規則第一四号）抄</h2>
+<article class="art" id="sup5-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup5-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/tokureikisoku2.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（施行期日）</p><p class="para" id="sup5-a1-p1"><a class="art-no" href="#sup5-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、民事訴訟法等の一部を改正する法律（令和四年法律第四十八号。以下「改正法」という。）の施行の日（以下「施行日」という。）から施行する。</span></p></article>
+    </div>
+    <aside class="notes"><p>読み取りに関する注意</p><ul><li>PDF中の目次は読み飛ばし、条見出しから目次を再構成しました。</li><li>各条の「原本」は https://www.courts.go.jp/assets/tokureikisoku2.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。</li></ul></aside>
+    <div class="foot">出典：tokureikisoku2.pdf　／　最高裁規則ビューア 1.9.0 で 2026年09月02日 に変換　
+    条文の正確な内容は原本で確認してください。</div>
+  </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  "use strict";
+  var doc = document.getElementById("doc");
+  var input = document.getElementById("q");
+  var hitLabel = document.getElementById("hits");
+  var crumb = document.getElementById("crumb");
+  var toc = document.getElementById("toc");
+  var toast = document.getElementById("toast");
+  var pristine = doc.innerHTML;
+  var hits = [];
+  var cursor = -1;
+
+  function say(msg){
+    toast.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(say._t);
+    say._t = setTimeout(function(){ toast.classList.remove("show"); }, 1600);
+  }
+
+  /* ---------------------------------------------------------- 条番号の表記 */
+  var numeralBtn = document.getElementById("numeral");
+  function applyNumeral(useArabic){
+    var nodes = doc.querySelectorAll(".art-no");
+    for (var i = 0; i < nodes.length; i++){
+      var el = nodes[i];
+      var v = useArabic ? el.getAttribute("data-num") : el.getAttribute("data-kan");
+      if (v) el.textContent = v;
+    }
+    numeralBtn.setAttribute("aria-pressed", useArabic ? "true" : "false");
+  }
+  numeralBtn.addEventListener("click", function(){
+    var next = numeralBtn.getAttribute("aria-pressed") !== "true";
+    applyNumeral(next);
+    try { localStorage.setItem("rule-numeral", next ? "1" : "0"); } catch(e){}
+    pristine = doc.innerHTML;
+  });
+  try {
+    /* 既定の表記は原本に合わせてある。前回の切り替えが残っていればそれに従う */
+    var saved = localStorage.getItem("rule-numeral");
+    if (saved === "1" || saved === "0"){ applyNumeral(saved === "1"); pristine = doc.innerHTML; }
+  } catch(e){}
+
+  /* -------------------------------------------------------------- 検索処理 */
+  var SKIP = {SCRIPT:1, STYLE:1, MARK:1, BUTTON:1, A:1};   /* 原本リンク等の道具立ては検索対象にしない */
+  function highlight(term){
+    doc.innerHTML = pristine;
+    hits = [];
+    cursor = -1;
+    if (!term){ hitLabel.textContent = ""; refreshToc(""); return; }
+    var walker = document.createTreeWalker(doc, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        if (!n.nodeValue || n.nodeValue.indexOf(term) < 0) return NodeFilter.FILTER_REJECT;
+        if (n.parentNode && SKIP[n.parentNode.nodeName]) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var targets = [];
+    var node;
+    while ((node = walker.nextNode())) targets.push(node);
+    for (var i = 0; i < targets.length; i++){
+      var t = targets[i], text = t.nodeValue, pos = 0, frag = document.createDocumentFragment();
+      var idx;
+      while ((idx = text.indexOf(term, pos)) >= 0){
+        if (idx > pos) frag.appendChild(document.createTextNode(text.slice(pos, idx)));
+        var m = document.createElement("mark");
+        m.textContent = text.substr(idx, term.length);
+        frag.appendChild(m);
+        hits.push(m);
+        pos = idx + term.length;
+      }
+      if (pos < text.length) frag.appendChild(document.createTextNode(text.slice(pos)));
+      t.parentNode.replaceChild(frag, t);
+    }
+    hitLabel.textContent = hits.length ? "1 / " + hits.length : "該当なし";
+    refreshToc(term);
+    if (hits.length){ cursor = 0; focusHit(0, false); }
+  }
+  function focusHit(i, scroll){
+    if (!hits.length) return;
+    for (var k = 0; k < hits.length; k++) hits[k].classList.remove("live");
+    cursor = (i + hits.length) % hits.length;
+    hits[cursor].classList.add("live");
+    hitLabel.textContent = (cursor + 1) + " / " + hits.length;
+    if (scroll !== false) hits[cursor].scrollIntoView({block:"center", behavior:"instant"});
+  }
+  function refreshToc(term){
+    var links = toc.querySelectorAll("li.lv-art");
+    for (var i = 0; i < links.length; i++){
+      var li = links[i];
+      var body = (li.getAttribute("data-text") || "");
+      li.classList.toggle("hidden", !!term && body.indexOf(term) < 0);
+    }
+    var divs = toc.querySelectorAll("li.lv-div");
+    for (var j = divs.length - 1; j >= 0; j--){
+      var d = divs[j];
+      var kids = d.querySelectorAll("li:not(.hidden)");
+      d.classList.toggle("hidden", !!term && kids.length === 0);
+    }
+  }
+  var timer = null;
+  input.addEventListener("input", function(){
+    clearTimeout(timer);
+    var v = input.value.trim();
+    timer = setTimeout(function(){ highlight(v); }, 180);
+  });
+  input.addEventListener("keydown", function(e){
+    if (e.key === "Enter"){ e.preventDefault(); focusHit(cursor + (e.shiftKey ? -1 : 1)); }
+    if (e.key === "Escape"){ input.value = ""; highlight(""); input.blur(); }
+  });
+  document.getElementById("prev").addEventListener("click", function(){ focusHit(cursor - 1); });
+  document.getElementById("next").addEventListener("click", function(){ focusHit(cursor + 1); });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "/" && e.target === document.body){ e.preventDefault(); input.focus(); }
+  });
+
+  /* -------------------------------------------------- リンクのコピー・共有 */
+  doc.addEventListener("click", function(e){
+    var btn = e.target.closest ? e.target.closest("button[data-anchor]") : null;
+    if (!btn) return;
+    var anchor = btn.getAttribute("data-anchor");
+    var url = location.href.split("#")[0] + "#" + anchor;
+    history.replaceState(null, "", "#" + anchor);
+    var done = function(){ say("リンクをコピーしました"); };
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(done, function(){ legacyCopy(url, done); });
+    } else {
+      legacyCopy(url, done);
+    }
+  });
+  function legacyCopy(text, done){
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); done(); }
+    catch(err){ say("コピーできませんでした。アドレス欄からURLを控えてください"); }
+    document.body.removeChild(ta);
+  }
+
+  /* ------------------------------------------------ 現在位置の表示と目次連動 */
+  var watched = doc.querySelectorAll(".art[id], .div-head[id]");
+  var tocLinks = {};
+  var links = toc.querySelectorAll("a[href^='#']");
+  for (var i = 0; i < links.length; i++) tocLinks[links[i].getAttribute("href").slice(1)] = links[i];
+  var currentLink = null;
+  if ("IntersectionObserver" in window){
+    var visible = [];
+    var io = new IntersectionObserver(function(entries){
+      for (var i = 0; i < entries.length; i++){
+        var id = entries[i].target.id;
+        var at = visible.indexOf(id);
+        if (entries[i].isIntersecting){ if (at < 0) visible.push(id); }
+        else if (at >= 0){ visible.splice(at, 1); }
+      }
+      if (!visible.length) return;
+      var first = null;
+      for (var k = 0; k < watched.length; k++){
+        if (visible.indexOf(watched[k].id) >= 0){ first = watched[k]; break; }
+      }
+      if (!first) return;
+      crumb.textContent = first.getAttribute("data-path") || "";
+      var link = tocLinks[first.id];
+      if (link && link !== currentLink){
+        if (currentLink) currentLink.classList.remove("current");
+        link.classList.add("current");
+        currentLink = link;
+      }
+    }, {rootMargin:"-20% 0px -70% 0px"});
+    for (var w = 0; w < watched.length; w++) io.observe(watched[w]);
+  }
+
+  /* -------------------------------------------------------- 目次の開閉（狭幅） */
+  var opener = document.getElementById("toc-open");
+  if (opener){
+    opener.addEventListener("click", function(){ toc.classList.toggle("open"); });
+    toc.addEventListener("click", function(e){
+      if (e.target.tagName === "A") toc.classList.remove("open");
+    });
+  }
+})();
+</script>
+</body>
+</html>

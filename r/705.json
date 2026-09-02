@@ -1,0 +1,447 @@
+{
+  "title": "家庭裁判所委員会規則",
+  "law_number": "平成15年4月2日最高裁判所規則第10号",
+  "enforcement_date": "平成15年8月1日",
+  "enforcement_iso": "2003-08-01",
+  "pdf_link": "https://www.courts.go.jp/assets/kateisaibannshoiinnkaikisoku.pdf",
+  "source": "kateisaibannshoiinnkaikisoku.pdf",
+  "numeral": "kansuji",
+  "notes": [
+    "各条の「原本」は https://www.courts.go.jp/assets/kateisaibannshoiinnkaikisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+  ],
+  "nodes": [
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "body-1",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "家庭裁判所委員会規則を次のように定める。家庭裁判所委員会規則",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "a1",
+      "caption": "設置",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "家庭裁判所の運営に広く国民の意見を反映させるため、家庭裁判所に家庭裁判所委員会（以下「委員会」という。）を置く。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        2
+      ],
+      "label": "第二条",
+      "short_label": "2条",
+      "anchor": "a2",
+      "caption": "所掌事務",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "委員会は、当該委員会を置く家庭裁判所の運営に関し、当該家庭裁判所の諮問に応ずるとともに、当該家庭裁判所に対して意見を述べるものとする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        3
+      ],
+      "label": "第三条",
+      "short_label": "3条",
+      "anchor": "a3",
+      "caption": "組織",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "委員会は、委員十五人以内で組織する。ただし、最高裁判所が必要と認める場合には、二十五人に達するまで委員の数を増加することができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        4
+      ],
+      "label": "第四条",
+      "short_label": "4条",
+      "anchor": "a4",
+      "caption": "委員の任命",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "委員は、次に掲げる者のうちから、第二条に規定する家庭裁判所が任命する。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "当該家庭裁判所の管轄区域内において居住し、又は執務する学識経験者",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "当該家庭裁判所と管轄区域を同じくする地方裁判所を設立の基準とする弁護士会に所属する弁護士",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "当該家庭裁判所に対応する地方検察庁又は当該家庭裁判所の管轄区域内に所在する簡易裁判所に対応する区検察庁の検察官",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "当該家庭裁判所の裁判官",
+              "children": []
+            }
+          ]
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        5
+      ],
+      "label": "第五条",
+      "short_label": "5条",
+      "anchor": "a5",
+      "caption": "委員の任期等",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "委員の任期は、二年とする。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "委員は、再任されることができる。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "委員は、非常勤とする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        6
+      ],
+      "label": "第六条",
+      "short_label": "6条",
+      "anchor": "a6",
+      "caption": "委員長",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "委員会に委員長を置き、当該委員会の委員の互選により選任する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "委員長は、会務を総理し、委員会を代表する。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "委員長に事故があるときは、あらかじめその指名する委員が、その職務を代理する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        7
+      ],
+      "label": "第七条",
+      "short_label": "7条",
+      "anchor": "a7",
+      "caption": "部会",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "委員会は、その定めるところにより、部会を置くことができる。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "部会に属すべき委員は、委員長が指名する。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "部会に部会長を置き、当該部会に属する委員の互選により選任する。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "部会長は、当該部会の事務を掌理する。",
+          "items": []
+        },
+        {
+          "number": 5,
+          "text": "部会長に事故があるときは、当該部会に属する委員のうちから部会長があらかじめ指名する者が、その職務を代理する。",
+          "items": []
+        },
+        {
+          "number": 6,
+          "text": "委員会は、その定めるところにより、部会の議決をもって委員会の議決とすることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        8
+      ],
+      "label": "第八条",
+      "short_label": "8条",
+      "anchor": "a8",
+      "caption": "庶務",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "委員会の庶務は、第二条に規定する家庭裁判所の事務局総務課において処理する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        9
+      ],
+      "label": "第九条",
+      "short_label": "9条",
+      "anchor": "a9",
+      "caption": "雑則",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則に定めるもののほか、議事の手続その他委員会の運営に関し必要な事項は、委員長が委員会に諮って定める。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "",
+      "anchor": "sup1",
+      "level": 1,
+      "page": 1,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "sup1-a1",
+      "caption": "施行期日",
+      "deleted": false,
+      "section": "supplementary",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 1,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、平成十五年八月一日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        2
+      ],
+      "label": "第二条",
+      "short_label": "2条",
+      "anchor": "sup1-a2",
+      "caption": "旧規則の廃止",
+      "deleted": false,
+      "section": "supplementary",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 1,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "家庭裁判所委員会規則（昭和二十三年最高裁判所規則第三十九号。以下「旧規則」という。）は、廃止する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        3
+      ],
+      "label": "第三条",
+      "short_label": "3条",
+      "anchor": "sup1-a3",
+      "caption": "経過措置",
+      "deleted": false,
+      "section": "supplementary",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 1,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則の施行の際現に旧規則第四条第四号又は第五号の委員に委嘱されている者は、この規則の施行の日に第四条の規定により同条第一号の委員に任命されたものとみなす。この場合において、当該委員の任期は、第五条第一項の規定にかかわらず、平成十六年七月三十一日（同日までの間に退任する委員にあっては、その退任の日）に満了するものとする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        4
+      ],
+      "label": "第四条",
+      "short_label": "4条",
+      "anchor": "sup1-a4",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 1,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "平成十六年七月三十一日までの間における第三条の規定の適用については、同条中「委員十五人以内」とあるのは、「附則第三条の規定により委員に任命されたものとみなされる者の数に委員会ごとに最高裁判所が別に定める数を加えた員数（当該員数が十五人を下回る場合にあっては十五人）以内の委員」とする。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "第三条ただし書の規定は、平成十六年七月三十一日までの間においては、附則第三条の規定により委員に任命されたものとみなされる者の数に委員会ごとに最高裁判所が別に定める数を加えた員数が二十五人以上である委員会については、適用しない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    }
+  ]
+}

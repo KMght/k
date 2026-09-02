@@ -1,0 +1,71 @@
+{
+  "title": "道路交通法の施行に伴う交通事件の即決裁判に関する手続の経過措置に関する規則",
+  "law_number": "昭和35年11月21日最高裁判所規則第15号",
+  "enforcement_date": "昭和35年12月20日",
+  "enforcement_iso": "1960-12-20",
+  "pdf_link": "https://www.courts.go.jp/assets/koutsusokketsukeikasochikisoku.pdf",
+  "source": "koutsusokketsukeikasochikisoku.pdf",
+  "numeral": "kansuji",
+  "notes": [
+    "条番号の付いた条文を1件も検出できませんでした。条を持たない告示・要綱であればこれで正しく、そうでなければ書字方向・段組の設定、またはOCRの要否を確認してください。",
+    "各条の「原本」は https://www.courts.go.jp/assets/koutsusokketsukeikasochikisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+  ],
+  "nodes": [
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "body-1",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "道路交通法の施行に伴う交通事件の即決裁判に関する手続の経過措置に関する規則を次のように定める。道路交通法の施行に伴う交通事件の即決裁判に関する手続の経過措置に関する規則道路交通法（昭和三十五年法律第百五号）附則第十八条第二項の規定により従前の例によるべき事件の即決裁判に関する手続については、交通事件即決裁判手続規則（昭和二十九年最高裁判所規則第十四号）の定めるところによる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "",
+      "anchor": "sup1",
+      "level": 1,
+      "page": 1,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-1",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 1,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、昭和三十五年十二月二十日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    }
+  ]
+}

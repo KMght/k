@@ -1,0 +1,7264 @@
+{
+ "rule_id": "600",
+ "title": "刑事訴訟規則",
+ "enforcement_iso": "2026-05-21",
+ "url": "https://kmght.github.io/ksk/r/600.html",
+ "articles": [
+  {
+   "key": "1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "この規則の解釈、運用",
+   "anchor": "a1",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "2",
+   "label": "第二条",
+   "short": "2条",
+   "caption": "管轄の指定、移転の請求の方式・法第十五条等",
+   "anchor": "a2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "3",
+   "label": "第三条",
+   "short": "3条",
+   "caption": "管轄の指定、移転の請求の通知・法第十五条等",
+   "anchor": "a3",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "4",
+   "label": "第四条",
+   "short": "4条",
+   "caption": "請求書の謄本の交付、意見書の差出・法第十七条",
+   "anchor": "a4",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "5",
+   "label": "第五条",
+   "short": "5条",
+   "caption": "被告人の管轄移転の請求・法第十七条",
+   "anchor": "a5",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "6",
+   "label": "第六条",
+   "short": "6条",
+   "caption": "訴訟手続の停止・法第十五条等",
+   "anchor": "a6",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "7",
+   "label": "第七条",
+   "short": "7条",
+   "caption": "移送の請求の方式・法第十九条",
+   "anchor": "a7",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "8",
+   "label": "第八条",
+   "short": "8条",
+   "caption": "意見の聴取・法第十九条",
+   "anchor": "a8",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "9",
+   "label": "第九条",
+   "short": "9条",
+   "caption": "忌避の申立て・法第二十一条",
+   "anchor": "a9",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "10",
+   "label": "第十条",
+   "short": "10条",
+   "caption": "申立てに対する意見書・法第二十三条",
+   "anchor": "a10",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "11",
+   "label": "第十一条",
+   "short": "11条",
+   "caption": "訴訟手続の停止",
+   "anchor": "a11",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "12",
+   "label": "第十二条",
+   "short": "12条",
+   "caption": "除斥の裁判・法第二十三条",
+   "anchor": "a12",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "13",
+   "label": "第十三条",
+   "short": "13条",
+   "caption": "回避",
+   "anchor": "a13",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "14",
+   "label": "第十四条",
+   "short": "14条",
+   "caption": "除斥、回避の裁判の送達",
+   "anchor": "a14",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "15",
+   "label": "第十五条",
+   "short": "15条",
+   "caption": "準用規定",
+   "anchor": "a15",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "16",
+   "label": "第十六条",
+   "short": "16条",
+   "caption": "被疑者の特別代理人選任の請求・法第二十九条",
+   "anchor": "a16",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "17",
+   "label": "第十七条",
+   "short": "17条",
+   "caption": "被疑者の弁護人の選任・法第三十条",
+   "anchor": "a17",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "18",
+   "label": "第十八条",
+   "short": "18条",
+   "caption": "被告人の弁護人の選任の方式・法第三十条",
+   "anchor": "a18",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "18_2",
+   "label": "第十八条の二",
+   "short": "18条の2",
+   "caption": "追起訴された事件の弁護人の選任・法第三十条",
+   "anchor": "a18-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "18_3",
+   "label": "第十八条の三",
+   "short": "18条の3",
+   "caption": "被告人、被疑者に対する通知・法第三十一条の二",
+   "anchor": "a18-3",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "19",
+   "label": "第十九条",
+   "short": "19条",
+   "caption": "主任弁護人・法第三十三条",
+   "anchor": "a19",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "20",
+   "label": "第二十条",
+   "short": "20条",
+   "caption": "主任弁護人の指定、変更の方式・法第三十三条",
+   "anchor": "a20",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "21",
+   "label": "第二十一条",
+   "short": "21条",
+   "caption": "裁判長の指定する主任弁護人・法第三十三条",
+   "anchor": "a21",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "22",
+   "label": "第二十二条",
+   "short": "22条",
+   "caption": "主任弁護人の指定、変更の通知・法第三十三条",
+   "anchor": "a22",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "23",
+   "label": "第二十三条",
+   "short": "23条",
+   "caption": "副主任弁護人・法第三十三条",
+   "anchor": "a23",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "24",
+   "label": "第二十四条",
+   "short": "24条",
+   "caption": "主任弁護人、副主任弁護人の辞任、解任・法第三十三条",
+   "anchor": "a24",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "25",
+   "label": "第二十五条",
+   "short": "25条",
+   "caption": "主任弁護人、副主任弁護人の権限・法第三十四条",
+   "anchor": "a25",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "26",
+   "label": "第二十六条",
+   "short": "26条",
+   "caption": "被告人の弁護人の数の制限・法第三十五条",
+   "anchor": "a26",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "27",
+   "label": "第二十七条",
+   "short": "27条",
+   "caption": "被疑者の弁護人の数の制限・法第三十五条",
+   "anchor": "a27",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "28",
+   "label": "第二十八条",
+   "short": "28条",
+   "caption": "国選弁護人選任の請求・法第三十六条等",
+   "anchor": "a28",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "28_2",
+   "label": "第二十八条の二",
+   "short": "28条の2",
+   "caption": "国選弁護人選任の請求先裁判官・法第三十七条の二",
+   "anchor": "a28-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "28_3",
+   "label": "第二十八条の三",
+   "short": "28条の3",
+   "caption": "国選弁護人選任請求書等の提出・法第三十七条の二等",
+   "anchor": "a28-3",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "28_4",
+   "label": "第二十八条の四",
+   "short": "28条の4",
+   "caption": "弁護人の選任に関する処分をすべき裁判官",
+   "anchor": "a28-4",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "28_5",
+   "label": "第二十八条の五",
+   "short": "28条の5",
+   "caption": "",
+   "anchor": "a28-5",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "29",
+   "label": "第二十九条",
+   "short": "29条",
+   "caption": "国選弁護人の選任・法第三十八条",
+   "anchor": "a29",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "29_2",
+   "label": "第二十九条の二",
+   "short": "29条の2",
+   "caption": "弁護人の解任に関する処分をすべき裁判官・法第三十八条の三",
+   "anchor": "a29-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "29_3",
+   "label": "第二十九条の三",
+   "short": "29条の3",
+   "caption": "国選弁護人の選任等の通知・法第三十八条等",
+   "anchor": "a29-3",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "30",
+   "label": "第三十条",
+   "short": "30条",
+   "caption": "裁判所における接見等・法第三十九条",
+   "anchor": "a30",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "31",
+   "label": "第三十一条",
+   "short": "31条",
+   "caption": "弁護人の書類の閲覧等・法第四十条",
+   "anchor": "a31",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "32",
+   "label": "第三十二条",
+   "short": "32条",
+   "caption": "補佐人の届出の方式・法第四十二条",
+   "anchor": "a32",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "33",
+   "label": "第三十三条",
+   "short": "33条",
+   "caption": "決定、命令の手続・法第四十三条",
+   "anchor": "a33",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "34",
+   "label": "第三十四条",
+   "short": "34条",
+   "caption": "裁判の告知",
+   "anchor": "a34",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "34_2",
+   "label": "第三十四条の二",
+   "short": "34条の2",
+   "caption": "",
+   "anchor": "a34-2",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "34_3",
+   "label": "第三十四条の三",
+   "short": "34条の3",
+   "caption": "処置をとるべきことの請求",
+   "anchor": "a34-3",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "35",
+   "label": "第三十五条",
+   "short": "35条",
+   "caption": "裁判の宣告",
+   "anchor": "a35",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "36",
+   "label": "第三十六条",
+   "short": "36条",
+   "caption": "謄本、抄本の送付",
+   "anchor": "a36",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "37",
+   "label": "第三十七条",
+   "short": "37条",
+   "caption": "訴訟書類の作成者",
+   "anchor": "a37",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "38",
+   "label": "第三十八条",
+   "short": "38条",
+   "caption": "証人等の尋問調書",
+   "anchor": "a38",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "39",
+   "label": "第三十九条",
+   "short": "39条",
+   "caption": "被告人、被疑者の陳述の調書",
+   "anchor": "a39",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "40",
+   "label": "第四十条",
+   "short": "40条",
+   "caption": "速記、録音",
+   "anchor": "a40",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "41",
+   "label": "第四十一条",
+   "short": "41条",
+   "caption": "検証、押収等の調書",
+   "anchor": "a41",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "42",
+   "label": "第四十二条",
+   "short": "42条",
+   "caption": "調書の記載要件",
+   "anchor": "a42",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "43",
+   "label": "第四十三条",
+   "short": "43条",
+   "caption": "差押状等の執行調書、捜索調書",
+   "anchor": "a43",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "44",
+   "label": "第四十四条",
+   "short": "44条",
+   "caption": "公判調書の記載要件・法第四十八条",
+   "anchor": "a44",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "44_2",
+   "label": "第四十四条の二",
+   "short": "44条の2",
+   "caption": "公判調書の供述の記載の簡易化・法第四十八条",
+   "anchor": "a44-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "45",
+   "label": "第四十五条",
+   "short": "45条",
+   "caption": "公判調書の作成の手続・法第四十八条",
+   "anchor": "a45",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "46",
+   "label": "第四十六条",
+   "short": "46条",
+   "caption": "公判調書の署名押印、認印・法第四十八条",
+   "anchor": "a46",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "47",
+   "label": "第四十七条",
+   "short": "47条",
+   "caption": "公判廷の速記、録音",
+   "anchor": "a47",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "48",
+   "label": "第四十八条",
+   "short": "48条",
+   "caption": "異議の申立の記載・法第五十条等",
+   "anchor": "a48",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "49",
+   "label": "第四十九条",
+   "short": "49条",
+   "caption": "調書への引用",
+   "anchor": "a49",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "49_2",
+   "label": "第四十九条の二",
+   "short": "49条の2",
+   "caption": "調書の記載事項別編てつ",
+   "anchor": "a49-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "50",
+   "label": "第五十条",
+   "short": "50条",
+   "caption": "被告人の公判調書の閲覧・法第四十九条",
+   "anchor": "a50",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "51",
+   "label": "第五十一条",
+   "short": "51条",
+   "caption": "証人の供述の要旨等の告知・法第五十条",
+   "anchor": "a51",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "52",
+   "label": "第五十二条",
+   "short": "52条",
+   "caption": "公判調書の整理・法第四十八条等",
+   "anchor": "a52",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "52_2",
+   "label": "第五十二条の二",
+   "short": "52条の2",
+   "caption": "公判準備における証人等の尋問調書",
+   "anchor": "a52-2",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "52_3",
+   "label": "第五十二条の三",
+   "short": "52条の3",
+   "caption": "速記録の作成",
+   "anchor": "a52-3",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "52_4",
+   "label": "第五十二条の四",
+   "short": "52条の4",
+   "caption": "証人の尋問調書等における速記録の引用",
+   "anchor": "a52-4",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "52_5",
+   "label": "第五十二条の五",
+   "short": "52条の5",
+   "caption": "速記録引用の場合の措置",
+   "anchor": "a52-5",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "52_6",
+   "label": "第五十二条の六",
+   "short": "52条の6",
+   "caption": "",
+   "anchor": "a52-6",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "52_7",
+   "label": "第五十二条の七",
+   "short": "52条の7",
+   "caption": "公判調書における速記録の引用",
+   "anchor": "a52-7",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "52_8",
+   "label": "第五十二条の八",
+   "short": "52条の8",
+   "caption": "公判調書における速記原本の引用",
+   "anchor": "a52-8",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "52_9",
+   "label": "第五十二条の九",
+   "short": "52条の9",
+   "caption": "速記原本の訳読等",
+   "anchor": "a52-9",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "52_10",
+   "label": "第五十二条の十",
+   "short": "52条の10",
+   "caption": "",
+   "anchor": "a52-10",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "52_11",
+   "label": "第五十二条の十一",
+   "short": "52条の11",
+   "caption": "",
+   "anchor": "a52-11",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "52_12",
+   "label": "第五十二条の十二",
+   "short": "52条の12",
+   "caption": "速記原本の反訳等",
+   "anchor": "a52-12",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "52_13",
+   "label": "第五十二条の十三",
+   "short": "52条の13",
+   "caption": "速記録添附の場合の異議申立期間・法第五十一条",
+   "anchor": "a52-13",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "52_14",
+   "label": "第五十二条の十四",
+   "short": "52条の14",
+   "caption": "録音反訳による証人の尋問調書等",
+   "anchor": "a52-14",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "52_15",
+   "label": "第五十二条の十五",
+   "short": "52条の15",
+   "caption": "録音反訳の場合の措置",
+   "anchor": "a52-15",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "52_16",
+   "label": "第五十二条の十六",
+   "short": "52条の16",
+   "caption": "",
+   "anchor": "a52-16",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "52_17",
+   "label": "第五十二条の十七",
+   "short": "52条の17",
+   "caption": "録音反訳による公判調書",
+   "anchor": "a52-17",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "52_18",
+   "label": "第五十二条の十八",
+   "short": "52条の18",
+   "caption": "公判調書における録音反訳の場合の措置",
+   "anchor": "a52-18",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "52_19",
+   "label": "第五十二条の十九",
+   "short": "52条の19",
+   "caption": "公判調書未整理の場合の録音体の再生等",
+   "anchor": "a52-19",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "52_20",
+   "label": "第五十二条の二十",
+   "short": "52条の20",
+   "caption": "公判調書における録音体の引用",
+   "anchor": "a52-20",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "52_21",
+   "label": "第五十二条の二十一",
+   "short": "52条の21",
+   "caption": "録音体の内容を記載した書面の作成",
+   "anchor": "a52-21",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "53",
+   "label": "第五十三条",
+   "short": "53条",
+   "caption": "裁判書の作成",
+   "anchor": "a53",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "54",
+   "label": "第五十四条",
+   "short": "54条",
+   "caption": "裁判書の作成者",
+   "anchor": "a54",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "55",
+   "label": "第五十五条",
+   "short": "55条",
+   "caption": "裁判書の署名押印",
+   "anchor": "a55",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "56",
+   "label": "第五十六条",
+   "short": "56条",
+   "caption": "裁判書の記載要件",
+   "anchor": "a56",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "57",
+   "label": "第五十七条",
+   "short": "57条",
+   "caption": "裁判書等の謄本、抄本等",
+   "anchor": "a57",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "58",
+   "label": "第五十八条",
+   "short": "58条",
+   "caption": "公務員の書類",
+   "anchor": "a58",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "59",
+   "label": "第五十九条",
+   "short": "59条",
+   "caption": "公務員の書類の訂正",
+   "anchor": "a59",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "60",
+   "label": "第六十条",
+   "short": "60条",
+   "caption": "公務員以外の者の書類",
+   "anchor": "a60",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "60_2",
+   "label": "第六十条の二",
+   "short": "60条の2",
+   "caption": "署名押印に代わる記名押印",
+   "anchor": "a60-2",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "61",
+   "label": "第六十一条",
+   "short": "61条",
+   "caption": "署名押印に代わる代書又は指印",
+   "anchor": "a61",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "61_2",
+   "label": "第六十一条の二",
+   "short": "61条の2",
+   "caption": "条件を付する場合等の裁判長等による記名押印",
+   "anchor": "a61-2",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "62",
+   "label": "第六十二条",
+   "short": "62条",
+   "caption": "送達のための届出・法第五十四条",
+   "anchor": "a62",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "63",
+   "label": "第六十三条",
+   "short": "63条",
+   "caption": "書留郵便等に付する送達・法第五十四条",
+   "anchor": "a63",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "63_2",
+   "label": "第六十三条の二",
+   "short": "63条の2",
+   "caption": "就業場所における送達の要件・法第五十四条",
+   "anchor": "a63-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "64",
+   "label": "第六十四条",
+   "short": "64条",
+   "caption": "検察官に対する送達・法第五十四条",
+   "anchor": "a64",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "65",
+   "label": "第六十五条",
+   "short": "65条",
+   "caption": "交付送達・法第五十四条",
+   "anchor": "a65",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "66",
+   "label": "第六十六条",
+   "short": "66条",
+   "caption": "裁判所に対する訴訟行為をする者のための法定期間の延長・法第五十六条",
+   "anchor": "a66",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "66_2",
+   "label": "第六十六条の二",
+   "short": "66条の2",
+   "caption": "検察官に対する訴訟行為をする者のための法定期間の延長・法第五十六条",
+   "anchor": "a66-2",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "67",
+   "label": "第六十七条",
+   "short": "67条",
+   "caption": "召喚の猶予期間・法第五十七条",
+   "anchor": "a67",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "68",
+   "label": "第六十八条",
+   "short": "68条",
+   "caption": "勾引、勾留についての身体、名誉の保全",
+   "anchor": "a68",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "69",
+   "label": "第六十九条",
+   "short": "69条",
+   "caption": "裁判所書記官の立会・法第六十一条",
+   "anchor": "a69",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "70",
+   "label": "第七十条",
+   "short": "70条",
+   "caption": "勾留状の記載要件・法第六十四条",
+   "anchor": "a70",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "70_2",
+   "label": "第七十条の二",
+   "short": "70条の2",
+   "caption": "勾引状に代わるもの、勾留状に代わるものの記載要件・法第二百七十一条の八等",
+   "anchor": "a70-2",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "71",
+   "label": "第七十一条",
+   "short": "71条",
+   "caption": "裁判長の令状の記載要件・法第六十九条",
+   "anchor": "a71",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "72",
+   "label": "第七十二条",
+   "short": "72条",
+   "caption": "勾引状、勾留状の原本の送付・法第七十条",
+   "anchor": "a72",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "73",
+   "label": "第七十三条",
+   "short": "73条",
+   "caption": "勾引状等の数通交付",
+   "anchor": "a73",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "74",
+   "label": "第七十四条",
+   "short": "74条",
+   "caption": "勾引状、勾留状の謄本の被告人への交付の請求等",
+   "anchor": "a74",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "74_2",
+   "label": "第七十四条の二",
+   "short": "74条の2",
+   "caption": "勾引状、勾留状の謄本の弁護人への交付の請求等",
+   "anchor": "a74-2",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "74_3",
+   "label": "第七十四条の三",
+   "short": "74条の3",
+   "caption": "勾引状、勾留状の謄本の弁護人への交付の請求の方式",
+   "anchor": "a74-3",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "74_4",
+   "label": "第七十四条の四",
+   "short": "74条の4",
+   "caption": "処置をとるべきことの請求",
+   "anchor": "a74-4",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "75",
+   "label": "第七十五条",
+   "short": "75条",
+   "caption": "勾引状、勾留状執行後の処置",
+   "anchor": "a75",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "76",
+   "label": "第七十六条",
+   "short": "76条",
+   "caption": "嘱託による勾引状・法第六十七条",
+   "anchor": "a76",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "77",
+   "label": "第七十七条",
+   "short": "77条",
+   "caption": "裁判所書記官の立会・法第七十六条等",
+   "anchor": "a77",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "78",
+   "label": "第七十八条",
+   "short": "78条",
+   "caption": "調書の作成・法第七十六条等",
+   "anchor": "a78",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "79",
+   "label": "第七十九条",
+   "short": "79条",
+   "caption": "勾留の通知・法第七十九条",
+   "anchor": "a79",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "80",
+   "label": "第八十条",
+   "short": "80条",
+   "caption": "被告人の移送",
+   "anchor": "a80",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "81",
+   "label": "第八十一条",
+   "short": "81条",
+   "caption": "勾留の理由開示の請求の方式・法第八十二条",
+   "anchor": "a81",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "81_2",
+   "label": "第八十一条の二",
+   "short": "81条の2",
+   "caption": "開示の請求の却下",
+   "anchor": "a81-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "82",
+   "label": "第八十二条",
+   "short": "82条",
+   "caption": "開示の手続・法第八十三条",
+   "anchor": "a82",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "83",
+   "label": "第八十三条",
+   "short": "83条",
+   "caption": "公判期日における開示・法第八十三条",
+   "anchor": "a83",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "84",
+   "label": "第八十四条",
+   "short": "84条",
+   "caption": "開示の請求と開示期日",
+   "anchor": "a84",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "85",
+   "label": "第八十五条",
+   "short": "85条",
+   "caption": "開示期日の変更",
+   "anchor": "a85",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "85_2",
+   "label": "第八十五条の二",
+   "short": "85条の2",
+   "caption": "被告人、弁護人の退廷中の開示・法第八十三条",
+   "anchor": "a85-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "85_3",
+   "label": "第八十五条の三",
+   "short": "85条の3",
+   "caption": "開示期日における意見陳述の時間の制限等・法第八十四条",
+   "anchor": "a85-3",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "86",
+   "label": "第八十六条",
+   "short": "86条",
+   "caption": "開示期日の調書",
+   "anchor": "a86",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "86_2",
+   "label": "第八十六条の二",
+   "short": "86条の2",
+   "caption": "開示の請求の却下決定の送達",
+   "anchor": "a86-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "87",
+   "label": "第八十七条",
+   "short": "87条",
+   "caption": "保釈の保証書の記載事項・法第九十四条等",
+   "anchor": "a87",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "88",
+   "label": "第八十八条",
+   "short": "88条",
+   "caption": "執行停止についての意見の聴取・法第九十五条",
+   "anchor": "a88",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "89",
+   "label": "第八十九条",
+   "short": "89条",
+   "caption": "",
+   "anchor": "a89",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": true
+  },
+  {
+   "key": "90",
+   "label": "第九十条",
+   "short": "90条",
+   "caption": "委託による執行停止・法第九十五条",
+   "anchor": "a90",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "91",
+   "label": "第九十一条",
+   "short": "91条",
+   "caption": "保証金等の還付・法第九十六条、第九十八条の八、第九十八条の九、第九十八条の十一、第三百四十三条等",
+   "anchor": "a91",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "92",
+   "label": "第九十二条",
+   "short": "92条",
+   "caption": "上訴中の事件等の勾留に関する処分・法第九十七条",
+   "anchor": "a92",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "92_2",
+   "label": "第九十二条の二",
+   "short": "92条の2",
+   "caption": "拘禁刑以上の刑に処せられた被告人の収容手続・法第三百四十三条、第九十八条等",
+   "anchor": "a92-2",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "92_3",
+   "label": "第九十二条の三",
+   "short": "92条の3",
+   "caption": "監督保証金に代わる保証書の記載事項・法第九十八条の六等",
+   "anchor": "a92-3",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "93",
+   "label": "第九十三条",
+   "short": "93条",
+   "caption": "押収、捜索等についての秘密、名誉の保持",
+   "anchor": "a93",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "94",
+   "label": "第九十四条",
+   "short": "94条",
+   "caption": "差押状等の記載事項・法第百七条",
+   "anchor": "a94",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "95",
+   "label": "第九十五条",
+   "short": "95条",
+   "caption": "準用規定",
+   "anchor": "a95",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "96",
+   "label": "第九十六条",
+   "short": "96条",
+   "caption": "捜索証明書、押収品目録の作成者・法第百十九条等",
+   "anchor": "a96",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "97",
+   "label": "第九十七条",
+   "short": "97条",
+   "caption": "差押状等執行後の処置",
+   "anchor": "a97",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "98",
+   "label": "第九十八条",
+   "short": "98条",
+   "caption": "押収物等の処置",
+   "anchor": "a98",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "99",
+   "label": "第九十九条",
+   "short": "99条",
+   "caption": "差押状の執行調書の記載",
+   "anchor": "a99",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "100",
+   "label": "第百条",
+   "short": "100条",
+   "caption": "押収、捜索の立会い",
+   "anchor": "a100",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "101",
+   "label": "第百一条",
+   "short": "101条",
+   "caption": "検証についての注意",
+   "anchor": "a101",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "102",
+   "label": "第百二条",
+   "short": "102条",
+   "caption": "被告人の身体検査の召喚状等の記載要件・法第六十三条等",
+   "anchor": "a102",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "103",
+   "label": "第百三条",
+   "short": "103条",
+   "caption": "被告人以外の者の身体検査の召喚状等の記載要件・法第百三十六条等",
+   "anchor": "a103",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "104",
+   "label": "第百四条",
+   "short": "104条",
+   "caption": "準用規定",
+   "anchor": "a104",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "105",
+   "label": "第百五条",
+   "short": "105条",
+   "caption": "検証の立会",
+   "anchor": "a105",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "106",
+   "label": "第百六条",
+   "short": "106条",
+   "caption": "尋問事項書・法第三百四条等",
+   "anchor": "a106",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "107",
+   "label": "第百七条",
+   "short": "107条",
+   "caption": "請求の却下",
+   "anchor": "a107",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "107_2",
+   "label": "第百七条の二",
+   "short": "107条の2",
+   "caption": "決定の告知・法第百五十七条の二等",
+   "anchor": "a107-2",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "107_3",
+   "label": "第百七条の三",
+   "short": "107条の3",
+   "caption": "映像等の送受信による通話の方法による尋問・法第百五十七条の六",
+   "anchor": "a107-3",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "108",
+   "label": "第百八条",
+   "short": "108条",
+   "caption": "尋問事項の告知等・法第百五十八条",
+   "anchor": "a108",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "109",
+   "label": "第百九条",
+   "short": "109条",
+   "caption": "職権による公判期日外の尋問・法第百五十八条",
+   "anchor": "a109",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "110",
+   "label": "第百十条",
+   "short": "110条",
+   "caption": "召喚状、勾引状の記載要件・法第百五十三条等",
+   "anchor": "a110",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "111",
+   "label": "第百十一条",
+   "short": "111条",
+   "caption": "召喚の猶予期間・法第百四十三条の二",
+   "anchor": "a111",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "112",
+   "label": "第百十二条",
+   "short": "112条",
+   "caption": "準用規定",
+   "anchor": "a112",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "113",
+   "label": "第百十三条",
+   "short": "113条",
+   "caption": "尋問上の注意、在廷証人",
+   "anchor": "a113",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "114",
+   "label": "第百十四条",
+   "short": "114条",
+   "caption": "尋問の立会",
+   "anchor": "a114",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "115",
+   "label": "第百十五条",
+   "short": "115条",
+   "caption": "人定尋問",
+   "anchor": "a115",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "116",
+   "label": "第百十六条",
+   "short": "116条",
+   "caption": "宣誓の趣旨の説明等・法第百五十五条",
+   "anchor": "a116",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "117",
+   "label": "第百十七条",
+   "short": "117条",
+   "caption": "宣誓の時期・法第百五十四条",
+   "anchor": "a117",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "118",
+   "label": "第百十八条",
+   "short": "118条",
+   "caption": "宣誓の方式・法第百五十四条",
+   "anchor": "a118",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "119",
+   "label": "第百十九条",
+   "short": "119条",
+   "caption": "個別宣誓・法第百五十四条",
+   "anchor": "a119",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "120",
+   "label": "第百二十条",
+   "short": "120条",
+   "caption": "偽証の警告・法第百五十四条",
+   "anchor": "a120",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "121",
+   "label": "第百二十一条",
+   "short": "121条",
+   "caption": "証言拒絶権の告知等・法第百四十六条等",
+   "anchor": "a121",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "122",
+   "label": "第百二十二条",
+   "short": "122条",
+   "caption": "証言の拒絶・法第百四十六条等",
+   "anchor": "a122",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "123",
+   "label": "第百二十三条",
+   "short": "123条",
+   "caption": "個別尋問",
+   "anchor": "a123",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "124",
+   "label": "第百二十四条",
+   "short": "124条",
+   "caption": "対質",
+   "anchor": "a124",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "125",
+   "label": "第百二十五条",
+   "short": "125条",
+   "caption": "書面による尋問",
+   "anchor": "a125",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "126",
+   "label": "第百二十六条",
+   "short": "126条",
+   "caption": "公判期日外の尋問調書の閲覧等・法第百五十九条",
+   "anchor": "a126",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "127",
+   "label": "第百二十七条",
+   "short": "127条",
+   "caption": "受命、受託裁判官の尋問・法第百六十三条",
+   "anchor": "a127",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "128",
+   "label": "第百二十八条",
+   "short": "128条",
+   "caption": "宣誓・法第百六十六条",
+   "anchor": "a128",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "129",
+   "label": "第百二十九条",
+   "short": "129条",
+   "caption": "鑑定の報告",
+   "anchor": "a129",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "130",
+   "label": "第百三十条",
+   "short": "130条",
+   "caption": "裁判所外の鑑定",
+   "anchor": "a130",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "130_2",
+   "label": "第百三十条の二",
+   "short": "130条の2",
+   "caption": "鑑定留置状の記載要件・法第百六十七条",
+   "anchor": "a130-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "130_3",
+   "label": "第百三十条の三",
+   "short": "130条の3",
+   "caption": "看守の申出の方式・法第百六十七条",
+   "anchor": "a130-3",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "130_4",
+   "label": "第百三十条の四",
+   "short": "130条の4",
+   "caption": "鑑定留置期間の延長、短縮・法第百六十七条",
+   "anchor": "a130-4",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "130_5",
+   "label": "第百三十条の五",
+   "short": "130条の5",
+   "caption": "収容費の支払・法第百六十七条",
+   "anchor": "a130-5",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "131",
+   "label": "第百三十一条",
+   "short": "131条",
+   "caption": "準用規定",
+   "anchor": "a131",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "131_2",
+   "label": "第百三十一条の二",
+   "short": "131条の2",
+   "caption": "鑑定留置状に代わるものの記載要件・法第百六十七条、第二百七十一条の八等",
+   "anchor": "a131-2",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "132",
+   "label": "第百三十二条",
+   "short": "132条",
+   "caption": "準用規定",
+   "anchor": "a132",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "133",
+   "label": "第百三十三条",
+   "short": "133条",
+   "caption": "鑑定許可状の記載要件・法第百六十八条",
+   "anchor": "a133",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "134",
+   "label": "第百三十四条",
+   "short": "134条",
+   "caption": "鑑定のための閲覧等",
+   "anchor": "a134",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "135",
+   "label": "第百三十五条",
+   "short": "135条",
+   "caption": "準用規定",
+   "anchor": "a135",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "136",
+   "label": "第百三十六条",
+   "short": "136条",
+   "caption": "準用規定",
+   "anchor": "a136",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "137",
+   "label": "第百三十七条",
+   "short": "137条",
+   "caption": "処分をすべき裁判官・法第百七十九条",
+   "anchor": "a137",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "138",
+   "label": "第百三十八条",
+   "short": "138条",
+   "caption": "請求の方式・法第百七十九条",
+   "anchor": "a138",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "138_2",
+   "label": "第百三十八条の二",
+   "short": "138条の2",
+   "caption": "請求先裁判所・法第百八十七条の二",
+   "anchor": "a138-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "138_3",
+   "label": "第百三十八条の三",
+   "short": "138条の3",
+   "caption": "請求の方式・法第百八十七条の二",
+   "anchor": "a138-3",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "138_4",
+   "label": "第百三十八条の四",
+   "short": "138条の4",
+   "caption": "資料の提供・法第百八十七条の二",
+   "anchor": "a138-4",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "138_5",
+   "label": "第百三十八条の五",
+   "short": "138条の5",
+   "caption": "請求書の謄本の差出し、送達・法第百八十七条の二",
+   "anchor": "a138-5",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "138_6",
+   "label": "第百三十八条の六",
+   "short": "138条の6",
+   "caption": "意見の聴取・法第百八十七条の二",
+   "anchor": "a138-6",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "138_7",
+   "label": "第百三十八条の七",
+   "short": "138条の7",
+   "caption": "請求の却下・法第百八十七条の二",
+   "anchor": "a138-7",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "138_8",
+   "label": "第百三十八条の八",
+   "short": "138条の8",
+   "caption": "準用規定",
+   "anchor": "a138-8",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "138_9",
+   "label": "第百三十八条の九",
+   "short": "138条の9",
+   "caption": "裁判所書記官による計算・法第百八十八条の三等",
+   "anchor": "a138-9",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "139",
+   "label": "第百三十九条",
+   "short": "139条",
+   "caption": "令状請求の方式",
+   "anchor": "a139",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "140",
+   "label": "第百四十条",
+   "short": "140条",
+   "caption": "令状請求の却下",
+   "anchor": "a140",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "141",
+   "label": "第百四十一条",
+   "short": "141条",
+   "caption": "令状請求書の返還",
+   "anchor": "a141",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "141_2",
+   "label": "第百四十一条の二",
+   "short": "141条の2",
+   "caption": "逮捕状請求権者の指定、変更の通知等",
+   "anchor": "a141-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "142",
+   "label": "第百四十二条",
+   "short": "142条",
+   "caption": "逮捕状請求書の記載要件",
+   "anchor": "a142",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "142_2",
+   "label": "第百四十二条の二",
+   "short": "142条の2",
+   "caption": "逮捕状に代わるものの交付請求書の記載要件",
+   "anchor": "a142-2",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "143",
+   "label": "第百四十三条",
+   "short": "143条",
+   "caption": "資料の提供",
+   "anchor": "a143",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "143_2",
+   "label": "第百四十三条の二",
+   "short": "143条の2",
+   "caption": "逮捕状請求者の陳述聴取等",
+   "anchor": "a143-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "143_3",
+   "label": "第百四十三条の三",
+   "short": "143条の3",
+   "caption": "明らかに逮捕の必要がない場合",
+   "anchor": "a143-3",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "144",
+   "label": "第百四十四条",
+   "short": "144条",
+   "caption": "逮捕状の記載要件",
+   "anchor": "a144",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "144_2",
+   "label": "第百四十四条の二",
+   "short": "144条の2",
+   "caption": "逮捕状に代わるものの記載要件",
+   "anchor": "a144-2",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "145",
+   "label": "第百四十五条",
+   "short": "145条",
+   "caption": "逮捕状の作成",
+   "anchor": "a145",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "145_2",
+   "label": "第百四十五条の二",
+   "short": "145条の2",
+   "caption": "逮捕状に代わるものの作成",
+   "anchor": "a145-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "146",
+   "label": "第百四十六条",
+   "short": "146条",
+   "caption": "数通の逮捕状等",
+   "anchor": "a146",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "146_2",
+   "label": "第百四十六条の二",
+   "short": "146条の2",
+   "caption": "逮捕状に代わるものの交付請求の却下等",
+   "anchor": "a146-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "147",
+   "label": "第百四十七条",
+   "short": "147条",
+   "caption": "勾留請求書の記載要件・法第二百四条等",
+   "anchor": "a147",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "147_2",
+   "label": "第百四十七条の二",
+   "short": "147条の2",
+   "caption": "勾留状に代わるものの交付等請求書の記載要件・法第二百七条の二",
+   "anchor": "a147-2",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "148",
+   "label": "第百四十八条",
+   "short": "148条",
+   "caption": "資料の提供・法第二百四条等",
+   "anchor": "a148",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "149",
+   "label": "第百四十九条",
+   "short": "149条",
+   "caption": "勾留状の記載要件・法第二百七条等",
+   "anchor": "a149",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "149_2",
+   "label": "第百四十九条の二",
+   "short": "149条の2",
+   "caption": "勾留状に代わるものの記載要件・法第二百七条の二",
+   "anchor": "a149-2",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "149_3",
+   "label": "第百四十九条の三",
+   "short": "149条の3",
+   "caption": "勾留状に代わるものの交付等請求の却下等・法第二百七条の二",
+   "anchor": "a149-3",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "150",
+   "label": "第百五十条",
+   "short": "150条",
+   "caption": "書類の送付",
+   "anchor": "a150",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "150_2",
+   "label": "第百五十条の二",
+   "short": "150条の2",
+   "caption": "個人特定事項の通知の請求の方式・法第二百七条の三",
+   "anchor": "a150-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "150_3",
+   "label": "第百五十条の三",
+   "short": "150条の3",
+   "caption": "勾留状に代わるものの記載要件・法第二百七条の三",
+   "anchor": "a150-3",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "150_4",
+   "label": "第百五十条の四",
+   "short": "150条の4",
+   "caption": "勾留状の謄本の被疑者への交付の請求等・法第二百七条等",
+   "anchor": "a150-4",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "150_5",
+   "label": "第百五十条の五",
+   "short": "150条の5",
+   "caption": "勾留状の謄本の弁護人への交付の請求等",
+   "anchor": "a150-5",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "150_6",
+   "label": "第百五十条の六",
+   "short": "150条の6",
+   "caption": "勾留状の謄本の弁護人への交付の請求の方式",
+   "anchor": "a150-6",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "150_7",
+   "label": "第百五十条の七",
+   "short": "150条の7",
+   "caption": "勾留状の謄本を弁護人に交付する旨の裁判",
+   "anchor": "a150-7",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "150_8",
+   "label": "第百五十条の八",
+   "short": "150条の8",
+   "caption": "処置をとるべきことの請求",
+   "anchor": "a150-8",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "150_9",
+   "label": "第百五十条の九",
+   "short": "150条の9",
+   "caption": "被疑者の勾留期間の再延長・法第二百八条の二",
+   "anchor": "a150-9",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "151",
+   "label": "第百五十一条",
+   "short": "151条",
+   "caption": "期間の延長の請求・法第二百八条等",
+   "anchor": "a151",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "152",
+   "label": "第百五十二条",
+   "short": "152条",
+   "caption": "資料の提供等・法第二百八条等",
+   "anchor": "a152",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "153",
+   "label": "第百五十三条",
+   "short": "153条",
+   "caption": "期間の延長の裁判・法第二百八条等",
+   "anchor": "a153",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "154",
+   "label": "第百五十四条",
+   "short": "154条",
+   "caption": "期間の延長の裁判の記載のある勾留状の謄本の被疑者への交付の請求等・法第二百八条等",
+   "anchor": "a154",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "154_2",
+   "label": "第百五十四条の二",
+   "short": "154条の2",
+   "caption": "期間の延長の裁判の記載のある勾留状の謄本の弁護人への交付の請求等",
+   "anchor": "a154-2",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "155",
+   "label": "第百五十五条",
+   "short": "155条",
+   "caption": "差押え等の令状請求書の記載要件・法第二百十八条",
+   "anchor": "a155",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "156",
+   "label": "第百五十六条",
+   "short": "156条",
+   "caption": "資料の提供・法第二百十八条等",
+   "anchor": "a156",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "157",
+   "label": "第百五十七条",
+   "short": "157条",
+   "caption": "身体検査令状の記載要件・法第二百十九条",
+   "anchor": "a157",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "157_2",
+   "label": "第百五十七条の二",
+   "short": "157条の2",
+   "caption": "逮捕状等の返還に関する記載",
+   "anchor": "a157-2",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "157_3",
+   "label": "第百五十七条の三",
+   "short": "157条の3",
+   "caption": "電磁的記録提供命令の令状の記載要件・法第二百十九条",
+   "anchor": "a157-3",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "158",
+   "label": "第百五十八条",
+   "short": "158条",
+   "caption": "処罰等の請求・法第二百二十二条",
+   "anchor": "a158",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "158_2",
+   "label": "第百五十八条の二",
+   "short": "158条の2",
+   "caption": "鑑定留置請求書の記載要件・法第二百二十四条",
+   "anchor": "a158-2",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "158_3",
+   "label": "第百五十八条の三",
+   "short": "158条の3",
+   "caption": "鑑定留置状に代わるものの交付等請求書の記載要件・法第二百二十四条、第二百七条の二",
+   "anchor": "a158-3",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "158_4",
+   "label": "第百五十八条の四",
+   "short": "158条の4",
+   "caption": "鑑定留置状に代わるものの記載要件・法第二百二十四条、第二百七条の二",
+   "anchor": "a158-4",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "158_5",
+   "label": "第百五十八条の五",
+   "short": "158条の5",
+   "caption": "鑑定留置状に代わるものの交付等請求の却下等・法第二百二十四条、第二百七条の二",
+   "anchor": "a158-5",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "158_6",
+   "label": "第百五十八条の六",
+   "short": "158条の6",
+   "caption": "個人特定事項の通知の請求の方式・法第二百二十四条、第二百七条の三",
+   "anchor": "a158-6",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "158_7",
+   "label": "第百五十八条の七",
+   "short": "158条の7",
+   "caption": "鑑定留置状に代わるものの記載要件・法第二百二十四条、第二百七条の三",
+   "anchor": "a158-7",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "158_8",
+   "label": "第百五十八条の八",
+   "short": "158条の8",
+   "caption": "準用規定",
+   "anchor": "a158-8",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "159",
+   "label": "第百五十九条",
+   "short": "159条",
+   "caption": "鑑定処分許可請求書の記載要件・法第二百二十五条",
+   "anchor": "a159",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "160",
+   "label": "第百六十条",
+   "short": "160条",
+   "caption": "証人尋問請求書の記載要件・法第二百二十六条等",
+   "anchor": "a160",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "161",
+   "label": "第百六十一条",
+   "short": "161条",
+   "caption": "資料の提供・法第二百二十六条",
+   "anchor": "a161",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "162",
+   "label": "第百六十二条",
+   "short": "162条",
+   "caption": "証人尋問の立会・法第二百二十八条",
+   "anchor": "a162",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "163",
+   "label": "第百六十三条",
+   "short": "163条",
+   "caption": "書類の送付・法第二百二十六条等",
+   "anchor": "a163",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "164",
+   "label": "第百六十四条",
+   "short": "164条",
+   "caption": "起訴状の記載要件・法第二百五十六条",
+   "anchor": "a164",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "165",
+   "label": "第百六十五条",
+   "short": "165条",
+   "caption": "弁護人選任書の差出し等・法第二百五十六条等",
+   "anchor": "a165",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "165_2",
+   "label": "第百六十五条の二",
+   "short": "165条の2",
+   "caption": "起訴状抄本等の記載事項等・法第二百七十一条の二等",
+   "anchor": "a165-2",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "165_3",
+   "label": "第百六十五条の三",
+   "short": "165条の3",
+   "caption": "証明資料の差出・法第二百五十条",
+   "anchor": "a165-3",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "166",
+   "label": "第百六十六条",
+   "short": "166条",
+   "caption": "証明資料の差出・法第二百五十五条",
+   "anchor": "a166",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "167",
+   "label": "第百六十七条",
+   "short": "167条",
+   "caption": "逮捕状等の差出・法第二百八十条",
+   "anchor": "a167",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "168",
+   "label": "第百六十八条",
+   "short": "168条",
+   "caption": "公訴取消の方式・法第二百五十七条",
+   "anchor": "a168",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "169",
+   "label": "第百六十九条",
+   "short": "169条",
+   "caption": "審判請求書の記載要件・法第二百六十二条",
+   "anchor": "a169",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "170",
+   "label": "第百七十条",
+   "short": "170条",
+   "caption": "請求の取下の方式・法第二百六十三条",
+   "anchor": "a170",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "171",
+   "label": "第百七十一条",
+   "short": "171条",
+   "caption": "書類等の送付",
+   "anchor": "a171",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "172",
+   "label": "第百七十二条",
+   "short": "172条",
+   "caption": "請求等の通知",
+   "anchor": "a172",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "173",
+   "label": "第百七十三条",
+   "short": "173条",
+   "caption": "被疑者の取調・法第二百六十五条",
+   "anchor": "a173",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "174",
+   "label": "第百七十四条",
+   "short": "174条",
+   "caption": "審判に付する決定・法第二百六十六条",
+   "anchor": "a174",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "175",
+   "label": "第百七十五条",
+   "short": "175条",
+   "caption": "審判に付する決定後の処分・法第二百六十七条",
+   "anchor": "a175",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "176",
+   "label": "第百七十六条",
+   "short": "176条",
+   "caption": "起訴状の謄本の送達等・法第二百七十一条等",
+   "anchor": "a176",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "176_2",
+   "label": "第百七十六条の二",
+   "short": "176条の2",
+   "caption": "呼称の定め等・法第二百七十一条の二等",
+   "anchor": "a176-2",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "176_3",
+   "label": "第百七十六条の三",
+   "short": "176条の3",
+   "caption": "個人特定事項の通知の請求の方式・法第二百七十一条の五等",
+   "anchor": "a176-3",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "176_4",
+   "label": "第百七十六条の四",
+   "short": "176条の4",
+   "caption": "通知の請求に対する判断の時期・法第二百七十一条の五等",
+   "anchor": "a176-4",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "176_5",
+   "label": "第百七十六条の五",
+   "short": "176条の5",
+   "caption": "呼称の通知・法第二百七十一条の六等",
+   "anchor": "a176-5",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "176_6",
+   "label": "第百七十六条の六",
+   "short": "176条の6",
+   "caption": "公判期日外の尋問調書の閲覧等の制限",
+   "anchor": "a176-6",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "177",
+   "label": "第百七十七条",
+   "short": "177条",
+   "caption": "弁護人選任に関する通知・法第二百七十二条等",
+   "anchor": "a177",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "178",
+   "label": "第百七十八条",
+   "short": "178条",
+   "caption": "弁護人のない事件の処置・法第二百八十九条等",
+   "anchor": "a178",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "178_2",
+   "label": "第百七十八条の二",
+   "short": "178条の2",
+   "caption": "第一回公判期日前における訴訟関係人の準備",
+   "anchor": "a178-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "178_3",
+   "label": "第百七十八条の三",
+   "short": "178条の3",
+   "caption": "検察官、弁護人の氏名の告知等",
+   "anchor": "a178-3",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "178_4",
+   "label": "第百七十八条の四",
+   "short": "178条の4",
+   "caption": "第一回公判期日の指定",
+   "anchor": "a178-4",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "178_5",
+   "label": "第百七十八条の五",
+   "short": "178条の5",
+   "caption": "審理に充てることのできる見込み時間の告知",
+   "anchor": "a178-5",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "178_6",
+   "label": "第百七十八条の六",
+   "short": "178条の6",
+   "caption": "第一回公判期日前における検察官、弁護人の準備の内容",
+   "anchor": "a178-6",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "178_7",
+   "label": "第百七十八条の七",
+   "short": "178条の7",
+   "caption": "証人等の氏名及び住居を知る機会を与える場合等",
+   "anchor": "a178-7",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "178_8",
+   "label": "第百七十八条の八",
+   "short": "178条の8",
+   "caption": "証人等の氏名及び住居の開示に係る措置の通知・法第二百九十九条の四",
+   "anchor": "a178-8",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "178_9",
+   "label": "第百七十八条の九",
+   "short": "178条の9",
+   "caption": "証人等の氏名及び住居の開示に関する裁定の請求の方式・法第二百九十九条の五",
+   "anchor": "a178-9",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "178_10",
+   "label": "第百七十八条の十",
+   "short": "178条の10",
+   "caption": "呼称の定め等・法第二百九十九条の四等",
+   "anchor": "a178-10",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "178_11",
+   "label": "第百七十八条の十一",
+   "short": "178条の11",
+   "caption": "証人等の呼称又は連絡先の通知・法第二百九十九条の六",
+   "anchor": "a178-11",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "178_12",
+   "label": "第百七十八条の十二",
+   "short": "178条の12",
+   "caption": "公判期日外の尋問調書の閲覧等の制限",
+   "anchor": "a178-12",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "178_13",
+   "label": "第百七十八条の十三",
+   "short": "178条の13",
+   "caption": "証拠決定された証人等の氏名等の通知",
+   "anchor": "a178-13",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "178_14",
+   "label": "第百七十八条の十四",
+   "short": "178条の14",
+   "caption": "第一回公判期日における在廷証人",
+   "anchor": "a178-14",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "178_15",
+   "label": "第百七十八条の十五",
+   "short": "178条の15",
+   "caption": "検察官、弁護人の準備の進行に関する問合せ等",
+   "anchor": "a178-15",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "178_16",
+   "label": "第百七十八条の十六",
+   "short": "178条の16",
+   "caption": "検察官、弁護人との事前の打合せ",
+   "anchor": "a178-16",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "178_17",
+   "label": "第百七十八条の十七",
+   "short": "178条の17",
+   "caption": "還付等に関する規定の活用",
+   "anchor": "a178-17",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "179",
+   "label": "第百七十九条",
+   "short": "179条",
+   "caption": "第一回の公判期日・法第二百七十五条",
+   "anchor": "a179",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "179_2",
+   "label": "第百七十九条の二",
+   "short": "179条の2",
+   "caption": "",
+   "anchor": "a179-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": true
+  },
+  {
+   "key": "179_3",
+   "label": "第百七十九条の三",
+   "short": "179条の3",
+   "caption": "公判期日に出頭しない者に対する処置",
+   "anchor": "a179-3",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "179_4",
+   "label": "第百七十九条の四",
+   "short": "179条の4",
+   "caption": "公判期日の変更の請求・法第二百七十六条",
+   "anchor": "a179-4",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "179_5",
+   "label": "第百七十九条の五",
+   "short": "179条の5",
+   "caption": "私選弁護人差支の場合の処置・法第二百八十九条等",
+   "anchor": "a179-5",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "179_6",
+   "label": "第百七十九条の六",
+   "short": "179条の6",
+   "caption": "国選弁護人差支えの場合の処置・法第三十六条等",
+   "anchor": "a179-6",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "180",
+   "label": "第百八十条",
+   "short": "180条",
+   "caption": "期日変更についての意見の聴取・法第二百七十六条",
+   "anchor": "a180",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "181",
+   "label": "第百八十一条",
+   "short": "181条",
+   "caption": "期日変更請求の却下決定の送達・法第二百七十六条",
+   "anchor": "a181",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "182",
+   "label": "第百八十二条",
+   "short": "182条",
+   "caption": "公判期日の不変更・法第二百七十七条",
+   "anchor": "a182",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "183",
+   "label": "第百八十三条",
+   "short": "183条",
+   "caption": "不出頭の場合の資料・法第二百七十八条",
+   "anchor": "a183",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "184",
+   "label": "第百八十四条",
+   "short": "184条",
+   "caption": "診断書の不受理等・法第二百七十八条",
+   "anchor": "a184",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "185",
+   "label": "第百八十五条",
+   "short": "185条",
+   "caption": "不当な診断書・法第二百七十八条",
+   "anchor": "a185",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "186",
+   "label": "第百八十六条",
+   "short": "186条",
+   "caption": "準用規定",
+   "anchor": "a186",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "187",
+   "label": "第百八十七条",
+   "short": "187条",
+   "caption": "勾留に関する処分をすべき裁判官・法第二百八十条",
+   "anchor": "a187",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "187_2",
+   "label": "第百八十七条の二",
+   "short": "187条の2",
+   "caption": "出頭拒否の通知・法第二百八十六条の二",
+   "anchor": "a187-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "187_3",
+   "label": "第百八十七条の三",
+   "short": "187条の3",
+   "caption": "出頭拒否についての取調べ・法第二百八十六条の二",
+   "anchor": "a187-3",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "187_4",
+   "label": "第百八十七条の四",
+   "short": "187条の4",
+   "caption": "不出頭のままで公判手続を行う旨の告知・法第二百八十六条の二",
+   "anchor": "a187-4",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "188",
+   "label": "第百八十八条",
+   "short": "188条",
+   "caption": "証拠調べの請求の時期・法第二百九十八条",
+   "anchor": "a188",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "188_2",
+   "label": "第百八十八条の二",
+   "short": "188条の2",
+   "caption": "証拠調を請求する場合の書面の提出・法第二百九十八条",
+   "anchor": "a188-2",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "188_3",
+   "label": "第百八十八条の三",
+   "short": "188条の3",
+   "caption": "証人尋問の時間の申出・法第二百九十八条",
+   "anchor": "a188-3",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "189",
+   "label": "第百八十九条",
+   "short": "189条",
+   "caption": "証拠調の請求の方式・法第二百九十八条",
+   "anchor": "a189",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "189_2",
+   "label": "第百八十九条の二",
+   "short": "189条の2",
+   "caption": "証拠の厳選・法第二百九十八条",
+   "anchor": "a189-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "190",
+   "label": "第百九十条",
+   "short": "190条",
+   "caption": "証拠決定・法第二百九十八条等",
+   "anchor": "a190",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "191",
+   "label": "第百九十一条",
+   "short": "191条",
+   "caption": "証拠決定の送達",
+   "anchor": "a191",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "191_2",
+   "label": "第百九十一条の二",
+   "short": "191条の2",
+   "caption": "証人等の出頭",
+   "anchor": "a191-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "191_3",
+   "label": "第百九十一条の三",
+   "short": "191条の3",
+   "caption": "証人尋問の準備",
+   "anchor": "a191-3",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "192",
+   "label": "第百九十二条",
+   "short": "192条",
+   "caption": "証拠決定についての提示命令",
+   "anchor": "a192",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "193",
+   "label": "第百九十三条",
+   "short": "193条",
+   "caption": "証拠調の請求の順序・法第二百九十八条",
+   "anchor": "a193",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "194",
+   "label": "第百九十四条及び第百九十五条",
+   "short": "194条",
+   "caption": "",
+   "anchor": "a194",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": true
+  },
+  {
+   "key": "196",
+   "label": "第百九十六条",
+   "short": "196条",
+   "caption": "人定質問",
+   "anchor": "a196",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "196_2",
+   "label": "第百九十六条の二",
+   "short": "196条の2",
+   "caption": "法第二百九十条の二第一項の申出がされた旨の通知の方式",
+   "anchor": "a196-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "196_3",
+   "label": "第百九十六条の三",
+   "short": "196条の3",
+   "caption": "公開の法廷で明らかにされる可能性があると思料する事項の告知・法第二百九十条の二",
+   "anchor": "a196-3",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "196_4",
+   "label": "第百九十六条の四",
+   "short": "196条の4",
+   "caption": "呼称の定め・法第二百九十条の二",
+   "anchor": "a196-4",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "196_5",
+   "label": "第百九十六条の五",
+   "short": "196条の5",
+   "caption": "決定の告知・法第二百九十条の二",
+   "anchor": "a196-5",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "196_6",
+   "label": "第百九十六条の六",
+   "short": "196条の6",
+   "caption": "公開の法廷で明らかにされる可能性があると思料する事項の告知・法第二百九十条の三",
+   "anchor": "a196-6",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "196_7",
+   "label": "第百九十六条の七",
+   "short": "196条の7",
+   "caption": "呼称の定め・法第二百九十条の三",
+   "anchor": "a196-7",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "196_8",
+   "label": "第百九十六条の八",
+   "short": "196条の8",
+   "caption": "決定の告知・法第二百九十条の三",
+   "anchor": "a196-8",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "197",
+   "label": "第百九十七条",
+   "short": "197条",
+   "caption": "被告人の権利保護のための告知事項・法第二百九十一条",
+   "anchor": "a197",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "197_2",
+   "label": "第百九十七条の二",
+   "short": "197条の2",
+   "caption": "簡易公判手続によるための処置・法第二百九十一条の二",
+   "anchor": "a197-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "198",
+   "label": "第百九十八条",
+   "short": "198条",
+   "caption": "弁護人等の陳述",
+   "anchor": "a198",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "198_2",
+   "label": "第百九十八条の二",
+   "short": "198条の2",
+   "caption": "争いのない事実の証拠調べ",
+   "anchor": "a198-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "198_3",
+   "label": "第百九十八条の三",
+   "short": "198条の3",
+   "caption": "犯罪事実に関しないことが明らかな情状に関する証拠の取調べ",
+   "anchor": "a198-3",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "198_4",
+   "label": "第百九十八条の四",
+   "short": "198条の4",
+   "caption": "取調べの状況に関する立証",
+   "anchor": "a198-4",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "199",
+   "label": "第百九十九条",
+   "short": "199条",
+   "caption": "証拠調の順序",
+   "anchor": "a199",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "199_2",
+   "label": "第百九十九条の二",
+   "short": "199条の2",
+   "caption": "証人尋問の順序・法第三百四条",
+   "anchor": "a199-2",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "199_3",
+   "label": "第百九十九条の三",
+   "short": "199条の3",
+   "caption": "主尋問・法第三百四条等",
+   "anchor": "a199-3",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "199_4",
+   "label": "第百九十九条の四",
+   "short": "199条の4",
+   "caption": "反対尋問・法第三百四条等",
+   "anchor": "a199-4",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "199_5",
+   "label": "第百九十九条の五",
+   "short": "199条の5",
+   "caption": "反対尋問の機会における新たな事項の尋問・法第三百四条",
+   "anchor": "a199-5",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "199_6",
+   "label": "第百九十九条の六",
+   "short": "199条の6",
+   "caption": "供述の証明力を争うために必要な事項の尋問・法第三百四条",
+   "anchor": "a199-6",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "199_7",
+   "label": "第百九十九条の七",
+   "short": "199条の7",
+   "caption": "再主尋問・法第三百四条等",
+   "anchor": "a199-7",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "199_8",
+   "label": "第百九十九条の八",
+   "short": "199条の8",
+   "caption": "補充尋問・法第三百四条",
+   "anchor": "a199-8",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "199_9",
+   "label": "第百九十九条の九",
+   "short": "199条の9",
+   "caption": "職権による証人の補充尋問・法第三百四条",
+   "anchor": "a199-9",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "199_10",
+   "label": "第百九十九条の十",
+   "short": "199条の10",
+   "caption": "書面又は物の提示・法第三百四条等",
+   "anchor": "a199-10",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "199_11",
+   "label": "第百九十九条の十一",
+   "short": "199条の11",
+   "caption": "記憶喚起のための書面等の提示・法第三百四条等",
+   "anchor": "a199-11",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "199_12",
+   "label": "第百九十九条の十二",
+   "short": "199条の12",
+   "caption": "図面等の利用・法第三百四条等",
+   "anchor": "a199-12",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "199_13",
+   "label": "第百九十九条の十三",
+   "short": "199条の13",
+   "caption": "証人尋問の方法・法第三百四条等",
+   "anchor": "a199-13",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "199_14",
+   "label": "第百九十九条の十四",
+   "short": "199条の14",
+   "caption": "関連性の明示・法第二百九十五条",
+   "anchor": "a199-14",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "200",
+   "label": "第二百条",
+   "short": "200条",
+   "caption": "陪席裁判官の尋問・法第三百四条",
+   "anchor": "a200",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "201",
+   "label": "第二百一条",
+   "short": "201条",
+   "caption": "裁判長の尋問・法第三百四条",
+   "anchor": "a201",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "202",
+   "label": "第二百二条",
+   "short": "202条",
+   "caption": "傍聴人の退廷",
+   "anchor": "a202",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "203",
+   "label": "第二百三条",
+   "short": "203条",
+   "caption": "訴訟関係人の尋問の機会・法第三百四条",
+   "anchor": "a203",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "203_2",
+   "label": "第二百三条の二",
+   "short": "203条の2",
+   "caption": "証拠書類等の取調の方法・法第三百五条等",
+   "anchor": "a203-2",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "203_3",
+   "label": "第二百三条の三",
+   "short": "203条の3",
+   "caption": "簡易公判手続による場合の特例・法第三百七条の二",
+   "anchor": "a203-3",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "204",
+   "label": "第二百四条",
+   "short": "204条",
+   "caption": "証拠の証明力を争う機会・法第三百八条",
+   "anchor": "a204",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "205",
+   "label": "第二百五条",
+   "short": "205条",
+   "caption": "異議申立の事由・法第三百九条",
+   "anchor": "a205",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "205_2",
+   "label": "第二百五条の二",
+   "short": "205条の2",
+   "caption": "異議申立の方式、時期・法第三百九条",
+   "anchor": "a205-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "205_3",
+   "label": "第二百五条の三",
+   "short": "205条の3",
+   "caption": "異議申立に対する決定の時期・法第三百九条",
+   "anchor": "a205-3",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "205_4",
+   "label": "第二百五条の四",
+   "short": "205条の4",
+   "caption": "異議申立が不適法な場合の決定・法第三百九条",
+   "anchor": "a205-4",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "205_5",
+   "label": "第二百五条の五",
+   "short": "205条の5",
+   "caption": "異議申立が理由のない場合の決定・法第三百九条",
+   "anchor": "a205-5",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "205_6",
+   "label": "第二百五条の六",
+   "short": "205条の6",
+   "caption": "異議申立が理由のある場合の決定・法第三百九条",
+   "anchor": "a205-6",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "206",
+   "label": "第二百六条",
+   "short": "206条",
+   "caption": "重ねて異議を申し立てることの禁止・法第三百九条",
+   "anchor": "a206",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "207",
+   "label": "第二百七条",
+   "short": "207条",
+   "caption": "職権による排除決定",
+   "anchor": "a207",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "207_2",
+   "label": "第二百七条の二",
+   "short": "207条の2",
+   "caption": "閲覧の対象から除外することに弁護人に異議がなかつた部分の通知等",
+   "anchor": "a207-2",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "208",
+   "label": "第二百八条",
+   "short": "208条",
+   "caption": "釈明等",
+   "anchor": "a208",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "209",
+   "label": "第二百九条",
+   "short": "209条",
+   "caption": "訴因変更等請求書面の朗読・法第三百十二条等",
+   "anchor": "a209",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "209_2",
+   "label": "第二百九条の二",
+   "short": "209条の2",
+   "caption": "訴因変更等請求書面の記載要件等・法第三百十二条の二",
+   "anchor": "a209-2",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "210",
+   "label": "第二百十条",
+   "short": "210条",
+   "caption": "弁論の分離・法第三百十三条",
+   "anchor": "a210",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "210_2",
+   "label": "第二百十条の二",
+   "short": "210条の2",
+   "caption": "意見陳述の申出がされた旨の通知の方式・法第二百九十二条の二",
+   "anchor": "a210-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "210_3",
+   "label": "第二百十条の三",
+   "short": "210条の3",
+   "caption": "意見陳述が行われる公判期日の通知",
+   "anchor": "a210-3",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "210_4",
+   "label": "第二百十条の四",
+   "short": "210条の4",
+   "caption": "意見陳述の時間",
+   "anchor": "a210-4",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "210_5",
+   "label": "第二百十条の五",
+   "short": "210条の5",
+   "caption": "意見の陳述に代わる措置等の決定の告知",
+   "anchor": "a210-5",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "210_6",
+   "label": "第二百十条の六",
+   "short": "210条の6",
+   "caption": "意見を記載した書面が提出されたことの通知",
+   "anchor": "a210-6",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "210_7",
+   "label": "第二百十条の七",
+   "short": "210条の7",
+   "caption": "準用規定",
+   "anchor": "a210-7",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "211",
+   "label": "第二百十一条",
+   "short": "211条",
+   "caption": "最終陳述・法第二百九十三条",
+   "anchor": "a211",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "211_2",
+   "label": "第二百十一条の二",
+   "short": "211条の2",
+   "caption": "弁論の時期",
+   "anchor": "a211-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "211_3",
+   "label": "第二百十一条の三",
+   "short": "211条の3",
+   "caption": "弁論の方法",
+   "anchor": "a211-3",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "212",
+   "label": "第二百十二条",
+   "short": "212条",
+   "caption": "弁論時間の制限",
+   "anchor": "a212",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "213",
+   "label": "第二百十三条",
+   "short": "213条",
+   "caption": "公判手続の更新",
+   "anchor": "a213",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "213_2",
+   "label": "第二百十三条の二",
+   "short": "213条の2",
+   "caption": "更新の手続",
+   "anchor": "a213-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "214",
+   "label": "第二百十四条",
+   "short": "214条",
+   "caption": "弁論の再開請求の却下決定の送達",
+   "anchor": "a214",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "215",
+   "label": "第二百十五条",
+   "short": "215条",
+   "caption": "公判廷の写真撮影等の制限",
+   "anchor": "a215",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "216",
+   "label": "第二百十六条",
+   "short": "216条",
+   "caption": "判決宣告期日の告知・法第二百八十四条等",
+   "anchor": "a216",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217",
+   "label": "第二百十七条",
+   "short": "217条",
+   "caption": "破棄後の手続",
+   "anchor": "a217",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_2",
+   "label": "第二百十七条の二",
+   "short": "217条の2",
+   "caption": "審理予定の策定・法第三百十六条の二等",
+   "anchor": "a217-2",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_3",
+   "label": "第二百十七条の三",
+   "short": "217条の3",
+   "caption": "公判前整理手続に付する旨の決定等についての意見の聴取・法第三百十六条の二",
+   "anchor": "a217-3",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_4",
+   "label": "第二百十七条の四",
+   "short": "217条の4",
+   "caption": "公判前整理手続に付する旨の決定等の送達・法第三百十六条の二",
+   "anchor": "a217-4",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_5",
+   "label": "第二百十七条の五",
+   "short": "217条の5",
+   "caption": "弁護人を必要とする旨の通知・法第三百十六条の四等",
+   "anchor": "a217-5",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_6",
+   "label": "第二百十七条の六",
+   "short": "217条の6",
+   "caption": "公判前整理手続期日の指定・法第三百十六条の六",
+   "anchor": "a217-6",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_7",
+   "label": "第二百十七条の七",
+   "short": "217条の7",
+   "caption": "公判前整理手続期日の変更の請求・法第三百十六条の六",
+   "anchor": "a217-7",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_8",
+   "label": "第二百十七条の八",
+   "short": "217条の8",
+   "caption": "公判前整理手続期日の変更についての意見の聴取・法第三百十六条の六",
+   "anchor": "a217-8",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_9",
+   "label": "第二百十七条の九",
+   "short": "217条の9",
+   "caption": "公判前整理手続期日の変更に関する命令の送達・法第三百十六条の六",
+   "anchor": "a217-9",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_10",
+   "label": "第二百十七条の十",
+   "short": "217条の10",
+   "caption": "公判前整理手続期日の不変更・法第三百十六条の六",
+   "anchor": "a217-10",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_11",
+   "label": "第二百十七条の十一",
+   "short": "217条の11",
+   "caption": "被告人の公判前整理手続期日への出頭についての通知・法第三百十六条の九",
+   "anchor": "a217-11",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_12",
+   "label": "第二百十七条の十二",
+   "short": "217条の12",
+   "caption": "公判前整理手続を受命裁判官にさせる旨の決定の送達・法第三百十六条の十一",
+   "anchor": "a217-12",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_13",
+   "label": "第二百十七条の十三",
+   "short": "217条の13",
+   "caption": "公判前整理手続期日における決定等の告知",
+   "anchor": "a217-13",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_14",
+   "label": "第二百十七条の十四",
+   "short": "217条の14",
+   "caption": "決定の告知・法第三百十六条の五",
+   "anchor": "a217-14",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_15",
+   "label": "第二百十七条の十五",
+   "short": "217条の15",
+   "caption": "公判前整理手続調書の記載要件・法第三百十六条の十二",
+   "anchor": "a217-15",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_16",
+   "label": "第二百十七条の十六",
+   "short": "217条の16",
+   "caption": "公判前整理手続調書の署名押印、認印・法第三百十六条の十二",
+   "anchor": "a217-16",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_17",
+   "label": "第二百十七条の十七",
+   "short": "217条の17",
+   "caption": "公判前整理手続調書の整理・法第三百十六条の十二",
+   "anchor": "a217-17",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_18",
+   "label": "第二百十七条の十八",
+   "short": "217条の18",
+   "caption": "公判前整理手続調書の記載に対する異議申立て等・法第三百十六条の十二",
+   "anchor": "a217-18",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_19",
+   "label": "第二百十七条の十九",
+   "short": "217条の19",
+   "caption": "公判前整理手続に付された場合の特例・法第三百十六条の二",
+   "anchor": "a217-19",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_20",
+   "label": "第二百十七条の二十",
+   "short": "217条の20",
+   "caption": "証明予定事実等の明示方法・法第三百十六条の十三等",
+   "anchor": "a217-20",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_21",
+   "label": "第二百十七条の二十一",
+   "short": "217条の21",
+   "caption": "証明予定事実の明示における留意事項・法第三百十六条の十三等",
+   "anchor": "a217-21",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_22",
+   "label": "第二百十七条の二十二",
+   "short": "217条の22",
+   "caption": "期限の告知・法第三百十六条の十三等",
+   "anchor": "a217-22",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_23",
+   "label": "第二百十七条の二十三",
+   "short": "217条の23",
+   "caption": "期限の厳守・法第三百十六条の十三等",
+   "anchor": "a217-23",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_24",
+   "label": "第二百十七条の二十四",
+   "short": "217条の24",
+   "caption": "期限を守らない場合の措置・法第三百十六条の十六等",
+   "anchor": "a217-24",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_25",
+   "label": "第二百十七条の二十五",
+   "short": "217条の25",
+   "caption": "証人等の氏名及び住居の開示に関する措置に係る準用規定・法第三百十六条の二十三",
+   "anchor": "a217-25",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_26",
+   "label": "第二百十七条の二十六",
+   "short": "217条の26",
+   "caption": "証拠不開示の理由の告知・法第三百十六条の十五等",
+   "anchor": "a217-26",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_27",
+   "label": "第二百十七条の二十七",
+   "short": "217条の27",
+   "caption": "証拠開示に関する裁定の請求の方式・法第三百十六条の二十五等",
+   "anchor": "a217-27",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_28",
+   "label": "第二百十七条の二十八",
+   "short": "217条の28",
+   "caption": "証拠標目一覧表の記載事項・法第三百十六条の二十七",
+   "anchor": "a217-28",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_29",
+   "label": "第二百十七条の二十九",
+   "short": "217条の29",
+   "caption": "準用規定",
+   "anchor": "a217-29",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_30",
+   "label": "第二百十七条の三十",
+   "short": "217条の30",
+   "caption": "審理予定に従つた公判の審理の進行",
+   "anchor": "a217-30",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_31",
+   "label": "第二百十七条の三十一",
+   "short": "217条の31",
+   "caption": "公判前整理手続等の結果を明らかにする手続・法第三百十六条の三十一",
+   "anchor": "a217-31",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_32",
+   "label": "第二百十七条の三十二",
+   "short": "217条の32",
+   "caption": "やむを得ない事由の疎明・法第三百十六条の三十二",
+   "anchor": "a217-32",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_33",
+   "label": "第二百十七条の三十三",
+   "short": "217条の33",
+   "caption": "やむを得ない事由により請求することができなかつた証拠の取調べの請求・法第三百十六条の三十二",
+   "anchor": "a217-33",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_34",
+   "label": "第二百十七条の三十四",
+   "short": "217条の34",
+   "caption": "被害者参加の申出がされた旨の通知の方式・法第三百十六条の三十三",
+   "anchor": "a217-34",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_35",
+   "label": "第二百十七条の三十五",
+   "short": "217条の35",
+   "caption": "委託の届出等・法第三百十六条の三十四等",
+   "anchor": "a217-35",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_36",
+   "label": "第二百十七条の三十六",
+   "short": "217条の36",
+   "caption": "代表者選定の求めの記録化・法第三百十六条の三十四",
+   "anchor": "a217-36",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_37",
+   "label": "第二百十七条の三十七",
+   "short": "217条の37",
+   "caption": "選定された代表者の通知・法第三百十六条の三十四",
+   "anchor": "a217-37",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_38",
+   "label": "第二百十七条の三十八",
+   "short": "217条の38",
+   "caption": "意見陳述の時期・法第三百十六条の三十八",
+   "anchor": "a217-38",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_39",
+   "label": "第二百十七条の三十九",
+   "short": "217条の39",
+   "caption": "意見陳述の時間・法第三百十六条の三十八",
+   "anchor": "a217-39",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "217_40",
+   "label": "第二百十七条の四十",
+   "short": "217条の40",
+   "caption": "決定の告知・法第三百十六条の三十三等",
+   "anchor": "a217-40",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "218",
+   "label": "第二百十八条",
+   "short": "218条",
+   "caption": "判決書への引用",
+   "anchor": "a218",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "218_2",
+   "label": "第二百十八条の二",
+   "short": "218条の2",
+   "caption": "",
+   "anchor": "a218-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "219",
+   "label": "第二百十九条",
+   "short": "219条",
+   "caption": "調書判決",
+   "anchor": "a219",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "219_2",
+   "label": "第二百十九条の二",
+   "short": "219条の2",
+   "caption": "公訴棄却の決定の送達の特例・法第三百三十九条",
+   "anchor": "a219-2",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "220",
+   "label": "第二百二十条",
+   "short": "220条",
+   "caption": "上訴期間等の告知",
+   "anchor": "a220",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "220_2",
+   "label": "第二百二十条の二",
+   "short": "220条の2",
+   "caption": "保護観察の趣旨等の説示・法第三百三十三条",
+   "anchor": "a220-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "221",
+   "label": "第二百二十一条",
+   "short": "221条",
+   "caption": "判決宣告後の訓戒",
+   "anchor": "a221",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "222",
+   "label": "第二百二十二条",
+   "short": "222条",
+   "caption": "判決の通知・法第二百八十四条",
+   "anchor": "a222",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "222_2",
+   "label": "第二百二十二条の二",
+   "short": "222条の2",
+   "caption": "刑法第二十五条の二第一項の規定による保護観察の判決の通知等",
+   "anchor": "a222-2",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "222_3",
+   "label": "第二百二十二条の三",
+   "short": "222条の3",
+   "caption": "保護観察の成績の報告",
+   "anchor": "a222-3",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "222_4",
+   "label": "第二百二十二条の四",
+   "short": "222条の4",
+   "caption": "帰国等保証金に代わる保証書の記載事項・法第三百四十二条の六等",
+   "anchor": "a222-4",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "222_5",
+   "label": "第二百二十二条の五",
+   "short": "222条の5",
+   "caption": "帰国等保証金の還付・法第三百四十二条の七等",
+   "anchor": "a222-5",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "222_6",
+   "label": "第二百二十二条の六",
+   "short": "222条の6",
+   "caption": "勾留状の記載要件等・法第三百四十二条の八等",
+   "anchor": "a222-6",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "222_7",
+   "label": "第二百二十二条の七",
+   "short": "222条の7",
+   "caption": "執行猶予取消請求の方式・法第三百四十九条",
+   "anchor": "a222-7",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "222_8",
+   "label": "第二百二十二条の八",
+   "short": "222条の8",
+   "caption": "資料の差出し・法第三百四十九条",
+   "anchor": "a222-8",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "222_9",
+   "label": "第二百二十二条の九",
+   "short": "222条の9",
+   "caption": "請求書の謄本の差出し、送達・法第三百四十九条等",
+   "anchor": "a222-9",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "222_10",
+   "label": "第二百二十二条の十",
+   "short": "222条の10",
+   "caption": "口頭弁論請求権の通知等・法第三百四十九条の二",
+   "anchor": "a222-10",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "222_11",
+   "label": "第二百二十二条の十一",
+   "short": "222条の11",
+   "caption": "出頭命令・法第三百四十九条等",
+   "anchor": "a222-11",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "222_12",
+   "label": "第二百二十二条の十二",
+   "short": "222条の12",
+   "caption": "口頭弁論・法第三百四十九条の二",
+   "anchor": "a222-12",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "222_13",
+   "label": "第二百二十二条の十三",
+   "short": "222条の13",
+   "caption": "準用規定・法第三百五十条",
+   "anchor": "a222-13",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "222_14",
+   "label": "第二百二十二条の十四",
+   "short": "222条の14",
+   "caption": "書面の添付・法第三百五十条の十六",
+   "anchor": "a222-14",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "222_15",
+   "label": "第二百二十二条の十五",
+   "short": "222条の15",
+   "caption": "同意確認のための国選弁護人選任の請求・法第三百五十条の十七",
+   "anchor": "a222-15",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "222_16",
+   "label": "第二百二十二条の十六",
+   "short": "222条の16",
+   "caption": "同意確認のための私選弁護人選任の申出・法第三百五十条の十七",
+   "anchor": "a222-16",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "222_17",
+   "label": "第二百二十二条の十七",
+   "short": "222条の17",
+   "caption": "即決裁判手続の申立ての却下",
+   "anchor": "a222-17",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "222_18",
+   "label": "第二百二十二条の十八",
+   "short": "222条の18",
+   "caption": "即決裁判手続の申立てを却下する決定等をした場合の措置・法第三百五十条の二十二等",
+   "anchor": "a222-18",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "222_19",
+   "label": "第二百二十二条の十九",
+   "short": "222条の19",
+   "caption": "弁護人選任に関する通知・法第三百五十条の二十三",
+   "anchor": "a222-19",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "222_20",
+   "label": "第二百二十二条の二十",
+   "short": "222条の20",
+   "caption": "弁護人のない事件の処置・法第三百五十条の二十三",
+   "anchor": "a222-20",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "222_21",
+   "label": "第二百二十二条の二十一",
+   "short": "222条の21",
+   "caption": "公判期日の指定・法第三百五十条の二十一",
+   "anchor": "a222-21",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "222_22",
+   "label": "第二百二十二条の二十二",
+   "short": "222条の22",
+   "caption": "即決裁判手続による場合の特例",
+   "anchor": "a222-22",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "222_23",
+   "label": "第二百二十二条の二十三",
+   "short": "222条の23",
+   "caption": "",
+   "anchor": "a222-23",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "222_24",
+   "label": "第二百二十二条の二十四",
+   "short": "222条の24",
+   "caption": "",
+   "anchor": "a222-24",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "223",
+   "label": "第二百二十三条",
+   "short": "223条",
+   "caption": "上訴放棄の申立裁判所・法第三百五十九条等",
+   "anchor": "a223",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "223_2",
+   "label": "第二百二十三条の二",
+   "short": "223条の2",
+   "caption": "上訴取下の申立裁判所・法第三百五十九条等",
+   "anchor": "a223-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "224",
+   "label": "第二百二十四条",
+   "short": "224条",
+   "caption": "上訴取下の申立の方式・法第三百五十九条等",
+   "anchor": "a224",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "224_2",
+   "label": "第二百二十四条の二",
+   "short": "224条の2",
+   "caption": "同意書の差出・法第三百六十条",
+   "anchor": "a224-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "225",
+   "label": "第二百二十五条",
+   "short": "225条",
+   "caption": "上訴権回復請求の方式・法第三百六十三条",
+   "anchor": "a225",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "226",
+   "label": "第二百二十六条",
+   "short": "226条",
+   "caption": "上訴権回復請求の理由の疎明・法第三百六十三条",
+   "anchor": "a226",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "227",
+   "label": "第二百二十七条",
+   "short": "227条",
+   "caption": "刑事施設に収容中の被告人の上訴・法第三百六十六条",
+   "anchor": "a227",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "228",
+   "label": "第二百二十八条",
+   "short": "228条",
+   "caption": "",
+   "anchor": "a228",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "229",
+   "label": "第二百二十九条",
+   "short": "229条",
+   "caption": "刑事施設に収容中の被告人の上訴放棄等・法第三百六十七条等",
+   "anchor": "a229",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "230",
+   "label": "第二百三十条",
+   "short": "230条",
+   "caption": "上訴等の通知",
+   "anchor": "a230",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "231",
+   "label": "第二百三十一条から第二百三十四条まで",
+   "short": "231条",
+   "caption": "",
+   "anchor": "a231",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": true
+  },
+  {
+   "key": "235",
+   "label": "第二百三十五条",
+   "short": "235条",
+   "caption": "訴訟記録等の送付",
+   "anchor": "a235",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "236",
+   "label": "第二百三十六条",
+   "short": "236条",
+   "caption": "控訴趣意書の差出期間・法第三百七十六条",
+   "anchor": "a236",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "237",
+   "label": "第二百三十七条",
+   "short": "237条",
+   "caption": "訴訟記録到達の通知",
+   "anchor": "a237",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "238",
+   "label": "第二百三十八条",
+   "short": "238条",
+   "caption": "期間経過後の控訴趣意書",
+   "anchor": "a238",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "239",
+   "label": "第二百三十九条",
+   "short": "239条",
+   "caption": "主任弁護人以外の弁護人の控訴趣意書・法第三十四条",
+   "anchor": "a239",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "240",
+   "label": "第二百四十条",
+   "short": "240条",
+   "caption": "控訴趣意書の記載",
+   "anchor": "a240",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "241",
+   "label": "第二百四十一条",
+   "short": "241条",
+   "caption": "控訴趣意書の謄本",
+   "anchor": "a241",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "242",
+   "label": "第二百四十二条",
+   "short": "242条",
+   "caption": "控訴趣意書の謄本の送達",
+   "anchor": "a242",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "243",
+   "label": "第二百四十三条",
+   "short": "243条",
+   "caption": "答弁書",
+   "anchor": "a243",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "244",
+   "label": "第二百四十四条",
+   "short": "244条",
+   "caption": "被告人の移送",
+   "anchor": "a244",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "245",
+   "label": "第二百四十五条",
+   "short": "245条",
+   "caption": "受命裁判官の報告書",
+   "anchor": "a245",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "246",
+   "label": "第二百四十六条",
+   "short": "246条",
+   "caption": "判決書の記載",
+   "anchor": "a246",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "247",
+   "label": "第二百四十七条",
+   "short": "247条",
+   "caption": "最高裁判所への移送・法第四百六条",
+   "anchor": "a247",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "248",
+   "label": "第二百四十八条",
+   "short": "248条",
+   "caption": "移送の許可の申請・法第四百六条",
+   "anchor": "a248",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "249",
+   "label": "第二百四十九条",
+   "short": "249条",
+   "caption": "移送の決定の効力・法第四百六条",
+   "anchor": "a249",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "250",
+   "label": "第二百五十条",
+   "short": "250条",
+   "caption": "準用規定",
+   "anchor": "a250",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "251",
+   "label": "第二百五十一条",
+   "short": "251条",
+   "caption": "訴訟記録の送付",
+   "anchor": "a251",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "252",
+   "label": "第二百五十二条",
+   "short": "252条",
+   "caption": "上告趣意書の差出期間・法第四百十四条等",
+   "anchor": "a252",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "253",
+   "label": "第二百五十三条",
+   "short": "253条",
+   "caption": "判例の摘示",
+   "anchor": "a253",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "254",
+   "label": "第二百五十四条",
+   "short": "254条",
+   "caption": "跳躍上告・法第四百六条",
+   "anchor": "a254",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "255",
+   "label": "第二百五十五条",
+   "short": "255条",
+   "caption": "跳躍上告と控訴・法第四百六条",
+   "anchor": "a255",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "256",
+   "label": "第二百五十六条",
+   "short": "256条",
+   "caption": "違憲判断事件の優先審判",
+   "anchor": "a256",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "257",
+   "label": "第二百五十七条",
+   "short": "257条",
+   "caption": "上告審としての事件受理の申立・法第四百六条",
+   "anchor": "a257",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "258",
+   "label": "第二百五十八条",
+   "short": "258条",
+   "caption": "申立の方式・法第四百六条",
+   "anchor": "a258",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "258_2",
+   "label": "第二百五十八条の二",
+   "short": "258条の2",
+   "caption": "原判決の謄本等の交付・法第四百六条",
+   "anchor": "a258-2",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "258_3",
+   "label": "第二百五十八条の三",
+   "short": "258条の3",
+   "caption": "処置をとるべきことの請求",
+   "anchor": "a258-3",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "258_4",
+   "label": "第二百五十八条の四",
+   "short": "258条の4",
+   "caption": "事件受理の申立理由書・法第四百六条",
+   "anchor": "a258-4",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "259",
+   "label": "第二百五十九条",
+   "short": "259条",
+   "caption": "原裁判所の棄却決定・法第四百六条",
+   "anchor": "a259",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "260",
+   "label": "第二百六十条",
+   "short": "260条",
+   "caption": "申立書の送付等・法第四百六条",
+   "anchor": "a260",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "261",
+   "label": "第二百六十一条",
+   "short": "261条",
+   "caption": "事件受理の決定・法第四百六条",
+   "anchor": "a261",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "262",
+   "label": "第二百六十二条",
+   "short": "262条",
+   "caption": "事件受理の決定の通知・法第四百六条",
+   "anchor": "a262",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "263",
+   "label": "第二百六十三条",
+   "short": "263条",
+   "caption": "事件受理の決定の効力等・法第四百六条",
+   "anchor": "a263",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "264",
+   "label": "第二百六十四条",
+   "short": "264条",
+   "caption": "申立の効力・法第四百六条",
+   "anchor": "a264",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "265",
+   "label": "第二百六十五条",
+   "short": "265条",
+   "caption": "被告人の移送・法第四百九条",
+   "anchor": "a265",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "266",
+   "label": "第二百六十六条",
+   "short": "266条",
+   "caption": "準用規定",
+   "anchor": "a266",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "267",
+   "label": "第二百六十七条",
+   "short": "267条",
+   "caption": "判決訂正申立等の方式・法第四百十五条",
+   "anchor": "a267",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "268",
+   "label": "第二百六十八条",
+   "short": "268条",
+   "caption": "判決訂正申立の通知・法第四百十五条",
+   "anchor": "a268",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "269",
+   "label": "第二百六十九条",
+   "short": "269条",
+   "caption": "却下決定の送達・法第四百十五条",
+   "anchor": "a269",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "270",
+   "label": "第二百七十条",
+   "short": "270条",
+   "caption": "判決訂正申立についての裁判・法第四百十六条等",
+   "anchor": "a270",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "271",
+   "label": "第二百七十一条",
+   "short": "271条",
+   "caption": "訴訟記録等の送付",
+   "anchor": "a271",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "272",
+   "label": "第二百七十二条",
+   "short": "272条",
+   "caption": "抗告裁判所の決定の通知",
+   "anchor": "a272",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "273",
+   "label": "第二百七十三条",
+   "short": "273条",
+   "caption": "準用規定",
+   "anchor": "a273",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "274",
+   "label": "第二百七十四条",
+   "short": "274条",
+   "caption": "特別抗告申立書の記載・法第四百三十三条",
+   "anchor": "a274",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "275",
+   "label": "第二百七十五条",
+   "short": "275条",
+   "caption": "特別抗告についての調査の範囲・法第四百三十三条",
+   "anchor": "a275",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "276",
+   "label": "第二百七十六条",
+   "short": "276条",
+   "caption": "準用規定",
+   "anchor": "a276",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "277",
+   "label": "第二百七十七条",
+   "short": "277条",
+   "caption": "審理の方針",
+   "anchor": "a277",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "278",
+   "label": "第二百七十八条",
+   "short": "278条",
+   "caption": "少年鑑別所への送致令状の記載要件・少年法第四十四条",
+   "anchor": "a278",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "278_2",
+   "label": "第二百七十八条の二",
+   "short": "278条の2",
+   "caption": "少年鑑別所への送致令状に代わるものの交付請求等",
+   "anchor": "a278-2",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "278_3",
+   "label": "第二百七十八条の三",
+   "short": "278条の3",
+   "caption": "",
+   "anchor": "a278-3",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "279",
+   "label": "第二百七十九条",
+   "short": "279条",
+   "caption": "国選弁護人・法第三十七条等",
+   "anchor": "a279",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "280",
+   "label": "第二百八十条",
+   "short": "280条",
+   "caption": "家庭裁判所調査官の観護に付する決定の効力・少年法第四十五条",
+   "anchor": "a280",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "280_2",
+   "label": "第二百八十条の二",
+   "short": "280条の2",
+   "caption": "観護の措置が勾留とみなされる場合の国選弁護人選任の請求等・少年法第四十五条等",
+   "anchor": "a280-2",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "280_3",
+   "label": "第二百八十条の三",
+   "short": "280条の3",
+   "caption": "観護の措置が勾留とみなされる場合の私選弁護人選任の申出・少年法第四十五条等",
+   "anchor": "a280-3",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "281",
+   "label": "第二百八十一条",
+   "short": "281条",
+   "caption": "勾留に代わる措置の請求・少年法第四十三条",
+   "anchor": "a281",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "282",
+   "label": "第二百八十二条",
+   "short": "282条",
+   "caption": "準用規定",
+   "anchor": "a282",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "283",
+   "label": "第二百八十三条",
+   "short": "283条",
+   "caption": "請求の手続",
+   "anchor": "a283",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "284",
+   "label": "第二百八十四条",
+   "short": "284条",
+   "caption": "準用規定",
+   "anchor": "a284",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "285",
+   "label": "第二百八十五条",
+   "short": "285条",
+   "caption": "請求の競合",
+   "anchor": "a285",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "286",
+   "label": "第二百八十六条",
+   "short": "286条",
+   "caption": "意見の聴取",
+   "anchor": "a286",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "287",
+   "label": "第二百八十七条",
+   "short": "287条",
+   "caption": "",
+   "anchor": "a287",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": true
+  },
+  {
+   "key": "288",
+   "label": "第二百八十八条",
+   "short": "288条",
+   "caption": "書面の添附・法第四百六十一条の二等",
+   "anchor": "a288",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "289",
+   "label": "第二百八十九条",
+   "short": "289条",
+   "caption": "書類等の差出",
+   "anchor": "a289",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "290",
+   "label": "第二百九十条",
+   "short": "290条",
+   "caption": "略式命令の時期等",
+   "anchor": "a290",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "291",
+   "label": "第二百九十一条",
+   "short": "291条",
+   "caption": "準用規定",
+   "anchor": "a291",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "292",
+   "label": "第二百九十二条",
+   "short": "292条",
+   "caption": "起訴状の謄本の送達等・法第四百六十三条等",
+   "anchor": "a292",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "292_2",
+   "label": "第二百九十二条の二",
+   "short": "292条の2",
+   "caption": "準用規定",
+   "anchor": "a292-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "293",
+   "label": "第二百九十三条",
+   "short": "293条",
+   "caption": "書類等の返還",
+   "anchor": "a293",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "294",
+   "label": "第二百九十四条",
+   "short": "294条",
+   "caption": "準用規定",
+   "anchor": "a294",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "294_2",
+   "label": "第二百九十四条の二",
+   "short": "294条の2",
+   "caption": "拘置請求書の記載要件・法第四百九十四条の五等",
+   "anchor": "a294-2",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "294_3",
+   "label": "第二百九十四条の三",
+   "short": "294条の3",
+   "caption": "資料の提供・法第四百九十四条の五等",
+   "anchor": "a294-3",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "294_4",
+   "label": "第二百九十四条の四",
+   "short": "294条の4",
+   "caption": "裁判所書記官の立会・法第四百九十四条の六",
+   "anchor": "a294-4",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "294_5",
+   "label": "第二百九十四条の五",
+   "short": "294条の5",
+   "caption": "調書の作成・法第四百九十四条の六",
+   "anchor": "a294-5",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "294_6",
+   "label": "第二百九十四条の六",
+   "short": "294条の6",
+   "caption": "拘置状の記載要件等・法第四百九十四条の七等",
+   "anchor": "a294-6",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "294_7",
+   "label": "第二百九十四条の七",
+   "short": "294条の7",
+   "caption": "拘置の通知等・法第四百九十四条の八",
+   "anchor": "a294-7",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "294_8",
+   "label": "第二百九十四条の八",
+   "short": "294条の8",
+   "caption": "拘置についての準用規定・法第四百九十四条の八等",
+   "anchor": "a294-8",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "294_9",
+   "label": "第二百九十四条の九",
+   "short": "294条の9",
+   "caption": "勾引に関する準用規定・法第四百九十四条の十二等",
+   "anchor": "a294-9",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "295",
+   "label": "第二百九十五条",
+   "short": "295条",
+   "caption": "訴訟費用免除の申立等・法第五百条等",
+   "anchor": "a295",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "295_2",
+   "label": "第二百九十五条の二",
+   "short": "295条の2",
+   "caption": "免除の申立裁判所・法第五百条",
+   "anchor": "a295-2",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "295_3",
+   "label": "第二百九十五条の三",
+   "short": "295条の3",
+   "caption": "申立書が申立裁判所以外の裁判所に差し出された場合・法第五百条",
+   "anchor": "a295-3",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "295_4",
+   "label": "第二百九十五条の四",
+   "short": "295条の4",
+   "caption": "申立書の記載要件・法第五百条",
+   "anchor": "a295-4",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "295_5",
+   "label": "第二百九十五条の五",
+   "short": "295条の5",
+   "caption": "検察官に対する通知・法第五百条",
+   "anchor": "a295-5",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "295_6",
+   "label": "第二百九十五条の六",
+   "short": "295条の6",
+   "caption": "差押え等の令状請求書の記載要件・法第五百九条",
+   "anchor": "a295-6",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "295_7",
+   "label": "第二百九十五条の七",
+   "short": "295条の7",
+   "caption": "資料の提供等・法第五百九条等",
+   "anchor": "a295-7",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "295_8",
+   "label": "第二百九十五条の八",
+   "short": "295条の8",
+   "caption": "身体検査令状の記載要件・法第五百十条",
+   "anchor": "a295-8",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "295_9",
+   "label": "第二百九十五条の九",
+   "short": "295条の9",
+   "caption": "令状の返還に関する記載・法第五百十条",
+   "anchor": "a295-9",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "295_10",
+   "label": "第二百九十五条の十",
+   "short": "295条の10",
+   "caption": "電磁的記録提供命令の令状の記載要件・法第五百十条",
+   "anchor": "a295-10",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "295_11",
+   "label": "第二百九十五条の十一",
+   "short": "295条の11",
+   "caption": "鑑定処分許可請求書の記載要件・法第五百十五条",
+   "anchor": "a295-11",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "295_12",
+   "label": "第二百九十五条の十二",
+   "short": "295条の12",
+   "caption": "準用規定等",
+   "anchor": "a295-12",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "296",
+   "label": "第二百九十六条",
+   "short": "296条",
+   "caption": "申立その他の申述の方式",
+   "anchor": "a296",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "297",
+   "label": "第二百九十七条",
+   "short": "297条",
+   "caption": "刑事収容施設に収容中又は留置中の被告人又は被疑者の申述",
+   "anchor": "a297",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "298",
+   "label": "第二百九十八条",
+   "short": "298条",
+   "caption": "書類の発送、受理等",
+   "anchor": "a298",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "299",
+   "label": "第二百九十九条",
+   "short": "299条",
+   "caption": "裁判官に対する取調等の請求",
+   "anchor": "a299",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "300",
+   "label": "第三百条",
+   "short": "300条",
+   "caption": "令状の有効期間",
+   "anchor": "a300",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "301",
+   "label": "第三百一条",
+   "short": "301条",
+   "caption": "書類、証拠物の閲覧等",
+   "anchor": "a301",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "302",
+   "label": "第三百二条",
+   "short": "302条",
+   "caption": "裁判官の権限",
+   "anchor": "a302",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "303",
+   "label": "第三百三条",
+   "short": "303条",
+   "caption": "検察官及び弁護人の訴訟遅延行為に対する処置",
+   "anchor": "a303",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "304",
+   "label": "第三百四条",
+   "short": "304条",
+   "caption": "被告事件終結後の訴訟記録の送付",
+   "anchor": "a304",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "305",
+   "label": "第三百五条",
+   "short": "305条",
+   "caption": "代替収容の場合における規定の適用",
+   "anchor": "a305",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "s40:1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "施行期日",
+   "anchor": "sup40-a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  },
+  {
+   "key": "s41:1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "施行期日",
+   "anchor": "sup41-a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  },
+  {
+   "key": "s45:1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "施行期日",
+   "anchor": "sup45-a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  },
+  {
+   "key": "s46:1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "施行期日",
+   "anchor": "sup46-a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  },
+  {
+   "key": "s48:1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "施行期日",
+   "anchor": "sup48-a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  },
+  {
+   "key": "s48:2",
+   "label": "第二条",
+   "short": "2条",
+   "caption": "経過措置",
+   "anchor": "sup48-a2",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "supplementary",
+   "deleted": false
+  }
+ ]
+}

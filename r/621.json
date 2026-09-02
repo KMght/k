@@ -1,0 +1,757 @@
+{
+  "title": "旧刑事訴訟法事件の控訴審及び上告審における審判の特例に関する規則",
+  "law_number": "昭和二十三年法律第百三十一号",
+  "enforcement_date": "昭和26年1月4日",
+  "enforcement_iso": "1951-01-04",
+  "pdf_link": "https://www.courts.go.jp/assets/jyousoshinpantokurei.pdf",
+  "source": "jyousoshinpantokurei.pdf",
+  "numeral": "kansuji",
+  "notes": [
+    "3ページのOCRに失敗しました（No tessdata specified and Tesseract is not installed）。Tesseract OCRと日本語辞書の導入状況を確認してください。",
+    "題名・制定文とみられる行を本文の前に検出しました：昭和25年12月20日最高裁判所規則第３０号／旧刑事訴訟法事件の控訴審及び上告審における審判の特例に関する規則を次のように定／める。",
+    "各条の「原本」は https://www.courts.go.jp/assets/jyousoshinpantokurei.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+  ],
+  "nodes": [
+    {
+      "type": "division",
+      "kind": "章",
+      "label": "第一章",
+      "title": "総則",
+      "anchor": "d0",
+      "level": 2,
+      "page": 1,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "a1",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [
+        "",
+        "第一章　総則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "（この規則の目的）この規則は、刑事訴訟法（昭和二十三年法律第百三十一号。以下法という。）施行前に公訴の提起があつた事件の控訴審（地方裁判所が控訴裁判所である場合を含む。以下同じ。）及び上告審（最高裁判所が上告裁判所である場合に限る。以下同じ。）における審判の迅速を図ることを目的とする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        2
+      ],
+      "label": "第二条",
+      "short_label": "2条",
+      "anchor": "a2",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [
+        "",
+        "第一章　総則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "（この規則と他の法令との関係）前条の事件の控訴審及び上告審における審判については、この規則による外、改正前の刑事訴訟法（大正十一年法律第七十五号。以下旧法という。）、日本国憲法の施行に伴う刑事訴訟法の応急的措置に関する法律（昭和二十二年法律第七十六号。以下応急措置法という。）、刑事訴訟法施行法（昭和二十三年法律第二百四十九号）及び刑事訴訟規則施行規則（昭和二十三年最高裁判所規則第三十四号）による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "章",
+      "label": "第二章",
+      "title": "控訴審",
+      "anchor": "d3",
+      "level": 2,
+      "page": 1,
+      "note": ""
+    },
+    {
+      "number": [
+        3
+      ],
+      "label": "第三条",
+      "short_label": "3条",
+      "anchor": "a3",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [
+        "",
+        "第二章　控訴審"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "（公判期日において控訴申立の理由等を明らかにする手続）裁判長は、被告人に対し、その人違でないことを確めるに足りる事項を尋ねた後、控訴申立人に対し、控訴申立の理由を問わなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "裁判長は、相当と認めるときは、前項の手続を経ないで被告人尋問を開始した事件についても、控訴申立人に対し、控訴申立の理由を問うことができる。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "控訴申立人が控訴申立の理由を陳述するには、第一審判決に対する不服の事項を具体的に明示してしなければならない。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "裁判長は、必要と認めるときは、控訴の相手方に対し、前項の陳述に対する答弁を求めることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        4
+      ],
+      "label": "第四条",
+      "short_label": "4条",
+      "anchor": "a4",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [
+        "",
+        "第二章　控訴審"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "（公判期日前に控訴申立の理由等を明らかにする手続）裁判所は、複雑な事件について、必要と認めるときは、前条の手続に代え又はこれを補うため、公判期日前、次の方法により、第一審判決に対する不服の事項及びこれに対する答弁を明らかにさせることができる。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "控訴申立人、控訴の相手方又はその他の訴訟関係人（旧法第三百七十八条及び第三百七十九条に掲げる者を含む。）に出頭を命ずること。",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "前号に掲げる者に対し、一定の期間を定めて、書面を差し出すべきことを命ずること。",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "text": "前項の手続は、合議体の構成員にこれをさせることができる。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "第一項第一号の手続をするときは、裁判所書記官を立ち会わせなければならない。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "前項の手続については、調書を作り、裁判長又は受命裁判官が、裁判所書記官とともに署名押印しなければならない。",
+          "items": []
+        },
+        {
+          "number": 5,
+          "text": "第一項第二号の書面及び前項の調書は、公判期日において、裁判所書記官に朗読させ又はその要旨を告げさせなければならない。第一審判決に対する不服の事項が具休的に明示されている控訴申立書も、同様である．",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        5
+      ],
+      "label": "第五条",
+      "short_label": "5条",
+      "anchor": "a5",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [
+        "",
+        "第二章　控訴審"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "（不服のない事項についての審理）裁判所は、控訴申立人に不服のないことが明らかな事項については、事案の真相を明らかにし被告人の権利を保護するため必要と認める場合の外、重ねて、被告人を尋問し、証拠調をすることを要しない。この場合には、控訴申立人に不服のない限度において、原判決の認定した事実による。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        6
+      ],
+      "label": "第六条",
+      "short_label": "6条",
+      "anchor": "a6",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [
+        "",
+        "第二章　控訴審"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "（不服のない場合における判決書の記載）有罪の言渡をする場合の判決書において、前条の規定により被告人尋問及び証拠調をしなかつた事実について事実の摘示及び証拠の説明をするには、原判決の認定した事実のとおりであつて、控訴申立人に不服のないことを明らかにすれば足りる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        7
+      ],
+      "label": "第七条",
+      "short_label": "7条",
+      "anchor": "a7",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [
+        "",
+        "第二章　控訴審"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "（附帯控訴についての準用規定）附帯控訴については、前四条の規定を準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        8
+      ],
+      "label": "第八条",
+      "short_label": "8条",
+      "anchor": "a8",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [
+        "",
+        "第二章　控訴審"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "（判決書の簡易化）裁判所は、有罪の言渡をするに当り証拠により罪となるべき事実を認めた理由を説明し法令の適用を示すには、証拠の標目及び法令を掲げれば足りる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        9
+      ],
+      "label": "第九条",
+      "short_label": "9条",
+      "anchor": "a9",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第二章　控訴審"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "（調書判決）裁判所は、上告の申立がなく、且つ上告の提起期間内に判決書の謄本の請求がない場合には、判決主文並びに罪となるべき事実の要旨及び適用した罰條を公判調書に記載させて、これをもつて判決書に代えることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "章",
+      "label": "第三章",
+      "title": "上告審",
+      "anchor": "d11",
+      "level": 2,
+      "page": 2,
+      "note": ""
+    },
+    {
+      "number": [
+        10
+      ],
+      "label": "第十条",
+      "short_label": "10条",
+      "anchor": "a10",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第三章　上告審"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "（上告趣意書の差出期間）裁判所は、訴訟記録の送付を受けたときは、旧法第四百二十二條及び第四百二十三條の規定にかかわらず、速やかに上告趣意書を差し出すべき最終日を指定してこれを上告申立人に通知しなければならない。上告申立人に弁護人があるときは、その通知は、弁護人にもこれをしなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の通知は、通知書を送達してこれをしなければならない。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "第一項の最終日は、上告申立人に対する前項の送達があつた日の翌日から起算して二十八日目以後の日でなければならない。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "第二項の通知書の送達があつた場合において第一項の最終日の指定が前項の規定に違反しているときは、第一項の規定にかかわらず、上告申立人に対する送達があつた日の翌日から起算して二十八日目の日を最終日とみなす。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        11
+      ],
+      "label": "第十一条",
+      "short_label": "11条",
+      "anchor": "a11",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第三章　上告審"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "（訴訟記録到達の通知）裁判所は、前條の通知をする場合には、同時に訴訟記録の送付があつた旨を検察官又は被告人で上告申立人でない者に通知しなければならない。被告人に弁護人があるときは、その通知は、弁護人にこれをしなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の通知は、通知書を送達してこれをしなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        12
+      ],
+      "label": "第十二条",
+      "short_label": "12条",
+      "anchor": "a12",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第三章　上告審"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "（附帯上告の提起期間）上告の相手方がする附帯上告は、旧法第四百二十四条第一項の規定にかかわらず、前条の通知があつた日の翌日から起算して二十八日目の日までにこれをしなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        13
+      ],
+      "label": "第十三条",
+      "short_label": "13条",
+      "anchor": "a13",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第三章　上告審"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "（期間経過後の上告趣意書）裁判所は、上告趣意書を差し出すべき期間経過後に上告趣意書を受け取つた場合においても、その遅延がやむを得ない事情に基くものと認めるときは、これを期間内に差し出されたものとして審判をすることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        14
+      ],
+      "label": "第十四条",
+      "short_label": "14条",
+      "anchor": "a14",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第三章　上告審"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "（主任弁護人以外の弁護人の上告趣意書）上告趣意書は、主任弁護人以外の弁護人もこれを差し出すことができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        15
+      ],
+      "label": "第十五条",
+      "short_label": "15条",
+      "anchor": "a15",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第三章　上告審"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "（上告趣意書の記載）上告趣意書には、上告の理由を簡潔に明示しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        16
+      ],
+      "label": "第十六条",
+      "short_label": "16条",
+      "anchor": "a16",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第三章　上告審"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "（上告趣意書の謄本）上告趣意書には、相手方の数に応ずる謄本を添附しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        17
+      ],
+      "label": "第十七条",
+      "short_label": "17条",
+      "anchor": "a17",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第三章　上告審"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "（上告趣意書の謄本の送達）裁判所は、上告趣意書を受け取つたときは、速やかにその謄本を相手方に送達しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        18
+      ],
+      "label": "第十八条",
+      "short_label": "18条",
+      "anchor": "a18",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第三章　上告審"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "（答弁書）上告の相手方は、上告趣意書の謄本の送達を受けた日から七日以内に答弁書を裁判所に差し出すことができる。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "検察官が相手方であるときは、重要と認める上告の理由について答弁書を差し出さなければならない。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "裁判所は、必要と認めるときは、上告の相手方に対し、一定の期間を定めて、答弁書を差し出すべきことを命ずることができる。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "答弁書には、相手方の数に応ずる謄本を添附しなければならない。",
+          "items": []
+        },
+        {
+          "number": 5,
+          "text": "裁判所は、答弁書を受け取つたときは、速やかにその謄本を上告申立人に送達しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        19
+      ],
+      "label": "第十九条",
+      "short_label": "19条",
+      "anchor": "a19",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第三章　上告審"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "（判決書への引用）裁判所は、相当と認めるときは、判決書に上告趣意書又は答弁書の記載を引用することができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        20
+      ],
+      "label": "第二十条",
+      "short_label": "20条",
+      "anchor": "a20",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第三章　上告審"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "（再上告以外の上告についての特則）応急措置法第十七条の規定による以外の上告については、刑事訴訟規則（昭和二十三年最高裁判所規則第三十二号）中の次に掲げる規定をも適用する。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "第二百三十一条から第二百三十四条まで（補償の請求の方式等・法第三百七十一条）",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "第二百五十三条（判例の摘示・法第四百五条）",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "第二百五十七条から第二百六十四条まで（上告審としての事件受理の申立等・法第四百六条）",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "第二百六十七条から第二百七十七条まで（判決訂正申立の方式等・法第四百十五条等）",
+              "children": []
+            }
+          ]
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "",
+      "anchor": "sup1",
+      "level": 1,
+      "page": 2,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-1",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 1,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、昭和二十六年一月四日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則施行の際現に最高裁判所に係属している事件及び最高裁判所への上告の提起期間内にある事件については、その上告審に限り、第十条から第二十条までの規定は、適用しない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    }
+  ]
+}

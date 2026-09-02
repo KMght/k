@@ -1,0 +1,1165 @@
+{
+  "title": "逃亡犯罪人引渡法による審査等の手続に関する規則",
+  "law_number": "昭和二十八年法律第六十八号",
+  "enforcement_date": "平成18年5月24日",
+  "enforcement_iso": "2006-05-24",
+  "pdf_link": "https://www.courts.go.jp/vc-files/courts/2022/toubouhanzaininhikiwatashikisoku20220221.pdf",
+  "source": "toubouhanzaininhikiwatashikisoku20220221.pdf",
+  "numeral": "kansuji",
+  "notes": [
+    "題名・制定文とみられる行を本文の前に検出しました：昭和28年7月22日最高裁判所規則第１１号／改正 昭和39年5月29日最高裁判所規則第５号／平成18年5月12日最高裁判所規則第６号",
+    "各条の「原本」は https://www.courts.go.jp/vc-files/courts/2022/toubouhanzaininhikiwatashikisoku20220221.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+  ],
+  "nodes": [
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "a1",
+      "caption": "この規則の趣旨",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "逃亡犯罪人引渡法（昭和二十八年法律第六十八号。以下法という。）による裁判所の審査に関する手続及び拘禁許可状又は仮拘禁許可状の発付に関する手続については、法に定めるもののほか、この規則の定めるところによる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        2
+      ],
+      "label": "第二条",
+      "short_label": "2条",
+      "anchor": "a2",
+      "caption": "定義・法第一条",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則において「引渡条約」、「請求国」、「引渡犯罪」又は「逃亡犯罪人」という用語は、法におけると同様の意義を有する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則において「裁判所」とは東京高等裁判所を、「裁判官」とは東京高等裁判所の裁判官を、「検察官」とは東京高等検察庁の検察官をいう。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        3
+      ],
+      "label": "第三条",
+      "short_label": "3条",
+      "anchor": "a3",
+      "caption": "準用規定",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判所職員の除斥、書類及び送達については、法及びこの規則に別段の定がある場合を除き、その性質に反しない限り、刑事訴訟に関する法令の規定を準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        4
+      ],
+      "label": "第四条",
+      "short_label": "4条",
+      "anchor": "a4",
+      "caption": "訳文の添附",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "外国語で記載された書面には、その訳文を添附しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        5
+      ],
+      "label": "第五条",
+      "short_label": "5条",
+      "anchor": "a5",
+      "caption": "拘禁許可状請求の方式・法第五条",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "拘禁許可状の請求は、書面でしなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の書面には、次に掲げる事項を記載しなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "逃亡犯罪人の氏名、年齢、性別、国籍、職業及び住居",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "引渡犯罪名及び引渡犯罪に係る行為",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "引渡犯罪に係る行為に適用すべき請求国の罰条及び日本国の相当罰条",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "引渡しの請求が引渡条約に基づいて行われたものである場合には、当該条約において引渡犯罪に係る行為を犯罪人の引渡しを請求することができる犯罪として掲げる条項",
+              "children": []
+            },
+            {
+              "marker": "五",
+              "kind": "go",
+              "text": "引渡しの請求が引渡条約に基づかないで行われたものである場合には、法第三条第二号の保証がなされている旨",
+              "children": []
+            },
+            {
+              "marker": "六",
+              "kind": "go",
+              "text": "請求国の名称及び引渡しの請求の年月日",
+              "children": []
+            },
+            {
+              "marker": "七",
+              "kind": "go",
+              "text": "逃亡犯罪人に対して行われた請求国の刑事に関する手続",
+              "children": []
+            },
+            {
+              "marker": "八",
+              "kind": "go",
+              "text": "必要とする有効期間",
+              "children": []
+            },
+            {
+              "marker": "九",
+              "kind": "go",
+              "text": "拘禁許可状を数通必要とするときは、その旨及び事由",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "text": "逃亡犯罪人の氏名が明らかでないときは、人相、体格その他本人を特定するに足りる事項でこれを指定しなければならない。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "逃亡犯罪人の年齢、性別、国籍、職業又は住居が明らかでないときは、その旨を記載すれば足りる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        6
+      ],
+      "label": "第六条",
+      "short_label": "6条",
+      "anchor": "a6",
+      "caption": "資料の提供・法第五条",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "拘禁許可状を請求するには、拘禁許可状発付の要件が存在することを認めるべき資料を提供しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        7
+      ],
+      "label": "第七条",
+      "short_label": "7条",
+      "anchor": "a7",
+      "caption": "拘禁許可状発付の要件・法第五条",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判官は、拘禁許可状の請求を受けたときは、次の場合を除き、拘禁許可状を発しなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "請求の手続が法令に違反するとき。",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "明らかに逃亡犯罪人を引き渡すことができない場合に該当するとき。",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "text": "前項各号に掲げる場合には、裁判官は、拘禁許可状の請求を却下しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        8
+      ],
+      "label": "第八条",
+      "short_label": "8条",
+      "anchor": "a8",
+      "caption": "拘禁許可状の記載要件・法第五条",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "拘禁許可状には、法第五条第三項に規定する事項のほか、次に掲げる事項を記載しなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "逃亡犯罪人の年齢、性別、国籍、職業及び住居",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "引渡犯罪にかかる行為",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "請求者の官職氏名",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "法第五条第二項の規定によつて発するものである旨",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "text": "拘禁許可状については、第五条第三項及び第四項の規定を準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        9
+      ],
+      "label": "第九条",
+      "short_label": "9条",
+      "anchor": "a9",
+      "caption": "数通の拘禁許可状・法第五条",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "拘禁許可状は、請求により、数通を発することができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        10
+      ],
+      "label": "第十条",
+      "short_label": "10条",
+      "anchor": "a10",
+      "caption": "審査請求書の記載要件・法第八条",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第八条第二項の審査請求書には、第五条第二項第一号から第七号までに掲げる事項を記載しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の場合には、第五条第三項及び第四項の規定を準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        11
+      ],
+      "label": "第十一条",
+      "short_label": "11条",
+      "anchor": "a11",
+      "caption": "謄本の添附等・法第八条",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第八条第二項の審査請求書及び関係書類を裁判所に差し出すときは、謄本三通を添附しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "裁判長は、必要と認めるときは、検察官、逃亡犯罪人又は補佐する弁護士に対し、前項の書面以外の書面の謄本の提出を命ずることができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        12
+      ],
+      "label": "第十二条",
+      "short_label": "12条",
+      "anchor": "a12",
+      "caption": "拘禁等に関する通知",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "検察官は、拘禁許可状又は仮拘禁許可状の発せられた犯罪人について審査の請求をするときは、同時に次に掲げる事項を記載した書面を裁判所に差し出さなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "拘禁許可状又は仮拘禁許可状の発せられた年月日",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "拘禁許可状又は仮拘禁許可状により当該犯罪人を拘束したときは、その年月日時及び場所",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "検察官以外の者が拘禁許可状又は仮拘禁許可状により当該犯罪人を拘束したときは、検察官が拘束された当該犯罪人を受け取つた年月日時",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "法第二十七条第一項の規定による告知があつたときは、その年月日時",
+              "children": []
+            },
+            {
+              "marker": "五",
+              "kind": "go",
+              "text": "逃亡犯罪人が拘禁許可状により拘禁されているときは、拘禁されている刑事施設",
+              "children": []
+            },
+            {
+              "marker": "六",
+              "kind": "go",
+              "text": "逃亡犯罪人が拘禁許可状による拘禁を停止されているときは、 その旨",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "text": "審査の請求をした後次の各号に掲げる事由が生じたときは、検察官は、その旨を書面で裁判所に通知しなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "拘禁許可状により逃亡犯罪人を拘束したとき。",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "拘禁許可状により拘禁されている逃亡犯罪人を移送したとき。",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "拘禁許可状による拘禁を停止したとき。",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "拘禁許可状による拘禁の停止を取り消したため逃亡犯罪人が拘束されたとき。",
+              "children": []
+            },
+            {
+              "marker": "五",
+              "kind": "go",
+              "text": "住居の制限を附して拘禁許可状による拘禁を停止されている逃亡犯罪人に対し住居の変更を許したとき。",
+              "children": []
+            }
+          ]
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        13
+      ],
+      "label": "第十三条",
+      "short_label": "13条",
+      "anchor": "a13",
+      "caption": "弁護士の補佐・法第九条",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "逃亡犯罪人又は仮拘禁許可状の発せられた犯罪人が弁護士の補佐を受けるには、審査の請求があるまでは検察官に、審査の請求があつた後は裁判所にその旨を書面で届け出なければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "検察官は、前項の書面を受け取つたときは、審査の請求と同時に、これを裁判所に差し出さなければならない。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "逃亡犯罪人又は仮拘禁許可状の発せられた犯罪人を補佐する弁護士の数は、各犯罪人について三人をこえることができない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        14
+      ],
+      "label": "第十四条",
+      "short_label": "14条",
+      "anchor": "a14",
+      "caption": "弁護士の補佐を受ける権利の告知",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "検察官は、拘禁許可状若しくは仮拘禁許可状の発せられた犯罪人を当該令状により拘束したとき、又は拘禁許可状若しくは仮拘禁許可状により拘束された犯罪人を受け取つたときは、直ちに、当該犯罪人に対し、弁護士の補佐を受けることができる旨を告げなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        15
+      ],
+      "label": "第十五条",
+      "short_label": "15条",
+      "anchor": "a15",
+      "caption": "国選弁護士",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判所は、審査の請求を受けた後、逃亡犯罪人に補佐する弁護士がない場合において、逃亡犯罪人の利益を保護するため必要と認めるときは、補佐する弁護士を附することができる。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の場合には、刑事訴訟法（昭和二十三年法律第百三十一号）第三十八条第二項、刑事訴訟規則（昭和二十三年最高裁判所規則第三十二号）第二十九条及び刑事訴訟費用に関する法令の規定を準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        16
+      ],
+      "label": "第十六条",
+      "short_label": "16条",
+      "anchor": "a16",
+      "caption": "接見、書類の閲覧等",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "拘禁許可状又は仮拘禁許可状により拘禁されている犯罪人と補佐する弁護士との接見又は書類若しくは物の授受については刑事訴訟法第三十九条及び刑事訴訟規則第三十条の規定を、補佐する弁護士の書類その他の資料の閲覧又は謄写については刑事訴訟法第四十条並びに刑事訴訟規則第三十一条及び第三百一条の規定を準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        17
+      ],
+      "label": "第十七条",
+      "short_label": "17条",
+      "anchor": "a17",
+      "caption": "出頭の命令等・法第九条",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判所は、審査をするについて必要と認めるときは、検察官、逃亡犯罪人又は補佐する弁護士に出頭を命じ、その陳述を聞くことができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        18
+      ],
+      "label": "第十八条",
+      "short_label": "18条",
+      "anchor": "a18",
+      "caption": "準用規定・法第九条",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第九条第四項の規定により証人を尋問し、又は鑑定、通訳若しくは翻訳を命ずる場合には、その性質に反しない限り、刑事訴訟規則第一編第十一章から第十三章までの規定を準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        19
+      ],
+      "label": "第十九条",
+      "short_label": "19条",
+      "anchor": "a19",
+      "caption": "審問期日・法第九条",
+      "deleted": false,
+      "section": "main",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判所は、次の場合には、審問期日を開かなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "逃亡犯罪人又は補佐する弁護士が法第九条第三項の機会に意見を口頭で述べたい旨を申し出たとき。",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "裁判所において証人又は鑑定人を尋問するとき。",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "その他審査をするについて必要と認めるとき。",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "text": "審問期日は、裁判長が定める。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "裁判所は、検察官、逃亡犯罪人及び補佐する弁護士に審問期日を通知しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        20
+      ],
+      "label": "第二十条",
+      "short_label": "20条",
+      "anchor": "a20",
+      "caption": "手続の公開・法第九条",
+      "deleted": false,
+      "section": "main",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "審問期日の手続は、公開の法廷において行う。但し、逃亡犯罪人の請求があるとき、又は裁判所が公の秩序若しくは善良の風俗を害する虞があると認めるときは、公開しないで行う。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        21
+      ],
+      "label": "第二十一条",
+      "short_label": "21条",
+      "anchor": "a21",
+      "caption": "審問期日の手続・法第九条",
+      "deleted": false,
+      "section": "main",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "審問期日には、次に掲げる手続を行う。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "検察官、逃亡犯罪人又は補佐する弁護士の陳述を聞くこと。",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "証人、鑑定人、通訳人又は翻訳人を尋問すること。",
+              "children": []
+            }
+          ]
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        22
+      ],
+      "label": "第二十二条",
+      "short_label": "22条",
+      "anchor": "a22",
+      "caption": "関係人の立会等・法第九条",
+      "deleted": false,
+      "section": "main",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "検察官、逃亡犯罪人及び補佐する弁護士は、審問期日の手続に立ち会うことができる。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の規定により審問期日の手続に立ち会つた者は、裁判長の許可を受けて、証人その他の者を尋問することができる。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "裁判所は、請求国の官憲又はその代理人に対し、審問期日の手続に立ち会い、意見を述べることを許すことができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        23
+      ],
+      "label": "第二十三条",
+      "short_label": "23条",
+      "anchor": "a23",
+      "caption": "裁判所書記官の立会・法第九条",
+      "deleted": false,
+      "section": "main",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "審問期日の手続には、裁判所書記官を立ち会わせなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        24
+      ],
+      "label": "第二十四条",
+      "short_label": "24条",
+      "anchor": "a24",
+      "caption": "調書",
+      "deleted": false,
+      "section": "main",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "審問期日の手続については、調書を作らなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        25
+      ],
+      "label": "第二十五条",
+      "short_label": "25条",
+      "anchor": "a25",
+      "caption": "決定の方式・法第十条",
+      "deleted": false,
+      "section": "main",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第十条第一項の決定には、理由を附しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の決定をするときは、裁判書を作らなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        26
+      ],
+      "label": "第二十六条",
+      "short_label": "26条",
+      "anchor": "a26",
+      "caption": "決定の主文の通知・法第十条",
+      "deleted": false,
+      "section": "main",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第十条第二項の規定により同条第一項の決定の主文を通知するときは、これを記載した書面を検察官に送付しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の書面は、裁判長が作らなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        27
+      ],
+      "label": "第二十七条",
+      "short_label": "27条",
+      "anchor": "a27",
+      "caption": "補佐する弁護士に対する裁判書の謄本の送達",
+      "deleted": false,
+      "section": "main",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "裁判所は、法第十条第一項の決定をしたときはすみやかに、補佐する弁護士にも裁判書の謄本を送達しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        28
+      ],
+      "label": "第二十八条",
+      "short_label": "28条",
+      "anchor": "a28",
+      "caption": "仮拘禁許可状の発付に関する手続・法第二十五条",
+      "deleted": false,
+      "section": "main",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "仮拘禁許可状の発付に関する手続については、その性質に反しない限り、第五条から第九条までの規定を準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        29
+      ],
+      "label": "第二十九条",
+      "short_label": "29条",
+      "anchor": "a29",
+      "caption": "引渡条約発効前に犯された犯罪に関する引渡の請求・法第三十三条",
+      "deleted": false,
+      "section": "main",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第三十三条の規定により法が適用される場合には、この規則も適用されるものとする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "",
+      "anchor": "sup1",
+      "level": 1,
+      "page": 3,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-1",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 1,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、公布の日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則は、この規則の施行前に犯された引渡犯罪に関する逃亡犯罪人の引渡の請求にかかる場合にも、適用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（昭和三九年五月二九日最高裁判所規則第五号）",
+      "anchor": "sup2",
+      "level": 1,
+      "page": 3,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-2",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 2,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、公布の日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則による改正後の逃亡犯罪人引渡法による審査等の手続に関する規則は、この規則の施行前に犯された犯罪に関する犯罪人の引渡の請求にかかる場合にも、適用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成一八年五月一二日最高裁判所規則第六号）",
+      "anchor": "sup3",
+      "level": 1,
+      "page": 3,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-3",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 3,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、刑事施設及び受刑者の処遇等に関する法律（平成十七年法律第五十号）の施行の日（平成十八年五月二十四日）から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（令和四年二月二一日最高裁判所規則第十号）",
+      "anchor": "sup4",
+      "level": 1,
+      "page": 3,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-4",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 3,
+      "division_path": [],
+      "sup_index": 4,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、公布の日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    }
+  ]
+}

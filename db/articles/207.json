@@ -1,0 +1,59 @@
+{
+ "rule_id": "207",
+ "title": "密集市街地における防災街区の整備の促進に関する法律による権利の変換と強制執行等との調整に関する規則",
+ "enforcement_iso": "2003-12-19",
+ "url": "https://kmght.github.io/ksk/r/207.html",
+ "articles": [
+  {
+   "key": "1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "権利変換手続が強制競売等の手続に先行する場合における施行者への通知等",
+   "anchor": "a1",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "2",
+   "label": "第二条",
+   "short": "2条",
+   "caption": "強制競売等の手続が権利変換手続に先行する場合における差押債権者等への通知等",
+   "anchor": "a2",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "3",
+   "label": "第三条",
+   "short": "3条",
+   "caption": "施行者に対する代金納付等の通知",
+   "anchor": "a3",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "4",
+   "label": "第四条",
+   "short": "4条",
+   "caption": "差押え等がある場合において補償金等が払い渡された場合の取扱い",
+   "anchor": "a4",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  }
+ ]
+}

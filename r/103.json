@@ -1,0 +1,916 @@
+{
+  "title": "民事訴訟手続に関する条約等の実施に伴う民事訴訟手続の特例等に関する規則",
+  "law_number": "昭和四五年七月七日最高裁判所規則第六号",
+  "enforcement_date": "昭和45年7月27日",
+  "enforcement_iso": "1970-07-27",
+  "pdf_link": "https://www.courts.go.jp/assets/tokureikisoku2.pdf",
+  "source": "tokureikisoku2.pdf",
+  "numeral": "kansuji",
+  "notes": [
+    "PDF中の目次は読み飛ばし、条見出しから目次を再構成しました。",
+    "各条の「原本」は https://www.courts.go.jp/assets/tokureikisoku2.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+  ],
+  "nodes": [
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "body-1",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "民事訴訟手続に関する条約等の実施に伴う民事訴訟手続の特例等に関する規則（原文は縦書き）改正 平成八年一二月一七日最高裁判所規則第六号同一五年一一月一二日同第一九号同二四年七月一七日同第九号令和六年九月一七日同第一四号民事訴訟手続に関する条約等の実施に伴う民事訴訟手続の特例等に関する規則を次のように定める。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "章",
+      "label": "第一章",
+      "title": "総則",
+      "anchor": "d1",
+      "level": 2,
+      "page": 1,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "a1",
+      "caption": "この規則の趣旨",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [
+        "",
+        "第一章　総則"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "民事訴訟手続に関する条約及び民事又は商事に関する裁判上及び裁判外の文書の外国における送達及び告知に関する条約の実施のための裁判所の手続に関しては、民事訴訟手続に関する条約等の実施に伴う民事訴訟手続の特例等に関する法律（昭和四十五年法律第百十五号。以下「法」という。）に定めるもののほか、この規則の定めるところによる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "章",
+      "label": "第二章",
+      "title": "民事訴訟手続に関する条約の実施",
+      "anchor": "d3",
+      "level": 2,
+      "page": 1,
+      "note": ""
+    },
+    {
+      "number": [
+        2
+      ],
+      "label": "第二条",
+      "short_label": "2条",
+      "anchor": "a2",
+      "caption": "送達すべき文書の翻訳文",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [
+        "",
+        "第二章　民事訴訟手続に関する条約の実施"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "民事訴訟手続に関する条約（以下「民訴条約」という。）の締約国である外国の当局に対し、同条約第三条第二項に規定する方法による文書の送達を嘱託するときは、送達すべき文書に同項に規定する言語のいずれか一方によつて作成された翻訳文を添附するものとする。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "民訴条約の締約国に駐在する日本国の大使、公使又は領事に対し、文書の送達を嘱託する場合において必要があるときは、送達すべき文書に送達すべき地における公用語又は送達を受けるべき者が解する言語によつて作成された翻訳文を添附するものとする。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "当事者が作成し、又は提出した文書に添附すべき翻訳文は、その当事者が提出しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        3
+      ],
+      "label": "第三条",
+      "short_label": "3条",
+      "anchor": "a3",
+      "caption": "裁判外の文書の送達嘱託の申請",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第二章　民事訴訟手続に関する条約の実施"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "民訴条約第一条第一項の文書で裁判外のものを同条約の締約国である外国において送達することを求める者は、次に掲げる事項を記載した申請書を管轄裁判所に提出しなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "送達すべき文書の種類",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "当事者の氏名及び資格",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "送達を受けるべき者の氏名及び住所",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "申請者の氏名及び住所",
+              "children": []
+            },
+            {
+              "marker": "五",
+              "kind": "go",
+              "text": "年月日",
+              "children": []
+            },
+            {
+              "marker": "六",
+              "kind": "go",
+              "text": "裁判所の表示",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "text": "前項第一号から第三号までに掲げる事項については、送達すべき地における公用語による記載をもしなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        3,
+        2
+      ],
+      "label": "第三条の二",
+      "short_label": "3条の2",
+      "anchor": "a3-2",
+      "caption": "裁判外の文書の送達",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第二章　民事訴訟手続に関する条約の実施"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第六条第一項の送達及び外国の当局の嘱託により本邦においてする裁判外の文書の送達に関しては、民事訴訟規則（平成八年最高裁判所規則第五号）第一編第五章第四節の規定（同規則第四十一条、第四十二条、第一編第五章第四節第三款、第四十六条第一項、第四十七条第三項及び第四項並びに第四十七条の二の規定を除く。）を準用する。この場合において、同規則第四十七条第一項中「書類又は電磁的記録」とあるのは「書類」と読み替えるものとする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        4
+      ],
+      "label": "第四条",
+      "short_label": "4条",
+      "anchor": "a4",
+      "caption": "民訴条約第二条に規定する方法による文書の送達",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第二章　民事訴訟手続に関する条約の実施"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "民訴条約第二条に規定する方法により文書の送達をすべきときは、裁判所書記官は、送達を受けるべき者に対し、送達すべき文書を表示してその受領を催告しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の規定による催告を受けた者は、出頭して文書を受領すること又は文書の送付を申し出ることができる。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "前項の規定による申出を受けたときは、裁判所書記官は、民事訴訟法（平成八年法律第百九号）及び民事訴訟規則に定める郵便による送達の例により、文書を送付する。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "第一項の規定による催告を発した日から三週間以内に、送達を受けるべき者が出頭せず、又は第二項の規定による申出をしないときは、裁判所書記官は、文書の受領が拒絶されたものとして取り扱うことができる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        5
+      ],
+      "label": "第五条",
+      "short_label": "5条",
+      "anchor": "a5",
+      "caption": "司法共助の嘱託書及び添附書類の翻訳",
+      "deleted": false,
+      "section": "main",
+      "page": 2,
+      "division_path": [
+        "",
+        "第二章　民事訴訟手続に関する条約の実施"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "民訴条約第八条の当局に対する嘱託書及びその添附書類には、同条約第十条に規定する言語のいずれか一方によつて作成された翻訳文を添附するものとする。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "第二条第二項の規定は、民訴条約の締約国に駐在する日本国の大使、公使又は領事に対する嘱託書の添附書類について準用する。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "第二条第三項の規定は、前二項の場合について準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        5,
+        2
+      ],
+      "label": "第五条の二",
+      "short_label": "5条の2",
+      "anchor": "a5-2",
+      "caption": "受託裁判所のした処分に対する不服申立て",
+      "deleted": false,
+      "section": "main",
+      "page": 3,
+      "division_path": [
+        "",
+        "第二章　民事訴訟手続に関する条約の実施"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "外国の当局の嘱託により証拠調べその他の裁判上の行為をするに際し本邦の裁判所がした裁判については、当該裁判所を受訴裁判所とみなして不服申立てに関する民事訴訟規則の規定を適用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        6
+      ],
+      "label": "第六条",
+      "short_label": "6条",
+      "anchor": "a6",
+      "caption": "法第十一条の申立て",
+      "deleted": false,
+      "section": "main",
+      "page": 3,
+      "division_path": [
+        "",
+        "第二章　民事訴訟手続に関する条約の実施"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第十一条の申立てに係る申立書には、第九条の二において準用する非訟事件手続規則（平成二十四年最高裁判所規則第七号）第一条第一項各号に掲げる事項のほか、次に掲げる事項を記載しなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "執行認許の請求をすべき訴訟費用の負担を定める裁判（その裁判において訴訟費用の額を定めていないときは、その裁判のほか訴訟費用の額を定める裁判（訴訟費用の負担の額を定める裁判所書記官の処分を含む。））の表示",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "執行認許の請求をすべき相手国の表示",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "訴訟費用債務者が民訴条約第十八条第一項に規定する免除を受けたこと及びその要件となる事実",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "訴訟費用債務者の氏名及び住所",
+              "children": []
+            },
+            {
+              "marker": "五",
+              "kind": "go",
+              "text": "執行認許の請求について裁判をする権限を有する当局の管轄を定める原因である事実",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "text": "前項第一号、第二号、第四号及び第五号に掲げる事項については、執行認許の請求をすべき相手国の公用語による記載をもしなければならない。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "第一項の申立書には、同項第一号の裁判の謄本、裁判所書記官がその確定を証明する書類及び法第二十二条の規定により当局の権限を証明する書類並びにこれらの書類について民訴条約第十九条第二項３に規定する言語のいずれか一方によつて作成された翻訳文を添付しなければならない。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "民訴条約第十八条第一項に規定する免除の要件となる事実について、証拠書類があるときは、その写しを申立書に添付しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        7
+      ],
+      "label": "第七条",
+      "short_label": "7条",
+      "anchor": "a7",
+      "caption": "当局の権限証明の申請",
+      "deleted": false,
+      "section": "main",
+      "page": 3,
+      "division_path": [
+        "",
+        "第二章　民事訴訟手続に関する条約の実施"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第二十二条の規定による当局の権限の証明を求める者は、法第十一条に規定する第一審の受訴裁判所を経由してその申請をしなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        8
+      ],
+      "label": "第八条",
+      "short_label": "8条",
+      "anchor": "a8",
+      "caption": "費用額確定請求書等の送付",
+      "deleted": false,
+      "section": "main",
+      "page": 3,
+      "division_path": [
+        "",
+        "第二章　民事訴訟手続に関する条約の実施"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第十一条の申立てに基づき執行認許の請求を外務大臣に嘱託する場合において、申立人が民訴条約第十九条第四項の規定により費用額を定めるべき旨の請求書及び証拠書類を提出しているときは、裁判所は、これらの書類を外務大臣に送付する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の請求書は、執行認許の請求をすべき相手国の公用語又は相手国との間の取極により定められた言語で作成しなければならない。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "第一項の証拠書類が前項に規定する言語で作成されていないときは、同項に規定する言語のいずれか一方によつて作成された翻訳文を添附しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        9
+      ],
+      "label": "第九条",
+      "short_label": "9条",
+      "anchor": "a9",
+      "caption": "費用計算書等の提出",
+      "deleted": false,
+      "section": "main",
+      "page": 4,
+      "division_path": [
+        "",
+        "第二章　民事訴訟手続に関する条約の実施"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "民訴条約第十九条第四項の規定により本邦の裁判所に対し費用額を定めるべき旨の請求をするときは、費用計算書及び費用額に関する証拠書類を提出しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "前項の書類が外国語で作成されているときは、日本語又は関係国間の取極により定められた言語によつて作成された翻訳文を添附しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        9,
+        2
+      ],
+      "label": "第九条の二",
+      "short_label": "9条の2",
+      "anchor": "a9-2",
+      "caption": "非訟事件手続規則の準用",
+      "deleted": false,
+      "section": "main",
+      "page": 4,
+      "division_path": [
+        "",
+        "第二章　民事訴訟手続に関する条約の実施"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第十一条の申立て及び執行認許の手続に関しては、この規則に特別の定めがある場合を除き、非訟事件手続規則の規定を準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        10
+      ],
+      "label": "第十条",
+      "short_label": "10条",
+      "anchor": "a10",
+      "caption": "救助請求書の用語等",
+      "deleted": false,
+      "section": "main",
+      "page": 4,
+      "division_path": [
+        "",
+        "第二章　民事訴訟手続に関する条約の実施"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "法第二十三条第一項の規定により提出する請求書及びその関係書類は、民訴条約第十条に規定する言語のいずれかで作成し、又は同条に規定する言語のいずれか一方によつて作成された翻訳文を添附して作成しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "章",
+      "label": "第三章",
+      "title": "民事又は商事に関する裁判上及び裁判外の文書の外国における送達及び告知に",
+      "anchor": "d16",
+      "level": 2,
+      "page": 4,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "body-2",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 4,
+      "division_path": [
+        "",
+        "第三章　民事又は商事に関する裁判上及び裁判外の文書の外国における送達及び告知に"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "関する条約の実施",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        11
+      ],
+      "label": "第十一条",
+      "short_label": "11条",
+      "anchor": "a11",
+      "caption": "送達すべき文書の翻訳文",
+      "deleted": false,
+      "section": "main",
+      "page": 4,
+      "division_path": [
+        "",
+        "第三章　民事又は商事に関する裁判上及び裁判外の文書の外国における送達及び告知に"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "民事又は商事に関する裁判上及び裁判外の文書の外国における送達及び告知に関する条約（以下「送達条約」という。）の締約国である外国の当局に対し、同条約第五条第一項に規定する方法による文書の送達を嘱託した場合において、送達すべき文書の翻訳を求められたときは、同条第三項に規定する言語又は当該外国との間の取極により定められた言語によつて作成された翻訳文を送付するものとする。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "第二条第二項の規定は、送達条約の締約国に駐在する日本国の大使、公使又は領事に対して文書の送達を嘱託する場合について準用する。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "第二条第三項の規定は、前二項の場合について準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        12
+      ],
+      "label": "第十二条",
+      "short_label": "12条",
+      "anchor": "a12",
+      "caption": "裁判外の文書の送達嘱託の申請",
+      "deleted": false,
+      "section": "main",
+      "page": 4,
+      "division_path": [
+        "",
+        "第三章　民事又は商事に関する裁判上及び裁判外の文書の外国における送達及び告知に"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "送達条約第十七条の裁判外の文書を同条約の締約国である外国において送達することを求める者は、第三条第一項各号に掲げる事項のほか、次に掲げる事項を記載した申請書を管轄裁判所に提出しなければならない。",
+          "items": [
+            {
+              "marker": "一",
+              "kind": "go",
+              "text": "送達について利害関係を有する者があるときは、その氏名及び住所",
+              "children": []
+            },
+            {
+              "marker": "二",
+              "kind": "go",
+              "text": "送達すべき文書に期間又は期限の定めの記載があるときは、その内容",
+              "children": []
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "text": "第三条第一項第一号から第三号まで及び前項各号に掲げる事項については、送達条約第七条第二項に規定する言語のいずれかによる記載をもしなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        12,
+        2
+      ],
+      "label": "第十二条の二",
+      "short_label": "12条の2",
+      "anchor": "a12-2",
+      "caption": "裁判外の文書の送達",
+      "deleted": false,
+      "section": "main",
+      "page": 4,
+      "division_path": [
+        "",
+        "第三章　民事又は商事に関する裁判上及び裁判外の文書の外国における送達及び告知に"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "第三条の二の規定は、送達条約第十七条の裁判外の文書の送達について準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        13
+      ],
+      "label": "第十三条",
+      "short_label": "13条",
+      "anchor": "a13",
+      "caption": "送達条約第五条第二項に規定する方法による文書の送達",
+      "deleted": false,
+      "section": "main",
+      "page": 5,
+      "division_path": [
+        "",
+        "第三章　民事又は商事に関する裁判上及び裁判外の文書の外国における送達及び告知に"
+      ],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "送達条約第五条第二項に規定する方法により文書の送達をすべきときは、第四条の規定を準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "",
+      "anchor": "sup1",
+      "level": 1,
+      "page": 5,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-1",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 5,
+      "division_path": [],
+      "sup_index": 1,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、昭和四十五年七月二十七日から施行する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "この規則は、この規則の施行前に生じた事項についても適用する。ただし、この規則の施行前に生じた効力を妨げない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成八年一二月一七日最高裁判所規則第六号）抄",
+      "anchor": "sup2",
+      "level": 1,
+      "page": 5,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "sup2-a1",
+      "caption": "施行期日",
+      "deleted": false,
+      "section": "supplementary",
+      "page": 5,
+      "division_path": [],
+      "sup_index": 2,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、民事訴訟法（平成八年法律第百九号。以下「新法」という。）の施行の日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成一五年一一月一二日最高裁判所規則第一九号）抄",
+      "anchor": "sup3",
+      "level": 1,
+      "page": 5,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-2",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 5,
+      "division_path": [],
+      "sup_index": 3,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、民事訴訟法等の一部を改正する法律（平成一五年法律第百八号。次項において「法」という。）の施行の日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成二四年七月一七日最高裁判所規則第九号）抄",
+      "anchor": "sup4",
+      "level": 1,
+      "page": 5,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "sup4-a1",
+      "caption": "施行期日",
+      "deleted": false,
+      "section": "supplementary",
+      "page": 5,
+      "division_path": [],
+      "sup_index": 4,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、非訟事件手続法（平成二十三年法律第五十一号）の施行の日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（令和六年九月一七日最高裁判所規則第一四号）抄",
+      "anchor": "sup5",
+      "level": 1,
+      "page": 5,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "sup5-a1",
+      "caption": "施行期日",
+      "deleted": false,
+      "section": "supplementary",
+      "page": 5,
+      "division_path": [],
+      "sup_index": 5,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、民事訴訟法等の一部を改正する法律（令和四年法律第四十八号。以下「改正法」という。）の施行の日（以下「施行日」という。）から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    }
+  ]
+}

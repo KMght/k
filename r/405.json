@@ -1,0 +1,245 @@
+{
+  "title": "民事調停官及び家事調停官規則",
+  "law_number": "平成一五年一〇月一日最高裁判所規則第一五号",
+  "enforcement_date": "平成16年1月1日",
+  "enforcement_iso": "2004-01-01",
+  "pdf_link": "https://www.courts.go.jp/vc-files/courts/file4/chouteikankisoku.pdf",
+  "source": "chouteikankisoku.pdf",
+  "numeral": "kansuji",
+  "notes": [
+    "各条の「原本」は https://www.courts.go.jp/vc-files/courts/file4/chouteikankisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+  ],
+  "nodes": [
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "body-1",
+      "caption": "民事調停官及び家事調停官規則（原文は縦書き",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "改正 平成二四年七月一七日最高裁判所規則第九号",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "a1",
+      "caption": "趣旨",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "民事調停官及び家事調停官の任免等に関しては、民事調停法（昭和二十六年法律第二百二十二号）、家事事件手続法（平成二十三法律第五十二号）その他の法令に定めるもののほか、この規則の定めるところによる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        2
+      ],
+      "label": "第二条",
+      "short_label": "2条",
+      "anchor": "a2",
+      "caption": "勤務裁判所の指定",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "民事調停官及び家事調停官の勤務する裁判所は、最高裁判所が指定する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        3
+      ],
+      "label": "第三条",
+      "short_label": "3条",
+      "anchor": "a3",
+      "caption": "解任",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "最高裁判所は、民事調停官が民事調停法第二十三条の二第五項各号のいずれかに該当するに至ったとき又は家事調停官が家事事件手続法第二百五十条第五項各号のいずれかに該当するに至ったときは、その民事調停官又は家事調停官を解任しなければならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        4
+      ],
+      "label": "第四条",
+      "short_label": "4条",
+      "anchor": "a4",
+      "caption": "政治的行為の制限",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "民事調停官及び家事調停官は、在任中、政党その他の政治的団体の役員となり、又は積極的に政治運動をしてはならない。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "number": [
+        5
+      ],
+      "label": "第五条",
+      "short_label": "5条",
+      "anchor": "a5",
+      "caption": "旅費、日当及び宿泊料",
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "民事調停官又は家事調停官が第二条の規定により指定された裁判所で職務を行う場合には、次項の規定により旅費を支給する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "旅費は、鉄道賃、船賃及び車賃の三種とし、その金額は、国家公務員等の旅費に関する法律（昭和二十五年法律第百十四号。次項において「旅費法」という。）の規定に基づいて受ける旅費の金額と同一とする。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "第一項の規定により旅費のみが支給される場合を除き、民事調停官又は家事調停官には、旅費、日当及び宿泊料を支給するものとし、その種類及び金額は、旅費法の規定に基づいて受ける旅費の種類及び金額と同一とする。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "前三項に定めるもののほか、民事調停官又は家事調停官に支給する旅費、日当及び宿泊料については、別に最高裁判所の定めるところによる。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "抄",
+      "anchor": "sup1",
+      "level": 1,
+      "page": 2,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-1",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 1,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、平成十六年一月一日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "（平成二四年七月一七日最高裁判所規則第九号）抄",
+      "anchor": "sup2",
+      "level": 1,
+      "page": 2,
+      "note": ""
+    },
+    {
+      "number": [
+        1
+      ],
+      "label": "第一条",
+      "short_label": "1条",
+      "anchor": "sup2-a1",
+      "caption": "施行期日",
+      "deleted": false,
+      "section": "supplementary",
+      "page": 2,
+      "division_path": [],
+      "sup_index": 2,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、非訟事件手続法（平成二十三年法律第五十一号）の施行の日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    }
+  ]
+}

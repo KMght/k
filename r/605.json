@@ -1,0 +1,71 @@
+{
+  "title": "刑事補償規則",
+  "law_number": "昭和25年1月1日最高裁判所規則第1号",
+  "enforcement_date": "",
+  "enforcement_iso": "",
+  "pdf_link": "https://www.courts.go.jp/assets/keijihoshoukisoku.pdf",
+  "source": "keijihoshoukisoku.pdf",
+  "numeral": "kansuji",
+  "notes": [
+    "条番号の付いた条文を1件も検出できませんでした。条を持たない告示・要綱であればこれで正しく、そうでなければ書字方向・段組の設定、またはOCRの要否を確認してください。",
+    "各条の「原本」は https://www.courts.go.jp/assets/keijihoshoukisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+  ],
+  "nodes": [
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "body-1",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "刑事補償規則を次のように定める。刑事補償規則刑事補償法（昭和二十五年法律第一号）の期間、決定、即時抗告、異議の申立及び同法第十九条第二項（同法第二十五条第二項において準用する場合を含む。）の抗告については、同法に定めるものの外、刑事訴訟規則（昭和二十三年最高裁判所規則第三十二号）を準用する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
+    {
+      "type": "division",
+      "kind": "附則",
+      "label": "附則",
+      "title": "",
+      "anchor": "sup1",
+      "level": 1,
+      "page": 1,
+      "note": ""
+    },
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "sup-body-1",
+      "caption": null,
+      "deleted": false,
+      "section": "supplementary",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 1,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、公布の日から施行する。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    }
+  ]
+}

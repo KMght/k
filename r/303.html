@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>金融機関等の更生手続の特例等に関する規則</title>
+<style>
+:root{
+  --paper:#ffffff;
+  --ink:#16181d;
+  --sub:#5f6875;
+  --rule:#dde2e9;
+  --chrome:#f4f6f9;
+  --accent:#14538a;
+  --accent-weak:#e7eff7;
+  --mark:#ffe08a;
+  --mark-live:#ff9d3d;
+  --gothic:"Yu Gothic UI","Yu Gothic","YuGothic","Hiragino Sans","Noto Sans JP","Meiryo",system-ui,sans-serif;
+  --mincho:"Yu Mincho","YuMincho","Hiragino Mincho ProN","Noto Serif JP","MS Mincho",serif;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:5.5rem}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--mincho);font-size:17px;line-height:1.9;
+  text-rendering:optimizeLegibility;
+}
+
+/* ---------------------------------------------------------------- ヘッダ */
+.top{
+  position:sticky;top:0;z-index:30;background:var(--chrome);
+  border-bottom:1px solid var(--rule);font-family:var(--gothic);
+}
+.top-inner{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;padding:.7rem 1.2rem}
+.law-title{font-size:1.12rem;font-weight:700;letter-spacing:.02em;margin:0}
+.law-number{font-size:.8rem;color:var(--sub);margin-left:.2rem}
+.top-tools{margin-left:auto;display:flex;align-items:center;gap:.5rem}
+.search-box{display:flex;align-items:center;gap:.35rem;background:var(--paper);
+  border:1px solid var(--rule);border-radius:2px;padding:.25rem .5rem}
+.search-box input{border:0;outline:0;font:inherit;font-size:.85rem;width:14rem;background:transparent;color:inherit}
+.hit-count{font-size:.78rem;color:var(--sub);min-width:4.2rem;text-align:right;font-variant-numeric:tabular-nums}
+button{font:inherit;font-family:var(--gothic);cursor:pointer}
+.btn{background:var(--paper);border:1px solid var(--rule);border-radius:2px;
+  color:var(--ink);font-size:.78rem;padding:.28rem .6rem;line-height:1.4}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.crumb{padding:.3rem 1.2rem;border-top:1px solid var(--rule);background:var(--paper);
+  font-family:var(--gothic);font-size:.78rem;color:var(--sub);min-height:1.7rem}
+
+/* ------------------------------------------------------------------ 骨格 */
+.wrap{display:grid;grid-template-columns:19rem minmax(0,1fr);align-items:start}
+.toc{
+  position:sticky;top:5.6rem;max-height:calc(100vh - 5.6rem);overflow-y:auto;
+  border-right:1px solid var(--rule);padding:1rem .6rem 4rem 1.2rem;
+  font-family:var(--gothic);font-size:.83rem;line-height:1.65;
+}
+.toc h2{font-size:.75rem;color:var(--sub);font-weight:700;margin:0 0 .6rem}
+.toc ul{list-style:none;margin:0;padding:0}
+.toc a{display:block;color:var(--ink);text-decoration:none;padding:.16rem .4rem;border-radius:2px}
+.toc a:hover{background:var(--accent-weak);color:var(--accent)}
+.toc a.current{background:var(--accent-weak);color:var(--accent);font-weight:700}
+.toc .div-1>a,.toc .div-2>a{font-weight:700}
+.toc .div-2{margin-top:.5rem}
+.toc .div-3,.toc .div-4,.toc .div-5{margin-top:.25rem}
+.toc .lv-art{padding-left:.9rem}
+.toc .lv-art.hidden,.toc .lv-div.hidden{display:none}
+.toc-toggle{background:none;border:0;color:var(--sub);padding:0 .3rem;font-size:.75rem}
+
+.doc{padding:2.2rem 2rem 8rem;max-width:44em}
+.doc-head{border-bottom:2px solid var(--ink);padding-bottom:.8rem;margin-bottom:2rem}
+.doc-head h1{font-size:1.5rem;margin:0 0 .3rem;letter-spacing:.04em}
+.doc-head .meta{font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+
+/* ------------------------------------------------------------------ 条文 */
+.div-head{font-family:var(--gothic);margin:2.6rem 0 1rem;scroll-margin-top:6rem}
+.div-head .lbl{color:var(--accent);font-weight:700}
+h2.div-head{font-size:1.12rem;border-bottom:1px solid var(--rule);padding-bottom:.35rem}
+h3.div-head{font-size:1.02rem}
+h4.div-head,h5.div-head,h6.div-head{font-size:.95rem}
+
+.art{position:relative;padding-left:2.6rem;margin:1.5rem 0 1.9rem;scroll-margin-top:6rem}
+.art:target{background:var(--accent-weak);box-shadow:-.4rem 0 0 var(--accent);border-radius:2px}
+.art-tools{position:absolute;left:0;top:.25rem;display:flex;flex-direction:column;gap:.2rem;
+  visibility:hidden}
+.art:hover .art-tools,.art:focus-within .art-tools,.art:target .art-tools{visibility:visible}
+.art-tools button,.art-tools a{background:none;border:0;color:var(--sub);font-size:.72rem;
+  font-family:var(--gothic);padding:.1rem .2rem;border-radius:2px;text-decoration:none;
+  white-space:nowrap;display:block}
+.art-tools button:hover,.art-tools a:hover{color:var(--accent);background:var(--accent-weak)}
+.raw h3 .src{font-size:.75rem;font-weight:400;color:var(--sub);margin-left:.5rem}
+.doc-head .src{color:var(--accent);text-decoration:none}
+.doc-head .src:hover{text-decoration:underline}
+.caption{font-family:var(--gothic);font-size:.88rem;font-weight:700;color:var(--sub);margin:0 0 .1rem}
+.amend-note{font-family:var(--gothic);font-size:.78rem;font-weight:400;color:var(--sub);margin:.1rem 0 0;text-align:right}
+h2 .amend-note,h3 .amend-note,h4 .amend-note,h5 .amend-note,h6 .amend-note{display:inline;text-align:left}
+.art-no{font-family:var(--gothic);font-weight:700;color:var(--accent);text-decoration:none;margin-right:.55em}
+.art-no:hover{text-decoration:underline}
+.para{margin:.35rem 0;text-indent:0}
+.para+.para{margin-top:.55rem}
+.pno{font-family:var(--gothic);color:var(--sub);font-size:.9em;margin-right:.5em;font-variant-numeric:tabular-nums}
+.deleted .body-text{color:var(--sub)}
+.art.noarticle .para{margin-top:0}
+
+ol.items{list-style:none;margin:.35rem 0 .35rem 1.1em;padding:0}
+ol.items>li{display:grid;grid-template-columns:2.4em minmax(0,1fr);margin:.2rem 0}
+ol.items .mk{font-family:var(--gothic);font-size:.9em;color:var(--sub);margin-right:.4em}
+ol.items ol.items{grid-column:1/-1;margin-left:1.2em}
+ol.items ol.items>li{grid-template-columns:2em minmax(0,1fr)}
+
+.raw{margin:1.6rem 0;scroll-margin-top:6rem}
+.raw h3{font-family:var(--gothic);font-size:1rem;margin:0 0 .4rem}
+.raw pre{font-family:var(--mincho);white-space:pre-wrap;margin:0;padding:.7rem .9rem;
+  background:var(--chrome);border:1px solid var(--rule);font-size:.92rem;line-height:1.75}
+
+.notes{margin:2.5rem 0 0;padding:.8rem 1rem;background:var(--chrome);
+  border-left:3px solid var(--accent);font-family:var(--gothic);font-size:.8rem;color:var(--sub)}
+.notes p{margin:0 0 .3rem;font-weight:700;color:var(--ink)}
+.notes ul{margin:0;padding-left:1.2rem}
+.foot{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);
+  font-family:var(--gothic);font-size:.75rem;color:var(--sub)}
+
+a.ref{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule)}
+a.ref:hover{color:var(--accent);border-bottom-color:var(--accent)}
+a.ref-egov{border-bottom-style:dotted}
+a.ref-rule{border-bottom-color:var(--accent)}
+mark{background:var(--mark);color:inherit;padding:0 .05em}
+mark.live{background:var(--mark-live)}
+.toast{position:fixed;left:50%;bottom:2rem;transform:translateX(-50%);
+  background:var(--ink);color:#fff;font-family:var(--gothic);font-size:.8rem;
+  padding:.5rem .9rem;border-radius:3px;pointer-events:none;z-index:60;display:none}
+.toast.show{display:block}
+
+.toc-open{display:none}
+@media (max-width:900px){
+  body{font-size:16px}
+  .wrap{grid-template-columns:minmax(0,1fr)}
+  .toc{position:fixed;inset:5.6rem auto 0 0;width:82vw;max-width:20rem;background:var(--paper);
+    z-index:25;box-shadow:0 0 0 100vmax rgba(0,0,0,.25);max-height:none;height:calc(100vh - 5.6rem);
+    display:none}
+  .toc.open{display:block}
+  .toc-open{display:inline-block}
+  .doc{padding:1.4rem 1.1rem 6rem}
+  .search-box input{width:8rem}
+  .art-tools{opacity:1;position:static;flex-direction:row;justify-content:flex-end;margin-bottom:.15rem}
+  .art-tools button,.art-tools a{border:1px solid var(--rule);border-radius:2px;
+    padding:.1rem .45rem;display:inline-block}
+  .art{padding-left:0}
+}
+
+@media print{
+  .top,.toc,.art-tools,.crumb,.toast{display:none!important}
+  a.ref{border-bottom:0}
+  .wrap{display:block}
+  .doc{max-width:none;padding:0}
+  body{font-size:10.5pt;line-height:1.7}
+  .art{page-break-inside:avoid}
+}
+
+.anchor-alias{position:absolute;scroll-margin-top:6rem}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <button type="button" class="btn toc-open" id="toc-open">目次</button>
+    <h1 class="law-title">金融機関等の更生手続の特例等に関する規則</h1>
+    <span class="law-number">平成十五年二月十九日最高裁判所規則第三号</span>
+    <div class="top-tools">
+      <div class="search-box">
+        <input type="search" id="q" placeholder="条文を検索（/ キー）" aria-label="条文を検索">
+        <span class="hit-count" id="hits"></span>
+      </div>
+      <button type="button" class="btn" id="prev" title="前の該当箇所">前</button>
+      <button type="button" class="btn" id="next" title="次の該当箇所">次</button>
+      <button type="button" class="btn" id="numeral" aria-pressed="false"
+        title="条番号の表記を切り替える">123</button>
+    </div>
+  </div>
+  <div class="crumb" id="crumb"></div>
+</header>
+<div class="wrap">
+  <nav class="toc" id="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ul><li class="lv-art" data-text="金融機関等の更生手続の特例等に関する規則（原文は縦書き金融機関等の更生手続の特例等に関する規則（原文は縦書き改正 平成一六年一〇月六日最高裁判所規則第一五号同一八年二月八日同第二号令和四年二月二一日同第七号金融機関等の更生手続の特例等に関する規則を次のように定める。"><a href="#body-1">本文　金融機関等の更生手続の特例等に関する規則（原文は縦書き</a></li><li class="lv-div div-2"><a href="#d1">第一章　協同組織金融機関の更生手続</a><ul><li class="lv-art" data-text="第一条1条会社更生規則の準用会社更生規則の準用この章及び第三章に特別の定めがある場合を除き、金融機関等の更生手続の特例等に関する法律（平成八年法律第九十五号。以下「更生特例法」という。）の規定による協同組織金融機関（更生特例法第二条第二項に規定する協同組織金融機関をいう。以下同じ。）の更生手続に関しては、その性質に反しない限り、会社更生規則（平成十五年最高裁判所規則第二号）の規定を準用する。この場合において、同規則の規定中「株式会社」とあるのは「協同組織金融機関」と、「被申立会社」とあるのは「被申立金融機関」と、「開始前会社」とあるのは「開始前協同組織金融機関（更生特例法第四条第六項に規定する開始前協同組織金融機関をいう。）」と、「更生会社」とあるのは「更生協同組織金融機関（更生特例法第四条第七項に規定する更生協同組織金融機関をいう。）」と、「株主」とあるのは「組合員等（更生特例法第二条第十項に規定する組合員等をいう。）」と、「商号」とあるのは「名称」と、「本店」とあるのは「主たる事務所」と、「営業所」とあるのは「事務所」と読み替えるものとする。"><a href="#a1">第一条　会社更生規則の準用</a></li><li class="lv-art" data-text="更生手続開始の申立書の記載事項の特例更生手続開始の申立書の記載事項の特例1"><a href="#body-2">本文　更生手続開始の申立書の記載事項の特例</a></li><li class="lv-art" data-text="第二条2条協同組織金融機関の更生手続に関する前条において準用する会社更生規則第十二条の規定の適用については、同条第一項第一号中「目的」とあるのは「事業、地区」と、「資本金の額、株式の状況」とあるのは「登記された出資の総額、組合員等（更生特例法第二条第十項に規定する組合員等をいう。）の状況」とする。"><a href="#a2">第二条</a></li><li class="lv-art" data-text="第三条3条更生債権者表等の記載事項・更生特例法第八十六条更生債権者表等の記載事項・更生特例法第八十六条更生特例法第八十六条第二項の最高裁判所規則で定める事項は、次に掲げるものとする。一更生債権者（更生特例法第四条第九項に規定する更生債権者をいう。）の氏名又は名称及び住所二更生特例法第八十条第一項において準用する会社更生法（平成十四年法律第百五十四号）第百三十六条第二項各号に掲げる更生債権（更生特例法第四条第八項に規定する更生債権をいう。以下この条において同じ。）であるときは、その旨三執行力ある債務名義又は終局判決のある更生債権であるときは、その旨更生特例法第八十六条第三項の最高裁判所規則で定める事項は、次に掲げるものとする。一更生担保権者（更生特例法第四条第十一項に規定する更生担保権者をいう。）の氏名又は名称及び住所二更生特例法第八十条第一項において準用する会社更生法第百三十六条第二項各号に掲げる更生担保権（更生特例法第四条第十項に規定する更生担保権をいう。以下この条において同じ。）であるときは、その旨三執行力ある債務名義又は終局判決のある更生担保権であるときは、その旨"><a href="#a3">第三条　更生債権者表等の記載事項・更生特例法第八十六条</a></li></ul></li><li class="lv-div div-2"><a href="#d6">第二章　相互会社の更生手続</a><ul><li class="lv-art" data-text="第四条4条会社更生規則の準用会社更生規則の準用この章及び次章に特別の定めがある場合を除き、更生特例法の規定による相互会社（更生特例法第二条第六項に規定する相互会社をいう。以下同じ。）の更生手続に関しては、その性質に反しない限り、会社更生規則の規定を準用する。この場合において、同規則の規定中「株式会社」とあるのは「相互会社」と、「株主」とあるのは「社員」と、「商号」とあるのは「名称」と、「本店」とあるのは「主たる事務所」と、「営業所」とあるのは「事務所」と読み替えるものとする。"><a href="#a4">第四条　会社更生規則の準用</a></li><li class="lv-art" data-text="2"><a href="#body-3">本文</a></li><li class="lv-art" data-text="第五条5条更生手続開始の申立書の記載事項の特例更生手続開始の申立書の記載事項の特例相互会社の更生手続に関する前条において準用する会社更生規則第十二条の規定の適用については、同条第一項第一号中「資本金の額、株式の状況」とあるのは、「基金（保険業法（平成七年法律第百五号）第五十六条の基金償却積立金を含む。）の総額、社員の状況」とする。"><a href="#a5">第五条　更生手続開始の申立書の記載事項の特例</a></li><li class="lv-art" data-text="第六条6条更生債権者表等の記載事項・更生特例法第二百五十三条更生債権者表等の記載事項・更生特例法第二百五十三条更生特例法第二百五十三条第二項の最高裁判所規則で定める事項は、次に掲げるものとする。一更生債権者（更生特例法第百六十九条第九項に規定する更生債権者をいう。）の氏名又は名称及び住所二更生特例法第二百四十七条第一項において準用する会社更生法第百三十六条第二項各号に掲げる更生債権（更生特例法第百六十九条第八項に規定する更生債権をいう。以下この条において同じ。）であるときは、その旨三執行力ある債務名義又は終局判決のある更生債権であるときは、その旨更生特例法第二百五十三条第三項の最高裁判所規則で定める事項は、次に掲げるものとする。一更生担保権者（更生特例法第百六十九条第十一項に規定する更生担保権者をいう。）の氏名又は名称及び住所二更生特例法第二百四十七条第一項において準用する会社更生法第百三十六条第二項各号に掲げる更生担保権（更生特例法第百六十九条第十項に規定する更生担保権をいう。以下この条において同じ。）であるときは、その旨三執行力ある債務名義又は終局判決のある更生担保権であるときは、その旨"><a href="#a6">第六条　更生債権者表等の記載事項・更生特例法第二百五十三条</a></li></ul></li><li class="lv-div div-2"><a href="#d11">第三章　金融機関等の更生手続の特例</a><ul><li class="lv-art" data-text="第七条7条機構等に対する財産状況の周知機構等に対する財産状況の周知金融機関（更生特例法第二条第三項に規定する金融機関をいう。第十三条において同じ。）、金融商品取引業者（更生特例法第二条第四項に規定する金融商品取引業者をいう。第十三条において同じ。）又は保険会社（更生特例法第二条第五項に規定する保険会社をいう。第十三条において同じ。）の更生手続においては、管財人は、裁判所に提出した会社更生法第八十四条第一項（更生特例法第五十五条又は第二百二十一条において準用する場合を含む。）の報告書の要旨を預金保険機構、投資者保護基金（金融商品取引法（昭和二十三年法律第二十五号）第七十九条の二十一に規定する投資者保護基金であって、当該金融商品取引業者が加入しているものをいう。第十三条において同3じ。）又は保険契約者保護機構（保険業法第二百五十九条に規定する保険契約者保護機構であって、当該保険会社が加入しているものをいう。第十三条において同じ。）に知らせるため、当該報告書の要旨を記載した書面のこれらの者に対する送付、会社更生規則第二十五条第一項（第一条又は第四条において準用する場合を含む。）に規定する関係人説明会の日時及び場所のこれらの者に対する通知その他の適当な措置を執らなければならない。"><a href="#a7">第七条　機構等に対する財産状況の周知</a></li><li class="lv-art" data-text="第八条8条更生手続参加の届出の方式等・更生特例法第三百九十四条等更生手続参加の届出の方式等・更生特例法第三百九十四条等会社更生規則第三十六条第三項及び第五項、第三十八条第四項並びに第四十条第一項及び第二項の規定は、更生特例法第三百九十四条第一項本文、第四百十三条第一項本文又は第四百三十一条第一項本文の規定による参加の届出について準用する。"><a href="#a8">第八条　更生手続参加の届出の方式等・更生特例法第三百九十四条等</a></li><li class="lv-art" data-text="第九条9条異議の通知の特例・更生特例法第三百九十九条等異議の通知の特例・更生特例法第三百九十九条等更生特例法第三百九十五条に規定する機構代理預金者、更生特例法第四百十四条に規定する基金代理顧客及び更生特例法第四百三十二条に規定する保護機構代理保険契約者に対しては、会社更生規則第四十六条第二項（第一条及び第四条において準用する場合を含む。）の規定による通知をすることを要しない。"><a href="#a9">第九条　異議の通知の特例・更生特例法第三百九十九条等</a></li></ul></li><li class="lv-div div-2"><a href="#d15">第四章　金融機関等の再生手続の特例</a><ul><li class="lv-art" data-text="第十条10条事業の譲渡に関する総会等の議決に代わる許可の会員等に対する送達・更生特例法第四百五十四条事業の譲渡に関する総会等の議決に代わる許可の会員等に対する送達・更生特例法第四百五十四条民事再生規則（平成十二年最高裁判所規則第三号）第十九条第一項の規定は更生特例法第四百五十四条において準用する民事再生法（平成十一年法律第二百二十五号）第四十三条第二項の規定による会員又は組合員に対する送達をする場合について、同規則第十九条第二項の規定は更生特例法第四百五十四条において準用する民事再生法第四十三条第四項に規定する方法により更生特例法第四百五十四条において準用する民事再生法第四十三条第二項の規定による会員又は組合員に対する送達をした場合について準用する。"><a href="#a10">第十条　事業の譲渡に関する総会等の議決に代わる許可の会員等に対する送達・更生特例法第四百五十四条</a></li><li class="lv-art" data-text="第十一条11条再生手続参加の届出の方式等・更生特例法第四百六十五条等再生手続参加の届出の方式等・更生特例法第四百六十五条等民事再生規則第三十一条第二項及び第四項、第三十三条第七項並びに第三十五条第一項及び第二項の規定は、更生特例法第四百六十五条第一項本文又は第四百八十二条第一項本文の規定による参加の届出について準用する。4"><a href="#a11">第十一条　再生手続参加の届出の方式等・更生特例法第四百六十五条等</a></li><li class="lv-art" data-text="第十二条12条異議の通知の特例・更生特例法第四百七十条等異議の通知の特例・更生特例法第四百七十条等更生特例法第四百六十六条に規定する機構代理預金者及び更生特例法第四百八十三条に規定する基金代理顧客に対しては、民事再生規則第四十四条の規定による通知をすることを要しない。"><a href="#a12">第十二条　異議の通知の特例・更生特例法第四百七十条等</a></li></ul></li><li class="lv-div div-2"><a href="#d19">第五章　金融機関等の破産手続の特例</a><ul><li class="lv-art" data-text="第十三条13条機構等に対する財産状況の周知機構等に対する財産状況の周知金融機関、金融商品取引業者又は保険会社の破産手続においては、破産管財人は、裁判所に提出した破産法（平成十六年法律第七十五号）第百五十七条第一項の報告書の要旨を預金保険機構、投資者保護基金又は保険契約者保護機構に知らせるため、当該報告書の要旨を記載した書面のこれらの者に対する送付その他の適当な措置を執らなければならない。"><a href="#a13">第十三条　機構等に対する財産状況の周知</a></li><li class="lv-art" data-text="第十四条14条破産手続参加の届出の方式等・更生特例法第五百六条等破産手続参加の届出の方式等・更生特例法第五百六条等破産規則（平成十六年最高裁判所規則第十四号）第三十二条第三項及び第四項（第二号を除く。）、第三十三条第四項並びに第三十五条第一項の規定は、更生特例法第五百六条第一項本文、第五百二十三条第一項本文又は第五百三十九条第一項本文の規定による参加の届出について準用する。"><a href="#a14">第十四条　破産手続参加の届出の方式等・更生特例法第五百六条等</a></li><li class="lv-art" data-text="第十五条15条異議の通知の特例・更生特例法第五百十一条等異議の通知の特例・更生特例法第五百十一条等更生特例法第五百七条に規定する機構代理預金者、更生特例法第五百二十四条に規定する基金代理顧客及び更生特例法第五百四十条に規定する保護機構代理保険契約者に対しては、破産規則第三十九条第二項並びに第四十三条第四項本文及び第五項の規定による通知をすることを要しない。"><a href="#a15">第十五条　異議の通知の特例・更生特例法第五百十一条等</a></li></ul></li><li class="lv-div div-1"><a href="#sup1">附則</a></li><li class="lv-div div-1"><a href="#sup2">附則　（平成一六年一〇月六日最高裁判所規則第一五号）抄</a><ul><li class="lv-art" data-text="第一条1条施行期日施行期日この規則は、破産法（平成十六年法律第七十五号。附則第七条において「新破産法」という。）及び破産法の施行に伴う関係法律の整備等に関する法律（平成十六年法律第七十六号）の施行の日から施行する。"><a href="#sup2-a1">第一条　施行期日</a></li><li class="lv-art" data-text="第五条5条金融機関等の更生手続の特例等に関する規則の一部改正に伴う経過措置金融機関等の更生手続の特例等に関する規則の一部改正に伴う経過措置この規則の施行前にされた再生手続開始の申立てに係る金融機関（破産法の施行に伴う関係法律の整備等に関する法律第四条の規定による改正後の金融機関等の更生手続の特例等に関する法律（平成八年法律第九十五号。次項において「新更生特例法」という。）第二条第三項に規定する金融機関をいう。次項において同じ。）及び証券会社（同条第四項に規定する証券会社をいう。次項において同じ。）の再生事件については、第四条の規定による改正後の金融機関等の更生手続の特例等に関する規則（次項において「新更生特例規則」という。）第四章の規定にかかわらず、なお従前の例による。この規則の施行前にされた破産の申立て又はこの規則の施行前に職権でされた破産の宣告に係る金融機関、証券会社及び保険会社（新更生特例法第二条第五項に規定する保険会社をいう。）の破産事件については、新更生特例規則第五章の規定にかかわらず、なお従前の例による。"><a href="#sup2-a5">第五条　金融機関等の更生手続の特例等に関する規則の一部改正に伴う経過措置</a></li></ul></li><li class="lv-div div-1"><a href="#sup3">附則　（平成一八年二月八日最高裁判所規則第二号）抄</a></li><li class="lv-div div-1"><a href="#sup4">附則　（令和四年二月二一日最高裁判所規則第七号）</a></li></ul>
+  </nav>
+  <main class="doc" id="doc-outer">
+    <div class="doc-head">
+      <h1>金融機関等の更生手続の特例等に関する規則</h1>
+      <div class="meta">平成十五年二月十九日最高裁判所規則第三号　／　<a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kinnyukikankouseikisokuR4.2.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本PDF p.1</a></div>
+    </div>
+    <div id="doc">
+<article class="art noarticle" id="body-1" data-path=""><div class="art-tools"><button type="button" data-anchor="body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kinnyukikankouseikisokuR4.2.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（金融機関等の更生手続の特例等に関する規則（原文は縦書き）</p><p class="para" id="body-1-p1"><span class="body-text">改正 平成一六年一〇月六日最高裁判所規則第一五号同一八年二月八日同第二号令和四年二月二一日同第七号金融機関等の更生手続の特例等に関する規則を次のように定める。</span></p></article>
+<h3 class="div-head" id="d1" data-path="第一章　協同組織金融機関の更生手続"><span class="lbl">第一章</span>　協同組織金融機関の更生手続</h3>
+<article class="art" id="a1" data-path="第一章　協同組織金融機関の更生手続"><span class="anchor-alias" id="Mp-At_1"></span><div class="art-tools"><button type="button" data-anchor="a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kinnyukikankouseikisokuR4.2.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（会社更生規則の準用）</p><p class="para" id="a1-p1"><a class="art-no" href="#a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この章及び第三章に特別の定めがある場合を除き、金融機関等の更生手続の特例等に関する法律（平成八年法律第九十五号。以下「更生特例法」という。）の規定による協同組織金融機関（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第二条</a>第二項に規定する協同組織金融機関をいう。以下同じ。）の更生手続に関しては、その性質に反しない限り、会社更生規則（平成十五年最高裁判所規則第二号）の規定を準用する。この場合において、同規則の規定中「株式会社」とあるのは「協同組織金融機関」と、「被申立会社」とあるのは「被申立金融機関」と、「開始前会社」とあるのは「開始前協同組織金融機関（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_4" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第四条</a>第六項に規定する開始前協同組織金融機関をいう。）」と、「更生会社」とあるのは「更生協同組織金融機関（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_4" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第四条</a>第七項に規定する更生協同組織金融機関をいう。）」と、「株主」とあるのは「組合員等（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第二条</a>第十項に規定する組合員等をいう。）」と、「商号」とあるのは「名称」と、「本店」とあるのは「主たる事務所」と、「営業所」とあるのは「事務所」と読み替えるものとする。</span></p></article>
+<article class="art noarticle" id="body-2" data-path="第一章　協同組織金融機関の更生手続"><div class="art-tools"><button type="button" data-anchor="body-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kinnyukikankouseikisokuR4.2.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（更生手続開始の申立書の記載事項の特例）</p><p class="para" id="body-2-p1"><span class="body-text">1</span></p></article>
+<article class="art" id="a2" data-path="第一章　協同組織金融機関の更生手続"><span class="anchor-alias" id="Mp-At_2"></span><div class="art-tools"><button type="button" data-anchor="a2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kinnyukikankouseikisokuR4.2.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="para" id="a2-p1"><a class="art-no" href="#a2" data-kan="第二条" data-num="第2条">第二条</a><span class="body-text">協同組織金融機関の更生手続に関する前条において準用する<a class="ref ref-rule" href="302.html#a12" title="この規則集の中を開きます">会社更生規則第十二条</a>の規定の適用については、同条第一項第一号中「目的」とあるのは「事業、地区」と、「資本金の額、株式の状況」とあるのは「登記された出資の総額、組合員等（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第二条</a>第十項に規定する組合員等をいう。）の状況」とする。</span></p></article>
+<article class="art" id="a3" data-path="第一章　協同組織金融機関の更生手続"><span class="anchor-alias" id="Mp-At_3"></span><div class="art-tools"><button type="button" data-anchor="a3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kinnyukikankouseikisokuR4.2.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（更生債権者表等の記載事項・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_86" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第八十六条</a>）</p><p class="para" id="a3-p1"><a class="art-no" href="#a3" data-kan="第三条" data-num="第3条">第三条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_86" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第八十六条</a>第二項の最高裁判所規則で定める事項は、次に掲げるものとする。</span></p><ol class="items"><li id="a3-p1-1"><span class="mk">一</span><span class="tx">更生債権者（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_4" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第四条</a>第九項に規定する更生債権者をいう。）の氏名又は名称及び住所</span></li><li id="a3-p1-2"><span class="mk">二</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_80" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第八十条</a>第一項において準用する会社更生法（平成十四年法律第百五十四号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/414AC0000000154#Mp-At_136" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第百三十六条</a>第二項各号に掲げる更生債権（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_4" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第四条</a>第八項に規定する更生債権をいう。以下この条において同じ。）であるときは、その旨</span></li><li id="a3-p1-3"><span class="mk">三</span><span class="tx">執行力ある債務名義又は終局判決のある更生債権であるときは、その旨</span></li></ol><p class="para" id="a3-p2"><span class="pno">2</span><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_86" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第八十六条</a>第三項の最高裁判所規則で定める事項は、次に掲げるものとする。</span></p><ol class="items"><li id="a3-p2-1"><span class="mk">一</span><span class="tx">更生担保権者（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_4" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第四条</a>第十一項に規定する更生担保権者をいう。）の氏名又は名称及び住所</span></li><li id="a3-p2-2"><span class="mk">二</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_80" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第八十条</a><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/414AC0000000154#Mp-At_136" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第一項において準用する会社更生法第百三十六条</a>第二項各号に掲げる更生担保権（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_4" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第四条</a>第十項に規定する更生担保権をいう。以下この条において同じ。）であるときは、その旨</span></li><li id="a3-p2-3"><span class="mk">三</span><span class="tx">執行力ある債務名義又は終局判決のある更生担保権であるときは、その旨</span></li></ol></article>
+<h3 class="div-head" id="d6" data-path="第二章　相互会社の更生手続"><span class="lbl">第二章</span>　相互会社の更生手続</h3>
+<article class="art" id="a4" data-path="第二章　相互会社の更生手続"><span class="anchor-alias" id="Mp-At_4"></span><div class="art-tools"><button type="button" data-anchor="a4" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kinnyukikankouseikisokuR4.2.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="caption">（会社更生規則の準用）</p><p class="para" id="a4-p1"><a class="art-no" href="#a4" data-kan="第四条" data-num="第4条">第四条</a><span class="body-text">この章及び次章に特別の定めがある場合を除き、更生特例法の規定による相互会社（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第二条</a>第六項に規定する相互会社をいう。以下同じ。）の更生手続に関しては、その性質に反しない限り、会社更生規則の規定を準用する。この場合において、同規則の規定中「株式会社」とあるのは「相互会社」と、「株主」とあるのは「社員」と、「商号」とあるのは「名称」と、「本店」とあるのは「主たる事務所」と、「営業所」とあるのは「事務所」と読み替えるものとする。</span></p><p class="amend-note">（平一八最裁規二・一部改正）</p></article>
+<article class="art noarticle" id="body-3" data-path="第二章　相互会社の更生手続"><div class="art-tools"><button type="button" data-anchor="body-3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kinnyukikankouseikisokuR4.2.pdf#page=2" target="_blank" rel="noopener" title="原本PDFの2ページを開きます">原本 p.2</a></div><p class="para" id="body-3-p1"><span class="body-text">2</span></p></article>
+<article class="art" id="a5" data-path="第二章　相互会社の更生手続"><span class="anchor-alias" id="Mp-At_5"></span><div class="art-tools"><button type="button" data-anchor="a5" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kinnyukikankouseikisokuR4.2.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（更生手続開始の申立書の記載事項の特例）</p><p class="para" id="a5-p1"><a class="art-no" href="#a5" data-kan="第五条" data-num="第5条">第五条</a><span class="body-text">相互会社の更生手続に関する前条において準用する<a class="ref ref-rule" href="302.html#a12" title="この規則集の中を開きます">会社更生規則第十二条</a>の規定の適用については、同条第一項第一号中「資本金の額、株式の状況」とあるのは、「基金（保険業法（平成七年法律第百五号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/407AC0000000105#Mp-At_56" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第五十六条</a>の基金償却積立金を含む。）の総額、社員の状況」とする。</span></p></article>
+<article class="art" id="a6" data-path="第二章　相互会社の更生手続"><span class="anchor-alias" id="Mp-At_6"></span><div class="art-tools"><button type="button" data-anchor="a6" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kinnyukikankouseikisokuR4.2.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（更生債権者表等の記載事項・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_253" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第二百五十三条</a>）</p><p class="para" id="a6-p1"><a class="art-no" href="#a6" data-kan="第六条" data-num="第6条">第六条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_253" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第二百五十三条</a>第二項の最高裁判所規則で定める事項は、次に掲げるものとする。</span></p><ol class="items"><li id="a6-p1-1"><span class="mk">一</span><span class="tx">更生債権者（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_169" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第百六十九条</a>第九項に規定する更生債権者をいう。）の氏名又は名称及び住所</span></li><li id="a6-p1-2"><span class="mk">二</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_247" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第二百四十七条</a><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/414AC0000000154#Mp-At_136" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第一項において準用する会社更生法第百三十六条</a>第二項各号に掲げる更生債権（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_169" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第百六十九条</a>第八項に規定する更生債権をいう。以下この条において同じ。）であるときは、その旨</span></li><li id="a6-p1-3"><span class="mk">三</span><span class="tx">執行力ある債務名義又は終局判決のある更生債権であるときは、その旨</span></li></ol><p class="para" id="a6-p2"><span class="pno">2</span><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_253" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第二百五十三条</a>第三項の最高裁判所規則で定める事項は、次に掲げるものとする。</span></p><ol class="items"><li id="a6-p2-1"><span class="mk">一</span><span class="tx">更生担保権者（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_169" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第百六十九条</a>第十一項に規定する更生担保権者をいう。）の氏名又は名称及び住所</span></li><li id="a6-p2-2"><span class="mk">二</span><span class="tx"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_247" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第二百四十七条</a><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/414AC0000000154#Mp-At_136" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第一項において準用する会社更生法第百三十六条</a>第二項各号に掲げる更生担保権（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_169" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第百六十九条</a>第十項に規定する更生担保権をいう。以下この条において同じ。）であるときは、その旨</span></li><li id="a6-p2-3"><span class="mk">三</span><span class="tx">執行力ある債務名義又は終局判決のある更生担保権であるときは、その旨</span></li></ol></article>
+<h3 class="div-head" id="d11" data-path="第三章　金融機関等の更生手続の特例"><span class="lbl">第三章</span>　金融機関等の更生手続の特例</h3>
+<article class="art" id="a7" data-path="第三章　金融機関等の更生手続の特例"><span class="anchor-alias" id="Mp-At_7"></span><div class="art-tools"><button type="button" data-anchor="a7" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kinnyukikankouseikisokuR4.2.pdf#page=3" target="_blank" rel="noopener" title="原本PDFの3ページを開きます">原本 p.3</a></div><p class="caption">（機構等に対する財産状況の周知）</p><p class="para" id="a7-p1"><a class="art-no" href="#a7" data-kan="第七条" data-num="第7条">第七条</a><span class="body-text">金融機関（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第二条</a>第三項に規定する金融機関をいう。<a class="ref ref-self" href="#a13">第十三条</a>において同じ。）、金融商品取引業者（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第二条</a>第四項に規定する金融商品取引業者をいう。<a class="ref ref-self" href="#a13">第十三条</a>において同じ。）又は保険会社（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第二条</a>第五項に規定する保険会社をいう。<a class="ref ref-self" href="#a13">第十三条</a>において同じ。）の更生手続においては、管財人は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/414AC0000000154#Mp-At_84" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">裁判所に提出した会社更生法第八十四条</a>第一項（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_55" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第五十五条</a>又は第二百二十一条において準用する場合を含む。）の報告書の要旨を預金保険機構、投資者保護基金（金融商品取引法（昭和二十三年法律第二十五号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/323AC0000000025#Mp-At_79_21" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第七十九条の二十一</a>に規定する投資者保護基金であって、当該金融商品取引業者が加入しているものをいう。<a class="ref ref-self" href="#a13">第十三条</a>において同3じ。）又は保険契約者保護機構（<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/407AC0000000105#Mp-At_259" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">保険業法第二百五十九条</a>に規定する保険契約者保護機構であって、当該保険会社が加入しているものをいう。<a class="ref ref-self" href="#a13">第十三条</a>において同じ。）に知らせるため、当該報告書の要旨を記載した書面のこれらの者に対する送付、<a class="ref ref-rule" href="302.html#a25" title="この規則集の中を開きます">会社更生規則第二十五条</a>第一項（<a class="ref ref-self" href="#a1">第一条</a>又は<a class="ref ref-self" href="#a4">第四条</a>において準用する場合を含む。）に規定する関係人説明会の日時及び場所のこれらの者に対する通知その他の適当な措置を執らなければならない。</span></p></article>
+<article class="art" id="a8" data-path="第三章　金融機関等の更生手続の特例"><span class="anchor-alias" id="Mp-At_8"></span><div class="art-tools"><button type="button" data-anchor="a8" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kinnyukikankouseikisokuR4.2.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（更生手続参加の届出の方式等・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_394" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第三百九十四条</a>等）</p><p class="para" id="a8-p1"><a class="art-no" href="#a8" data-kan="第八条" data-num="第8条">第八条</a><span class="body-text"><a class="ref ref-rule" href="302.html#a36" title="この規則集の中を開きます">会社更生規則第三十六条</a>第三項及び第五項、第三十八条第四項並びに第四十条第一項及び第二項の規定は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_394" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第三百九十四条</a>第一項本文、第四百十三条第一項本文又は第四百三十一条第一項本文の規定による参加の届出について準用する。</span></p></article>
+<article class="art" id="a9" data-path="第三章　金融機関等の更生手続の特例"><span class="anchor-alias" id="Mp-At_9"></span><div class="art-tools"><button type="button" data-anchor="a9" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kinnyukikankouseikisokuR4.2.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（異議の通知の特例・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_399" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第三百九十九条</a>等）</p><p class="para" id="a9-p1"><a class="art-no" href="#a9" data-kan="第九条" data-num="第9条">第九条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_395" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第三百九十五条</a>に規定する機構代理預金者、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_414" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第四百十四条</a>に規定する基金代理顧客及び<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_432" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第四百三十二条</a>に規定する保護機構代理保険契約者に対しては、<a class="ref ref-rule" href="302.html#a46" title="この規則集の中を開きます">会社更生規則第四十六条</a>第二項（<a class="ref ref-self" href="#a1">第一条</a>及び<a class="ref ref-self" href="#a4">第四条</a>において準用する場合を含む。）の規定による通知をすることを要しない。</span></p></article>
+<h3 class="div-head" id="d15" data-path="第四章　金融機関等の再生手続の特例"><span class="lbl">第四章</span>　金融機関等の再生手続の特例</h3>
+<article class="art" id="a10" data-path="第四章　金融機関等の再生手続の特例"><span class="anchor-alias" id="Mp-At_10"></span><div class="art-tools"><button type="button" data-anchor="a10" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kinnyukikankouseikisokuR4.2.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（事業の譲渡に関する総会等の議決に代わる許可の会員等に対する送達・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_454" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第四百五十四条</a>）</p><p class="para" id="a10-p1"><a class="art-no" href="#a10" data-kan="第十条" data-num="第10条">第十条</a><span class="body-text">民事再生規則（平成十二年最高裁判所規則第三号）<a class="ref ref-rule" href="301.html#a19" title="この規則集の中を開きます">第十九条</a>第一項の規定は<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_454" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第四百五十四条</a>において準用する民事再生法（平成十一年法律第二百二十五号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000225#Mp-At_43" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第四十三条</a>第二項の規定による会員又は組合員に対する送達をする場合について、同規則第十九条第二項の規定は<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_454" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第四百五十四条</a><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000225#Mp-At_43" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">において準用する民事再生法第四十三条</a>第四項に規定する方法により<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_454" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第四百五十四条</a><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/411AC0000000225#Mp-At_43" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">において準用する民事再生法第四十三条</a>第二項の規定による会員又は組合員に対する送達をした場合について準用する。</span></p></article>
+<article class="art" id="a11" data-path="第四章　金融機関等の再生手続の特例"><span class="anchor-alias" id="Mp-At_11"></span><div class="art-tools"><button type="button" data-anchor="a11" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kinnyukikankouseikisokuR4.2.pdf#page=4" target="_blank" rel="noopener" title="原本PDFの4ページを開きます">原本 p.4</a></div><p class="caption">（再生手続参加の届出の方式等・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_465" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第四百六十五条</a>等）</p><p class="para" id="a11-p1"><a class="art-no" href="#a11" data-kan="第十一条" data-num="第11条">第十一条</a><span class="body-text"><a class="ref ref-rule" href="301.html#a31" title="この規則集の中を開きます">民事再生規則第三十一条</a>第二項及び第四項、第三十三条第七項並びに第三十五条第一項及び第二項の規定は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_465" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第四百六十五条</a>第一項本文又は第四百八十二条第一項本文の規定による参加の届出について準用する。4</span></p></article>
+<article class="art" id="a12" data-path="第四章　金融機関等の再生手続の特例"><span class="anchor-alias" id="Mp-At_12"></span><div class="art-tools"><button type="button" data-anchor="a12" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kinnyukikankouseikisokuR4.2.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（異議の通知の特例・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_470" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第四百七十条</a>等）</p><p class="para" id="a12-p1"><a class="art-no" href="#a12" data-kan="第十二条" data-num="第12条">第十二条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_466" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第四百六十六条</a>に規定する機構代理預金者及び<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_483" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第四百八十三条</a>に規定する基金代理顧客に対しては、<a class="ref ref-rule" href="301.html#a44" title="この規則集の中を開きます">民事再生規則第四十四条</a>の規定による通知をすることを要しない。</span></p></article>
+<h3 class="div-head" id="d19" data-path="第五章　金融機関等の破産手続の特例"><span class="lbl">第五章</span>　金融機関等の破産手続の特例</h3>
+<article class="art" id="a13" data-path="第五章　金融機関等の破産手続の特例"><span class="anchor-alias" id="Mp-At_13"></span><div class="art-tools"><button type="button" data-anchor="a13" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kinnyukikankouseikisokuR4.2.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（機構等に対する財産状況の周知）</p><p class="para" id="a13-p1"><a class="art-no" href="#a13" data-kan="第十三条" data-num="第13条">第十三条</a><span class="body-text">金融機関、金融商品取引業者又は保険会社の破産手続においては、破産管財人は、裁判所に提出した破産法（平成十六年法律第七十五号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/416AC0000000075#Mp-At_157" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第百五十七条</a>第一項の報告書の要旨を預金保険機構、投資者保護基金又は保険契約者保護機構に知らせるため、当該報告書の要旨を記載した書面のこれらの者に対する送付その他の適当な措置を執らなければならない。</span></p></article>
+<article class="art" id="a14" data-path="第五章　金融機関等の破産手続の特例"><span class="anchor-alias" id="Mp-At_14"></span><div class="art-tools"><button type="button" data-anchor="a14" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kinnyukikankouseikisokuR4.2.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（破産手続参加の届出の方式等・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_506" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第五百六条</a>等）</p><p class="para" id="a14-p1"><a class="art-no" href="#a14" data-kan="第十四条" data-num="第14条">第十四条</a><span class="body-text">破産規則（平成十六年最高裁判所規則第十四号）<a class="ref ref-rule" href="300.html#a32" title="この規則集の中を開きます">第三十二条</a>第三項及び第四項（第二号を除く。）、第三十三条第四項並びに第三十五条第一項の規定は、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_506" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第五百六条</a>第一項本文、第五百二十三条第一項本文又は第五百三十九条第一項本文の規定による参加の届出について準用する。</span></p></article>
+<article class="art" id="a15" data-path="第五章　金融機関等の破産手続の特例"><span class="anchor-alias" id="Mp-At_15"></span><div class="art-tools"><button type="button" data-anchor="a15" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kinnyukikankouseikisokuR4.2.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="caption">（異議の通知の特例・<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_511" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第五百十一条</a>等）</p><p class="para" id="a15-p1"><a class="art-no" href="#a15" data-kan="第十五条" data-num="第15条">第十五条</a><span class="body-text"><a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_507" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第五百七条</a>に規定する機構代理預金者、<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_524" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第五百二十四条</a>に規定する基金代理顧客及び<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_540" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第五百四十条</a>に規定する保護機構代理保険契約者に対しては、<a class="ref ref-rule" href="300.html#a39" title="この規則集の中を開きます">破産規則第三十九条</a>第二項並びに第四十三条第四項本文及び第五項の規定による通知をすることを要しない。</span></p></article>
+<h2 class="div-head" id="sup1" data-path="附則　"><span class="lbl">附則</span></h2>
+<article class="art noarticle" id="sup-body-1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kinnyukikankouseikisokuR4.2.pdf#page=5" target="_blank" rel="noopener" title="原本PDFの5ページを開きます">原本 p.5</a></div><p class="para" id="sup-body-1-p1"><span class="body-text">この規則は、会社更生法（平成十四年法律第百五十四号）の施行の日から施行する。</span></p><p class="para" id="sup-body-1-p2"><span class="pno">2</span><span class="body-text">この規則の施行前にされた更生手続開始の申立てに係る株式会社、協同組織金融機関及び相互会社の更生事件については、なお従前の例による。5</span></p></article>
+<h2 class="div-head" id="sup2" data-path="附則　（平成一六年一〇月六日最高裁判所規則第一五号）抄"><span class="lbl">附則</span>　（平成一六年一〇月六日最高裁判所規則第一五号）抄</h2>
+<article class="art" id="sup2-a1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup2-a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kinnyukikankouseikisokuR4.2.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="caption">（施行期日）</p><p class="para" id="sup2-a1-p1"><a class="art-no" href="#sup2-a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">この規則は、破産法（平成十六年法律第七十五号。附則<a class="ref ref-self" href="#a7">第七条</a>において「新破産法」という。）及び破産法の施行に伴う関係法律の整備等に関する法律（平成十六年法律第七十六号）の施行の日から施行する。</span></p></article>
+<article class="art" id="sup2-a5" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup2-a5" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kinnyukikankouseikisokuR4.2.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="caption">（金融機関等の更生手続の特例等に関する規則の一部改正に伴う経過措置）</p><p class="para" id="sup2-a5-p1"><a class="art-no" href="#sup2-a5" data-kan="第五条" data-num="第5条">第五条</a><span class="body-text">この規則の施行前にされた再生手続開始の申立てに係る金融機関（破産法の施行に伴う関係法律の整備等に関する法律第四条の規定による改正後の金融機関等の更生手続の特例等に関する法律（平成八年法律第九十五号。次項において「新更生特例法」という。）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">第二条</a>第三項に規定する金融機関をいう。次項において同じ。）及び証券会社（同条第四項に規定する証券会社をいう。次項において同じ。）の再生事件については、<a class="ref ref-self" href="#a4">第四条</a>の規定による改正後の金融機関等の更生手続の特例等に関する規則（次項において「新更生特例規則」という。）第四章の規定にかかわらず、なお従前の例による。</span></p><p class="para" id="sup2-a5-p2"><span class="pno">2</span><span class="body-text">この規則の施行前にされた破産の申立て又はこの規則の施行前に職権でされた破産の宣告に係る金融機関、証券会社及び保険会社（新<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000095#Mp-At_2" target="_blank" rel="noopener" title="e-Gov法令検索で開きます">更生特例法第二条</a>第五項に規定する保険会社をいう。）の破産事件については、新更生特例規則第五章の規定にかかわらず、なお従前の例による。</span></p></article>
+<h2 class="div-head" id="sup3" data-path="附則　（平成一八年二月八日最高裁判所規則第二号）抄"><span class="lbl">附則</span>　（平成一八年二月八日最高裁判所規則第二号）抄</h2>
+<article class="art noarticle" id="sup-body-2" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kinnyukikankouseikisokuR4.2.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="para" id="sup-body-2-p1"><span class="body-text">この規則は、会社法（平成十七年法律第八十六号）の施行の日（次項において「施行日」という。）から施行する。</span></p></article>
+<h2 class="div-head" id="sup4" data-path="附則　（令和四年二月二一日最高裁判所規則第七号）"><span class="lbl">附則</span>　（令和四年二月二一日最高裁判所規則第七号）</h2>
+<article class="art noarticle" id="sup-body-3" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-3" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/vc-files/courts/2022/kinnyukikankouseikisokuR4.2.pdf#page=6" target="_blank" rel="noopener" title="原本PDFの6ページを開きます">原本 p.6</a></div><p class="para" id="sup-body-3-p1"><span class="body-text">この規則は、公布の日から施行する。6</span></p></article>
+    </div>
+    <aside class="notes"><p>読み取りに関する注意</p><ul><li>PDF中の目次は読み飛ばし、条見出しから目次を再構成しました。</li><li>各条の「原本」は https://www.courts.go.jp/vc-files/courts/2022/kinnyukikankouseikisokuR4.2.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。</li></ul></aside>
+    <div class="foot">出典：kinnyukikankouseikisokuR4.2.pdf　／　最高裁規則ビューア 1.9.0 で 2026年09月02日 に変換　
+    条文の正確な内容は原本で確認してください。</div>
+  </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  "use strict";
+  var doc = document.getElementById("doc");
+  var input = document.getElementById("q");
+  var hitLabel = document.getElementById("hits");
+  var crumb = document.getElementById("crumb");
+  var toc = document.getElementById("toc");
+  var toast = document.getElementById("toast");
+  var pristine = doc.innerHTML;
+  var hits = [];
+  var cursor = -1;
+
+  function say(msg){
+    toast.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(say._t);
+    say._t = setTimeout(function(){ toast.classList.remove("show"); }, 1600);
+  }
+
+  /* ---------------------------------------------------------- 条番号の表記 */
+  var numeralBtn = document.getElementById("numeral");
+  function applyNumeral(useArabic){
+    var nodes = doc.querySelectorAll(".art-no");
+    for (var i = 0; i < nodes.length; i++){
+      var el = nodes[i];
+      var v = useArabic ? el.getAttribute("data-num") : el.getAttribute("data-kan");
+      if (v) el.textContent = v;
+    }
+    numeralBtn.setAttribute("aria-pressed", useArabic ? "true" : "false");
+  }
+  numeralBtn.addEventListener("click", function(){
+    var next = numeralBtn.getAttribute("aria-pressed") !== "true";
+    applyNumeral(next);
+    try { localStorage.setItem("rule-numeral", next ? "1" : "0"); } catch(e){}
+    pristine = doc.innerHTML;
+  });
+  try {
+    /* 既定の表記は原本に合わせてある。前回の切り替えが残っていればそれに従う */
+    var saved = localStorage.getItem("rule-numeral");
+    if (saved === "1" || saved === "0"){ applyNumeral(saved === "1"); pristine = doc.innerHTML; }
+  } catch(e){}
+
+  /* -------------------------------------------------------------- 検索処理 */
+  var SKIP = {SCRIPT:1, STYLE:1, MARK:1, BUTTON:1, A:1};   /* 原本リンク等の道具立ては検索対象にしない */
+  function highlight(term){
+    doc.innerHTML = pristine;
+    hits = [];
+    cursor = -1;
+    if (!term){ hitLabel.textContent = ""; refreshToc(""); return; }
+    var walker = document.createTreeWalker(doc, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        if (!n.nodeValue || n.nodeValue.indexOf(term) < 0) return NodeFilter.FILTER_REJECT;
+        if (n.parentNode && SKIP[n.parentNode.nodeName]) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var targets = [];
+    var node;
+    while ((node = walker.nextNode())) targets.push(node);
+    for (var i = 0; i < targets.length; i++){
+      var t = targets[i], text = t.nodeValue, pos = 0, frag = document.createDocumentFragment();
+      var idx;
+      while ((idx = text.indexOf(term, pos)) >= 0){
+        if (idx > pos) frag.appendChild(document.createTextNode(text.slice(pos, idx)));
+        var m = document.createElement("mark");
+        m.textContent = text.substr(idx, term.length);
+        frag.appendChild(m);
+        hits.push(m);
+        pos = idx + term.length;
+      }
+      if (pos < text.length) frag.appendChild(document.createTextNode(text.slice(pos)));
+      t.parentNode.replaceChild(frag, t);
+    }
+    hitLabel.textContent = hits.length ? "1 / " + hits.length : "該当なし";
+    refreshToc(term);
+    if (hits.length){ cursor = 0; focusHit(0, false); }
+  }
+  function focusHit(i, scroll){
+    if (!hits.length) return;
+    for (var k = 0; k < hits.length; k++) hits[k].classList.remove("live");
+    cursor = (i + hits.length) % hits.length;
+    hits[cursor].classList.add("live");
+    hitLabel.textContent = (cursor + 1) + " / " + hits.length;
+    if (scroll !== false) hits[cursor].scrollIntoView({block:"center", behavior:"instant"});
+  }
+  function refreshToc(term){
+    var links = toc.querySelectorAll("li.lv-art");
+    for (var i = 0; i < links.length; i++){
+      var li = links[i];
+      var body = (li.getAttribute("data-text") || "");
+      li.classList.toggle("hidden", !!term && body.indexOf(term) < 0);
+    }
+    var divs = toc.querySelectorAll("li.lv-div");
+    for (var j = divs.length - 1; j >= 0; j--){
+      var d = divs[j];
+      var kids = d.querySelectorAll("li:not(.hidden)");
+      d.classList.toggle("hidden", !!term && kids.length === 0);
+    }
+  }
+  var timer = null;
+  input.addEventListener("input", function(){
+    clearTimeout(timer);
+    var v = input.value.trim();
+    timer = setTimeout(function(){ highlight(v); }, 180);
+  });
+  input.addEventListener("keydown", function(e){
+    if (e.key === "Enter"){ e.preventDefault(); focusHit(cursor + (e.shiftKey ? -1 : 1)); }
+    if (e.key === "Escape"){ input.value = ""; highlight(""); input.blur(); }
+  });
+  document.getElementById("prev").addEventListener("click", function(){ focusHit(cursor - 1); });
+  document.getElementById("next").addEventListener("click", function(){ focusHit(cursor + 1); });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "/" && e.target === document.body){ e.preventDefault(); input.focus(); }
+  });
+
+  /* -------------------------------------------------- リンクのコピー・共有 */
+  doc.addEventListener("click", function(e){
+    var btn = e.target.closest ? e.target.closest("button[data-anchor]") : null;
+    if (!btn) return;
+    var anchor = btn.getAttribute("data-anchor");
+    var url = location.href.split("#")[0] + "#" + anchor;
+    history.replaceState(null, "", "#" + anchor);
+    var done = function(){ say("リンクをコピーしました"); };
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(done, function(){ legacyCopy(url, done); });
+    } else {
+      legacyCopy(url, done);
+    }
+  });
+  function legacyCopy(text, done){
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); done(); }
+    catch(err){ say("コピーできませんでした。アドレス欄からURLを控えてください"); }
+    document.body.removeChild(ta);
+  }
+
+  /* ------------------------------------------------ 現在位置の表示と目次連動 */
+  var watched = doc.querySelectorAll(".art[id], .div-head[id]");
+  var tocLinks = {};
+  var links = toc.querySelectorAll("a[href^='#']");
+  for (var i = 0; i < links.length; i++) tocLinks[links[i].getAttribute("href").slice(1)] = links[i];
+  var currentLink = null;
+  if ("IntersectionObserver" in window){
+    var visible = [];
+    var io = new IntersectionObserver(function(entries){
+      for (var i = 0; i < entries.length; i++){
+        var id = entries[i].target.id;
+        var at = visible.indexOf(id);
+        if (entries[i].isIntersecting){ if (at < 0) visible.push(id); }
+        else if (at >= 0){ visible.splice(at, 1); }
+      }
+      if (!visible.length) return;
+      var first = null;
+      for (var k = 0; k < watched.length; k++){
+        if (visible.indexOf(watched[k].id) >= 0){ first = watched[k]; break; }
+      }
+      if (!first) return;
+      crumb.textContent = first.getAttribute("data-path") || "";
+      var link = tocLinks[first.id];
+      if (link && link !== currentLink){
+        if (currentLink) currentLink.classList.remove("current");
+        link.classList.add("current");
+        currentLink = link;
+      }
+    }, {rootMargin:"-20% 0px -70% 0px"});
+    for (var w = 0; w < watched.length; w++) io.observe(watched[w]);
+  }
+
+  /* -------------------------------------------------------- 目次の開閉（狭幅） */
+  var opener = document.getElementById("toc-open");
+  if (opener){
+    opener.addEventListener("click", function(){ toc.classList.toggle("open"); });
+    toc.addEventListener("click", function(e){
+      if (e.target.tagName === "A") toc.classList.remove("open");
+    });
+  }
+})();
+</script>
+</body>
+</html>

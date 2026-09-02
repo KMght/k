@@ -1,0 +1,261 @@
+{
+ "rule_id": "713",
+ "title": "司法修習生の修習専念資金の貸与等に関する規則",
+ "enforcement_iso": "2023-11-01",
+ "url": "https://kmght.github.io/ksk/r/713.html",
+ "articles": [
+  {
+   "key": "1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "貸与申請の方式等",
+   "anchor": "a1",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "2",
+   "label": "第二条",
+   "short": "2条",
+   "caption": "修習専念資金の貸与の方法",
+   "anchor": "a2",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "3",
+   "label": "第三条",
+   "short": "3条",
+   "caption": "修習専念資金の額",
+   "anchor": "a3",
+   "paragraphs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "4",
+   "label": "第四条",
+   "short": "4条",
+   "caption": "保証人",
+   "anchor": "a4",
+   "paragraphs": [
+    1,
+    2,
+    3
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "5",
+   "label": "第五条",
+   "short": "5条",
+   "caption": "貸与申請の撤回",
+   "anchor": "a5",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "6",
+   "label": "第六条",
+   "short": "6条",
+   "caption": "修習専念資金の貸与の終了",
+   "anchor": "a6",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "7",
+   "label": "第七条",
+   "short": "7条",
+   "caption": "修習専念資金の返還の期限等",
+   "anchor": "a7",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "7_2",
+   "label": "第七条の二",
+   "short": "7条の2",
+   "caption": "法第六十七条の三第三項に規定する最高裁判所の定める事由",
+   "anchor": "a7-2",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "8",
+   "label": "第八条",
+   "short": "8条",
+   "caption": "期限の利益の喪失",
+   "anchor": "a8",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "9",
+   "label": "第九条",
+   "short": "9条",
+   "caption": "返還明細書の提出",
+   "anchor": "a9",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "10",
+   "label": "第十条",
+   "short": "10条",
+   "caption": "延滞利息",
+   "anchor": "a10",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "11",
+   "label": "第十一条",
+   "short": "11条",
+   "caption": "修習専念資金の貸与及び返還に関する書面の提出",
+   "anchor": "a11",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "12",
+   "label": "第十二条",
+   "short": "12条",
+   "caption": "電子情報処理組織を使用する方法等による申請等",
+   "anchor": "a12",
+   "paragraphs": [
+    1,
+    2
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "13",
+   "label": "第十三条",
+   "short": "13条",
+   "caption": "補則",
+   "anchor": "a13",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
+   "key": "s1:1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "施行期日",
+   "anchor": "sup1-a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  },
+  {
+   "key": "s1:2",
+   "label": "第二条",
+   "short": "2条",
+   "caption": "司法修習生の給与に関する規則の廃止",
+   "anchor": "sup1-a2",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  },
+  {
+   "key": "s1:3",
+   "label": "第三条",
+   "short": "3条",
+   "caption": "司法修習生の給与に関する規則の廃止に伴う経過措置",
+   "anchor": "sup1-a3",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  },
+  {
+   "key": "s1:4",
+   "label": "第四条",
+   "short": "4条",
+   "caption": "裁判官等の寒冷地手当に関する規則の一部改正",
+   "anchor": "sup1-a4",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  },
+  {
+   "key": "s1:5",
+   "label": "第五条",
+   "short": "5条",
+   "caption": "裁判官の報酬等の支給定日に関する規則の一部改正",
+   "anchor": "sup1-a5",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  },
+  {
+   "key": "s1:6",
+   "label": "第六条",
+   "short": "6条",
+   "caption": "裁判官等の寒冷地手当に関する規則及び裁判官の報酬等の支給定日に関する規則の一部改正に伴う経過措置",
+   "anchor": "sup1-a6",
+   "paragraphs": [
+    1
+   ],
+   "section": "supplementary",
+   "deleted": false
+  }
+ ]
+}
