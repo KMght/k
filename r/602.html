@@ -366,7 +366,8 @@ mark.live{background:var(--mark-live)}
   </main>
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script>
+<!-- ページ用スクリプト ここから -->
+<script>/* rule-page-script 1.13.0 */
 (function(){
   "use strict";
   var doc = document.getElementById("doc");
@@ -386,40 +387,226 @@ mark.live{background:var(--mark-live)}
     say._t = setTimeout(function(){ toast.classList.remove("show"); }, 1600);
   }
 
-  /* ---------------------------------------------------------- 条番号の表記 */
+  /* ============================================ 番号の表記（漢数字⇔算用数字）
+     「第百十一条第一項第二号」と「第111条第1項第2号」を相互に変換する。
+     「一般的」「十分」「一部」のような語に触れないよう、「第」＋数字＋
+     （条・項・号・編・章・節・款・目）の形だけを対象にする。
+     このかたまりは規則のページと規則集の入口ページの両方で使う */
+  var KAN = "〇零一二三四五六七八九十百千";
+  var NUMCH = KAN + "０１２３４５６７８９0123456789";
+  var UNITS = "条項号編章節款目";
+  var REF = new RegExp("第([" + NUMCH + "]+)([" + UNITS + "])", "g");
+  var TAIL = new RegExp("^の([" + NUMCH + "]+)");
+  var PURE = new RegExp("^[" + KAN + "]+$");
+  
+  /* 単位のすぐ後ろに来ると別の語になる字。「第一条件」「同一項目」を避ける。
+     号は「第○号」の形が参照以外に現れないため置かない
+     （「同第一四号外国倒産処理手続…」のような続き方が実際にある） */
+  var STOP = {"条": "件約例文理款項", "項": "目", "号": "",
+              "編": "", "章": "", "節": "", "款": "", "目": "的"};
+  /* 枝番（「第三十二条の三」「第二節の二」）を許す単位。項には枝番が付かない */
+  var BRANCH = {"条": 1, "号": 1, "編": 1, "章": 1, "節": 1, "款": 1, "目": 1};
+  /* 枝番のあとに続いてよい漢字。これ以外の漢字が続くときは枝番と見ない
+     （「法第百五十六条の一般的基準」の「の一」を拾わないための守り） */
+  var BRANCH_OK = "第中等及並又若本各前後同他号条項規定関";
+  
+  function toInt(s){
+    s = s.replace(/[０-９]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) - 0xFEE0);
+    });
+    if (/^[0-9]+$/.test(s)) return parseInt(s, 10);
+    var D = {"〇":0,"零":0,"一":1,"二":2,"三":3,"四":4,"五":5,"六":6,"七":7,"八":8,"九":9};
+    var U = {"十":10,"百":100,"千":1000};
+    var plain = true, i;
+    for (i = 0; i < s.length; i++){ if (!(s.charAt(i) in D)){ plain = false; break; } }
+    if (plain){
+      if (s.length === 1) return D[s];
+      var t = "";
+      for (i = 0; i < s.length; i++) t += D[s.charAt(i)];
+      return parseInt(t, 10);
+    }
+    var total = 0, cur = 0;
+    for (i = 0; i < s.length; i++){
+      var c = s.charAt(i);
+      if (c in D){ cur = D[c]; }
+      else if (c in U){ total += (cur || 1) * U[c]; cur = 0; }
+      else { return NaN; }
+    }
+    return total + cur;
+  }
+  
+  /* 整数を法令の漢数字表記にする（1〜9999） */
+  function toKan(n){
+    if (!(n > 0) || n > 9999) return "";
+    var D = "〇一二三四五六七八九", U = ["", "十", "百", "千"];
+    var out = "", digits = String(n).split("");
+    for (var i = 0; i < digits.length; i++){
+      var d = parseInt(digits[i], 10), pos = digits.length - 1 - i;
+      if (d === 0) continue;
+      out += (d === 1 && pos > 0 ? "" : D.charAt(d)) + U[pos];
+    }
+    return out;
+  }
+  
+  /* text の中の参照を、数字の書き方を差し替えながら組み立てる。
+     write(整数) が実際の表記を返す */
+  function rewrite(text, write){
+    if (!text || text.indexOf("第") < 0) return text;
+    var out = "", last = 0, m;
+    REF.lastIndex = 0;
+    while ((m = REF.exec(text)) !== null){
+      var num = toInt(m[1]), unit = m[2];
+      var end = m.index + m[0].length;
+      if (isNaN(num) || num === 0) continue;
+      var nxt = text.charAt(end);
+      /* 空文字の indexOf は 0 を返すので、続く文字があるときだけ見る */
+      if (nxt && STOP[unit].indexOf(nxt) >= 0) continue;
+      var branch = "";
+      if (BRANCH[unit]){
+        var rest = text.slice(end), t;
+        while ((t = rest.match(TAIL)) !== null){
+          var bn = toInt(t[1]);
+          if (isNaN(bn) || bn === 0) break;
+          var after = rest.charAt(t[0].length);
+          if (after && /[\u4e00-\u9fff]/.test(after) && BRANCH_OK.indexOf(after) < 0) break;
+          var bw = write(bn);
+          if (!bw) break;
+          branch += "の" + bw;
+          rest = rest.slice(t[0].length);
+          end += t[0].length;
+        }
+      }
+      var w = write(num);
+      if (!w) continue;
+      out += text.slice(last, m.index) + "第" + w + unit + branch;
+      last = end;
+      REF.lastIndex = end;
+    }
+    return last ? out + text.slice(last) : text;
+  }
+  
+  function toArabic(text){ return rewrite(text, function(n){ return String(n); }); }
+  function toKansuji(text){ return rewrite(text, toKan); }
+
+  /* 書き換えるところ。本文・号の文・見出しのかっこ書き・別表・
+     章節の見出しの番号（<span class="lbl">第一章</span>）。
+     条ごとの改正沿革の注記（昭二八最裁規二一・…）は、年月日と混ざって
+     読みにくくなるため原本の表記のままにしておく */
+  var BODY_SEL = ".body-text, .tx, .caption, .raw h3, .raw pre, .div-head .lbl";
+
+  function convertIn(root, sel){
+    var nodes = root.querySelectorAll(sel), i, j;
+    for (i = 0; i < nodes.length; i++){
+      var walker = document.createTreeWalker(nodes[i], NodeFilter.SHOW_TEXT, null, false);
+      var texts = [], n;
+      while ((n = walker.nextNode())) texts.push(n);
+      for (j = 0; j < texts.length; j++){
+        var v = toArabic(texts[j].nodeValue);
+        if (v !== texts[j].nodeValue) texts[j].nodeValue = v;
+      }
+    }
+  }
+
+  /* 行頭の号の番号は丸数字にする。①は20までしか安心して使えないので、
+     21号以上まである条では、その条だけ全部を素の数字にしてそろえる。
+     イロハや(1)はもとの表記のままにする */
+  var CIRCLED = "①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳";
+
+  function convertMarkers(){
+    var lists = doc.querySelectorAll("ol.items"), i, j;
+    for (i = 0; i < lists.length; i++){
+      var kids = lists[i].children, marks = [], vals = [], top = 0;
+      for (j = 0; j < kids.length; j++){
+        if (kids[j].nodeName !== "LI") continue;
+        var mk = kids[j].firstElementChild;
+        if (!mk || mk.className !== "mk") continue;
+        var raw = mk.textContent.trim();
+        if (!PURE.test(raw)) continue;          /* イロハ・(1) などは触らない */
+        var val = toInt(raw);
+        if (isNaN(val) || val <= 0) continue;
+        marks.push(mk);
+        vals.push(val);
+        if (val > top) top = val;
+      }
+      var circled = top <= CIRCLED.length;
+      for (j = 0; j < marks.length; j++){
+        marks[j].textContent = circled ? CIRCLED.charAt(vals[j] - 1) : String(vals[j]);
+      }
+    }
+  }
+
+  function convertBody(){
+    convertIn(doc, BODY_SEL);
+    convertMarkers();
+  }
+
   var numeralBtn = document.getElementById("numeral");
+  var original = doc.innerHTML;        /* 漢数字のままの原本。戻すときに使う */
+  var tocOriginal = toc ? toc.innerHTML : "";
+  var arabicOn = numeralBtn.getAttribute("aria-pressed") === "true";
+
   function applyNumeral(useArabic){
+    var term = input.value;
+    doc.innerHTML = original;          /* いったん原本に戻してから作り直す */
+    if (toc) toc.innerHTML = tocOriginal;
     var nodes = doc.querySelectorAll(".art-no");
     for (var i = 0; i < nodes.length; i++){
       var el = nodes[i];
       var v = useArabic ? el.getAttribute("data-num") : el.getAttribute("data-kan");
       if (v) el.textContent = v;
     }
+    if (useArabic){
+      convertBody();
+      /* 目次も本文と同じ表記にそろえる。しぼり込みは data-text（原本の表記）で
+         見ているので、見た目を変えても効き方は変わらない */
+      if (toc) convertIn(toc, "a");
+    }
+    arabicOn = useArabic;
     numeralBtn.setAttribute("aria-pressed", useArabic ? "true" : "false");
+    pristine = doc.innerHTML;
+    if (term) highlight(term);         /* 検索中なら色付けを掛け直す */
   }
   numeralBtn.addEventListener("click", function(){
-    var next = numeralBtn.getAttribute("aria-pressed") !== "true";
-    applyNumeral(next);
-    try { localStorage.setItem("rule-numeral", next ? "1" : "0"); } catch(e){}
-    pristine = doc.innerHTML;
+    applyNumeral(!arabicOn);
+    try { localStorage.setItem("rule-numeral", arabicOn ? "1" : "0"); } catch(e){}
   });
   try {
     /* 既定の表記は原本に合わせてある。前回の切り替えが残っていればそれに従う */
     var saved = localStorage.getItem("rule-numeral");
-    if (saved === "1" || saved === "0"){ applyNumeral(saved === "1"); pristine = doc.innerHTML; }
+    if (saved === "1" || saved === "0") arabicOn = saved === "1";
   } catch(e){}
+  if (arabicOn) applyNumeral(true);      /* 本文の番号も表記をそろえる */
 
   /* -------------------------------------------------------------- 検索処理 */
-  var SKIP = {SCRIPT:1, STYLE:1, MARK:1, BUTTON:1, A:1};   /* 原本リンク等の道具立ては検索対象にしない */
-  function highlight(term){
+  /* 検索の対象にしないもの。リンクの中の条文（「法第百十一条」など）は
+     検索できるようにし、道具立て（「リンク」「原本 p.○」）だけを除く */
+  var SKIP = {SCRIPT:1, STYLE:1, MARK:1, BUTTON:1};
+  var SKIP_SEL = ".art-tools, a.src, .anchor-alias";
+  function skipNode(n){
+    var p = n.parentNode;
+    if (!p) return true;
+    if (SKIP[p.nodeName]) return true;
+    if (p.closest && p.closest(SKIP_SEL)) return true;
+    return false;
+  }
+  /* 「第111条」と入れても漢数字のページで当たるように、いま画面に出ている
+     表記に合わせて検索語を読み替える */
+  function forDisplay(term){
+    if (!term || term.indexOf("第") < 0) return term;
+    var v = arabicOn ? toArabic(term) : toKansuji(term);
+    return v || term;
+  }
+
+  function highlight(raw){
+    var term = forDisplay(raw);
     doc.innerHTML = pristine;
     hits = [];
     cursor = -1;
-    if (!term){ hitLabel.textContent = ""; refreshToc(""); return; }
+    if (!term){ hitLabel.textContent = ""; refreshToc("", ""); return; }
     var walker = document.createTreeWalker(doc, NodeFilter.SHOW_TEXT, {
       acceptNode: function(n){
         if (!n.nodeValue || n.nodeValue.indexOf(term) < 0) return NodeFilter.FILTER_REJECT;
-        if (n.parentNode && SKIP[n.parentNode.nodeName]) return NodeFilter.FILTER_REJECT;
+        if (skipNode(n)) return NodeFilter.FILTER_REJECT;
         return NodeFilter.FILTER_ACCEPT;
       }
     });
@@ -441,7 +628,7 @@ mark.live{background:var(--mark-live)}
       t.parentNode.replaceChild(frag, t);
     }
     hitLabel.textContent = hits.length ? "1 / " + hits.length : "該当なし";
-    refreshToc(term);
+    refreshToc(raw, term);
     if (hits.length){ cursor = 0; focusHit(0, false); }
   }
   function focusHit(i, scroll){
@@ -452,18 +639,20 @@ mark.live{background:var(--mark-live)}
     hitLabel.textContent = (cursor + 1) + " / " + hits.length;
     if (scroll !== false) hits[cursor].scrollIntoView({block:"center", behavior:"instant"});
   }
-  function refreshToc(term){
+  function refreshToc(raw, term){
     var links = toc.querySelectorAll("li.lv-art");
     for (var i = 0; i < links.length; i++){
       var li = links[i];
       var body = (li.getAttribute("data-text") || "");
-      li.classList.toggle("hidden", !!term && body.indexOf(term) < 0);
+      /* data-text は原本の表記。入力そのままと読み替え後の両方で見る */
+      var hit = !raw || body.indexOf(raw) >= 0 || (term && body.indexOf(term) >= 0);
+      li.classList.toggle("hidden", !hit);
     }
     var divs = toc.querySelectorAll("li.lv-div");
     for (var j = divs.length - 1; j >= 0; j--){
       var d = divs[j];
       var kids = d.querySelectorAll("li:not(.hidden)");
-      d.classList.toggle("hidden", !!term && kids.length === 0);
+      d.classList.toggle("hidden", !!raw && kids.length === 0);
     }
   }
   var timer = null;
@@ -487,7 +676,9 @@ mark.live{background:var(--mark-live)}
     var btn = e.target.closest ? e.target.closest("button[data-anchor]") : null;
     if (!btn) return;
     var anchor = btn.getAttribute("data-anchor");
-    var url = location.href.split("#")[0] + "#" + anchor;
+    /* 規則集の本文検索から来たときの ?q=語 は、コピーするURLに含めない */
+    var base = location.href.split("#")[0].replace(/[?&]q=[^&]*/, "").replace(/\?&/, "?").replace(/\?$/, "");
+    var url = base + "#" + anchor;
     history.replaceState(null, "", "#" + anchor);
     var done = function(){ say("リンクをコピーしました"); };
     if (navigator.clipboard && navigator.clipboard.writeText){
@@ -549,97 +740,45 @@ mark.live{background:var(--mark-live)}
       if (e.target.tagName === "A") toc.classList.remove("open");
     });
   }
-})();
-</script>
-<!-- 検索結果から来たときの色付け ここから -->
-<script>
-(function(){
-  "use strict";
-  /* 「r/100.html?q=送達#a53」で開かれたとき、その語を色付けして
-     #a53 の中の最初の該当箇所に合わせる。?q= はアドレスから外して、
+
+  /* ---------------------------------------- 規則集の本文検索から来たとき */
+  /* 「…/民事訴訟規則.html?q=送達#a53」の形で開かれたら、その語を色付けした上で
+     #a53 の条にある最初の該当箇所に合わせる。?q= はアドレスから外して、
      「リンク」ボタンでコピーするURLに検索語が混ざらないようにする */
-  var m = /[?&]q=([^&#]+)/.exec(location.search);
-  if (!m) return;
-  var term = "";
-  try { term = decodeURIComponent(m[1].replace(/\+/g, " ")).trim(); } catch(e){ return; }
-  if (!term) return;
-  var input = document.getElementById("q");
-  var doc = document.getElementById("doc");
-  if (!input || !doc) return;
-  var id = location.hash.length > 1 ? location.hash.slice(1) : "";
-  try { id = decodeURIComponent(id); } catch(e){}
-
-  function drop(){
-    try { history.replaceState(null, "", location.pathname + location.hash); } catch(e){}
-    if (location.search.indexOf("q=") >= 0) guardCopy();   /* アドレスを直せなかったとき */
-  }
-
-  /* アドレス欄から ?q= を外せない環境（ブラウザによっては file:// で外せない）では、
-     「リンク」ボタンが検索語つきのURLをコピーしてしまう。先に受け止めて、
-     検索語を除いたURLをコピーする */
-  function guardCopy(){
-    document.addEventListener("click", function(e){
-      var btn = e.target && e.target.closest ? e.target.closest("button[data-anchor]") : null;
-      if (!btn) return;
-      e.stopPropagation();
-      var base = location.href.split("#")[0]
-        .replace(/[?&]q=[^&]*/g, "").replace(/\?&/, "?").replace(/[?&]$/, "");
-      copy(base + "#" + btn.getAttribute("data-anchor"));
-    }, true);
-  }
-  function copy(url){
-    var done = function(){ say("リンクをコピーしました"); };
-    if (navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(url).then(done, function(){ legacy(url, done); });
-    } else {
-      legacy(url, done);
+  (function(){
+    var m = /[?&]q=([^&#]+)/.exec(location.search);
+    if (!m) return;
+    var term = "";
+    try { term = decodeURIComponent(m[1].replace(/\+/g, " ")).trim(); } catch(e){ return; }
+    if (!term) return;
+    input.value = term;
+    highlight(term);
+    var target = null;
+    if (location.hash.length > 1){
+      var id = location.hash.slice(1);
+      try { id = decodeURIComponent(id); } catch(e){}
+      target = document.getElementById(id);
     }
-  }
-  function legacy(url, done){
-    var ta = document.createElement("textarea");
-    ta.value = url;
-    ta.setAttribute("readonly", "");
-    ta.style.position = "fixed";
-    ta.style.opacity = "0";
-    document.body.appendChild(ta);
-    ta.select();
-    try {
-      if (document.execCommand && document.execCommand("copy")) done();
-      else say("コピーできませんでした。アドレス欄からURLを控えてください");
-    } catch(err){
-      say("コピーできませんでした。アドレス欄からURLを控えてください");
-    }
-    document.body.removeChild(ta);
-  }
-  function say(msg){
-    var toast = document.getElementById("toast");
-    if (!toast) return;
-    toast.textContent = msg;
-    toast.classList.add("show");
-    clearTimeout(say._t);
-    say._t = setTimeout(function(){ toast.classList.remove("show"); }, 1600);
-  }
-
-  input.value = term;
-  input.dispatchEvent(new Event("input", {bubbles: true}));   /* ページの検索が働く */
-  setTimeout(function(){
-    var target = id ? document.getElementById(id) : null;
-    var marks = doc.getElementsByTagName("mark");
-    var at = -1;
+    var at = -1, i;
     if (target){
-      for (var i = 0; i < marks.length; i++){ if (target.contains(marks[i])){ at = i; break; } }
+      for (i = 0; i < hits.length; i++){ if (target.contains(hits[i])){ at = i; break; } }
+      if (at < 0){
+        /* 号は段落の要素の外に並ぶので、段落の中に該当箇所が無いときは
+           同じ条の中で、その段落より後にある最初の該当箇所に合わせる */
+        var art = target.closest ? target.closest("article") : null;
+        for (i = 0; i < hits.length; i++){
+          if (!(target.compareDocumentPosition(hits[i]) & 4)) continue;   /* 後ろにあるもの */
+          if (!art || art.contains(hits[i])) at = i;
+          break;
+        }
+      }
     }
-    if (at > 0){
-      var next = document.getElementById("next");
-      if (next){ for (var k = 0; k < at; k++) next.click(); }
-      else if (marks[at].scrollIntoView) marks[at].scrollIntoView({block:"center"});
-    } else if (at < 0 && target && target.scrollIntoView){
-      target.scrollIntoView({block:"start"});
-    }
-    drop();
-  }, 320);
+    if (at >= 0) focusHit(at, true);
+    else if (target) target.scrollIntoView({block:"start", behavior:"instant"});
+    try { history.replaceState(null, "", location.pathname + location.hash); } catch(e){}
+  })();
 })();
 </script>
-<!-- 検索結果から来たときの色付け ここまで -->
+<!-- ページ用スクリプト ここまで -->
 </body>
 </html>
