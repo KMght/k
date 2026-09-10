@@ -645,7 +645,7 @@ mark.live{background:var(--mark-live)}
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <!-- ページ用スクリプト ここから -->
-<script>/* rule-page-script 1.14.0 */
+<script>/* rule-page-script 1.16.0 */
 (function(){
   "use strict";
   var doc = document.getElementById("doc");
@@ -932,15 +932,44 @@ mark.live{background:var(--mark-live)}
     return v || term;
   }
 
+  /* 空白で区切った語をすべて拾う。番号は画面に出ている表記に読み替える */
+  function splitTerms(raw){
+    var out = [], seen = {};
+    var parts = (raw || "").split(/[\s\u3000]+/);
+    for (var i = 0; i < parts.length; i++){
+      var w = forDisplay(parts[i]);
+      if (w && !seen[w]){ seen[w] = 1; out.push(w); }
+    }
+    return out;
+  }
+
+  /* 1つの文の中で、いずれかの語が最初に現れる位置を返す */
+  function firstOf(text, terms, from){
+    var at = -1, len = 0;
+    for (var i = 0; i < terms.length; i++){
+      var j = text.indexOf(terms[i], from);
+      if (j >= 0 && (at < 0 || j < at || (j === at && terms[i].length > len))){
+        at = j;
+        len = terms[i].length;
+      }
+    }
+    return at < 0 ? null : {at: at, len: len};
+  }
+
+  function hasAny(text, terms){
+    for (var i = 0; i < terms.length; i++) if (text.indexOf(terms[i]) >= 0) return true;
+    return false;
+  }
+
   function highlight(raw){
-    var term = forDisplay(raw);
+    var terms = splitTerms(raw);
     doc.innerHTML = pristine;
     hits = [];
     cursor = -1;
-    if (!term){ hitLabel.textContent = ""; refreshToc("", ""); return; }
+    if (!terms.length){ hitLabel.textContent = ""; refreshToc("", []); return; }
     var walker = document.createTreeWalker(doc, NodeFilter.SHOW_TEXT, {
       acceptNode: function(n){
-        if (!n.nodeValue || n.nodeValue.indexOf(term) < 0) return NodeFilter.FILTER_REJECT;
+        if (!n.nodeValue || !hasAny(n.nodeValue, terms)) return NodeFilter.FILTER_REJECT;
         if (skipNode(n)) return NodeFilter.FILTER_REJECT;
         return NodeFilter.FILTER_ACCEPT;
       }
@@ -949,21 +978,21 @@ mark.live{background:var(--mark-live)}
     var node;
     while ((node = walker.nextNode())) targets.push(node);
     for (var i = 0; i < targets.length; i++){
-      var t = targets[i], text = t.nodeValue, pos = 0, frag = document.createDocumentFragment();
-      var idx;
-      while ((idx = text.indexOf(term, pos)) >= 0){
-        if (idx > pos) frag.appendChild(document.createTextNode(text.slice(pos, idx)));
+      var t = targets[i], text = t.nodeValue, pos = 0;
+      var frag = document.createDocumentFragment(), found;
+      while ((found = firstOf(text, terms, pos)) !== null){
+        if (found.at > pos) frag.appendChild(document.createTextNode(text.slice(pos, found.at)));
         var m = document.createElement("mark");
-        m.textContent = text.substr(idx, term.length);
+        m.textContent = text.substr(found.at, found.len);
         frag.appendChild(m);
         hits.push(m);
-        pos = idx + term.length;
+        pos = found.at + found.len;
       }
       if (pos < text.length) frag.appendChild(document.createTextNode(text.slice(pos)));
       t.parentNode.replaceChild(frag, t);
     }
     hitLabel.textContent = hits.length ? "1 / " + hits.length : "該当なし";
-    refreshToc(raw, term);
+    refreshToc(raw, terms);
     if (hits.length){ cursor = 0; focusHit(0, false); }
   }
   function focusHit(i, scroll){
@@ -974,13 +1003,22 @@ mark.live{background:var(--mark-live)}
     hitLabel.textContent = (cursor + 1) + " / " + hits.length;
     if (scroll !== false) hits[cursor].scrollIntoView({block:"center", behavior:"instant"});
   }
-  function refreshToc(raw, term){
+  function refreshToc(raw, terms){
+    var words = (raw || "").split(/[\s\u3000]+/);
     var links = toc.querySelectorAll("li.lv-art");
     for (var i = 0; i < links.length; i++){
       var li = links[i];
       var body = (li.getAttribute("data-text") || "");
-      /* data-text は原本の表記。入力そのままと読み替え後の両方で見る */
-      var hit = !raw || body.indexOf(raw) >= 0 || (term && body.indexOf(term) >= 0);
+      /* すべての語を含む条だけを残す。data-text は原本の表記なので、
+         入力そのままと読み替え後の両方で見る */
+      var hit = true;
+      for (var w = 0; w < words.length && hit; w++){
+        if (!words[w]) continue;
+        if (body.indexOf(words[w]) >= 0) continue;
+        var alt = forDisplay(words[w]);
+        if (alt && body.indexOf(alt) >= 0) continue;
+        hit = false;
+      }
       li.classList.toggle("hidden", !hit);
     }
     var divs = toc.querySelectorAll("li.lv-div");
@@ -1074,6 +1112,133 @@ mark.live{background:var(--mark-live)}
     toc.addEventListener("click", function(e){
       if (e.target.tagName === "A") toc.classList.remove("open");
     });
+  }
+
+  /* ------------------------------------------- 選んだ語で検索する小窓 */
+  /* 本文の用語を選んで右クリックすると、その語で「全規則を検索」または
+     「このページ内を検索」を選べる小さな窓を出す。ブラウザの標準メニューは
+     ページ側から項目を足せないため、短い語（30字まで）を選んだときだけ
+     こちらの窓に差し替える。長く選んだとき（文の写しなど）は、標準の
+     メニューをそのまま出す */
+  var PICK_MAX = 30;
+  var PICK_CSS = ""
+    + ".pick-menu{position:absolute;z-index:60;min-width:11rem;padding:.25rem 0;"
+    + "background:var(--paper);border:1px solid var(--rule);border-radius:3px;"
+    + "box-shadow:0 2px 10px rgba(0,0,0,.12);font-family:var(--gothic);font-size:.82rem}"
+    + ".pick-menu .pick-word{padding:.3rem .7rem;color:var(--sub);font-size:.74rem;"
+    + "border-bottom:1px solid var(--rule);white-space:nowrap;overflow:hidden;"
+    + "text-overflow:ellipsis;max-width:16rem}"
+    + ".pick-menu button{display:block;width:100%;text-align:left;padding:.4rem .7rem;"
+    + "background:none;border:0;font:inherit;color:var(--ink);cursor:pointer}"
+    + ".pick-menu button:hover{background:var(--accent-weak);color:var(--accent)}";
+
+  var pickMenu = null;
+
+  /* 規則集の入口ページの場所。生成時に入れてあればそれを使い、
+     無ければ「r/NNN.html なら1つ上」「施行日ごとのフォルダなら2つ上」と見る */
+  function indexUrl(){
+    var given = document.body.getAttribute("data-index-url");
+    if (given) return given;
+    var parts = location.pathname.split("/");
+    parts.pop();
+    var dir = parts.pop() || "";
+    return dir === "r" ? "../index.html" : "../../index.html";
+  }
+
+  function pickedWord(){
+    var sel = window.getSelection ? window.getSelection() : null;
+    if (!sel || sel.isCollapsed) return "";
+    var node = sel.anchorNode;
+    if (!node || !doc.contains(node.nodeType === 1 ? node : node.parentNode)) return "";
+    var word = String(sel).replace(/[\s\u3000]+/g, " ").trim();
+    if (!word || word.length > PICK_MAX) return "";
+    return word;
+  }
+
+  function hidePick(){
+    if (pickMenu && pickMenu.parentNode) pickMenu.parentNode.removeChild(pickMenu);
+    pickMenu = null;
+  }
+
+  function showPick(word, x, y){
+    hidePick();
+    var style = document.getElementById("pick-style");
+    if (!style){
+      style = document.createElement("style");
+      style.id = "pick-style";
+      style.textContent = PICK_CSS;
+      document.head.appendChild(style);
+    }
+    pickMenu = document.createElement("div");
+    pickMenu.className = "pick-menu";
+    pickMenu.setAttribute("role", "menu");
+
+    var head = document.createElement("div");
+    head.className = "pick-word";
+    head.textContent = "「" + word + "」";
+    pickMenu.appendChild(head);
+
+    function item(label, run){
+      var b = document.createElement("button");
+      b.type = "button";
+      b.textContent = label;
+      b.addEventListener("click", function(){ hidePick(); run(); });
+      pickMenu.appendChild(b);
+    }
+    item("全規則を検索", function(){
+      location.href = indexUrl() + "?q=" + encodeURIComponent(word);
+    });
+    item("このページ内を検索", function(){
+      input.value = word;
+      highlight(word);
+      if (hits.length) focusHit(0, true);
+    });
+    item("コピー", function(){ copyText(word); });
+
+    document.body.appendChild(pickMenu);
+    var w = pickMenu.offsetWidth || 176, h = pickMenu.offsetHeight || 120;
+    var maxX = (window.pageXOffset || 0) + document.documentElement.clientWidth - w - 8;
+    var maxY = (window.pageYOffset || 0) + document.documentElement.clientHeight - h - 8;
+    pickMenu.style.left = Math.max(4, Math.min(x, maxX)) + "px";
+    pickMenu.style.top = Math.max(4, Math.min(y, maxY)) + "px";
+  }
+
+  doc.addEventListener("contextmenu", function(e){
+    hidePick();
+    var word = pickedWord();
+    if (!word) return;            /* 選んでいないか長いときは標準のメニュー */
+    e.preventDefault();
+    showPick(word, e.pageX + 2, e.pageY + 2);
+  });
+  document.addEventListener("mousedown", function(e){
+    if (pickMenu && !pickMenu.contains(e.target)) hidePick();
+  });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "Escape") hidePick();
+  });
+  window.addEventListener("scroll", hidePick);
+
+  function copyText(text){
+    function done(){ say("コピーしました"); }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done, function(){ legacyCopy(text, done); });
+    } else {
+      legacyCopy(text, done);
+    }
+  }
+  function legacyCopy(text, done){
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+      if (document.execCommand && document.execCommand("copy")) done();
+      else say("コピーできませんでした");
+    } catch(err){ say("コピーできませんでした"); }
+    document.body.removeChild(ta);
   }
 
   /* ---------------------------------------- 規則集の本文検索から来たとき */

@@ -255,7 +255,7 @@ mark.live{background:var(--mark-live)}
 </main></div>
 <!-- 本文検索の動き ここから -->
 <script>
-/* rule-index-script 1.14.0 */
+/* rule-index-script 1.16.0 */
 
 (function(){
   "use strict";
@@ -417,6 +417,11 @@ mark.live{background:var(--mark-live)}
     return out;
   }
 
+  /* 並びのどれかが含まれているか（抜き出しを選ぶときに使う） */
+  function hasWord(text, list){
+    for (var i = 0; i < list.length; i++) if (text.indexOf(list[i]) >= 0) return true;
+    return false;
+  }
   /* 候補のどれかが含まれていれば当たりとみなす */
   function anyIn(group, text){
     for (var i = 0; i < group.length; i++) if (text.indexOf(group[i]) >= 0) return true;
@@ -492,19 +497,35 @@ mark.live{background:var(--mark-live)}
   }
 
   /* 項の本文から、語の前後を切り出して色を付ける */
+  /* 語ごとに最初の1か所を拾い、近い窓はひとつにまとめて抜き出す。
+     こうすると2語目以降も抜き出しの中に入り、色が付く */
   function snippet(raw, nrm, ts){
-    var first = -1, len = 0;
-    for (var t = 0; t < ts.length; t++) {
+    var BEFORE = 22, AFTER = 52, JOIN = 16, LIMIT = 260;
+    var wins = [], t;
+    for (t = 0; t < ts.length; t++) {
       var i = nrm.indexOf(ts[t]);
-      if (i >= 0 && (first < 0 || i < first)) { first = i; len = ts[t].length; }
+      if (i < 0) continue;
+      wins.push([Math.max(0, i - BEFORE), Math.min(raw.length, i + ts[t].length + AFTER)]);
     }
-    if (first < 0) return null;
-    var BEFORE = 28, AFTER = 64;
-    var s = Math.max(0, first - BEFORE), e = Math.min(raw.length, first + len + AFTER);
+    if (!wins.length) return null;
+    wins.sort(function(a, b){ return a[0] - b[0]; });
+    var merged = [wins[0].slice()], total = wins[0][1] - wins[0][0];
+    for (var k = 1; k < wins.length; k++) {
+      var last = merged[merged.length - 1];
+      if (wins[k][0] - last[1] <= JOIN) {
+        if (wins[k][1] > last[1]) { total += wins[k][1] - last[1]; last[1] = wins[k][1]; }
+      } else if (total < LIMIT) {
+        merged.push(wins[k].slice());
+        total += wins[k][1] - wins[k][0];
+      }
+    }
     var frag = document.createDocumentFragment();
-    if (s > 0) frag.appendChild(document.createTextNode("…"));
-    frag.appendChild(markup(raw.slice(s, e), nrm.slice(s, e), ts));
-    if (e < raw.length) frag.appendChild(document.createTextNode("…"));
+    for (var w = 0; w < merged.length; w++) {
+      var s = merged[w][0], e = merged[w][1];
+      if (s > 0 || w > 0) frag.appendChild(document.createTextNode("…"));
+      frag.appendChild(markup(raw.slice(s, e), nrm.slice(s, e), ts));
+    }
+    if (merged[merged.length - 1][1] < raw.length) frag.appendChild(document.createTextNode("…"));
     return frag;
   }
   function markup(raw, nrm, ts){
@@ -560,7 +581,7 @@ mark.live{background:var(--mark-live)}
       return;
     }
     sum.textContent = "「" + q + "」　" + res.groups.length + "規則・" + res.total + "条に該当";
-    var shown = 0, rawFirst = q.trim().split(/\s+/)[0];
+    var shown = 0, allWords = q.replace(/\s+/g, " ").trim();
     for (var g = 0; g < res.groups.length && shown < MAX_ARTICLES; g++) {
       var rule = res.groups[g].rule, arts = res.groups[g].arts;
       var sec = el("section", "ft-rule");
@@ -574,15 +595,29 @@ mark.live{background:var(--mark-live)}
       for (var a = 0; a < arts.length && shown < MAX_ARTICLES; a++, shown++) {
         var art = arts[a], li = el("li");
         var link = el("a");
+        /* どの項にどの語が出るかを先に見て、まだ出していない語を含む項を
+           先に並べる。こうすると2語目以降も抜き出しに入り、色が付く */
         var target = art.k, snips = [], omitted = 0, paraLabel = "";
-        for (var p = 0; p < art._p.length; p++) {
-          var sn = snippet(art.p[p], art._p[p], ts);
+        var lead = [], rest = [], seenWord = {}, p, t;
+        for (p = 0; p < art._p.length; p++) {
+          var isNew = false;
+          for (t = 0; t < ts.length; t++) {
+            if (!seenWord[t] && art._p[p].indexOf(ts[t]) >= 0) { seenWord[t] = 1; isNew = true; }
+          }
+          if (isNew) lead.push(p);
+          else if (hasWord(art._p[p], ts)) rest.push(p);
+        }
+        var picks = lead.concat(rest).sort(function(x, y){ return x - y; });
+        for (var pk = 0; pk < picks.length; pk++) {
+          var pi = picks[pk];
+          var sn = snippet(art.p[pi], art._p[pi], ts);
           if (!sn) continue;
           if (snips.length >= MAX_SNIPS) { omitted++; continue; }
-          if (!snips.length && p > 0 && !art.r) { target = art.k + "-p" + (p + 1); paraLabel = "第" + (p + 1) + "項"; }
+          if (!snips.length && pi > 0 && !art.r) { target = art.k + "-p" + (pi + 1); paraLabel = "第" + (pi + 1) + "項"; }
           snips.push(sn);
         }
-        link.href = rule.h + "?q=" + encodeURIComponent(rawFirst) + "#" + target;
+        /* 規則ページ側も空白区切りの複数語に対応しているので、全部渡す */
+        link.href = rule.h + "?q=" + encodeURIComponent(allWords) + "#" + target;
         var head = el("span", "ft-art", art.l + (art.c ? "（" + art.c + "）" : ""));
         if (paraLabel) head.appendChild(el("span", "pn", paraLabel));
         link.appendChild(head);
