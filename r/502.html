@@ -459,5 +459,95 @@ mark.live{background:var(--mark-live)}
   }
 })();
 </script>
+<!-- 検索結果から来たときの色付け ここから -->
+<script>
+(function(){
+  "use strict";
+  /* 「r/100.html?q=送達#a53」で開かれたとき、その語を色付けして
+     #a53 の中の最初の該当箇所に合わせる。?q= はアドレスから外して、
+     「リンク」ボタンでコピーするURLに検索語が混ざらないようにする */
+  var m = /[?&]q=([^&#]+)/.exec(location.search);
+  if (!m) return;
+  var term = "";
+  try { term = decodeURIComponent(m[1].replace(/\+/g, " ")).trim(); } catch(e){ return; }
+  if (!term) return;
+  var input = document.getElementById("q");
+  var doc = document.getElementById("doc");
+  if (!input || !doc) return;
+  var id = location.hash.length > 1 ? location.hash.slice(1) : "";
+  try { id = decodeURIComponent(id); } catch(e){}
+
+  function drop(){
+    try { history.replaceState(null, "", location.pathname + location.hash); } catch(e){}
+    if (location.search.indexOf("q=") >= 0) guardCopy();   /* アドレスを直せなかったとき */
+  }
+
+  /* アドレス欄から ?q= を外せない環境（ブラウザによっては file:// で外せない）では、
+     「リンク」ボタンが検索語つきのURLをコピーしてしまう。先に受け止めて、
+     検索語を除いたURLをコピーする */
+  function guardCopy(){
+    document.addEventListener("click", function(e){
+      var btn = e.target && e.target.closest ? e.target.closest("button[data-anchor]") : null;
+      if (!btn) return;
+      e.stopPropagation();
+      var base = location.href.split("#")[0]
+        .replace(/[?&]q=[^&]*/g, "").replace(/\?&/, "?").replace(/[?&]$/, "");
+      copy(base + "#" + btn.getAttribute("data-anchor"));
+    }, true);
+  }
+  function copy(url){
+    var done = function(){ say("リンクをコピーしました"); };
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(done, function(){ legacy(url, done); });
+    } else {
+      legacy(url, done);
+    }
+  }
+  function legacy(url, done){
+    var ta = document.createElement("textarea");
+    ta.value = url;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+      if (document.execCommand && document.execCommand("copy")) done();
+      else say("コピーできませんでした。アドレス欄からURLを控えてください");
+    } catch(err){
+      say("コピーできませんでした。アドレス欄からURLを控えてください");
+    }
+    document.body.removeChild(ta);
+  }
+  function say(msg){
+    var toast = document.getElementById("toast");
+    if (!toast) return;
+    toast.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(say._t);
+    say._t = setTimeout(function(){ toast.classList.remove("show"); }, 1600);
+  }
+
+  input.value = term;
+  input.dispatchEvent(new Event("input", {bubbles: true}));   /* ページの検索が働く */
+  setTimeout(function(){
+    var target = id ? document.getElementById(id) : null;
+    var marks = doc.getElementsByTagName("mark");
+    var at = -1;
+    if (target){
+      for (var i = 0; i < marks.length; i++){ if (target.contains(marks[i])){ at = i; break; } }
+    }
+    if (at > 0){
+      var next = document.getElementById("next");
+      if (next){ for (var k = 0; k < at; k++) next.click(); }
+      else if (marks[at].scrollIntoView) marks[at].scrollIntoView({block:"center"});
+    } else if (at < 0 && target && target.scrollIntoView){
+      target.scrollIntoView({block:"start"});
+    }
+    drop();
+  }, 320);
+})();
+</script>
+<!-- 検索結果から来たときの色付け ここまで -->
 </body>
 </html>
