@@ -275,7 +275,7 @@ mark.live{background:var(--mark-live)}
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <!-- ページ用スクリプト ここから -->
-<script>/* rule-page-script 1.13.0 */
+<script>/* rule-page-script 1.14.0 */
 (function(){
   "use strict";
   var doc = document.getElementById("doc");
@@ -448,7 +448,62 @@ mark.live{background:var(--mark-live)}
     convertMarkers();
   }
 
+  /* ------------------------------------------------ 表記の切り替えスイッチ */
+  /* 「123」のボタンを、法令名のすぐ右に置いた二択のスイッチに作り替える。
+     いまどちらのモードかが一目で分かるようにする。見た目の指定は
+     ここから差し込む（公開済みのページはCSSが古いままのため） */
+  var SWITCH_CSS = ""
+    + ".numeral-switch{display:inline-flex;align-items:stretch;margin:0 0 0 .1rem;"
+    + "padding:0;border:1px solid var(--rule);border-radius:3px;overflow:hidden;"
+    + "background:var(--paper);font-family:var(--gothic);cursor:pointer;"
+    + "line-height:1;vertical-align:middle}"
+    + ".numeral-switch:hover{border-color:var(--accent)}"
+    + ".numeral-switch .seg{display:block;padding:.3rem .55rem;font-size:.78rem;"
+    + "color:var(--sub);white-space:nowrap}"
+    + ".numeral-switch .seg.on{background:var(--accent);color:#fff;font-weight:700}"
+    + ".numeral-switch .seg-num{font-family:var(--gothic);letter-spacing:.02em}"
+    + ".numeral-mode{font-size:.72rem;color:var(--sub);margin-left:.35rem;"
+    + "white-space:nowrap;font-family:var(--gothic)}"
+    + "@media (max-width:640px){.numeral-mode{display:none}}";
+
   var numeralBtn = document.getElementById("numeral");
+  var modeLabel = null;
+
+  function buildSwitch(){
+    if (!numeralBtn) return;
+    var style = document.createElement("style");
+    style.textContent = SWITCH_CSS;
+    document.head.appendChild(style);
+
+    numeralBtn.className = "numeral-switch";
+    numeralBtn.innerHTML =
+      '<span class="seg seg-kan">漢数字</span><span class="seg seg-num">123</span>';
+
+    /* 法令名のすぐ右へ移す。いまどちらかを示す言葉もその隣に置く */
+    var title = document.querySelector(".law-title");
+    modeLabel = document.createElement("span");
+    modeLabel.className = "numeral-mode";
+    if (title && title.parentNode){
+      title.parentNode.insertBefore(numeralBtn, title.nextSibling);
+      numeralBtn.parentNode.insertBefore(modeLabel, numeralBtn.nextSibling);
+    } else {
+      numeralBtn.appendChild(modeLabel);
+    }
+  }
+
+  function paintSwitch(useArabic){
+    if (!numeralBtn) return;
+    var kan = numeralBtn.querySelector(".seg-kan");
+    var num = numeralBtn.querySelector(".seg-num");
+    if (kan) kan.classList.toggle("on", !useArabic);
+    if (num) num.classList.toggle("on", useArabic);
+    if (modeLabel) modeLabel.textContent = useArabic ? "算用数字モード" : "漢数字モード";
+    numeralBtn.title = useArabic
+      ? "いま算用数字（第2条・①）で表示しています。押すと漢数字（第二条・一）に戻ります"
+      : "いま漢数字（第二条・一）で表示しています。押すと算用数字（第2条・①）にします";
+  }
+
+  buildSwitch();
   var original = doc.innerHTML;        /* 漢数字のままの原本。戻すときに使う */
   var tocOriginal = toc ? toc.innerHTML : "";
   var arabicOn = numeralBtn.getAttribute("aria-pressed") === "true";
@@ -471,6 +526,7 @@ mark.live{background:var(--mark-live)}
     }
     arabicOn = useArabic;
     numeralBtn.setAttribute("aria-pressed", useArabic ? "true" : "false");
+    paintSwitch(useArabic);
     pristine = doc.innerHTML;
     if (term) highlight(term);         /* 検索中なら色付けを掛け直す */
   }
@@ -484,6 +540,7 @@ mark.live{background:var(--mark-live)}
     if (saved === "1" || saved === "0") arabicOn = saved === "1";
   } catch(e){}
   if (arabicOn) applyNumeral(true);      /* 本文の番号も表記をそろえる */
+  else paintSwitch(false);
 
   /* -------------------------------------------------------------- 検索処理 */
   /* 検索の対象にしないもの。リンクの中の条文（「法第百十一条」など）は
