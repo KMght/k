@@ -3,13 +3,13 @@
   "law_number": "平成十五年二月十九日最高裁判所規則第三号",
   "enforcement_date": "令和4年2月21日",
   "enforcement_iso": "2022-02-21",
-  "pdf_link": "https://www.courts.go.jp/vc-files/courts/2022/kinnyukikankouseikisokuR4.2.pdf",
+  "pdf_link": "https://www.courts.go.jp/assets/kinnyukikankouseikisoku.pdf",
   "source": "kinnyukikankouseikisokuR4.2.pdf",
   "numeral": "kansuji",
   "notes": [
     "題名に続く改正経過・制定文は、本文に含めていません。",
     "目次は、原本PDFの目次ではなく、条見出しから作り直したものです。",
-    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/vc-files/courts/2022/kinnyukikankouseikisokuR4.2.pdf）の該当ページを開きます。"
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/kinnyukikankouseikisoku.pdf）の該当ページを開きます。"
   ],
   "nodes": [
     {
@@ -440,7 +440,7 @@
       "paragraphs": [
         {
           "number": 1,
-          "text": "民事再生規則第三十一条第二項及び第四項、第三十三条第七項並びに第三十五条第一項及び第二項の規定は、更生特例法第四百六十五条第一項本文又は第四百八十二条第一項本文の規定による参加の届出について準用する。4",
+          "text": "民事再生規則第三十一条第二項及び第四項、第三十三条第七項並びに第三十五条第一項及び第二項の規定は、更生特例法第四百六十五条第一項本文又は第四百八十二条第一項本文の規定による参加の届出について準用する。",
           "items": []
         }
       ],
@@ -600,7 +600,7 @@
         },
         {
           "number": 2,
-          "text": "この規則の施行前にされた更生手続開始の申立てに係る株式会社、協同組織金融機関及び相互会社の更生事件については、なお従前の例による。5",
+          "text": "この規則の施行前にされた更生手続開始の申立てに係る株式会社、協同組織金融機関及び相互会社の更生事件については、なお従前の例による。",
           "items": []
         }
       ],
@@ -731,7 +731,7 @@
       "paragraphs": [
         {
           "number": 1,
-          "text": "この規則は、公布の日から施行する。6",
+          "text": "この規則は、公布の日から施行する。",
           "items": []
         }
       ],

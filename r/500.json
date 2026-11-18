@@ -3,14 +3,14 @@
   "law_number": "平成二十四年七月十七日最高裁判所規則第七号",
   "enforcement_date": "令和8年5月21日",
   "enforcement_iso": "2026-05-21",
-  "pdf_link": "https://www.courts.go.jp/assets/080521hisyoukisoku.pdf",
+  "pdf_link": "https://www.courts.go.jp/assets/hisyoukisoku.pdf",
   "source": "080521hisyoukisoku.pdf",
   "numeral": "kansuji",
   "notes": [
     "題名に続く改正経過・制定文の6行は本文に含めていません。",
     "目次は、原本PDFの目次ではなく、条見出しから作り直したものです。",
     "「原本 p.○」のページ番号のうち118件は、以前の版のPDFで調べたものを引き継いでいます。改正でページがずれていることがあります。",
-    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/080521hisyoukisoku.pdf）の該当ページを開きます。"
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/hisyoukisoku.pdf）の該当ページを開きます。"
   ],
   "nodes": [
     {

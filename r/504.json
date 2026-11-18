@@ -3,13 +3,13 @@
   "law_number": "令和四年五月十三日最高裁判所規則第一三号",
   "enforcement_date": "令和8年5月21日",
   "enforcement_iso": "2026-05-21",
-  "pdf_link": "https://www.courts.go.jp/assets/080521kyouyuukannrikisoku.pdf",
+  "pdf_link": "https://www.courts.go.jp/assets/kyouyuukannrikisoku.pdf",
   "source": "080521kyouyuukannrikisoku.pdf",
   "numeral": "kansuji",
   "notes": [
     "題名に続く改正経過・制定文は、本文に含めていません。",
     "目次は、原本PDFの目次ではなく、条見出しから作り直したものです。",
-    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/080521kyouyuukannrikisoku.pdf）の該当ページを開きます。"
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/kyouyuukannrikisoku.pdf）の該当ページを開きます。"
   ],
   "nodes": [
     {
@@ -176,7 +176,7 @@
         },
         {
           "number": 2,
-          "text": "前項の申立書には、同項に規定する事項のほか、次に掲げる事項を記載するものとする。一代理人(前項第一号の法定代理人を除く。)の氏名及び住所二申立てに係る共有物の共有者(申立人を除く。)の氏名又は名称及び住所並びに法定代理人の氏名及び住所三申立てを理由づける具体的な事実ごとの証拠四事件の表示五附属書類の表示六年月日七裁判所の表示八申立人又は代理人の郵便番号及び電話番号(ファクシミリの番号を含む。)九その他裁判所が定める事項 (申立書の添付書類)",
+          "text": "前項の申立書には、同項に規定する事項のほか、次に掲げる事項を記載するものとする。一代理人(前項第一号の法定代理人を除く。)の氏名及び住所二申立てに係る共有物の共有者(申立人を除く。)の氏名又は名称及び住所並びに法定代理人の氏名及び住所三申立てを理由づける具体的な事実ごとの証拠四事件の表示五附属書類の表示六年月日七裁判所の表示八申立人又は代理人の郵便番号及び電話番号(ファクシミリの番号を含む。)九その他裁判所が定める事項",
           "items": []
         }
       ],
@@ -189,7 +189,7 @@
       "label": "第六条",
       "short_label": "6条",
       "anchor": "a6",
-      "caption": null,
+      "caption": "申立書の添付書類",
       "deleted": false,
       "section": "main",
       "page": 2,

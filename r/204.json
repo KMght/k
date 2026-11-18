@@ -3,13 +3,13 @@
   "law_number": "昭和三十二年八月一日最高裁判所規則第十二号",
   "enforcement_date": "平成25年7月1日",
   "enforcement_iso": "2013-07-01",
-  "pdf_link": "https://www.courts.go.jp/vc-files/courts/file2/20130701taichoukisoku.pdf",
+  "pdf_link": "https://www.courts.go.jp/assets/taichoukisoku.pdf",
   "source": "20130701taichoukisoku.pdf",
   "numeral": "kansuji",
   "notes": [
     "題名に続く改正経過・制定文は、本文に含めていません。",
     "目次は、原本PDFの目次ではなく、条見出しから作り直したものです。",
-    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/vc-files/courts/file2/20130701taichoukisoku.pdf）の該当ページを開きます。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/taichoukisoku.pdf）の該当ページを開きます。",
     "本文から他の法令（e-Gov法令検索）へのリンクを4件張っています。リンク先は機械的に判定したもので、誤っていることがあります。"
   ],
   "nodes": [

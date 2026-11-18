@@ -3,13 +3,13 @@
   "law_number": "令和8年3月31日最高裁判所告示第5号",
   "enforcement_date": "",
   "enforcement_iso": "",
-  "pdf_link": "https://www.courts.go.jp/assets/080521honnninnkakuninnyoukou.pdf",
+  "pdf_link": "https://www.courts.go.jp/assets/20261023honnninnkakuninnyoukou.pdf",
   "source": "080521honnninnkakuninnyoukou.pdf",
   "numeral": "kansuji",
   "notes": [
     "題名に続く改正経過・制定文は、本文に含めていません。",
     "この規則には条番号の付いた条文がないため、本文をひとまとまりで載せています。",
-    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/080521honnninnkakuninnyoukou.pdf）の該当ページを開きます。"
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/20261023honnninnkakuninnyoukou.pdf）の該当ページを開きます。"
   ],
   "nodes": [
     {
@@ -41,6 +41,18 @@
               "marker": "二",
               "kind": "go",
               "text": "国若しくは地方公共団体（以下「国等」という。）の代表者、国等の機関（当該機関が合議制の機関である場合にあっては、当該機関の代表者）又は民事訴訟法（平成八年法律第百九号）第百三十二条の十一第一項第二号若しくは第三号に掲げる者が規則第一条第一項の規定による届出を行う場合当該届出を行う者が所属する官公署をして当該届出を行う者の氏名及び電子メールアドレス（同項第三号に規定する電子メールアドレスをいう。）を裁判所に提供させる方法",
+              "children": []
+            },
+            {
+              "marker": "三",
+              "kind": "go",
+              "text": "規則第一条第三項又は第二条第二項の規定により識別符号を付与されている者が更に規則第一条第一項の規定による届出を行う場合当該者に付与されている識別符号を裁判所に提供させる方法",
+              "children": []
+            },
+            {
+              "marker": "四",
+              "kind": "go",
+              "text": "刑事事件等に関する手続において用いる識別符号の付与等に関する規則（令和八年最高裁判所規則第十四号）第一条第三項若しくは第四項又は第二条第二項の規定により識別符号を付与されている者が規則第一条第一項の規定による届出を行う場合当該者に付与されている識別符号を裁判所に提供させる方法",
               "children": []
             }
           ]

@@ -3,12 +3,12 @@
   "law_number": "昭和四十二年十二月十一日最高裁判所規則第十四号",
   "enforcement_date": "令和4年2月21日",
   "enforcement_iso": "2022-02-21",
-  "pdf_link": "https://www.courts.go.jp/vc-files/courts/2022/tochisyuuyoutyouseikisokuR4.2.pdf",
+  "pdf_link": "https://www.courts.go.jp/assets/tochisyuuyoutyouseikisoku.pdf",
   "source": "tochisyuuyoutyouseikisokuR4.2.pdf",
   "numeral": "kansuji",
   "notes": [
     "題名に続く改正経過・制定文は、本文に含めていません。",
-    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/vc-files/courts/2022/tochisyuuyoutyouseikisokuR4.2.pdf）の該当ページを開きます。"
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/tochisyuuyoutyouseikisoku.pdf）の該当ページを開きます。"
   ],
   "nodes": [
     {
@@ -265,7 +265,7 @@
         },
         {
           "number": 2,
-          "text": "前項後段の場合において、配当等を実施すべきこととなつたときは、裁判所は、訴訟の結果により配当等を実施すべきこととなつた金額を差し引いた残余を起業者に返還しなければならない。3",
+          "text": "前項後段の場合において、配当等を実施すべきこととなつたときは、裁判所は、訴訟の結果により配当等を実施すべきこととなつた金額を差し引いた残余を起業者に返還しなければならない。",
           "items": []
         }
       ],
@@ -497,7 +497,7 @@
       "paragraphs": [
         {
           "number": 1,
-          "text": "この規則は、公布の日から施行する。5",
+          "text": "この規則は、公布の日から施行する。",
           "items": []
         }
       ],

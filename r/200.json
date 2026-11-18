@@ -3,7 +3,7 @@
   "law_number": "昭和五十四年十一月八日最高裁判所規則第五号",
   "enforcement_date": "令和8年5月27日",
   "enforcement_iso": "2026-05-27",
-  "pdf_link": "https://www.courts.go.jp/assets/20260527minjisikkoukisoku.pdf",
+  "pdf_link": "https://www.courts.go.jp/assets/minjisikkoukisoku.pdf",
   "source": "20260527minjisikkoukisoku.pdf",
   "numeral": "kansuji",
   "notes": [
@@ -11,7 +11,7 @@
     "目次は、原本PDFの目次ではなく、条見出しから作り直したものです。",
     "項番号が印字されていない条があります（第145条・第150条など2件）。原本PDFが項を字下げだけで表しているため、項に分けずに続けて載せています。",
     "「原本 p.○」のページ番号のうち397件は、以前の版のPDFで調べたものを引き継いでいます。改正でページがずれていることがあります。",
-    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/20260527minjisikkoukisoku.pdf）の該当ページを開きます。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/minjisikkoukisoku.pdf）の該当ページを開きます。",
     "本文から他の法令（e-Gov法令検索）へのリンクを22件張っています。リンク先は機械的に判定したもので、誤っていることがあります。"
   ],
   "nodes": [

@@ -3,12 +3,12 @@
   "law_number": "昭和四十五年四月二十五日最高裁判所規則第二号",
   "enforcement_date": "令和4年2月21日",
   "enforcement_iso": "2022-02-21",
-  "pdf_link": "https://www.courts.go.jp/vc-files/courts/2022/toshisaikaihatsuhoutyouseikisokuR4.2.pdf",
+  "pdf_link": "https://www.courts.go.jp/assets/toshisaikaihatsuhoutyouseikisoku.pdf",
   "source": "toshisaikaihatsuhoutyouseikisokuR4.2.pdf",
   "numeral": "kansuji",
   "notes": [
     "題名に続く改正経過・制定文は、本文に含めていません。",
-    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/vc-files/courts/2022/toshisaikaihatsuhoutyouseikisokuR4.2.pdf）の該当ページを開きます。"
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/toshisaikaihatsuhoutyouseikisoku.pdf）の該当ページを開きます。"
   ],
   "nodes": [
     {
@@ -394,7 +394,7 @@
       "paragraphs": [
         {
           "number": 1,
-          "text": "この規則は、公布の日から施行する。4",
+          "text": "この規則は、公布の日から施行する。",
           "items": []
         }
       ],

@@ -252,7 +252,7 @@
    "html": "r/200.html",
    "url": "https://kmght.github.io/k/r/200.html",
    "data_url": "https://kmght.github.io/k/r/200.json",
-   "pdf_url": "https://www.courts.go.jp/assets/20260527minjisikkoukisoku.pdf",
+   "pdf_url": "https://www.courts.go.jp/assets/minjisikkoukisoku.pdf",
    "legacy_dir": "20260527minjisikkoukisoku",
    "source_pdf": "20260527minjisikkoukisoku.pdf"
   },
@@ -324,7 +324,7 @@
    "html": "r/204.html",
    "url": "https://kmght.github.io/k/r/204.html",
    "data_url": "https://kmght.github.io/k/r/204.json",
-   "pdf_url": "https://www.courts.go.jp/vc-files/courts/file2/20130701taichoukisoku.pdf",
+   "pdf_url": "https://www.courts.go.jp/assets/taichoukisoku.pdf",
    "legacy_dir": "20130701taichoukisoku",
    "source_pdf": "20130701taichoukisoku.pdf"
   },
@@ -342,7 +342,7 @@
    "html": "r/205.html",
    "url": "https://kmght.github.io/k/r/205.html",
    "data_url": "https://kmght.github.io/k/r/205.json",
-   "pdf_url": "https://www.courts.go.jp/vc-files/courts/2022/tochisyuuyoutyouseikisokuR4.2.pdf",
+   "pdf_url": "https://www.courts.go.jp/assets/tochisyuuyoutyouseikisoku.pdf",
    "legacy_dir": "tochisyuuyoutyouseikisokuR4.2",
    "source_pdf": "tochisyuuyoutyouseikisokuR4.2.pdf"
   },
@@ -360,7 +360,7 @@
    "html": "r/206.html",
    "url": "https://kmght.github.io/k/r/206.html",
    "data_url": "https://kmght.github.io/k/r/206.json",
-   "pdf_url": "https://www.courts.go.jp/vc-files/courts/2022/toshisaikaihatsuhoutyouseikisokuR4.2.pdf",
+   "pdf_url": "https://www.courts.go.jp/assets/toshisaikaihatsuhoutyouseikisoku.pdf",
    "legacy_dir": "toshisaikaihatsuhoutyouseikisokuR4.2",
    "source_pdf": "toshisaikaihatsuhoutyouseikisokuR4.2.pdf"
   },
@@ -378,7 +378,7 @@
    "html": "r/207.html",
    "url": "https://kmght.github.io/k/r/207.html",
    "data_url": "https://kmght.github.io/k/r/207.json",
-   "pdf_url": "https://www.courts.go.jp/assets/20031219missyuushigaichicyouseikisoku.pdf",
+   "pdf_url": "https://www.courts.go.jp/assets/missyuushigaichicyouseikisoku.pdf",
    "legacy_dir": "20031219missyuushigaichicyouseikisoku",
    "source_pdf": "20031219missyuushigaichicyouseikisoku.pdf"
   },
@@ -396,7 +396,7 @@
    "html": "r/208.html",
    "url": "https://kmght.github.io/k/r/208.html",
    "data_url": "https://kmght.github.io/k/r/208.json",
-   "pdf_url": "https://www.courts.go.jp/assets/20260401mansionsaisei.pdf",
+   "pdf_url": "https://www.courts.go.jp/assets/mansionsaisei.pdf",
    "legacy_dir": "20260401mansionsaisei",
    "source_pdf": "20260401mansionsaisei.pdf"
   },
@@ -414,7 +414,7 @@
    "html": "r/209.html",
    "url": "https://kmght.github.io/k/r/209.html",
    "data_url": "https://kmght.github.io/k/r/209.json",
-   "pdf_url": "https://www.courts.go.jp/assets/080521kigyoutannpokennjikkou.pdf",
+   "pdf_url": "https://www.courts.go.jp/assets/kigyoutannpokennjikkou.pdf",
    "legacy_dir": "080521kigyoutannpokennjikkou",
    "source_pdf": "080521kigyoutannpokennjikkou.pdf"
   },
@@ -432,7 +432,7 @@
    "html": "r/210.html",
    "url": "https://kmght.github.io/k/r/210.html",
    "data_url": "https://kmght.github.io/k/r/210.json",
-   "pdf_url": "https://www.courts.go.jp/assets/20260525kigyoukatitanpokenkikisoku.pdf",
+   "pdf_url": "https://www.courts.go.jp/assets/kigyoukatitanpokenkikisoku.pdf",
    "legacy_dir": "20260525kigyoukatitanpokenkikisoku",
    "source_pdf": "20260525kigyoukatitanpokenkikisoku.pdf"
   },
@@ -468,7 +468,7 @@
    "html": "r/300.html",
    "url": "https://kmght.github.io/k/r/300.html",
    "data_url": "https://kmght.github.io/k/r/300.json",
-   "pdf_url": "https://www.courts.go.jp/assets/080521hasannkisoku.pdf",
+   "pdf_url": "https://www.courts.go.jp/assets/hasannkisoku.pdf",
    "legacy_dir": "080521hasannkisoku",
    "source_pdf": "080521hasannkisoku.pdf"
   },
@@ -486,7 +486,7 @@
    "html": "r/301.html",
    "url": "https://kmght.github.io/k/r/301.html",
    "data_url": "https://kmght.github.io/k/r/301.json",
-   "pdf_url": "https://www.courts.go.jp/assets/080521minnjisaiseikisoku.pdf",
+   "pdf_url": "https://www.courts.go.jp/assets/minnjisaiseikisoku.pdf",
    "legacy_dir": "080521minnjisaiseikisoku",
    "source_pdf": "080521minnjisaiseikisoku.pdf"
   },
@@ -504,7 +504,7 @@
    "html": "r/302.html",
    "url": "https://kmght.github.io/k/r/302.html",
    "data_url": "https://kmght.github.io/k/r/302.json",
-   "pdf_url": "https://www.courts.go.jp/assets/080521kaisyakouseikisoku.pdf",
+   "pdf_url": "https://www.courts.go.jp/assets/kaisyakouseikisoku.pdf",
    "legacy_dir": "080521kaisyakouseikisoku",
    "source_pdf": "080521kaisyakouseikisoku.pdf"
   },
@@ -522,7 +522,7 @@
    "html": "r/303.html",
    "url": "https://kmght.github.io/k/r/303.html",
    "data_url": "https://kmght.github.io/k/r/303.json",
-   "pdf_url": "https://www.courts.go.jp/vc-files/courts/2022/kinnyukikankouseikisokuR4.2.pdf",
+   "pdf_url": "https://www.courts.go.jp/assets/kinnyukikankouseikisoku.pdf",
    "legacy_dir": "kinnyukikankouseikisokuR4.2",
    "source_pdf": "kinnyukikankouseikisokuR4.2.pdf"
   },
@@ -540,7 +540,7 @@
    "html": "r/304.html",
    "url": "https://kmght.github.io/k/r/304.html",
    "data_url": "https://kmght.github.io/k/r/304.json",
-   "pdf_url": "https://www.courts.go.jp/assets/080521gaikoukutousannsyori.pdf",
+   "pdf_url": "https://www.courts.go.jp/assets/gaikoukutousannsyori.pdf",
    "legacy_dir": "080521gaikoukutousannsyori",
    "source_pdf": "080521gaikoukutousannsyori.pdf"
   },
@@ -558,7 +558,7 @@
    "html": "r/305.html",
    "url": "https://kmght.github.io/k/r/305.html",
    "data_url": "https://kmght.github.io/k/r/305.json",
-   "pdf_url": "https://www.courts.go.jp/assets/080521sennpakusyoyusya.pdf",
+   "pdf_url": "https://www.courts.go.jp/assets/sennpakusyoyusya.pdf",
    "legacy_dir": "080521sennpakusyoyusya",
    "source_pdf": "080521sennpakusyoyusya.pdf"
   },
@@ -576,7 +576,7 @@
    "html": "r/306.html",
    "url": "https://kmght.github.io/k/r/306.html",
    "data_url": "https://kmght.github.io/k/r/306.json",
-   "pdf_url": "https://www.courts.go.jp/vc-files/courts/2020/R021001sennpakuyudakutousongaibaisyousekininseigenjikentoutetuzukikisoku.pdf",
+   "pdf_url": "https://www.courts.go.jp/assets/sennpakuyudakutousongaibaisyousekininseigenjikentoutetuzukikisoku.pdf",
    "legacy_dir": "R021001sennpakuyudakutousongaibaisyousekininseigenjikentoutetuzukikisoku",
    "source_pdf": "R021001sennpakuyudakutousongaibaisyousekininseigenjikentoutetuzukikisoku.pdf"
   },
@@ -810,7 +810,7 @@
    "html": "r/500.html",
    "url": "https://kmght.github.io/k/r/500.html",
    "data_url": "https://kmght.github.io/k/r/500.json",
-   "pdf_url": "https://www.courts.go.jp/assets/080521hisyoukisoku.pdf",
+   "pdf_url": "https://www.courts.go.jp/assets/hisyoukisoku.pdf",
    "legacy_dir": "080521hisyoukisoku",
    "source_pdf": "080521hisyoukisoku.pdf"
   },
@@ -846,7 +846,7 @@
    "html": "r/502.html",
    "url": "https://kmght.github.io/k/r/502.html",
    "data_url": "https://kmght.github.io/k/r/502.json",
-   "pdf_url": "https://www.courts.go.jp/assets/080521kaisyahisyou.pdf",
+   "pdf_url": "https://www.courts.go.jp/assets/kaisyahisyou.pdf",
    "legacy_dir": "080521kaisyahisyou",
    "source_pdf": "080521kaisyahisyou.pdf"
   },
@@ -864,7 +864,7 @@
    "html": "r/503.html",
    "url": "https://kmght.github.io/k/r/503.html",
    "data_url": "https://kmght.github.io/k/r/503.json",
-   "pdf_url": "https://www.courts.go.jp/assets/080521ippannsyadannhoujinnkisoku.pdf",
+   "pdf_url": "https://www.courts.go.jp/assets/ippannsyadannhoujinnkisoku.pdf",
    "legacy_dir": "080521ippannsyadannhoujinnkisoku",
    "source_pdf": "080521ippannsyadannhoujinnkisoku.pdf"
   },
@@ -882,7 +882,7 @@
    "html": "r/504.html",
    "url": "https://kmght.github.io/k/r/504.html",
    "data_url": "https://kmght.github.io/k/r/504.json",
-   "pdf_url": "https://www.courts.go.jp/assets/080521kyouyuukannrikisoku.pdf",
+   "pdf_url": "https://www.courts.go.jp/assets/kyouyuukannrikisoku.pdf",
    "legacy_dir": "080521kyouyuukannrikisoku",
    "source_pdf": "080521kyouyuukannrikisoku.pdf"
   },
@@ -990,7 +990,7 @@
    "html": "r/600.html",
    "url": "https://kmght.github.io/k/r/600.html",
    "data_url": "https://kmght.github.io/k/r/600.json",
-   "pdf_url": "https://www.courts.go.jp/assets/keijisosyoukisoku_20260521.pdf",
+   "pdf_url": "https://www.courts.go.jp/assets/keijisosyoukisoku_20261020.pdf",
    "legacy_dir": "keijisosyoukisoku_20260521",
    "source_pdf": "keijisosyoukisoku_20260521.pdf"
   },
@@ -1440,7 +1440,7 @@
    "html": "r/701.html",
    "url": "https://kmght.github.io/k/r/701.html",
    "data_url": "https://kmght.github.io/k/r/701.json",
-   "pdf_url": "https://www.courts.go.jp/assets/kakyuuki-H240401.pdf",
+   "pdf_url": "https://www.courts.go.jp/vc-files/courts/file5/kakyuuki-H240401.pdf",
    "legacy_dir": "kakyuuki-H240401",
    "source_pdf": "kakyuuki-H240401.pdf"
   },
@@ -1458,7 +1458,7 @@
    "html": "r/702.html",
    "url": "https://kmght.github.io/k/r/702.html",
    "data_url": "https://kmght.github.io/k/r/702.json",
-   "pdf_url": "https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf",
+   "pdf_url": "https://www.courts.go.jp/vc-files/courts/file5/saikousaibansyojimusoukyokukisoku.pdf",
    "legacy_dir": "saikousaibansyojimusoukyokukisoku",
    "source_pdf": "saikousaibansyojimusoukyokukisoku.pdf"
   },
@@ -1476,7 +1476,7 @@
    "html": "r/703.html",
    "url": "https://kmght.github.io/k/r/703.html",
    "data_url": "https://kmght.github.io/k/r/703.json",
-   "pdf_url": "https://www.courts.go.jp/assets/daihouteisyusekisyokikantounikansurukisoku.pdf",
+   "pdf_url": "https://www.courts.go.jp/vc-files/courts/file5/daihouteisyusekisyokikantounikansurukisoku.pdf",
    "legacy_dir": "daihouteisyusekisyokikantounikansurukisoku",
    "source_pdf": "daihouteisyusekisyokikantounikansurukisoku.pdf"
   },
@@ -1566,7 +1566,7 @@
    "html": "r/708.html",
    "url": "https://kmght.github.io/k/r/708.html",
    "data_url": "https://kmght.github.io/k/r/708.json",
-   "pdf_url": "https://www.courts.go.jp/assets/saibankannobungenjikentetudukikisoku.pdf",
+   "pdf_url": "https://www.courts.go.jp/vc-files/courts/file5/saibankannobungenjikentetudukikisoku.pdf",
    "legacy_dir": "saibankannobungenjikentetudukikisoku",
    "source_pdf": "saibankannobungenjikentetudukikisoku.pdf"
   },
@@ -1656,7 +1656,7 @@
    "html": "r/713.html",
    "url": "https://kmght.github.io/k/r/713.html",
    "data_url": "https://kmght.github.io/k/r/713.json",
-   "pdf_url": "https://www.courts.go.jp/assets/051101_kisoku.pdf",
+   "pdf_url": "https://www.courts.go.jp/assets/taiyo_R7_512.pdf",
    "legacy_dir": "051101_kisoku",
    "source_pdf": "051101_kisoku.pdf"
   },
@@ -1746,7 +1746,7 @@
    "html": "r/718.html",
    "url": "https://kmght.github.io/k/r/718.html",
    "data_url": "https://kmght.github.io/k/r/718.json",
-   "pdf_url": "https://www.courts.go.jp/assets/r4kisokukaisei.pdf",
+   "pdf_url": "https://www.courts.go.jp/vc-files/courts/2022/r4kisokukaisei.pdf",
    "legacy_dir": "r4kisokukaisei",
    "source_pdf": "r4kisokukaisei.pdf"
   },
@@ -1764,7 +1764,7 @@
    "html": "r/719.html",
    "url": "https://kmght.github.io/k/r/719.html",
    "data_url": "https://kmght.github.io/k/r/719.json",
-   "pdf_url": "https://www.courts.go.jp/assets/gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf",
+   "pdf_url": "https://www.courts.go.jp/vc-files/courts/file4/gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf",
    "legacy_dir": "gyouhukuiinnkai_kisoku_kisokusyuuyou",
    "source_pdf": "gyouhukuiinnkai_kisoku_kisokusyuuyou.pdf"
   },
@@ -1818,7 +1818,7 @@
    "html": "r/802.html",
    "url": "https://kmght.github.io/k/r/802.html",
    "data_url": "https://kmght.github.io/k/r/802.json",
-   "pdf_url": "https://www.courts.go.jp/assets/080521honnninnkakuninnyoukou.pdf",
+   "pdf_url": "https://www.courts.go.jp/assets/20261023honnninnkakuninnyoukou.pdf",
    "legacy_dir": "080521honnninnkakuninnyoukou",
    "source_pdf": "080521honnninnkakuninnyoukou.pdf"
   },

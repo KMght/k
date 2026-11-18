@@ -3,13 +3,13 @@
   "law_number": "昭和23年6月7日最高裁判所規則第6号",
   "enforcement_date": "平成25年1月1日",
   "enforcement_iso": "2013-01-01",
-  "pdf_link": "https://www.courts.go.jp/assets/saibankannobungenjikentetudukikisoku.pdf",
+  "pdf_link": "https://www.courts.go.jp/vc-files/courts/file5/saibankannobungenjikentetudukikisoku.pdf",
   "source": "saibankannobungenjikentetudukikisoku.pdf",
   "numeral": "kansuji",
   "notes": [
     "題名に続く改正経過・制定文は、本文に含めていません。",
     "項番号が印字されていない条があります（第1条・第3条・第6条など3件）。原本PDFが項を字下げだけで表しているため、項に分けずに続けて載せています。",
-    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/saibankannobungenjikentetudukikisoku.pdf）の該当ページを開きます。"
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/vc-files/courts/file5/saibankannobungenjikentetudukikisoku.pdf）の該当ページを開きます。"
   ],
   "nodes": [
     {
