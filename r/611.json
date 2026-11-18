@@ -7,8 +7,8 @@
   "source": "huseikyousouboushitokureikisoku.20240215.pdf",
   "numeral": "kansuji",
   "notes": [
-    "題名・制定文とみられる行を本文の前に検出しました：改正 平成二十八年十月一八日最高裁判所規則第六号／平成三十年一月一五日最高裁判所規則第一号／令和五年一二月二五日最高裁判所規則第一〇号",
-    "各条の「原本」は https://www.courts.go.jp/vc-files/courts/2023/huseikyousouboushitokureikisoku.20240215.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "題名・制定文・改正経過にあたる次の行は、条文の前にあるため本文に含めていません：改正 平成二十八年十月一八日最高裁判所規則第六号／平成三十年一月一五日最高裁判所規則第一号／令和五年一二月二五日最高裁判所規則第一〇号",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/vc-files/courts/2023/huseikyousouboushitokureikisoku.20240215.pdf）の該当ページを開きます。"
   ],
   "nodes": [
     {

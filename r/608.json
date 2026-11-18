@@ -1,16 +1,16 @@
 {
   "title": "犯罪収益に係る保全手続等に関する規則",
-  "law_number": "",
-  "enforcement_date": "平成15年1月6日",
-  "enforcement_iso": "2003-01-06",
+  "law_number": "平成11年12月1日最高裁判所規則第10号",
+  "enforcement_date": "令和5年2月20日",
+  "enforcement_iso": "2023-02-20",
   "pdf_link": "https://www.courts.go.jp/vc-files/courts/2023/hanzaisyuuekihozennkisoku20230220.pdf",
   "source": "hanzaisyuuekihozennkisoku20230220.pdf",
   "numeral": "kansuji",
   "notes": [
-    "PDF中の目次は読み飛ばし、条見出しから目次を再構成しました。",
-    "題名・制定文とみられる行を本文の前に検出しました：平成11年12月1日号外最高裁判所規則第１０号／改正 平成14年3月27日最高裁判所規則第５号／平成14年12月11日最高裁判所規則第１５号",
-    "各条の「原本」は https://www.courts.go.jp/vc-files/courts/2023/hanzaisyuuekihozennkisoku20230220.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。",
-    "本文から他の法令へのリンクを7件作りました。うち2件は法令番号から e-Gov の法令IDを組み立てたものです。公開前に「法令リンク一覧」で確認してください。"
+    "目次は、原本PDFの目次ではなく、条見出しから作り直したものです。",
+    "題名・制定文・改正経過にあたる次の行は、条文の前にあるため本文に含めていません：平成11年12月1日号外最高裁判所規則第１０号／改正 平成14年3月27日最高裁判所規則第５号／平成14年12月11日最高裁判所規則第１５号",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/vc-files/courts/2023/hanzaisyuuekihozennkisoku20230220.pdf）の該当ページを開きます。",
+    "本文から他の法令（e-Gov法令検索）へのリンクを7件張っています。リンク先は機械的に判定したもので、誤っていることがあります。"
   ],
   "nodes": [
     {

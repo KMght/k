@@ -7,8 +7,8 @@
   "source": "kokusennbengohiyousanteikisoku.pdf",
   "numeral": "kansuji",
   "notes": [
-    "題名・制定文とみられる行を本文の前に検出しました：総合法律支援法による国選弁護人等契約弁護士に係る費用の額の算定等に関する規／則／平成18年7月28日最高裁判所規則第１２号",
-    "各条の「原本」は https://www.courts.go.jp/assets/kokusennbengohiyousanteikisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "題名・制定文・改正経過にあたる次の行は、条文の前にあるため本文に含めていません：総合法律支援法による国選弁護人等契約弁護士に係る費用の額の算定等に関する規／則／平成18年7月28日最高裁判所規則第１２号",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/kokusennbengohiyousanteikisoku.pdf）の該当ページを開きます。"
   ],
   "nodes": [
     {

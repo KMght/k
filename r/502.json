@@ -7,33 +7,11 @@
   "source": "080521kaisyahisyou.pdf",
   "numeral": "kansuji",
   "notes": [
-    "PDF中の目次は読み飛ばし、条見出しから目次を再構成しました。",
-    "各条の「原本」は https://www.courts.go.jp/assets/080521kaisyahisyou.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "題名に続く改正経過・制定文は、本文に含めていません。",
+    "目次は、原本PDFの目次ではなく、条見出しから作り直したものです。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/080521kaisyahisyou.pdf）の該当ページを開きます。"
   ],
   "nodes": [
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-1",
-      "caption": "会社非訟事件等手続規則（原文は縦書き",
-      "deleted": false,
-      "section": "main",
-      "page": 1,
-      "division_path": [],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "改正 同一九年四月一一日最高裁判所規則第五号同二○年一○月一日同第一○号同二四年七月一七日同第九号令和二年四月二二日同第六号同四年二月二一日同第八号同四年五月一三日同第一三号同四年一一月七日同第一七号同六年九月十七日同第一四号同七年一二月一五日同第一六号会社非訟事件等手続規則を次のように定める。会社非訟事件等手続規則",
-          "items": []
-        }
-      ],
-      "type": "article"
-    },
     {
       "type": "division",
       "kind": "章",

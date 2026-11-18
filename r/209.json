@@ -7,33 +7,11 @@
   "source": "080521kigyoutannpokennjikkou.pdf",
   "numeral": "kansuji",
   "notes": [
-    "PDF中の目次は読み飛ばし、条見出しから目次を再構成しました。",
-    "各条の「原本」は https://www.courts.go.jp/assets/080521kigyoutannpokennjikkou.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "題名に続く改正経過・制定文は、本文に含めていません。",
+    "目次は、原本PDFの目次ではなく、条見出しから作り直したものです。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/080521kigyoutannpokennjikkou.pdf）の該当ページを開きます。"
   ],
   "nodes": [
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-1",
-      "caption": "企業担保権実行手続規則 （原文は縦書き",
-      "deleted": false,
-      "section": "main",
-      "page": 1,
-      "division_path": [],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "改正 昭和四六年六月二三日最高裁判所規則第九号同五五年五月六日同第三号平成二年五月一六日同第三号同八年三月一日同第二号同八年一二月一七日同第六号同一〇年一一月一九日同第五号同一五年一一月一二日同第二二号同一六年一〇月六日同第一五号同一七年一月一一日同第一号同一七年二月九日同第六号令和元年一一月二七日同第五号同四年一一月七日同第一七号同六年九月一七日同第一四号同七年八月二九日同第一〇号企業担保権実行手続規則を次のように定める。企業担保権実行手続規則",
-          "items": []
-        }
-      ],
-      "type": "article"
-    },
     {
       "type": "division",
       "kind": "章",

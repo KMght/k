@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>国際捜査共助規則</title>
+<meta name="robots" content="noindex">
+<title>【非公式】国際捜査共助規則</title>
 <style>
 :root{
   --paper:#ffffff;
@@ -158,6 +159,42 @@ mark.live{background:var(--mark-live)}
 }
 
 .anchor-alias{position:absolute;scroll-margin-top:6rem}
+/* 非公式の注意書きとトップへ戻る ここから */
+.crumb-row{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;padding-top:.25rem;padding-bottom:.25rem}
+.crumb-row .home-link{font-size:.74rem;padding:.08rem .5rem}
+.crumb-row .unofficial-badge{text-decoration:none;font-size:.7rem;padding:0 .4rem}
+#unofficial{scroll-margin-top:6rem}
+.home-link{display:inline-block;background:var(--paper);border:1px solid var(--rule);border-radius:2px;
+  color:var(--accent);font-family:var(--gothic);font-size:.78rem;padding:.28rem .6rem;line-height:1.4;
+  text-decoration:none;white-space:nowrap}
+.home-link:hover{border-color:var(--accent);background:var(--accent-weak)}
+.unofficial-badge{display:inline-block;font-family:var(--gothic);font-size:.72rem;font-weight:700;
+  color:#8a4b00;background:#fff4d6;border:1px solid #e6c36a;border-radius:2px;
+  padding:.05rem .45rem;line-height:1.5;white-space:nowrap}
+.unofficial{font-family:var(--gothic);font-size:.85rem;line-height:1.75;color:var(--ink);
+  background:#fffaf0;border:1px solid #e6c36a;border-left:.4rem solid #d9a520;border-radius:2px;
+  padding:.7rem 1rem;margin:0 0 2rem}
+.unofficial strong{color:#8a4b00}
+.unofficial p{margin:0}
+.unofficial p+p{margin-top:.3rem}
+.unofficial a{color:var(--accent)}
+.page-warning{font-family:var(--gothic);font-size:.9rem;line-height:1.75;color:#5c0d0d;
+  background:#fdecec;border:1px solid #d98a8a;border-left:.4rem solid #b3261e;border-radius:2px;
+  padding:.7rem 1rem;margin:-1rem 0 2rem}
+.page-warning strong{color:#b3261e}
+.page-warning p{margin:0}
+.page-warning a{color:#8a1c16}
+.lapse-note{color:var(--sub);margin:.6rem 0 1rem 2.6rem}
+.doc-foot{font-family:var(--gothic);font-size:.85rem;border-top:1px solid var(--rule);
+  margin-top:4rem;padding-top:1.2rem;display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;align-items:center}
+.doc-foot .note{color:var(--sub);font-size:.8rem}
+.doc-foot .note a{color:var(--accent)}
+@media print{
+  .doc-foot .home-link{display:none}
+  .unofficial{background:none;border:1px solid #000;border-left:1px solid #000}
+  .page-warning{background:none;border:2px solid #000}
+}
+/* 非公式の注意書きとトップへ戻る ここまで */
 </style>
 </head>
 <body>
@@ -177,7 +214,11 @@ mark.live{background:var(--mark-live)}
         title="条番号の表記を切り替える">123</button>
     </div>
   </div>
-  <div class="crumb" id="crumb"></div>
+  <div class="crumb crumb-row">
+    <a class="home-link" href="../index.html" title="最高裁判所規則集のトップページ（総目次）に戻ります">← 規則集トップ</a>
+    <a class="unofficial-badge" href="#unofficial" title="裁判所の公式ページではありません。正確な内容は原本PDFで確認してください。">非公式</a>
+    <span id="crumb"></span>
+  </div>
 </header>
 <div class="wrap">
   <nav class="toc" id="toc" aria-label="目次">
@@ -187,19 +228,29 @@ mark.live{background:var(--mark-live)}
   <main class="doc" id="doc-outer">
     <div class="doc-head">
       <h1>国際捜査共助規則</h1>
-      <div class="meta">昭和55年9月18日最高裁判所規則第7号　／　平成16年6月29日施行　／　<a class="src" href="https://www.courts.go.jp/assets/kokusaisousakyoujyo.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本PDF p.1</a></div>
+      <div class="meta">昭和55年9月18日最高裁判所規則第7号　／　平成16年6月29日施行　／　<a class="src" href="https://www.courts.go.jp/assets/kokusaisousakyoujyo.pdf#page=1" target="_blank" rel="noopener" title="裁判所ウェブサイトの原本PDF（1ページ）を開きます">原本PDF p.1</a></div>
     </div>
+    <aside class="unofficial" id="unofficial" aria-label="このページについての注意">
+      <p><strong>【非公式】</strong>このページは、裁判所が公開している規則のPDFを機械的にHTMLへ変換した<strong>非公式</strong>の資料です。裁判所が作成・確認したものではありません。</p>
+      <p>変換の過程で誤りや脱落が生じているおそれがあり、改正にも自動では追随しません。<strong>正確な内容は、必ず<a href="https://www.courts.go.jp/assets/kokusaisousakyoujyo.pdf" target="_blank" rel="noopener">原本PDF（裁判所ウェブサイト）</a>で確認してください。</strong>各条の「原本 p.○」から該当ページを開けます。</p>
+      <p>画面上部の「漢数字／123」で、条番号などを算用数字（号は丸数字）に置き換えて表示できます。これは読みやすくするための表示で、原文の表記ではありません。</p>
+      <p>別表・読替表などの<strong>表は、列の区切りがなくなり、文字の順序が原本と違って表示されることがあります。</strong>表は必ず原本PDFで確認してください。</p>
+    </aside>
     <div id="doc">
-<article class="art" id="a1" data-path=""><span class="anchor-alias" id="Mp-At_1"></span><div class="art-tools"><button type="button" data-anchor="a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kokusaisousakyoujyo.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（令状の発付等の手続についての刑事訴訟規則の準用）</p><p class="para" id="a1-p1"><a class="art-no" href="#a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">国際捜査共助等に関する法律（昭和五十五年法律第六十九号）による令状の発付及び証人尋問並びに同法において準用する刑事訴訟法（昭和二十三法律第百三十一号）による不服申立てに関する手続については、その性質に反しない限り、刑事訴訟規則（昭和二十三年最高裁判所規則第三十二号）第一編第二章及び第五章から第十三章まで、第二編第一章、第三編第一章、第三章及び第四章、第七編並びに第八編の規定を準用する。</span></p></article>
-<article class="art" id="a2" data-path=""><span class="anchor-alias" id="Mp-At_2"></span><div class="art-tools"><button type="button" data-anchor="a2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kokusaisousakyoujyo.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（訳文の添付）</p><p class="para" id="a2-p1"><a class="art-no" href="#a2" data-kan="第二条" data-num="第2条">第二条</a><span class="body-text">外国語で記載された書面には、その訳文を添付しなければならない。</span></p></article>
+<article class="art" id="a1" data-path=""><span class="anchor-alias" id="Mp-At_1"></span><div class="art-tools"><button type="button" data-anchor="a1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kokusaisousakyoujyo.pdf#page=1" target="_blank" rel="noopener" title="裁判所ウェブサイトの原本PDF（1ページ）を開きます">原本 p.1</a></div><p class="caption">（令状の発付等の手続についての刑事訴訟規則の準用）</p><p class="para" id="a1-p1"><a class="art-no" href="#a1" data-kan="第一条" data-num="第1条">第一条</a><span class="body-text">国際捜査共助等に関する法律（昭和五十五年法律第六十九号）による令状の発付及び証人尋問並びに同法において準用する刑事訴訟法（昭和二十三法律第百三十一号）による不服申立てに関する手続については、その性質に反しない限り、刑事訴訟規則（昭和二十三年最高裁判所規則第三十二号）第一編第二章及び第五章から第十三章まで、第二編第一章、第三編第一章、第三章及び第四章、第七編並びに第八編の規定を準用する。</span></p></article>
+<article class="art" id="a2" data-path=""><span class="anchor-alias" id="Mp-At_2"></span><div class="art-tools"><button type="button" data-anchor="a2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kokusaisousakyoujyo.pdf#page=1" target="_blank" rel="noopener" title="裁判所ウェブサイトの原本PDF（1ページ）を開きます">原本 p.1</a></div><p class="caption">（訳文の添付）</p><p class="para" id="a2-p1"><a class="art-no" href="#a2" data-kan="第二条" data-num="第2条">第二条</a><span class="body-text">外国語で記載された書面には、その訳文を添付しなければならない。</span></p></article>
 <h2 class="div-head" id="sup1" data-path="附則　"><span class="lbl">附則</span></h2>
-<article class="art noarticle" id="sup-body-1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kokusaisousakyoujyo.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="sup-body-1-p1"><span class="body-text">この規則は、昭和五十五年十月一日から施行する。</span></p><p class="para" id="sup-body-1-p2"><span class="pno">2</span><span class="body-text">この規則は、この規則の施行前に犯された犯罪に係る外国からの共助の要請についても、適用する。</span></p></article>
+<article class="art noarticle" id="sup-body-1" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kokusaisousakyoujyo.pdf#page=1" target="_blank" rel="noopener" title="裁判所ウェブサイトの原本PDF（1ページ）を開きます">原本 p.1</a></div><p class="para" id="sup-body-1-p1"><span class="body-text">この規則は、昭和五十五年十月一日から施行する。</span></p><p class="para" id="sup-body-1-p2"><span class="pno">2</span><span class="body-text">この規則は、この規則の施行前に犯された犯罪に係る外国からの共助の要請についても、適用する。</span></p></article>
 <h2 class="div-head" id="sup2" data-path="附則　（平成一六年六月二一日最高裁判所規則第一一号）"><span class="lbl">附則</span>　（平成一六年六月二一日最高裁判所規則第一一号）</h2>
-<article class="art noarticle" id="sup-body-2" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kokusaisousakyoujyo.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="sup-body-2-p1"><span class="body-text">この規則は，国際捜査共助法及び組織的な犯罪の処罰及び犯罪収益の規制等に関する法律の一部を改正する法律（平成十六年法律第八十九号）の施行の日（平成十六年六月二十九日）から施行する。</span></p></article>
+<article class="art noarticle" id="sup-body-2" data-path="附則"><div class="art-tools"><button type="button" data-anchor="sup-body-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/kokusaisousakyoujyo.pdf#page=1" target="_blank" rel="noopener" title="裁判所ウェブサイトの原本PDF（1ページ）を開きます">原本 p.1</a></div><p class="para" id="sup-body-2-p1"><span class="body-text">この規則は，国際捜査共助法及び組織的な犯罪の処罰及び犯罪収益の規制等に関する法律の一部を改正する法律（平成十六年法律第八十九号）の施行の日（平成十六年六月二十九日）から施行する。</span></p></article>
     </div>
-    <aside class="notes"><p>読み取りに関する注意</p><ul><li>題名・制定文とみられる行を本文の前に検出しました：昭和55年9月18日最高裁判所規則第７号／改正 平成16年6月21日最高裁判所規則第１１号／国際捜査共助規則を次のように定める。</li><li>各条の「原本」は https://www.courts.go.jp/assets/kokusaisousakyoujyo.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。</li></ul></aside>
-    <div class="foot">出典：kokusaisousakyoujyo.pdf　／　最高裁規則ビューア 1.9.0 で 2026年09月02日 に変換　
+    <aside class="notes"><p>読み取りに関する注意</p><ul><li>題名・制定文・改正経過にあたる次の行は、条文の前にあるため本文に含めていません：昭和55年9月18日最高裁判所規則第７号／改正 平成16年6月21日最高裁判所規則第１１号／国際捜査共助規則を次のように定める。</li><li>各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/kokusaisousakyoujyo.pdf）の該当ページを開きます。</li></ul></aside>
+    <div class="foot">出典：裁判所ウェブサイト掲載のPDF（kokusaisousakyoujyo.pdf）　／　最高裁規則ビューア 1.9.0 で 2026年09月02日 に変換　
     条文の正確な内容は原本で確認してください。</div>
+    <div class="doc-foot">
+      <a class="home-link" href="../index.html">← 規則集トップに戻る</a>
+      <span class="note">非公式の資料です。正確な内容は<a href="https://www.courts.go.jp/assets/kokusaisousakyoujyo.pdf" target="_blank" rel="noopener">原本PDF</a>で確認してください。</span>
+    </div>
   </main>
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>

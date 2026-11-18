@@ -1,38 +1,16 @@
 {
   "title": "民事事件等に関する手続において用いる識別符号の付与等に関する規則に規定する最高裁判所が定める事項等（令和8年最高裁判所告示第1号)",
-  "law_number": "",
+  "law_number": "令和8年1月29日最高裁判所告示第1号",
   "enforcement_date": "",
   "enforcement_iso": "",
   "pdf_link": "https://www.courts.go.jp/assets/080521shikibetufugoukokuji1.pdf",
   "source": "080521shikibetufugoukokuji1.pdf",
   "numeral": "kansuji",
   "notes": [
-    "各条の「原本」は https://www.courts.go.jp/assets/080521shikibetufugoukokuji1.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "題名に続く改正経過・制定文は、本文に含めていません。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/080521shikibetufugoukokuji1.pdf）の該当ページを開きます。"
   ],
   "nodes": [
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-1",
-      "caption": null,
-      "deleted": false,
-      "section": "main",
-      "page": 1,
-      "division_path": [],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "民事事件等に関する手続において用いる識別符号の付与等に関する規則（令和六年最高裁判所規則第十五号）第一条第一項第五号に規定する最高裁判所が定める事項、同条第二項に規定する最高裁判所が定める方法及び同規則第二条第一項に規定する最高裁判所が定める者を次のとおり定めたので、告示する。",
-          "items": []
-        }
-      ],
-      "type": "article"
-    },
     {
       "number": [
         1

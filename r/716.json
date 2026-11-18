@@ -1,38 +1,16 @@
 {
   "title": "裁判所傍聴規則",
   "law_number": "昭和27年9月1日最高裁判所規則第21号",
-  "enforcement_date": "",
-  "enforcement_iso": "",
+  "enforcement_date": "昭和27年9月1日",
+  "enforcement_iso": "1952-09-01",
   "pdf_link": "https://www.courts.go.jp/assets/saibansyoboutyoukisoku.pdf",
   "source": "saibansyoboutyoukisoku.pdf",
   "numeral": "kansuji",
   "notes": [
-    "各条の「原本」は https://www.courts.go.jp/assets/saibansyoboutyoukisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "題名に続く改正経過・制定文は、本文に含めていません。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/saibansyoboutyoukisoku.pdf）の該当ページを開きます。"
   ],
   "nodes": [
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-1",
-      "caption": null,
-      "deleted": false,
-      "section": "main",
-      "page": 1,
-      "division_path": [],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "裁判所傍聴規則を次のように定める。裁判所傍聴規則",
-          "items": []
-        }
-      ],
-      "type": "article"
-    },
     {
       "number": [
         1

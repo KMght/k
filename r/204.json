@@ -1,40 +1,18 @@
 {
   "title": "滞納処分と強制執行等との手続の調整に関する規則",
   "law_number": "昭和三十二年八月一日最高裁判所規則第十二号",
-  "enforcement_date": "平成14年4月1日",
-  "enforcement_iso": "2002-04-01",
+  "enforcement_date": "平成25年7月1日",
+  "enforcement_iso": "2013-07-01",
   "pdf_link": "https://www.courts.go.jp/vc-files/courts/file2/20130701taichoukisoku.pdf",
   "source": "20130701taichoukisoku.pdf",
   "numeral": "kansuji",
   "notes": [
-    "PDF中の目次は読み飛ばし、条見出しから目次を再構成しました。",
-    "各条の「原本」は https://www.courts.go.jp/vc-files/courts/file2/20130701taichoukisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。",
-    "本文から他の法令へのリンクを4件作りました。うち1件は法令番号から e-Gov の法令IDを組み立てたものです。公開前に「法令リンク一覧」で確認してください。"
+    "題名に続く改正経過・制定文は、本文に含めていません。",
+    "目次は、原本PDFの目次ではなく、条見出しから作り直したものです。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/vc-files/courts/file2/20130701taichoukisoku.pdf）の該当ページを開きます。",
+    "本文から他の法令（e-Gov法令検索）へのリンクを4件張っています。リンク先は機械的に判定したもので、誤っていることがあります。"
   ],
   "nodes": [
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-1",
-      "caption": "滞納処分と強制執行等との手続の調整に関する規則（原文は縦書き",
-      "deleted": false,
-      "section": "main",
-      "page": 1,
-      "division_path": [],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "改正 昭和三四年一二月一五日最高裁判所規則第一九号同四一年一二月二〇日同第一一号同五五年五月六日同第三号同五五年九月一七日同第六号平成二年五月一六日同第三号同一〇年一一月一九日同第五号同一四年二月一五日同第四号同一七年一月一一日同第一号同二五年三月二六日同第二号滞納処分と強制執行等との手続の調整に関する規則を次のように定める。滞納処分と強制執行等との手続の調整に関する規則",
-          "items": []
-        }
-      ],
-      "type": "article"
-    },
     {
       "type": "division",
       "kind": "章",

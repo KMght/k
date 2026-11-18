@@ -1,38 +1,16 @@
 {
   "title": "特許法による査証の手続等に関する規則",
   "law_number": "令和二年四月二二日最高裁判所規則第七号",
-  "enforcement_date": "",
-  "enforcement_iso": "",
+  "enforcement_date": "令和2年10月1日",
+  "enforcement_iso": "2020-10-01",
   "pdf_link": "https://www.courts.go.jp/vc-files/courts/2020/20200422sasyoukisoku.pdf",
   "source": "20200422sasyoukisoku.pdf",
   "numeral": "kansuji",
   "notes": [
-    "各条の「原本」は https://www.courts.go.jp/vc-files/courts/2020/20200422sasyoukisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "題名に続く改正経過・制定文は、本文に含めていません。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/vc-files/courts/2020/20200422sasyoukisoku.pdf）の該当ページを開きます。"
   ],
   "nodes": [
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-1",
-      "caption": "特許法による査証の手続等に関する規則（原文は縦書き",
-      "deleted": false,
-      "section": "main",
-      "page": 1,
-      "division_path": [],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "特許法による査証の手続等に関する規則を次のように定める。",
-          "items": []
-        }
-      ],
-      "type": "article"
-    },
     {
       "number": [
         1

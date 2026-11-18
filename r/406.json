@@ -1,38 +1,16 @@
 {
   "title": "配偶者暴力等に関する保護命令手続規則",
   "law_number": "平成一三年七月二七日最高裁判所規則第七号",
-  "enforcement_date": "令和6年4月1日",
-  "enforcement_iso": "2024-04-01",
+  "enforcement_date": "令和8年5月21日",
+  "enforcement_iso": "2026-05-21",
   "pdf_link": "https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf",
   "source": "20260521hogomeireitetsuzukikisoku.pdf",
   "numeral": "kansuji",
   "notes": [
-    "各条の「原本」は https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "題名に続く改正経過・制定文は、本文に含めていません。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/20260521hogomeireitetsuzukikisoku.pdf）の該当ページを開きます。"
   ],
   "nodes": [
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-1",
-      "caption": "配偶者暴力等に関する保護命令手続規則（原文は縦書き",
-      "deleted": false,
-      "section": "main",
-      "page": 1,
-      "division_path": [],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "改正 平成一六年一〇月二〇日同第一七号同一九年一一月二八日同第一三号同二五年一一月一三日同第七号令和六年二月一日同第一号令和六年九月一七日同第一四号配偶者暴力に関する保護命令手続規則を次のように定める。",
-          "items": []
-        }
-      ],
-      "type": "article"
-    },
     {
       "number": [
         1

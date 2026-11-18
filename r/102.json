@@ -7,33 +7,11 @@
   "source": "08521minnsohoudaihachihenntokusokutetudukinikannsurukisoku.pdf",
   "numeral": "kansuji",
   "notes": [
-    "各条の「原本」は https://www.courts.go.jp/assets/08521minnsohoudaihachihenntokusokutetudukinikannsurukisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。",
-    "本文から他の法令へのリンクを4件作りました。うち1件は法令番号から e-Gov の法令IDを組み立てたものです。公開前に「法令リンク一覧」で確認してください。"
+    "題名に続く改正経過・制定文は、本文に含めていません。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/08521minnsohoudaihachihenntokusokutetudukinikannsurukisoku.pdf）の該当ページを開きます。",
+    "本文から他の法令（e-Gov法令検索）へのリンクを4件張っています。リンク先は機械的に判定したもので、誤っていることがあります。"
   ],
   "nodes": [
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-1",
-      "caption": "民事訴訟法第八編第二章の規定による督促手続に関する規則（原文は縦書き",
-      "deleted": false,
-      "section": "main",
-      "page": 1,
-      "division_path": [],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "改正 平成一八年一二月二八日 最高裁判所規則第一四号平成一九年一〇月一日 最高裁判所規則第一二号平成二〇年一〇月一日 最高裁判所規則第一一号平成二一年一〇月一日 最高裁判所規則第九号平成二二年一〇月一日 最高裁判所規則第七号平成二七年一二月二五日 最高裁判所規則第一一号令和七年八月二九日 最高裁判所規則第一一号民事訴訟法第百三十二条の十第一項に規定する電子情報処理組織を用いて取り扱う督促手続に関する規則を次のように定める。民事訴訟法第八編第二章の規定による督促手続に関する規則",
-          "items": []
-        }
-      ],
-      "type": "article"
-    },
     {
       "number": [
         1

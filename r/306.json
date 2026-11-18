@@ -7,32 +7,10 @@
   "source": "R021001sennpakuyudakutousongaibaisyousekininseigenjikentoutetuzukikisoku.pdf",
   "numeral": "kansuji",
   "notes": [
-    "各条の「原本」は https://www.courts.go.jp/vc-files/courts/2020/R021001sennpakuyudakutousongaibaisyousekininseigenjikentoutetuzukikisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "題名に続く改正経過・制定文は、本文に含めていません。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/vc-files/courts/2020/R021001sennpakuyudakutousongaibaisyousekininseigenjikentoutetuzukikisoku.pdf）の該当ページを開きます。"
   ],
   "nodes": [
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-1",
-      "caption": "船舶油濁等損害賠償責任制限事件等手続規則（原文は縦書き",
-      "deleted": false,
-      "section": "main",
-      "page": 1,
-      "division_path": [],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "改正 昭和五九年三月二日最高裁判所規則第一号平成六年八月三日同第六号同八年一二月一七日同第六号同一六年七月二六日同第一二号令和元年一一月二七日同第六号船舶油濁損害賠償責任制限事件等手続規則を次のように定める。",
-          "items": []
-        }
-      ],
-      "type": "article"
-    },
     {
       "number": [
         1

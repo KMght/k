@@ -1,39 +1,17 @@
 {
   "title": "一般社団法人等非訟事件手続規則",
-  "law_number": "",
+  "law_number": "平成二○年一○月一日最高裁判所規則第九号",
   "enforcement_date": "令和8年5月21日",
   "enforcement_iso": "2026-05-21",
   "pdf_link": "https://www.courts.go.jp/assets/080521ippannsyadannhoujinnkisoku.pdf",
   "source": "080521ippannsyadannhoujinnkisoku.pdf",
   "numeral": "kansuji",
   "notes": [
-    "PDF中の目次は読み飛ばし、条見出しから目次を再構成しました。",
-    "各条の「原本」は https://www.courts.go.jp/assets/080521ippannsyadannhoujinnkisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "題名に続く改正経過・制定文は、本文に含めていません。",
+    "目次は、原本PDFの目次ではなく、条見出しから作り直したものです。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/080521ippannsyadannhoujinnkisoku.pdf）の該当ページを開きます。"
   ],
   "nodes": [
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-1",
-      "caption": "一般社団法人等非訟事件手続規則（原文は縦書き",
-      "deleted": false,
-      "section": "main",
-      "page": 1,
-      "division_path": [],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "平成二○年一○月一日最高裁判所規則第九号改正 同二四年七月一七日最高裁判所規則第九号令和六年九月一七日同第一四号一般社団法人等非訟事件手続規則を次のように定める。",
-          "items": []
-        }
-      ],
-      "type": "article"
-    },
     {
       "type": "division",
       "kind": "章",

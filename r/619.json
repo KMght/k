@@ -1,16 +1,16 @@
 {
   "title": "性的な姿態を撮影する行為等の処罰及び押収物に記録された性的な姿態の影像に係る電磁的記録の消去等に関する法律による消去等の手続等に関する規則",
   "law_number": "令和6年4月17日最高裁判所規則第10号",
-  "enforcement_date": "",
-  "enforcement_iso": "",
+  "enforcement_date": "令和8年5月21日",
+  "enforcement_iso": "2026-05-21",
   "pdf_link": "https://www.courts.go.jp/assets/seitekishitaisatueikisoku20260521.pdf",
   "source": "seitekishitaisatueikisoku20260521.pdf",
   "numeral": "kansuji",
   "notes": [
-    "7ページのOCRに失敗しました（No tessdata specified and Tesseract is not installed）。Tesseract OCRと日本語辞書の導入状況を確認してください。",
-    "題名・制定文とみられる行を本文の前に検出しました：性的な姿態を撮影する行為等の処罰及び押収物に記録された性的な姿態の影像に係る／令和６年４月17 日最高裁判所規則第10 号／改正 令和６年９月17 日最高裁判所規則第14 号",
-    "各条の「原本」は https://www.courts.go.jp/assets/seitekishitaisatueikisoku20260521.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。",
-    "本文から他の法令へのリンクを5件作りました。うち1件は法令番号から e-Gov の法令IDを組み立てたものです。公開前に「法令リンク一覧」で確認してください。"
+    "原本PDFの7ページ目は「（施行の日＝令和８年５月２１日）」という注記だけのページで、条文はありません。",
+    "題名・制定文・改正経過にあたる次の行は、条文の前にあるため本文に含めていません：性的な姿態を撮影する行為等の処罰及び押収物に記録された性的な姿態の影像に係る／令和６年４月17 日最高裁判所規則第10 号／改正 令和６年９月17 日最高裁判所規則第14 号",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/seitekishitaisatueikisoku20260521.pdf）の該当ページを開きます。",
+    "本文から他の法令（e-Gov法令検索）へのリンクを5件張っています。リンク先は機械的に判定したもので、誤っていることがあります。"
   ],
   "nodes": [
     {
@@ -360,7 +360,7 @@
       "paragraphs": [
         {
           "number": 1,
-          "text": "から施行する。",
+          "text": "この規則は、法附則第一条ただし書に掲げる規定の施行の日（令和六年六月二〇日）から施行する。",
           "items": []
         }
       ],
@@ -383,7 +383,7 @@
       "label": "第一条",
       "short_label": "1条",
       "anchor": "sup2-a1",
-      "caption": "この規則は、法附則第一条ただし書に掲げる規定の施行の日（令和六年六月二〇日",
+      "caption": null,
       "deleted": false,
       "section": "supplementary",
       "page": 6,

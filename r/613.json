@@ -1,14 +1,14 @@
 {
   "title": "交通事件即決裁判手続規則",
   "law_number": "昭和29年9月15日最高裁判所規則第14号",
-  "enforcement_date": "",
-  "enforcement_iso": "",
+  "enforcement_date": "昭和29年11月1日",
+  "enforcement_iso": "1954-11-01",
   "pdf_link": "https://www.courts.go.jp/assets/koutsusokketsukisoku.pdf",
   "source": "koutsusokketsukisoku.pdf",
   "numeral": "kansuji",
   "notes": [
-    "題名・制定文とみられる行を本文の前に検出しました：昭和29年9月15日最高裁判所規則第１４号／交通事件即決裁判手続規則を次のように定める。／交通事件即決裁判手続規則",
-    "各条の「原本」は https://www.courts.go.jp/assets/koutsusokketsukisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "題名・制定文・改正経過にあたる次の行は、条文の前にあるため本文に含めていません：昭和29年9月15日最高裁判所規則第１４号／交通事件即決裁判手続規則を次のように定める。／交通事件即決裁判手続規則",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/koutsusokketsukisoku.pdf）の該当ページを開きます。"
   ],
   "nodes": [
     {

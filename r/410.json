@@ -7,33 +7,11 @@
   "source": "20250401syounenenzyohiyoukisoku.pdf",
   "numeral": "kansuji",
   "notes": [
-    "条番号の付いた条文を1件も検出できませんでした。条を持たない告示・要綱であればこれで正しく、そうでなければ書字方向・段組の設定、またはOCRの要否を確認してください。",
-    "各条の「原本」は https://www.courts.go.jp/vc-files/courts/2025/20250401syounenenzyohiyoukisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "題名に続く改正経過・制定文は、本文に含めていません。",
+    "この規則には条番号の付いた条文がないため、本文をひとまとまりで載せています。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/vc-files/courts/2025/20250401syounenenzyohiyoukisoku.pdf）の該当ページを開きます。"
   ],
   "nodes": [
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-1",
-      "caption": null,
-      "deleted": false,
-      "section": "main",
-      "page": 1,
-      "division_path": [],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "昭五三最裁規三・改称",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "改正 昭和32年12月5日最高裁判所規則第２２号昭和53年6月13日最高裁判所規則第３号昭和60年12月21日最高裁判所規則第６号平成13年2月19日最高裁判所規則第１号平成18年3月22日最高裁判所規則第５号令和7年3月3日最高裁判所規則第５号少年法による調査および観察のための援助費用に関する規則を次のように定める。少年法による調査及び観察のための援助費用に関する規則",
-          "items": []
-        }
-      ],
-      "type": "article"
-    },
     {
       "number": [],
       "label": "",

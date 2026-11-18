@@ -1,38 +1,16 @@
 {
   "title": "裁判の迅速化に係る検証に関する規則",
   "law_number": "平成15年11月13日最高裁判所規則第26号",
-  "enforcement_date": "",
-  "enforcement_iso": "",
+  "enforcement_date": "令和4年11月28日",
+  "enforcement_iso": "2022-11-28",
   "pdf_link": "https://www.courts.go.jp/assets/r4kisokukaisei.pdf",
   "source": "r4kisokukaisei.pdf",
   "numeral": "kansuji",
   "notes": [
-    "各条の「原本」は https://www.courts.go.jp/assets/r4kisokukaisei.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "題名に続く改正経過・制定文は、本文に含めていません。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/r4kisokukaisei.pdf）の該当ページを開きます。"
   ],
   "nodes": [
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-1",
-      "caption": null,
-      "deleted": false,
-      "section": "main",
-      "page": 1,
-      "division_path": [],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "改正 令和4 年11 月28 日最高裁判所規則第18 号裁判の迅速化に係る検証に関する規則を次のように定める。",
-          "items": []
-        }
-      ],
-      "type": "article"
-    },
     {
       "number": [
         1

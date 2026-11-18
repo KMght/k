@@ -7,8 +7,8 @@
   "source": "keijisosyoukisokusekoukisoku.20240215.pdf",
   "numeral": "kansuji",
   "notes": [
-    "題名・制定文とみられる行を本文の前に検出しました：改正 昭和二四年七月一日最高裁判所規則第一二号／昭和二五年一二月二〇日最高裁判所規則第二九号／令和五年九月一九日最高裁判所規則第四号",
-    "各条の「原本」は https://www.courts.go.jp/vc-files/courts/2023/keijisosyoukisokusekoukisoku.20240215.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "題名・制定文・改正経過にあたる次の行は、条文の前にあるため本文に含めていません：改正 昭和二四年七月一日最高裁判所規則第一二号／昭和二五年一二月二〇日最高裁判所規則第二九号／令和五年九月一九日最高裁判所規則第四号",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/vc-files/courts/2023/keijisosyoukisokusekoukisoku.20240215.pdf）の該当ページを開きます。"
   ],
   "nodes": [
     {

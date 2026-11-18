@@ -1,38 +1,16 @@
 {
   "title": "法廷の秩序維持等にあたる裁判所職員に関する規則",
   "law_number": "昭和27年9月16日最高裁判所規則第23号",
-  "enforcement_date": "",
-  "enforcement_iso": "",
+  "enforcement_date": "昭和27年9月16日",
+  "enforcement_iso": "1952-09-16",
   "pdf_link": "https://www.courts.go.jp/assets/houteinotitujoijitouniatarusaibansyosyokuinnikansurukisoku.pdf",
   "source": "houteinotitujoijitouniatarusaibansyosyokuinnikansurukisoku.pdf",
   "numeral": "kansuji",
   "notes": [
-    "各条の「原本」は https://www.courts.go.jp/assets/houteinotitujoijitouniatarusaibansyosyokuinnikansurukisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "題名に続く改正経過・制定文は、本文に含めていません。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/houteinotitujoijitouniatarusaibansyosyokuinnikansurukisoku.pdf）の該当ページを開きます。"
   ],
   "nodes": [
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-1",
-      "caption": null,
-      "deleted": false,
-      "section": "main",
-      "page": 1,
-      "division_path": [],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "法廷の秩序維持等にあたる裁判所職員に関する規則を次のように定める。法廷の秩序維持等にあたる裁判所職員に関する規則",
-          "items": []
-        }
-      ],
-      "type": "article"
-    },
     {
       "number": [
         1

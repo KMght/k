@@ -1,14 +1,14 @@
 {
   "title": "少年の保護事件に係る補償に関する規則",
   "law_number": "平成4年7月20日最高裁判所規則第8号",
-  "enforcement_date": "平成13年4月1日",
-  "enforcement_iso": "2001-04-01",
+  "enforcement_date": "令和8年5月21日",
+  "enforcement_iso": "2026-05-21",
   "pdf_link": "https://www.courts.go.jp/assets/20260521shounenhoshoukisoku.pdf",
   "source": "20260521shounenhoshoukisoku.pdf",
   "numeral": "kansuji",
   "notes": [
-    "題名・制定文とみられる行を本文の前に検出しました：平成4年7月20日最高裁判所規則第８号／改正 平成8年12月17日最高裁判所規則第６号／平成13年2月19日最高裁判所規則第１号",
-    "各条の「原本」は https://www.courts.go.jp/assets/20260521shounenhoshoukisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "題名・制定文・改正経過にあたる次の行は、条文の前にあるため本文に含めていません：平成4年7月20日最高裁判所規則第８号／改正 平成8年12月17日最高裁判所規則第６号／平成13年2月19日最高裁判所規則第１号",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/20260521shounenhoshoukisoku.pdf）の該当ページを開きます。"
   ],
   "nodes": [
     {

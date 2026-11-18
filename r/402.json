@@ -1,39 +1,17 @@
 {
   "title": "民事調停規則",
   "law_number": "昭和二六年九月一五日最高裁判所規則第八号",
-  "enforcement_date": "令和5年2月20日",
-  "enforcement_iso": "2023-02-20",
+  "enforcement_date": "令和8年5月21日",
+  "enforcement_iso": "2026-05-21",
   "pdf_link": "https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf",
   "source": "20260521minjityouteikisoku.pdf",
   "numeral": "kansuji",
   "notes": [
-    "PDF中の目次は読み飛ばし、条見出しから目次を再構成しました。",
-    "各条の「原本」は https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "題名に続く改正経過・制定文は、本文に含めていません。",
+    "目次は、原本PDFの目次ではなく、条見出しから作り直したものです。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf）の該当ページを開きます。"
   ],
   "nodes": [
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-1",
-      "caption": "民事調停規則（原文は縦書き",
-      "deleted": false,
-      "section": "main",
-      "page": 1,
-      "division_path": [],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "改正 同三三年七月一日最高裁判所規則第六号同四六年六月一四日同第六号同四九年九月一四日同第六号同五年五月六日同第三号平成四年二月二一日同第四号同八年一二月一七日同第六号同一二年一二月一五日同第一五号同一五年一○月一日同第一四号同二四年七月一七日同第九号令和四年一一月七日同第一七号同六年九月一七日同第一四号民事調停規則を次のように定める。民事調停規則",
-          "items": []
-        }
-      ],
-      "type": "article"
-    },
     {
       "number": [
         1
@@ -168,7 +146,12 @@
         },
         {
           "number": 4,
-          "text": "民事訴訟法第七十六条、第七十七条、第七十九条及び第八十条の規定は、第一項及び第二項の担保について準用する。５第一項及び第二項の規定による決定に対しては、当事者は、即時抗告をすることができる。",
+          "text": "民事訴訟法第七十六条、第七十七条、第七十九条及び第八十条の規定は、第一項及び第二項の担保について準用する。",
+          "items": []
+        },
+        {
+          "number": 5,
+          "text": "第一項及び第二項の規定による決定に対しては、当事者は、即時抗告をすることができる。",
           "items": []
         }
       ],

@@ -7,32 +7,10 @@
   "source": "R6.9.17saikousaibansyosaibanjimusyorikisoku.pdf",
   "numeral": "kansuji",
   "notes": [
-    "各条の「原本」は https://www.courts.go.jp/assets/R6.9.17saikousaibansyosaibanjimusyorikisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "題名に続く改正経過・制定文は、本文に含めていません。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/R6.9.17saikousaibansyosaibanjimusyorikisoku.pdf）の該当ページを開きます。"
   ],
   "nodes": [
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-1",
-      "caption": null,
-      "deleted": false,
-      "section": "main",
-      "page": 1,
-      "division_path": [],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "改正 昭和22年12月29日最高裁判所規則第１９号昭和23年4月1日最高裁判所規則第３号昭和23年10月19日最高裁判所規則第２６号昭和24年7月1日最高裁判所規則第１２号昭和28年1月19日最高裁判所規則第１号昭和40年3月31日最高裁判所規則第５号令和6年9月17日最高裁判所規則第１４号最高裁判所裁判事務処理規則を次のように定める。最高裁判所裁判事務処理規則",
-          "items": []
-        }
-      ],
-      "type": "article"
-    },
     {
       "number": [
         1

@@ -1,38 +1,16 @@
 {
   "title": "仲裁関係事件手続規則",
   "law_number": "平成一五年一一月二六日最高裁判所規則第二七号",
-  "enforcement_date": "令和6年4月1日",
-  "enforcement_iso": "2024-04-01",
+  "enforcement_date": "令和8年5月21日",
+  "enforcement_iso": "2026-05-21",
   "pdf_link": "https://www.courts.go.jp/assets/20260521chusaikisoku.pdf",
   "source": "20260521chusaikisoku.pdf",
   "numeral": "kansuji",
   "notes": [
-    "各条の「原本」は https://www.courts.go.jp/assets/20260521chusaikisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "題名に続く改正経過・制定文は、本文に含めていません。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/20260521chusaikisoku.pdf）の該当ページを開きます。"
   ],
   "nodes": [
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-1",
-      "caption": "仲裁関係事件手続規則（原文は縦書き",
-      "deleted": false,
-      "section": "main",
-      "page": 1,
-      "division_path": [],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "改正 令和四年一一月七日同第一七号同六年二月一日同第二号同六年九月一七日同第一四号仲裁関係事件手続規則を次のように定める。",
-          "items": []
-        }
-      ],
-      "type": "article"
-    },
     {
       "number": [
         1

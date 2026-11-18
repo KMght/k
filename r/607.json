@@ -1,15 +1,15 @@
 {
   "title": "犯罪捜査のための通信傍受に関する規則",
   "law_number": "平成十二年三月十五日最高裁判所規則第六号",
-  "enforcement_date": "平成13年1月6日",
-  "enforcement_iso": "2001-01-06",
+  "enforcement_date": "令和元年6月1日",
+  "enforcement_iso": "2019-06-01",
   "pdf_link": "https://www.courts.go.jp/vc-files/courts/file5/tuusinboujukisoku010601.pdf",
   "source": "tuusinboujukisoku010601.pdf",
   "numeral": "kansuji",
   "notes": [
-    "PDF中の目次は読み飛ばし、条見出しから目次を再構成しました。",
-    "題名・制定文とみられる行を本文の前に検出しました：改正 平成十二年十二月十五日最高裁判所規則第十五号／平成三十年一月十五日最高裁判所規則第一号／犯罪捜査のための通信傍受に関する規則を次のように定める。",
-    "各条の「原本」は https://www.courts.go.jp/vc-files/courts/file5/tuusinboujukisoku010601.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "目次は、原本PDFの目次ではなく、条見出しから作り直したものです。",
+    "題名・制定文・改正経過にあたる次の行は、条文の前にあるため本文に含めていません：改正 平成十二年十二月十五日最高裁判所規則第十五号／平成三十年一月十五日最高裁判所規則第一号／犯罪捜査のための通信傍受に関する規則を次のように定める。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/vc-files/courts/file5/tuusinboujukisoku010601.pdf）の該当ページを開きます。"
   ],
   "nodes": [
     {

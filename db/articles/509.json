@@ -5,6 +5,18 @@
  "url": "https://kmght.github.io/k/r/509.html",
  "articles": [
   {
+   "key": "1",
+   "label": "第一条",
+   "short": "1条",
+   "caption": "",
+   "anchor": "a1",
+   "paragraphs": [
+    1
+   ],
+   "section": "main",
+   "deleted": false
+  },
+  {
    "key": "2",
    "label": "第二条",
    "short": "2条",

@@ -7,10 +7,33 @@
   "source": "kokuzeichokansatukansousakisoku.20240215.pdf",
   "numeral": "kansuji",
   "notes": [
-    "題名・制定文とみられる行を本文の前に検出しました：改正 昭和二九年九月一五日最高裁判所規則第一五号／昭和六〇年九月二五日最高裁判所規則第三号／平成一二年一二月一五日最高裁判所規則第一五号",
-    "各条の「原本」は https://www.courts.go.jp/vc-files/courts/2023/kokuzeichokansatukansousakisoku.20240215.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "題名・制定文・改正経過にあたる次の行は、条文の前にあるため本文に含めていません：改正 昭和二九年九月一五日最高裁判所規則第一五号／昭和六〇年九月二五日最高裁判所規則第三号／平成一二年一二月一五日最高裁判所規則第一五号",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/vc-files/courts/2023/kokuzeichokansatukansousakisoku.20240215.pdf）の該当ページを開きます。"
   ],
   "nodes": [
+    {
+      "number": [],
+      "label": "",
+      "short_label": "",
+      "anchor": "body-1",
+      "caption": null,
+      "deleted": false,
+      "section": "main",
+      "page": 1,
+      "division_path": [],
+      "sup_index": 0,
+      "label_override": null,
+      "alias_numbers": [],
+      "note": "",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "国税庁監察官が財務省設置法（平成十一年法律第九十五号）第二十七条の規定により行う捜査については、刑事訴訟規則（昭和二十三年最高裁判所規則第三十二号）の規定を適用する。この場合において、同規則第十六条、第十七条、第二十七条第一項及び第百六十五条第一項中「司法警察員」とあるのは、「国税庁監察官」と読み替えるものとする。",
+          "items": []
+        }
+      ],
+      "type": "article"
+    },
     {
       "type": "division",
       "kind": "附則",

@@ -24,7 +24,10 @@
    "caption": "申立ての方式等",
    "anchor": "a2",
    "paragraphs": [
-    1
+    1,
+    2,
+    3,
+    4
    ],
    "section": "main",
    "deleted": false
@@ -151,7 +154,8 @@
    "anchor": "a11",
    "paragraphs": [
     1,
-    2
+    2,
+    3
    ],
    "section": "main",
    "deleted": false
@@ -438,7 +442,8 @@
    "anchor": "a24",
    "paragraphs": [
     1,
-    2
+    2,
+    3
    ],
    "section": "main",
    "deleted": false
@@ -450,7 +455,11 @@
    "caption": "強制執行等禁止命令の申立書の記載事項等・法第二十八条",
    "anchor": "a25",
    "paragraphs": [
-    1
+    1,
+    2,
+    3,
+    4,
+    5
    ],
    "section": "main",
    "deleted": false
@@ -498,7 +507,8 @@
    "caption": "管理命令の申立書の記載事項等・法第三十二条",
    "anchor": "a29",
    "paragraphs": [
-    1
+    1,
+    2
    ],
    "section": "main",
    "deleted": false
@@ -510,7 +520,10 @@
    "caption": "承認管財人の選任等・法第三十二条",
    "anchor": "a30",
    "paragraphs": [
-    1
+    1,
+    2,
+    3,
+    4
    ],
    "section": "main",
    "deleted": false
@@ -547,7 +560,9 @@
    "caption": "承認管財人に対する監督等・法第三十八条",
    "anchor": "a33",
    "paragraphs": [
-    1
+    1,
+    2,
+    3
    ],
    "section": "main",
    "deleted": false
@@ -620,7 +635,8 @@
    "caption": "国内倒産処理手続の中止命令の申立書の記載事項等・法第五十八条",
    "anchor": "a39",
    "paragraphs": [
-    1
+    1,
+    2
    ],
    "section": "main",
    "deleted": false
@@ -645,7 +661,11 @@
    "caption": "国内倒産処理手続が係属する裁判所との連絡調整",
    "anchor": "a41",
    "paragraphs": [
-    1
+    1,
+    2,
+    3,
+    4,
+    5
    ],
    "section": "main",
    "deleted": false
@@ -707,7 +727,9 @@
    "caption": "外国倒産処理手続の承認援助に関する規則の一部改正に伴う経過措置",
    "anchor": "sup5-a4",
    "paragraphs": [
-    1
+    1,
+    2,
+    3
    ],
    "section": "supplementary",
    "deleted": false

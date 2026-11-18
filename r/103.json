@@ -1,39 +1,17 @@
 {
   "title": "民事訴訟手続に関する条約等の実施に伴う民事訴訟手続の特例等に関する規則",
   "law_number": "昭和四五年七月七日最高裁判所規則第六号",
-  "enforcement_date": "昭和45年7月27日",
-  "enforcement_iso": "1970-07-27",
+  "enforcement_date": "令和8年5月21日",
+  "enforcement_iso": "2026-05-21",
   "pdf_link": "https://www.courts.go.jp/assets/tokureikisoku2.pdf",
   "source": "tokureikisoku2.pdf",
   "numeral": "kansuji",
   "notes": [
-    "PDF中の目次は読み飛ばし、条見出しから目次を再構成しました。",
-    "各条の「原本」は https://www.courts.go.jp/assets/tokureikisoku2.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "題名に続く改正経過・制定文は、本文に含めていません。",
+    "目次は、原本PDFの目次ではなく、条見出しから作り直したものです。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/tokureikisoku2.pdf）の該当ページを開きます。"
   ],
   "nodes": [
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-1",
-      "caption": null,
-      "deleted": false,
-      "section": "main",
-      "page": 1,
-      "division_path": [],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "民事訴訟手続に関する条約等の実施に伴う民事訴訟手続の特例等に関する規則（原文は縦書き）改正 平成八年一二月一七日最高裁判所規則第六号同一五年一一月一二日同第一九号同二四年七月一七日同第九号令和六年九月一七日同第一四号民事訴訟手続に関する条約等の実施に伴う民事訴訟手続の特例等に関する規則を次のように定める。",
-          "items": []
-        }
-      ],
-      "type": "article"
-    },
     {
       "type": "division",
       "kind": "章",
@@ -563,37 +541,11 @@
       "type": "division",
       "kind": "章",
       "label": "第三章",
-      "title": "民事又は商事に関する裁判上及び裁判外の文書の外国における送達及び告知に",
+      "title": "民事又は商事に関する裁判上及び裁判外の文書の外国における送達及び告知に関する条約の実施",
       "anchor": "d16",
       "level": 2,
       "page": 4,
       "note": ""
-    },
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-2",
-      "caption": null,
-      "deleted": false,
-      "section": "main",
-      "page": 4,
-      "division_path": [
-        "",
-        "第三章　民事又は商事に関する裁判上及び裁判外の文書の外国における送達及び告知に"
-      ],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "関する条約の実施",
-          "items": []
-        }
-      ],
-      "type": "article"
     },
     {
       "number": [

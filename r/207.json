@@ -7,33 +7,11 @@
   "source": "20031219missyuushigaichicyouseikisoku.pdf",
   "numeral": "kansuji",
   "notes": [
-    "各条の「原本」は https://www.courts.go.jp/assets/20031219missyuushigaichicyouseikisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。",
-    "本文から他の法令へのリンクを4件作りました。うち1件は法令番号から e-Gov の法令IDを組み立てたものです。公開前に「法令リンク一覧」で確認してください。"
+    "題名に続く改正経過・制定文は、本文に含めていません。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/20031219missyuushigaichicyouseikisoku.pdf）の該当ページを開きます。",
+    "本文から他の法令（e-Gov法令検索）へのリンクを4件張っています。リンク先は機械的に判定したもので、誤っていることがあります。"
   ],
   "nodes": [
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-1",
-      "caption": null,
-      "deleted": false,
-      "section": "main",
-      "page": 1,
-      "division_path": [],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "密集市街地における防災街区の整備の促進に関する法律による権利の変換と強制執行等との調整に関する規則（原文は縦書き）密集市街地における防災街区の整備の促進に関する法律による権利の変換と強制執行等との調整に関する規則を次のように定める。密集市街地における防災街区の整備の促進に関する法律による権利の変換と強制執行等",
-          "items": []
-        }
-      ],
-      "type": "article"
-    },
     {
       "number": [
         1

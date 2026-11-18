@@ -7,9 +7,9 @@
   "source": "jyousoshinpantokurei.pdf",
   "numeral": "kansuji",
   "notes": [
-    "3ページのOCRに失敗しました（No tessdata specified and Tesseract is not installed）。Tesseract OCRと日本語辞書の導入状況を確認してください。",
-    "題名・制定文とみられる行を本文の前に検出しました：昭和25年12月20日最高裁判所規則第３０号／旧刑事訴訟法事件の控訴審及び上告審における審判の特例に関する規則を次のように定／める。",
-    "各条の「原本」は https://www.courts.go.jp/assets/jyousoshinpantokurei.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "原本PDFの3ページ目は附則の末尾の1行だけで、その内容はこのページに載っています。",
+    "題名・制定文・改正経過にあたる次の行は、条文の前にあるため本文に含めていません：昭和25年12月20日最高裁判所規則第３０号／旧刑事訴訟法事件の控訴審及び上告審における審判の特例に関する規則を次のように定／める。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/jyousoshinpantokurei.pdf）の該当ページを開きます。"
   ],
   "nodes": [
     {

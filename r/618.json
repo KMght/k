@@ -1,16 +1,16 @@
 {
   "title": "国際刑事裁判所に対する協力の手続に関する規則",
   "law_number": "平成19年7月19日最高裁判所規則第8号",
-  "enforcement_date": "平成21年1月5日",
-  "enforcement_iso": "2009-01-05",
+  "enforcement_date": "令和4年2月21日",
+  "enforcement_iso": "2022-02-21",
   "pdf_link": "https://www.courts.go.jp/vc-files/courts/2022/kokusaikeijisaibansyokisoku20220221.pdf",
   "source": "kokusaikeijisaibansyokisoku20220221.pdf",
   "numeral": "kansuji",
   "notes": [
     "題名に続く改正経過・制定文の5行は本文に含めていません。",
-    "PDF中の目次は読み飛ばし、条見出しから目次を再構成しました。",
-    "原本のページ番号は、同じ規則の以前の解析結果から25件引き継ぎました。",
-    "各条の「原本」は https://www.courts.go.jp/vc-files/courts/2022/kokusaikeijisaibansyokisoku20220221.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "目次は、原本PDFの目次ではなく、条見出しから作り直したものです。",
+    "「原本 p.○」のページ番号のうち25件は、以前の版のPDFで調べたものを引き継いでいます。改正でページがずれていることがあります。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/vc-files/courts/2022/kokusaikeijisaibansyokisoku20220221.pdf）の該当ページを開きます。"
   ],
   "nodes": [
     {

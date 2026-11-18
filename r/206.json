@@ -1,38 +1,16 @@
 {
   "title": "都市再開発法による権利の変換と強制執行等との調整に関する規則",
   "law_number": "昭和四十五年四月二十五日最高裁判所規則第二号",
-  "enforcement_date": "",
-  "enforcement_iso": "",
+  "enforcement_date": "令和4年2月21日",
+  "enforcement_iso": "2022-02-21",
   "pdf_link": "https://www.courts.go.jp/vc-files/courts/2022/toshisaikaihatsuhoutyouseikisokuR4.2.pdf",
   "source": "toshisaikaihatsuhoutyouseikisokuR4.2.pdf",
   "numeral": "kansuji",
   "notes": [
-    "各条の「原本」は https://www.courts.go.jp/vc-files/courts/2022/toshisaikaihatsuhoutyouseikisokuR4.2.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "題名に続く改正経過・制定文は、本文に含めていません。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/vc-files/courts/2022/toshisaikaihatsuhoutyouseikisokuR4.2.pdf）の該当ページを開きます。"
   ],
   "nodes": [
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-1",
-      "caption": "都市再開発法による権利の変換と強制執行等との調整に関する規則（原文は縦書き",
-      "deleted": false,
-      "section": "main",
-      "page": 1,
-      "division_path": [],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "改正 昭和五五年五月六日最高裁判所規則第三号令和四年二月二一日同第四号都市再開発法による権利の変換と強制執行等との調整に関する規則を次のように定める。",
-          "items": []
-        }
-      ],
-      "type": "article"
-    },
     {
       "number": [
         1
@@ -112,7 +90,7 @@
         },
         {
           "number": 2,
-          "text": "裁判所は、前項の施行者の通知を受けたときは、権利変換手続が終了するまで、強1制競売等の手続を留保することができる。",
+          "text": "裁判所は、前項の施行者の通知を受けたときは、権利変換手続が終了するまで、強制競売等の手続を留保することができる。",
           "items": []
         }
       ],
@@ -232,7 +210,7 @@
         },
         {
           "number": 2,
-          "text": "留置権者が前項の計算書を民事執行規則第六十条に規定する期間内に提出したときは、裁判所書記官は、速やかに、その内容を債務者及び所有者に通知しなければなら2ない。",
+          "text": "留置権者が前項の計算書を民事執行規則第六十条に規定する期間内に提出したときは、裁判所書記官は、速やかに、その内容を債務者及び所有者に通知しなければならない。",
           "items": []
         }
       ],
@@ -383,7 +361,7 @@
       "paragraphs": [
         {
           "number": 1,
-          "text": "この規則は、民事執行法（昭和五十四年法律第四号）の施行の日（昭和五十五年十3月一日）から施行する。",
+          "text": "この規則は、民事執行法（昭和五十四年法律第四号）の施行の日（昭和五十五年十月一日）から施行する。",
           "items": []
         }
       ],

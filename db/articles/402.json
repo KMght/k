@@ -1,7 +1,7 @@
 {
  "rule_id": "402",
  "title": "民事調停規則",
- "enforcement_iso": "2023-02-20",
+ "enforcement_iso": "2026-05-21",
  "url": "https://kmght.github.io/k/r/402.html",
  "articles": [
   {
@@ -62,7 +62,8 @@
     1,
     2,
     3,
-    4
+    4,
+    5
    ],
    "section": "main",
    "deleted": false

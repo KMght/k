@@ -7,32 +7,10 @@
   "source": "20250601minjicyouteiiinoyobikajicyouteiiinkisoku.pdf",
   "numeral": "kansuji",
   "notes": [
-    "各条の「原本」は https://www.courts.go.jp/vc-files/courts/2025/20250601minjicyouteiiinoyobikajicyouteiiinkisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "題名に続く改正経過・制定文は、本文に含めていません。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/vc-files/courts/2025/20250601minjicyouteiiinoyobikajicyouteiiinkisoku.pdf）の該当ページを開きます。"
   ],
   "nodes": [
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-1",
-      "caption": "民事調停委員及び家事調停委員規則 （原文は縦書き",
-      "deleted": false,
-      "section": "main",
-      "page": 1,
-      "division_path": [],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "改正 同五○年九月二○日最高裁判所規則第三号同五○年一一月一五日同第七号同五四年三月三一日同第一号同六○年一二月二一日同第六号平成二年四月二四日同第二号同六年九月一日同第八号同一二年一月七日同第一号同一八年三月二二日同第五号同二四年七月一七日同第九号令和四年二月二一日同第五号同七年二月一二日同第三号同七年三月三日同第五号民事調停委員及び家事調停委員規則を次のように定める民事調停委員及び家事調停委員規則",
-          "items": []
-        }
-      ],
-      "type": "article"
-    },
     {
       "number": [
         1

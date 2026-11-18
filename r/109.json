@@ -1,38 +1,16 @@
 {
   "title": "専門委員規則",
-  "law_number": "",
+  "law_number": "平成一五年一一月一二日最高裁判所規則第二○号",
   "enforcement_date": "令和7年6月1日",
   "enforcement_iso": "2025-06-01",
   "pdf_link": "https://www.courts.go.jp/vc-files/courts/2025/20250601senmoniinkisoku.pdf",
   "source": "20250601senmoniinkisoku.pdf",
   "numeral": "kansuji",
   "notes": [
-    "各条の「原本」は https://www.courts.go.jp/vc-files/courts/2025/20250601senmoniinkisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "題名に続く改正経過・制定文は、本文に含めていません。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/vc-files/courts/2025/20250601senmoniinkisoku.pdf）の該当ページを開きます。"
   ],
   "nodes": [
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-1",
-      "caption": "専門委員規則（原文は縦書き",
-      "deleted": false,
-      "section": "main",
-      "page": 1,
-      "division_path": [],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "平成一五年一一月一二日最高裁判所規則第二○号改正 同二四年七月一七日最高裁判所規則第九号令和四年二月二一日同第五号同七年二月一二日同第三号同七年三月三日同第五号専門委員規則を次のように定める。",
-          "items": []
-        }
-      ],
-      "type": "article"
-    },
     {
       "number": [
         1

@@ -7,32 +7,10 @@
   "source": "080521hasshinnsyajyouhoukaijimeireikisoku.pdf",
   "numeral": "kansuji",
   "notes": [
-    "各条の「原本」は https://www.courts.go.jp/assets/080521hasshinnsyajyouhoukaijimeireikisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "題名に続く改正経過・制定文は、本文に含めていません。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/080521hasshinnsyajyouhoukaijimeireikisoku.pdf）の該当ページを開きます。"
   ],
   "nodes": [
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-1",
-      "caption": null,
-      "deleted": false,
-      "section": "main",
-      "page": 1,
-      "division_path": [],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "改正 令和4 年11 月7 日最高裁判所規則第１７号令和6 年9 月17 日最高裁判所規則第１４号令和7 年2 月3 日最高裁判所規則第１号発信者情報開示命令事件手続規則を次のように定める。発信者情報開示命令事件手続規則",
-          "items": []
-        }
-      ],
-      "type": "article"
-    },
     {
       "number": [
         1

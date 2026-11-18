@@ -1,38 +1,16 @@
 {
   "title": "司法修習委員会規則",
   "law_number": "平成15年4月9日最高裁判所規則第11号",
-  "enforcement_date": "平成19年12月26日",
-  "enforcement_iso": "2007-12-26",
+  "enforcement_date": "平成20年3月3日",
+  "enforcement_iso": "2008-03-03",
   "pdf_link": "https://www.courts.go.jp/assets/shihousyusyuuiinnkai.pdf",
   "source": "shihousyusyuuiinnkai.pdf",
   "numeral": "kansuji",
   "notes": [
-    "各条の「原本」は https://www.courts.go.jp/assets/shihousyusyuuiinnkai.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "題名に続く改正経過・制定文は、本文に含めていません。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/shihousyusyuuiinnkai.pdf）の該当ページを開きます。"
   ],
   "nodes": [
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-1",
-      "caption": null,
-      "deleted": false,
-      "section": "main",
-      "page": 1,
-      "division_path": [],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "改正 平成20年3月3日最高裁判所規則第２号司法修習委員会規則を次のように定める。司法修習委員会規則",
-          "items": []
-        }
-      ],
-      "type": "article"
-    },
     {
       "number": [
         1

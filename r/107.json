@@ -7,32 +7,10 @@
   "source": "080521roudoushinnpannkisoku.pdf",
   "numeral": "kansuji",
   "notes": [
-    "各条の「原本」は https://www.courts.go.jp/assets/080521roudoushinnpannkisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "題名に続く改正経過・制定文は、本文に含めていません。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/080521roudoushinnpannkisoku.pdf）の該当ページを開きます。"
   ],
   "nodes": [
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-1",
-      "caption": "労働審判規則（原文は縦書き",
-      "deleted": false,
-      "section": "main",
-      "page": 1,
-      "division_path": [],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "改正 平成２４年７月１７日最高裁判所規則第９号令和４年１１月７日最高裁判所規則第１７号令和６年９月１７日最高裁判所規則第１４号労働審判規則を次のように定める。",
-          "items": []
-        }
-      ],
-      "type": "article"
-    },
     {
       "number": [
         1
@@ -167,7 +145,7 @@
       "number": [
         6
       ],
-      "label": "第六条",
+      "label": "第六条から第八条まで",
       "short_label": "6条",
       "anchor": "a6",
       "caption": null,

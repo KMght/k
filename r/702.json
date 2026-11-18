@@ -7,32 +7,10 @@
   "source": "saikousaibansyojimusoukyokukisoku.pdf",
   "numeral": "kansuji",
   "notes": [
-    "各条の「原本」は https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "題名に続く改正経過・制定文は、本文に含めていません。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/saikousaibansyojimusoukyokukisoku.pdf）の該当ページを開きます。"
   ],
   "nodes": [
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-1",
-      "caption": null,
-      "deleted": false,
-      "section": "main",
-      "page": 1,
-      "division_path": [],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "改正 昭和２３年１０月１３日最高裁判所規則第２４号昭和２３年１２月２８日最高裁判所規則第４０号昭和２４年７月１日最高裁判所規則第１７号昭和２５年１月１７日最高裁判所規則第２号昭和２５年５月１日最高裁判所規則第１３号昭和２６年３月３１日最高裁判所規則第２号昭和２７年４月２３日最高裁判所規則第９号昭和２８年３月３０日最高裁判所規則第６号昭和３８年４月２２日最高裁判所規則第４号昭和４３年４月２０日最高裁判所規則第２号昭和５０年４月７日最高裁判所規則第２号昭和５６年３月１８日最高裁判所規則第１号令和６年３月１日最高裁判所規則第６号令和６年４月１８日最高裁判所規則第１１号最高裁判所事務局規則を次のように定める。最高裁判所事務総局規則（昭二三最裁規四〇・改称）",
-          "items": []
-        }
-      ],
-      "type": "article"
-    },
     {
       "number": [
         1

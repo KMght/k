@@ -7,68 +7,20 @@
   "source": "080521sennpakusyoyusya.pdf",
   "numeral": "kansuji",
   "notes": [
-    "PDF中の目次は読み飛ばし、条見出しから目次を再構成しました。",
-    "各条の「原本」は https://www.courts.go.jp/assets/080521sennpakusyoyusya.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "題名に続く改正経過・制定文は、本文に含めていません。",
+    "目次は、原本PDFの目次ではなく、条見出しから作り直したものです。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/080521sennpakusyoyusya.pdf）の該当ページを開きます。"
   ],
   "nodes": [
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-1",
-      "caption": "船舶所有者等責任制限事件手続規則(原文は縦書き",
-      "deleted": false,
-      "section": "main",
-      "page": 1,
-      "division_path": [],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "改正 昭和五九年三月二日最高裁判所規則第一号平成八年一二月一七日同第六号同一五年三月一九日同第七号令和四年一一月七日同第一七号同六年九月一七日同第一四号船舶所有者等責任制限事件手続規則を次のように定める。",
-          "items": []
-        }
-      ],
-      "type": "article"
-    },
     {
       "type": "division",
       "kind": "章",
       "label": "第一章",
-      "title": "",
+      "title": "責任制限手続の開始",
       "anchor": "d1",
       "level": 2,
       "page": 1,
       "note": ""
-    },
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-2",
-      "caption": null,
-      "deleted": false,
-      "section": "main",
-      "page": 1,
-      "division_path": [
-        "",
-        "第一章"
-      ],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "責任制限手続の開始",
-          "items": []
-        }
-      ],
-      "type": "article"
     },
     {
       "number": [
@@ -364,37 +316,11 @@
       "type": "division",
       "kind": "章",
       "label": "第二章",
-      "title": "",
+      "title": "責任制限手続の拡張",
       "anchor": "d13",
       "level": 2,
       "page": 3,
       "note": ""
-    },
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-3",
-      "caption": null,
-      "deleted": false,
-      "section": "main",
-      "page": 3,
-      "division_path": [
-        "",
-        "第二章"
-      ],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "責任制限手続の拡張",
-          "items": []
-        }
-      ],
-      "type": "article"
     },
     {
       "number": [
@@ -1203,7 +1129,27 @@
       "paragraphs": [
         {
           "number": 1,
-          "text": "法第八十二条第三号に該当する場合において、同条ただし書に規定する事由があるときは、管理人は、裁判所の許可を得て基金から法第九十条に規定する費用等の概算 額の支払を受けることができる。2管理人は、前項の支払を受けたときは、直ちに、これを裁判所に納付しなければならない。3前項の規定により納付された金銭で第一項の費用等として支出しないことが明らかになつたものについては、責任制限裁判所は、これを管理人に返還すべき旨を定めなければならない。4管理人は、前項の規定により定められた金銭の返還を受けたときは、直ちに、これを申立人のために基金として供託し、かつ、その旨を裁判所に報告しなければならない。5前項の規定により管理人がした供託は、申立人が供託者としてした供託とみなす。6第三条第一項の規定は、第四項の規定による報告について準用する。",
+          "text": "法第八十二条第三号に該当する場合において、同条ただし書に規定する事由があるときは、管理人は、裁判所の許可を得て基金から法第九十条に規定する費用等の概算 額の支払を受けることができる。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "管理人は、前項の支払を受けたときは、直ちに、これを裁判所に納付しなければならない。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "前項の規定により納付された金銭で第一項の費用等として支出しないことが明らかになつたものについては、責任制限裁判所は、これを管理人に返還すべき旨を定めなければならない。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "管理人は、前項の規定により定められた金銭の返還を受けたときは、直ちに、これを申立人のために基金として供託し、かつ、その旨を裁判所に報告しなければならない。",
+          "items": []
+        },
+        {
+          "number": 5,
+          "text": "前項の規定により管理人がした供託は、申立人が供託者としてした供託とみなす。6第三条第一項の規定は、第四項の規定による報告について準用する。",
           "items": []
         }
       ],

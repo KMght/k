@@ -7,33 +7,11 @@
   "source": "saibankannobungenjikentetudukikisoku.pdf",
   "numeral": "kansuji",
   "notes": [
+    "題名に続く改正経過・制定文は、本文に含めていません。",
     "項番号が印字されていない条があります（第1条・第3条・第6条など3件）。原本PDFが項を字下げだけで表しているため、項に分けずに続けて載せています。",
-    "各条の「原本」は https://www.courts.go.jp/assets/saibankannobungenjikentetudukikisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/saibankannobungenjikentetudukikisoku.pdf）の該当ページを開きます。"
   ],
   "nodes": [
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-1",
-      "caption": null,
-      "deleted": false,
-      "section": "main",
-      "page": 1,
-      "division_path": [],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "改正 昭和24年7月1日最高裁判所規則第１３号平成24年7月17日最高裁判所規則第９号裁判官の分限事件手続規則を次のように定める。裁判官の分限事件手続規則",
-          "items": []
-        }
-      ],
-      "type": "article"
-    },
     {
       "number": [
         1

@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>民事事件等に関する手続において用いる識別符号の付与における本人確認方法に関する要綱</title>
+<meta name="robots" content="noindex">
+<title>【非公式】民事事件等に関する手続において用いる識別符号の付与における本人確認方法に関する要綱</title>
 <style>
 :root{
   --paper:#ffffff;
@@ -158,6 +159,42 @@ mark.live{background:var(--mark-live)}
 }
 
 .anchor-alias{position:absolute;scroll-margin-top:6rem}
+/* 非公式の注意書きとトップへ戻る ここから */
+.crumb-row{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;padding-top:.25rem;padding-bottom:.25rem}
+.crumb-row .home-link{font-size:.74rem;padding:.08rem .5rem}
+.crumb-row .unofficial-badge{text-decoration:none;font-size:.7rem;padding:0 .4rem}
+#unofficial{scroll-margin-top:6rem}
+.home-link{display:inline-block;background:var(--paper);border:1px solid var(--rule);border-radius:2px;
+  color:var(--accent);font-family:var(--gothic);font-size:.78rem;padding:.28rem .6rem;line-height:1.4;
+  text-decoration:none;white-space:nowrap}
+.home-link:hover{border-color:var(--accent);background:var(--accent-weak)}
+.unofficial-badge{display:inline-block;font-family:var(--gothic);font-size:.72rem;font-weight:700;
+  color:#8a4b00;background:#fff4d6;border:1px solid #e6c36a;border-radius:2px;
+  padding:.05rem .45rem;line-height:1.5;white-space:nowrap}
+.unofficial{font-family:var(--gothic);font-size:.85rem;line-height:1.75;color:var(--ink);
+  background:#fffaf0;border:1px solid #e6c36a;border-left:.4rem solid #d9a520;border-radius:2px;
+  padding:.7rem 1rem;margin:0 0 2rem}
+.unofficial strong{color:#8a4b00}
+.unofficial p{margin:0}
+.unofficial p+p{margin-top:.3rem}
+.unofficial a{color:var(--accent)}
+.page-warning{font-family:var(--gothic);font-size:.9rem;line-height:1.75;color:#5c0d0d;
+  background:#fdecec;border:1px solid #d98a8a;border-left:.4rem solid #b3261e;border-radius:2px;
+  padding:.7rem 1rem;margin:-1rem 0 2rem}
+.page-warning strong{color:#b3261e}
+.page-warning p{margin:0}
+.page-warning a{color:#8a1c16}
+.lapse-note{color:var(--sub);margin:.6rem 0 1rem 2.6rem}
+.doc-foot{font-family:var(--gothic);font-size:.85rem;border-top:1px solid var(--rule);
+  margin-top:4rem;padding-top:1.2rem;display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;align-items:center}
+.doc-foot .note{color:var(--sub);font-size:.8rem}
+.doc-foot .note a{color:var(--accent)}
+@media print{
+  .doc-foot .home-link{display:none}
+  .unofficial{background:none;border:1px solid #000;border-left:1px solid #000}
+  .page-warning{background:none;border:2px solid #000}
+}
+/* 非公式の注意書きとトップへ戻る ここまで */
 </style>
 </head>
 <body>
@@ -165,7 +202,7 @@ mark.live{background:var(--mark-live)}
   <div class="top-inner">
     <button type="button" class="btn toc-open" id="toc-open">目次</button>
     <h1 class="law-title">民事事件等に関する手続において用いる識別符号の付与における本人確認方法に関する要綱</h1>
-    <span class="law-number"></span>
+    <span class="law-number">令和8年3月31日最高裁判所告示第5号</span>
     <div class="top-tools">
       <div class="search-box">
         <input type="search" id="q" placeholder="条文を検索（/ キー）" aria-label="条文を検索">
@@ -177,25 +214,38 @@ mark.live{background:var(--mark-live)}
         title="条番号の表記を切り替える">123</button>
     </div>
   </div>
-  <div class="crumb" id="crumb"></div>
+  <div class="crumb crumb-row">
+    <a class="home-link" href="../index.html" title="最高裁判所規則集のトップページ（総目次）に戻ります">← 規則集トップ</a>
+    <a class="unofficial-badge" href="#unofficial" title="裁判所の公式ページではありません。正確な内容は原本PDFで確認してください。">非公式</a>
+    <span id="crumb"></span>
+  </div>
 </header>
 <div class="wrap">
   <nav class="toc" id="toc" aria-label="目次">
     <h2>目次</h2>
-    <ul><li class="lv-art" data-text="民事事件等に関する手続において用いる識別符号の付与における本人確認方法に関する要綱"><a href="#body-1">本文</a></li><li class="lv-art" data-text="令和8年3月31日最高裁判所告示第5号令和8年3月31日最高裁判所告示第5号民事事件等に関する手続において用いる識別符号の付与等に関する規則第一条第一項第五号に規定する最高裁判所が定める事項、同条第二項に規定する最高裁判所が定める方法及び同規則第二条第一項に規定する最高裁判所が定める者を定める件（令和八年最高裁判所告示第一号）第二条に規定する最高裁判所が適当と認める方法は、次の各号に掲げる場合の区分に応じ、それぞれ当該各号に定める方法とする。一弁護士等（民事事件等に関する手続において用いる識別符号の付与等に関する規則（令和六年最高裁判所規則第十五号。以下「規則」という。）第二条第一項に規定する弁護士等（弁理士を除く。）をいう。以下同じ。）がその業務として規則第一条第一項の規定による届出を行う場合その所属する弁護士会又は司法書士会の発行する身分証明書、印鑑証明書その他の当該届出を行う者が弁護士等であることを証明する書面（当該届出の日に有効なものに限る。）の画像情報を当該届出を行う者の使用に係る電子計算機から送信する方法二国若しくは地方公共団体（以下「国等」という。）の代表者、国等の機関（当該機関が合議制の機関である場合にあっては、当該機関の代表者）又は民事訴訟法（平成八年法律第百九号）第百三十二条の十一第一項第二号若しくは第三号に掲げる者が規則第一条第一項の規定による届出を行う場合当該届出を行う者が所属する官公署をして当該届出を行う者の氏名及び電子メールアドレス（同項第三号に規定する電子メールアドレスをいう。）を裁判所に提供させる方法"><a href="#body-2">本文　令和8年3月31日最高裁判所告示第5号</a></li></ul>
+    <ul><li class="lv-art" data-text="民事事件等に関する手続において用いる識別符号の付与等に関する規則第一条第一項第五号に規定する最高裁判所が定める事項、同条第二項に規定する最高裁判所が定める方法及び同規則第二条第一項に規定する最高裁判所が定める者を定める件（令和八年最高裁判所告示第一号）第二条に規定する最高裁判所が適当と認める方法は、次の各号に掲げる場合の区分に応じ、それぞれ当該各号に定める方法とする。"><a href="#body-2">本文　令和8年3月31日最高裁判所告示第5号</a></li></ul>
   </nav>
   <main class="doc" id="doc-outer">
     <div class="doc-head">
       <h1>民事事件等に関する手続において用いる識別符号の付与における本人確認方法に関する要綱</h1>
-      <div class="meta">　／　<a class="src" href="https://www.courts.go.jp/assets/080521honnninnkakuninnyoukou.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本PDF p.1</a></div>
+      <div class="meta">令和8年3月31日最高裁判所告示第5号　／　<a class="src" href="https://www.courts.go.jp/assets/080521honnninnkakuninnyoukou.pdf#page=1" target="_blank" rel="noopener" title="裁判所ウェブサイトの原本PDF（1ページ）を開きます">原本PDF p.1</a></div>
     </div>
+    <aside class="unofficial" id="unofficial" aria-label="このページについての注意">
+      <p><strong>【非公式】</strong>このページは、裁判所が公開している規則のPDFを機械的にHTMLへ変換した<strong>非公式</strong>の資料です。裁判所が作成・確認したものではありません。</p>
+      <p>変換の過程で誤りや脱落が生じているおそれがあり、改正にも自動では追随しません。<strong>正確な内容は、必ず<a href="https://www.courts.go.jp/assets/080521honnninnkakuninnyoukou.pdf" target="_blank" rel="noopener">原本PDF（裁判所ウェブサイト）</a>で確認してください。</strong>各条の「原本 p.○」から該当ページを開けます。</p>
+      <p>画面上部の「漢数字／123」で、条番号などを算用数字（号は丸数字）に置き換えて表示できます。これは読みやすくするための表示で、原文の表記ではありません。</p>
+      <p>別表・読替表などの<strong>表は、列の区切りがなくなり、文字の順序が原本と違って表示されることがあります。</strong>表は必ず原本PDFで確認してください。</p>
+    </aside>
     <div id="doc">
-<article class="art noarticle" id="body-1" data-path=""><div class="art-tools"><button type="button" data-anchor="body-1" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521honnninnkakuninnyoukou.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="para" id="body-1-p1"><span class="body-text">民事事件等に関する手続において用いる識別符号の付与における本人確認方法に関する要綱</span></p></article>
-<article class="art noarticle" id="body-2" data-path=""><div class="art-tools"><button type="button" data-anchor="body-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521honnninnkakuninnyoukou.pdf#page=1" target="_blank" rel="noopener" title="原本PDFの1ページを開きます">原本 p.1</a></div><p class="caption">（令和8年3月31日最高裁判所告示第5号）</p><p class="para" id="body-2-p1"><span class="body-text"><a class="ref ref-rule" href="800.html#a1" title="この規則集の中を開きます">民事事件等に関する手続において用いる識別符号の付与等に関する規則第一条</a>第一項第五号に規定する最高裁判所が定める事項、同条第二項に規定する最高裁判所が定める方法及び同規則第二条第一項に規定する最高裁判所が定める者を定める件（令和八年最高裁判所告示第一号）第二条に規定する最高裁判所が適当と認める方法は、次の各号に掲げる場合の区分に応じ、それぞれ当該各号に定める方法とする。</span></p><ol class="items"><li id="body-2-p1-1"><span class="mk">一</span><span class="tx">弁護士等（<a class="ref ref-rule" href="800.html#a2" title="この規則集の中を開きます">民事事件等に関する手続において用いる識別符号の付与等に関する規則（令和六年最高裁判所規則第十五号。以下「規則」という。）第二条</a>第一項に規定する弁護士等（弁理士を除く。）をいう。以下同じ。）がその業務として規則第一条第一項の規定による届出を行う場合その所属する弁護士会又は司法書士会の発行する身分証明書、印鑑証明書その他の当該届出を行う者が弁護士等であることを証明する書面（当該届出の日に有効なものに限る。）の画像情報を当該届出を行う者の使用に係る電子計算機から送信する方法</span></li><li id="body-2-p1-2"><span class="mk">二</span><span class="tx">国若しくは地方公共団体（以下「国等」という。）の代表者、国等の機関（当該機関が合議制の機関である場合にあっては、当該機関の代表者）又は民事訴訟法（平成八年法律第百九号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000109#Mp-At_132_11" title="e-Gov法令検索で開きます">第百三十二条の十一</a>第一項第二号若しくは第三号に掲げる者が規則第一条第一項の規定による届出を行う場合当該届出を行う者が所属する官公署をして当該届出を行う者の氏名及び電子メールアドレス（同項第三号に規定する電子メールアドレスをいう。）を裁判所に提供させる方法</span></li></ol></article>
+<article class="art noarticle" id="body-2" data-path=""><div class="art-tools"><button type="button" data-anchor="body-2" title="この条へのリンクをコピー">リンク</button><a class="src" href="https://www.courts.go.jp/assets/080521honnninnkakuninnyoukou.pdf#page=1" target="_blank" rel="noopener" title="裁判所ウェブサイトの原本PDF（1ページ）を開きます">原本 p.1</a></div><p class="para" id="body-2-p1"><span class="body-text"><a class="ref ref-rule" href="800.html#a1" title="この規則集の中を開きます">民事事件等に関する手続において用いる識別符号の付与等に関する規則第一条</a>第一項第五号に規定する最高裁判所が定める事項、同条第二項に規定する最高裁判所が定める方法及び同規則第二条第一項に規定する最高裁判所が定める者を定める件（令和八年最高裁判所告示第一号）第二条に規定する最高裁判所が適当と認める方法は、次の各号に掲げる場合の区分に応じ、それぞれ当該各号に定める方法とする。</span></p><ol class="items"><li id="body-2-p1-1"><span class="mk">一</span><span class="tx">弁護士等（<a class="ref ref-rule" href="800.html#a2" title="この規則集の中を開きます">民事事件等に関する手続において用いる識別符号の付与等に関する規則（令和六年最高裁判所規則第十五号。以下「規則」という。）第二条</a>第一項に規定する弁護士等（弁理士を除く。）をいう。以下同じ。）がその業務として規則第一条第一項の規定による届出を行う場合その所属する弁護士会又は司法書士会の発行する身分証明書、印鑑証明書その他の当該届出を行う者が弁護士等であることを証明する書面（当該届出の日に有効なものに限る。）の画像情報を当該届出を行う者の使用に係る電子計算機から送信する方法</span></li><li id="body-2-p1-2"><span class="mk">二</span><span class="tx">国若しくは地方公共団体（以下「国等」という。）の代表者、国等の機関（当該機関が合議制の機関である場合にあっては、当該機関の代表者）又は民事訴訟法（平成八年法律第百九号）<a class="ref ref-egov" href="https://laws.e-gov.go.jp/law/408AC0000000109#Mp-At_132_11" title="e-Gov法令検索で開きます">第百三十二条の十一</a>第一項第二号若しくは第三号に掲げる者が規則第一条第一項の規定による届出を行う場合当該届出を行う者が所属する官公署をして当該届出を行う者の氏名及び電子メールアドレス（同項第三号に規定する電子メールアドレスをいう。）を裁判所に提供させる方法</span></li></ol></article>
     </div>
-    <aside class="notes"><p>読み取りに関する注意</p><ul><li>条番号の付いた条文を1件も検出できませんでした。条を持たない告示・要綱であればこれで正しく、そうでなければ書字方向・段組の設定、またはOCRの要否を確認してください。</li><li>各条の「原本」は https://www.courts.go.jp/assets/080521honnninnkakuninnyoukou.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。</li></ul></aside>
-    <div class="foot">出典：080521honnninnkakuninnyoukou.pdf　／　最高裁規則ビューア 1.9.0 で 2026年09月02日 に変換　
+    <aside class="notes"><p>読み取りに関する注意</p><ul><li>題名に続く改正経過・制定文は、本文に含めていません。</li><li>この規則には条番号の付いた条文がないため、本文をひとまとまりで載せています。</li><li>各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/080521honnninnkakuninnyoukou.pdf）の該当ページを開きます。</li></ul></aside>
+    <div class="foot">出典：裁判所ウェブサイト掲載のPDF（080521honnninnkakuninnyoukou.pdf）　／　最高裁規則ビューア 1.9.0 で 2026年09月02日 に変換　
     条文の正確な内容は原本で確認してください。</div>
+    <div class="doc-foot">
+      <a class="home-link" href="../index.html">← 規則集トップに戻る</a>
+      <span class="note">非公式の資料です。正確な内容は<a href="https://www.courts.go.jp/assets/080521honnninnkakuninnyoukou.pdf" target="_blank" rel="noopener">原本PDF</a>で確認してください。</span>
+    </div>
   </main>
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>

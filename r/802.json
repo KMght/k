@@ -1,45 +1,23 @@
 {
   "title": "民事事件等に関する手続において用いる識別符号の付与における本人確認方法に関する要綱",
-  "law_number": "",
+  "law_number": "令和8年3月31日最高裁判所告示第5号",
   "enforcement_date": "",
   "enforcement_iso": "",
   "pdf_link": "https://www.courts.go.jp/assets/080521honnninnkakuninnyoukou.pdf",
   "source": "080521honnninnkakuninnyoukou.pdf",
   "numeral": "kansuji",
   "notes": [
-    "条番号の付いた条文を1件も検出できませんでした。条を持たない告示・要綱であればこれで正しく、そうでなければ書字方向・段組の設定、またはOCRの要否を確認してください。",
-    "各条の「原本」は https://www.courts.go.jp/assets/080521honnninnkakuninnyoukou.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "題名に続く改正経過・制定文は、本文に含めていません。",
+    "この規則には条番号の付いた条文がないため、本文をひとまとまりで載せています。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/080521honnninnkakuninnyoukou.pdf）の該当ページを開きます。"
   ],
   "nodes": [
     {
       "number": [],
       "label": "",
       "short_label": "",
-      "anchor": "body-1",
-      "caption": null,
-      "deleted": false,
-      "section": "main",
-      "page": 1,
-      "division_path": [],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "民事事件等に関する手続において用いる識別符号の付与における本人確認方法に関する要綱",
-          "items": []
-        }
-      ],
-      "type": "article"
-    },
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
       "anchor": "body-2",
-      "caption": "令和8年3月31日最高裁判所告示第5号",
+      "caption": null,
       "deleted": false,
       "section": "main",
       "page": 1,

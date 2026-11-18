@@ -8,35 +8,12 @@
   "numeral": "kansuji",
   "notes": [
     "題名に続く改正経過・制定文の19行は本文に含めていません。",
-    "PDF中の目次は読み飛ばし、条見出しから目次を再構成しました。",
-    "原本のページ番号は、同じ規則の以前の解析結果から117件引き継ぎました。",
-    "各条の「原本」は https://www.courts.go.jp/assets/080521minjihozenkisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。",
-    "本文から他の法令へのリンクを10件作りました。うち1件は法令番号から e-Gov の法令IDを組み立てたものです。公開前に「法令リンク一覧」で確認してください。"
+    "目次は、原本PDFの目次ではなく、条見出しから作り直したものです。",
+    "「原本 p.○」のページ番号のうち117件は、以前の版のPDFで調べたものを引き継いでいます。改正でページがずれていることがあります。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/080521minjihozenkisoku.pdf）の該当ページを開きます。",
+    "本文から他の法令（e-Gov法令検索）へのリンクを10件張っています。リンク先は機械的に判定したもので、誤っていることがあります。"
   ],
   "nodes": [
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-1",
-      "caption": null,
-      "deleted": false,
-      "section": "main",
-      "page": 22,
-      "division_path": [],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "令和元年一一月二七日同第五号",
-          "items": []
-        }
-      ],
-      "type": "article"
-    },
     {
       "type": "division",
       "kind": "章",

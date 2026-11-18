@@ -7,55 +7,10 @@
   "source": "daihouteisyusekisyokikantounikansurukisoku.pdf",
   "numeral": "kansuji",
   "notes": [
-    "各条の「原本」は https://www.courts.go.jp/assets/daihouteisyusekisyokikantounikansurukisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "題名に続く改正経過・制定文は、本文に含めていません。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/daihouteisyusekisyokikantounikansurukisoku.pdf）の該当ページを開きます。"
   ],
   "nodes": [
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-1",
-      "caption": null,
-      "deleted": false,
-      "section": "main",
-      "page": 1,
-      "division_path": [],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "昭五六最裁規三・改称",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "改正 昭和30 年3 月1 日最高裁判所規則第１号昭和34 年10 月1 日最高裁判所規則第１３号昭和38 年4 月22 日最高裁判所規則第５号昭和40 年1 月29 日最高裁判所規則第２号昭和40 年3 月31 日最高裁判所規則第５号昭和42 年6 月10 日最高裁判所規則第６号昭和43 年4 月20 日最高裁判所規則第１号昭和44 年9 月1 日最高裁判所規則第７号昭和45 年5 月25 日最高裁判所規則第４号昭和53 年2 月3 日最高裁判所規則第１号昭和56 年3 月30 日最高裁判所規則第３号平成6 年6 月30 日最高裁判所規則第３号平成9 年11 月26 日最高裁判所規則第６号平成10 年7 月27 日最高裁判所規則第３号平成12 年7 月19 日最高裁判所規則第１０号平成16 年3 月31 日最高裁判所規則第７号平成17 年2 月14 日最高裁判所規則第７号平成17 年7 月27 日最高裁判所規則第１１号平成19 年3 月29 日最高裁判所規則第３号平成20 年5 月30 日最高裁判所規則第７号平成22 年3 月17 日最高裁判所規則第２号平成23 年7 月29 日最高裁判所規則第２号令和2 年8 月3 日最高裁判所規則第８号令和6 年3 月1 日最高裁判所規則第５号首席書記官等に関する規則を次のように定める。大法廷首席書記官等に関する規則",
-          "items": []
-        }
-      ],
-      "type": "article"
-    },
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-2",
-      "caption": null,
-      "deleted": false,
-      "section": "main",
-      "page": 1,
-      "division_path": [],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "首席書記官等に関する規則（昭和二十五年最高裁判所規則第二十六号）の全部を改正する。",
-          "items": []
-        }
-      ],
-      "type": "article"
-    },
     {
       "number": [
         1

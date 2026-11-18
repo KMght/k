@@ -7,32 +7,10 @@
   "source": "080521jinnshinnhogokisoku.pdf",
   "numeral": "kansuji",
   "notes": [
-    "各条の「原本」は https://www.courts.go.jp/assets/080521jinnshinnhogokisoku.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "題名に続く改正経過・制定文は、本文に含めていません。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/assets/080521jinnshinnhogokisoku.pdf）の該当ページを開きます。"
   ],
   "nodes": [
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-1",
-      "caption": null,
-      "deleted": false,
-      "section": "main",
-      "page": 1,
-      "division_path": [],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "改正 昭和二四年七月一日最高裁判所規則第一二号同二七年九月二二日同第二六号同四六年六月一四日同第六号同四六年六月二三日同第九号同五五年九月一〇日同第五号平成八年一二月一七日同第六号同一五年一一月一二日同第二三号同一八年五月一二日同第六号同一八年七月二八日同第一一号令和六年九月一七日同第一四号人身保護規則を次のように定める。人身保護規則",
-          "items": []
-        }
-      ],
-      "type": "article"
-    },
     {
       "number": [
         1

@@ -1,38 +1,16 @@
 {
   "title": "土地の収用等と強制執行等との調整に関する規則",
   "law_number": "昭和四十二年十二月十一日最高裁判所規則第十四号",
-  "enforcement_date": "昭和55年10月1日",
-  "enforcement_iso": "1980-10-01",
+  "enforcement_date": "令和4年2月21日",
+  "enforcement_iso": "2022-02-21",
   "pdf_link": "https://www.courts.go.jp/vc-files/courts/2022/tochisyuuyoutyouseikisokuR4.2.pdf",
   "source": "tochisyuuyoutyouseikisokuR4.2.pdf",
   "numeral": "kansuji",
   "notes": [
-    "各条の「原本」は https://www.courts.go.jp/vc-files/courts/2022/tochisyuuyoutyouseikisokuR4.2.pdf を開きます。公開前に、このURLが実際に開けるか一度お確かめください。"
+    "題名に続く改正経過・制定文は、本文に含めていません。",
+    "各条の「原本 p.○」は、裁判所ウェブサイトに掲載されているPDF（https://www.courts.go.jp/vc-files/courts/2022/tochisyuuyoutyouseikisokuR4.2.pdf）の該当ページを開きます。"
   ],
   "nodes": [
-    {
-      "number": [],
-      "label": "",
-      "short_label": "",
-      "anchor": "body-1",
-      "caption": "土地の収用等と強制執行等との調整に関する規則（原文は縦書き",
-      "deleted": false,
-      "section": "main",
-      "page": 1,
-      "division_path": [],
-      "sup_index": 0,
-      "label_override": null,
-      "alias_numbers": [],
-      "note": "",
-      "paragraphs": [
-        {
-          "number": 1,
-          "text": "改正 昭和五五年五月六日最高裁判所規則第三号令和四年二月二一日同第四号土地の収用等と強制執行等との調整に関する規則を次のように定める。",
-          "items": []
-        }
-      ],
-      "type": "article"
-    },
     {
       "number": [
         1
@@ -112,7 +90,7 @@
       "paragraphs": [
         {
           "number": 1,
-          "text": "強制競売等の開始決定に基づく登記がされた土地等について裁決手続開始の登記がされた旨の収用委員会の通知があつたときは、裁判所書記官は、速やかに、その旨を差押債権者、債務者及び所有者（不動産とみなされるものにあつては、その権利者。1以下同じ。）に通知しなければならない。",
+          "text": "強制競売等の開始決定に基づく登記がされた土地等について裁決手続開始の登記がされた旨の収用委員会の通知があつたときは、裁判所書記官は、速やかに、その旨を差押債権者、債務者及び所有者（不動産とみなされるものにあつては、その権利者。以下同じ。）に通知しなければならない。",
           "items": []
         },
         {
@@ -192,7 +170,7 @@
       "paragraphs": [
         {
           "number": 1,
-          "text": "法第九十六条第一項の規定により裁判所に補償金等が払い渡されたときは、裁2判所書記官は、交付を受けた金額及び交付を受けた年月日を記録上明らかにしなければならない。",
+          "text": "法第九十六条第一項の規定により裁判所に補償金等が払い渡されたときは、裁判所書記官は、交付を受けた金額及び交付を受けた年月日を記録上明らかにしなければならない。",
           "items": []
         },
         {
